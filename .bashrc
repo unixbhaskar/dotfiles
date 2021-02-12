@@ -47,7 +47,7 @@ alias rsync='rsync --progress --stats -ravz'
 alias c="clear"
 alias d='cd ~/Downloads'
 alias p='cd ~/Pictures'
-alias githome='cd ~/git-linux'
+alias linuxgit='cd ~/git-linux/linux/'
 alias boot='cd /boot'
 alias music='cd ~/Music'
 alias admscripts='cd ~/Adm_scripts'
@@ -217,7 +217,7 @@ search() {
 
 		sudo find / -name "$1" -ls  2> /dev/null
 	else
-		git grep "$1"
+		git grep -n "$1"
 	fi
 }
 
