@@ -398,3 +398,15 @@ changes() {
 		$(command -v vimdiff) $1 $2
 	fi
 }
+
+discard_changes() {
+
+        if [[ $# -ne 1 ]];then
+
+		printf "You need to provide the file name \n"
+	else
+
+		git checkout -- $1
+
+	fi
+}
