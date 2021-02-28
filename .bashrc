@@ -155,6 +155,10 @@ alias fix_spell="$HOME/git-linux/linux/scripts/checkpatch.pl -f --terse --nosumm
 alias build=build
 alias see_portage_log="$(command -v elogv)"
 alias localmail="mutt -F $HOME/.muttrc.local"
+alias enable_config="scripts/config --enable $1"
+alias disable_config="scripts/config --disable $1"
+alias who="git blame $1"
+
 unset SSH_ASKPASS
 
 #man page color
@@ -358,9 +362,6 @@ checkpatch() {
 
 	$patch_check
 }
-alias enable_config="scripts/config --enable $1"
-alias disable_config="scripts/config --disable $1"
-alias who="git blame $1"
 filehash() {
 
 	git ls-files -z  | GIT_PAGER= xargs -0 -L1 -I '{}' git log -n 1 --format="%h {}" -- '{}'
@@ -385,7 +386,13 @@ sedwise() {
 # Compare two files side by side
 
 changes() {
-	if [ $# -ne 2 ];then
+
+	if [ -e .git ];then
+
+		git difftool
+
+	elif [ $# -ne 2 ];then
+
 		printf "You need to provide both the file names \n"
 	else
 		$(command -v vimdiff) $1 $2
