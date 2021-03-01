@@ -1,0 +1,26 @@
+From 9c52c145bc258a560efee32280c72f3d0d40e7a5 Mon Sep 17 00:00:00 2001
+From: Bhaskar Chowdhury <unixbhaskar@gmail.com>
+Date: Mon, 1 Mar 2021 08:19:25 +0530
+Subject: [PATCH] check out
+
+Signed-off-by: Bhaskar Chowdhury <unixbhaskar@gmail.com>
+---
+ .gitconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/.gitconfig b/.gitconfig
+index cf528c972e74..16bd813ae83a 100644
+--- a/.gitconfig
++++ b/.gitconfig
+@@ -85,7 +85,7 @@ unfreeze = update-index --no-assume-unchanged  #You need to run this command ins
+          smtpserver = smtp.yourmailprovider.com
+          smtpencryption = tls
+          smtpserverport = 587
+-	 smtppass = "your smtp password"
++	 smtppass = "use_pass"
+ 	 confirm = auto
+ 	 chainreplyto = false
+ 
+-- 
+2.26.2
+
