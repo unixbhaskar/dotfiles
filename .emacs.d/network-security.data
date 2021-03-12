@@ -1,0 +1,5 @@
+(
+ (:id "sha1:706608f9b7fcfdea563351d49047f296d74a5a76" :fingerprints ("sha1:4b:87:20:8d:b6:c8:66:89:15:57:e2:2f:f4:3b:91:08:6d:e1:73:7f") :conditions nil)
+ (:id "sha1:3d532064566b20921bcbce08611f22aa13b18f0b" :fingerprints ("sha1:0a:cb:aa:ec:b3:f9:a6:9e:47:8e:c8:54:b0:59:6d:0a:9a:76:de:59" "sha1:f3:d6:cb:b6:38:b6:a1:1c:96:cd:37:7a:e6:4a:58:b2:96:6b:df:44") :host "smtp.google.com:25" :conditions (:same-cert))
+ (:id "sha1:85457c729378cc93c732b6a3941c8e4f9c2e60f3" :fingerprints ("sha1:ab:a6:d7:6a:b3:d3:63:fa:19:0d:65:41:60:23:6e:ef:d3:2a:46:dc") :host "marmalade-repo.org:443" :conditions (:expired :unknown-ca :invalid :verify-cert))
+)
