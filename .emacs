@@ -443,3 +443,31 @@
 
 (setq org-agenda-files
       '("~/.emacs.d/OrgFiles/task.org"))
+
+;; Maximize a specific pane
+
+(defun x11-maximize-frame ()
+  "Maximize the current frame (to full screen)"
+  (interactive)
+  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
+  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
+
+(global-set-key (kbd "C-f") 'x11-maximize-frame)
+
+;; Ivy posframe for spawn window on middle of the screen
+
+(use-package ivy-posframe
+	     :ensure  t
+             :delight
+	     :custom
+
+	     (ivy-posframe-display-fucntion-alist
+	       '((comple-symbol . ivy-posframe-display-at-point)
+		 (counsel-describe-function . nil)
+		 (counsel-describe-variable . nil)
+		 (swipper . nil)
+		 (swipper-isearch . nil)
+		 (t . ivy-posframe-display-at-frame-center)))
+	     :config
+	     (ivy-posframe-mode 1))
+
