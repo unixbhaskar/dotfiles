@@ -145,8 +145,6 @@ color index green default '~f akpm@linux-foundation.org'
 
 color index cyan default '~f viro@zeniv.linux.org.uk'
 
-color index red default '~f sfr@canb.auug.org.au'
-
 color index brightyellow default '~f davem@davemloft.net'
 
 color index brightgreen default '~f paulmck@linux.ibm.com'
