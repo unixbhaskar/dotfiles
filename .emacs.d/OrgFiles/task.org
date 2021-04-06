@@ -1,0 +1,7 @@
+* This is a todo file
+      SCHEDULED: <2021-03-31 Wed>
+      TODO : Need to pick up the cheque
+
+* Important stuff to finish
+  SCHEDULED: <2021-04-05 Mon>
+   *Research about UNIX/Linux*

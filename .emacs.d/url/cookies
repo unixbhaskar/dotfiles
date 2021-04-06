@@ -2,11 +2,23 @@
 ;; Automatically generated file!!! DO NOT EDIT!!!
 
 (setq url-cookie-storage
- '((".lkml.org"
-  [url-cookie "__cfduid" "da861c99633280ab14b58d7ca849d41431614771968" "Fri, 02-Apr-21 11:46:08 GMT" "/" ".lkml.org" nil]))
-)
+ 'nil)
 (setq url-cookie-secure-storage
- '((".youtube.com"
+ '((".twitter.com"
+  [url-cookie "personalization_id" "v1_ZcQ/ZLafHkQXrMZZSShspA==" "Thu Mar 16 12:54:23 2023 GMT" "/" ".twitter.com" t]
+  [url-cookie "guest_id" "v1%3A161589927165003025" "Thu Mar 16 12:54:23 2023 GMT" "/" ".twitter.com" t])
+ (".linkedin.com"
+  [url-cookie "li_gc" "MTswOzE2MTYwNTc5ODE7MjswMjH23zeCaA9Ynd1BJWx2hHUDKqUlW2LR7/q4nnQ3Bqe6kQ==" "Sun, 12 Mar 2023 16:10:47 GMT" "/" ".linkedin.com" t]
+  [url-cookie "bcookie" "v=2&445e89bc-8c00-4307-89af-39b985133d14" "Sat, 18-Mar-2023 20:37:14 GMT" "/" ".linkedin.com" t])
+ (".www.linkedin.com"
+  [url-cookie "bscookie" "v=1&202103180859416312ca03-7147-40a6-879b-336b32d4686dAQGJS_U2PQw35W6wHx_fl5Bfq5UAa_pg" "Sat, 18-Mar-2023 20:37:14 GMT" "/" ".www.linkedin.com" t])
+ (".reddit.com"
+  [url-cookie "loid" "0000000000bcfyoypw.2.1617596523000.Z0FBQUFBQmdhcEJyMU1ONmdFQUdnV2pubWdORWl6VnlYOHk2bkc1ZFd4cDVlSkRhWVN1RDNBWjhIQWJVSzAwVlJ2LVdaaWE5RU5aRS03OUZ2c1pJdGE1YmkzZHdOaU41dlgyOU5UVVF5UFJBcjluRDN2SWtaRHZSMm1COTNURmV5YmpIWTRmWVZiTDk" "Wed, 05 Apr 2023 04:22:04 GMT" "/" ".reddit.com" t]
+  [url-cookie "csv" "1" "Wed Apr 05 04:22:06 2023 GMT" "/" ".reddit.com" t])
+ ("reddit.com"
+  [url-cookie "token_v2" "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTc2MDAwMDMsInN1YiI6Ii1jWHp4QjBvMXZrQnhKMFNTTEg3MmxCUm8ycDgiLCJsb2dnZWRJbiI6ZmFsc2UsInNjb3BlcyI6WyIqIiwiZW1haWwiXX0.bdSoRcXeduvBqNl7b3oJhhKoh014hkuSEe1oFb9wF_w" "Wed, 05 Apr 2023 04:22:03 GMT" "/" "reddit.com" t]
+  [url-cookie "edgebucket" "TII9cPafxr0YrNcHLG" "Wed Apr 05 04:22:05 2023 GMT" "/" "reddit.com" t])
+ (".youtube.com"
   [url-cookie "VISITOR_INFO1_LIVE" "458af9NMlPo" "Mon, 30-Aug-2021 11:44:52 GMT" "/" ".youtube.com" t]))
 )
 
