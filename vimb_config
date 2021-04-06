@@ -125,7 +125,7 @@ nmap <C-g> :shellcmd! github<CR>
 
 # Open Arch git to check latest version
 
-nmap <C-a> :shellcmd! archgit<CR>
+nmap <C-a> :shellcmd! amazonin<CR>
 
 # Open Pocket for save references
 
@@ -158,12 +158,13 @@ nmap <C-n> :shellcmd! goodreads<CR>
 # set status-ssl-css=color:#99cc99;background-color:#393939;font:12pt DejaVu Sans Mono;
 # set status-ssl-invalid-css=color:#f2777a;background-color:#393939;font:12pt DejaVu Sans Mono;
 #
-set status-css=color:#00BCE3;background-color:#000000; height:50px;font:12pt DejaVu Sans Mono;
-set status-ssl-css=color:#FE5000;background-color:#000000;height:50px;font:12pt DejaVu Sans Mono;
-set status-ssl-invalid-css=color:#f2777a;background-color:#000000;height:50px;font:12pt DejaVu Sans Mono;
+set status-css=color:#00BCE3;background-color:#000000;font:12pt DejaVu Sans Mono;
+set status-ssl-css=color:#FE5000;background-color:#000000;font:12pt DejaVu Sans Mono;
+set status-ssl-invalid-css=color:#f2777a;background-color:#000000;font:12pt DejaVu Sans Mono;
 # Images loading
 set images=true
-
+set scripts=true
+set smooth-scrolling=true
 set html5-database=true
 set html5-local-storage=true
 set hardware-acceleration-policy=ondemand
