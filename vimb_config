@@ -72,6 +72,7 @@ shortcut-default duck
 nmap + zI
 nmap - zO
 nmap = zz
+nmap bb :shellcmd! bookmark<CR>
 
 #simple read format
 
@@ -93,7 +94,7 @@ nmap <C-k> :shellcmd! kerneldoc<CR>
 
 # Open local weather page
 
-nmap <C-w> :shellcmd! weather<CR>
+#nmap <C-w> :shellcmd! weather<CR>
 
 # open up Tweetdeck
 
@@ -117,7 +118,7 @@ nmap <C-y> :shellcmd! open_youtube<CR>
 
 # Open Wikipedia
 
-nmap <C-i> :shellcmd! wikipedia<CR>
+nmap <C-w> :shellcmd! wikipedia<CR>
 
 # Open GitHub
 
@@ -146,6 +147,10 @@ nmap <C-x> :shellcmd! reddit<CR>
 # Open Goodreads
 
 nmap <C-n> :shellcmd! goodreads<CR>
+
+# Open Sport website
+
+nmap <C-e> :shellcmd! opensportsite<CR>
 
 # GUI color settings
 # Color scheme: Base16 Eighties (https://github.com/chriskempson/base16)
