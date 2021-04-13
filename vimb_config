@@ -73,10 +73,12 @@ nmap + zI
 nmap - zO
 nmap = zz
 nmap bl :shellcmd! bookmarklist<CR>
-nmap bm :shellcmd! addbookmark<CR>
+nmap bm :shellcmd addbookmark<CR>
 nmap tw :shellcmd! travelwiki<CR>
 nmap gr :shellcmd! goodreads<CR>
 nmap lw :shellcmd! lwn<CR>
+nmap mc :shellcmd! mutt_config_tips_page<CR>
+
 
 #simple read format
 
@@ -121,10 +123,6 @@ nmap <C-a> :shellcmd! amazonin<CR>
 # Open Pocket for save references
 
 nmap <C-p> :shellcmd! getpocket<CR>
-
-# Open Mutt email wiki config page
-
-nmap <C-m> :shellcmd! mutt_config_tips_page<CR>
 
 # Show keybinds help
 
