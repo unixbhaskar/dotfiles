@@ -74,7 +74,7 @@ nmap - zO
 nmap = zz
 nmap bl :shellcmd! bookmarklist<CR>
 nmap bm :shellcmd! addbookmark<CR>
-
+nmap wt :shellcmd! travelwiki<CR>
 
 #simple read format
 
