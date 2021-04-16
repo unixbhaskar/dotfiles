@@ -73,7 +73,7 @@ nmap + zI
 nmap - zO
 nmap = zz
 nmap bl :shellcmd! bookmarklist<CR>
-nmap bm :shellcmd addbookmark<CR>
+#nmap bm :shellcmd! addbookmark<CR>
 nmap tw :shellcmd! travelwiki<CR>
 nmap gr :shellcmd! goodreads<CR>
 nmap lw :shellcmd! lwn<CR>
