@@ -517,7 +517,7 @@ Plugin 'tommcdo/vim-exchange'
 " Urlview key binding /u
  nnoremap <silent> <leader>u :Urlview<CR>
  " Automated log for file modification with the user who did it
- autocmd BufWritePost  *  !echo "$USER modified the file '%:t' at '$(date)'" >> /tmp/vimlog
+autocmd BufWritePost  *  !echo "$USER modified the file '%:p' at '$(date)'" >> /tmp/vimlog
  " Vimgrep/lvimgrep search quickfix window open
  augroup quickfixwindow
     autocmd!
