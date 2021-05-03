@@ -104,7 +104,7 @@ exec $HOME/bin/clipmenud
 exec $HOME/bin/pia-client
 
 set $workspace1 "1   "
-set $workspace2 "2  "
+set $workspace2 "2  "
 set $workspace3 "3   "
 set $workspace4 "4  ℰ "
 
