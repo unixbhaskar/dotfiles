@@ -475,3 +475,10 @@
 ;; Open calendar
 
 (global-set-key (kbd "C-x c") 'calendar)
+
+;; Show time on mode line
+
+ (display-time-mode 1)
+
+;; Display battery percentage
+(display-battery-mode 1)
