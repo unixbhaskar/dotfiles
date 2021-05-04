@@ -1,43 +1,53 @@
-*,div,pre,textarea,body,input,td,tr,p {
-    background-color: #002b36 !important;
-/*    background-color: #303030 !important;*/
-    background-image: none !important;
-    color: #bbbbbb !important;
-}
-h1,h2,h3,h4 {
-    background-color: none !important;
-    color: #b8ddea !important;
-}
-a {
-    color: #70e070 !important;
-}
-a:hover,a:focus {
-    color: #7070e0 !important;
-}
-a:visited {
-    color: #e07070 !important;
-}
-img {
-    opacity: 1;
-}
-img:hover {
-    opacity: 1;
-}
+*,div,pre,textarea,body,input,td,tr,p
+{
+	  background-color: #002b36 !important;
+	    background-image: none !important;
+	      /*color: #657b83 !important;*/
+	      color: #bbbbbb !important;
+      }
 
-/* Hint mode color styling
- * Color scheme: Base16 Eighties (https://github.com/chriskempson/base16)
- *
- * The precedence of the user style is lower than that of the website so you
- * have to mark your style definition to have higher priority.
- */
+      h1,h2,h3,h4
+      {
+	        background-color: #002b36 !important;
+		  /* color: #5f676a !important;*/
+                     color: #b8ddea !important;
+	  }
+
+	  a
+	  {
+		    /*color: #859900 !important;*/
+                     color: #70e070 !important;
+	    }
+
+	    a:hover,a:focus
+	    {
+		      color: #859900 !important;
+	      }
+
+	      a:visited
+	      {
+		        color: #b58900 !important;
+		}
+
+		img
+		{
+			  opacity: 1;
+		  }
+
+		  img:hover
+		  {
+			    opacity: 1;
+		    }
+
+
 span[vimbhint^='label'] {
-    background-color: #f2f0ec !important;
-    border: 1px solid #2d2d2d !important;
-    color: #2d2d2d !important;
-    font: bold 10pt monospace !important;
-    opacity: 1 !important;
-    padding: .1em .4em !important;
-    text-transform: uppercase !important;
+     background-color: #f2f0ec !important;
+     border: 1px solid #2d2d2d !important;
+     color: #2d2d2d !important;
+     font: bold 10pt monospace !important;
+     opacity: 1 !important;
+     padding: .1em .4em !important;
+     text-transform: uppercase !important;
 }
 span[vimbhint='label focus'] {
     font: bold 13pt monospace !important;
@@ -47,10 +57,15 @@ span[vimbhint='label focus'] {
     color: #2d2d2d !important;
 }
 *[vimbhint='hint focus'] {
-    background-color: #6699cc !important;
-    color: #2d2d2d !important;
+      background-color: #6699cc !important;
+      color: #2d2d2d !important;
 }
 
+div
+  {
+            font-weight: bolder;
+  }
+
 body::-webkit-scrollbar {
-    display: none;
+      display: none;
 }
