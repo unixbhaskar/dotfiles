@@ -109,7 +109,10 @@ set $workspace3 "3   "
 set $workspace4 "4  ℰ "
 set $workspace5 "5  "
 set $workspace6 "6  "
-
+set $workspace7 "7  "
+set $workspace8 "8  "
+set $workspace9 "9  "
+# set $workspace10 "10 "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -118,6 +121,10 @@ bindsym $mod+Shift+f workspace $workspace3 ; exec "$HOME/bin/firefox_open";
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
 bindsym $mod+c workspace $workspace5 ; exec "st -e $HOME/bin/build_and_install_kernel";
 bindsym $mod+g workspace $workspace6 ; exec "st -e $HOME/bin/sync_upstream_linux";
+bindsym $mod+n workspace $workspace7 ; exec  "st -e newsboat";
+bindsym $mod+apostrophe  workspace $workspace8 ; exec  "st -e calcurse";
+bindsym $mod+u  workspace $workspace9 ; exec  "st -e cmus";
+#bindsym $mod+Shift+m  workspace $workspace10 ; exec "st -e mutt";
 
 
 #ASSIGN PROGRAMS TO WORKSPACES
@@ -125,9 +132,12 @@ assign [class="^st-256color"] → $workspace1
 assign [class="^Vimb$"]  → $workspace2
 assign [class="^Firefox$"] → $workspace3
 assign [class="^Emacs$"] → $workspace4
-assign [class="^st-256color"] → $workspace5
-assign [class="^st-256color"] → $workspace6
-
+assign [class="^st-256color$"] → $workspace5
+assign [class="^st-256color$"] → $workspace6
+assign [class="^Newsboat$"] →  $workspace7
+assign [class="^Calcurse$"] → $workspace8
+assign [class="^Cmus$"] → $workspace9
+#assign [class="^Mutt$"] → $workspace10
 
 
 # move focused container to workspace
@@ -146,6 +156,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -264,22 +275,13 @@ bindsym $mod+minus scratchpad show
  for_window [class=".*"] title_format "<b>%title</b>"
  #for_window [class="(?i)firefox"] title_format "<span foreground='magenta'>%title</span>"
 
- #dmenufm shortcut
- # bindsym $mod+p exec dmenufminvoke
-
- # Toggle between dock mode and hide mode
-  # bindsym $mod+n bar mode toggle
 
 # My abroad tour videos
 
 bindsym $mod+Shift+g exec tour_videos
 
- # Cmus floating to play music
-
- bindsym $mod+u exec st -e cmus
- for_window [class="^Cmus$"] floating enable
-
 # clipmenu show the selection in dmenu
+
 bindsym $mod+z exec "clipmenu  -p 'clipboard items listed:'"
 
 #Movie selection and play
@@ -302,23 +304,12 @@ bindsym $mod+slash exec tabbed surf -pe
 
 bindsym $mod+comma exec photo_albaum
 
-# Open the calendar
-
-bindsym $mod+apostrophe exec st -e calcurse
-
-for_window [class="^Calcurse$"] floating enable
-
 # Open kernel monitoring screen
 
 bindsym $mod+Shift+question exec st -e kmon --color cyan
 
 for_window [class="^Kmon$"] floating enable
 
-# Feeds are running by newsboat
-
-bindsym $mod+n exec st -e newsboat
-
-for_window [class="^Newsboat$"] floating enable
 
 # Launch integrated webcam
  bindsym $mod+backslash exec ffplay /dev/video0
@@ -349,3 +340,6 @@ bindsym $mod+Shift+s exec mpv_stop
 
 # Mpv continue
 bindsym $mod+shift+p exec mpv_cont
+
+# For vim syntax detection
+# vim:filetype=i3config
