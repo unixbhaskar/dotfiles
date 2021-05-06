@@ -107,19 +107,20 @@ set $workspace1 "1   "
 set $workspace2 "2  "
 set $workspace3 "3   "
 set $workspace4 "4  ℰ "
-
+set $workspace5 "5  "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+b workspace $workspace2 ; exec "vimb";
 bindsym $mod+Shift+f workspace $workspace3 ; exec "$HOME/bin/firefox_open";
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
+bindsym $mod+End workspace $workspace5 ; exec "st -e $HOME/bin/build_and_install_kernel";
 #ASSIGN PROGRAMS TO WORKSPACES
 assign [class="^st-256color"] → $workspace1
 assign [class="^Vimb$"]  → $workspace2
 assign [class="^Firefox$"] → $workspace3
 assign [class="^Emacs$"] → $workspace4
-
+assign [class="^st-256color"] → $workspace5
 
 
 # move focused container to workspace
