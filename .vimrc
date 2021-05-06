@@ -56,6 +56,7 @@ Plugin  'Xuyuanp/nerdtree-git-plugin'
 Plugin  'bash-support.vim'
 Plugin  'sudo.vim'
 Plugin  'erietz/vim-terminator'
+Plugin 'mboughaba/i3config.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
@@ -524,3 +525,8 @@ autocmd BufWritePost  *  !echo "$USER modified the file '%:p' at '$(date)'" >> /
     autocmd QuickFixCmdPost [^l]* cwindow
     autocmd QuickFixCmdPost l*    lwindow
 augroup END
+" i3 config syntax detection method
+aug i3config_ft_detection
+  au!
+  au BufRead ~/.config/i3/config set filetype=i3config
+aug end
