@@ -528,5 +528,5 @@ augroup END
 " i3 config syntax detection method
 aug i3config_ft_detection
   au!
-  au BufRead ~/.config/i3/config set filetype=i3config
+  au BufEnter,BufRead ~/.i3.config set filetype=i3config
 aug end
