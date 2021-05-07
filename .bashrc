@@ -558,8 +558,3 @@ backup() {
 	cp -v "$1"{,.$(date +'%F')}
 }
 
-sync_upstream_linux() {
-	kern_source="/home/bhaskar/git-linux/linux"
-	cd $kern_source  && git switch master && git pull && cd ~
-	$HOME/bin/sync_upstream_linux
-}
