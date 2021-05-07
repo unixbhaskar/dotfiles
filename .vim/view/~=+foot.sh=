@@ -1,0 +1,377 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <buffer> <silent> <C-J> =BASH_JumpForward()
+inoremap <buffer> <silent> <F9> :call BASH_Debugger()
+inoremap <buffer> <S-F9> :BashScriptArguments 
+inoremap <buffer> <silent> <M-F9> :call BASH_SyntaxCheck()
+inoremap <buffer> <silent> <C-F9> :call BASH_Run("n")
+nnoremap <buffer> <silent> <NL> i=BASH_JumpForward()
+nnoremap <buffer> "" ciW""P
+nnoremap <buffer> '' ciW''P
+nmap <buffer> ;hp <Plug>(GitGutterPreviewHunk)
+nmap <buffer> ;hu <Plug>(GitGutterUndoHunk)
+nmap <buffer> ;hs <Plug>(GitGutterStageHunk)
+xmap <buffer> ;hs <Plug>(GitGutterStageHunk)
+nmap <buffer> [c <Plug>(GitGutterPrevHunk)
+noremap <buffer> <silent> \ntl :call mmtemplates#core#EditTemplateFiles(g:BASH_Templates,-1)
+noremap <buffer> <silent> \nts :call mmtemplates#core#ChooseStyle(g:BASH_Templates,"!pick")
+noremap <buffer> <silent> \ntr :call mmtemplates#core#ReadTemplates(g:BASH_Templates,"reload","all")
+vnoremap <buffer> <silent> \pbr :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.BASH_REMATCH")
+nnoremap <buffer> <silent> \pbr :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.BASH_REMATCH")
+vnoremap <buffer> <silent> \ppc :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.POSIX classes")
+nnoremap <buffer> <silent> \ppc :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.POSIX classes")
+vnoremap <buffer> <silent> \pae :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.anything except","v")
+nnoremap <buffer> <silent> \pae :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.anything except")
+vnoremap <buffer> <silent> \peo :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.exactly one","v")
+nnoremap <buffer> <silent> \peo :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.exactly one")
+vnoremap <buffer> <silent> \pom :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.one or more","v")
+nnoremap <buffer> <silent> \pom :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.one or more")
+vnoremap <buffer> <silent> \pzm :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.zero or more","v")
+nnoremap <buffer> <silent> \pzm :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.zero or more")
+vnoremap <buffer> <silent> \pzo :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.zero or one","v")
+nnoremap <buffer> <silent> \pzo :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.zero or one")
+vnoremap <buffer> <silent> \ioh :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"IO-Redir.here-document","v")
+nnoremap <buffer> <silent> \ioh :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"IO-Redir.here-document")
+vnoremap <buffer> <silent> \ior :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"IO-Redir.redir")
+nnoremap <buffer> <silent> \ior :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"IO-Redir.redir")
+vnoremap <buffer> <silent> \bso :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Shopts")
+nnoremap <buffer> <silent> \bso :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Shopts")
+vnoremap <buffer> <silent> \bse :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Set")
+nnoremap <buffer> <silent> \bse :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Set")
+vnoremap <buffer> <silent> \bbu :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Builtins")
+nnoremap <buffer> <silent> \bbu :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Builtins")
+vnoremap <buffer> <silent> \ben :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Environment")
+nnoremap <buffer> <silent> \ben :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Environment")
+vnoremap <buffer> <silent> \bsp :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"SpecParams")
+nnoremap <buffer> <silent> \bsp :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"SpecParams")
+vnoremap <buffer> <silent> \bps :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"ParamSub")
+nnoremap <buffer> <silent> \bps :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"ParamSub")
+vnoremap <buffer> <silent> \tm :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.string matches regexp")
+nnoremap <buffer> <silent> \tm :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.string matches regexp")
+vnoremap <buffer> <silent> \tfd :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.file descriptor is open, refers to a terminal, -t")
+nnoremap <buffer> <silent> \tfd :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.file descriptor is open, refers to a terminal, -t")
+vnoremap <buffer> <silent> \tvs :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.variable has been set, -v")
+nnoremap <buffer> <silent> \tvs :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.variable has been set, -v")
+vnoremap <buffer> <silent> \toe :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.option is enabled, -o")
+nnoremap <buffer> <silent> \toe :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.option is enabled, -o")
+vnoremap <buffer> <silent> \ts :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.string comparison")
+nnoremap <buffer> <silent> \ts :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.string comparison")
+vnoremap <buffer> <silent> \tfc :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.file characteristics")
+nnoremap <buffer> <silent> \tfc :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.file characteristics")
+vnoremap <buffer> <silent> \tft :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.file types")
+nnoremap <buffer> <silent> \tft :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.file types")
+vnoremap <buffer> <silent> \tfp :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.file permissions")
+nnoremap <buffer> <silent> \tfp :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.file permissions")
+vnoremap <buffer> <silent> \ta :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.arithmetic tests")
+nnoremap <buffer> <silent> \ta :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.arithmetic tests")
+vnoremap <buffer> <silent> \sai :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.array indices","v")
+nnoremap <buffer> <silent> \sai :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.array indices")
+vnoremap <buffer> <silent> \san :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.no of element","v")
+nnoremap <buffer> <silent> \san :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.no of element")
+vnoremap <buffer> <silent> \ssa :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.subarray","v")
+nnoremap <buffer> <silent> \ssa :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.subarray")
+vnoremap <buffer> <silent> \sas :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.array elements, string","v")
+nnoremap <buffer> <silent> \sas :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.array elements, string")
+vnoremap <buffer> <silent> \saa :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.array elements, all","v")
+nnoremap <buffer> <silent> \saa :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.array elements, all")
+vnoremap <buffer> <silent> \sae :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.array element","v")
+nnoremap <buffer> <silent> \sae :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.array element")
+vnoremap <buffer> <silent> \sp :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.printf","v")
+nnoremap <buffer> <silent> \sp :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.printf")
+vnoremap <buffer> <silent> \se :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.echo","v")
+nnoremap <buffer> <silent> \se :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.echo")
+vnoremap <buffer> <silent> \sfu :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.function","v")
+nnoremap <buffer> <silent> \sfu :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.function")
+vnoremap <buffer> <silent> \sw :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.while","v")
+nnoremap <buffer> <silent> \sw :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.while")
+vnoremap <buffer> <silent> \su :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.until","v")
+nnoremap <buffer> <silent> \su :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.until")
+vnoremap <buffer> <silent> \ss :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.select","v")
+nnoremap <buffer> <silent> \ss :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.select")
+vnoremap <buffer> <silent> \sie :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.if-else","v")
+nnoremap <buffer> <silent> \sie :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.if-else")
+vnoremap <buffer> <silent> \si :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.if","v")
+nnoremap <buffer> <silent> \si :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.if")
+vnoremap <buffer> <silent> \sfo :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.for","v")
+nnoremap <buffer> <silent> \sfo :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.for")
+vnoremap <buffer> <silent> \sf :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.for-in","v")
+nnoremap <buffer> <silent> \sf :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.for-in")
+vnoremap <buffer> <silent> \sei :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.elif")
+nnoremap <buffer> <silent> \sei :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.elif")
+vnoremap <buffer> <silent> \sc :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.case")
+nnoremap <buffer> <silent> \sc :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.case")
+vnoremap <buffer> <silent> \cma :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.macros")
+nnoremap <buffer> <silent> \cma :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.macros")
+vnoremap <buffer> <silent> \ckc :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.keyword comments")
+nnoremap <buffer> <silent> \ckc :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.keyword comments")
+vnoremap <buffer> <silent> \css :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.script sections")
+nnoremap <buffer> <silent> \css :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.script sections")
+vnoremap <buffer> <silent> \ct :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.date+time")
+nnoremap <buffer> <silent> \ct :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.date+time")
+vnoremap <buffer> <silent> \cd :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.date")
+nnoremap <buffer> <silent> \cd :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.date")
+vnoremap <buffer> <silent> \ch :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.file header")
+nnoremap <buffer> <silent> \ch :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.file header")
+vnoremap <buffer> <silent> \cfu :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.function")
+nnoremap <buffer> <silent> \cfu :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.function")
+vnoremap <buffer> <silent> \cfr :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.frame")
+nnoremap <buffer> <silent> \cfr :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.frame")
+noremap <buffer> <silent> \hbs :call BASH_HelpBashSupport()
+noremap <buffer> <silent> \hm :call BASH_help('man')
+noremap <buffer> <silent> \hh :call BASH_help('help')
+noremap <buffer> <silent> \hb :call BASH_help('bash')
+nnoremap <buffer> <silent> \rs :call BASH_Settings()
+noremap <buffer> <silent> \rd :call BASH_Debugger()
+noremap <buffer> <silent> \ro :call BASH_Toggle_Gvim_Xterm()
+vnoremap <buffer> <silent> \rh :call BASH_Hardcopy("v")
+nnoremap <buffer> <silent> \rh :call BASH_Hardcopy("n")
+noremap <buffer> <silent> \re :call BASH_MakeScriptExecutable()
+noremap <buffer> \rba :BashArguments 
+noremap <buffer> \ra :BashScriptArguments 
+noremap <buffer> <silent> \rco :call BASH_SyntaxCheckOptionsLocal()
+noremap <buffer> <silent> \rc :call BASH_SyntaxCheck()
+vnoremap <buffer> <silent> \rr :call BASH_Run("v")
+nnoremap <buffer> <silent> \rr :call BASH_Run("n")
+onoremap <buffer> <silent> \rr :call BASH_Run("n")
+nnoremap <buffer> <silent> \nv :call BASH_CodeSnippet("view")
+nnoremap <buffer> <silent> \ne :call BASH_CodeSnippet("edit")
+vnoremap <buffer> <silent> \nw :call BASH_CodeSnippet("writemarked")
+nnoremap <buffer> <silent> \nw :call BASH_CodeSnippet("write")
+nnoremap <buffer> <silent> \nr :call BASH_CodeSnippet("read")
+noremap <buffer> <silent> \cr :call BASH_remove_echo()j'
+noremap <buffer> <silent> \ce :call BASH_echo_comment()j'
+vnoremap <buffer> <silent> \cu :call BASH_CommentCode(0)
+nnoremap <buffer> <silent> \cu :call BASH_CommentCode(0)
+vnoremap <buffer> <silent> \cc :call BASH_CodeComment()
+nnoremap <buffer> <silent> \cc :call BASH_CodeComment()
+vnoremap <buffer> <silent> \cs :call BASH_GetLineEndCommCol()
+nnoremap <buffer> <silent> \cs :call BASH_GetLineEndCommCol()
+vnoremap <buffer> <silent> \cj :call BASH_AdjustLineEndComm()
+nnoremap <buffer> <silent> \cj :call BASH_AdjustLineEndComm()
+vnoremap <buffer> <silent> \cl :call BASH_EndOfLineComment()
+nnoremap <buffer> <silent> \cl :call BASH_EndOfLineComment()
+nmap <buffer> ]c <Plug>(GitGutterNextHunk)
+xmap <buffer> ac <Plug>(GitGutterTextObjectOuterVisual)
+omap <buffer> ac <Plug>(GitGutterTextObjectOuterPending)
+xmap <buffer> ic <Plug>(GitGutterTextObjectInnerVisual)
+omap <buffer> ic <Plug>(GitGutterTextObjectInnerPending)
+nnoremap <buffer> <silent> <C-J> i=BASH_JumpForward()
+noremap <buffer> <silent> <F9> :call BASH_Debugger()
+noremap <buffer> <S-F9> :BashScriptArguments 
+noremap <buffer> <silent> <M-F9> :call BASH_SyntaxCheck()
+vnoremap <buffer> <silent> <C-F9> :call BASH_Run("v")
+nnoremap <buffer> <silent> <C-F9> :call BASH_Run("n")
+onoremap <buffer> <silent> <C-F9> :call BASH_Run("n")
+inoremap <buffer> <silent> <NL> =BASH_JumpForward()
+inoremap <buffer> <silent> \ntl :call mmtemplates#core#EditTemplateFiles(g:BASH_Templates,-1)
+inoremap <buffer> <silent> \nts :call mmtemplates#core#ChooseStyle(g:BASH_Templates,"!pick")
+inoremap <buffer> <silent> \ntr :call mmtemplates#core#ReadTemplates(g:BASH_Templates,"reload","all")
+inoremap <buffer> <silent> \pbr :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.BASH_REMATCH","i")
+inoremap <buffer> <silent> \ppc :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.POSIX classes","i")
+inoremap <buffer> <silent> \pae :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.anything except","i")
+inoremap <buffer> <silent> \peo :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.exactly one","i")
+inoremap <buffer> <silent> \pom :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.one or more","i")
+inoremap <buffer> <silent> \pzm :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.zero or more","i")
+inoremap <buffer> <silent> \pzo :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"PatternMatching.zero or one","i")
+inoremap <buffer> <silent> \ioh :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"IO-Redir.here-document","i")
+inoremap <buffer> <silent> \ior :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"IO-Redir.redir","i")
+inoremap <buffer> <silent> \bso :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Shopts","i")
+inoremap <buffer> <silent> \bse :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Set","i")
+inoremap <buffer> <silent> \bbu :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Builtins","i")
+inoremap <buffer> <silent> \ben :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Environment","i")
+inoremap <buffer> <silent> \bsp :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"SpecParams","i")
+inoremap <buffer> <silent> \bps :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"ParamSub","i")
+inoremap <buffer> <silent> \tm :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.string matches regexp","i")
+inoremap <buffer> <silent> \tfd :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.file descriptor is open, refers to a terminal, -t","i")
+inoremap <buffer> <silent> \tvs :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.variable has been set, -v","i")
+inoremap <buffer> <silent> \toe :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.option is enabled, -o","i")
+inoremap <buffer> <silent> \ts :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.string comparison","i")
+inoremap <buffer> <silent> \tfc :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.file characteristics","i")
+inoremap <buffer> <silent> \tft :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.file types","i")
+inoremap <buffer> <silent> \tfp :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.file permissions","i")
+inoremap <buffer> <silent> \ta :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Tests.arithmetic tests","i")
+inoremap <buffer> <silent> \sai :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.array indices","i")
+inoremap <buffer> <silent> \san :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.no of element","i")
+inoremap <buffer> <silent> \ssa :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.subarray","i")
+inoremap <buffer> <silent> \sas :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.array elements, string","i")
+inoremap <buffer> <silent> \saa :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.array elements, all","i")
+inoremap <buffer> <silent> \sae :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.array element","i")
+inoremap <buffer> <silent> \sp :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.printf","i")
+inoremap <buffer> <silent> \se :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.echo","i")
+inoremap <buffer> <silent> \sfu :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.function","i")
+inoremap <buffer> <silent> \sw :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.while","i")
+inoremap <buffer> <silent> \su :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.until","i")
+inoremap <buffer> <silent> \ss :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.select","i")
+inoremap <buffer> <silent> \sie :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.if-else","i")
+inoremap <buffer> <silent> \si :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.if","i")
+inoremap <buffer> <silent> \sfo :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.for","i")
+inoremap <buffer> <silent> \sf :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.for-in","i")
+inoremap <buffer> <silent> \sei :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.elif","i")
+inoremap <buffer> <silent> \sc :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Statements.case","i")
+inoremap <buffer> <silent> \cma :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.macros","i")
+inoremap <buffer> <silent> \ckc :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.keyword comments","i")
+inoremap <buffer> <silent> \css :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.script sections","i")
+inoremap <buffer> <silent> \ct :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.date+time","i")
+inoremap <buffer> <silent> \cd :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.date","i")
+inoremap <buffer> <silent> \ch :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.file header","i")
+inoremap <buffer> <silent> \cfu :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.function","i")
+inoremap <buffer> <silent> \cfr :call mmtemplates#core#InsertTemplate(g:BASH_Templates,"Comments.frame","i")
+inoremap <buffer> <silent> \hbs :call BASH_HelpBashSupport()
+inoremap <buffer> <silent> \hm :call BASH_help('man')
+inoremap <buffer> <silent> \hh :call BASH_help('help')
+inoremap <buffer> <silent> \hb :call BASH_help('bash')
+inoremap <buffer> <silent> \rd :call BASH_Debugger()
+inoremap <buffer> <silent> \ro :call BASH_Toggle_Gvim_Xterm()
+inoremap <buffer> <silent> \re :call BASH_MakeScriptExecutable()
+inoremap <buffer> \rba :BashArguments 
+inoremap <buffer> \ra :BashScriptArguments 
+inoremap <buffer> <silent> \rco :call BASH_SyntaxCheckOptionsLocal()
+inoremap <buffer> <silent> \rc :call BASH_SyntaxCheck()
+inoremap <buffer> <silent> \rr :call BASH_Run("n")
+inoremap <buffer> <silent> \nv :call BASH_CodeSnippet("view")
+inoremap <buffer> <silent> \ne :call BASH_CodeSnippet("edit")
+inoremap <buffer> <silent> \nw :call BASH_CodeSnippet("write")
+inoremap <buffer> <silent> \nr :call BASH_CodeSnippet("read")
+inoremap <buffer> <silent> \cr :call BASH_remove_echo()j'
+inoremap <buffer> <silent> \ce :call BASH_echo_comment()j'
+inoremap <buffer> <silent> \cu :call BASH_CommentCode(0)
+inoremap <buffer> <silent> \cc :call BASH_CodeComment()
+inoremap <buffer> <silent> \cs :call BASH_GetLineEndCommCol()
+inoremap <buffer> <silent> \cj :call BASH_AdjustLineEndComm()
+inoremap <buffer> <silent> \cl :call BASH_EndOfLineComment()
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal binary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal cursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=~/.vim/bundle/bash-support.vim/bash-support/wordlists/bash-keywords.list
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'sh'
+setlocal filetype=sh
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetShIndent()
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,0=then,0=do,0=else,0=elif,0=fi,0=esac,0=done,0=end,),0=;;,0=;&,0=fin,0=fil,0=fip,0=fir,0=fix
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=8
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=8
+setlocal spell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%!airline#statusline(1)
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'sh'
+setlocal syntax=sh
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=78
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal varsofttabstop=
+setlocal vartabstop=
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 21 - ((20 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+21
+normal! 0
+let &so = s:so_save | let &siso = s:siso_save
+nohlsearch
+doautoall SessionLoadPost
+" vim: set ft=vim :
