@@ -185,6 +185,14 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 gpg-connect-agent updatestartuptty /bye > /dev/null # help pgp find user tty for password prompts
 
+gpg-reload(){
+     pkill scdaemon
+     pkill gpg-agent
+     gpg-connect-agent /bye >/dev/null 2>&1
+     gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
+     gpgconf --reload gpg-agent
+ }
+
 #Gitlog
 
 gitlog() {
