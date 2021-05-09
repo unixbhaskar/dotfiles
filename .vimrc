@@ -525,8 +525,48 @@ autocmd BufWritePost  *  !echo "$USER modified the file '%:p' at '$(date)'" >> /
     autocmd QuickFixCmdPost [^l]* cwindow
     autocmd QuickFixCmdPost l*    lwindow
 augroup END
+
 " i3 config syntax detection method
 aug i3config_ft_detection
   au!
   au BufEnter,BufRead ~/.i3.config set filetype=i3config
 aug end
+" Make vaa select the entire file...
+xmap aa VGo1G
+" Back up the current file
+nmap BB  :!backup_file %<CR><CR>:echomsg "Backed up with date appended" expand('%')<CR>
+" Automate shell shebang with a keystroke
+ "iab hs #!/bin/sh
+ "iab hb #!/bin/bash
+"=====[ Show help files in a new tab, plus add a shortcut for helpg ]==============
+
+let g:help_in_tabs = 1
+
+nmap <silent> H  :let g:help_in_tabs = !g:help_in_tabs<CR>
+
+"Only apply to .txt files...
+augroup HelpInTabs
+    autocmd!
+    autocmd BufEnter  *.txt   call HelpInNewTab()
+augroup END
+
+"Only apply to help files...
+function! HelpInNewTab ()
+    if &buftype == 'help' && g:help_in_tabs
+        "Convert the help window to a tab...
+        execute "normal \<C-W>T"
+    endif
+endfunction
+"=====[ Correct common mistypings in-the-fly ]=======================
+iab    netowrk network
+iab    retrun  return
+iab     pritn  print
+iab       teh  the
+iab      liek  like
+iab  liekwise  likewise
+iab      Pelr  Perl
+iab      pelr  perl
+iab        ;t  't
+iab      moer  more
+iab  previosu  previous
+
