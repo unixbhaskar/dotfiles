@@ -349,6 +349,10 @@ Shortcut fallback to shortcut menu on partial entry
 
 Shortcut! Paste mode toggle by pressing F2
 
+Shortcut! SelectEntireBuffer  aa in normal mode
+
+Shortcut!  BackupCurrentFile   BB in normal mode
+
 Shortcut! GitCommit popup messages of the specific line of code by pressing  \g
 
 Shortcut! Tagbar to toggle by  F8
@@ -569,4 +573,3 @@ iab      pelr  perl
 iab        ;t  't
 iab      moer  more
 iab  previosu  previous
-
