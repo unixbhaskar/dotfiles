@@ -108,7 +108,7 @@ set $workspace2 "2  "
 set $workspace3 "3   "
 set $workspace4 "4  ℰ "
 set $workspace5 "5  "
-set $workspace6 "6  "
+set $workspace6 "6  "
 set $workspace7 "7  "
 set $workspace8 "8  "
 set $workspace9 "9  "
@@ -119,12 +119,12 @@ bindsym $mod+1 workspace $workspace1
 bindsym $mod+b workspace $workspace2 ; exec "vimb";
 bindsym $mod+Shift+f workspace $workspace3 ; exec "$HOME/bin/firefox_open";
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
-bindsym $mod+c workspace $workspace5 ; exec "st -e $HOME/bin/build_and_install_kernel";
-bindsym $mod+g workspace $workspace6 ; exec "st -e $HOME/bin/sync_upstream_linux";
-bindsym $mod+n workspace $workspace7 ; exec  "st -e newsboat";
-bindsym $mod+apostrophe  workspace $workspace8 ; exec  "st -e calcurse";
-bindsym $mod+u  workspace $workspace9 ; exec  "st -e cmus";
-#bindsym $mod+Shift+m  workspace $workspace10 ; exec "st -e mutt";
+bindsym $mod+c workspace $workspace5 ; exec --no-startup-id "st -n Build_And_Install_Kernel  -e sudo su -";
+bindsym $mod+g workspace $workspace6 ; exec --no-startup-id "st -n Sync_Upstream_Kernel -e $HOME/bin/sync_upstream_linux";
+bindsym $mod+n workspace $workspace7 ; exec --no-startup-id  "st -n Newsboat -e newsboat";
+bindsym $mod+apostrophe  workspace $workspace8 ; exec --no-startup-id  "st -n Calcurse -e calcurse";
+bindsym $mod+u  workspace $workspace9 ; exec --no-startup-id  "st -n Cmus -e cmus";
+# bindsym $mod+Shift+m  workspace $workspace10 ; exec "st -e mutt";
 
 
 #ASSIGN PROGRAMS TO WORKSPACES
@@ -132,12 +132,26 @@ assign [class="^st-256color"] → $workspace1
 assign [class="^Vimb$"]  → $workspace2
 assign [class="^Firefox$"] → $workspace3
 assign [class="^Emacs$"] → $workspace4
-assign [class="^st-256color$"] → $workspace5
-assign [class="^st-256color$"] → $workspace6
-assign [class="^Newsboat$"] →  $workspace7
-assign [class="^Calcurse$"] → $workspace8
-assign [class="^Cmus$"] → $workspace9
-#assign [class="^Mutt$"] → $workspace10
+# assign [class="^st$" instance="^Build_And_Install_Kernel$"] → $workspace5
+# assign [class="^st$" instance="^Sync_Upstream_Kernel$"] → $workspace6
+# assign [class="^st$" instance="^Newsboat$"] →  $workspace7
+# assign [class="^st$" instance="^Calcurse$"] → $workspace8
+# assign [class="^st$" instance="^Cmus"] → $workspace9
+# assign [class="^Mutt$"] → $workspace10
+
+
+# For_window versions
+
+for_window [class="^st-256color$" instance="^Build_And_Install_Kernel$"] move to workspace 
+
+for_window [class="^st-256color$" instance="^Sync_Upstream_Kernel$"] move to workspace 
+
+for_window [class="^st-256color$" instance="^Newsboat$"] move  to workspace 
+
+for_window [class="^st-256color$" instance="^Calcurse$"] move  to workspace "
+
+for_window [class="^st-256color$" instance="^Cmus$"] move to workspace 
+
 
 
 # move focused container to workspace
