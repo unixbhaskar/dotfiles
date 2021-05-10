@@ -533,7 +533,7 @@ augroup END
 " i3 config syntax detection method
 aug i3config_ft_detection
   au!
-  au BufEnter,BufRead ~/.i3.config set filetype=i3config
+  au BufEnter,BufRead ~/.ithreeconfig set filetype=i3config
 aug end
 " Make vaa select the entire file...
 xmap aa VGo1G
