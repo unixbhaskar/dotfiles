@@ -1,0 +1,12 @@
+q
+save
+colorscheme solarized-dark
+view 5
+clear p
+clear l
+clear
+help
+add ~/Music
+delete
+set status_display_program=/home/bhaskar/.config/cmus/cmus_notify.py
+set status_display_program=/home/bhaskar/.config/cmus/
