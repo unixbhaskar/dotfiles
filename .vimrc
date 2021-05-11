@@ -176,9 +176,9 @@ vnoremap <F9> zf
  "Search replaces n number of times
 nnoremap Q :normal n.<CR>
 "Open URI under cursor by pressing ob and os
- nmap ob <Plug>(openbrowser-open)
+ nmap ob :exe 'silent !vimb %'<CR>
  "Open selected URI.
- vmap os <Plug>(openbrowser-open)
+ vmap os :exe 'silent !vimb %'<CR>
  "Titlecase plugins
 
 nmap <leader>tc <Plug>Titlecase
