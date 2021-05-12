@@ -321,13 +321,6 @@ bindsym $mod+slash exec tabbed surf -pe
 
 bindsym $mod+comma exec photo_albaum
 
-# Open kernel monitoring screen
-
-bindsym $mod+Shift+question exec st -e kmon --color cyan
-
-for_window [class="^Kmon$"] floating enable
-
-
 # Launch integrated webcam
  bindsym $mod+backslash exec ffplay /dev/video0
 
