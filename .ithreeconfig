@@ -115,6 +115,9 @@ set $workspace9 "9  "
 #set $workspace10 "10 "
 
 # switch to workspace
+bindsym $mod+Control+Right workspace next
+bindsym $mod+Control+Left workspace prev
+
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+b workspace $workspace2 ; exec "vimb";
 bindsym $mod+Shift+f workspace $workspace3 ; exec "$HOME/bin/firefox_open";
