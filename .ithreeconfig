@@ -129,6 +129,14 @@ bindsym $mod+apostrophe  workspace $workspace8 ; exec --no-startup-id  "st -n Ca
 bindsym $mod+u  workspace $workspace9 ; exec --no-startup-id  "st -n Cmus -e cmus";
 #bindsym $mod+Shift+m  workspace $workspace10 ; exec --no-startup-id "st -n Mutt -e mutt";
 
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
 
 #ASSIGN PROGRAMS TO WORKSPACES
 assign [class="^st-256color"] → $workspace1
