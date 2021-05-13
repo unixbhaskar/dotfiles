@@ -295,6 +295,8 @@ bindsym $mod+minus scratchpad show
  for_window [class=".*"] title_format "<b>%title</b>"
  #for_window [class="(?i)firefox"] title_format "<span foreground='magenta'>%title</span>"
 
+# Focus on window activation
+focus_on_window_activation smart
 
 # My abroad tour videos
 
