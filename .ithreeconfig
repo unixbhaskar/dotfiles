@@ -106,7 +106,7 @@ exec $HOME/bin/pia-client
 set $workspace1 "1   "
 set $workspace2 "2  "
 set $workspace3 "3   "
-set $workspace4 "4  ℰ "
+set $workspace4 "4  ℰ"
 set $workspace5 "5  "
 set $workspace6 "6  "
 set $workspace7 "7  "
@@ -124,32 +124,25 @@ bindsym $mod+Shift+f workspace $workspace3 ; exec "$HOME/bin/firefox_open";
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
 bindsym $mod+c workspace $workspace5 ; exec --no-startup-id "st -n Build_And_Install_Kernel  -e system_operation";
 bindsym $mod+g workspace $workspace6 ; exec --no-startup-id "st -n Sync_Upstream_Kernel -e $HOME/bin/sync_upstream_linux";
-bindsym $mod+n workspace $workspace7 ; exec --no-startup-id  "st -n Newsboat -e newsboat";
+bindsym $mod+n workspace $workspacer7 ; exec --no-startup-id  "st -n Newsboat -e newsboat";
 bindsym $mod+apostrophe  workspace $workspace8 ; exec --no-startup-id  "st -n Calcurse -e calcurse";
 bindsym $mod+u  workspace $workspace9 ; exec --no-startup-id  "st -n Cmus -e cmus";
 #bindsym $mod+Shift+m  workspace $workspace10 ; exec --no-startup-id "st -n Mutt -e mutt";
-
-bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace $workspace8
-bindsym $mod+9 workspace $workspace9
 
 #ASSIGN PROGRAMS TO WORKSPACES
 assign [class="^st-256color"] → $workspace1
 assign [class="^Vimb$"]  → $workspace2
 assign [class="^Firefox$"] → $workspace3
 assign [class="^Emacs$"] → $workspace4
-# assign [class="^st$" instance="^Build_And_Install_Kernel$"] → $workspace5
-# assign [class="^st$" instance="^Sync_Upstream_Kernel$"] → $workspace6
-# assign [class="^st$" instance="^Newsboat$"] →  $workspace7
-# assign [class="^st$" instance="^Calcurse$"] → $workspace8
-# assign [class="^st$" instance="^Cmus"] → $workspace9
+assign [class="^st-256color$" instance="^Build_And_Install_Kernel$"] → $workspace5
+assign [class="^st-256color$" instance="^Sync_Upstream_Kernel$"] → $workspace6
+assign [class="^st-256color$" instance="^Newsboat$"] →  $workspace7
+assign [class="^st-256color$" instance="^Calcurse$"] → $workspace8
+assign [class="^st-256color$" instance="^Cmus"] → $workspace9
 # assign [class="^Mutt$"] → $workspace10
 
+# Prompt for workspace switch
+bindsym $mod+w exec i3-input -F 'workspace number %s' -P 'go to workspace: '
 
 # For_window versions
 
@@ -279,9 +272,9 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots'
 # Press $mod+o followed by either f, t, Escape or Return to launch firefox,
 # thunderbird or return to the default mode, respectively.
 #set $mode_launcher Launch: [f]irefox [t]hunderbird
-bindsym $mod+o mode "$mode_launcher"
+bindsym $mod+o mode "Shortcut_keys"
 
-mode "$mode_launcher" {
+mode "Shortcut_keys" {
     bindsym l exec i3_open_mode_keys
     bindsym b exec bash_supported_keywords
     bindsym f exec firefox_shortcut_keys
@@ -289,6 +282,7 @@ mode "$mode_launcher" {
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
+
 
 #bindsym --release button2 exec --no-startup-id import /tmp/latest-screenshot.png
 
