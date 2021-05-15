@@ -156,6 +156,7 @@ alias localmail="mutt -F $HOME/.muttrc.local"
 alias enable_config="scripts/config --enable $1"
 alias disable_config="scripts/config --disable $1"
 alias who="git blame $1"
+alias econfig="vim ~/.emacs"
 export MANPAGER="vim -M +MANPAGER -"
 
 
