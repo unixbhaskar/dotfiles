@@ -36,6 +36,8 @@
  '(mu4e-mu-binary "/usr/local/bin/mu")
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
+ '(package-selected-packages
+   '(all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(scroll-bar-mode nil)
@@ -145,6 +147,7 @@
 (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -485,3 +488,86 @@
 
 ;; Display battery percentage
 (display-battery-mode 1)
+
+;; Indentation specific stuff
+
+(add-hook 'sh-mode-hook
+	       (lambda ()
+		 (setq sh-basic-offset 2)))
+
+(add-hook 'c-mode-hook
+	       (lambda ()
+		 (c-set-style "linux")
+		 (setq c-basic-offset 8
+		       c-block-comment-prefix "* ")
+		 (c-set-offset 'arglist-intro '++)
+		 (c-set-offset 'arglist-cont '++)
+		 (c-set-offset 'arglist-cont-nonempty '++)
+		 (setq indent-tabs-mode t)))
+
+(add-hook 'lisp-mode-hook
+	       (lambda ()
+		 (setq indent-tabs-mode nil)))
+
+(add-hook 'awk-mode-hook
+	       (lambda ()
+		 (c-set-style "awk")))
+
+;; Highlight current line
+
+(when window-system (global-hl-line-mode))
+
+;; Better grep
+
+(setq grep-command "grep --color -nH -e")
+
+;; Follow symlinks
+
+(setq vc-follow-symlinks t)
+
+;; Compilation mode
+
+(use-package compile
+  :demand t)
+
+;; Engine mode
+
+ (use-package engine-mode
+    :config
+     (engine/set-keymap-prefix (kbd "C-c s"))
+
+     (defengine duckduckgo
+	"https://duckduckgo.com/?q=%s"
+	:keybinding "d")
+
+     (defengine wikipedia
+	"https://en.wikipedia.org/w/index.php?title=Special:Search&go=Go&search=%s"
+	:keybinding "w")
+
+
+     (defengine youtube
+	"https://www.youtube.com/results?aq=f&oq=&search_query=%s"
+	:keybinding "y")
+
+
+     (engine-mode t))
+
+;; Setup Markdown
+
+(use-package markdown-mode
+  :mode (("README\\.md\\'" . gfm-mode)
+	     ("\\.md\\'" . markdown-mode)
+	     ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "pandoc"))
+
+;; All the icons
+
+(use-package all-the-icons)
+
+(use-package all-the-icons-dired
+   :hook (dired-mode . all-the-icons-dired-mode))
+
+;; Text scale increase and decrease
+
+(define-key global-map (kbd "C-1") 'text-scale-increase)
+(define-key global-map (kbd "C-0") 'text-scale-decrease)
