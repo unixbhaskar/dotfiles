@@ -92,6 +92,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+
 #background
 
 exec_always --no-startup-id feh --bg-scale /home/bhaskar/Pictures/LKM3_1024.png
