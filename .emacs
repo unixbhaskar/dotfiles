@@ -360,7 +360,7 @@
            (nnir-search-engine imap)
            (nnimap-authinfo-file "~/.emacs.d/secrets/authinfo.gpg")
            )
-    (nntp "news.gmane.org")
+    (nntp "news.gnus.org")
     (nnfolder "archive"
       ;;(nnfolder-directory   "~/Documents/Text/Gnus/Mail/archive")
       ;;(nnfolder-active-file "~/Documents/Text/Gnus/Mail/archive/active")
