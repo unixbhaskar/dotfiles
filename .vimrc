@@ -540,8 +540,8 @@ xmap aa VGo1G
 " Back up the current file
 nmap BB  :!backup_file %<CR><CR>:echomsg "Backed up with date appended" expand('%')<CR>
 " Automate shell shebang with a keystroke
- "iab hs #!/bin/sh
- "iab hb #!/bin/bash
+ iab hs #!/bin/sh
+ iab hb #!/bin/bash
 "=====[ Show help files in a new tab, plus add a shortcut for helpg ]==============
 
 let g:help_in_tabs = 1
