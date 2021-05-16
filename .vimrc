@@ -542,7 +542,7 @@ nmap BB  :!backup_file %<CR><CR>:echomsg "Backed up with date appended" expand('
 " Automate shell shebang with a keystroke
  iab hs #!/bin/sh
  iab hb #!/bin/bash
-"=====[ Show help files in a new tab, plus add a shortcut for helpg ]==============
+"[ Show help files in a new tab, plus add a shortcut for helpg ]
 
 let g:help_in_tabs = 1
 
@@ -561,7 +561,7 @@ function! HelpInNewTab ()
         execute "normal \<C-W>T"
     endif
 endfunction
-"=====[ Correct common mistypings in-the-fly ]=======================
+"[ Correct common mistypings in-the-fly ]
 iab    netowrk network
 iab    retrun  return
 iab     pritn  print
