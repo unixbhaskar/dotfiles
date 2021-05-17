@@ -113,6 +113,7 @@ set $workspace6 "6  "
 set $workspace7 "7  "
 set $workspace8 "8  "
 set $workspace9 "9 "
+set $workspace10 "10  "
 
 # switch to workspace
 bindsym $mod+Control+Right workspace next
@@ -126,7 +127,8 @@ bindsym $mod+c workspace $workspace5 ; exec --no-startup-id "st -n Build_And_Ins
 bindsym $mod+n workspace $workspacer6 ; exec --no-startup-id  "st -n Newsboat -e newsboat"; focus
 bindsym $mod+apostrophe  workspace $workspace7 ; exec --no-startup-id  "st -n Calcurse -e calcurse"; focus
 bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id  "st -n Cmus -e cmus"; focus
-bindsym $mod+Shift+m  workspace $workspace9 ; exec --no-startup-id "st -n Mutt -e mail_open" focus;
+bindsym $mod+Shift+m  workspace $workspace9 ; exec --no-startup-id "st -n Mutt -e mail_open"; focus;
+bindsym $mod+g  workspace $workspace10 ; exec --no-startup-id "st -n Tig -e tig_open"; focus
 
 #ASSIGN PROGRAMS TO WORKSPACES
 assign [class="^st-256color"] → $workspace1
@@ -138,19 +140,22 @@ assign [instance="^Newsboat$"] →  $workspace6
 assign [instance="^Calcurse$"] → $workspace7
 assign [instance="^Cmus"] → $workspace8
 assign [instance="^Mutt$"] → $workspace9
+assign [instance="^Tig$"] → $workspace10
 
 
 # For_window versions
 
 for_window [instance="^Build_And_Install_Kernel$"] move to workspace $workspace5
 
-for_window [ instance="^Newsboat$"] move to workspace $workspace6
+for_window  [instance="^Newsboat$"] move to workspace $workspace6
 
-for_window [ instance="^Calcurse$"] move to workspace $workspace7
+for_window [instance="^Calcurse$"] move to workspace $workspace7
 
-for_window [ instance="^Cmus$"] move to workspace $workspace8
+for_window [instance="^Cmus$"] move to workspace $workspace8
 
-for_window [ instance="^Mutt$"] move to workspace $workspace9
+for_window [instance="^Mutt$"] move to workspace $workspace9
+
+for_window [instance="^Tig$"] move to workspace $workspace10
 
 
 bindsym $mod+2 workspace number 2
@@ -161,6 +166,7 @@ bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
 
 # Prompt for workspace switch
 bindsym $mod+w exec i3-input -F 'workspace number %s' -P 'go to workspace: '
