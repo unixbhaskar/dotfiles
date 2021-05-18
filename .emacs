@@ -25,6 +25,8 @@
  '(fci-rule-color "#383838")
  '(git-commit-setup-hook
    '(git-commit-save-message git-commit-setup-changelog-support git-commit-turn-on-auto-fill git-commit-turn-on-flyspell git-commit-propertize-diff bug-reference-mode with-editor-usage-message))
+ '(git-messenger:show-detail t)
+ '(git-messenger:use-magit-popup t)
  '(gnus-add-timestamp-to-message t)
  '(gnus-expert-user t)
  '(ivy-posframe-style 'frame-center)
@@ -37,7 +39,7 @@
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(package-selected-packages
-   '(all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
+   '(popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(scroll-bar-mode nil)
@@ -571,3 +573,13 @@
 
 (define-key global-map (kbd "C-1") 'text-scale-increase)
 (define-key global-map (kbd "C-0") 'text-scale-decrease)
+
+;; Use magit-show-commit for showing status/diff commands
+
+(global-set-key (kbd "C-x v p") 'git-messenger:popup-message)
+
+;;(define-key git-messenger-map (kbd "m") 'git-messenger:copy-message)
+
+;; Use magit-show-commit for showing status/diff commands
+(custom-set-variables
+ '(git-messenger:use-magit-popup t))
