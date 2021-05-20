@@ -587,45 +587,8 @@
 
 ;; Org mode shortcut for code block
 
-;; For Emacs lisp
-
-;; add <el for emacs-lisp expansion and press tab for invocation
-(add-to-list 'org-structure-template-alist
-         '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"
-           "<src lang=\"emacs-lisp\">\n?\n</src>"))
-
-;; This is for C  for that to invoke <c and press tab
- (add-to-list 'org-structure-template-alist
-         '("c" "#+BEGIN_SRC python :results output org drawer\n?\n#+END_SRC"
-           "<src lang=\"c\">\n?\n</src>"))
-
-; This is for shell/bash for that to invoke <s and press tab
-(add-to-list 'org-structure-template-alist
-         '("s" "#+BEGIN_SRC python :results output org drawer\n?\n#+END_SRC"
-           "<src lang=\"bash\">\n?\n</src>"))
+(add-to-list 'org-structure-template-alist '("C" "#+begin_comment\n?\n#+end_comment"))
 
 
-;; Various markdown/org section actions
-
-(add-to-list 'org-structure-template-alist
-         '("ao" "#+attr_org: " ""))
-
-(add-to-list 'org-structure-template-alist
-         '("al" "#+attr_latex: " ""))
-
-(add-to-list 'org-structure-template-alist
-         '("ca" "#+caption: " ""))
-
-(add-to-list 'org-structure-template-alist
-         '("tn" "#+tblname: " ""))
-
-(add-to-list 'org-structure-template-alist
-         '("n" "#+name: " ""))
-
-(add-to-list 'org-structure-template-alist
-         '("o" "#+options: " ""))
-
-(add-to-list 'org-structure-template-alist
-         '("ti" "#+title: " ""))
 
 
