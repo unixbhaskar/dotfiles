@@ -38,6 +38,11 @@
  '(mu4e-mu-binary "/usr/local/bin/mu")
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
+ '(org-agenda-files
+   '("~/.emacs.d/OrgFiles/organizer.org" "~/.emacs.d/OrgFiles/task.org"))
+ '(org-directory "~/.emacs.d/OrgFiles")
+ '(org-todo-keywords
+   '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "CANCELLED(c)")))
  '(package-selected-packages
    '(popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
@@ -581,14 +586,15 @@
 ;;(define-key git-messenger-map (kbd "m") 'git-messenger:copy-message)
 
 ;; Use magit-show-commit for showing status/diff commands
-(custom-set-variables
- '(git-messenger:use-magit-popup t))
+
 
 
 ;; Org mode shortcut for code block
 
 (add-to-list 'org-structure-template-alist '("C" "#+begin_comment\n?\n#+end_comment"))
 
+;; Customization of org mode
 
-
-
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
