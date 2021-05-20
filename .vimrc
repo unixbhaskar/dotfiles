@@ -573,3 +573,4 @@ iab      pelr  perl
 iab        ;t  't
 iab      moer  more
 iab  previosu  previous
+iab  chnages   changes
