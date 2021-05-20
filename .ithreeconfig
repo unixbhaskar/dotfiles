@@ -123,12 +123,12 @@ bindsym $mod+1 workspace $workspace1
 bindsym $mod+b workspace $workspace2 ; exec "vimb";
 bindsym $mod+Shift+f workspace $workspace3 ; exec "$HOME/bin/firefox_open";
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
-bindsym $mod+c workspace $workspace5 ; exec --no-startup-id "st -n Build_And_Install_Kernel  -e system_operation"; focus
-bindsym $mod+n workspace $workspacer6 ; exec --no-startup-id  "st -n Newsboat -e newsboat"; focus
-bindsym $mod+apostrophe  workspace $workspace7 ; exec --no-startup-id  "st -n Calcurse -e calcurse"; focus
-bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id  "st -n Cmus -e cmus"; focus
-bindsym $mod+Shift+m  workspace $workspace9 ; exec --no-startup-id "st -n Mutt -e mail_open"; focus
-bindsym $mod+g  workspace $workspace10 ; exec --no-startup-id "st -n Tig -e tig_open"; focus
+bindsym $mod+c workspace $workspace5 ; exec --no-startup-id "st -n Build_And_Install_Kernel  -e system_operation";
+bindsym $mod+n workspace $workspacer6 ; exec --no-startup-id  "st -n Newsboat -e newsboat";
+bindsym $mod+apostrophe  workspace $workspace7 ; exec --no-startup-id  "st -n Calcurse -e calcurse";
+bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id  "st -n Cmus -e cmus";
+bindsym $mod+Shift+m  workspace $workspace9 ; exec --no-startup-id "st -n Mutt -e mail_open";
+bindsym $mod+g  workspace $workspace10 ; exec --no-startup-id "st -n Tig -e tig_open";
 
 #ASSIGN PROGRAMS TO WORKSPACES
 assign [class="^st-256color"] → $workspace1
