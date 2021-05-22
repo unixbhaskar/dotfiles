@@ -41,6 +41,11 @@
  '(org-agenda-files nil)
  '(org-directory "~/.emacs.d/OrgFiles")
  '(org-export-backends '(ascii html icalendar latex md odt org texinfo))
+ '(org-file-apps
+   '((auto-mode . emacs)
+     ("\\.mm\\'" . default)
+     ("\\.x?html?\\'" . "vimb")
+     ("\\.pdf\\'" . "zathura")))
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "CANCELLED(c)")))
  '(package-selected-packages
