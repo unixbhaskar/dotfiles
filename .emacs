@@ -44,8 +44,8 @@
  '(org-file-apps
    '((auto-mode . emacs)
      ("\\.mm\\'" . default)
-     ("\\.x?html?\\'" . "vimb")
-     ("\\.pdf\\'" . "zathura")))
+     ("\\.x?html?\\'" . "\"vimb %s\"")
+     ("\\.pdf\\'" . "\"zathura %s\"")))
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "CANCELLED(c)")))
  '(package-selected-packages
