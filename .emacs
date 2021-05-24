@@ -14,7 +14,7 @@
  '(compose-mail-user-agent-warnings nil)
  '(custom-enabled-themes '(molokai))
  '(custom-safe-themes
-   '("6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
+   '("13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
  '(display-line-numbers-type 'relative)
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
@@ -29,6 +29,7 @@
  '(git-messenger:use-magit-popup t)
  '(gnus-add-timestamp-to-message t)
  '(gnus-expert-user t)
+ '(icomplete-mode t)
  '(ivy-posframe-style 'frame-center)
  '(mu4e-maildir-shortcuts
    '((:maildir "/Inbox" :key 105)
@@ -44,12 +45,12 @@
  '(org-file-apps
    '((auto-mode . emacs)
      ("\\.mm\\'" . default)
-     ("\\.x?html?\\'" . "\"vimb %s\"")
-     ("\\.pdf\\'" . "\"zathura %s\"")))
+     ("\\.x?html?\\'" . "vimb %s")
+     ("\\.pdf\\'" . "zathura %s")))
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "CANCELLED(c)")))
  '(package-selected-packages
-   '(org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
+   '(wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(scroll-bar-mode nil)
@@ -372,7 +373,7 @@
            (nnir-search-engine imap)
            (nnimap-authinfo-file "~/.emacs.d/secrets/authinfo.gpg")
            )
-    (nntp "news.gnus.org")
+    (nntp "news.gwene.org")
     (nnfolder "archive"
       ;;(nnfolder-directory   "~/Documents/Text/Gnus/Mail/archive")
       ;;(nnfolder-active-file "~/Documents/Text/Gnus/Mail/archive/active")
@@ -603,3 +604,7 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
+
+;; Add TAG to the org file
+
+(setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l) ("Reading" . ?r)))
