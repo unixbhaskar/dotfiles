@@ -50,7 +50,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)")))
  '(package-selected-packages
-   '(remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
+   '(org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(scroll-bar-mode nil)
@@ -597,7 +597,12 @@
 
 ;; Org mode shortcut for code block
 
-(add-to-list 'org-structure-template-alist '("C" "#+begin_comment\n?\n#+end_comment"))
+;; add <el for emacs-lisp expansion
+
+(add-to-list 'org-structure-template-alist
+         '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"
+           "<src lang=\"emacs-lisp\">\n?\n</src>"))
+
 
 ;; Customization of org mode
 
@@ -619,3 +624,5 @@
     (sml/setup)
     (sml/apply-theme 'powerline)
 )
+(require 'powerline)
+(powerline-default-theme)
