@@ -597,11 +597,6 @@
 
 ;; Org mode shortcut for code block
 
-;; add <el for emacs-lisp expansion
-
-(add-to-list 'org-structure-template-alist
-         '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"
-           "<src lang=\"emacs-lisp\">\n?\n</src>"))
 
 
 ;; Customization of org mode
@@ -626,3 +621,20 @@
 )
 (require 'powerline)
 (powerline-default-theme)
+
+
+(org-babel-do-load-languages 'org-babel-load-languages
+    '(
+        (shell . t)
+    )
+)
+
+;; Org buffer link back and forth key bind
+
+(with-eval-after-load 'org
+  (define-key org-mode-map (kbd "M-n") 'org-next-link)
+  (define-key org-mode-map (kbd "M-p") 'org-previous-link))
+
+;; Use RETURN key to open the link in stead C-c C-o
+
+(setq org-return-follows-link t)
