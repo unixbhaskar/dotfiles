@@ -37,6 +37,10 @@
      (:maildir "/Linus" :key 108)
      (:maildir "/Andrew_Morton" :key 97)))
  '(mu4e-mu-binary "/usr/local/bin/mu")
+ '(nnir-notmuch-remove-prefix "/home/bhaskar/gmail-backup")
+ '(notmuch-always-prompt-for-sender t)
+ '(notmuch-maildir-use-notmuch-insert t)
+ '(notmuch-show-all-tags-list t)
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(org-agenda-files nil)
@@ -50,7 +54,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)")))
  '(package-selected-packages
-   '(org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
+   '(notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(scroll-bar-mode nil)
@@ -638,3 +642,17 @@
 ;; Use RETURN key to open the link in stead C-c C-o
 
 (setq org-return-follows-link t)
+
+;; Source code block comment
+
+(set-register ?p "#+begin_src perl\n\n#+end_src")
+(set-register ?b "#+begin_src bash\n\n#+end_src")
+(set-register ?c "#+begin_src C\n\n#+end_src")
+
+;; Make sure org-bullet-mode is ture
+(setq org-bullets-mode t)
+
+(use-package org-bullets
+  :hook (org-mode . org-bullets-mode)
+  :config
+  (setq org-bullets-bullet-list '("◉" "⁑" "⁂" "❖" "✮" "✱" "✸")))
