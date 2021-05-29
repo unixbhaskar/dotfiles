@@ -45,6 +45,7 @@
  '(notmuch-always-prompt-for-sender t)
  '(notmuch-maildir-use-notmuch-insert t)
  '(notmuch-show-all-tags-list t)
+ '(notmuch-tag-added-formats '((".*" (notmuch-apply-face tag 'nil))))
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(org-agenda-files nil)
@@ -687,3 +688,7 @@
 
 (use-package emojify
   :hook (after-init . global-emojify-mode))
+
+;; Notmuch
+
+(autoload 'notmuch "notmuch" "notmuch mail" t)
