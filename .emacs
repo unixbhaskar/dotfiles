@@ -672,7 +672,7 @@
   (org-crypt-use-before-save-magic)
   (setq org-tags-exclude-from-inheritance (quote ("crypt")))
   :custom
-  (setq org-crypt-key "unixbhaskar@gmail.com"))
+  (setq org-crypt-key "9F017E9D"))
 
 ;; Startup time measure
 
@@ -725,3 +725,60 @@
               ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
               ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
               ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
+
+;; Setting the org note file path
+
+(setq org-default-notes-file "~/.emacs.d/notes")
+
+;; Templates for the org capture
+(require 'org-protocol)
+
+;; Capture templates for: TODO tasks, Notes, appointments, phone calls, meetings, and org-protocol
+(setq org-capture-templates
+      (quote (("t" "todo" entry (file "~/.emacs.d/OrgFiles/task.org")
+               "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+              ("r" "respond" entry (file "~/.emacs.d/OrgFiles/refile.org")
+               "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
+              ("n" "note" entry (file "~/.emacs.d/OrgFiles/notes.org")
+               "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+              ("j" "Journal" entry (file+datetree "~/.emacs.d/OrgFiles/diary.org")
+               "* %?\n%U\n" :clock-in t :clock-resume t)
+              ("w" "org-protocol" entry (file "~/.emacs.d/OrgFiles/refile.org")
+               "* TODO Review %c\n%U\n" :immediate-finish t)
+              ("m" "Meeting" entry (file "~/.emacs.d/OrgFiles/refile.org")
+               "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
+              ("p" "Phone call" entry (file "~/.emacs.d/OrgFiles/refile.org")
+               "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t))))
+
+; Use IDO for both buffer and file completion and ido-everywhere to t
+(setq org-completion-use-ido t)
+(setq ido-everywhere t)
+(setq ido-max-directory-size 100000)
+(ido-mode (quote both))
+; Use the current window when visiting files and buffers with ido
+(setq ido-default-file-method 'selected-window)
+(setq ido-default-buffer-method 'selected-window)
+; Use the current window for indirect buffer display
+(setq org-indirect-buffer-display 'current-window)
+
+;; Mailto link open in compose mail
+(setq org-link-mailto-program (quote (compose-mail "%a" "%s")))
+(require 'org-mime)
+
+;; Source code block syntax highliting
+
+(setq org-src-fontify-natively t)
+
+;; Preserving souce block indentation
+
+(setq org-src-preserve-indentation nil)
+(setq org-edit-src-content-indentation 0)
+
+;; utf-8 is default encoding system
+
+(setq org-export-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-charset-priority 'unicode)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+
+
