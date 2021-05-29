@@ -57,7 +57,7 @@
      ("\\.x?html?\\'" . "vimb %s")
      ("\\.pdf\\'" . "zathura %s")))
  '(org-todo-keywords
-   '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)")))
+   '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
    '(notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
@@ -692,3 +692,36 @@
 ;; Notmuch
 
 (autoload 'notmuch "notmuch" "notmuch mail" t)
+
+;; Org mode shortcut
+
+;; This for swithing to org file
+(global-set-key "\C-cb" 'org-switchb)
+
+;; This is for org capture
+(global-set-key "\C-cc" 'org-capture)
+
+;; Color TODO keywords
+
+(setq org-todo-keyword-faces
+      (quote (("TODO" :foreground "red" :weight bold)
+              ("ONGOING" :foreground "blue" :weight bold)
+              ("DONE" :foreground "forest green" :weight bold)
+              ("WAITING" :foreground "orange" :weight bold)
+              ("STARTED" :foreground "magenta" :weight bold)
+              ("CANCELLED" :foreground "red" :weight bold)
+              ("HOLD" :foreground "black" :weight bold)
+              ("NEXT" :foreground "purple" :weight bold)
+              ("MEETING" :foreground "yellow" :weight bold)
+              ("PHONE" :foreground "cyan" :weight bold))))
+
+;; Org mode tags triggers
+
+(setq org-todo-state-tags-triggers
+      (quote (("CANCELLED" ("CANCELLED" . t))
+              ("WAITING" ("WAITING" . t))
+              ("HOLD" ("WAITING") ("HOLD" . t))
+              (done ("WAITING") ("HOLD"))
+              ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
+              ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
+              ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
