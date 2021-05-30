@@ -103,6 +103,7 @@ exec $HOME/bin/st
 exec $HOME/bin/telegram
 exec $HOME/bin/clipmenud
 exec $HOME/bin/pia-client
+exec emacs --bg-daemon=emacs-daemon
 
 set $workspace1 "1   "
 set $workspace2 "2  "
@@ -355,7 +356,7 @@ bindsym $mod+y exec search_youtube_videos
  bindsym $mod+q exec search_on_the_internet
 
 # Open the sports site for score
-bindsym $mod+End exec live_sports_scores
+#bindsym $mod+End exec live_sports_scores
 
 # Open bookmarked site on browser
 bindsym $mod+Shift+b exec bookmark2
@@ -369,5 +370,7 @@ bindsym $mod+Shift+s exec mpv_stop
 # Mpv continue
 bindsym $mod+shift+p exec mpv_cont
 
+# Emacs pop up buffer anywhere
+bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)"
 # For vim syntax detection
 # vim:filetype=i3config
