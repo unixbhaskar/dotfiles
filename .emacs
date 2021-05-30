@@ -783,5 +783,8 @@
 
 ;; Notmuch shortcut
 
-
 (global-set-key (kbd "M-n") 'notmuch)
+
+;; Mu4e shortcut
+
+(global-set-key (kbd "M-m") 'mu4e)
