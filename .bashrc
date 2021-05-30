@@ -157,6 +157,7 @@ alias enable_config="scripts/config --enable $1"
 alias disable_config="scripts/config --disable $1"
 alias who="git blame $1"
 alias econfig="vim ~/.emacs"
+alias magit="vim -c MagitOnly"
 export MANPAGER="vim -M +MANPAGER -"
 
 
