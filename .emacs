@@ -728,7 +728,7 @@
 
 ;; Setting the org note file path
 
-(setq org-default-notes-file "~/.emacs.d/notes")
+(setq org-default-notes-file "~/.emacs.d/OrgFiles/notes.org")
 
 ;; Templates for the org capture
 (require 'org-protocol)
