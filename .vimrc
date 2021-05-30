@@ -47,7 +47,6 @@ Plugin 'svermeulen/vim-macrobatics'
 Plugin 'mhinz/vim-startify'
 Plugin 'strboul/urlview.vim'
 Plugin 'mtth/scratch.vim'
-Plugin  'tpope/vim-fugitive'
 Plugin  'tyru/open-browser.vim'
 Plugin  'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'wincent/command-t'
@@ -57,6 +56,7 @@ Plugin  'bash-support.vim'
 Plugin  'sudo.vim'
 Plugin  'erietz/vim-terminator'
 Plugin 'mboughaba/i3config.vim'
+Plugin 'jreybert/vimagit'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
