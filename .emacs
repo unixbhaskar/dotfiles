@@ -750,6 +750,13 @@
               ("p" "Phone call" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t))))
 
+;; Show the targets
+(setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+
+;; Create new parent while refiling if it is not existed
+
+(setq org-refile-allow-creating-parent-nodes 'confirm)
+
 ; Use IDO for both buffer and file completion and ido-everywhere to t
 (setq org-completion-use-ido t)
 (setq ido-everywhere t)
