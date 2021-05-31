@@ -158,6 +158,9 @@ alias disable_config="scripts/config --disable $1"
 alias who="git blame $1"
 alias econfig="vim ~/.emacs"
 alias magit="vim -c MagitOnly"
+alias tsm="transmission-remote"
+alias tl="transmission-remote -l"
+alias tsmadd="transmission-remote -a $1"
 export MANPAGER="vim -M +MANPAGER -"
 
 
