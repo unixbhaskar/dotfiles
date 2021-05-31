@@ -574,3 +574,5 @@ iab        ;t  't
 iab      moer  more
 iab  previosu  previous
 iab  chnages   changes
+"Set to automatically load when the file is changed
+set autoread
