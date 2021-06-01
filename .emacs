@@ -10,12 +10,14 @@
    ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
+ '(calendar-view-diary-initially-flag t)
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
  '(compose-mail-user-agent-warnings nil)
  '(custom-enabled-themes '(molokai))
  '(custom-safe-themes
    '("13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
+ '(diary-file "~/.emacs.d/OrgFiles/diary.org")
  '(display-line-numbers-type 'relative)
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
@@ -35,6 +37,7 @@
  '(gnus-expert-user t)
  '(icomplete-mode t)
  '(ivy-posframe-style 'frame-center)
+ '(mu4e-icalendar-diary-file "~/.emacs.d/OrgFiles/refile.org")
  '(mu4e-maildir-shortcuts
    '((:maildir "/Inbox" :key 105)
      (:maildir "/Greg(GKH)" :key 103)
@@ -48,7 +51,10 @@
  '(notmuch-tag-added-formats '((".*" (notmuch-apply-face tag 'nil))))
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
+ '(org-agenda-diary-file "~/.emacs.d/OrgFiles/diary.org")
  '(org-agenda-files nil)
+ '(org-agenda-include-diary t)
+ '(org-agenda-insert-diary-extract-time t)
  '(org-directory "~/.emacs.d/OrgFiles")
  '(org-export-backends '(ascii html icalendar latex md odt org texinfo))
  '(org-file-apps
@@ -59,7 +65,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
+   '(org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(scroll-bar-mode nil)
@@ -176,7 +182,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(diary ((t (:foreground "blue")))))
 ;;(require 'org-mu4e)
 (require 'mu4e-contrib)
 (require 'smtpmail)
@@ -797,3 +803,32 @@
 ;; Mu4e shortcut
 
 (global-set-key (kbd "M-m") 'mu4e)
+
+;; todo reminder pop up buffer
+
+;; Make appt aware of appointments from the agenda
+
+(defun org-agenda-to-appt ()
+  "Activate appointments found in `org-agenda-files'."
+  (interactive)
+  (require 'org)
+  (let* ((today (org-date-to-gregorian
+		 (time-to-days (current-time))))
+	 (files org-agenda-files) entries file)
+    (while (setq file (pop files))
+      (setq entries (append entries (org-agenda-get-day-entries
+				     file today :timestamp))))
+    (setq entries (delq nil entries))
+    (mapc (lambda(x)
+	    (let* ((event (org-trim (get-text-property 1 'txt x)))
+		   (time-of-day (get-text-property 1 'time-of-day x)) tod)
+	      (when time-of-day
+		(setq tod (number-to-string time-of-day)
+		      tod (when (string-match
+				  "\\([0-9]\\{1,2\\}\\)\\([0-9]\\{2\\}\\)" tod)
+			     (concat (match-string 1 tod) ":"
+				     (match-string 2 tod))))
+		(if tod (appt-add tod event))))) entries)))
+
+(org-agenda-to-appt)
+
