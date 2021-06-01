@@ -126,9 +126,9 @@ bindsym $mod+Shift+f workspace $workspace3 ; exec "$HOME/bin/firefox_open";
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
 bindsym $mod+c workspace $workspace5 ; exec "st -n Build_And_Install_Kernel  -e system_operation";
 bindsym $mod+n workspace $workspace6 ; exec "st -n Newsboat -e newsboat";
-bindsym $mod+apostrophe  workspace $workspace7 ; exec "st -n Calcurse -e calcurse"
-bindsym $mod+u  workspace $workspace8 ; exec "st -n Cmus -e cmus";
-bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open"
+bindsym $mod+apostrophe  workspace $workspace7 ; exec "st -n Calcurse -e calcurse";
+bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st -n Cmus -e cmus";
+bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
 bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";
 
 #ASSIGN PROGRAMS TO WORKSPACES
@@ -139,10 +139,9 @@ assign [class="^Emacs$"] → $workspace4
 assign [class="^Build_And_Install_Kernel$"] → $workspace5
 assign [class="^Newsboat$"] →  $workspace6
 assign [class="^Calcurse$"] → $workspace7
-assign [class="^Cmus"] → $workspace8
+assign [class="^Cmus" window_role="cmus"] → $workspace8
 assign [class="^Mutt$"] → $workspace9
 assign [class="^Tig$"] → $workspace10
-
 
 # For_window versions
 
