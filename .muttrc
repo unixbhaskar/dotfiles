@@ -1,5 +1,6 @@
 # This is a Mutt Email Client config file.
-#
+#Author : Bhaskar Chowdhury
+
 source "gpg2 -dq $HOME/.mail.cred.gpg |"
 set imap_user = "unixbhaskar@gmail.com"
 set imap_pass =$my_pass
