@@ -20,7 +20,6 @@
 # For some (older) Palm Pilots, you might need to set a lower baud rate
 # e.g. 57600 or 38400; lowest is 9600 (very slow!)
 #
-#export PILOTPORT=/dev/pilot
 if [[ -e /etc/bashrc || -e /etc/bash.bashrc ]]; then
 
  source /etc/bashrc || source /etc/bash.bashrc
