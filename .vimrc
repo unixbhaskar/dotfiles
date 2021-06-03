@@ -87,37 +87,40 @@ augroup aug_cursor_line
 augroup END
 "set spelling
 set spell spelllang=en
+
 " Write file with sudo permission with capital W
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
 "vim startup time measure
 let g:startuptime_sort = 0
 let g:startuptime_tries = 5
 let g:startuptime_exe_args = ['-u', '~/.vimrc']
+
 "vifm
 "let loaded_vifm=1
 map<Leader>vv :Vifm<CR>
-"vimwiki header colors and file extensions
-hi VimwikiHeader1 guifg=#FF0000
-hi VimwikiHeader2 guifg=#00FF00
-hi VimwikiHeader3 guifg=#0000FF
-hi VimwikiHeader4 guifg=#FF00FF
-hi VimwikiHeader5 guifg=#00FFFF
-hi VimwikiHeader6 guifg=#FFFF00
+
 " Pop up git commit info box by pressing \g
 
 let g:GPGFilePattern = '*.\(gpg\|asc\|pgp\)\(.wiki\)\='
 Shortcut! Git commit popup messages of the specific line of code by pressing"\g
  nmap <silent><Leader>g :call setbufvar(winbufnr(popup_atcursor(split(system("git log -n 1 -L " . line(".") . ",+1:" . expand("%:p")), "\n"), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
+
+
  "Make leading and trailing space visible
 
 syn match ErrorLeadSpace /^ \+/         " highlight any leading spaces
 syn match ErrorTailSpace / \+$/         " highlight any trailing spaces
 "match Error80            /\%>80v.\+/    " highlight anything past 80 in red
+
+
 "All about indenting
 
 set autoindent smartindent              " turn on auto/smart indenting
 set smarttab                            " make <tab> and <backspace> smarter
 set backspace=eol,start,indent          " allow backspacing over indent, eol, & start
+
+
 "All about Tabs and Spaces
 
 set noexpandtab                         " use tabs, not spaces
@@ -125,15 +128,19 @@ set tabstop=8                           " tabstops of 8
 set softtabstop=8
 set shiftwidth=8                        " indents of 8
 set textwidth=78                        " screen in 80 columns wide, wrap at 78
+
 " To make folding work automatically
 "autocmd BufWinLeave *.* mkview
 "autocmd BufWinEnter *.* silent loadview
+
 " Paste mode toggle by F2
 Shortcut! paste mode on or off
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
+
 "History of changes showing by undotree plugin
 nnoremap <F3> :UndotreeToggle<CR>
+
 " Non visible character showing by pressing F4
 Shortcut! showing non visible character by toggle
 nmap <F4> :set list!<CR>
@@ -154,43 +161,57 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
 " Spelling check toggle by pressing F6
 Shortcut! Spell Checking toggle
 map <silent><F6> :setlocal spell! spelllang=en_us<CR>
+
 "Tabs manipulation vim -p filename1 filename2... from cli
 set switchbuf=usetab
 nnoremap <F7> :sbnext<CR>
 nnoremap <S-F7> :sbprevious<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
+
+
 "Tagbar to work
  nmap <F8> :TagbarToggle<CR>
-"Fold toggle by F9
+
+
+ "Fold toggle by F9
 
 inoremap <F9> <C-O>za
 nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
+
 "NerdTree open CTRL+n
  noremap <C-n> :NERDTreeToggle<CR>
+
  "Search replaces n number of times
 nnoremap Q :normal n.<CR>
+
 "Open URI under cursor by pressing ob and os
  nmap ob :exe 'silent !vimb %'<CR>
+
  "Open selected URI.
  vmap os :exe 'silent !vimb %'<CR>
+
  "Titlecase plugins
 
 nmap <leader>tc <Plug>Titlecase
 vmap <leader>tc <Plug>Titlecase
 nmap <leader>tT <Plug>TitlecaseLine
+
 "Open a terminal inside vim
 noremap <silent><leader>te :botright vertical terminal<CR>
+
 "Tim pope commentrary plugins for comment in file
 autocmd FileType sh setlocal commentstring=#\ %s
 autocmd FileType cpp,cs,java setlocal commentstring=//\ %s
 autocmd FileType c setlocal commentstring=/*\ %s
 autocmd FileType vim setlocal commentstring=\"\ %s
+
 "Google calendar process
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
@@ -198,6 +219,7 @@ let g:calendar_google_event = 1
 let g:calendar_event_start_time= 1
 "let g:calendar_frame = 'default'
 source ~/.cache/calendar.vim/credentials.vim
+
 "Auto command for configuration file modification/change notification
 augroup configfilealert
 "au!
@@ -212,18 +234,25 @@ autocmd BufWritePost  screenrc !notify_config_file_updates
 autocmd BufWritePost  .config/vimb/config !copy_vimb_config
 autocmd BufWritePost  .emacs !notify_config_file_updates
 augroup END
+
+
 "Move between splits
 nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
+
 "Open this file in vertical split for quick reference
 nnoremap <leader>vr :vsplit ~/.vimrc<cr>
+
 "After editing this file must be sourced ,so the changes take effect on
 "current session
 nnoremap <leader>sv :source ~/.vimrc<cr>
+
 "To insert email address with a shortcut @@ ,and then need to press space after that
 iabbrev @@    unixbhaskar@gmail.com
+
+
 " Auto loading .vimrc once saved
 if has('autocmd')
     augroup reload_vimrc
@@ -231,6 +260,8 @@ if has('autocmd')
         autocmd! BufWritePost ~/.vimrc nested source %
     augroup END
 endif
+
+
 "conditionally auto creating directory if it is not exists.
 
 augroup AutoMkdir
@@ -255,6 +286,8 @@ function! AskQuit (msg, proposed_action)
         exit
     endif
 endfunction
+
+
 "fzf related customization
 
 let $FZF_DEFAULT_OPTS .= ' --inline-info'
@@ -285,9 +318,12 @@ omap <leader><tab> <plug>(fzf-maps-o)
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
 " Word completion with custom spec with popup layout option
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'window': { 'width': 0.2, 'height': 0.9, 'xoffset': 1 }})
+
 "Visual mode selection move up and down my unimpaired
+
 "autocmd VimEnter * vunmap <C-j>
 vmap <C-k> [egv
 vmap <C-j> ]egv
@@ -301,43 +337,59 @@ let g:Mac_NamedMacrosDirectory = "~/.vim/macrobatics"
 " Start the macro by pressing q and end with pressing gq
 nmap <nowait> q <plug>(Mac_Play)
 nmap <nowait> gq <plug>(Mac_RecordNew)
+
+
 "Navigating macros history
 
 nmap <leader>mh :DisplayMacroHistory<cr>
 
 nmap [m <plug>(Mac_RotateBack)
 nmap ]m <plug>(Mac_RotateForward)
+
+
 "Macro append and macro prepend
 
 nmap <leader>ma <plug>(Mac_Append)
 nmap <leader>mp <plug>(Mac_Prepend)
+
+
 "Named macros
 
 nmap <leader>mn <plug>(Mac_NameCurrentMacro)
+
+
 "Macro execute
 
 nmap <leader>me <plug>(Mac_SearchForNamedMacroAndPlay)
+
 "Macro select
 
 nmap <leader>ms <plug>(Mac_SearchForNamedMacroAndSelect)
+
 "Macro overwrite
 
 nmap <leader>mo <plug>(Mac_SearchForNamedMacroAndOverwrite)
+
 "Delete a macro
 
 nmap <leader>md <plug>(Mac_SearchForNamedMacroAndDelete)
+
 "Rename a macro
 
 nmap <leader>mr <plug>(Mac_SearchForNamedMacroAndRename)
+
 "Name macro for global use
 
 nmap <leader>mng <plug>(Mac_NameCurrentMacro)
+
 "Name macro for file type
 
 nmap <leader>mnf <plug>(Mac_NameCurrentMacroForFileType)
+
 "Macro copy
 
 nmap <leader>mc <plug>(Mac_CopyCurrentMacroToRegister)
+
 "Shortcut show shortcut menu and run chosen shortcut
 let mapleader=";"
 
@@ -465,6 +517,8 @@ Shortcut! ChnagesAndJumps              :changes = show the chnage made ;  :Jump 
 Shortcut! WordsLinesRegionExchange      cx is default prefix , cxx for current line , X in visual mode , cxc clear out the mark
 Shortcut! Scratchpad                    gs in normal mode and insert mode and gS in visual mode
 Shortcut! WindowManagementKeys          whs=for horizontal split wvs=for vertical split wc=for window close
+
+
 "Vim-terminator plugins keybindings
 Shortcut! OpenTerminal                  ;ot
 Shortcut! OpenARepl                     ;or
@@ -473,11 +527,16 @@ Shortcut! RunsSelectionOnTerminal       ;rt
 Shortcut! StopRunningJobs               ;rs
 Shortcut! SendVisualSelectionToTerm     ;ss
 Shortcut! SendTextInDelimiterToTerm     ;sd
+
+
 "View save and restore plugin
 set viewoptions=cursor,folds,slash,unix
 Plugin 'restore_view.vim'
+
+
 "Alternative colors scheme by pressing F10 next scheme,shift+F10 previous scheme, Alt+F10 is random scheme
 source  ~/.vim/bundle/setcolors.vim
+
 " vim window manipulation plugin
 Plugin 'yaronkh/vim-winmanip'
 
@@ -511,38 +570,54 @@ Plugin 'yaronkh/vim-winmanip'
 
 nmap <leader>z <Plug>(MaximizeWin)"
 
-"nmap <silent> <Leader>B <Plug>(ClearAllW"indows)
+nmap <silent> <Leader>c <Plug>(ClearAllW"indows)
 "nmap <silent> <Leader>b <Plug>(ClearBuff"erList)
+
+
 "Ack search plugin
 Plugin 'mileszs/ack.vim'
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
+
+
 " Vim exchange plugin to help exchnage words and regions
 Plugin 'tommcdo/vim-exchange'
+
 " Urlview key binding /u
  nnoremap <silent> <leader>u :Urlview<CR>
  " Automated log for file modification with the user who did it
 autocmd BufWritePost  *  !echo "$USER modified the file '%:p' at '$(date)'" >> /tmp/vimlog
- " Vimgrep/lvimgrep search quickfix window open
+
+
+" Vimgrep/lvimgrep search quickfix window open
  augroup quickfixwindow
     autocmd!
     autocmd QuickFixCmdPost [^l]* cwindow
     autocmd QuickFixCmdPost l*    lwindow
 augroup END
+
+
 " i3 config syntax detection method
 aug i3config_ft_detection
   au!
   au BufEnter,BufRead ~/.ithreeconfig set filetype=i3config
   au BufEnter,BufRead ~/.ithreeblocksconfig set filetype=i3config
 aug end
+
+
 " Make vaa select the entire file...
 xmap aa VGo1G
+
+
 " Back up the current file
 nmap BB  :!backup_file %<CR><CR>:echomsg "Backed up with date appended" expand('%')<CR>
+
 " Automate shell shebang with a keystroke
  iab hs #!/bin/sh
  iab hb #!/bin/bash
-"[ Show help files in a new tab, plus add a shortcut for helpg ]
+
+
+ "[ Show help files in a new tab, plus add a shortcut for helpg ]
 
 let g:help_in_tabs = 1
 
@@ -561,6 +636,8 @@ function! HelpInNewTab ()
         execute "normal \<C-W>T"
     endif
 endfunction
+
+
 "[ Correct common mistypings in-the-fly ]
 iab    netowrk network
 iab    retrun  return
@@ -574,5 +651,13 @@ iab        ;t  't
 iab      moer  more
 iab  previosu  previous
 iab  chnages   changes
+
 "Set to automatically load when the file is changed
 set autoread
+" Focus on a particular window(w),open buffer(b) list,open histrory(h),open registers(r)
+noremap <leader>w :Windows<cr>
+nnoremap <leader>b :buffers<cr>
+nnoremap <leader>h :History<cr>
+nnoremap <leader>r :registers<cr>
+" Quote a word by pressing leader and double quote
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
