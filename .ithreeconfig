@@ -103,7 +103,7 @@ exec $HOME/bin/st
 exec $HOME/bin/telegram
 exec $HOME/bin/clipmenud
 exec $HOME/bin/pia-client
-exec emacs --bg-daemon=emacs-daemon
+#exec emacs --bg-daemon=emacs-daemon
 
 set $workspace1 "1   "
 set $workspace2 "2  "
