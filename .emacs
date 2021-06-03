@@ -749,7 +749,7 @@
                "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
               ("n" "note" entry (file "~/.emacs.d/OrgFiles/notes.org")
                "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("j" "Journal" entry (file+datetree "~/.emacs.d/OrgFiles/diary.org")
+              ("j" "Journal" entry (file+datetree "~/.emacs.d/OrgFiles/journal.org")
                "* %?\n%U\n" :clock-in t :clock-resume t)
               ("d" "diary" entry (file+datetree "~/.emacs.d/OrgFiles/diary.org")
                "* %?\n%U\n" :clock-in t :clock-resume t)
@@ -853,3 +853,21 @@
 
 (load "server")
 (unless (server-running-p) (server-start))
+
+
+;; Few shortcut key for convenience
+
+(defun mp-insert-date ()
+  (interactive)
+  (insert (format-time-string "%x")))
+
+(defun mp-insert-time ()
+  (interactive)
+  (insert (format-time-string "%X")))
+
+(global-set-key (kbd "C-c i d") 'mp-insert-date)
+(global-set-key (kbd "C-c i t") 'mp-insert-time)
+
+;; Set items ido mode vertically
+
+(setq ido-separator "\n")
