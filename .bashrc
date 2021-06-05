@@ -160,8 +160,9 @@ alias magit="vim -c MagitOnly"
 alias tsm="transmission-remote"
 alias tl="transmission-remote -l"
 alias tsmadd="transmission-remote -a $1"
+alias taskrc="vim ~/.taskrc"
+alias taskopenrc="vim ~/.taskopenrc"
 export MANPAGER="vim -M +MANPAGER -"
-
 
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
@@ -569,4 +570,28 @@ patch_series() {
 backup() {
 	cp -v "$1"{,.$(date +'%F')}
 }
+
+# TaskWorrior Prompt
+
+task_indicator() {
+
+	URGENT=""
+	DUETOMORROW=""
+	OVERDUE=""
+
+	TASK=$(command -v task)
+
+	if [[ "$($TASK +READY +OVERDUE count)" -gt "0" ]]; then
+		echo "$OVERDUE"
+	elif [[ "$($TASK +READY +TOMORROW count)" -gt "0" ]]; then
+		echo "$DUETOMORROW"
+	elif [[ "$($TASK +READY urgency > 10 count)" -gt "0" ]]; then
+		echo "$URGENT"
+	else
+		echo ""
+	fi
+
+}
+
+PS1="\[\e[32;1m\u@\e[33;1m\h_\e[35;1m\t_\e[36;1m\d:\e[31;1m$(task_indicator)\e[m \]:\w>"
 
