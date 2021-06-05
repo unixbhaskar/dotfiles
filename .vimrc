@@ -661,3 +661,5 @@ nnoremap <leader>h :History<cr>
 nnoremap <leader>r :registers<cr>
 " Quote a word by pressing leader and double quote
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+" TaskWarrior
+Plugin 'farseer90718/vim-taskwarrior'
