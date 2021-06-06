@@ -871,3 +871,7 @@
 ;; Set items ido mode vertically
 
 (setq ido-separator "\n")
+
+;; Pop up for buffer change
+
+(gobal-set-key (kbd "C-b") 'counsel-switch-buffer)
