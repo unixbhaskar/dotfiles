@@ -1,5 +1,3 @@
-
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -874,4 +872,6 @@
 
 ;; Pop up for buffer change
 
-(gobal-set-key (kbd "C-b") 'counsel-switch-buffer)
+(global-set-key (kbd "C-b") 'counsel-switch-buffer)
+
+(global-set-key (kbd " C-x p") 'counsel-M-x)
