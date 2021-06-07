@@ -874,4 +874,4 @@
 
 (global-set-key (kbd "C-b") 'counsel-switch-buffer)
 
-(global-set-key (kbd " C-x p") 'counsel-M-x)
+(global-set-key (kbd "C-x p") 'counsel-M-x)
