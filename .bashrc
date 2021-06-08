@@ -162,6 +162,7 @@ alias tl="transmission-remote -l"
 alias tsmadd="transmission-remote -a $1"
 alias taskrc="vim ~/.taskrc"
 alias taskopenrc="vim ~/.taskopenrc"
+alias fetch_info="onefetch $1"
 export MANPAGER="vim -M +MANPAGER -"
 
 # Check if the ssh-agent is already running
