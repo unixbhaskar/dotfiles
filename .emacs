@@ -66,6 +66,11 @@
    '(projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
+ '(safe-local-variable-values
+   '((eval add-hook 'after-save-hook
+           (lambda nil
+             (org-babel-tangle))
+           nil t)))
  '(scroll-bar-mode nil)
  '(send-mail-function 'mailclient-send-it)
  '(smtpmail-debug-info t)
@@ -891,17 +896,19 @@
 (defun blog-mode-parse-org (file)
   (let ((title (blog-mode-file-peek "/\\+title/" file))
         (date (blog-mode-file-peek "/\\+date/" file))
+        (author (blog-mode-file-peek "/\\+author/" file))
         (draft (blog-mode-file-peek "/\\+draft/" file))
         (tags (blog-mode-file-peek "/\\+tags/" file)))
 
-    (list file (vector title draft date tags))))
+    (list file (vector title draft date author tags))))
 
 (defun blog-mode-parse-md (file)
   (let ((title (blog-mode-file-peek "/^title/" file))
         (date (blog-mode-file-peek "/^date/" file))
+        (author (blog-mode-file-peek "/\\+author/" file))
         (draft (blog-mode-file-peek "/^draft/" file))
         (tags (blog-mode-file-peek "/^tags/" file)))
-    (list file (vector title draft date tags))))
+    (list file (vector title draft date author tags))))
 
 (defun blog-mode-parse-directory (directory)
   (let ((md (concat directory "/index.md"))
@@ -933,6 +940,7 @@
   (setq tabulated-list-format [("Title" 60 t)
                                ("Draft" 5 nil)
                                ("Date"  11 t)
+                               ("Author"  15 t)
 			       ("Tags" 0 nil)])
   (setq tabulated-list-padding 2)
   (setq tabulated-list-sort-key (cons "Date" t))
@@ -1055,3 +1063,14 @@
 ;;    (async-shell-command "sleep 5;xdg-open http://localhost:1313" (get-buffer "*hugo web opener*"))))
 
 (global-set-key (kbd "C-x e") 'blog-list)
+
+;; Restrict buffer to 80 character limit
+
+;;'(c-max-one-liner-length 80)
+
+;;'(fill-column 80)
+
+;; Max. chars per line (auto-fill-mode)
+(add-hook 'text-mode-hook #'auto-fill-mode)
+(add-hook 'prog-mode-hook #'auto-fill-mode)
+(setq-default fill-column 80)
