@@ -243,17 +243,11 @@ build() {
 }
 
 
-
-
-
 #Git grep as search in repo
 
 search() {
-	if [ $# -ne 1 ]; then
 
-		echo "You need to pass the search string"
-
-	elif [ ! -e .git ];then
+	if [ ! -e .git ];then
 
 		sudo find / -name "$1" -ls  2> /dev/null
 
