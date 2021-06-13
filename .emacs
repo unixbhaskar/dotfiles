@@ -763,9 +763,12 @@
               ("p" "Phone call" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
               ("b" "Books" entry (file  "~/.emacs.d/OrgFiles/books.org")
-              "* %^{TITLE}\n:PROPERTIES:\n:ADDED: %<[%Y-%02m-%02d]>\n:END:%^{AUTHOR}p\n%?" :empty-lines 1)
-              ("l" "Book log" item (function org-books-visit-book-log)
-              "- %U %?" :prepend t))))
+	       ;;"* %^{TITLE}\n:PROPERTIES:\n:ADDED: %<[%Y-%02m-%02d]>\n:END:%^{AUTHOR}p\n%?" :empty-lines 1)
+               "* %(let* ((url (substring-no-properties (current-kill 0)))
+                  (details (org-books-get-details url)))
+                (when details (apply #'org-books-format 1 details)))"))))
+	      ;;("l" "Book log" item (function org-books-visit-book-log)
+              ;;"- %U %?" :prepend t))))
 ;; Show the targets
 (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 
