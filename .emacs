@@ -761,8 +761,11 @@
               ("m" "Meeting" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
               ("p" "Phone call" entry (file "~/.emacs.d/OrgFiles/refile.org")
-               "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t))))
-
+               "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
+              ("b" "Books" entry (file  "~/.emacs.d/OrgFiles/books.org")
+              "* %^{TITLE}\n:PROPERTIES:\n:ADDED: %<[%Y-%02m-%02d]>\n:END:%^{AUTHOR}p\n%?" :empty-lines 1)
+              ("l" "Book log" item (function org-books-visit-book-log)
+              "- %U %?" :prepend t))))
 ;; Show the targets
 (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 
@@ -1100,3 +1103,4 @@
       '(("Unixbhaskar's Blog"
          :url "https://unixbhaskar.wordpress.com/xmlrpc.php"
          :username "unixbhaskar")))
+
