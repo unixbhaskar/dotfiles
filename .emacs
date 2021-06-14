@@ -63,7 +63,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
+   '(neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(safe-local-variable-values
@@ -1088,11 +1088,11 @@
 (add-to-list 'load-path "~/.emacs.d/org-weather")
 (require 'org-weather)
 ;; Set your location and refresh the data
-(setq org-weather-location "Kolkata,IN")
+;;(setq org-weather-location "Kolkata,IN")
 (org-weather-refresh)
 (setq org-weather-format "Weather: %desc, %tmin-%tmax%tu, %p%pu, %h%hu, %s%su")
-(setq org-weather-api-key  "783c9abf98d154e05236ccd5f4a0a914")
-(setq org-weather-api-url "http://api.openweathermap.org/data/2.5/weather?q=%s&mode=json&units=metric&APPID=%s")
+;;(setq org-weather-api-key  "783c9abf98d154e05236ccd5f4a0a914")
+;;(setq org-weather-api-url "http://api.openweathermap.org/data/2.5/weather?q=%s&mode=json&units=metric&APPID=%s")
 
 ;; Reload/evaluate this file i.e .emacs after change
 (defun reload-dotemacs ()
@@ -1107,3 +1107,6 @@
          :url "https://unixbhaskar.wordpress.com/xmlrpc.php"
          :username "unixbhaskar")))
 
+;; Neotree shortcut
+
+(global-set-key (kbd "C-n") 'neotree-toggle)
