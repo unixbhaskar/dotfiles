@@ -12,6 +12,7 @@
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
  '(compose-mail-user-agent-warnings nil)
+ '(cua-enable-modeline-indications t)
  '(custom-enabled-themes '(molokai))
  '(custom-safe-themes
    '("13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
@@ -34,7 +35,9 @@
  '(gnus-add-timestamp-to-message t)
  '(gnus-expert-user t)
  '(icomplete-mode t)
+ '(image-dired-main-image-directory "~/Pictures")
  '(ivy-posframe-style 'frame-center)
+ '(mu4e-display-update-status-in-modeline t)
  '(mu4e-icalendar-diary-file "~/.emacs.d/OrgFiles/refile.org")
  '(mu4e-maildir-shortcuts
    '((:maildir "/Inbox" :key 105)
@@ -63,7 +66,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
+   '(dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(safe-local-variable-values
@@ -101,7 +104,8 @@
      (320 . "#8CD0D3")
      (340 . "#94BFF3")
      (360 . "#DC8CC3")))
- '(vc-annotate-very-old-color "#DC8CC3"))
+ '(vc-annotate-very-old-color "#DC8CC3")
+ '(weather-metno-mode-line t))
 (tool-bar-mode -1)
 (tooltip-mode -1)
 (menu-bar-mode -1)
@@ -1110,3 +1114,98 @@
 ;; Neotree shortcut
 
 (global-set-key (kbd "C-n") 'neotree-toggle)
+
+;; Dashboard
+
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+;; Or if you use use-package
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+
+;; Set the title
+;;(setq dashboard-banner-logo-title "Emacs Dashboard")
+;; Set the banner
+(setq dashboard-startup-banner [2])
+;; Value can be
+;; 'official which displays the official emacs logo
+;; 'logo which displays an alternative emacs logo
+;; 1, 2 or 3 which displays one of the text banners
+;; "path/to/your/image.png" or "path/to/your/text.txt" which displays whatever image/text you would prefer
+
+;; Content is not centered by default. To center, set
+(setq dashboard-center-content t)
+
+;; To disable shortcut "jump" indicators for each section, set
+(setq dashboard-show-shortcuts nil)
+
+(setq dashboard-items '((recents  . 5)
+                        (bookmarks . 5)
+                        (projects . 5)
+;;                        (agenda . 5)
+                        (registers . 5)))
+
+;; Custom items
+;;(defun dashboard-insert-custom (list-size)
+;;  (insert "Custom text"))
+;;(add-to-list 'dashboard-item-generators  '(custom . dashboard-insert-custom))
+;;(add-to-list 'dashboard-items '(custom) t)
+
+(setq dashboard-set-heading-icons t)
+(setq dashboard-set-file-icons t)
+;; Modify heading icon with another icons
+
+;;(dashboard-modify-heading-icons '((recents . "file-text")
+;;                                  (bookmarks . "book")))
+
+(setq dashboard-set-navigator t)
+
+(setq dashboard-set-init-info t)
+(setq dashboard-set-footer nil)
+
+;; Customize footer icons
+
+;;(setq dashboard-footer-messages '("Dashboard is pretty cool!"))
+;;(setq dashboard-footer-icon (all-the-icons-octicon "dashboard"
+;;                                                   :height 1.1
+;;                                                   :v-adjust -0.05
+;;                                                   :face 'font-lock-keyword-face))
+
+
+(setq dashboard-projects-switch-function 'counsel-projectile-switch-project-by-name)
+(add-to-list 'dashboard-items '(agenda) t)
+(setq dashboard-week-agenda nil)
+(setq dashboard-org-agenda-categories '("Tasks" "Diary"))
+(setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
+
+
+;; IRC
+
+;; Set our nickname & real-name as constant variables
+(setq
+ erc-nick "unixbhaskar"     ; Our IRC nick
+ erc-user-full-name "Bhaskar Chowdhury") ; Our /whois name
+
+;; Define a function to connect to a server
+(defun some-serv ()
+  (lambda ()
+  (interactive)
+  (erc :server "irc.libera.chat"
+       :port   "6667")))
+
+;; TLS version
+
+;; This example is also using erc's TLS capabilities:
+(global-set-key "\C-ce"
+  (lambda ()
+  (interactive)
+  (erc-tls :server "irc.libera.chat"
+           :port   "6697")))
+
+
+;; Image-dired
+
+
+(global-set-key (kbd "C-i") 'image-dired)
