@@ -66,7 +66,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
+   '(imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(safe-local-variable-values
@@ -773,7 +773,7 @@
                 (when details (apply #'org-books-format 1 details)))")
 	      ;;("l" "Book log" item (function org-books-visit-book-log)
               ;;"- %U %?" :prepend t))))
-             ("a" "Appointment" entry (file+olp+datetree "~/.emacs.d/OrgFiles/appointments.org")
+             ("a" "Appointment" entry (file+olp+datetree "~/.emacs.d/OrgFiles/diary.org")
                "* APPT %^{Description} %^g %? Added: %U")
               ("c" "Contacts" entry (file+headline "~/.emacs.d/OrgFiles/contacts.org" "")
                "* %^{Name} :CONTACT: %[~/.emacs.d/OrgFiles/contacts.txt]"))))
@@ -1241,3 +1241,23 @@
 ;; Dictionary
 
 (global-set-key (kbd "C-c d") 'dictionary-search)
+
+;; Wikipedia search
+(defun wikipedia-search (search-term)
+  "Search for SEARCH-TERM on wikipedia"
+  (interactive
+   (let ((term (if mark-active
+                   (buffer-substring (region-beginning) (region-end))
+                 (word-at-point))))
+     (list
+      (read-string
+       (format "Wikipedia (%s):" term) nil nil term)))
+   )
+  (browse-url
+   (concat
+    "http://en.m.wikipedia.org/w/index.php?search="
+    search-term
+    ))
+  )
+
+(global-set-key (kbd "C-c w") 'wikipedia-search)
