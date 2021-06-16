@@ -663,3 +663,18 @@ nnoremap <leader>r :registers<cr>
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 " TaskWarrior
 Plugin 'farseer90718/vim-taskwarrior'
+" Tab should not expand in MAKE file
+au FileType make setlocal noexpandtab
+" Perform a macro and save the last macro to g:LastMacro.
+let g:LastMacro = ''
+function! DoMacroSave()
+    let l:macro = getchar()
+    if l:macro =~ '^\d\+$'
+        let l:macro = nr2char(l:macro)
+    endif
+    if l:macro != '@'
+        let g:LastMacro = '@' .l:macro
+    endif
+    exec 'normal! @' . l:macro
+endfunction
+nnoremap <silent> @ :call DoMacroSave()<CR>
