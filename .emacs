@@ -66,7 +66,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
+   '(smex doom-modeline org-roam undo-tree slime imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(safe-local-variable-values
@@ -750,17 +750,17 @@
 
 ;; Capture templates for: TODO tasks, Notes, appointments, phone calls, meetings, and org-protocol
 (setq org-capture-templates
-      (quote (("t" "todo" entry (file "~/.emacs.d/OrgFiles/task.org")
+      (quote (("t" "Todo" entry (file "~/.emacs.d/OrgFiles/task.org")
                "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("r" "respond" entry (file "~/.emacs.d/OrgFiles/refile.org")
+              ("r" "Respond" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
-              ("n" "note" entry (file "~/.emacs.d/OrgFiles/notes.org")
+              ("n" "Note" entry (file "~/.emacs.d/OrgFiles/notes.org")
                "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
               ("j" "Journal" entry (file+datetree "~/.emacs.d/OrgFiles/journal.org")
                "* %?\n%U\n" :clock-in t :clock-resume t)
-              ("d" "diary" entry (file+datetree "~/.emacs.d/OrgFiles/diary.org")
+              ("d" "Diary" entry (file+datetree "~/.emacs.d/OrgFiles/diary.org")
                "* %?\n%U\n" :clock-in t :clock-resume t)
-              ("w" "org-protocol" entry (file "~/.emacs.d/OrgFiles/refile.org")
+              ("w" "Org-protocol" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* TODO Review %c\n%U\n" :immediate-finish t)
               ("m" "Meeting" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
@@ -1097,11 +1097,11 @@
 (add-to-list 'load-path "~/.emacs.d/org-weather")
 (require 'org-weather)
 ;; Set your location and refresh the data
-;;(setq org-weather-location "Kolkata,IN")
-(org-weather-refresh)
+(setq org-weather-location "Kolkata,IN")
+(setq org-weather-api-key  "783c9abf98d154e05236ccd5f4a0a914")
+(setq org-weather-api-url "http://api.openweathermap.org/data/2.5/weather?q=%s&mode=json&units=metric&APPID=%s")
 (setq org-weather-format "Weather: %desc, %tmin-%tmax%tu, %p%pu, %h%hu, %s%su")
-;;(setq org-weather-api-key  "783c9abf98d154e05236ccd5f4a0a914")
-;;(setq org-weather-api-url "http://api.openweathermap.org/data/2.5/weather?q=%s&mode=json&units=metric&APPID=%s")
+(org-weather-refresh)
 
 ;; Reload/evaluate this file i.e .emacs after change
 (defun reload-dotemacs ()
@@ -1148,9 +1148,9 @@
 
 (setq dashboard-items '((recents  . 5)
                         (bookmarks . 5)
-                        (projects . 5)
+                        (projects . 5)))
 ;;                        (agenda . 5)
-                        (registers . 5)))
+;;                        (registers . 5)
 
 ;; Custom items
 ;;(defun dashboard-insert-custom (list-size)
@@ -1261,3 +1261,180 @@
   )
 
 (global-set-key (kbd "C-c w") 'wikipedia-search)
+
+;; Undo
+
+(use-package undo-tree
+  :diminish undo-tree-mode
+  :config
+  (progn
+    (global-undo-tree-mode)
+    (setq undo-tree-visualizer-timestamps t)
+    (setq undo-tree-visualizer-diff t)))
+
+
+;; Doom-modeline
+
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode))
+
+;; Whether to use hud instead of default bar. It's only respected in GUI.
+;;(defcustom doom-modeline-hud nil)
+
+;; The limit of the window width.
+;; If `window-width' is smaller than the limit, some information won't be displayed.
+(setq doom-modeline-window-width-limit fill-column)
+
+;; Whether display icons in the mode-line.
+;; While using the server mode in GUI, should set the value explicitly.
+(setq doom-modeline-icon (display-graphic-p))
+
+;; Whether display the icon for `major-mode'. It respects `doom-modeline-icon'.
+(setq doom-modeline-major-mode-icon t)
+
+;; Whether display the colorful icon for `major-mode'.
+;; It respects `all-the-icons-color-icons'.
+(setq doom-modeline-major-mode-color-icon t)
+
+;; Whether display the icon for the buffer state. It respects `doom-modeline-icon'.
+(setq doom-modeline-buffer-state-icon t)
+
+;; Whether display the modification icon for the buffer.
+;; It respects `doom-modeline-icon' and `doom-modeline-buffer-state-icon'.
+(setq doom-modeline-buffer-modification-icon t)
+
+;; Whether to use unicode as a fallback (instead of ASCII) when not using icons.
+(setq doom-modeline-unicode-fallback nil)
+
+;; Whether display the minor modes in the mode-line.
+(setq doom-modeline-minor-modes nil)
+
+;; If non-nil, a word count will be added to the selection-info modeline segment.
+(setq doom-modeline-enable-word-count nil)
+
+;; Major modes in which to display word count continuously.
+;; Also applies to any derived modes. Respects `doom-modeline-enable-word-count'.
+;; If it brings the sluggish issue, disable `doom-modeline-enable-word-count' or
+;; remove the modes from `doom-modeline-continuous-word-count-modes'.
+(setq doom-modeline-continuous-word-count-modes '(markdown-mode gfm-mode org-mode))
+
+;; Whether display the buffer encoding.
+(setq doom-modeline-buffer-encoding t)
+
+;; Whether display the indentation information.
+(setq doom-modeline-indent-info t)
+
+;; If non-nil, only display one number for checker information if applicable.
+(setq doom-modeline-checker-simple-format t)
+
+;; The maximum number displayed for notifications.
+(setq doom-modeline-number-limit 99)
+
+;; The maximum displayed length of the branch name of version control.
+(setq doom-modeline-vcs-max-length 12)
+
+;; Whether display the workspace name. Non-nil to display in the mode-line.
+(setq doom-modeline-workspace-name t)
+
+;; Whether display the perspective name. Non-nil to display in the mode-line.
+(setq doom-modeline-persp-name t)
+
+;; If non nil the default perspective name is displayed in the mode-line.
+(setq doom-modeline-display-default-persp-name nil)
+
+;; If non nil the perspective name is displayed alongside a folder icon.
+(setq doom-modeline-persp-icon t)
+
+;; Whether display the `lsp' state. Non-nil to display in the mode-line.
+(setq doom-modeline-lsp t)
+
+;; Whether display the GitHub notifications. It requires `ghub' package.
+(setq doom-modeline-github t)
+
+;; The interval of checking GitHub.
+(setq doom-modeline-github-interval (* 30 60))
+
+;; Whether display the modal state icon.
+;; Including `evil', `overwrite', `god', `ryo' and `xah-fly-keys', etc.
+(setq doom-modeline-modal-icon t)
+
+;; Whether display the mu4e notifications. It requires `mu4e-alert' package.
+(setq doom-modeline-mu4e t)
+
+;; Whether display the gnus notifications.
+(setq doom-modeline-gnus t)
+
+;; Wheter gnus should automatically be updated and how often (set to 0 or smaller than 0 to disable)
+(setq doom-modeline-gnus-timer 2)
+
+;; Wheter groups should be excludede when gnus automatically being updated.
+(setq doom-modeline-gnus-excluded-groups '("dummy.group"))
+
+;; Whether display the IRC notifications. It requires `circe' or `erc' package.
+(setq doom-modeline-irc t)
+
+;; Function to stylize the irc buffer names.
+(setq doom-modeline-irc-stylize 'identity)
+
+;; Whether display the environment version.
+(setq doom-modeline-env-version t)
+;; Or for individual languages
+(setq doom-modeline-env-enable-python t)
+(setq doom-modeline-env-enable-ruby t)
+(setq doom-modeline-env-enable-perl t)
+(setq doom-modeline-env-enable-go t)
+(setq doom-modeline-env-enable-elixir t)
+(setq doom-modeline-env-enable-rust t)
+
+;; Change the executables to use for the language version string
+(setq doom-modeline-env-python-executable "python")
+(setq doom-modeline-env-ruby-executable "ruby")
+(setq doom-modeline-env-perl-executable "perl")
+(setq doom-modeline-env-go-executable "go")
+(setq doom-modeline-env-elixir-executable "iex")
+(setq doom-modeline-env-rust-executable "rustc")
+
+;; What to display as the version while a new one is being loaded
+(setq doom-modeline-env-load-string "...")
+
+;; Hooks that run before/after the modeline version string is updated
+(setq doom-modeline-before-update-env-hook nil)
+(setq doom-modeline-after-update-env-hook nil)
+
+;; How tall the mode-line should be. It's only respected in GUI.
+;; If the actual char height is larger, it respects the actual height.
+(setq doom-modeline-height 10)
+
+;; How wide the mode-line bar should be. It's only respected in GUI.
+(setq doom-modeline-bar-width 2)
+
+;; Enhance M-x with counsel
+
+(use-package smex)
+
+
+;; It has to be loaded before pass
+
+(use-package general
+  :ensure t
+  :config)
+
+;; Integration with pass
+
+(use-package pass
+  :general
+  (:keymaps 'pass-view-mode-map "C-c C-y" 'pass-view-copy-password))
+
+
+;;Preview line before jumping to it.
+
+(use-package goto-line-preview
+  :general
+  ("M-g g" 'goto-line-preview))
+
+;; Shrinking file path
+
+(use-package shrink-path
+  :ensure t
+  :demand t)
