@@ -53,7 +53,7 @@
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(org-agenda-diary-file "~/.emacs.d/OrgFiles/diary.org")
- '(org-agenda-files nil)
+ '(org-agenda-files '("~/.emacs.d/OrgFiles/task.org"))
  '(org-agenda-include-diary t)
  '(org-agenda-insert-diary-extract-time t)
  '(org-directory "~/.emacs.d/OrgFiles")
@@ -63,10 +63,11 @@
      ("\\.mm\\'" . default)
      ("\\.x?html?\\'" . "vimb %s")
      ("\\.pdf\\'" . "zathura %s")))
+ '(org-roam-directory "/home/bhaskar/.emacs.d/OrgFiles/org-roam")
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(smex doom-modeline org-roam undo-tree slime imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
+   '(org-download deft goto-line-preview general smex doom-modeline org-roam undo-tree slime imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(safe-local-variable-values
@@ -628,6 +629,10 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
+(global-set-key (kbd "C-c o")
+                (lambda () (interactive) (find-file "~/.emacs.d/OrgFiles/task.org")))
+
+;;(set-register ?o (cons 'file "~/.emacs.d/OrgFiles/task.org"))
 
 ;; Add TAG to the org file
 
@@ -1182,7 +1187,7 @@
 (setq dashboard-projects-switch-function 'counsel-projectile-switch-project-by-name)
 (add-to-list 'dashboard-items '(agenda) t)
 (setq dashboard-week-agenda nil)
-(setq dashboard-org-agenda-categories '("Tasks" "Diary"))
+(setq dashboard-org-agenda-categories '("Tasks" "Diary" "Notes"))
 (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
 
 
@@ -1438,3 +1443,74 @@
 (use-package shrink-path
   :ensure t
   :demand t)
+
+;; Hide the emphesis markers in org mode
+
+(setq org-hide-emphasis-markers t)
+(font-lock-add-keywords
+ 'org-mode
+ '(("^ *\\([-]\\) "
+    (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+
+;; Org Roam
+
+(use-package emacsql
+  :defer nil)
+(use-package emacsql-sqlite
+  :after emacsql
+  :defer nil)
+
+(use-package org-roam
+  :after (org emacsql emacsql-sqlite)
+  :load-path "lisp/org-roam"
+  :diminish
+  :hook
+  ((org-mode . org-roam-mode)
+   (after-init . org-roam--build-cache-async))
+  :custom
+  (org-roam-directory "~/.emacs.d/OrgFiles/org-roam")
+  :bind
+  ("C-c n l" . org-roam)
+  ("C-c n t" . org-roam-dailies-today)
+  ("C-c n f" . org-roam-find-file)
+  ("C-c n i" . org-roam-insert)
+  ("C-c n g" . org-roam-show-graph))
+
+(use-package deft
+  :after org
+  :bind
+  ("C-c n d" . deft)
+  :custom
+  (deft-directory org-directory)
+  (deft-recursive t)
+  (deft-use-filename-as-title nil)
+  (deft-use-filter-string-for-filename t)
+  (deft-file-naming-rules '((noslash . "-")
+                            (nospace . "-")
+                            (case-fn . downcase)))
+  (deft-org-mode-title-prefix t)
+  (deft-extensions '("org" "txt" "text" "md" "markdown" "org.gpg"))
+  (deft-default-extension "org"))
+
+(use-package org-download
+  :after org
+  :defer nil
+  :custom
+  (org-download-method 'directory)
+  (org-download-image-dir "images")
+  (org-download-heading-lvl nil)
+  (org-download-timestamp "%Y%m%d-%H%M%S_")
+  (org-image-actual-width 300)
+  :bind
+  ("C-M-y" .
+   (lambda (&optional noask)
+     (interactive "P")
+     (let ((file
+            (if (not noask)
+                (read-string (format "Filename [%s]: " org-download-screenshot-basename)
+                             nil nil org-download-screenshot-basename)
+              nil)))
+       (org-download-clipboard file))))
+  :config
+  (require 'org-download))
