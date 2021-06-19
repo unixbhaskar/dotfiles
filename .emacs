@@ -63,11 +63,14 @@
      ("\\.mm\\'" . default)
      ("\\.x?html?\\'" . "vimb %s")
      ("\\.pdf\\'" . "zathura %s")))
- '(org-roam-directory "/home/bhaskar/.emacs.d/OrgFiles/org-roam")
+ '(org-roam-completion-everywhere t)
+ '(org-roam-dailies-directory "~/.emacs.d/OrgFiles/daily/")
+ '(org-roam-mode t nil (org-roam))
+ '(org-roam-server-mode t)
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(org-download deft goto-line-preview general smex doom-modeline org-roam undo-tree slime imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
+   '(org-protocol-jekyll org-roam-server org-download deft goto-line-preview general smex doom-modeline org-roam undo-tree slime imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(safe-local-variable-values
@@ -1162,7 +1165,6 @@
 ;;  (insert "Custom text"))
 ;;(add-to-list 'dashboard-item-generators  '(custom . dashboard-insert-custom))
 ;;(add-to-list 'dashboard-items '(custom) t)
-
 (setq dashboard-set-heading-icons t)
 (setq dashboard-set-file-icons t)
 ;; Modify heading icon with another icons
@@ -1189,7 +1191,7 @@
 (setq dashboard-week-agenda nil)
 (setq dashboard-org-agenda-categories '("Tasks" "Diary" "Notes"))
 (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
-
+(load "~/.emacs.d/org-link-minor-mode.el")
 
 ;; IRC
 
@@ -1462,27 +1464,27 @@
   :defer nil)
 
 (use-package org-roam
-  :after (org emacsql emacsql-sqlite)
-  :load-path "lisp/org-roam"
-  :diminish
-  :hook
-  ((org-mode . org-roam-mode)
-   (after-init . org-roam--build-cache-async))
-  :custom
-  (org-roam-directory "~/.emacs.d/OrgFiles/org-roam")
-  :bind
-  ("C-c n l" . org-roam)
-  ("C-c n t" . org-roam-dailies-today)
-  ("C-c n f" . org-roam-find-file)
-  ("C-c n i" . org-roam-insert)
-  ("C-c n g" . org-roam-show-graph))
+      :ensure t
+      :hook
+      (after-init . org-roam-mode)
+      :custom
+      (org-roam-directory (file-truename "~/.emacs.d/OrgFiles/"))
+      :bind (:map org-roam-mode-map
+              (("C-c n l" . org-roam)
+               ("C-c n f" . org-roam-find-file)
+               ("C-c n g" . org-roam-graph))
+               ("C-c n t" . org-roam-dailies-today)
+              (("C-c n i" . org-roam-insert))
+              (("C-c n I" . org-roam-insert-immediate))))
+
+(add-hook 'after-init-hook 'org-roam-mode)
 
 (use-package deft
   :after org
   :bind
   ("C-c n d" . deft)
   :custom
-  (deft-directory org-directory)
+  (deft-directory "~/.emacs.d/OrgFiles/")
   (deft-recursive t)
   (deft-use-filename-as-title nil)
   (deft-use-filter-string-for-filename t)
@@ -1514,3 +1516,23 @@
        (org-download-clipboard file))))
   :config
   (require 'org-download))
+
+;; Org-protocol redefined to work with browser i.e firefox
+
+(defun transform-square-brackets-to-round-ones(string-to-transform)
+  "Transforms [ into ( and ] into ), other chars left unchanged."
+  (concat
+  (mapcar #'(lambda (c) (if (equal c ?[) ?\( (if (equal c ?]) ?\) c))) string-to-transform))
+  )
+
+;;(setq org-capture-templates `(
+;;	("p" "Protocol" entry (file+headline ,(concat org-directory "notes.org"))
+;;        "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
+;;	("L" "Protocol Link" entry (file+headline ,(concat org-directory "notes.org"))
+;;         "* %? [[%:link][%:description]] %(progn (setq kk/delete-frame-after-capture 2) \"\")\nCaptured On: %U"
+;; :empty-lines 1)
+;;))
+
+;; package-install shortcut
+
+(global-set-key (kbd "M-p") 'package-install)
