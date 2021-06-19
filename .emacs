@@ -390,21 +390,20 @@
       ;;(t  "/archive")
 ;;)))
 
-(setq gnus-secondary-select-methods
-      '(
-    (nnimap "gmail"
-           (nnimap-address "imap.gmail.com")
-           (nnimap-server-port 993)
-           (nnimap-stream ssl)
-           (nnir-search-engine imap)
-           (nnimap-authinfo-file "~/.emacs.d/secrets/authinfo.gpg")
-           )
-    (nntp "news.gwene.org")
-    (nnfolder "archive"
-      ;;(nnfolder-directory   "~/Documents/Text/Gnus/Mail/archive")
-      ;;(nnfolder-active-file "~/Documents/Text/Gnus/Mail/archive/active")
-      (nnfolder-get-new-mail nil)
-      (nnfolder-inhibit-expiry t))))
+;; Gnus
+
+(setq user-mail-address "unixbhaskar@gmail.com"
+      user-full-name "Bhaskar Chowdhury")
+
+(setq gnus-select-method
+      '(nnimap "gmail"
+	       (nnimap-address "imap.gmail.com")  ; it could also be imap.googlemail.com if that's your server.
+	       (nnimap-server-port "imaps")
+	       (nnimap-stream ssl)))
+
+(setq smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-service 587
+      gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")
 
 ;; Spell-check
 (require 'flyspell)
@@ -676,6 +675,7 @@
 (set-register ?p "#+begin_src perl\n\n#+end_src")
 (set-register ?b "#+begin_src bash\n\n#+end_src")
 (set-register ?c "#+begin_src C\n\n#+end_src")
+(set-register ?l "#+begin_src emacs-lisp\n\n#+end_src")
 
 ;; Make sure org-bullet-mode is ture
 (setq org-bullets-mode t)
@@ -1222,7 +1222,7 @@
 (erc-autojoin-enable)
 
 (setq erc-autojoin-channels-alist
-      '(("irc.libera.chat" .  "#linux" "#kernel" "#git" "#emacs" "#vim" "#shell")))))
+      '(("irc.libera.chat"  "#linux" "#kernel" "#git" "#emacs" "#vim" "#shell")))))
 
 
 ;; Image-dired
@@ -1528,11 +1528,11 @@
 
 ;; Org-protocol redefined to work with browser i.e firefox
 
-(defun transform-square-brackets-to-round-ones(string-to-transform)
-  "Transforms [ into ( and ] into ), other chars left unchanged."
-  (concat
-  (mapcar #'(lambda (c) (if (equal c ?[) ?\( (if (equal c ?]) ?\) c))) string-to-transform))
-  )
+;;(defun transform-square-brackets-to-round-ones(string-to-transform)
+;;  "Transforms [ into ( and ] into ), other chars left unchanged."
+;;  (concat
+;;  (mapcar #'(lambda (c) (if (equal c ?[) ?\( (if (equal c ?]) ?\) c))) string-to-transform))
+;;  )
 
 ;;(setq org-capture-templates `(
 ;;	("p" "Protocol" entry (file+headline ,(concat org-directory "notes.org"))
