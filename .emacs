@@ -1214,7 +1214,16 @@
   (lambda ()
   (interactive)
   (erc-tls :server "irc.libera.chat"
-           :port   "6697")))
+           :port   "6697")
+
+;; Autojoin irc channel
+
+(require 'erc-join)
+(erc-autojoin-enable)
+
+(setq erc-autojoin-channels-alist
+      '(("irc.libera.chat" .  "#linux" "#kernel" "#git" "#emacs" "#vim" "#shell")))))
+
 
 ;; Image-dired
 
@@ -1536,3 +1545,13 @@
 ;; package-install shortcut
 
 (global-set-key (kbd "M-p") 'package-install)
+
+;; Customization shortcut
+
+(global-set-key (kbd "C-x n c") 'customize)
+
+;; Restart emacs
+
+(global-set-key (kbd "C-x n r") 'restart-emacs)
+
+
