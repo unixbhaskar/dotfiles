@@ -113,7 +113,7 @@
 (tool-bar-mode -1)
 (tooltip-mode -1)
 (menu-bar-mode -1)
-
+;; Package repos
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -143,7 +143,7 @@
 (setq use-package-always-ensure t)
 (use-package command-log-mode)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
+;;Mu4e setup
 (setq load-path (append load-path '("~/.emacs.d/mu/mu4e")))
 (require 'mu4e)
 
@@ -154,7 +154,7 @@
       mu4e-attachment-dir "~/attachments")
 
 (setq mu4e-mu-binary "/usr/local/bin/mu")
-
+;; Encryption
 (require 'mml2015)
 (require 'epa-file)
 
@@ -168,8 +168,9 @@
 
 (defalias 'ec 'encrypt-message)
 (defalias 'dc 'decrypt-message)
+;;External browser invoke
 (setq browse-url-browser-function 'browse-url-vimb)
-
+;; Line number and Column number
 (column-number-mode)
 
 (dolist (mode '(org-mode-hook
@@ -187,7 +188,7 @@
 
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
-
+;; Mu4e various customization
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -254,48 +255,43 @@
        (:maildir "/Thomas_Gleixner"       :key ?t)
        (:maildir "/linux-kernel"          :key ?k)
        (:maildir "/David_Miller"          :key ?d))))
-
-
-
-
+;; Disable uppercase
 (put 'upcase-region 'disabled nil)
-
 ;;open vimb,invoke it like browse-url-generic on M-x prompt
 (setq browse-url-generic-program
     (executable-find (getenv "BROWSER"))
      browse-url-browser-function 'browse-url-generic)
-
+;; Change META key to window key
 (setq x-super-keysym 'meta)
-
+;; Which-key,a key pop up for key binds
 (use-package which-key
     :init (which-key-mode)
     :diminish which-key-mode
     :config
     (setq which-key-idle-delay 0.3))
-
+;; Ivy-rich
 (use-package ivy-rich
 	     :init
 	     (ivy-rich-mode 1))
-
+;; Mu4e Alerts
 (use-package mu4e-alert
     :after mu4e
     :hook ((after-init . mu4e-alert-enable-mode-line-display)
            (after-init . mu4e-alert-enable-notifications))
     :config (mu4e-alert-set-default-style 'libnotify))
-
+;; Visual line mode and Flyspell mode
 (add-hook 'mu4e-view-mode-hook #'visual-line-mode)
 (add-hook 'mu4e-compose-mode-hook 'flyspell-mode)
 ;;(setq mu4e-compose-in-new-frame t)
 (setq mu4e-compose-format-flowed t)
-
+;; Mute system's gpg to use emacs own
 (setq epg-gpg-program "gpg2")
 (setenv "GPG_AGENT_INFO" nil)
-
+;; Pass a password manager
 (use-package pass
   :pin melpa
   :config
   (setf epa-pinentry-mode 'loopback))
-
 ;;vterm
 
 (use-package vterm
@@ -304,20 +300,16 @@
 (require 'vterm)
 
 (global-set-key (kbd "C-x t") 'vterm)
-
+;; Secret file for password store
 (setq auth-source-debug t)
 
 (setq auth-sources
           '((:source "~/.emacs.d/secrets/.authinfo.gpg")))
-
-
 ;; don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
-
 ;;elfeed
 
 (global-set-key (kbd "C-x w") 'elfeed)
-
 ;;Auto Complete
 
 ;;(global-auto-complete-mode t)
@@ -330,23 +322,19 @@
                          (auto-complete-mode 1))
                        ))
 (real-global-auto-complete-mode t)
-
 ;;Color settings
 
 ;;(set-foreground-color "white")
 ;;(set-background-color "blue")
-
 ;; make {copy, cut, paste, undo} have {C-c, C-x, C-v, C-z} keys
 (cua-mode 1)
-
-(progn
 ;; New Window. was nil
+(progn
 (global-set-key (kbd "C-S-n") 'make-frame-command)
 )
 ;; UTF-8 as default encoding
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
-
 ;;Refiling folders
 
 ;;(setq mu4e-refile-folder
@@ -389,7 +377,6 @@
       ;; important to have a catch-all at the end!
       ;;(t  "/archive")
 ;;)))
-
 ;; Gnus
 
 (setq user-mail-address "unixbhaskar@gmail.com"
@@ -404,7 +391,6 @@
 (setq smtpmail-smtp-server "smtp.gmail.com"
       smtpmail-smtp-service 587
       gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")
-
 ;; Spell-check
 (require 'flyspell)
 (setq flyspell-issue-message-flag nil
@@ -414,19 +400,15 @@
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-
 ;; Never use tabs - always spaces
 (setq-default indent-tabs-mode nil)
-
 ;; Remove trailing whitespace on each save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 ;; Autocompletion: Company mode is better thought out than auto-complete.
 (use-package company
   :defer 2
   :config
   (global-company-mode))
-
 ;; SPELL CHECKING
 ;; Spell checking requires an external command to be available. Install =aspell= on your Mac, then make it the default checker for Emacs' =ispell=. Note that personal dictionary is located at =~/.aspell.LANG.pws= by default.
 
@@ -437,8 +419,6 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (global-set-key (kbd "s-\\") 'ispell-word)
 (global-set-key (kbd "C-s-\\") 'flyspell-auto-correct-word)
-
-;; ---------
 ;; THESAURUS
 
 ;; Spellcheck was =Cmd+\=, synonym search is =Cmd+Shift+\=. It requires =wordnet= to be installed locally.
@@ -451,15 +431,12 @@
 (use-package synosaurus
   :config
   (global-set-key (kbd "s-|") 'synosaurus-choose-and-replace))
-
 ;; Word definition search.
 (use-package define-word
   :config
   (global-set-key (kbd "M-\\") 'define-word-at-point))
-
 ;;Org mode stuff
 (define-key mu4e-headers-mode-map (kbd "C-c c") 'org-mu4e-store-and-capture)
-
 ;;Emms Music player
 
 (require 'emms-setup)
@@ -477,18 +454,15 @@
 
 (setq emms-info-asynchronously nil)
 (setq emms-playlist-buffer-name "*Music*")
-
 ;;Mpv integration
 
 (load "emms-player-mpv.el")
 
 (global-set-key (kbd "C-x m") 'emms)
-
 ;;Org mode files
 
 (setq org-agenda-files
       '("~/.emacs.d/OrgFiles/task.org"))
-
 ;; Maximize a specific pane
 
 (defun x11-maximize-frame ()
@@ -498,7 +472,6 @@
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
 
 (global-set-key (kbd "C-f") 'x11-maximize-frame)
-
 ;; Ivy posframe for spawn window on middle of the screen
 
 (use-package ivy-posframe
@@ -517,18 +490,14 @@
 		 (t . ivy-posframe-display-at-frame-center)))
 	     :config
 	     (ivy-posframe-mode 1))
-
 ;; Open calendar
 
 (global-set-key (kbd "C-x c") 'calendar)
-
 ;; Show time on mode line
 
  (display-time-mode 1)
-
 ;; Display battery percentage
 (display-battery-mode 1)
-
 ;; Indentation specific stuff
 
 (add-hook 'sh-mode-hook
@@ -552,24 +521,19 @@
 (add-hook 'awk-mode-hook
 	       (lambda ()
 		 (c-set-style "awk")))
-
 ;; Highlight current line
 
 (when window-system (global-hl-line-mode))
-
 ;; Better grep
 
 (setq grep-command "grep --color -nH -e")
-
 ;; Follow symlinks
 
 (setq vc-follow-symlinks t)
-
 ;; Compilation mode
 
 (use-package compile
   :demand t)
-
 ;; Engine mode
 
  (use-package engine-mode
@@ -591,7 +555,6 @@
 
 
      (engine-mode t))
-
 ;; Setup Markdown
 
 (use-package markdown-mode
@@ -599,33 +562,20 @@
 	     ("\\.md\\'" . markdown-mode)
 	     ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "pandoc"))
-
 ;; All the icons
 
 (use-package all-the-icons)
 
 (use-package all-the-icons-dired
    :hook (dired-mode . all-the-icons-dired-mode))
-
 ;; Text scale increase and decrease
 
 (define-key global-map (kbd "C-1") 'text-scale-increase)
 (define-key global-map (kbd "C-0") 'text-scale-decrease)
-
 ;; Use magit-show-commit for showing status/diff commands
 
 (global-set-key (kbd "C-x v p") 'git-messenger:popup-message)
-
 ;;(define-key git-messenger-map (kbd "m") 'git-messenger:copy-message)
-
-;; Use magit-show-commit for showing status/diff commands
-
-
-
-;; Org mode shortcut for code block
-
-
-
 ;; Customization of org mode
 
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
@@ -633,13 +583,9 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key (kbd "C-c o")
                 (lambda () (interactive) (find-file "~/.emacs.d/OrgFiles/task.org")))
-
-;;(set-register ?o (cons 'file "~/.emacs.d/OrgFiles/task.org"))
-
 ;; Add TAG to the org file
 
 (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l) ("Reading" . ?r) ("Researching" . ?s)))
-
 ;; Powerline modline
 
 (use-package smart-mode-line-powerline-theme
@@ -652,39 +598,32 @@
 )
 (require 'powerline)
 (powerline-default-theme)
-
-
+;; Org babel to load languages
 (org-babel-do-load-languages 'org-babel-load-languages
     '(
         (shell . t)
     )
 )
-
 ;; Org buffer link back and forth key bind
 
 (with-eval-after-load 'org
   (define-key org-mode-map (kbd "M-n") 'org-next-link)
   (define-key org-mode-map (kbd "M-p") 'org-previous-link))
-
 ;; Use RETURN key to open the link in stead C-c C-o
 
 (setq org-return-follows-link t)
-
 ;; Source code block comment
 
 (set-register ?p "#+begin_src perl\n\n#+end_src")
 (set-register ?b "#+begin_src bash\n\n#+end_src")
 (set-register ?c "#+begin_src C\n\n#+end_src")
 (set-register ?l "#+begin_src emacs-lisp\n\n#+end_src")
-
 ;; Make sure org-bullet-mode is ture
 (setq org-bullets-mode t)
-
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode)
   :config
   (setq org-bullets-bullet-list '("◉" "⁑" "⁂" "❖" "✮" "✱" "✸")))
-
 
 ;; Org-crypt
 
@@ -696,7 +635,6 @@
   (setq org-tags-exclude-from-inheritance (quote ("crypt")))
   :custom
   (setq org-crypt-key "9F017E9D"))
-
 ;; Startup time measure
 
   (add-hook 'emacs-startup-hook
@@ -706,24 +644,17 @@
                              (float-time
                               (time-subtract after-init-time before-init-time)))
                      gcs-done)))
-
 ;; Emojis
 
 (use-package emojify
   :hook (after-init . global-emojify-mode))
-
 ;; Notmuch
 
 (autoload 'notmuch "notmuch" "notmuch mail" t)
-
-;; Org mode shortcut
-
 ;; This for swithing to org file
 (global-set-key "\C-cb" 'org-switchb)
-
 ;; This is for org capture
 (global-set-key "\C-cc" 'org-capture)
-
 ;; Color TODO keywords
 
 (setq org-todo-keyword-faces
@@ -737,7 +668,6 @@
               ("NEXT" :foreground "purple" :weight bold)
               ("MEETING" :foreground "yellow" :weight bold)
               ("PHONE" :foreground "cyan" :weight bold))))
-
 ;; Org mode tags triggers
 
 (setq org-todo-state-tags-triggers
@@ -748,11 +678,9 @@
               ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
               ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
               ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
-
 ;; Setting the org note file path
 
 (setq org-default-notes-file "~/.emacs.d/OrgFiles/notes.org")
-
 ;; Templates for the org capture
 (require 'org-protocol)
 
@@ -785,14 +713,11 @@
                "* APPT %^{Description} %^g %? Added: %U")
               ("c" "Contacts" entry (file+headline "~/.emacs.d/OrgFiles/contacts.org" "")
                "* %^{Name} :CONTACT: %[~/.emacs.d/OrgFiles/contacts.txt]"))))
-
 ;; Show the targets
 (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
-
 ;; Create new parent while refiling if it is not existed
 
 (setq org-refile-allow-creating-parent-nodes 'confirm)
-
 ; Use IDO for both buffer and file completion and ido-everywhere to t
 (setq org-completion-use-ido t)
 (setq ido-everywhere t)
@@ -803,37 +728,28 @@
 (setq ido-default-buffer-method 'selected-window)
 ; Use the current window for indirect buffer display
 (setq org-indirect-buffer-display 'current-window)
-
 ;; Mailto link open in compose mail
 (setq org-link-mailto-program (quote (compose-mail "%a" "%s")))
 (require 'org-mime)
-
 ;; Source code block syntax highliting
 
 (setq org-src-fontify-natively t)
-
 ;; Preserving souce block indentation
 
 (setq org-src-preserve-indentation nil)
 (setq org-edit-src-content-indentation 0)
-
 ;; utf-8 is default encoding system
 
 (setq org-export-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 (set-charset-priority 'unicode)
 (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
-
 ;; Notmuch shortcut
 
 (global-set-key (kbd "M-n") 'notmuch)
-
 ;; Mu4e shortcut
 
 (global-set-key (kbd "M-m") 'mu4e)
-
-;; todo reminder pop up buffer
-
 ;; Make appt aware of appointments from the agenda
 
 (defun org-agenda-to-appt ()
@@ -859,8 +775,6 @@
 		(if tod (appt-add tod event))))) entries)))
 
 ;;(org-agenda-to-appt)
-
-
 ;; org mode appt reminder alert
 
 (setq
@@ -874,14 +788,11 @@
  ;; update appt each time agenda opened
 
 (add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt)
-
 ;; Start the server if it is not already STARTED
 
 (load "server")
 (unless (server-running-p) (server-start))
-
-
-;; Few shortcut key for convenience
+;; Few shortcut key for convenience date and time insertion
 
 (defun mp-insert-date ()
   (interactive)
@@ -893,17 +804,14 @@
 
 (global-set-key (kbd "C-c i d") 'mp-insert-date)
 (global-set-key (kbd "C-c i t") 'mp-insert-time)
-
 ;; Set items ido mode vertically
 
 (setq ido-separator "\n")
-
 ;; Pop up for buffer change
 
 (global-set-key (kbd "C-b") 'counsel-switch-buffer)
 
 (global-set-key (kbd "C-x p") 'counsel-M-x)
-
 ;; Blog related stuff
 
 ;; set the directory
@@ -1087,7 +995,6 @@
 
 (global-set-key (kbd "C-x e") 'blog-list)
 (global-set-key (kbd "C-x w") 'org2blog-user-interface)
-
 ;; Restrict buffer to 80 character limit
 
 ;;'(c-max-one-liner-length 80)
@@ -1098,7 +1005,6 @@
 (add-hook 'text-mode-hook #'auto-fill-mode)
 (add-hook 'prog-mode-hook #'auto-fill-mode)
 (setq-default fill-column 80)
-
 ;; Org-weather
 
 ;; Load the org-weather library
@@ -1110,24 +1016,20 @@
 (setq org-weather-api-url "http://api.openweathermap.org/data/2.5/weather?q=%s&mode=json&units=metric&APPID=%s")
 (setq org-weather-format "Weather: %desc, %tmin-%tmax%tu, %p%pu, %h%hu, %s%su")
 (org-weather-refresh)
-
 ;; Reload/evaluate this file i.e .emacs after change
 (defun reload-dotemacs ()
   (interactive)
   (load-file "~/.emacs"))
 (global-set-key (kbd "C-c r") 'reload-dotemacs)
-
 ;; org2blog base
 
 (setq org2blog/wp-blog-alist
       '(("Unixbhaskar's Blog"
          :url "https://unixbhaskar.wordpress.com/xmlrpc.php"
          :username "unixbhaskar")))
-
 ;; Neotree shortcut
 
 (global-set-key (kbd "C-n") 'neotree-toggle)
-
 ;; Dashboard
 
 (require 'dashboard)
@@ -1192,7 +1094,6 @@
 (setq dashboard-org-agenda-categories '("Tasks" "Diary" "Notes"))
 (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
 (load "~/.emacs.d/org-link-minor-mode.el")
-
 ;; IRC
 
 ;; Set our nickname & real-name as constant variables
@@ -1223,20 +1124,15 @@
 
 (setq erc-autojoin-channels-alist
       '(("irc.libera.chat"  "#linux" "#kernel" "#git" "#emacs" "#vim" "#shell")))))
-
-
 ;; Image-dired
 
 (global-set-key (kbd "C-i") 'image-dired)
-
 ;; comment line
 
 (global-set-key (kbd ";") 'comment-line)
-
 ;; comment region
 
 (global-set-key (kbd ";;") 'comment-region)
-
 ;; Save a macro for future sessions
 
 (defun save-macro (name)
@@ -1253,11 +1149,9 @@
      (switch-to-buffer nil))               ;; return to the initial buffer
 
 (global-set-key (kbd "C-c m") 'save-macro)
-
 ;; Dictionary
 
 (global-set-key (kbd "C-c d") 'dictionary-search)
-
 ;; Wikipedia search
 (defun wikipedia-search (search-term)
   "Search for SEARCH-TERM on wikipedia"
@@ -1277,7 +1171,6 @@
   )
 
 (global-set-key (kbd "C-c w") 'wikipedia-search)
-
 ;; Undo
 
 (use-package undo-tree
@@ -1287,8 +1180,6 @@
     (global-undo-tree-mode)
     (setq undo-tree-visualizer-timestamps t)
     (setq undo-tree-visualizer-diff t)))
-
-
 ;; Doom-modeline
 
 (use-package doom-modeline
@@ -1424,13 +1315,10 @@
 
 ;; How wide the mode-line bar should be. It's only respected in GUI.
 (setq doom-modeline-bar-width 2)
-
 ;; Enhance M-x with counsel
 
 (use-package smex)
-
-
-;; It has to be loaded before pass
+;; General has to be loaded before pass
 
 (use-package general
   :ensure t
@@ -1441,20 +1329,11 @@
 (use-package pass
   :general
   (:keymaps 'pass-view-mode-map "C-c C-y" 'pass-view-copy-password))
-
-
-;;Preview line before jumping to it.
-
-(use-package goto-line-preview
-  :general
-  ("M-g g" 'goto-line-preview))
-
 ;; Shrinking file path
 
 (use-package shrink-path
   :ensure t
   :demand t)
-
 ;; Hide the emphesis markers in org mode
 
 (setq org-hide-emphasis-markers t)
@@ -1462,8 +1341,6 @@
  'org-mode
  '(("^ *\\([-]\\) "
     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-
-
 ;; Org Roam
 
 (use-package emacsql
@@ -1488,6 +1365,7 @@
 
 (add-hook 'after-init-hook 'org-roam-mode)
 
+;; Deft
 (use-package deft
   :after org
   :bind
@@ -1503,7 +1381,7 @@
   (deft-org-mode-title-prefix t)
   (deft-extensions '("org" "txt" "text" "md" "markdown" "org.gpg"))
   (deft-default-extension "org"))
-
+;; org-download
 (use-package org-download
   :after org
   :defer nil
@@ -1525,8 +1403,7 @@
        (org-download-clipboard file))))
   :config
   (require 'org-download))
-
-;; Org-protocol redefined to work with browser i.e firefox
+;; Org-protocol redefined to work with browser i.e firefox Not working
 
 ;;(defun transform-square-brackets-to-round-ones(string-to-transform)
 ;;  "Transforms [ into ( and ] into ), other chars left unchanged."
@@ -1541,15 +1418,12 @@
 ;;         "* %? [[%:link][%:description]] %(progn (setq kk/delete-frame-after-capture 2) \"\")\nCaptured On: %U"
 ;; :empty-lines 1)
 ;;))
-
 ;; package-install shortcut
 
 (global-set-key (kbd "M-p") 'package-install)
-
 ;; Customization shortcut
 
 (global-set-key (kbd "C-x n c") 'customize)
-
 ;; Restart emacs
 
 (global-set-key (kbd "C-x n r") 'restart-emacs)
