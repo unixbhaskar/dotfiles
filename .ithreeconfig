@@ -106,7 +106,7 @@ exec $HOME/bin/pia-client
 #exec emacs --bg-daemon=emacs-daemon
 
 set $workspace1 "1   "
-set $workspace2 "2  "
+set $workspace2 "2  "
 set $workspace3 "3   "
 set $workspace4 "4  ℰ"
 set $workspace5 "5  "
