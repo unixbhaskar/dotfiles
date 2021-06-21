@@ -109,6 +109,10 @@
      (340 . "#94BFF3")
      (360 . "#DC8CC3")))
  '(vc-annotate-very-old-color "#DC8CC3")
+ '(weather-metno-location-latitude 22)
+ '(weather-metno-location-longitude 88)
+ '(weather-metno-location-msl nil)
+ '(weather-metno-location-name "Kolkata, India")
  '(weather-metno-mode-line t))
 (tool-bar-mode -1)
 (tooltip-mode -1)
@@ -309,7 +313,7 @@
 (setq message-kill-buffer-on-exit t)
 ;;elfeed
 
-(global-set-key (kbd "C-x w") 'elfeed)
+(global-set-key (kbd "C-x n e") 'elfeed)
 ;;Auto Complete
 
 ;;(global-auto-complete-mode t)
@@ -616,6 +620,7 @@
 
 (set-register ?p "#+begin_src perl\n\n#+end_src")
 (set-register ?b "#+begin_src bash\n\n#+end_src")
+(set-register ?s "#+begin_src sh\n\n#+end_src")
 (set-register ?c "#+begin_src C\n\n#+end_src")
 (set-register ?l "#+begin_src emacs-lisp\n\n#+end_src")
 ;; Make sure org-bullet-mode is ture
@@ -1381,7 +1386,7 @@
   (deft-org-mode-title-prefix t)
   (deft-extensions '("org" "txt" "text" "md" "markdown" "org.gpg"))
   (deft-default-extension "org"))
-;; org-download
+;; org-download C-M-y
 (use-package org-download
   :after org
   :defer nil
@@ -1428,4 +1433,8 @@
 
 (global-set-key (kbd "C-x n r") 'restart-emacs)
 
+;; Weather metno
 
+(setq weather-metno-location-name "Kolkata, India"
+      weather-metno-location-latitude 22
+      weather-metno-location-longitude 88)
