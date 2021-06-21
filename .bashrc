@@ -588,5 +588,12 @@ task_indicator() {
 
 }
 
+# Prompt with a Taskwarrior task graph
+
 PS1="\[\e[32;1m\u@\e[33;1m\h_\e[35;1m\t_\e[36;1m\d:\e[31;1m$(task_indicator)\e[m \]:\w>"
 
+
+# Cscope DB
+
+CSCOPE_DB=/home/bhaskar/git-linux/linux/cscope.out
+export CSCOPE_DB
