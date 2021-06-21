@@ -682,3 +682,7 @@ nnoremap <silent> @ :call DoMacroSave()<CR>
  let g:markdown_fenced_languages = [ 'vim','ruby' ]
 " Cscope db connection
  cs add $CSCOPE_DB
+" Cscope with quickfix window
+source /home/bhaskar/.vim/bundle/cscope_quickfix.vim
+" Cscope popup menu
+ let Cscope_PopupMenu = 1
