@@ -680,3 +680,5 @@ endfunction
 nnoremap <silent> @ :call DoMacroSave()<CR>
 " Markdown syntax embedded source highlight
  let g:markdown_fenced_languages = [ 'vim','ruby' ]
+" Cscope db connection
+ cs add $CSCOPE_DB
