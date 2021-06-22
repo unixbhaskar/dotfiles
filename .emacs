@@ -1129,7 +1129,7 @@
 (erc-autojoin-enable)
 
 (setq erc-autojoin-channels-alist
-      '(("irc.libera.chat"  "#linux" "#kernel" "#git" "#emacs" "#vim" "#shell")))))
+      '(("irc.libera.chat"  "#linux" "#kernel" "#git" "#emacs" "#vim" "#sysadmin")))))
 ;; Image-dired
 
 (global-set-key (kbd "C-i") 'image-dired)
@@ -1440,3 +1440,7 @@
       weather-metno-location-latitude 22
       weather-metno-location-longitude 88)
 
+;; Rainbow delimiter
+load-file("~/.emacs.d/rainbow-delimiters/")
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
