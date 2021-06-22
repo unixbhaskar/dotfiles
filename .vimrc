@@ -57,6 +57,8 @@ Plugin  'sudo.vim'
 Plugin  'erietz/vim-terminator'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'jreybert/vimagit'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
@@ -686,3 +688,35 @@ nnoremap <silent> @ :call DoMacroSave()<CR>
 source /home/bhaskar/.vim/bundle/cscope_quickfix.vim
 " Cscope popup menu
  let Cscope_PopupMenu = 1
+" allow filtering of quickfix/location list window results
+" :help cfilter-plugin
+:packadd cfilter
+"Custom keyword highlights
+"#augroup myTodo
+"#	  autocmd!
+"#	    autocmd Syntax * syntax match myTodo /\v\_.<(TODO|FIXME).*/#!/bin/sh=s+1 containedin=.*Comment
+"#    augroup END
+"#
+"#    highlight link myTodo Todo
+" Markdown
+" Treat all .md files as markdown
+autocmd BufNewFile,BufRead *.md,*.markdown set filetype=markdown
+" Hide and format markdown elements like **bold**
+autocmd FileType markdown set conceallevel=2
+let g:vim_markdown_conceal = 2
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_math = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_autowrite = 1
+let g:vim_markdown_edit_url_in = 'tab'
+let g:vim_markdown_follow_anchor = 1
+":syn clear mkdLineBreak -- end of line space
+"Markdown previewer by using glow
+function! PreviewerMarkdown()
+  let l:path=expand('%:p')
+  silent execute "!echo ".l:path." > ~/.lastpreview.log"
+  :execute "bel vert terminal"
+endfunction
+nmap <Leader>m : call PreviewerMarkdown()<CR>clear<CR>glow $(cat ~/.lastpreview.log)<CR>
