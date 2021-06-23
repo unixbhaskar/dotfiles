@@ -1,3 +1,5 @@
+;; Author: Bhaskar Chowdhury
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -1425,13 +1427,10 @@
 ;; :empty-lines 1)
 ;;))
 ;; package-install shortcut
-
 (global-set-key (kbd "M-p") 'package-install)
 ;; Customization shortcut
-
 (global-set-key (kbd "C-x n c") 'customize)
 ;; Restart emacs
-
 (global-set-key (kbd "C-x n r") 'restart-emacs)
 
 ;; Weather metno
