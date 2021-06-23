@@ -1757,3 +1757,21 @@
  (require 'rainbow-delimiters)
  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 #+end_src
+* Explicit priority symbol then A,B,C with the help of font Symbola
+#+begin_src emacs-lisp
+(use-package org-fancy-priorities
+  12  :diminish
+  11  :demand t
+  10  :defines org-fancy-priorities-list
+   9  :hook (org-mode . org-fancy-priorities-mode)
+   8  :config
+   7  (unless (char-displayable-p ?❗)
+   6  (setq org-fancy-priorities-list '("HIGH" "MID" "LOW" "OPTIONAL"))))
+#+end_src
+
+*  Existence of Symbola font check and set
+#+begin_src emacs-lisp
+(when (member "Symbola" (font-family-list))
+  (set-fontset-font "fontset-default" nil
+  (font-spec :size 20 :name "Symbola")))
+#+end_src
