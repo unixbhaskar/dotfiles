@@ -1760,13 +1760,13 @@
 * Explicit priority symbol then A,B,C with the help of font Symbola
 #+begin_src emacs-lisp
 (use-package org-fancy-priorities
-  12  :diminish
-  11  :demand t
-  10  :defines org-fancy-priorities-list
-   9  :hook (org-mode . org-fancy-priorities-mode)
-   8  :config
-   7  (unless (char-displayable-p ?❗)
-   6  (setq org-fancy-priorities-list '("HIGH" "MID" "LOW" "OPTIONAL"))))
+   :diminish
+   :demand t
+     :defines org-fancy-priorities-list
+     :hook (org-mode . org-fancy-priorities-mode)
+     :config
+     (unless (char-displayable-p ?❗)
+     (setq org-fancy-priorities-list '("HIGH" "MID" "LOW" "OPTIONAL"))))
 #+end_src
 
 *  Existence of Symbola font check and set
