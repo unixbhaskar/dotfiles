@@ -601,15 +601,6 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
-(global-set-key (kbd "C-c o")
-                (lambda () (interactive) (find-file "~/.emacs.d/OrgFiles/task.org")))
-(global-set-key (kbd "C-c n c")
-                (lambda () (interactive) (find-file "~/.emacs.d/OrgFiles/contacts.org")))
-(global-set-key (kbd "C-c n n")
-                (lambda () (interactive) (find-file "~/.emacs.d/OrgFiles/notes.org")))
-;;(global-set-key (kbd "C-c n b")
-;;                (lambda () (interactive) (find-file "~/.emacs.d/OrgFiles/books.org")))
-
 
 ;; Add TAG to the org file
 
