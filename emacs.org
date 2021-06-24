@@ -1769,9 +1769,62 @@
      (setq org-fancy-priorities-list '("HIGH" "MID" "LOW" "OPTIONAL"))))
 #+end_src
 
-*  Existence of Symbola font check and set
+* Existence of Symbola font check and set
 #+begin_src emacs-lisp
 (when (member "Symbola" (font-family-list))
   (set-fontset-font "fontset-default" nil
   (font-spec :size 20 :name "Symbola")))
+#+end_src
+
+* Custom functions for ORG mode files to open by Key stroke C-c-n-[various latters]
+
+#+begin_src emacs-lisp
+(defun org-open-books-file ()
+     (interactive)
+     (find-file "~/.emacs.d/OrgFiles/books.org"))
+   (global-set-key (kbd "C-c n b") 'org-open-books-file)
+#+end_src
+
+   ;; Open contacts.org file
+#+begin_src emacs-lisp
+   (defun org-open-contacts-file ()
+     (interactive)
+     (find-file "~/.emacs.d/OrgFiles/contacts.org"))
+   (global-set-key (kbd "C-c n c") 'org-open-contacts-file)
+#+end_src
+
+   ;; Open notes.org file
+#+begin_src emacs-lisp
+   (defun org-open-notes-file ()
+     (interactive)
+     (find-file "~/.emacs.d/OrgFiles/notes.org"))
+   (global-set-key (kbd "C-c n n") 'org-open-notes-file)
+#+end_src
+   ;; Open task.org file
+#+begin_src emacs-lisp
+   (defun org-open-task-file ()
+     (interactive)
+     (find-file "~/.emacs.d/OrgFiles/task.org"))
+   (global-set-key (kbd "C-c o") 'org-open-task-file)
+#+end_src
+   ;; Open refile.org file
+#+begin_src emacs-lisp
+   (defun org-open-refile-file ()
+     (interactive)
+     (find-file "~/.emacs.d/OrgFiles/refile.org"))
+   (global-set-key (kbd "C-c n r") 'org-open-refile-file)
+#+end_src
+   ;; Open diary.org file
+#+begin_src emacs-lisp
+   (defun org-open-dairy-file ()
+     (interactive)
+      (find-file "~/.emacs.d/OrgFiles/diary.org"))
+    (global-set-key (kbd "C-c n a") 'org-open-dairy-file)
+#+end_src
+    ;; Open emacs.org file
+#+begin_src emacs-lisp
+    (defun org-open-dotemacs-file ()
+      (interactive)
+      (find-file "~/.emacs.d/OrgFiles/emacs.org"))
+ (global-set-key (kbd "C-c n e") 'org-open-dotemacs-file)
 #+end_src
