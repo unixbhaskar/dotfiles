@@ -56,7 +56,8 @@
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(org-agenda-diary-file "~/.emacs.d/OrgFiles/diary.org")
- '(org-agenda-files '("~/.emacs.d/OrgFiles/task.org"))
+ '(org-agenda-files
+   '("~/.emacs.d/OrgFiles/contacts.org" "~/.emacs.d/OrgFiles/task.org"))
  '(org-agenda-include-diary t)
  '(org-agenda-insert-diary-extract-time t)
  '(org-directory "~/.emacs.d/OrgFiles")
@@ -329,19 +330,29 @@
                          (auto-complete-mode 1))
                        ))
 (real-global-auto-complete-mode t)
+
+
 ;;Color settings
 
 ;;(set-foreground-color "white")
 ;;(set-background-color "blue")
 ;; make {copy, cut, paste, undo} have {C-c, C-x, C-v, C-z} keys
 (cua-mode 1)
+
+
 ;; New Window. was nil
 (progn
 (global-set-key (kbd "C-S-n") 'make-frame-command)
 )
+
 ;; UTF-8 as default encoding
+(prefer-coding-system 'utf-8)
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+
+
 ;;Refiling folders
 
 ;;(setq mu4e-refile-folder
@@ -583,6 +594,8 @@
 
 (global-set-key (kbd "C-x v p") 'git-messenger:popup-message)
 ;;(define-key git-messenger-map (kbd "m") 'git-messenger:copy-message)
+
+
 ;; Customization of org mode
 
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
@@ -590,9 +603,19 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key (kbd "C-c o")
                 (lambda () (interactive) (find-file "~/.emacs.d/OrgFiles/task.org")))
+(global-set-key (kbd "C-c n c")
+                (lambda () (interactive) (find-file "~/.emacs.d/OrgFiles/contacts.org")))
+(global-set-key (kbd "C-c n n")
+                (lambda () (interactive) (find-file "~/.emacs.d/OrgFiles/notes.org")))
+;;(global-set-key (kbd "C-c n b")
+;;                (lambda () (interactive) (find-file "~/.emacs.d/OrgFiles/books.org")))
+
+
 ;; Add TAG to the org file
 
 (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l) ("Reading" . ?r) ("Researching" . ?s)))
+
+
 ;; Powerline modline
 
 (use-package smart-mode-line-powerline-theme
@@ -605,6 +628,8 @@
 )
 (require 'powerline)
 (powerline-default-theme)
+
+
 ;; Org babel to load languages
 (org-babel-do-load-languages 'org-babel-load-languages
     '(
@@ -1029,6 +1054,57 @@
   (interactive)
   (load-file "~/.emacs"))
 (global-set-key (kbd "C-c r") 'reload-dotemacs)
+
+;; Open books.org file
+
+(defun org-open-books-file ()
+  (interactive)
+  (find-file "~/.emacs.d/OrgFiles/books.org"))
+(global-set-key (kbd "C-c n b") 'org-open-books-file)
+
+;; Open contacts.org file
+
+(defun org-open-contacts-file ()
+  (interactive)
+  (find-file "~/.emacs.d/OrgFiles/contacts.org"))
+(global-set-key (kbd "C-c n c") 'org-open-contacts-file)
+
+
+;; Open notes.org file
+
+(defun org-open-notes-file ()
+  (interactive)
+  (find-file "~/.emacs.d/OrgFiles/notes.org"))
+(global-set-key (kbd "C-c n n") 'org-open-notes-file)
+
+;; Open task.org file
+
+(defun org-open-task-file ()
+  (interactive)
+  (find-file "~/.emacs.d/OrgFiles/task.org"))
+(global-set-key (kbd "C-c o") 'org-open-task-file)
+
+;; Open refile.org file
+
+(defun org-open-refile-file ()
+  (interactive)
+  (find-file "~/.emacs.d/OrgFiles/refile.org"))
+(global-set-key (kbd "C-c n r") 'org-open-refile-file)
+
+;; Open diary.org file
+
+(defun org-open-dairy-file ()
+  (interactive)
+  (find-file "~/.emacs.d/OrgFiles/diary.org"))
+(global-set-key (kbd "C-c n a") 'org-open-dairy-file)
+
+;; Open emacs.org file
+
+(defun org-open-dotemacs-file ()
+  (interactive)
+  (find-file "~/.emacs.d/OrgFiles/emacs.org"))
+(global-set-key (kbd "C-c n e") 'org-open-dotemacs-file)
+
 ;; org2blog base
 
 (setq org2blog/wp-blog-alist
