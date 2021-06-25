@@ -19,7 +19,6 @@
  '(custom-safe-themes
    '("13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
  '(deft-filter-only-filenames t)
- '(deft-org-mode-title-prefix nil nil nil "Customized with use-package deft")
  '(diary-file "~/.emacs.d/OrgFiles/diary.org")
  '(display-line-numbers-type 'relative)
  '(display-time-24hr-format t)
@@ -78,6 +77,8 @@
  '(package-selected-packages
    '(org-fancy-priorities rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download deft goto-line-preview general smex doom-modeline org-roam undo-tree slime imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
+ '(pdf-view-use-imagemagick t)
+ '(pdf-view-use-unicode-ligther t)
  '(popper-reference-buffers '("\\*Messages\\*$"))
  '(safe-local-variable-values
    '((eval add-hook 'after-save-hook
@@ -437,8 +438,8 @@
 ;; Enable spellcheck on the fly for all text modes. This includes org, latex and LaTeX. Spellcheck current word.
 
 (add-hook 'text-mode-hook 'flyspell-mode)
-(global-set-key (kbd "s-\\") 'ispell-word)
-(global-set-key (kbd "C-s-\\") 'flyspell-auto-correct-word)
+(global-set-key (kbd "M-\\") 'ispell-word)
+(global-set-key (kbd "C-M-\\") 'flyspell-auto-correct-word)
 ;; THESAURUS
 
 ;; Spellcheck was =Cmd+\=, synonym search is =Cmd+Shift+\=. It requires =wordnet= to be installed locally.
@@ -450,7 +451,7 @@
 ;; Alternative, local thesaurus
 (use-package synosaurus
   :config
-  (global-set-key (kbd "s-|") 'synosaurus-choose-and-replace))
+  (global-set-key (kbd "M-|") 'synosaurus-choose-and-replace))
 ;; Word definition search.
 (use-package define-word
   :config
