@@ -367,9 +367,14 @@ bindsym $mod+k exec pkill ffmpeg
 bindsym $mod+Shift+s exec mpv_stop
 
 # Mpv continue
-bindsym $mod+shift+p exec mpv_cont
+bindsym $mod+Shift+p exec mpv_cont
 
 # Emacs pop up buffer anywhere
 bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)"
+
+# Emacs org-capture protocol
+bindsym $mod+Shift+o  exec org-capture
+
+
 # For vim syntax detection
 # vim:filetype=i3config
