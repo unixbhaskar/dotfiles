@@ -18,6 +18,8 @@
  '(custom-enabled-themes '(molokai))
  '(custom-safe-themes
    '("13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
+ '(deft-filter-only-filenames t)
+ '(deft-org-mode-title-prefix nil nil nil "Customized with use-package deft")
  '(diary-file "~/.emacs.d/OrgFiles/diary.org")
  '(display-line-numbers-type 'relative)
  '(display-time-24hr-format t)
@@ -720,7 +722,7 @@
                "* %?\n%U\n" :clock-in t :clock-resume t)
               ("d" "Diary" entry (file+datetree "~/.emacs.d/OrgFiles/diary.org")
                "* %?\n%U\n" :clock-in t :clock-resume t)
-              ("w" "Org-protocol" entry (file "~/.emacs.d/OrgFiles/refile.org")
+              ("w" "Org-protocol" entry (file+olp+datetree "~/.emacs.d/OrgFiles/refile.org")
                "* TODO Review %c\n%U\n" :immediate-finish t)
               ("m" "Meeting" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
@@ -1448,7 +1450,7 @@
   :custom
   (deft-directory "~/.emacs.d/OrgFiles/")
   (deft-recursive t)
-  (deft-use-filename-as-title nil)
+  (deft-use-filename-as-title t)
   (deft-use-filter-string-for-filename t)
   (deft-file-naming-rules '((noslash . "-")
                             (nospace . "-")
