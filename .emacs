@@ -58,7 +58,7 @@
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(org-agenda-diary-file "~/.emacs.d/OrgFiles/diary.org")
  '(org-agenda-files
-   '("~/.emacs.d/OrgFiles/contacts.org" "~/.emacs.d/OrgFiles/task.org"))
+   '("~/.emacs.d/OrgFiles/notes.org" "~/.emacs.d/OrgFiles/task.org"))
  '(org-agenda-include-diary t)
  '(org-agenda-insert-diary-extract-time t)
  '(org-directory "~/.emacs.d/OrgFiles")
@@ -724,7 +724,7 @@
               ("d" "Diary" entry (file+datetree "~/.emacs.d/OrgFiles/diary.org")
                "* %?\n%U\n" :clock-in t :clock-resume t)
               ("w" "Org-protocol" entry (file+olp+datetree "~/.emacs.d/OrgFiles/refile.org")
-               "* TODO Review %c\n%U\n" :immediate-finish t)
+               "*  %c\n%U\n%^G%A" :immediate-finish t)
               ("m" "Meeting" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
               ("p" "Phone call" entry (file "~/.emacs.d/OrgFiles/refile.org")
