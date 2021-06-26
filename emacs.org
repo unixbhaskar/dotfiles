@@ -1,5 +1,5 @@
-#+AUTHOR: Bhaskar Chowdhury
 #+TITLE: My Emacs Config
+#+AUTHOR: Bhaskar Chowdhury
 #+DATE: 06/19/2021
 #+EMAIL: unixbhaskar@gmail.com
 
@@ -884,7 +884,7 @@
               ("j" "Journal" entry (file+datetree "~/.emacs.d/OrgFiles/journal.org")
                "* %?\n%U\n" :clock-in t :clock-resume t)
               ("d" "Diary" entry (file+datetree "~/.emacs.d/OrgFiles/diary.org")
-               "* %?\n%U\n" :clock-in t :clock-resume t)
+               "* %?\n%U\n^G%A" :clock-in t :clock-resume t)
               ("w" "Org-protocol" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* TODO Review %c\n%U\n" :immediate-finish t)
               ("m" "Meeting" entry (file "~/.emacs.d/OrgFiles/refile.org")
@@ -1674,7 +1674,7 @@
   :custom
   (deft-directory "~/.emacs.d/OrgFiles/")
   (deft-recursive t)
-  (deft-use-filename-as-title nil)
+  (deft-use-filename-as-title t)
   (deft-use-filter-string-for-filename t)
   (deft-file-naming-rules '((noslash . "-")
                             (nospace . "-")
