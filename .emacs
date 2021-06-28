@@ -1535,3 +1535,12 @@
  (set-fontset-font "fontset-default" nil
  (font-spec :size 20 :name "Symbola")))
 
+;; Abbrevation
+
+(setq abbrev-file-name             ;; tell emacs where to read abbrev
+        "~/.emacs.d/abbrev_defs")    ;; definitions from...
+(setq save-abbrevs 'silent)        ;; save abbrevs when files are saved
+
+ (setq-default abbrev-mode t)
+
+
