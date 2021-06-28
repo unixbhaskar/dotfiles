@@ -287,50 +287,51 @@ bindsym $mod+f fullscreen toggle
 
 * Resize window (you can also use the mouse for that)
 
-  mode "resize" {
+
+      mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+         bindsym j resize shrink width 10 px or 10 ppt
+         bindsym k resize grow height 10 px or 10 ppt
+         bindsym l resize shrink height 10 px or 10 ppt
+         bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+         # same bindings, but for the arrow keys
+         bindsym Left resize shrink width 10 px or 10 ppt
+         bindsym Down resize grow height 10 px or 10 ppt
+         bindsym Up resize shrink height 10 px or 10 ppt
+         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+         # back to normal: Enter or Escape
+         bindsym Return mode "default"
+         bindsym Escape mode "default"
 
-        }
+         }
 
 
-        bindsym $mod+r mode "resize"
+         bindsym $mod+r mode "resize"
 
-# class                  bground text    indicator
-# client.focused           #285577 #FFFFFF #2E9EF4
-# client.focused_inactive  #5F676A #FFFFFF #484E50
-# client.unfocused         #222222 #888888 #292D2E
-# client.urgent            #900000 #FFFFFF #900000
-# client.placeholder       #0C0C0C #FFFFFF #000000
+       # class                  bground text    indicator
+       # client.focused           #285577 #FFFFFF #2E9EF4
+       # client.focused_inactive  #5F676A #FFFFFF #484E50
+       # client.unfocused         #222222 #888888 #292D2E
+       # client.urgent            #900000 #FFFFFF #900000
+       # client.placeholder       #0C0C0C #FFFFFF #000000
 
 * Start i3bar to display a workspace bar
 
 
-  bar {
-     position top
-     output primary
-     tray_output primary
+       bar {
+         position top
+         output primary
+         tray_output primary
 
 
-  colors {
+       colors {
 	background #000000
 	statusline #dddddd
 	separator #666666
@@ -339,20 +340,20 @@ bindsym $mod+f fullscreen toggle
         inactive_workspace #333333 #222222 #888888
         urgent_workspace   #2f343a #900000 #ffffff
 
-  }
-     status_command i3blocks -c  $HOME/.config/i3/i3blocks.conf
-     workspace_buttons yes
-     tray_output eDP-1
-     strip_workspace_numbers yes
+       }
+         status_command i3blocks -c  $HOME/.config/i3/i3blocks.conf
+         workspace_buttons yes
+         tray_output eDP-1
+         strip_workspace_numbers yes
 
-  }
+       }
 
 * This bar will appear on second monitor ,if uncommented below lines
-# bar {
-#    position bottom
-#    output DP2
-#    status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
-#    }
+        # bar {
+        #    position bottom
+        #    output DP2
+        #    status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
+        #    }
 
 #
 * Pulse Audio controls
