@@ -391,15 +391,15 @@ bindsym $mod+f fullscreen toggle
 
 * This bar will appear on second monitor ,if uncommented below lines
 
-         # bar {
+      ==  # bar {
 
-           #    position bottom
+        ==    #    position bottom
 
-           #    output DP2
+        ==    #    output DP2
 
-           #    status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
+        ==   #    status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
 
-           #    }
+        ==   #    }
 
 * Pulse Audio controls
 
@@ -439,23 +439,28 @@ bindsym $mod+f fullscreen toggle
 
 * set $mode_launcher Launch
 
-
-  bindsym $mod+o mode "Shortcut_keys"
-
-
-  mode "Shortcut_keys" {
-    bindsym l exec i3_open_mode_keys
-    bindsym b exec bash_supported_keywords
-    bindsym f exec firefox_shortcut_keys
-    bindsym c exec take_photo_by_webcam
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-
-  }
+       bindsym $mod+o mode "Shortcut_keys"
 
 
+       mode "Shortcut_keys" {
 
-  #bindsym --release button2 exec --no-startup-id import /tmp/latest-screenshot.png
+       bindsym l exec i3_open_mode_keys
+
+       bindsym b exec bash_supported_keywords
+
+       bindsym f exec firefox_shortcut_keys
+
+       bindsym c exec take_photo_by_webcam
+
+       bindsym Escape mode "default"
+
+       bindsym Return mode "default"
+
+
+       }
+
+
+       #bindsym --release button2 exec --no-startup-id import /tmp/latest-screenshot.png
 
 * Make the currently focused window a scratchpad
 
