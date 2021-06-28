@@ -1,5 +1,5 @@
 #+TITLE: i3 Window Manager Config
-#+AUTOR: Bhaskar Chowdhury
+#+AUTHOR: Bhaskar Chowdhury
 #+DATE: 06/28/2021 09:47:35 AM
 
 
