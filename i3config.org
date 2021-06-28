@@ -1,10 +1,9 @@
 #+TITLE: i3 Window Manager Config
 #+AUTHOR: Bhaskar Chowdhury
 #+DATE: 06/28/2021 09:47:35 AM
+#+EMAIL: unixbhaskar@gmail.com
 
 
-# i3 config file (v4)
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
 * Setting the MOD or Main Control Key
 set $mod Mod1
 
