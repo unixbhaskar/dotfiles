@@ -391,16 +391,15 @@ bindsym $mod+f fullscreen toggle
 
 * This bar will appear on second monitor ,if uncommented below lines
 
-  # bar {
+         # bar {
 
-      #    position bottom
+           #    position bottom
 
-      #    output DP2
+           #    output DP2
 
-      #    status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
+           #    status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
 
-      #    }
-
+           #    }
 
 * Pulse Audio controls
 
