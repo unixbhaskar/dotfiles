@@ -482,6 +482,7 @@
 (global-set-key (kbd "C-x m") 'emms)
 (global-set-key (kbd "C-c s p") 'emms-pause)
 (global-set-key (kbd "C-c s n") 'emms-next)
+(global-set-key (kbd "C-c s s") 'emms-stop)
 
 ;;Org mode files
 
