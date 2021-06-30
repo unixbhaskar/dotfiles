@@ -1042,12 +1042,13 @@
 (add-to-list 'load-path "~/.emacs.d/org-weather")
 (require 'org-weather)
 ;; Set your location and refresh the data
-(setq org-weather-location "Kolkata,IN")
-(setq org-weather-api-key  "783c9abf98d154e05236ccd5f4a0a914")
-(setq org-weather-api-url "http://api.openweathermap.org/data/2.5/weather?q=%s&mode=json&units=metric&APPID=%s")
-(setq org-weather-format "Weather: %desc, %tmin-%tmax%tu, %p%pu, %h%hu, %s%su")
+;;(setq org-weather-location "Kolkata,IN")
+;;(setq org-weather-api-key  "783c9abf98d154e05236ccd5f4a0a914")
+;;(setq org-weather-api-url "http://api.openweathermap.org/data/2.5/weather?q=%s&mode=json&units=metric&APPID=%s")
+;;(setq org-weather-format "Weather: %desc, %tmin-%tmax%tu, %p%pu, %h%hu, %s%su")
 (org-weather-refresh)
 ;; Reload/evaluate this file i.e .emacs after change
+
 (defun reload-dotemacs ()
   (interactive)
   (load-file "~/.emacs"))
