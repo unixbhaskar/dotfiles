@@ -82,7 +82,7 @@ nmap cg :shellcmd! check_gr<CR>
 nmap fk :shellcmd! flickr<CR>
 nmap gl :shellcmd! gitlab<CR>
 nmap sc :source ~/.config/vimb/config<CR>
-
+nmap hn :shellcmd! hackernews<CR>
 #simple read format
 
 nnoremap <C-R> :e! simplyread();<CR>
