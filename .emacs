@@ -728,7 +728,7 @@
               ("d" "Diary" entry (file+datetree "~/.emacs.d/OrgFiles/diary.org")
                "* %?\n%U\n" :clock-in t :clock-resume t)
               ("w" "Org-protocol" entry (file+olp+datetree "~/.emacs.d/OrgFiles/refile.org")
-               "* TODO Review %c\n%U\n%A%^G" :immediate-finish t)
+               "* TODO Review %A %^G\n%c\n%U\n" :immediate-finish t)
               ("m" "Meeting" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
               ("p" "Phone call" entry (file "~/.emacs.d/OrgFiles/refile.org")
