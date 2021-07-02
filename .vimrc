@@ -246,13 +246,12 @@ nnoremap <C-l> <C-w><C-l>
 
 "Open this file in vertical split for quick reference
 nnoremap <leader>vr :vsplit ~/.vimrc<cr>
-
 "After editing this file must be sourced ,so the changes take effect on
 "current session
 nnoremap <leader>sv :source ~/.vimrc<cr>
-
-"To insert email address with a shortcut @@ ,and then need to press space after that
+"To insert email address with a shortcut @@ ,to insert author with a shortcut au and then need to press space after that
 iabbrev @@    unixbhaskar@gmail.com
+iabbrev au    Bhaskar Chowdhuey
 
 
 " Auto loading .vimrc once saved
