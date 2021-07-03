@@ -1828,3 +1828,9 @@
 #+begin_src emacs-lisp
    (global-set-key "C-q" 'kill-this-buffer)
 #+end_src
+* Keyboard macro to copy this file to dotfiles repo
+#+begin_src emacs-lisp
+(fset 'org-emacs-copy
+   (kmacro-lambda-form [?\M-! ?o ?r ?g ?- ?e ?m ?a ?c ?s ?- ?c ?o ?p ?y return] 0 "%d"))
+(global-set-key "C-c n o") 'org-emacs-copy)
+#+end_src
