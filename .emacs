@@ -1548,4 +1548,9 @@
 
 (global-set-key (kbd "C-q") 'kill-this-buffer)
 
+;; Copy emacs.org to dotfile repo
 
+(fset 'org-emacs-copy
+   (kmacro-lambda-form [?\M-! ?o ?r ?g ?- ?e ?m ?a ?c ?s ?- ?c ?o ?p ?y return] 0 "%d"))
+
+(global-set-key (kbd "C-c n o") 'org-emacs-copy)
