@@ -59,7 +59,7 @@
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(org-agenda-diary-file "~/.emacs.d/OrgFiles/diary.org")
  '(org-agenda-files
-   '("~/.emacs.d/OrgFiles/notes.org" "~/.emacs.d/OrgFiles/task.org"))
+   '("~/.emacs.d/OrgFiles/refile.org" "~/.emacs.d/OrgFiles/task.org"))
  '(org-agenda-include-diary t)
  '(org-agenda-insert-diary-extract-time t)
  '(org-directory "~/.emacs.d/OrgFiles")
@@ -1103,6 +1103,13 @@
   (interactive)
   (find-file "~/.emacs.d/OrgFiles/emacs.org"))
 (global-set-key (kbd "C-c n e") 'org-open-dotemacs-file)
+
+;; Open the journal.org file
+
+(defun org-open-journal-file ()
+  (interactive)
+  (find-file "~/.emacs.d/OrgFiles/journal.org"))
+(global-set-key (kbd "C-c n j") 'org-open-journal-file)
 
 ;; org2blog base
 
