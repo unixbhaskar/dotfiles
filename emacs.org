@@ -1826,5 +1826,5 @@
 #+end_src
 * Quit buffer with less keystroke C-q
 #+begin_src emacs-lisp
-   (set-global-key "C-q" 'kill-this-buffer)
+   (global-set-key "C-q" 'kill-this-buffer)
 #+end_src
