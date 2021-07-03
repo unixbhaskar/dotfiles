@@ -720,3 +720,5 @@ function! PreviewerMarkdown()
   :execute "bel vert terminal"
 endfunction
 nmap <Leader>m : call PreviewerMarkdown()<CR>clear<CR>glow $(cat ~/.lastpreview.log)<CR>
+" Ale ,language server protocol
+Plugin 'dense-analysis/ale'
