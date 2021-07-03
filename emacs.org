@@ -1824,3 +1824,7 @@
       (find-file "~/.emacs.d/OrgFiles/emacs.org"))
  (global-set-key (kbd "C-c n e") 'org-open-dotemacs-file)
 #+end_src
+* Quit buffer with less keystroke C-q
+#+begin_src emacs-lisp
+   (set-global-key "C-q" 'kill-this-buffer)
+#+end_src
