@@ -1,11 +1,17 @@
-((magit-blame
+((blog-mode-help nil)
+ (magit-blame
   ("-w"))
  (magit-branch nil)
  (magit-commit nil)
  (magit-dispatch nil)
+ (magit-gitignore nil)
  (magit-log
   ("-n256" "--graph" "--decorate")
   (("--" "scripts/ver_linux")))
+ (magit-pull nil)
  (magit-push nil)
  (magit-stash nil)
- (magit-submodule nil))
+ (magit-submodule nil)
+ (magithub-dashboard-popup nil)
+ (magithub-dispatch-popup nil)
+ (magithub-settings-popup nil))

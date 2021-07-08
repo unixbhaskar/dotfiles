@@ -1,0 +1,25 @@
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("emacs.org"
+ (filename . "~/.emacs.d/OrgFiles/emacs.org")
+ (front-context-string . "#+TITLE: My Emac")
+ (rear-context-string)
+ (position . 1))
+(".emacs"
+ (filename . "~/.emacs")
+ (front-context-string . "(custom-set-vari")
+ (rear-context-string)
+ (position . 1))
+("org-refile-last-stored"
+ (filename . "~/.emacs.d/OrgFiles/task.org")
+ (front-context-string . "** WAITING [#B] ")
+ (rear-context-string . "04 Sun 14:40]\n\n\n")
+ (position . 5978))
+("org-capture-last-stored"
+ (filename . "~/.emacs.d/OrgFiles/journal.org")
+ (front-context-string . "**** UNIX Bell L")
+ (rear-context-string . "1-07-06 Tuesday\n")
+ (position . 620))
+)
