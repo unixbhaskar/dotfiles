@@ -1,0 +1,3 @@
+[submodule ".emacs.d/.emacs.d/mu"]
+	path = .emacs.d/.emacs.d/mu
+	url = git@github.com:unixbhaskar/dotfiles.git
