@@ -1,2 +1,0 @@
-;;; Generated package description from ffmpeg-player.el  -*- no-byte-compile: t -*-
-(define-package "ffmpeg-player" "20200720.1028" "Play video using ffmpeg" '((emacs "24.4") (s "1.12.0") (f "0.20.0")) :commit "164fb15d70adbc186eb2d987f5c5143aa7336659" :authors '(("Shen, Jen-Chieh" . "jcs090218@gmail.com")) :maintainer '("Shen, Jen-Chieh" . "jcs090218@gmail.com") :url "https://github.com/jcs-elpa/ffmpeg-player")

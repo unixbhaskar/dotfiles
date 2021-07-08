@@ -1,2 +1,0 @@
-;;; Generated package description from /home/bhaskar/.emacs.d/elpa/wttrin-20170614.1206/wttrin.el  -*- no-byte-compile: t -*-
-(define-package "wttrin" "20170614.1206" "Emacs frontend for weather web service wttr.in" '((emacs "24.4") (xterm-color "1.0")) :commit "df5427ce2a5ad4dab652dbb1c4a1834d7ddc2abc" :authors '(("Carl X. Su" . "bcbcarl@gmail.com") ("ono hiroko (kuanyui)" . "azazabc123@gmail.com")) :maintainer '("Carl X. Su" . "bcbcarl@gmail.com") :keywords '("comm" "weather" "wttrin") :url "https://github.com/bcbcarl/emacs-wttrin")

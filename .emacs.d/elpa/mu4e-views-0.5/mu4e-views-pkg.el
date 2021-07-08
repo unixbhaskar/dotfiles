@@ -1,2 +1,0 @@
-;;; Generated package description from /home/bhaskar/.emacs.d/elpa/mu4e-views-0.5/mu4e-views.el  -*- no-byte-compile: t -*-
-(define-package "mu4e-views" "0.5" "View emails in mu4e using xwidget-webkit" '((emacs "26.1") (xwidgets-reuse "0.2") (ht "2.2")) :commit "33fa9f584034978006108a4498566e933493f852" :authors '(("Boris Glavic" . "lordpretzel@gmail.com")) :maintainer '("Boris Glavic" . "lordpretzel@gmail.com") :keywords '("mail") :url "https://github.com/lordpretzel/mu4e-views")
