@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-06-28 Mon 12:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Keep track of things which needs attention</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Bhaskar Chowdhury" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn;public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Keep track of things which needs attention</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgad7e41d">1. Weather</a></li>
+<li><a href="#org4890982">2. <span class="todo STARTED">STARTED</span> Linus's Kernel Tree Find a bug or fix a bug in the linux kernel,send patches upstream&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span></span></a></li>
+<li><a href="#org9d3235e">3. <span class="todo STARTED">STARTED</span> Exercise regularly for at least 60 mins&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span></span></a></li>
+<li><a href="#org554c65d">4. <span class="todo HOLD">HOLD</span> Goodreads Need to finish the compiler book by Aho,Ullman&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span>&#xa0;<span class="Reading">Reading</span>&#xa0;<span class="HOLD">HOLD</span></span></a>
+<ul>
+<li><a href="#org1441a44">4.1. <span class="todo MEETING">MEETING</span> with Donald Knuth, that's a dream&#xa0;&#xa0;&#xa0;<span class="tag"><span class="MEETING">MEETING</span></span></a></li>
+<li><a href="#org47281df">4.2. <span class="done PHONE">PHONE</span> 9940290893&#xa0;&#xa0;&#xa0;<span class="tag"><span class="PHONE">PHONE</span></span></a></li>
+</ul>
+</li>
+<li><a href="#org0aa09ab">5. <span class="todo ONGOING">ONGOING</span> Researching about the open system i.e UNIX , Linux et al&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span>&#xa0;<span class="Researching">Researching</span></span></a></li>
+<li><a href="#orgf221f72">6. <span class="todo ONGOING">ONGOING</span> My Emacs config file :  .emacs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_work">@work</span>&#xa0;<span class="_home">@home</span>&#xa0;<span class="laptop">laptop</span>&#xa0;<span class="ATTACH">ATTACH</span></span></a></li>
+<li><a href="#org5687d20">7. <span class="todo ONGOING">ONGOING</span> <b>Try/should outright ignore rude/mean/nefarious people on the internet and in life</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span>&#xa0;<span class="_work">@work</span></span></a></li>
+<li><a href="#org0ebf180">8. <span class="todo ONGOING">ONGOING</span> Learning VIML and ELISP for the sake of using the editors more efficiently.&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span>&#xa0;<span class="_work">@work</span>&#xa0;<span class="_home">@home</span>&#xa0;<span class="laptop">laptop</span>&#xa0;<span class="Researching">Researching</span></span></a>
+<ul>
+<li><a href="#org28d2ec4">8.1. <span class="todo TODO">TODO</span> Review https://mediaonfire.com/blog/2017_07_21_org_protocol_firefox.html</a></li>
+<li><a href="#org7613296">8.2. <span class="todo TODO">TODO</span> Review https://planet.emacslife.com/</a></li>
+<li><a href="#org6ec97d6">8.3. <span class="todo TODO">TODO</span> Review https://sachachua.com/blog/category/emacs/</a></li>
+<li><a href="#orgef7ed3d">8.4. <span class="todo TODO">TODO</span> Review https://depp.brause.cc/shackle/</a></li>
+<li><a href="#orgf86d2c7">8.5. <span class="todo TODO">TODO</span> Review https://www.reddit.com/r/emacs/</a></li>
+<li><a href="#org171930b">8.6. <span class="todo TODO">TODO</span> Review https://www.reddit.com/r/vim/</a></li>
+<li><a href="#orgad9895f">8.7. <span class="todo TODO">TODO</span> Review https://vim.fandom.com/wiki/Vim_Tips_Wiki</a></li>
+<li><a href="#org2062058">8.8. <span class="todo TODO">TODO</span> Review https://vim.fandom.com/wiki/Best_Vim_Tips</a></li>
+</ul>
+</li>
+<li><a href="#org619f2c5">9. <span class="todo TODO">TODO</span> Reminds about passport renewals&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Followup">Followup</span>&#xa0;<span class="ATTACH">ATTACH</span></span></a></li>
+<li><a href="#orgc74eec7">10. <span class="todo WAITING">WAITING</span> Health related stuff needs to get done&#x2026;but&#x2026;&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_home">@home</span>&#xa0;<span class="HOLD">HOLD</span>&#xa0;<span class="WAITING">WAITING</span></span></a></li>
+<li><a href="#org53d16b5">11. <span class="todo ONGOING">ONGOING</span> This is my Vim config file:  .vimrc&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_work">@work</span>&#xa0;<span class="_home">@home</span>&#xa0;<span class="laptop">laptop</span>&#xa0;<span class="ATTACH">ATTACH</span></span></a></li>
+<li><a href="#org123924a">12. <span class="todo NEXT">NEXT</span> Notmuch version has to be fixed everywhere to get it work seamlessly work across distros&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_work">@work</span>&#xa0;<span class="_home">@home</span>&#xa0;<span class="laptop">laptop</span></span></a>
+<ul>
+<li><a href="#org609bbec">12.1. Look like the notmuch version differance makes huge difference in database build:NOTE:</a></li>
+</ul>
+</li>
+<li><a href="#orgb465888">13. <span class="todo TODO">TODO</span> Mediclaims premium has to be paid&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Followup">Followup</span>&#xa0;<span class="_home">@home</span></span></a></li>
+<li><a href="#org732f823">14. <span class="todo TODO">TODO</span> Need to scan through the GCC manual for better understanding of the flags used&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Followup">Followup</span>&#xa0;<span class="_work">@work</span>&#xa0;<span class="laptop">laptop</span>&#xa0;<span class="Researching">Researching</span></span></a></li>
+<li><a href="#orge23c6d2">15. <span class="todo TODO">TODO</span> Need to pay <b>Electricity Bill for next two months</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span>&#xa0;<span class="Followup">Followup</span>&#xa0;<span class="_home">@home</span></span></a></li>
+<li><a href="#orgf8e1c24">16. <span class="todo ONGOING">ONGOING</span> Brushing <b>Cscope</b> and <b>Ctags</b> for old time's sake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_home">@home</span>&#xa0;<span class="laptop">laptop</span>&#xa0;<span class="Researching">Researching</span></span></a></li>
+<li><a href="#orgf4d356b">17. Notes</a>
+<ul>
+<li><a href="#org799f7b0">17.1. <span class="todo DONE">DONE</span> :NOTE: Need to fix the emacs version all across the distros</a></li>
+<li><a href="#org7717457">17.2. :NOTE: There is a stark difference between the result of same query in notmuch and mu .</a></li>
+<li><a href="#org57149d5">17.3. <span class="todo DONE">DONE</span> :NOTE: Paid this year maintenance of the apartment&#xa0;&#xa0;&#xa0;<span class="tag"><span class="NOTE">NOTE</span></span></a></li>
+<li><a href="#orge8be64e">17.4. :NOTE: Make an arrangement for mother's eye inspection at Sankar Netralaya&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_home">@home</span>&#xa0;<span class="Followup">Followup</span>&#xa0;<span class="NOTE">NOTE</span></span></a></li>
+<li><a href="#org565b632">17.5. :NOTE: Git<sub>FAQ</sub>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="NOTE">NOTE</span></span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgad7e41d" class="outline-2">
+<h2 id="orgad7e41d"><span class="section-number-2">1</span> Weather</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+%%(org-weather-metno)
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org4890982" class="outline-2">
+<h2 id="org4890982"><span class="section-number-2">2</span> <span class="todo STARTED">STARTED</span> <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git">Linus's Kernel Tree</a> Find a bug or fix a bug in the linux kernel,send patches upstream&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span></span></h2>
+<div class="outline-text-2" id="text-2">
+</div>
+</div>
+<div id="outline-container-org9d3235e" class="outline-2">
+<h2 id="org9d3235e"><span class="section-number-2">3</span> <span class="todo STARTED">STARTED</span> Exercise regularly for at least 60 mins&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span></span></h2>
+<div class="outline-text-2" id="text-3">
+</div>
+</div>
+<div id="outline-container-org554c65d" class="outline-2">
+<h2 id="org554c65d"><span class="section-number-2">4</span> <span class="todo HOLD">HOLD</span> <a href="https://www.goodreads.com/book/show/8903671-principles-of-compiler-design">Goodreads</a> Need to finish the compiler book by Aho,Ullman&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span>&#xa0;<span class="Reading">Reading</span>&#xa0;<span class="HOLD">HOLD</span></span></h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org1441a44" class="outline-3">
+<h3 id="org1441a44"><span class="section-number-3">4.1</span> <span class="todo MEETING">MEETING</span> with Donald Knuth, that's a dream&#xa0;&#xa0;&#xa0;<span class="tag"><span class="MEETING">MEETING</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-05-31 Mon 03:24]</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-org47281df" class="outline-3">
+<h3 id="org47281df"><span class="section-number-3">4.2</span> <span class="done PHONE">PHONE</span> 9940290893&#xa0;&#xa0;&#xa0;<span class="tag"><span class="PHONE">PHONE</span></span></h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-05-31 Mon 03:25]</span></span>\
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0aa09ab" class="outline-2">
+<h2 id="org0aa09ab"><span class="section-number-2">5</span> <span class="todo ONGOING">ONGOING</span> Researching about the open system i.e UNIX , Linux et al&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span>&#xa0;<span class="Researching">Researching</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2021-05-25 Tue 12:43] </span></span> <br />
+Various aspect of the open system,kernel , file system , performance tuning , overall configuration , enhancement</li>
+</ul>
+
+<p>
+<b><code>To open the local link file ,use C-u C-c C-o</code></b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf221f72" class="outline-2">
+<h2 id="orgf221f72"><span class="section-number-2">6</span> <span class="todo ONGOING">ONGOING</span> My Emacs config file :  <a href="file://home/bhaskar/.emacs">.emacs</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_work">@work</span>&#xa0;<span class="_home">@home</span>&#xa0;<span class="laptop">laptop</span>&#xa0;<span class="ATTACH">ATTACH</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<p>
+<a href="http://doc.norang.ca/org-mode.html#DeadlinesAndAgendaVisibility">Wonderful details of org mode efficiency</a>
+<a href="https://github.com/emacs-tw/awesome-emacs#key-bindings">Emacs-goodies-on-github</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org5687d20" class="outline-2">
+<h2 id="org5687d20"><span class="section-number-2">7</span> <span class="todo ONGOING">ONGOING</span> <b>Try/should outright ignore rude/mean/nefarious people on the internet and in life</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span>&#xa0;<span class="_work">@work</span></span></h2>
+<div class="outline-text-2" id="text-7">
+</div>
+</div>
+<div id="outline-container-org0ebf180" class="outline-2">
+<h2 id="org0ebf180"><span class="section-number-2">8</span> <span class="todo ONGOING">ONGOING</span> Learning VIML and ELISP for the sake of using the editors more efficiently.&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span>&#xa0;<span class="_work">@work</span>&#xa0;<span class="_home">@home</span>&#xa0;<span class="laptop">laptop</span>&#xa0;<span class="Researching">Researching</span></span></h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org28d2ec4" class="outline-3">
+<h3 id="org28d2ec4"><span class="section-number-3">8.1</span> <span class="todo TODO">TODO</span> Review <a href="https://mediaonfire.com/blog/2017_07_21_org_protocol_firefox.html">https://mediaonfire.com/blog/2017_07_21_org_protocol_firefox.html</a></h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-06-24 Thu 18:23]</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-org7613296" class="outline-3">
+<h3 id="org7613296"><span class="section-number-3">8.2</span> <span class="todo TODO">TODO</span> Review <a href="https://planet.emacslife.com/">https://planet.emacslife.com/</a></h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-06-25 Fri 13:37]</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-org6ec97d6" class="outline-3">
+<h3 id="org6ec97d6"><span class="section-number-3">8.3</span> <span class="todo TODO">TODO</span> Review <a href="https://sachachua.com/blog/category/emacs/">https://sachachua.com/blog/category/emacs/</a></h3>
+<div class="outline-text-3" id="text-8-3">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-06-25 Fri 13:42]</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-orgef7ed3d" class="outline-3">
+<h3 id="orgef7ed3d"><span class="section-number-3">8.4</span> <span class="todo TODO">TODO</span> Review <a href="https://depp.brause.cc/shackle/">https://depp.brause.cc/shackle/</a></h3>
+<div class="outline-text-3" id="text-8-4">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-06-25 Fri 14:42]</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-orgf86d2c7" class="outline-3">
+<h3 id="orgf86d2c7"><span class="section-number-3">8.5</span> <span class="todo TODO">TODO</span> Review <a href="https://www.reddit.com/r/emacs/">https://www.reddit.com/r/emacs/</a></h3>
+<div class="outline-text-3" id="text-8-5">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-06-26 Sat 13:54]</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-org171930b" class="outline-3">
+<h3 id="org171930b"><span class="section-number-3">8.6</span> <span class="todo TODO">TODO</span> Review <a href="https://www.reddit.com/r/vim/">https://www.reddit.com/r/vim/</a></h3>
+<div class="outline-text-3" id="text-8-6">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-06-26 Sat 13:57]</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-orgad9895f" class="outline-3">
+<h3 id="orgad9895f"><span class="section-number-3">8.7</span> <span class="todo TODO">TODO</span> Review <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">https://vim.fandom.com/wiki/Vim_Tips_Wiki</a></h3>
+<div class="outline-text-3" id="text-8-7">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-06-26 Sat 13:59]</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-org2062058" class="outline-3">
+<h3 id="org2062058"><span class="section-number-3">8.8</span> <span class="todo TODO">TODO</span> Review <a href="https://vim.fandom.com/wiki/Best_Vim_Tips">https://vim.fandom.com/wiki/Best_Vim_Tips</a></h3>
+<div class="outline-text-3" id="text-8-8">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-06-26 Sat 14:05]</span></span>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org619f2c5" class="outline-2">
+<h2 id="org619f2c5"><span class="section-number-2">9</span> <span class="todo TODO">TODO</span> Reminds about passport renewals&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Followup">Followup</span>&#xa0;<span class="ATTACH">ATTACH</span></span></h2>
+<div class="outline-text-2" id="text-9">
+</div>
+</div>
+<div id="outline-container-orgc74eec7" class="outline-2">
+<h2 id="orgc74eec7"><span class="section-number-2">10</span> <span class="todo WAITING">WAITING</span> Health related stuff needs to get done&#x2026;but&#x2026;&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_home">@home</span>&#xa0;<span class="HOLD">HOLD</span>&#xa0;<span class="WAITING">WAITING</span></span></h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2021-05-29 Sat 11:50] </span></span> <br />
+I am not confident enough to get the booster in my body. Because , the recurring effect of getting it every year make me think.Wondering.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org53d16b5" class="outline-2">
+<h2 id="org53d16b5"><span class="section-number-2">11</span> <span class="todo ONGOING">ONGOING</span> This is my Vim config file:  <a href="https://github.com/unixbhaskar/dotfiles/blob/master/.vimrc">.vimrc</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_work">@work</span>&#xa0;<span class="_home">@home</span>&#xa0;<span class="laptop">laptop</span>&#xa0;<span class="ATTACH">ATTACH</span></span></h2>
+<div class="outline-text-2" id="text-11">
+<p>
+:PROPERTIES:
+:ID:       638e6e78-f88c-4044-aadc-3e61db0c0087
+:END:*
+</p>
+</div>
+</div>
+
+<div id="outline-container-org123924a" class="outline-2">
+<h2 id="org123924a"><span class="section-number-2">12</span> <span class="todo NEXT">NEXT</span> Notmuch version has to be fixed everywhere to get it work seamlessly work across distros&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_work">@work</span>&#xa0;<span class="_home">@home</span>&#xa0;<span class="laptop">laptop</span></span></h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> [#B] <del><a href="https://taskwarrior.org/">TaskWorrior Web Site</a> Exploring <i>TaskWorrior</i> and it is amazing!</del></li>
+</ul>
+</div>
+<div id="outline-container-org609bbec" class="outline-3">
+<h3 id="org609bbec"><span class="section-number-3">12.1</span> Look like the notmuch version differance makes huge difference in database build:NOTE:</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-06-24 Thu 03:07]</span></span>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb465888" class="outline-2">
+<h2 id="orgb465888"><span class="section-number-2">13</span> <span class="todo TODO">TODO</span> Mediclaims premium has to be paid&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Followup">Followup</span>&#xa0;<span class="_home">@home</span></span></h2>
+<div class="outline-text-2" id="text-13">
+</div>
+</div>
+<div id="outline-container-org732f823" class="outline-2">
+<h2 id="org732f823"><span class="section-number-2">14</span> <span class="todo TODO">TODO</span> Need to scan through the GCC manual for better understanding of the flags used&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Followup">Followup</span>&#xa0;<span class="_work">@work</span>&#xa0;<span class="laptop">laptop</span>&#xa0;<span class="Researching">Researching</span></span></h2>
+<div class="outline-text-2" id="text-14">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-06-16 Wed 02:06]</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-orge23c6d2" class="outline-2">
+<h2 id="orge23c6d2"><span class="section-number-2">15</span> <span class="todo TODO">TODO</span> Need to pay <b>Electricity Bill for next two months</b>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Daily">Daily</span>&#xa0;<span class="Followup">Followup</span>&#xa0;<span class="_home">@home</span></span></h2>
+<div class="outline-text-2" id="text-15">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-06-16 Wed 15:46]</span></span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf8e1c24" class="outline-2">
+<h2 id="orgf8e1c24"><span class="section-number-2">16</span> <span class="todo ONGOING">ONGOING</span> Brushing <b>Cscope</b> and <b>Ctags</b> for old time's sake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_home">@home</span>&#xa0;<span class="laptop">laptop</span>&#xa0;<span class="Researching">Researching</span></span></h2>
+<div class="outline-text-2" id="text-16">
+</div>
+</div>
+
+<div id="outline-container-orgf4d356b" class="outline-2">
+<h2 id="orgf4d356b"><span class="section-number-2">17</span> Notes</h2>
+<div class="outline-text-2" id="text-17">
+</div>
+<div id="outline-container-org799f7b0" class="outline-3">
+<h3 id="org799f7b0"><span class="section-number-3">17.1</span> <span class="todo DONE">DONE</span> :NOTE: Need to fix the emacs version all across the distros</h3>
+<div class="outline-text-3" id="text-17-1">
+<p>
+:LOGBOOK:
+</p>
+<p>
+:END
+</p>
+</div>
+</div>
+<div id="outline-container-org7717457" class="outline-3">
+<h3 id="org7717457"><span class="section-number-3">17.2</span> :NOTE: There is a stark difference between the result of same query in notmuch and mu .</h3>
+<div class="outline-text-3" id="text-17-2">
+</div>
+</div>
+<div id="outline-container-org57149d5" class="outline-3">
+<h3 id="org57149d5"><span class="section-number-3">17.3</span> <span class="todo DONE">DONE</span> :NOTE: Paid this year maintenance of the apartment&#xa0;&#xa0;&#xa0;<span class="tag"><span class="NOTE">NOTE</span></span></h3>
+</div>
+<div id="outline-container-orge8be64e" class="outline-3">
+<h3 id="orge8be64e"><span class="section-number-3">17.4</span> :NOTE: Make an arrangement for mother's eye inspection at Sankar Netralaya&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_home">@home</span>&#xa0;<span class="Followup">Followup</span>&#xa0;<span class="NOTE">NOTE</span></span></h3>
+<div class="outline-text-3" id="text-17-4">
+</div>
+</div>
+<div id="outline-container-org565b632" class="outline-3">
+<h3 id="org565b632"><span class="section-number-3">17.5</span> :NOTE: <a href="https://git.wiki.kernel.org/index.php/Git_FAQ">Git<sub>FAQ</sub></a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="NOTE">NOTE</span></span></h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-05-25</p>
+<p class="author">Author: Bhaskar Chowdhury</p>
+<p class="date">Created: 2021-06-28 Mon 12:01</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

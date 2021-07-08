@@ -1,0 +1,2 @@
+;;; Generated package description from notmuch-maildir.el  -*- no-byte-compile: t -*-
+(define-package "notmuch-maildir" "20210416.1043" "Visualize maildirs as a tree" '((emacs "26") (notmuch "0.30")) :commit "e34c470521e83c3100f0d6eb9e7402ae35e19321" :authors '(("Jonas Bernoulli" . "jonas@bernoul.li")) :maintainer '("Jonas Bernoulli" . "jonas@bernoul.li") :keywords '("mail") :url "https://git.sr.ht/~tarsius/notmuch-maildir")

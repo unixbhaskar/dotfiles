@@ -1,0 +1,61 @@
+ls
+mu index --maildir=~/gmail-backup/ --my-address=unixbhaskar@gmail.com
+mu init
+cd gmail-backup/
+mu init
+mu init --maildir=~/gmail-backup/
+mu index
+mail_sync
+:cd
+mu index --maildir=~/gmail-backup/
+cd gmail-backup/
+mu index
+mu index --maildir=~/gmail-backup/
+:cd	:cd
+mu init
+mu init --maildir=~/gmail-backup/
+mu init --maildir=~/gmail-backup/
+exit
+ls
+exit
+ls
+emerge -av emacs
+v /etc/portage/package.use/emacs
+vim !$
+clear
+emacs /etc/portage/package.use
+nano /etc/portage/package.use/emacs
+find-file /etc/portage/package.use/emacs
+ls
+ls
+htop
+v .emacs
+vim .emacs
+emacs .emacs
+exit
+ls
+mu index --maildir=~/gmail-backup/ --my-address=unixbhaskar@gmail.com
+c
+clear
+dired
+ls
+date
+w
+exit
+ls
+search .bashrc
+find / -name ".emacs" -type f -ls
+lsls
+ls
+w
+rm -f readme.txt~
+ls
+w
+exit
+ls
+cat wget-log 
+cd dotfiles
+ls
+cd ..
+ls
+htop

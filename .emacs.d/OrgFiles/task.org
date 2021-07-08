@@ -1,0 +1,132 @@
+#+TITLE: Keep track of things which needs attention
+#+AUTHOR: Bhaskar Chowdhury
+#+EMAIL: unixbhaskar@gmail.com
+#+DATE: 2021-05-25
+
+* Weather
+  %%(org-weather)
+
+
+* STARTED [#B] [[https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git][Linus's Kernel Tree]] Find a bug or fix a bug in the linux kernel,send patches upstream :Technical:Daily:
+  SCHEDULED: <2021-05-21 Fri +1d>
+* STARTED [#A] Exercise regularly for at least 60 mins                :Daily:
+   SCHEDULED: <2021-05-21 Fri +1d>
+* HOLD [#B] [[https://www.goodreads.com/book/show/8903671-principles-of-compiler-design][Goodreads]] Need to finish the compiler book by Aho,Ullman :Daily:Reading:HOLD:
+   DEADLINE: <2021-07-30 Thu +1d>
+** MEETING with Donald Knuth, that's a dream                        :MEETING:
+   :LOGBOOK:
+   CLOCK: [2021-05-31 Mon 03:24]--[2021-05-31 Mon 03:24] =>  0:00
+   :END:
+ [2021-05-31 Mon 03:24]
+* ONGOING [#C] Researching about the open system i.e UNIX , Linux et al :Daily:Researching:
+  SCHEDULED: <2021-05-25 Tue +1d>
+  - Note taken on [2021-05-25 Tue 12:43] \\
+    Various aspect of the open system,kernel , file system , performance tuning , overall configuration , enhancement
+
+*=To open the local link file ,use C-u C-c C-o=*
+
+* ONGOING [#B] My Emacs config file :  [[file://home/bhaskar/.emacs][.emacs]] :@work:@home:laptop:Technical:ATTACH:
+  SCHEDULED: <2021-05-25 +1d>
+  :PROPERTIES:
+  :ID:       cf6d7662-39b7-450e-89c2-69d913cd3c72
+  :END:
+ [[http://doc.norang.ca/org-mode.html#DeadlinesAndAgendaVisibility][Wonderful details of org mode efficiency]]
+[[https://github.com/emacs-tw/awesome-emacs#key-bindings][Emacs-goodies-on-github]]
+* ONGOING [#A] *Try/should outright ignore rude/mean/nefarious people on the internet and in life* :Daily:@work:
+  SCHEDULED: <2021-05-28 Fri +1d>
+* ONGOING [#B] Learning VIML and ELISP for the sake of using the editors more efficiently. :@home:laptop:Researching:Technical:Daily:@work:
+  SCHEDULED: <2021-05-29 Sat +1d>
+** TODO Review https://mediaonfire.com/blog/2017_07_21_org_protocol_firefox.html :Researching:
+ [2021-06-24 Thu 18:23]
+** TODO Review https://planet.emacslife.com/                    :Researching:
+ [2021-06-25 Fri 13:37]
+** TODO Review https://sachachua.com/blog/category/emacs/       :Researching:
+ [2021-06-25 Fri 13:42]
+** TODO Review https://depp.brause.cc/shackle/                  :Researching:
+ [2021-06-25 Fri 14:42]
+** TODO Review https://www.reddit.com/r/emacs/                  :Researching:
+ [2021-06-26 Sat 13:54]
+** TODO Review https://www.reddit.com/r/vim/                    :Researching:
+ [2021-06-26 Sat 13:57]
+** TODO Review https://vim.fandom.com/wiki/Vim_Tips_Wiki        :Researching:
+ [2021-06-26 Sat 13:59]
+** TODO Review https://vim.fandom.com/wiki/Best_Vim_Tips        :Researching:
+ [2021-06-26 Sat 14:05]
+** TODO Review https://writequit.org/eos/eos.html               :Researching:
+ [2021-07-01 Thu 13:06]
+** TODO Review https://sodocumentation.net/vim                  :Researching:
+ [2021-07-02 Fri 02:37]
+ [[https://sodocumentation.net/vim][Vim documentation]]
+** TODO Review [[Power Vim Usage]] https://www.ukuug.org/events/linux2004/programme/paper-SMyers/Linux_2004_slides/vim_tips/ :Researching:
+ [2021-07-02 Fri 04:36]
+** TODO Review [[https://dev.to/serhatteker/remotely-edit-files-in-vim-3ppg][Remote Edit File with Vim]]                        :Researching:
+ https://dev.to/serhatteker/remotely-edit-files-in-vim-3ppg
+ [2021-07-02 Fri 05:01]
+** TODO Review [[http://vimdoc.sourceforge.net/][Vim resources]]                                    :Researching:
+ http://vimdoc.sourceforge.net/
+ [2021-07-02 Fri 13:49]
+* TODO [#C] Reminds about passport renewals                 :Followup:ATTACH:
+  SCHEDULED: <2021-05-29 Sat +1w> DEADLINE: <2021-09-01 Wed>
+  :PROPERTIES:
+  :ID:       deb84872-545a-432b-99e4-9e3aa5aeb9e7
+  :END:
+* ONGOING [#B] This is my Vim config file:  [[https://github.com/unixbhaskar/dotfiles/blob/master/.vimrc][.vimrc]] :@work:@home:laptop:Technical:ATTACH:
+  SCHEDULED: <2021-05-30 Sun +1d>
+  :PROPERTIES:
+  :ID:       638e6e78-f88c-4044-aadc-3e61db0c0087
+  :END:*
+
+* TODO [#B] Mediclaims premium has to be paid        :Medical:Followup:@home:
+SCHEDULED: <2021-06-07 Mon +1w>  DEADLINE: <2021-09-10 Fri>
+* TODO [#B] Need to scan through the GCC manual for better understanding of the flags used :@work:laptop:Researching:Technical:Followup:
+  SCHEDULED: <2021-06-16 Wed +1d>
+  :LOGBOOK:
+  CLOCK: [2021-06-16 Wed 02:06]--[2021-06-16 Wed 02:08] =>  0:02
+  :END:
+[2021-06-16 Wed 02:06]
+* TODO [#A] Need to pay *Electricity Bill for next two months* :Daily:Followup:@home:
+  DEADLINE: <2021-08-16 Mon> SCHEDULED: <2021-06-16 Wed +1d>
+  :LOGBOOK:
+  CLOCK: [2021-06-16 Wed 15:46]--[2021-06-16 Wed 15:49] =>  0:03
+  :END:
+[2021-06-16 Wed 15:46]
+
+* ONGOING [#B] Brushing *Cscope* and *Ctags* for old time's sake :@home:laptop:Researching:Technical:
+  SCHEDULED: <2021-06-21 Mon +1d>
+
+* TODO [#A] Trim down emacs packages ,lots of package causing load delay :@work:@home:laptop:Technical:
+  SCHEDULED: <2021-07-06 Tue +1d>
+  :LOGBOOK:
+  CLOCK: [2021-07-06 Tue 11:37]--[2021-07-06 Tue 11:51] =>  0:14
+  :END:
+[2021-07-06 Tue 11:37]
+
+* Notes
+**  [#B] :NOTE: Make an arrangement for mother's eye inspection at Sankar Netralaya :@home:Medical:Followup:NOTE:
+   SCHEDULED: <2021-06-28 Mon +1d> DEADLINE: <2021-07-10 Fri>
+   :LOGBOOK:
+   CLOCK: [2021-06-16 Wed 15:16]--[2021-06-16 Wed 15:17] =>  0:01
+   :END:
+**  :NOTE: [[https://git.wiki.kernel.org/index.php/Git_FAQ][Git_FAQ]]                                           :Technical:NOTE:
+** TODO Review [[https://ieeexplore.ieee.org/document/402081][IEEE The Linux Operating System]]        :Researching:Technical:
+ https://ieeexplore.ieee.org/document/402081
+ [2021-07-04 Sun 03:38]
+** TODO Review [[https://www.linuxjournal.com/content/parallel-shells-xargs-utilize-all-your-cpu-cores-unix-and-windows][Prallel shell with xargs]]                      :Technical:NOTE:
+ https://www.linuxjournal.com/content/parallel-shells-xargs-utilize-all-your-cpu-cores-unix-and-windows
+ [2021-07-04 Sun 14:40]
+
+
+** Archive                                                          :ARCHIVE:
+*** WAITING [#B] Health related stuff needs to get done...but... :@home:HOLD:WAITING:
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2021-07-06 Tue 12:35
+    :ARCHIVE_FILE: ~/.emacs.d/OrgFiles/task.org
+    :ARCHIVE_CATEGORY: task
+    :ARCHIVE_TODO: WAITING
+    :END:
+    - Note taken on [2021-05-29 Sat 11:50] \\
+     I am not confident enough to get the booster in my body. Because , the recurring effect of getting it every year make me think.Wondering.
+
+* Footnotes
+
+[fn:1] My org agenda file
