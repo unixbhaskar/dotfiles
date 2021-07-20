@@ -732,7 +732,7 @@
 #+BEGIN_SRC emacs-lisp
 ;; Add TAG to the org file
 
-(setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l) ("Reading" . ?r) ("Researching" . ?s)))
+(setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l) ("Reading" . ?r) ("Researching" . ?s) ("Technical" . ?t)))
 #+END_SRC
 * Powerline modeline
 #+BEGIN_SRC emacs-lisp
@@ -857,7 +857,7 @@
       (quote (("CANCELLED" ("CANCELLED" . t))
               ("WAITING" ("WAITING" . t))
               ("HOLD" ("WAITING") ("HOLD" . t))
-              (done ("WAITING") ("HOLD"))
+              ("DONE" ("DONE" .t ))
               ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
               ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
               ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
@@ -886,7 +886,7 @@
               ("d" "Diary" entry (file+datetree "~/.emacs.d/OrgFiles/diary.org")
                "* %?\n%U\n" :clock-in t :clock-resume t)
               ("w" "Org-protocol" entry (file "~/.emacs.d/OrgFiles/refile.org")
-               "* %c\n%U\n^G%A" :immediate-finish t)
+               "*  %A %^G\n%c\n%U\n" :immediate-finish t)
               ("m" "Meeting" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
               ("p" "Phone call" entry (file "~/.emacs.d/OrgFiles/refile.org")
@@ -1833,4 +1833,11 @@
 (fset 'org-emacs-copy
    (kmacro-lambda-form [?\M-! ?o ?r ?g ?- ?e ?m ?a ?c ?s ?- ?c ?o ?p ?y return] 0 "%d"))
 (global-set-key "C-c n o") 'org-emacs-copy)
+#+end_src
+
+* projectile setup
+#+begin_src emacs-lisp
+(projectile-mode +1)
+   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+   (setq projectile-project-search-path '("~/projects/"))
 #+end_src
