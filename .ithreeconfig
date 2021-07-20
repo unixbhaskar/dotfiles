@@ -375,6 +375,11 @@ bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)"
 # Emacs org-capture protocol
 bindsym $mod+Shift+o  exec org-capture
 
+# Search words in dictionary.com
+bindsym $mod+Shift+d exec search_dict
+
+# search specific subreddit and get the urls of the topic
+bindsym $mod+Shift+t exec reddit_info
 
 # For vim syntax detection
 # vim:filetype=i3config
