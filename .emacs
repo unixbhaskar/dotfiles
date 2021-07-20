@@ -75,7 +75,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(eglot spinner lsp-mode lsp-grammarly counsel-notmuch org-fancy-priorities rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download deft goto-line-preview general smex doom-modeline org-roam undo-tree slime imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
+   '(magit-org-todos eglot spinner lsp-mode lsp-grammarly counsel-notmuch org-fancy-priorities rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download deft goto-line-preview general smex doom-modeline org-roam undo-tree slime imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -116,10 +116,10 @@
      (340 . "#94BFF3")
      (360 . "#DC8CC3")))
  '(vc-annotate-very-old-color "#DC8CC3")
- '(weather-metno-location-latitude 22)
- '(weather-metno-location-longitude 88)
+ '(weather-metno-location-latitude 22 t)
+ '(weather-metno-location-longitude 88 t)
  '(weather-metno-location-msl nil)
- '(weather-metno-location-name "Kolkata, India")
+ '(weather-metno-location-name "Kolkata, India" t)
  '(weather-metno-mode-line t))
 (tool-bar-mode -1)
 (tooltip-mode -1)
@@ -1560,3 +1560,10 @@
    (kmacro-lambda-form [?\M-! ?o ?r ?g ?- ?e ?m ?a ?c ?s ?- ?c ?o ?p ?y return] 0 "%d"))
 
 (global-set-key (kbd "C-c n o") 'org-emacs-copy)
+
+
+;; Projectile
+
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(setq projectile-project-search-path '("~/projects/"))
