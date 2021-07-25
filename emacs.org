@@ -1848,3 +1848,9 @@
       :config
       (magit-org-todos-autoinsert))
 #+end_src
+
+* Linux kernel development settings
+#+begin_src emacs-lisp
+(setq c-default-style "linux")
+    (require 'xcscope)
+#+end_src
