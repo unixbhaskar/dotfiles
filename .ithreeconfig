@@ -384,4 +384,8 @@ bindsym $mod+Shift+t exec reddit_info
 # LWN headlines
 bindsym $mod+l exec lwn_headlines
 # For vim syntax detection
+
+# Wikipedia search
+bindsym $mod+Shift+w exec wikipedia_search
+
 # vim:filetype=i3config
