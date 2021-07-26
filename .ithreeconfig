@@ -45,8 +45,8 @@ bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#E
 # change focus
 bindsym $mod+j focus left
 #bindsym $mod+k focus down
-bindsym $mod+l focus up
-# bindsym $mod+semicolon focus right
+# bindsym $mod+l focus up
+# # bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -381,5 +381,7 @@ bindsym $mod+Shift+d exec search_dict
 # search specific subreddit and get the urls of the topic
 bindsym $mod+Shift+t exec reddit_info
 
+# LWN headlines
+bindsym $mod+l exec lwn_headlines
 # For vim syntax detection
 # vim:filetype=i3config
