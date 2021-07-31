@@ -388,4 +388,7 @@ bindsym $mod+l exec lwn_headlines
 # Wikipedia search
 bindsym $mod+Shift+w exec wikipedia_search
 
+# Telegram desktop client
+bindsym $mod+plus exec telegram
+
 # vim:filetype=i3config
