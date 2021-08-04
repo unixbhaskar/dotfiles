@@ -289,7 +289,6 @@ mode "Shortcut_keys" {
     bindsym l exec i3_open_mode_keys
     bindsym b exec bash_supported_keywords
     bindsym f exec firefox_shortcut_keys
-    bindsym c exec take_photo_by_webcam
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
@@ -390,5 +389,11 @@ bindsym $mod+Shift+w exec wikipedia_search
 
 # Telegram desktop client
 bindsym $mod+plus exec telegram
+
+# Mail subjectline top 20
+bindsym $mod+Sys_Req exec check_mail2
+
+# Photo by webcam
+bindsym $mod+Delete exec take_photo_by_webcam
 
 # vim:filetype=i3config
