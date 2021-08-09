@@ -38,6 +38,7 @@ bindsym $mod+Shift+q kill
 
 * Run dmenu ,dmenu color, dmenu prompt
 bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10' -p 'search command item >'"
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
