@@ -165,7 +165,7 @@ alias taskopenrc="vim ~/.taskopenrc"
 alias fetch_info="onefetch $1"
 export MANPAGER="vim -M +MANPAGER -"
 alias githome="cd $HOME/git-linux && ls"
-
+alias newsboat_urls="vim /home/bhaskar/.newsboat/urls"
 
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
