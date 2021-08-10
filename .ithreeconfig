@@ -399,4 +399,6 @@ bindsym $mod+Shift+h exec hn_headlines
 # List scripts and pressing enter open it in vim
 bindcode --release $mod+105  exec admin_scripts
 
+# Select particular area of the screen and capture
+bindcode --release $mod+108 exec select_capture
 # vim:filetype=i3config
