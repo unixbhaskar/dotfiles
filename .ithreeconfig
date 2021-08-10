@@ -124,12 +124,12 @@ bindsym $mod+1 workspace $workspace1
 bindsym $mod+b workspace $workspace2 ; exec "vimb";
 bindsym $mod+Shift+f workspace $workspace3 ; exec "$HOME/bin/firefox_open";
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
-bindsym $mod+c workspace $workspace5 ; exec "st -n Build_And_Install_Kernel -e system_operation";focus
-bindsym $mod+n workspace $workspace6 ; exec "st -n Newsboat -e newsboat";focus
-bindsym $mod+apostrophe  workspace $workspace7 ; exec "st -n Calcurse -e calcurse";focus
-bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st -n Cmus -e cmus";focus
-bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";focus
-bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";focus
+bindsym $mod+c workspace $workspace5 ; exec "st -n Build_And_Install_Kernel -e system_operation";
+bindsym $mod+n workspace $workspace6 ; exec "st -n Newsboat -e newsboat";
+bindsym $mod+apostrophe  workspace $workspace7 ; exec "st -n Calcurse -e calcurse";
+bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st -n Cmus -e cmus";
+bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
+bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";
 
 #ASSIGN PROGRAMS TO WORKSPACES
 assign [class="^st-256color"] → $workspace1
@@ -145,17 +145,25 @@ assign [class="^Tig$"] → $workspace10
 
 # For_window versions
 
- for_window [instance="^Build_And_Install_Kernel$"] move container to workspace $workspace5
-
- for_window  [instance="^Newsboat$"] move container to workspace $workspace6
-
- for_window [instance="^Calcurse$"] move container to workspace $workspace7
-
- for_window [instance="^Cmus$"] move container to workspace $workspace8
-
- for_window [instance="^Mutt$"] move container to workspace $workspace9
-
- for_window [instance="^Tig$"] move container to workspace $workspace10
+# for_window  [instance="^st-256color$"] move container to workspace $workspace1
+#
+# for_window  [instance="^Vimb$"] move container to workspace $workspace2
+#
+# for_window  [instance="^Firefox$"] move container to workspace $workspace3
+#
+# for_window  [instance="^Emacs$"] move container to workspace $workspace4
+#
+# for_window [instance="^Build_And_Install_Kernel$"] move container to workspace $workspace5
+#
+# for_window  [instance="^Newsboat$"] move container to workspace $workspace6
+#
+# for_window [instance="^Calcurse$"] move container to workspace $workspace7
+#
+# for_window [instance="^Cmus$"] move container to workspace $workspace8
+#
+# for_window [instance="^Mutt$"] move container to workspace $workspace9
+#
+# for_window [instance="^Tig$"] move container to workspace $workspace10
 
 
 bindsym $mod+2 workspace number 2
@@ -407,4 +415,7 @@ bindsym $mod+i exec i3config
 
 # Open i3blocks status config file
 bindsym $mod+Shift+i exec i3blocksconfig
+
+# Open bashrc file
+bindsym $mod+Escape exec bashrc_config
 # vim:filetype=i3config
