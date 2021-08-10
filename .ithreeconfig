@@ -401,4 +401,10 @@ bindcode --release $mod+105  exec admin_scripts
 
 # Select particular area of the screen and capture
 bindcode --release $mod+108 exec select_capture
+
+# Open i3config file
+bindsym $mod+i exec i3config
+
+# Open i3blocks status config file
+bindsym $mod+Shift+i exec i3blocksconfig
 # vim:filetype=i3config
