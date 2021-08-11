@@ -425,4 +425,6 @@ bindsym $mod+Escape exec bashrc_config
 # Open Emacs config file
 bindcode --release $mod+62 exec emacs_config
 
+# open vimrc
+bindsym $mod+Shift+v exec vim_config
 # vim:filetype=i3config
