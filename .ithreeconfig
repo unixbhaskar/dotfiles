@@ -346,8 +346,11 @@ bindsym $mod+slash exec tabbed surf -pe
 
 bindsym $mod+comma exec photo_albaum
 
-# Launch integrated webcam
- bindsym $mod+backslash exec ffplay /dev/video0
+# Launch screencast
+ bindsym $mod+backslash exec "st -e screencast"
+
+# Close screencast
+bindsym $mod+Shift+bar exec kill_ffmpeg
 
 # Start video recording with ffmpeg
 bindsym $mod+BackSpace exec video_by_ffmpeg
