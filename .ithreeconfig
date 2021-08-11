@@ -418,4 +418,8 @@ bindsym $mod+Shift+i exec i3blocksconfig
 
 # Open bashrc file
 bindsym $mod+Escape exec bashrc_config
+
+# Open Emacs config file
+bindcode --release $mod+62 exec emacs_config
+
 # vim:filetype=i3config
