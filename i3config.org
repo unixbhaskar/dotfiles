@@ -579,6 +579,21 @@ bindsym $mod+f fullscreen toggle
 * Hacker News top 10 headlines with dmenu
   bindsym $mod+Shift+h exec hn_headlines
 
+* Open script file in vim
+  bindcode --release $mod+105  exec admin_scripts
+
+* Open i3config file in vim
+  bindsym $mod+i exec i3config
+
+* Open i3blocks file in vim
+  bindsym $mod+Shift+i exec i3blocksconfig
+
+* Open bashrc file in vim
+  bindsym $mod+Escape exec bashrc_config
+
+* Open Emacs config file in vim
+  bindcode --release $mod+62 exec emacs_config
+
 * Vim specific stuff
 
   === # For vim syntax detection==
