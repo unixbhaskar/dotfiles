@@ -431,4 +431,7 @@ bindsym $mod+F1 exec vimb_config
 
 # Open newsboat config file
 bindsym $mod+Shift+n exec newsboat_config
+
+# Open muttrc mail config file
+bindsym $mod+Caps_Lock exec mutt_config
 # vim:filetype=i3config
