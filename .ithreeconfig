@@ -429,4 +429,6 @@ bindsym $mod+Shift+v exec vim_config
 # Open vimb browser config
 bindsym $mod+F1 exec vimb_config
 
+# Open newsboat config file
+bindsym $mod+Shift+n exec newsboat_config
 # vim:filetype=i3config
