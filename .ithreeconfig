@@ -321,7 +321,7 @@ focus_on_window_activation smart
 
 # My abroad tour videos
 
-bindsym $mod+Shift+g exec tour_videos
+bindsym $mod+Shift+g exec git_config
 
 # clipmenu show the selection in dmenu
 
@@ -434,4 +434,7 @@ bindsym $mod+Shift+n exec newsboat_config
 
 # Open muttrc mail config file
 bindsym $mod+Caps_Lock exec mutt_config
+
+# Open Tour videos
+bindsym $mod+apostrophe exec tour_videos
 # vim:filetype=i3config
