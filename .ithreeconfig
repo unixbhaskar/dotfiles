@@ -126,7 +126,7 @@ bindsym $mod+Shift+f workspace $workspace3 ; exec "$HOME/bin/firefox_open";
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
 bindsym $mod+c workspace $workspace5 ; exec "st -n Build_And_Install_Kernel -e system_operation";
 bindsym $mod+n workspace $workspace6 ; exec "st -n Newsboat -e newsboat";
-bindsym $mod+apostrophe  workspace $workspace7 ; exec "st -n Calcurse -e calcurse";
+bindsym $mod+k  workspace $workspace7 ; exec "st -n Calcurse -e calcurse";
 bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st -n Cmus -e cmus";
 bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
 bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";
@@ -285,12 +285,13 @@ bindsym $mod+Tab workspace back_and_forth
 
 for_window [class="^.*"] border pixel 1
 
-# Take a screenshot upon pressing $mod+x (select an area)
+# Take a screenshot of the entire desktop upon pressing $mod+x
 bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots'
 
 # Press $mod+o followed by either f, t, Escape or Return to launch firefox,
 # thunderbird or return to the default mode, respectively.
 #set $mode_launcher Launch: [f]irefox [t]hunderbird
+
 bindsym $mod+o mode "Shortcut_keys"
 
 mode "Shortcut_keys" {
@@ -367,9 +368,6 @@ bindsym $mod+y exec search_youtube_videos
 # Open bookmarked site on browser
 bindsym $mod+Shift+b exec bookmark2
 
-# Kill all ffmpeg stuff
-bindsym $mod+k exec pkill ffmpeg
-
 # Mpv pause
 bindsym $mod+Shift+s exec mpv_stop
 
@@ -427,4 +425,8 @@ bindcode --release $mod+62 exec emacs_config
 
 # open vimrc
 bindsym $mod+Shift+v exec vim_config
+
+# Open vimb browser config
+bindsym $mod+F1 exec vimb_config
+
 # vim:filetype=i3config
