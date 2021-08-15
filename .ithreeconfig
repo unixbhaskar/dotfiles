@@ -103,6 +103,7 @@ exec $HOME/bin/st
 exec $HOME/bin/telegram
 exec $HOME/bin/clipmenud
 exec $HOME/bin/pia-client
+exec $HOME/bin/noti_active
 #exec emacs --bg-daemon=emacs-daemon
 
 set $workspace1 "1   "
