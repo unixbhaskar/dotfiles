@@ -84,7 +84,7 @@ nmap gl :shellcmd! gitlab<CR>
 nmap sr :source ~/.config/vimb/config<CR>
 nmap hn :shellcmd! hackernews<CR>
 nmap so :shellcmd! stackoverflow<CR>
-
+nmap lo :shellcmd! lore<CR>
 
 #simple read format
 
