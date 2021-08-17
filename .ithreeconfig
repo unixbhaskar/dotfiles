@@ -125,7 +125,7 @@ bindsym $mod+1 workspace $workspace1
 bindsym $mod+b workspace $workspace2 ; exec "vimb";
 bindsym $mod+Shift+f workspace $workspace3 ; exec "$HOME/bin/firefox_open";
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
-bindsym $mod+c workspace $workspace5 ; exec "st -n Build_And_Install_Kernel -e system_operation";
+bindsym $mod+c workspace $workspace5 ; exec "st -n System_Operations -e system_operation";
 bindsym $mod+n workspace $workspace6 ; exec "st -n Newsboat -e newsboat";
 bindsym $mod+k  workspace $workspace7 ; exec "st -n Calcurse -e calcurse";
 bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st -n Cmus -e cmus";
@@ -137,7 +137,7 @@ assign [class="^st-256color"] → $workspace1
 assign [class="^Vimb$"]  → $workspace2
 assign [class="^Firefox$"] → $workspace3
 assign [class="^Emacs$"] → $workspace4
-assign [class="^Build_And_Install_Kernel$"] → $workspace5
+assign [class="^st-256color$"] → $workspace5
 assign [class="^Newsboat$"] →  $workspace6
 assign [class="^Calcurse$"] → $workspace7
 assign [class="^Cmus" window_role="cmus"] → $workspace8
@@ -154,8 +154,8 @@ assign [class="^Tig$"] → $workspace10
 #
 # for_window  [instance="^Emacs$"] move container to workspace $workspace4
 #
-# for_window [instance="^Build_And_Install_Kernel$"] move container to workspace $workspace5
-#
+ for_window [class="st-256color" instance="^System_Operations$"] move container to workspace $workspace5
+
 # for_window  [instance="^Newsboat$"] move container to workspace $workspace6
 #
 # for_window [instance="^Calcurse$"] move container to workspace $workspace7
@@ -349,7 +349,7 @@ bindsym $mod+slash exec tabbed surf -pe
 bindsym $mod+comma exec photo_albaum
 
 # Launch screencast
- bindsym $mod+backslash exec "st -e screencast"
+ bindsym $mod+backslash  exec "st -e screencast"
 
 # Close screencast
 bindsym $mod+Shift+bar exec kill_ffmpeg
