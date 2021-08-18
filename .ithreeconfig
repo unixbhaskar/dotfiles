@@ -154,7 +154,7 @@ assign [class="^Tig$"] → $workspace10
 #
 # for_window  [instance="^Emacs$"] move container to workspace $workspace4
 #
- for_window [class="st-256color" instance="^System_Operations$"] move container to workspace $workspace5
+ # for_window [class="st-256color" instance="^System_Operations$"] move container to workspace $workspace5
 
 # for_window  [instance="^Newsboat$"] move container to workspace $workspace6
 #
