@@ -3,10 +3,8 @@
 #+DATE: 06/28/2021 09:47:35 AM
 #+EMAIL: unixbhaskar@gmail.com
 
-
 * Setting the MOD or Main Control Key
-set $mod Mod1
-
+ $mod Mod1
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 * Fonts in general
@@ -38,7 +36,6 @@ bindsym $mod+Shift+q kill
 
 * Run dmenu ,dmenu color, dmenu prompt
 bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10' -p 'search command item >'"
-
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -187,7 +184,7 @@ bindsym $mod+f fullscreen toggle
 
 * ASSIGN PROGRAMS TO WORKSPACES
 
-  assign [class="^st-256color"] → $workspace1
+  assign [class="^st-256color" instance="^st-256color$"] → $workspace1
 
   assign [class="^Vimb$"]  → $workspace2
 
@@ -195,17 +192,17 @@ bindsym $mod+f fullscreen toggle
 
   assign [class="^Emacs$"] → $workspace4
 
-  assign [class="^Build_And_Install_Kernel$"] → $workspace5
+  assign [class="^st-256color$" instance="^System_Operations$"] → $workspace5
 
-  assign [class="^Newsboat$"] →  $workspace6
+  assign [class="^st-256color$" instance="^Newsboat$"] →  $workspace6
 
-  assign [class="^Calcurse$"] → $workspace7
+  assign [class="^st-256color$" instance="^Calcurse$"] → $workspace7
 
-  assign [class="^Cmus" window_role="cmus"] → $workspace8
+  assign [class="^st-256color$" window_role="cmus" instance="^Calcurse$"] → $workspace8
 
-  assign [class="^Mutt$"] → $workspace9
+  assign [class="^st-256color$" instance="^Mutt$"] → $workspace9
 
-  assign [class="^Tig$"] → $workspace10
+  assign [class"^st-256color$" instance="^Tig$"] → $workspace10
 
 * For_window versions
 
@@ -450,6 +447,8 @@ bindsym $mod+f fullscreen toggle
 
        bindsym f exec firefox_shortcut_keys
 
+       bindsym c exec take_photo_by_webcam
+
        bindsym Escape mode "default"
 
        bindsym Return mode "default"
@@ -482,29 +481,36 @@ bindsym $mod+f fullscreen toggle
 
 * My abroad tour videos
 
+
   bindsym $mod+Shift+g exec tour_videos
 
 * Clipmenu show the selection in dmenu
+
 
   bindsym $mod+z exec "clipmenu  -p 'clipboard items listed:'"
 
 * Movie selection and play
 
+
   bindsym $mod+m exec movie_watch
 
 * Play songs from artist directory
+
 
   bindsym $mod+semicolon exec songs_play
 
 * Open selected pdf from list
 
+
   bindsym $mod+p exec enlist_pdf_open
 
 * Surf browser open
 
+
   bindsym $mod+slash exec tabbed surf -pe
 
 * Photo albaum to open sxiv
+
 
   bindsym $mod+comma exec photo_albaum
 
@@ -555,44 +561,6 @@ bindsym $mod+f fullscreen toggle
 * Emacs org-capture protocol
 
   bindsym $mod+Shift+o  exec org-capture
-* Search words in dictionary.com
-   bindsym $mod+Shift+d exec search_dict
-
-* search specific subreddit and get the urls of the topic
-  bindsym $mod+Shift+t exec reddit_info
-
-* LWN headlines
-   bindsym $mod+l exec lwn_headlines
-
-* Wikipedia search
-    bindsym $mod+Shift+w exec wikipedia_search
-
-* Telegram desktop client
-   bindsym $mod+plus exec telegram
-
-* Mail subjectline top 20
-  bindsym $mod+Sys_Req exec check_mail2
-
-* Photo by webcam
-  bindsym $mod+Delete exec take_photo_by_webcam
-
-* Hacker News top 10 headlines with dmenu
-  bindsym $mod+Shift+h exec hn_headlines
-
-* Open script file in vim
-  bindcode --release $mod+105  exec admin_scripts
-
-* Open i3config file in vim
-  bindsym $mod+i exec i3config
-
-* Open i3blocks file in vim
-  bindsym $mod+Shift+i exec i3blocksconfig
-
-* Open bashrc file in vim
-  bindsym $mod+Escape exec bashrc_config
-
-* Open Emacs config file in vim
-  bindcode --release $mod+62 exec emacs_config
 
 * Vim specific stuff
 
