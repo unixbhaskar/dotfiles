@@ -133,16 +133,16 @@ bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
 bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";
 
 #ASSIGN PROGRAMS TO WORKSPACES
-assign [class="^st-256color"] → $workspace1
+assign [class="^st-256color" instance="^st-256color$"] → $workspace1
 assign [class="^Vimb$"]  → $workspace2
 assign [class="^Firefox$"] → $workspace3
 assign [class="^Emacs$"] → $workspace4
-assign [class="^st-256color$"] → $workspace5
-assign [class="^Newsboat$"] →  $workspace6
-assign [class="^Calcurse$"] → $workspace7
-assign [class="^Cmus" window_role="cmus"] → $workspace8
-assign [class="^Mutt$"] → $workspace9
-assign [class="^Tig$"] → $workspace10
+assign [class="^st-256color$" instance="^System_Operations$"] → $workspace5
+assign [class="^st-256color$" instance="^Newsboat$"] →  $workspace6
+assign [class="^st-256color$" instance="^Calcurse$"] → $workspace7
+assign [class="^st-256color$" window_role="cmus" instance="^Cmus$"] → $workspace8
+assign [class="^st-256color$" instance="^Mutt$"] → $workspace9
+assign [class="^st-256color$" instance="^Tig$"] → $workspace10
 
 # For_window versions
 
