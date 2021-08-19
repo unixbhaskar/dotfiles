@@ -526,6 +526,7 @@
 (define-key mu4e-headers-mode-map (kbd "C-c c") 'org-mu4e-store-and-capture)
 #+END_SRC
 * EMMS , Music player
+
 #+BEGIN_SRC emacs-lisp
 ;;Emms Music player
 
@@ -550,6 +551,14 @@
 (load "emms-player-mpv.el")
 
 (global-set-key (kbd "C-x m") 'emms)
+
+(global-set-key (kbd "C-c s p") 'emms-pause)
+(global-set-key (kbd "C-c s n") 'emms-next)
+(global-set-key (kbd "C-c s s") 'emms-stop)
+(global-set-key (kbd "C-c s m") 'emms-mark-all)
+(global-set-key (kbd "C-c s a") 'emms-add-file)
+(global-set-key (kbd "C-c s f") 'emms-add-dired)
+(global-set-key (kbd "C-c s t") 'emms-mark-track)
 #+END_SRC
 * Org Agenda files
 #+BEGIN_SRC emacs-lisp
