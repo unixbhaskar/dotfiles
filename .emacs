@@ -1586,3 +1586,10 @@
 ;; Linux kernel development settings
 (setq c-default-style "linux")
 (require 'xcscope)
+
+;; I3window config org file copy to dotfile repo
+
+(fset 'org-i3window-config
+   (kmacro-lambda-form [?\C-x ?\C-s ?\M-! ?/ ?h ?o ?m ?e ?/ ?b ?h ?a ?s ?k ?a ?r ?/ ?b ?i ?n ?/ ?o ?r ?g ?- ?i ?3 ?w ?i ?n ?d ?o ?w ?- ?c ?o ?n ?f ?i ?g return] 0 "%d"))
+
+(global-set-key (kbd "C-c n w") 'org-i3window-config)
