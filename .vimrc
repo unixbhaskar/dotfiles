@@ -722,3 +722,10 @@ endfunction
 nmap <Leader>m : call PreviewerMarkdown()<CR>clear<CR>glow -p $(cat ~/.lastpreview.log)<CR>
 " Ale ,language server protocol
 Plugin 'dense-analysis/ale'
+" Buffer manipulation
+" Previous buffer
+nnoremap <Leader>p :b#<CR>
+" Next Buffer
+nnoremap <Leader>n :bn<CR>
+" Close Buffer
+nnoremap Q :bd!<CR>
