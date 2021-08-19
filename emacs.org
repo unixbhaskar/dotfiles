@@ -559,6 +559,7 @@
 (global-set-key (kbd "C-c s a") 'emms-add-file)
 (global-set-key (kbd "C-c s f") 'emms-add-dired)
 (global-set-key (kbd "C-c s t") 'emms-mark-track)
+(global-set-key (kbd "C-c s r") 'emms-previous)
 #+END_SRC
 * Org Agenda files
 #+BEGIN_SRC emacs-lisp
