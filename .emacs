@@ -486,6 +486,7 @@
 (global-set-key (kbd "C-c s a") 'emms-add-file)
 (global-set-key (kbd "C-c s f") 'emms-add-dired)
 (global-set-key (kbd "C-c s t") 'emms-mark-track)
+(global-set-key (kbd "C-c s r") 'emms-previous)
 
 ;;Org mode files
 
