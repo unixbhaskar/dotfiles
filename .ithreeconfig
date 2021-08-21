@@ -121,6 +121,8 @@ set $workspace11 "11 "
 set $workspace12 "12 "
 set $workspace13 "13 "
 set $workspace14 "14 "
+set $workspace15 "15 "
+
 # switch to workspace
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
@@ -139,6 +141,7 @@ bindsym $mod+braceleft workspace $workspace11 ; exec  strail;
 bindsym $mod+braceright workspace $workspace12 ; exec "st -n Screencast -e screencast";
 bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
 bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
+bindsym $mod+p workspace $workspace15 ; exec enlist_pdf_open;
 
 #ASSIGN PROGRAMS TO WORKSPACES
 assign [class="^st-256color" instance="^st-256color$"] → $workspace1
@@ -155,6 +158,7 @@ assign [class="^st-256color$" instance="^Sourcetrail$"] → $workspace11
 assign [class="^st-256color$" instance="^Screencast$"] → $workspace12
 assign [class="^st-256color$" instance="^Movies$"] → $workspace13
 assign [class="^st-256color$" instance="^Photos$"] → $workspace14
+assign [class="^st-256color$" instance="^Zathura$"] → $workspace15
 
 # For_window versions
 
@@ -192,6 +196,8 @@ bindsym $mod+Ctrl+braceleft workspace number 11
 bindsym $mod+Ctrl+braceright workspace number 12
 bindsym $mod+Ctrl+m workspace number 13
 bindsym $mod+Ctrl+comma workspace number 14
+bindsym $mod+Ctrl+p workspace number 15
+
 # Prompt for workspace switch
 bindsym $mod+w exec i3-input -F 'workspace number %s' -P 'go to workspace: '
 
@@ -351,10 +357,6 @@ bindsym $mod+z exec "clipmenu  -p 'clipboard items listed:'"
 # Play songs from artist directory
 
 bindsym $mod+semicolon exec songs_play
-
-# Open selected pdf from list
-
-bindsym $mod+p exec enlist_pdf_open
 
 # Surf browser open
 
