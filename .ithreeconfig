@@ -110,7 +110,8 @@ set $workspace1 "1   "
 set $workspace2 "2  "
 set $workspace3 "3   "
 set $workspace4 "4  ℰ"
-set $workspace5 "5  "
+#set $workspace5 "5  "
+set $workspace5 "5  "
 set $workspace6 "6  "
 set $workspace7 "7  "
 set $workspace8 "8  "
@@ -118,7 +119,8 @@ set $workspace9 "9 "
 set $workspace10 "10  "
 set $workspace11 "11 "
 set $workspace12 "12 "
-
+set $workspace13 "13 "
+set $workspace14 "14 "
 # switch to workspace
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
@@ -135,6 +137,8 @@ bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
 bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";
 bindsym $mod+braceleft workspace $workspace11 ; exec  strail;
 bindsym $mod+braceright workspace $workspace12 ; exec "st -n Screencast -e screencast";
+bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
+bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
 
 #ASSIGN PROGRAMS TO WORKSPACES
 assign [class="^st-256color" instance="^st-256color$"] → $workspace1
@@ -149,6 +153,8 @@ assign [class="^st-256color$" instance="^Mutt$"] → $workspace9
 assign [class="^st-256color$" instance="^Tig$"] → $workspace10
 assign [class="^st-256color$" instance="^Sourcetrail$"] → $workspace11
 assign [class="^st-256color$" instance="^Screencast$"] → $workspace12
+assign [class="^st-256color$" instance="^Movies$"] → $workspace13
+assign [class="^st-256color$" instance="^Photos$"] → $workspace14
 
 # For_window versions
 
@@ -184,6 +190,8 @@ bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 bindsym $mod+Ctrl+braceleft workspace number 11
 bindsym $mod+Ctrl+braceright workspace number 12
+bindsym $mod+Ctrl+m workspace number 13
+bindsym $mod+Ctrl+comma workspace number 14
 # Prompt for workspace switch
 bindsym $mod+w exec i3-input -F 'workspace number %s' -P 'go to workspace: '
 
@@ -201,6 +209,8 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 bindsym $mod+Shift+braceleft move container to workspace $workspace11
 bindsym $mod+Shift+braceright move container to workspace $workspace12
+#bindsym $mod+Shift+backslash move container to workspace $workspace13
+#bindsym $mod+Shift+comma move container to workspace $workspace14
 
 
 # reload the configuration file
@@ -338,10 +348,6 @@ bindsym $mod+Shift+g exec git_config
 
 bindsym $mod+z exec "clipmenu  -p 'clipboard items listed:'"
 
-#Movie selection and play
-
-bindsym $mod+m exec movie_watch
-
 # Play songs from artist directory
 
 bindsym $mod+semicolon exec songs_play
@@ -353,10 +359,6 @@ bindsym $mod+p exec enlist_pdf_open
 # Surf browser open
 
 bindsym $mod+slash exec tabbed surf -pe
-
-# Photo albaum to open sxiv
-
-bindsym $mod+comma exec photo_albaum
 
 # Close screencast
 bindsym $mod+Shift+bar exec kill_ffmpeg
