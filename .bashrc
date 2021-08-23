@@ -108,7 +108,6 @@ alias i3config="vim ~/.ithreeconfig"
 alias linux-next="cd $HOME/git-linux/linux-next"
 alias profile="vim ~/.profile"
 alias i3blocks="vim ~/.ithreeblocksconfig"
-alias i3scripts="cd ~/.config/i3/ && ls"
 alias scriptsgit="cd ~/git-linux/AdminScripts"
 alias lt="cd ~/LaTeX_Workouts"
 alias vimplugin=vimplugin
