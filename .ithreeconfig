@@ -450,4 +450,6 @@ bindsym $mod+Caps_Lock exec mutt_config
 # Open Tour videos
 bindsym $mod+apostrophe exec tour_videos
 
+# Open i3 related scripts
+bindsym $mod+F12 exec i3scripts
 # vim:filetype=i3config
