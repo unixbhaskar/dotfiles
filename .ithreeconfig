@@ -317,7 +317,7 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots'
 
 # Press $mod+o followed by either f, t, Escape or Return to launch firefox,
 # thunderbird or return to the default mode, respectively.
-#set $mode_launcher Launch: [f]irefox [t]hunderbird
+# set $mode_launcher Launch: [b]ash_keywords [f]irefox_keywords
 
 bindsym $mod+o mode "Shortcut_keys"
 
@@ -464,4 +464,7 @@ bindsym $mod+F9 exec slackware_howto
 
 # Open Debian Wiki page with search item
 bindsym $mod+F8 exec debian_wiki_search
+
+# Open OpenSuse Wiki page with search item
+bindsym $mod+F7 exec opensuse_wiki_search
 # vim:filetype=i3config
