@@ -2,7 +2,7 @@
 #align=center
 #color=#666666
 #separator=false
-separator_block_width=2
+separator_block_width=1
 markup=pango
 
 #[feed]
@@ -20,7 +20,7 @@ markup=pango
 
 [diskio]
 #full_text=<span background="red">disk</span>
-label=
+#label=
 command=~/.config/i3/diskio.sh
 interval=60
 markup=pango
@@ -77,12 +77,10 @@ color=#00FFFF
 #command=~/.config/i3/vpn.sh
 #interval=100
 
-[kernel]
-label=
-command=~/.config/i3/latest_kernel_version.sh;echo
-interval=3000
-#color=#c0f0d8
-color=#C8F49D
+# [kernel]
+# command=~/.config/i3/latest_kernel_version.sh;echo
+# interval=3000
+# color=#C8F49D
 
 #[browser]
 #label=
@@ -92,7 +90,7 @@ color=#C8F49D
 #color=#ff4800
 
 [uptime]
-label=
+#label=
 command=~/.config/i3/uptime.sh
 interval=300
 #color=#fff0a8
@@ -107,7 +105,7 @@ interval=3000
 color=#54f30a
 
 [mail]
-label=
+#label=
 command=~/.config/i3/mail.sh
 interval=100
 #color=#067CE3
@@ -220,19 +218,19 @@ command=~/.config/i3/i3blocks/volume;echo
 #command=~/.i3/volume-usb
 interval=2
 signal=10
-#color=#d70a53
-color=#E6E6FA
+color=#FF4500
 
 [time]
-#command=date  %Y-%m-%d %H:%M
 #instance=IN
 #TZ=Asia/Kolkata
-label=
-command=date '+%d %b %Y %H:%M %a'
+#label=
+command=~/.config/i3/date_time.sh
+#command=date '+%d %b %Y %H:%M %a'
 #command=~/.config/i3/clock
 interval=5
-#color=#78a8d8
-color=#ADFF2F
+markup=pango
+#color=#00FA9A
+
 
 #[user]
 #label=
@@ -248,13 +246,13 @@ color=#ADFF2F
 #interval=5
 
 [cmus]
-label=
+#label=
 command=~/.config/i3/cmus-now-playing
 markup=pango
 interval=repeat
 
 [mpv]
-label=
+#label=
 command=~/.config/i3/song_name_display
 markup=pango
 interval=repeat
