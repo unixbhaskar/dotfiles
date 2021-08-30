@@ -1864,3 +1864,33 @@
 (setq c-default-style "linux")
     (require 'xcscope)
 #+end_src
+
+* I3window config ORG file copy to dotfile repo
+
+#+begin_src emacs-lisp
+
+(fset 'copy-Orgi3window-config
+   (kmacro-lambda-form [?\C-x ?\C-s ?\M-! ?/ ?h ?o ?m ?e ?/ ?b ?h ?a ?s ?k ?a ?r ?/ ?b ?i ?n ?/ ?o ?r ?g ?- ?i ?3 ?w ?i ?n ?d ?o ?w ?- ?c ?o ?n ?f ?i ?g return] 0 "%d"))
+
+(global-set-key (kbd "C-c i c") 'copy-Orgi3window-config)
+#+end_src
+
+* I3Window config file open
+
+#+begin_src emacs-lisp
+ (fset 'open_i3config_orgfile
+    (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?O ?r ?g ?F ?i ?l ?e ?s ?/ ?i ?3 backspace backspace ?i ?3 ?c ?o ?n ?f ?i ?g ?. ?o ?r ?g return] 0 "%d"))
+
+(global-set-key (kbd "C-c i w") 'open_i3config_orgfile)
+
+#+end_src
+
+* Open Dot Emacs file
+
+#+begin_src emacs-lisp
+(fset 'open_dotemacs_file
+   (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s return] 0 "%d"))
+
+(global-set-key (kbd "C-c i e") 'open_dotemacs_file)
+
+#+end_src
