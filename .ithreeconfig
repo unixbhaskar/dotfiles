@@ -467,4 +467,13 @@ bindsym $mod+F8 exec debian_wiki_search
 
 # Open OpenSuse Wiki page with search item
 bindsym $mod+F7 exec opensuse_wiki_search
+
+# Open Vimb Manual
+bindsym $mod+F6 exec vimb_manual
+
+# Open Vim tips wiki page
+bindsym $mod+F5 exec vim_wiki_tips_page
+
+# Open Emacs Wiki Page
+bindsym $mod+F4 exec emacs_wiki_page
 # vim:filetype=i3config
