@@ -109,7 +109,7 @@ exec_always --no-startup-id feh --bg-scale /home/bhaskar/Pictures/LKM3_1024.png
 * Autostart
 #exec xfce4-terminal --hide-menubar --hide-scrollbar --command screen -c "$HOME/screenrc"
 exec $HOME/bin/st
-exec $HOME/bin/telegram
+#exec $HOME/bin/telegram
 exec $HOME/bin/clipmenud
 exec $HOME/bin/pia-client
 exec $HOME/bin/noti_active
@@ -396,6 +396,9 @@ bindsym $mod+Shift+s exec mpv_stop
 * Mpv continue
 bindsym $mod+Shift+p exec mpv_cont
 
+* Kill Mpv
+bindsym $mod+Ctrl+k exec kill_mpv
+
 * Emacs pop up buffer anywhere
 bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)"
 
@@ -416,7 +419,7 @@ bindsym $mod+l exec lwn_headlines
 bindsym $mod+Shift+w exec wikipedia_search
 
 * Telegram desktop client
-bindsym $mod+plus exec telegram
+bindsym $mod+plus exec toggle_telegram
 
 * Mail subjectline top 20
 bindsym $mod+Sys_Req exec check_mail2
@@ -462,5 +465,29 @@ bindsym $mod+apostrophe exec tour_videos
 
 * Open i3 related scripts
 bindsym $mod+F12 exec i3scripts
+
+* Open Arch Linux Wiki with search Item
+bindsym $mod+F11 exec arch_wiki_search
+
+* Open Gentoo Linux Wiki with searched item
+bindsym $mod+F10 exec gentoo_wiki_search
+
+* Open Slackware HowTo page
+bindsym $mod+F9 exec slackware_howto
+
+* Open Debian Wiki page with search item
+bindsym $mod+F8 exec debian_wiki_search
+
+* Open OpenSuse Wiki page with search item
+bindsym $mod+F7 exec opensuse_wiki_search
+
+*  Open Vimb Manual
+bindsym $mod+F6 exec vimb_manual
+
+* Open Vim tips wiki page
+bindsym $mod+F5 exec vim_wiki_tips_page
+
+* Open Emacs Wiki Page
+bindsym $mod+F4 exec emacs_wiki_page
 
 # vim:filetype=i3config
