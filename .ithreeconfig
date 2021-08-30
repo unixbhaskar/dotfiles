@@ -386,6 +386,9 @@ bindsym $mod+Shift+s exec mpv_stop
 # Mpv continue
 bindsym $mod+Shift+p exec mpv_cont
 
+# Kill/Stop Mpv
+bindsym $mod+Ctrl+k exec kill_mpv
+
 # Emacs pop up buffer anywhere
 bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)"
 
