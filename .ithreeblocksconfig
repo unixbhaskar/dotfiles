@@ -108,8 +108,7 @@ color=#54f30a
 #label=
 command=~/.config/i3/mail.sh
 interval=100
-#color=#067CE3
-color=#a8d8ff
+#color=#FF00FF
 
 #[disk-root]
 #label=:
