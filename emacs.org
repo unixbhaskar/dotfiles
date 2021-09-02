@@ -1894,3 +1894,8 @@
 (global-set-key (kbd "C-c i e") 'open_dotemacs_file)
 
 #+end_src
+
+* Start Pinentry service at start
+#+begin_src emacs-lisp
+(pinentry-start)
+#+end_src
