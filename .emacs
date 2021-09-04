@@ -1609,4 +1609,7 @@
 (global-set-key (kbd "C-c i e") 'open_dotemacs_file)
 
 ;; Start pinentry service on start
-(pinentry-start)
+;;(pinentry-start)
+
+;; Dired git mode
+(add-hook 'dired-mode-hook 'dired-git-mode)
