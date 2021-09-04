@@ -108,7 +108,8 @@ exec $HOME/bin/noti_active
 
 set $workspace1 "1   "
 set $workspace2 "2  "
-set $workspace3 "3   "
+#set $workspace3 "3   "
+set $workspace3  "3 "
 set $workspace4 "4  ℰ"
 #set $workspace5 "5  "
 set $workspace5 "5  "
@@ -123,13 +124,14 @@ set $workspace13 "13 "
 set $workspace14 "14 "
 set $workspace15 "15 "
 
+
 # switch to workspace
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
 
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+b workspace $workspace2 ; exec "vimb";
-bindsym $mod+Shift+f workspace $workspace3 ; exec "$HOME/bin/firefox_open";
+bindsym $mod+Shift+f workspace $workspace3 ; exec open_spotify;
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
 bindsym $mod+c workspace $workspace5 ; exec "st -n System_Operations -e system_operation";
 bindsym $mod+n workspace $workspace6 ; exec "st -n Newsboat -e newsboat";
