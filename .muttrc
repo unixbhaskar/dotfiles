@@ -100,6 +100,10 @@ mailboxes =Al_Viro
  mailboxes =inbox/Google_Alert
  mailboxes =tip-bot2
  mailboxes =kernel_test_robot
+ mailboxes =Jonathan_Corbet
+ mailboxes =Paul_E_McKenney
+ mailboxes =David_Miller
+ mailboxes =Thomas_Gleixner
 
 auto_view text/html
 set mailcap_path=~/.mutt/mailcap
