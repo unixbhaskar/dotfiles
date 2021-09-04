@@ -494,4 +494,8 @@ bindsym $mod+F5 exec vim_wiki_tips_page
 
 # Open Emacs Wiki Page
 bindsym $mod+F4 exec emacs_wiki_page
+
+# Open firefox in safe mode
+bindsym $mod+Ctrl+f exec ff_safe_mode
+
 # vim:filetype=i3config
