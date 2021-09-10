@@ -258,11 +258,17 @@ search() {
 }
 
 
-#git clone and get into the cloned directory
+# Git clone and get into the cloned directory
 
 gclone() {
 
 	 cd $HOME/git-linux && git clone "$1" &&  cd "$(basename $1 .git)"
+}
+
+# Emacs external package cloning
+emacs_pkgs_clone() {
+
+	 cd $HOME/.emacs.d && git clone "$1" &&  cd "$(basename $1 .git)"
 }
 
 
