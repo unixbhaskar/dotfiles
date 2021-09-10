@@ -1912,3 +1912,12 @@
 #+begin_src emacs-lisp
 (global-set-key (kbd "C-c i r") 'crux-reopen-as-root-mode)
 #+end_src
+
+* Open emacs init and emacs org file side by side
+#+begin_src emacs-lisp
+
+(fset 'emacs-init-and-org-file-side-by-side
+   (kmacro-lambda-form [?\C-c ?i ?e ?\C-x ?3 ?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?o ?r ?g ?F ?i ?l ?e ?s ?/ ?e ?m ?a ?c ?s ?. ?o ?r ?g return] 0 "%d"))
+
+(global-set-key (kbd "C-c i i") 'emacs-init-and-org-file-side-by-side)
+#+end_src
