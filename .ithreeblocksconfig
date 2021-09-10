@@ -2,7 +2,7 @@
 #align=center
 #color=#666666
 #separator=false
-separator_block_width=1
+separator_block_width=5
 markup=pango
 
 #[feed]
