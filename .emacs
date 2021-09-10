@@ -1620,4 +1620,22 @@
 
 ;; Reopen the present file as root mode
 
+(fset 'open_dotemacs_file
+   (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s return] 0 "%d"))
 (global-set-key (kbd "C-c i r") 'crux-reopen-as-root-mode)
+
+;; Open emacs init and emacs org file side by side
+
+(fset 'emacs-init-and-org-file-side-by-side
+   (kmacro-lambda-form [?\C-c ?i ?e ?\C-x ?3 ?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?o ?r ?g ?F ?i ?l ?e ?s ?/ ?e ?m ?a ?c ?s ?. ?o ?r ?g return] 0 "%d"))
+
+(global-set-key (kbd "C-c i i") 'emacs-init-and-org-file-side-by-side)
+
+;; Header info skeleton for org file
+(define-skeleton org-header-skeleton
+"Header info for an Org file."
+"Title: ""#+TITLE:" str " \n"
+"#+AUTHOR: " user-full-name "\n"
+"#+EMAIL: " user-mail-address "\n"
+"#+DATE: " (format-time-string "%Y-%m-%d") "\n")
+(global-set-key (kbd "C-c i h") 'org-header-skeleton)
