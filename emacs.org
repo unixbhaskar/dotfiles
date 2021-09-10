@@ -1899,3 +1899,16 @@
 #+begin_src emacs-lisp
 (pinentry-start)
 #+end_src
+
+* Open shell init files
+
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-c i s") 'crux-find-shell-init-file)
+#+end_src
+
+
+* Reopen the present file as root mode
+
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-c i r") 'crux-reopen-as-root-mode)
+#+end_src
