@@ -1921,3 +1921,15 @@
 
 (global-set-key (kbd "C-c i i") 'emacs-init-and-org-file-side-by-side)
 #+end_src
+
+* Header info skeleton for org file
+#+begin_src emacs-lisp
+
+(define-skeleton org-header-skeleton
+"Header info for an Org file."
+"Title: ""#+TITLE:" str " \n"
+"#+AUTHOR: " user-full-name "\n"
+"#+EMAIL: " user-mail-address "\n"
+"#+DATE: " (format-time-string "%Y-%m-%d-%X") "\n")
+(global-set-key (kbd "C-c i h") 'org-header-skeleton)
+#+end_src
