@@ -124,7 +124,6 @@ set $workspace13 "13 "
 set $workspace14 "14 "
 set $workspace15 "15 "
 
-
 # switch to workspace
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
@@ -199,6 +198,7 @@ bindsym $mod+Ctrl+braceright workspace number 12
 bindsym $mod+Ctrl+m workspace number 13
 bindsym $mod+Ctrl+comma workspace number 14
 bindsym $mod+Ctrl+p workspace number 15
+# bindsym $mod+Ctrl+b workspace number 16
 
 # Prompt for workspace switch
 bindsym $mod+w exec i3-input -F 'workspace number %s' -P 'go to workspace: '
@@ -500,4 +500,9 @@ bindsym $mod+F4 exec emacs_wiki_page
 # Open firefox in safe mode
 bindsym $mod+Ctrl+f exec ff_safe_mode
 
+# Open manual page as pdf
+bindcode --release 67 exec manual_view_in_pdf
+
+# Search Gentoo packages on the packages.gentoo.org
+bindcode --release 49 exec gentoo_package_search
 # vim:filetype=i3config
