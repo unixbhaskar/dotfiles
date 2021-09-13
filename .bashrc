@@ -35,6 +35,7 @@ export HISTTIMEFORMAT="%h/%d/%Y - %H:%M:%S "
 export HISTFILESIZE=99999
 export  HISTSIZE=99999
 alias ls="ls --color=always"
+alias grep="grep --color"
 shopt -s checkwinsize cdspell autocd direxpand dirspell dotglob globstar histappend
 alias mount="mount | column -t"
 alias ports='netstat -tulanp'
