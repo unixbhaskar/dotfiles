@@ -201,7 +201,7 @@ bindsym $mod+Ctrl+p workspace number 15
 # bindsym $mod+Ctrl+b workspace number 16
 
 # Prompt for workspace switch
-bindsym $mod+w exec i3-input -F 'workspace number %s' -P 'go to workspace: '
+#bindsym $mod+w exec i3-input -F 'workspace number %s' -P 'go to workspace: '
 
 
 # move focused container to workspace
@@ -348,9 +348,8 @@ bindsym $mod+minus scratchpad show
 # Focus on window activation
 focus_on_window_activation smart
 
-# My abroad tour videos
-
-bindsym $mod+Shift+g exec git_config
+# Dotfiles config enlsit
+bindcode --release $mod+62 exec config_list
 
 # clipmenu show the selection in dmenu
 
@@ -407,7 +406,7 @@ bindsym $mod+Ctrl+s exec cmus-remote --play
 bindsym $mod+Ctrl+k exec kill_mpv
 
 # Emacs pop up buffer anywhere
-bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)"
+bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)" move scratchpad
 
 # for_window [title="^emacs-everywhere"] move container to scratchpad
 
@@ -416,6 +415,9 @@ bindsym $mod+Shift+o  exec org-capture
 
 # Search words in dictionary.com
 bindsym $mod+Shift+d exec search_dict
+
+# Linux/Vim/Emacs WIKI search
+bindsym $mod+w exec linux_wikis_search
 
 # search specific subreddit and get the urls of the topic
 bindsym $mod+Shift+t exec reddit_info
@@ -445,59 +447,14 @@ bindcode --release $mod+105  exec admin_scripts
 # Select particular area of the screen and capture
 bindcode --release $mod+108 exec select_capture
 
-# Open i3config file
-bindsym $mod+i exec i3config
-
-# Open i3blocks status config file
-bindsym $mod+Shift+i exec i3blocksconfig
-
-# Open bashrc file
-bindsym $mod+Escape exec bashrc_config
-
-# Open Emacs config file
-bindcode --release $mod+62 exec emacs_config
-
-# open vimrc
-bindsym $mod+Shift+v exec vim_config
-
-# Open vimb browser config
-bindsym $mod+F1 exec vimb_config
-
-# Open newsboat config file
-bindsym $mod+Shift+n exec newsboat_config
-
-# Open muttrc mail config file
-bindsym $mod+Caps_Lock exec mutt_config
-
 # Open Tour videos
 bindsym $mod+apostrophe exec tour_videos
 
 # Open i3 related scripts
 bindsym $mod+F12 exec i3scripts
 
-# Open Arch Linux Wiki with searched item
-bindsym $mod+F11 exec arch_wiki_search
-
-# Open Gentoo Linux Wiki with searched item
-bindsym $mod+F10 exec gentoo_wiki_search
-
-# Open Slackware HowTo page
-bindsym $mod+F9 exec slackware_howto
-
-# Open Debian Wiki page with search item
-bindsym $mod+F8 exec debian_wiki_search
-
-# Open OpenSuse Wiki page with search item
-bindsym $mod+F7 exec opensuse_wiki_search
-
 # Open Vimb Manual
 bindsym $mod+F6 exec vimb_manual
-
-# Open Vim tips wiki page
-bindsym $mod+F5 exec vim_wiki_tips_page
-
-# Open Emacs Wiki Page
-bindsym $mod+F4 exec emacs_wiki_page
 
 # Open firefox in safe mode
 bindsym $mod+Ctrl+f exec ff_safe_mode
