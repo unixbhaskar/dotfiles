@@ -409,6 +409,8 @@ bindsym $mod+Ctrl+k exec kill_mpv
 # Emacs pop up buffer anywhere
 bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)"
 
+# for_window [title="^emacs-everywhere"] move container to scratchpad
+
 # Emacs org-capture protocol
 bindsym $mod+Shift+o  exec org-capture
 
