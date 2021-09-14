@@ -219,8 +219,9 @@ nnoremap <leader>vr :vsplit ~/.vimrc<cr>
 nnoremap <leader>sv :source ~/.vimrc<cr>
 "To insert email address with a shortcut @@ ,to insert author with a shortcut au, to insert date type dts and then need to press space after that
 iabbrev @@    unixbhaskar@gmail.com
-iabbrev au    Bhaskar Chowdhuey
+iabbrev au    Bhaskar Chowdhury
 iabbrev <expr> dts strftime("%c")
+iabbrev ws  https://github.com/unixbhaskar
 " Auto loading .vimrc once saved
 if has('autocmd')
     augroup reload_vimrc
