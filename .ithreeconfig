@@ -123,6 +123,7 @@ set $workspace12 "12 "
 set $workspace13 "13 "
 set $workspace14 "14 "
 set $workspace15 "15 "
+set $workspace16 "16 "
 
 # switch to workspace
 bindsym $mod+Control+Right workspace next
@@ -143,6 +144,7 @@ bindsym $mod+braceright workspace $workspace12 ; exec "st -n Screencast -e scree
 bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
 bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
 bindsym $mod+p workspace $workspace15 ; exec enlist_pdf_open;
+bindsym $mod+F11 workspace $workspace16 ; exec sys_monitor;
 
 #ASSIGN PROGRAMS TO WORKSPACES
 assign [class="^st-256color" instance="^st-256color$"] → $workspace1
@@ -160,6 +162,7 @@ assign [class="^st-256color$" instance="^Screencast$"] → $workspace12
 assign [class="^st-256color$" instance="^Movies$"] → $workspace13
 assign [class="^st-256color$" instance="^Photos$"] → $workspace14
 assign [class="^st-256color$" instance="^Zathura$"] → $workspace15
+assign [class="^st-256color$" instance="^sys_monitor$"] → $workspace16
 
 # For_window versions
 
@@ -198,6 +201,7 @@ bindsym $mod+Ctrl+braceright workspace number 12
 bindsym $mod+Ctrl+m workspace number 13
 bindsym $mod+Ctrl+comma workspace number 14
 bindsym $mod+Ctrl+p workspace number 15
+bindsym $mod+Ctrl+o workspace number 16
 # bindsym $mod+Ctrl+b workspace number 16
 
 # Prompt for workspace switch
