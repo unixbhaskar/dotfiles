@@ -1949,3 +1949,25 @@
    (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?O ?r ?g ?F ?i ?l ?e ?s ?/ ?t ?e ?s ?t ?. ?o ?r ?g return return] 0 "%d"))
 (global-set-key (kbd "C-c i o") 'create-empty-org-file)
 #+end_src
+
+* Load dired+ features
+#+begin_src emacs-lisp
+
+(add-to-list 'load-path "~/.emacs.d/diredplus")
+   (require 'dired+)
+#+end_src
+
+* Load icicles
+#+begin_src emacs-lisp
+
+(add-to-list 'load-path "~/.emacs.d/icicles/")
+ (require 'icicles)
+(icy-mode 1)
+#+end_src
+
+* Bookmark+
+#+begin_src emacs-lisp
+
+(add-to-list 'load-path "~/.emacs.d/bookmarkplus/")
+ (require 'bookmark+)
+#+end_src
