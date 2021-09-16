@@ -1646,3 +1646,17 @@
 (fset 'create-empty-org-file
    (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?O ?r ?g ?F ?i ?l ?e ?s ?/ ?t ?e ?s ?t ?. ?o ?r ?g return return] 0 "%d"))
 (global-set-key (kbd "C-c i o") 'create-empty-org-file)
+
+;; Load dired+ features
+(add-to-list 'load-path "~/.emacs.d/diredplus")
+   (require 'dired+)
+
+;; Load icicles
+(add-to-list 'load-path "~/.emacs.d/icicles/")
+ (require 'icicles)
+(icy-mode 1)
+
+;; Bookmark+
+
+(add-to-list 'load-path "~/.emacs.d/bookmarkplus/")
+ (require 'bookmark+)
