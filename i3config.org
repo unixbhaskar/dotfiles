@@ -133,6 +133,7 @@ set $workspace12 "12 "
 set $workspace13 "13 "
 set $workspace14 "14 "
 set $workspace15 "15 "
+set $workspace16 "16 "
 
 * switch to workspace
 bindsym $mod+Control+Right workspace next
@@ -142,9 +143,9 @@ bindsym $mod+1 workspace $workspace1
 bindsym $mod+b workspace $workspace2 ; exec "vimb";
 bindsym $mod+Shift+f workspace $workspace3 ; exec open_spotify;
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
-bindsym $mod+c workspace $workspace5 ; exec "st -n System_Operations -e system_operation";
+bindsym $mod+o workspace $workspace5 ; exec "st -n System_Operations -e system_operation";
 bindsym $mod+n workspace $workspace6 ; exec "st -n Newsboat -e newsboat";
-bindsym $mod+k  workspace $workspace7 ; exec "st -n Calcurse -e calcurse";
+bindsym $mod+c  workspace $workspace7 ; exec "st -n Calcurse -e calcurse";
 bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st -n Cmus -e cmus";
 bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
 bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";
@@ -170,6 +171,7 @@ assign [class="^st-256color$" instance="^Screencast$"] → $workspace12
 assign [class="^st-256color$" instance="^Movies$"] → $workspace13
 assign [class="^st-256color$" instance="^Photos$"] → $workspace14
 assign [class="^st-256color$" instance="^Zathura$"] → $workspace15
+assign [class="^st-256color$" instance="^sys_monitor$"] → $workspace16
 
 * For_window versions
 
@@ -209,9 +211,10 @@ bindsym $mod+Ctrl+braceright workspace number 12
 bindsym $mod+Ctrl+m workspace number 13
 bindsym $mod+Ctrl+comma workspace number 14
 bindsym $mod+Ctrl+p workspace number 15
+bindsym $mod+Ctrl+o workspace number 16
 
 * Prompt for workspace switch
-bindsym $mod+w exec i3-input -F 'workspace number %s' -P 'go to workspace: '
+# bindsym $mod+w exec i3-input -F 'workspace number %s' -P 'go to workspace: '
 
 * move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -330,15 +333,15 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots'
 # thunderbird or return to the default mode, respectively.
 #set $mode_launcher Launch: [f]irefox [t]hunderbird
 * Shortcut menu
-bindsym $mod+o mode "Shortcut_keys"
+# bindsym $mod+o mode "Shortcut_keys"
 
-mode "Shortcut_keys" {
-    bindsym l exec i3_open_mode_keys
-    bindsym b exec bash_supported_keywords
-    bindsym f exec firefox_shortcut_keys
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
+# mode "Shortcut_keys" {
+#     bindsym l exec i3_open_mode_keys
+#     bindsym b exec bash_supported_keywords
+#     bindsym f exec firefox_shortcut_keys
+#     bindsym Escape mode "default"
+#     bindsym Return mode "default"
+# }
 
 
 #bindsym --release button2 exec --no-startup-id import /tmp/latest-screenshot.png
@@ -459,9 +462,6 @@ bindsym $mod+F12 exec i3scripts
 
 * Enlist all the Linux/Vim/Emacs WIKIs
 bindsym $mod+w  exec linux_wikis_search
-
-*  Open Vimb Manual
-bindsym $mod+F6 exec vimb_manual
 
 * Open firefox in safe mode
 bindsym $mod+Ctrl+f exec ff_safe_mode
