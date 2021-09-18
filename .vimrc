@@ -653,3 +653,45 @@ nnoremap <Leader>p :b#<CR>
 nnoremap <Leader>n :bn<CR>
 " Close Buffer
 nnoremap Q :bd!<CR>
+" reload files changed outside vim
+set autoread
+" Triger `autoread` when files changes on disk
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" Notification after file change
+autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+"shortcut ;w to compile/run current filetype
+map <leader>r :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+exec "w"
+if &filetype == 'c'
+exec "!clear && gcc % -o %< && echo COMPILED"
+exec "!clear && time ./%<"
+elseif &filetype == 'cpp'
+exec "!clear && g++ % -o %< && echo COMPILED"
+exec "!clear && time ./%<"
+elseif expand('%:t') == 'main.rs'
+exec "!clear && cargo build --manifest-path=%:p:h:h/Cargo.toml && echo COMPILED"
+exec "!time && cargo run --manifest-path=%:p:h:h/Cargo.toml"
+elseif &filetype == 'rust'
+exec "!clear && rustc %:p --out-dir=%:p:h && echo COMPILED"
+exec "!time " .expand("%:p:r")
+elseif &filetype == 'java'
+exec "!clear && javac % && echo COMPILED"
+exec "!clear && time java -cp %:p:h %:t:r"
+elseif &filetype == 'sh'
+exec "!clear && time bash %"
+elseif &filetype == 'text'
+exec "!clear && echo 'words : ' && wc -w % && echo 'lines : ' && wc -l % && echo 'size : ' && du -h %"
+elseif &filetype == 'asm'
+exec "!clear && time nasm -f elf64 % && echo ASSEMBLED"
+exec "!clear && ld -s -o %:r \"%:r.o\" && echo LINKING"
+exec "!clear && echo RUNNING && \.\/%:r"
+elseif &filetype == 'javascript'
+exec "!clear && time node %"
+elseif &filetype == 'html'
+exec "!chromium % &"
+elseif &filetype == 'go'
+exec "!go build %< && echo COMPILED"
+exec "!clear && time go run %"
+endif
+endfunc
