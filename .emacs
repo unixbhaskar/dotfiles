@@ -7,6 +7,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(add-log-mailing-address "unixbhaskar@gmail.com")
+ '(all-the-icons-dired-monochrome nil)
  '(ansi-color-names-vector
    ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(calendar-mark-diary-entries-flag t)
@@ -22,6 +23,7 @@
  '(debug-on-error t)
  '(deft-filter-only-filenames t)
  '(diary-file "~/.emacs.d/OrgFiles/diary.org")
+ '(dired-use-ls-dired t)
  '(display-line-numbers-type 'relative)
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
@@ -1660,3 +1662,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/bookmarkplus/")
  (require 'bookmark+)
+
+;; Exchnage buffer position
+
+(global-set-key (kbd "C-c x") 'crux-transpose-windows)
