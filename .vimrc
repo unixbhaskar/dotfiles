@@ -204,8 +204,9 @@ autocmd BufWritePost .profile !notify_config_file_updates
 autocmd BufWritePost .ithreeconfig !notify_config_file_updates
 autocmd BufWritePost .ithreeblocksconfig !notify_config_file_updates
 autocmd BufWritePost  screenrc !notify_config_file_updates
-autocmd BufWritePost  .config/vimb/config !copy_vimb_config
+autocmd BufWritePost  .vimb_config !copy_vimb_config
 autocmd BufWritePost  .emacs !notify_config_file_updates
+autocmd BufWritePost  .newsboat_config !copy_newsboat_config
 augroup END
 "Move between splits
 nnoremap <C-h> <C-w><C-h>

@@ -463,7 +463,7 @@ bindsym $mod+Ctrl+f exec ff_safe_mode
 bindcode --release 67 exec manual_view_in_pdf
 
 # Search Gentoo packages on the packages.gentoo.org
-bindcode --release 49 exec gentoo_package_search
+#bindcode --release 49 exec gentoo_package_search
 
 # Linux kernel released numbers from kernel.org
 bindcode --release 110 exec kernel_feed.sh
