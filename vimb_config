@@ -58,6 +58,7 @@ set stylesheet=on
 autocmd LoadStarted https://odysee.com/* set stylesheet=off | set dark-mode=on
 autocmd LoadStarted https://youtube.com/* set stylesheet=off | set dark-mode=on
 autocmd LoadStarted https://twitter.com/* set stylesheet=off | set dark-mode=on
+autocmd LoadStarted https://tweetdeck.twitter.com/* set stylesheet=off | set dark-mode=on
 
 # Shortcuts allow the opening of an URI built up from a named template with
 # additional parameters.
@@ -139,7 +140,7 @@ nmap <C-x> :shellcmd! reddit<CR>
 
 # Open Sport website
 
-nmap <C-e> :shellcmd! opensportsite<CR>
+nmap <C-e> :shellcmd! evernote<CR>
 
 
 # GUI color settings
