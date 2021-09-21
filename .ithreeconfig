@@ -410,9 +410,12 @@ bindsym $mod+Ctrl+s exec cmus-remote --play
 bindsym $mod+Ctrl+k exec kill_mpv
 
 # Emacs pop up buffer anywhere
-bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)" move scratchpad
+for_window [title="^emacs-everywhere$"] move to scratchpad
+bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)" show scratchpad
 
-# for_window [title="^emacs-everywhere"] move container to scratchpad
+# Vim pop up buffer anywhere
+for_window [instance="^vim-everywhere$"] move to scratchpad
+bindsym $mod+Ctrl+Return exec "st -n vim-everywhere -e vim" scratchpad show
 
 # Emacs org-capture protocol
 bindsym $mod+Shift+o  exec org-capture
@@ -462,9 +465,12 @@ bindsym $mod+Ctrl+f exec ff_safe_mode
 # Open manual page as pdf
 bindcode --release 67 exec manual_view_in_pdf
 
-# Search Gentoo packages on the packages.gentoo.org
-#bindcode --release 49 exec gentoo_package_search
-
 # Linux kernel released numbers from kernel.org
 bindcode --release 110 exec kernel_feed.sh
+
+# htop scratchpad
+for_window [instance="^htop_scratchpad$"] move to scratchpad
+bindsym $mod+Ctrl+h exec "st -n htop_scratchpad -e htop" scratchpad show
+
+
 # vim:filetype=i3config
