@@ -700,3 +700,5 @@ endfunc
 noremap ;; :%s:::g<Left><Left><Left>
 "noremap ;' :%s:::cg<Left><Left><Left><Left>"
 "cmap \\ \(\)<Left><Left>
+"Markdown file creation <C-m>
+map <C-M> :e .md<Left><Left><Left>
