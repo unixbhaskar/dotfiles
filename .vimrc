@@ -295,8 +295,7 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'window': { 'width': 0.2, 'hei
 vmap <C-k> [egv
 vmap <C-j> ]egv
 "Convert `` to $() in code
-" vmap <leader>cq  :%s/`\([^`]*\)`/$(\1)/g<CR>
-" imap <leader>cq  :%s/`\([^`]*\)`/$(\1)/g<CR>
+ map <leader>cq  :%s/`\([^`]*\)`/$(\1)/g<CR>
 "All about macros ..vim-microbastic plugin
 
 let g:Mac_NamedMacroFileExtension = '.vimmacro'
