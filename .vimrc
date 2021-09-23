@@ -696,8 +696,13 @@ exec "!clear && time go run %"
 endif
 endfunc
 " Search delimiters made easy ,press ;;
-noremap ;; :%s:::g<Left><Left><Left>
+noremap ;; :%s:::g<S-Left>
 "noremap ;' :%s:::cg<Left><Left><Left><Left>"
-"cmap \\ \(\)<Left><Left>
+"cmap \\ \(\)<Left>
+
 "Markdown file creation <C-m>
 map <C-M> :e .md<Left><Left><Left>
+" File type detection for ssh known_host file
+au BufNewFile,BufRead known_hosts setfiletype sshknownhost
+" Capture register value with rg <C-r>=
+imap rg <C-R>=&<S-Right>
