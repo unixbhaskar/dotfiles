@@ -659,8 +659,8 @@ set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 " Notification after file change
 autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
-"shortcut ;w to compile/run current filetype
-map <leader>r :call CompileRunGcc()<CR>
+"shortcut ;cc to compile/run current filetype
+map <leader>cc :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 exec "w"
 if &filetype == 'c'
@@ -704,8 +704,8 @@ noremap ;; :%s:::g<S-Left>
 map <S-m> :e .md<Left><Left><Left>
 " File type detection for ssh known_host file
 au BufNewFile,BufRead known_hosts setfiletype sshknownhost
-" Capture register value with rg <C-r>=
-imap rg <C-R>=&<S-Right>
+" Capture register value with rc <C-r>=
+imap rc <C-R>=&<S-Right>
 " Autocomple brackets and quotation pair
 
 inoremap ( ()<ESC>i
