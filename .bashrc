@@ -52,7 +52,7 @@ alias week='date +%V'
 alias filepath='ls | sed "s:^:`pwd`/:"'
 alias abspath='find $PWD -maxdepth 1 | xargs ls -ld'
 alias i3configfiles="cd ~/.config/i3"
-alias v="vim -u ~/.vimrc"
+#alias v="vim -u ~/.vimrc"
 alias sshot="cd ~/Pictures/Screenshots"
 alias github_repo='/home/bhaskar/bin/github_repo'
 alias see_log='sudo tail -f /var/log/messages || journalctl -f -q 2>/dev/null'
@@ -150,6 +150,8 @@ export MANPAGER="vim -M +MANPAGER -"
 alias githome="cd $HOME/git-linux && ls"
 alias newsboat_urls="vim /home/bhaskar/.newsboat/urls"
 alias gitgraph="git log --all --decorate --oneline --graph"
+alias v='vim -c "let g:tty='\''$(tty)'\''"'
+
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
 #    #echo "$(date +%F@%T) - SSH-AGENT: Agent will be started"
