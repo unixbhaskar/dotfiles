@@ -706,3 +706,27 @@ map <S-m> :e .md<Left><Left><Left>
 au BufNewFile,BufRead known_hosts setfiletype sshknownhost
 " Capture register value with rg <C-r>=
 imap rg <C-R>=&<S-Right>
+" Autocomple brackets and quotation pair
+
+inoremap ( ()<ESC>i
+
+inoremap ) <c-r>=ClosePair(')')<CR>
+
+inoremap { {<CR>}<ESC>O
+
+inoremap } <c-r>=ClosePair('}')<CR>
+
+inoremap [ []<ESC>i
+
+inoremap ] <c-r>=ClosePair(']')<CR>
+
+inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
+
+function! ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endfunction
