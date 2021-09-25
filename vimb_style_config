@@ -6,7 +6,7 @@ html,body,li,pre,div,textarea,body,input,td,tr,nav,article,header,p {
 }
 h1, h2, h3, h4, h5, h6 {
     color: #aaa !important;
-} 
+}
 table, th, td {
     border-color: grey !important;
 }
@@ -29,7 +29,7 @@ a:visited {
     color: #e07070 !important;
 }
 img {
-    opacity: .5;
+    opacity: 1;
 }
 img:hover {
     opacity: 1;
@@ -58,3 +58,14 @@ span[vimbhint^='label'] {
     color: #000 !important;
 }
 }
+
+ div
+    {
+             font-weight: bolder;
+    }
+
+  body::-webkit-scrollbar {
+        display: none;
+  }
+
+
