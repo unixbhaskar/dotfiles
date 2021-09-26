@@ -1999,3 +1999,14 @@
 (define-key mu4e-headers-mode-map (kbd "g") 'mu4e-headers-mark-for-tag)
 (define-key mu4e-headers-mode-map (kbd "A") 'mu4e-headers-mark-for-archive)
 #+end_src
+
+* To copy dot emacs and this org file to dotfile repo and local backup folder after edit and save
+#+begin_src emacs-lisp
+(add-hook 'local-write-file-hooks 'copy_dot_emacs_to_dotfiles_repo)
+(defun copy_dot_emacs_to_dotfiles_repo ()
+  "write the file in two places"
+  (let ((orig (buffer-file-name)))
+    (write-file (concat "/home/bhaskar/dotfiles/" (file-name-nondirectory orig)) nil)
+    (write-file (concat "/data/dotfiles/" (file-name-nondirectory orig)) nil)
+(write-file orig nil)))
+#+end_src
