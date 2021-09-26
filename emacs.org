@@ -1971,3 +1971,31 @@
 (add-to-list 'load-path "~/.emacs.d/bookmarkplus/")
  (require 'bookmark+)
 #+end_src
+
+* Mu4e Mark
+
+#+begin_src emacs-lisp
+(add-to-list 'mu4e-marks
+  '(tag
+     :char       "g"
+     :prompt     "gtag"
+     :ask-target (lambda () (read-string "What tag do you want to add?"))
+     :action      (lambda (docid msg target)
+                    (mu4e-action-retag-message msg (concat "+" target)))))
+
+(add-to-list 'mu4e-marks
+  '(archive
+     :char       "A"
+     :prompt     "Archive"
+     :show-target (lambda (target) "archive")
+     :action      (lambda (docid msg target)
+                    ;; must come before proc-move since retag runs
+                    ;; 'sed' on the file
+                    (mu4e-action-retag-message msg "-\\Inbox")
+                    (mu4e~proc-move docid nil "+S-u-N"))))
+
+(mu4e~headers-defun-mark-for tag)
+(mu4e~headers-defun-mark-for archive)
+(define-key mu4e-headers-mode-map (kbd "g") 'mu4e-headers-mark-for-tag)
+(define-key mu4e-headers-mode-map (kbd "A") 'mu4e-headers-mark-for-archive)
+#+end_src
