@@ -7,6 +7,8 @@ filetype off                  " required
 filetype plugin indent on     "Make indent code based on the file type
 syntax on
 set path+=**
+set noswapfile
+set nobackup
 "syntax enable
 "set background=dark
 let g:CommandTMaxFiles=200000
