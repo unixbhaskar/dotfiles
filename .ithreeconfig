@@ -438,7 +438,7 @@ bindsym $mod+Shift+w exec wikipedia_search
 # Telegram desktop client
 bindsym $mod+plus exec toggle_telegram toggle
 
-# Mail subjectline top 20
+# Mail subjectline top 20(Sys_Reg == PrtSc)
 bindsym $mod+Sys_Req exec check_mail2
 
 # Photo by webcam
@@ -447,10 +447,10 @@ bindsym $mod+Delete exec take_photo_by_webcam
 # Hacker News top 10 headlines with dmenu
 bindsym $mod+Shift+h exec hn_headlines
 
-# List scripts and pressing enter open it in vim
+# List scripts and pressing enter open it in vim(105 == RightCtrl)
 bindcode --release $mod+105  exec admin_scripts
 
-# Select particular area of the screen and capture
+# Select particular area of the screen and capture(108 == RightAlt)
 bindcode --release $mod+108 exec select_capture
 
 # Open Tour videos
@@ -462,10 +462,10 @@ bindsym $mod+F12 exec i3scripts
 # Open firefox in safe mode
 bindsym $mod+Ctrl+f exec ff_safe_mode
 
-# Open manual page as pdf
+# Open manual page as pdf(press F1)
 bindcode --release 67 exec manual_view_in_pdf
 
-# Linux kernel released numbers from kernel.org
+# Linux kernel released numbers from kernel.org (press Home)
 bindcode --release 110 exec kernel_feed.sh
 
 # htop scratchpad
