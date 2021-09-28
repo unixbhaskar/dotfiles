@@ -2010,3 +2010,15 @@
     (write-file (concat "/data/dotfiles/" (file-name-nondirectory orig)) nil)
 (write-file orig nil)))
 #+end_src
+
+* Make a window frame full screen then come back grid
+#+begin_src emacs-lisp
+(defun toggle-maximize-buffer () "Maximize buffer"
+  (interactive)
+  (if (= 1 (length (window-list)))
+      (jump-to-register '_)
+    (progn
+      (window-configuration-to-register '_)
+      (delete-other-windows))))
+(global-set-key (kbd "C-c f") 'crux-transpose-windows)
+#+end_src
