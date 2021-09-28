@@ -1716,3 +1716,14 @@
     (write-file (concat "/data/dotfiles/" (file-name-nondirectory orig))nil)
 
     (write-file orig nil)))
+
+;; Make one window maximize ,then come back to grid
+
+(defun toggle-maximize-buffer () "Maximize buffer"
+  (interactive)
+  (if (= 1 (length (window-list)))
+      (jump-to-register '_)
+    (progn
+      (window-configuration-to-register '_)
+      (delete-other-windows))))
+(global-set-key (kbd "C-c f") 'toggle-maximize-buffer)
