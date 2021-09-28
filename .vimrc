@@ -50,7 +50,6 @@ Plugin 'mhinz/vim-startify'
 Plugin 'strboul/urlview.vim'
 Plugin 'mtth/scratch.vim'
 Plugin  'tyru/open-browser.vim'
-Plugin  'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'wincent/command-t'
 Plugin 'preservim/nerdtree'
 Plugin  'Xuyuanp/nerdtree-git-plugin'
