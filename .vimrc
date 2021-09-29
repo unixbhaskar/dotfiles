@@ -697,7 +697,7 @@ exec "!clear && time go run %"
 endif
 endfunc
 " Search delimiters made easy ,press ;;
-noremap ;; :%s:::g<S-Left>
+noremap ;; :%s:::g<Left><Left><Left>
 "noremap ;' :%s:::cg<Left><Left><Left><Left>"
 "cmap \\ \(\)<Left>
 
@@ -705,8 +705,8 @@ noremap ;; :%s:::g<S-Left>
 map <S-m> :e .md<Left><Left><Left>
 " File type detection for ssh known_host file
 au BufNewFile,BufRead known_hosts setfiletype sshknownhost
-" Capture register value with rc <C-r>=
-imap rc <C-R>=&<S-Right>
+" Capture register value with AR <C-r>=
+imap AR <C-R>=&<S-Right>
 " Autocomple brackets and quotation pair
 
 inoremap ( ()<ESC>i
@@ -731,3 +731,13 @@ function! ClosePair(char)
         return a:char
     endif
 endfunction
+"Change colorscheme as per the timing
+let hr = (strftime('%H'))
+if hr >= 17
+         colorscheme molokai_dark
+elseif hr >= 6
+"	let g:gruvbox_contrast_dark = 'hard'
+	colorscheme gruvbox
+elseif hr >= 0
+         colorscheme molokai_dark
+endif
