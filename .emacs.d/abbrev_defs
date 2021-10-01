@@ -1,8 +1,0 @@
-;;-*-coding: utf-8;-*-
-(define-abbrev-table 'global-abbrev-table
-  '(
-    ("au" "Bhaskar Chowdhury" nil :count 1)
-    ("cc" "unixbhaskar@gmail.com" nil :count 1)
-    ("ws" "https://unixbhaskar.wordpress.com" nil :count 1)
-   ))
-
