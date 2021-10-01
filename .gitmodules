@@ -7,3 +7,6 @@
 [submodule ".emacs.d/mu"]
 	path = .emacs.d/mu
 	url = https://github.com/djcb/mu.git
+[submodule ".emacs.d/mu4e-dashboard"]
+	path = .emacs.d/mu4e-dashboard
+	url = https://github.com/rougier/mu4e-dashboard.git
