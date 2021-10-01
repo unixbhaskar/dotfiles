@@ -1,3 +1,6 @@
 [submodule ".emacs.d/.emacs.d/mu"]
 	path = .emacs.d/.emacs.d/mu
 	url = git@github.com:unixbhaskar/dotfiles.git
+[submodule ".emacs.d/elpa/vterm-20210308.1505/build/libvterm-prefix/src/libvterm"]
+	path = .emacs.d/elpa/vterm-20210308.1505/build/libvterm-prefix/src/libvterm
+	url = https://github.com/neovim/libvterm.git
