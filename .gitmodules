@@ -13,3 +13,6 @@
 [submodule ".emacs.d/org-weather"]
 	path = .emacs.d/org-weather
 	url = git@github.com:abo-abo/org-weather.git
+[submodule ".emacs.d/rainbow-delimiters"]
+	path = .emacs.d/rainbow-delimiters
+	url = git@github.com:Fanael/rainbow-delimiters.git
