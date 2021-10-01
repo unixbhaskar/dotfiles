@@ -736,7 +736,8 @@ let hr = (strftime('%H'))
 if hr >= 17
          colorscheme molokai_dark
 elseif hr >= 6
-"	let g:gruvbox_contrast_dark = 'hard'
+        set background=dark
+	let g:gruvbox_contrast_dark = 'hard'
 	colorscheme gruvbox
 elseif hr >= 0
          colorscheme molokai_dark
