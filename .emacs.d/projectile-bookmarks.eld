@@ -1,0 +1,1 @@
+("~/projects/linux/" "~/projects/linux-next/" "~/projects/Collected_Notes/" "~/projects/dotfiles/" "~/projects/AdminScripts/" "~/projects/vim/" "~/projects/emacs/" "~/local_bin/" "~/git-linux/AdminScripts/" "~/Collected_Notes/" "~/git-linux/vim/" "~/dotfiles/")

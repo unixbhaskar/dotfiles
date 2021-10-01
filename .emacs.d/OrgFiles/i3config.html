@@ -1,0 +1,1379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-06-28 Mon 12:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>i3 Window Manager Config</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Bhaskar Chowdhury" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a;public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">i3 Window Manager Config</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org62a9ddc">1. Setting the MOD or Main Control Key</a></li>
+<li><a href="#org061f9c4">2. Fonts in general</a></li>
+<li><a href="#org3c2e9f9">3. Floating Modifier</a></li>
+<li><a href="#orgeba46a2">4. Start the terminal</a></li>
+<li><a href="#org908756b">5. Kill focused window</a></li>
+<li><a href="#org77a32a3">6. Run dmenu ,dmenu color, dmenu prompt</a></li>
+<li><a href="#orgc8e5e99">7. Change focus windows</a></li>
+<li><a href="#orgaf12282">8. Use the damn arrow keys</a></li>
+<li><a href="#orgedffc81">9. Focus window move to specific place</a></li>
+<li><a href="#org47f7302">10. Alternatively, you can use the cursor keys:</a></li>
+<li><a href="#orgb4dae92">11. Horizontal split</a></li>
+<li><a href="#org7ccd3eb">12. Vertical split</a></li>
+<li><a href="#orgcf10beb">13. Full screen mode</a></li>
+<li><a href="#org3679f07">14. Layout change</a></li>
+<li><a href="#org9b63e85">15. Floating toggle</a></li>
+<li><a href="#orgfe71518">16. change focus between tiling / floating windows</a></li>
+<li><a href="#org5a60a4c">17. Focus to parent container</a></li>
+<li><a href="#org7405ad0">18. Focus on child container</a></li>
+<li><a href="#orgb9ffe9b">19. Background</a></li>
+<li><a href="#org74fb606">20. Autostart few start</a></li>
+<li><a href="#org5d6179c">21. Predefined Workspace</a></li>
+<li><a href="#org025dfbd">22. Switch to workspace</a></li>
+<li><a href="#org8874ced">23. ASSIGN PROGRAMS TO WORKSPACES</a></li>
+<li><a href="#org5ffb5a1">24. For<sub>window</sub> versions</a></li>
+<li><a href="#org0f5ce72">25. Binding number key to access the specific workspace</a></li>
+<li><a href="#org822482a">26. Prompt for workspace switch</a></li>
+<li><a href="#org3ea30f9">27. Move focused container to workspace</a></li>
+<li><a href="#org1bd6883">28. Reload the configuration file</a></li>
+<li><a href="#orgae2b2f7">29. Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)</a></li>
+<li><a href="#org63cc05d">30. Exit i3 (logs you out of your X session)</a></li>
+<li><a href="#org8bde872">31. Resize window (you can also use the mouse for that)</a></li>
+<li><a href="#org17be88f">32. Start i3bar to display a workspace bar</a></li>
+<li><a href="#org13324e2">33. This bar will appear on second monitor ,if uncommented below lines</a></li>
+<li><a href="#org3d0ce6c">34. Pulse Audio controls</a></li>
+<li><a href="#org136f588">35. Lock the screen</a></li>
+<li><a href="#orgf79c7e6">36. The borders of the window</a></li>
+<li><a href="#orga352803">37. Move between the workspace</a></li>
+<li><a href="#org7518749">38. Take a screenshot upon pressing $mod+x (select an area)</a></li>
+<li><a href="#org5953a43">39. set $mode<sub>launcher</sub> Launch</a></li>
+<li><a href="#org498efed">40. Make the currently focused window a scratchpad</a></li>
+<li><a href="#org9192d3c">41. Show the first scratchpad window</a></li>
+<li><a href="#org6d67176">42. Print all window titles bold</a></li>
+<li><a href="#orgaf87db5">43. Focus on window activation</a></li>
+<li><a href="#org25e0720">44. My abroad tour videos</a></li>
+<li><a href="#org789db27">45. Clipmenu show the selection in dmenu</a></li>
+<li><a href="#orgf7f54fd">46. Movie selection and play</a></li>
+<li><a href="#org9ccb6f7">47. Play songs from artist directory</a></li>
+<li><a href="#org4eff35e">48. Open selected pdf from list</a></li>
+<li><a href="#orga084a38">49. Surf browser open</a></li>
+<li><a href="#org361bfb6">50. Photo albaum to open sxiv</a></li>
+<li><a href="#org7c647bd">51. Launch integrated webcam</a></li>
+<li><a href="#org8adb5e4">52. Start video recording with ffmpeg</a></li>
+<li><a href="#orgdbecf86">53. Keybinds pop up for reminder</a></li>
+<li><a href="#org5355b78">54. Open youtube videos</a></li>
+<li><a href="#orgbf9da8c">55. Seach query from dmenu prompt and open it on chosen browser</a></li>
+<li><a href="#org34aa172">56. Open the sports site for score</a></li>
+<li><a href="#org43c2c86">57. Open bookmarked site on browser</a></li>
+<li><a href="#org19ccce7">58. Kill all ffmpeg stuff</a></li>
+<li><a href="#orga996a63">59. Mpv pause</a></li>
+<li><a href="#org55365ed">60. Mpv continue</a></li>
+<li><a href="#org3258a31">61. Emacs pop up buffer anywhere</a></li>
+<li><a href="#org7233487">62. Emacs org-capture protocol</a></li>
+<li><a href="#orga193472">63. Vim specific stuff</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org62a9ddc" class="outline-2">
+<h2 id="org62a9ddc"><span class="section-number-2">1</span> Setting the MOD or Main Control Key</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+set $mod Mod1
+</p>
+</div>
+</div>
+<div id="outline-container-org061f9c4" class="outline-2">
+<h2 id="org061f9c4"><span class="section-number-2">2</span> Fonts in general</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+font pango:monospace 8
+</p>
+
+<p>
+font pango:DejaVu Sans Mono 8
+</p>
+
+<p>
+#This is for the icons rendering
+font pango:fontawesome 8
+</p>
+</div>
+</div>
+<div id="outline-container-org3c2e9f9" class="outline-2">
+<h2 id="org3c2e9f9"><span class="section-number-2">3</span> Floating Modifier</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+floating<sub>modifier</sub> $mod
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeba46a2" class="outline-2">
+<h2 id="orgeba46a2"><span class="section-number-2">4</span> Start the terminal</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+bindsym $mod+Return exec i3-sensible-terminal
+</p>
+</div>
+</div>
+
+<div id="outline-container-org908756b" class="outline-2">
+<h2 id="org908756b"><span class="section-number-2">5</span> Kill focused window</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+bindsym $mod+Shift+q kill
+</p>
+</div>
+</div>
+
+<div id="outline-container-org77a32a3" class="outline-2">
+<h2 id="org77a32a3"><span class="section-number-2">6</span> Run dmenu ,dmenu color, dmenu prompt</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+bindsym $mod+d exec "dmenu<sub>run</sub> -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10' -p 'search command item &gt;'"
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc8e5e99" class="outline-2">
+<h2 id="orgc8e5e99"><span class="section-number-2">7</span> Change focus windows</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+bindsym $mod+j focus left
+</p>
+
+<p>
+#bindsym $mod+k focus down
+</p>
+
+<p>
+bindsym $mod+l focus up
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaf12282" class="outline-2">
+<h2 id="orgaf12282"><span class="section-number-2">8</span> Use the damn arrow keys</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+bindsym $mod+Left focus left
+</p>
+
+<p>
+bindsym $mod+Down focus down
+</p>
+
+<p>
+bindsym $mod+Up focus up
+</p>
+
+<p>
+bindsym $mod+Right focus right
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgedffc81" class="outline-2">
+<h2 id="orgedffc81"><span class="section-number-2">9</span> Focus window move to specific place</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+bindsym $mod+Shift+j move left
+</p>
+
+<p>
+bindsym $mod+Shift+k move down
+</p>
+
+<p>
+bindsym $mod+Shift+l move up
+</p>
+
+<p>
+bindsym $mod+Shift+semicolon move right
+</p>
+</div>
+</div>
+
+<div id="outline-container-org47f7302" class="outline-2">
+<h2 id="org47f7302"><span class="section-number-2">10</span> Alternatively, you can use the cursor keys:</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+bindsym $mod+Shift+Left move left
+</p>
+
+<p>
+bindsym $mod+Shift+Down move down
+</p>
+
+<p>
+bindsym $mod+Shift+Up move up
+</p>
+
+<p>
+bindsym $mod+Shift+Right move right
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4dae92" class="outline-2">
+<h2 id="orgb4dae92"><span class="section-number-2">11</span> Horizontal split</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+bindsym $mod+h split h
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7ccd3eb" class="outline-2">
+<h2 id="org7ccd3eb"><span class="section-number-2">12</span> Vertical split</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+bindsym $mod+v split v
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcf10beb" class="outline-2">
+<h2 id="orgcf10beb"><span class="section-number-2">13</span> Full screen mode</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+bindsym $mod+f fullscreen toggle
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3679f07" class="outline-2">
+<h2 id="org3679f07"><span class="section-number-2">14</span> Layout change</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+bindsym $mod+s layout stacking
+</p>
+
+<p>
+bindsym $mod+t layout tabbed
+</p>
+
+<p>
+bindsym $mod+e layout toggle split
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9b63e85" class="outline-2">
+<h2 id="org9b63e85"><span class="section-number-2">15</span> Floating toggle</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+bindsym $mod+Shift+space floating toggle
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfe71518" class="outline-2">
+<h2 id="orgfe71518"><span class="section-number-2">16</span> change focus between tiling / floating windows</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+bindsym $mod+space focus mode<sub>toggle</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5a60a4c" class="outline-2">
+<h2 id="org5a60a4c"><span class="section-number-2">17</span> Focus to parent container</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+bindsym $mod+a focus parent
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7405ad0" class="outline-2">
+<h2 id="org7405ad0"><span class="section-number-2">18</span> Focus on child container</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+#bindsym $mod+d focus child
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb9ffe9b" class="outline-2">
+<h2 id="orgb9ffe9b"><span class="section-number-2">19</span> Background</h2>
+<div class="outline-text-2" id="text-19">
+<p>
+exec<sub>always</sub> &#x2013;no-startup-id feh &#x2013;bg-scale /home/bhaskar/Pictures/LKM3<sub>1024.png</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org74fb606" class="outline-2">
+<h2 id="org74fb606"><span class="section-number-2">20</span> Autostart few start</h2>
+<div class="outline-text-2" id="text-20">
+<p>
+#exec xfce4-terminal &#x2013;hide-menubar &#x2013;hide-scrollbar &#x2013;command screen -c "$HOME/screenrc"
+</p>
+
+<p>
+exec $HOME/bin/st
+</p>
+
+<p>
+exec $HOME/bin/telegram
+</p>
+
+<p>
+exec $HOME/bin/clipmenud
+</p>
+
+<p>
+exec $HOME/bin/pia-client
+</p>
+
+<p>
+#exec emacs &#x2013;bg-daemon=emacs-daemon
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5d6179c" class="outline-2">
+<h2 id="org5d6179c"><span class="section-number-2">21</span> Predefined Workspace</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+set $workspace1 "1   "
+</p>
+
+<p>
+set $workspace2 "2  "
+</p>
+
+<p>
+set $workspace3 "3   "
+</p>
+
+<p>
+set $workspace4 "4  ℰ"
+</p>
+
+<p>
+set $workspace5 "5  "
+</p>
+
+<p>
+set $workspace6 "6  "
+</p>
+
+<p>
+set $workspace7 "7  "
+</p>
+
+<p>
+set $workspace8 "8  "
+</p>
+
+<p>
+set $workspace9 "9 "
+</p>
+
+<p>
+set $workspace10 "10  "
+</p>
+</div>
+</div>
+
+<div id="outline-container-org025dfbd" class="outline-2">
+<h2 id="org025dfbd"><span class="section-number-2">22</span> Switch to workspace</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+bindsym $mod+Control+Right workspace next
+</p>
+
+<p>
+bindsym $mod+Control+Left workspace prev
+</p>
+
+
+<p>
+bindsym $mod+1 workspace $workspace1
+</p>
+
+<p>
+bindsym $mod+b workspace $workspace2 ; exec "vimb";
+</p>
+
+<p>
+bindsym $mod+Shift+f workspace $workspace3 ; exec "$HOME/bin/firefox<sub>open</sub>";
+</p>
+
+<p>
+bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
+</p>
+
+<p>
+bindsym $mod+c workspace $workspace5 ; exec "st -n Build<sub>And</sub><sub>Install</sub><sub>Kernel</sub> -e system<sub>operation</sub>";focus
+</p>
+
+<p>
+bindsym $mod+n workspace $workspace6 ; exec "st -n Newsboat -e newsboat";focus
+</p>
+
+<p>
+bindsym $mod+apostrophe  workspace $workspace7 ; exec "st -n Calcurse -e calcurse";focus
+</p>
+
+<p>
+bindsym $mod+u  workspace $workspace8 ; exec &#x2013;no-startup-id "st -n Cmus -e cmus";focus
+</p>
+
+<p>
+bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail<sub>open</sub>";focus
+</p>
+
+<p>
+bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig<sub>open</sub>";focus
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8874ced" class="outline-2">
+<h2 id="org8874ced"><span class="section-number-2">23</span> ASSIGN PROGRAMS TO WORKSPACES</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+assign [class="<sup>st</sup>-256color"] → $workspace1
+</p>
+
+<p>
+assign [class="<sup>Vimb</sup>$"]  → $workspace2
+</p>
+
+<p>
+assign [class="<sup>Firefox</sup>$"] → $workspace3
+</p>
+
+<p>
+assign [class="<sup>Emacs</sup>$"] → $workspace4
+</p>
+
+<p>
+assign [class="<sup>Build</sup><sub>And</sub><sub>Install</sub><sub>Kernel</sub>$"] → $workspace5
+</p>
+
+<p>
+assign [class="<sup>Newsboat</sup>$"] →  $workspace6
+</p>
+
+<p>
+assign [class="<sup>Calcurse</sup>$"] → $workspace7
+</p>
+
+<p>
+assign [class="<sup>Cmus</sup>" window<sub>role</sub>="cmus"] → $workspace8
+</p>
+
+<p>
+assign [class="<sup>Mutt</sup>$"] → $workspace9
+</p>
+
+<p>
+assign [class="<sup>Tig</sup>$"] → $workspace10
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5ffb5a1" class="outline-2">
+<h2 id="org5ffb5a1"><span class="section-number-2">24</span> For<sub>window</sub> versions</h2>
+<div class="outline-text-2" id="text-24">
+<p>
+for<sub>window</sub> [instance="<sup>Build</sup><sub>And</sub><sub>Install</sub><sub>Kernel</sub>$"] move container to workspace $workspace5
+</p>
+
+
+<p>
+for<sub>window</sub>  [instance="<sup>Newsboat</sup>$"] move container to workspace $workspacae6
+</p>
+
+
+<p>
+for<sub>window</sub> [instance="<sup>Calcurse</sup>$"] move container to workspace $workspace7
+</p>
+
+
+<p>
+for<sub>window</sub> [instance="<sup>Cmus</sup>$"] move container to workspace $workspace8
+</p>
+
+
+<p>
+for<sub>window</sub> [instance="<sup>Mutt</sup>$"] move container to workspace $workspace9
+</p>
+
+
+<p>
+for<sub>window</sub> [instance="<sup>Tig</sup>$"] move container to workspace $workspace10
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0f5ce72" class="outline-2">
+<h2 id="org0f5ce72"><span class="section-number-2">25</span> Binding number key to access the specific workspace</h2>
+<div class="outline-text-2" id="text-25">
+<p>
+bindsym $mod+2 workspace number 2
+</p>
+
+<p>
+bindsym $mod+3 workspace number 3
+</p>
+
+<p>
+bindsym $mod+4 workspace number 4
+</p>
+
+<p>
+bindsym $mod+5 workspace number 5
+</p>
+
+<p>
+bindsym $mod+6 workspace number 6
+</p>
+
+<p>
+bindsym $mod+7 workspace number 7
+</p>
+
+<p>
+bindsym $mod+8 workspace number 8
+</p>
+
+<p>
+bindsym $mod+9 workspace number 9
+</p>
+
+<p>
+bindsym $mod+0 workspace number 10
+</p>
+</div>
+</div>
+
+<div id="outline-container-org822482a" class="outline-2">
+<h2 id="org822482a"><span class="section-number-2">26</span> Prompt for workspace switch</h2>
+<div class="outline-text-2" id="text-26">
+<p>
+bindsym $mod+w exec i3-input -F 'workspace number %s' -P 'go to workspace: '
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3ea30f9" class="outline-2">
+<h2 id="org3ea30f9"><span class="section-number-2">27</span> Move focused container to workspace</h2>
+<div class="outline-text-2" id="text-27">
+<p>
+bindsym $mod+Shift+1 move container to workspace $workspace1
+</p>
+
+<p>
+bindsym $mod+Shift+2 move container to workspace $workspace2
+</p>
+
+<p>
+bindsym $mod+Shift+3 move container to workspace $workspace3
+</p>
+
+<p>
+bindsym $mod+Shift+4 move container to workspace $workspace4
+</p>
+
+<p>
+bindsym $mod+Shift+5 move container to workspace $workspace5
+</p>
+
+<p>
+bindsym $mod+Shift+6 move container to workspace $workspace6
+</p>
+
+<p>
+bindsym $mod+Shift+7 move container to workspace $workspace7
+</p>
+
+<p>
+bindsym $mod+Shift+8 move container to workspace $workspace8
+</p>
+
+<p>
+bindsym $mod+Shift+9 move container to workspace $workspace9
+</p>
+
+<p>
+bindsym $mod+Shift+0 move container to workspace $workspace10
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1bd6883" class="outline-2">
+<h2 id="org1bd6883"><span class="section-number-2">28</span> Reload the configuration file</h2>
+<div class="outline-text-2" id="text-28">
+<p>
+bindsym $mod+Shift+c reload
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgae2b2f7" class="outline-2">
+<h2 id="orgae2b2f7"><span class="section-number-2">29</span> Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)</h2>
+<div class="outline-text-2" id="text-29">
+<p>
+bindsym $mod+Shift+r restart
+</p>
+</div>
+</div>
+
+<div id="outline-container-org63cc05d" class="outline-2">
+<h2 id="org63cc05d"><span class="section-number-2">30</span> Exit i3 (logs you out of your X session)</h2>
+<div class="outline-text-2" id="text-30">
+<p>
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8bde872" class="outline-2">
+<h2 id="org8bde872"><span class="section-number-2">31</span> Resize window (you can also use the mouse for that)</h2>
+<div class="outline-text-2" id="text-31">
+<p>
+mode "resize" {
+</p>
+
+<p>
+bindsym j resize shrink width 10 px or 10 ppt
+</p>
+
+<p>
+bindsym k resize grow height 10 px or 10 ppt
+</p>
+
+<p>
+bindsym l resize shrink height 10 px or 10 ppt
+</p>
+
+<p>
+bindsym semicolon resize grow width 10 px or 10 ppt
+</p>
+
+<p>
+bindsym Left resize shrink width 10 px or 10 ppt
+</p>
+
+<p>
+bindsym Down resize grow height 10 px or 10 ppt
+</p>
+
+<p>
+bindsym Up resize shrink height 10 px or 10 ppt
+</p>
+
+<p>
+bindsym Right resize grow width 10 px or 10 ppt
+</p>
+
+<p>
+bindsym Return mode "default"
+</p>
+
+<p>
+bindsym Escape mode "default"
+</p>
+
+
+
+<p>
+}
+</p>
+
+
+
+<p>
+bindsym $mod+r mode "resize"
+</p>
+</div>
+</div>
+
+<div id="outline-container-org17be88f" class="outline-2">
+<h2 id="org17be88f"><span class="section-number-2">32</span> Start i3bar to display a workspace bar</h2>
+<div class="outline-text-2" id="text-32">
+<p>
+bar {
+</p>
+
+<p>
+position top
+</p>
+
+<p>
+output primary
+</p>
+
+<p>
+tray<sub>output</sub> primary
+</p>
+
+
+<p>
+colors {
+</p>
+
+<p>
+background #000000
+</p>
+
+<p>
+statusline #dddddd
+</p>
+
+<p>
+separator #666666
+</p>
+
+<p>
+focused<sub>workspace</sub>  #4c7899 #285577 #ffffff
+</p>
+
+<p>
+active<sub>workspace</sub>   #333333 #ac4fc6 #ffffff
+</p>
+
+<p>
+inactive<sub>workspace</sub> #333333 #222222 #888888
+</p>
+
+<p>
+urgent<sub>workspace</sub>   #2f343a #900000 #ffffff
+</p>
+
+
+<p>
+}
+</p>
+
+<p>
+status<sub>command</sub> i3blocks -c  $HOME/.config/i3/i3blocks.conf
+</p>
+
+<p>
+workspace<sub>buttons</sub> yes
+</p>
+
+<p>
+tray<sub>output</sub> eDP-1
+</p>
+
+<p>
+strip<sub>workspace</sub><sub>numbers</sub> yes
+</p>
+
+
+<p>
+}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org13324e2" class="outline-2">
+<h2 id="org13324e2"><span class="section-number-2">33</span> This bar will appear on second monitor ,if uncommented below lines</h2>
+<div class="outline-text-2" id="text-33">
+<p>
+==  # bar {
+</p>
+
+<p>
+==    #    position bottom
+</p>
+
+<p>
+==    #    output DP2
+</p>
+
+<p>
+==   #    status<sub>command</sub> i3blocks -c $HOME/.config/i3/i3blocks.conf
+</p>
+
+<p>
+==   #    }
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3d0ce6c" class="outline-2">
+<h2 id="org3d0ce6c"><span class="section-number-2">34</span> Pulse Audio controls</h2>
+<div class="outline-text-2" id="text-34">
+<p>
+bindsym XF86AudioRaiseVolume exec &#x2013;no-startup-id pactl set-sink-volume 0 &#x2013; +10% &amp;&amp; killall -SIGUSR1 i3blocks
+</p>
+
+<p>
+bindsym XF86AudioLowerVolume exec &#x2013;no-startup-id pactl set-sink-volume 0 &#x2013; -10% &amp;&amp; killall -SIGUSR1 i3blocks
+</p>
+
+<p>
+bindsym XF86AudioMute exec &#x2013;no-startup-id pactl set-sink-mute 0 toggle # mute sound
+</p>
+
+<p>
+#bindsym XF86AudioRaiseVolume exec alsamixer sset Master 10%+ unmute
+</p>
+
+<p>
+#bindsym XF86AudioLowerVolume exec alsamixer sset Master 10%- unmute
+</p>
+
+<p>
+bindsym $mod+F3 exec amixer set Master 10%+ unmute
+</p>
+
+<p>
+bindsym $mod+F2 exec amixer set Master 10%- unmute
+</p>
+</div>
+</div>
+
+<div id="outline-container-org136f588" class="outline-2">
+<h2 id="org136f588"><span class="section-number-2">35</span> Lock the screen</h2>
+<div class="outline-text-2" id="text-35">
+<p>
+bindsym $mod+shift+x exec i3lock -i ~/Pictures/LKM3<sub>1024.png</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf79c7e6" class="outline-2">
+<h2 id="orgf79c7e6"><span class="section-number-2">36</span> The borders of the window</h2>
+<div class="outline-text-2" id="text-36">
+<p>
+hide<sub>edge</sub><sub>borders</sub> both
+</p>
+
+<p>
+workspace<sub>auto</sub><sub>back</sub><sub>and</sub><sub>forth</sub> yes
+</p>
+
+<p>
+for<sub>window</sub> [class="^.*"] border pixel 1
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga352803" class="outline-2">
+<h2 id="orga352803"><span class="section-number-2">37</span> Move between the workspace</h2>
+<div class="outline-text-2" id="text-37">
+<p>
+bindsym $mod+Tab workspace back<sub>and</sub><sub>forth</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7518749" class="outline-2">
+<h2 id="org7518749"><span class="section-number-2">38</span> Take a screenshot upon pressing $mod+x (select an area)</h2>
+<div class="outline-text-2" id="text-38">
+<p>
+bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots'
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5953a43" class="outline-2">
+<h2 id="org5953a43"><span class="section-number-2">39</span> set $mode<sub>launcher</sub> Launch</h2>
+<div class="outline-text-2" id="text-39">
+<p>
+bindsym $mod+o mode "Shortcut<sub>keys</sub>"
+</p>
+
+
+<p>
+mode "Shortcut<sub>keys</sub>" {
+</p>
+
+<p>
+bindsym l exec i3<sub>open</sub><sub>mode</sub><sub>keys</sub>
+</p>
+
+<p>
+bindsym b exec bash<sub>supported</sub><sub>keywords</sub>
+</p>
+
+<p>
+bindsym f exec firefox<sub>shortcut</sub><sub>keys</sub>
+</p>
+
+<p>
+bindsym c exec take<sub>photo</sub><sub>by</sub><sub>webcam</sub>
+</p>
+
+<p>
+bindsym Escape mode "default"
+</p>
+
+<p>
+bindsym Return mode "default"
+</p>
+
+
+<p>
+}
+</p>
+
+
+<p>
+#bindsym &#x2013;release button2 exec &#x2013;no-startup-id import /tmp/latest-screenshot.png
+</p>
+</div>
+</div>
+
+<div id="outline-container-org498efed" class="outline-2">
+<h2 id="org498efed"><span class="section-number-2">40</span> Make the currently focused window a scratchpad</h2>
+<div class="outline-text-2" id="text-40">
+<p>
+<code>=  #floating_modifier Mod1 =</code>
+</p>
+
+<p>
+bindsym $mod+Shift+minus move scratchpad
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9192d3c" class="outline-2">
+<h2 id="org9192d3c"><span class="section-number-2">41</span> Show the first scratchpad window</h2>
+<div class="outline-text-2" id="text-41">
+<p>
+bindsym $mod+minus scratchpad show
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6d67176" class="outline-2">
+<h2 id="org6d67176"><span class="section-number-2">42</span> Print all window titles bold</h2>
+<div class="outline-text-2" id="text-42">
+<p>
+for<sub>window</sub> [class=".*"] title<sub>format</sub> "&lt;b&gt;%title&lt;/b&gt;"
+</p>
+
+<p>
+<code>=</code> #for<sub>window</sub> [class="(?i)firefox"] title<sub>format</sub> "&lt;span foreground='magenta'&gt;%title&lt;/span&gt;"==
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaf87db5" class="outline-2">
+<h2 id="orgaf87db5"><span class="section-number-2">43</span> Focus on window activation</h2>
+<div class="outline-text-2" id="text-43">
+<p>
+focus<sub>on</sub><sub>window</sub><sub>activation</sub> smart
+</p>
+</div>
+</div>
+
+<div id="outline-container-org25e0720" class="outline-2">
+<h2 id="org25e0720"><span class="section-number-2">44</span> My abroad tour videos</h2>
+<div class="outline-text-2" id="text-44">
+<p>
+bindsym $mod+Shift+g exec tour<sub>videos</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org789db27" class="outline-2">
+<h2 id="org789db27"><span class="section-number-2">45</span> Clipmenu show the selection in dmenu</h2>
+<div class="outline-text-2" id="text-45">
+<p>
+bindsym $mod+z exec "clipmenu  -p 'clipboard items listed:'"
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf7f54fd" class="outline-2">
+<h2 id="orgf7f54fd"><span class="section-number-2">46</span> Movie selection and play</h2>
+<div class="outline-text-2" id="text-46">
+<p>
+bindsym $mod+m exec movie<sub>watch</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9ccb6f7" class="outline-2">
+<h2 id="org9ccb6f7"><span class="section-number-2">47</span> Play songs from artist directory</h2>
+<div class="outline-text-2" id="text-47">
+<p>
+bindsym $mod+semicolon exec songs<sub>play</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4eff35e" class="outline-2">
+<h2 id="org4eff35e"><span class="section-number-2">48</span> Open selected pdf from list</h2>
+<div class="outline-text-2" id="text-48">
+<p>
+bindsym $mod+p exec enlist<sub>pdf</sub><sub>open</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga084a38" class="outline-2">
+<h2 id="orga084a38"><span class="section-number-2">49</span> Surf browser open</h2>
+<div class="outline-text-2" id="text-49">
+<p>
+bindsym $mod+slash exec tabbed surf -pe
+</p>
+</div>
+</div>
+
+<div id="outline-container-org361bfb6" class="outline-2">
+<h2 id="org361bfb6"><span class="section-number-2">50</span> Photo albaum to open sxiv</h2>
+<div class="outline-text-2" id="text-50">
+<p>
+bindsym $mod+comma exec photo<sub>albaum</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7c647bd" class="outline-2">
+<h2 id="org7c647bd"><span class="section-number-2">51</span> Launch integrated webcam</h2>
+<div class="outline-text-2" id="text-51">
+<p>
+bindsym $mod+backslash exec ffplay /dev/video0
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8adb5e4" class="outline-2">
+<h2 id="org8adb5e4"><span class="section-number-2">52</span> Start video recording with ffmpeg</h2>
+<div class="outline-text-2" id="text-52">
+<p>
+bindsym $mod+BackSpace exec video<sub>by</sub><sub>ffmpeg</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdbecf86" class="outline-2">
+<h2 id="orgdbecf86"><span class="section-number-2">53</span> Keybinds pop up for reminder</h2>
+<div class="outline-text-2" id="text-53">
+<p>
+bindsym $mod+grave exec i3<sub>keybinds</sub><sub>help</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5355b78" class="outline-2">
+<h2 id="org5355b78"><span class="section-number-2">54</span> Open youtube videos</h2>
+<div class="outline-text-2" id="text-54">
+<p>
+bindsym $mod+y exec search<sub>youtube</sub><sub>videos</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbf9da8c" class="outline-2">
+<h2 id="orgbf9da8c"><span class="section-number-2">55</span> Seach query from dmenu prompt and open it on chosen browser</h2>
+<div class="outline-text-2" id="text-55">
+<p>
+bindsym $mod+q exec search<sub>on</sub><sub>the</sub><sub>internet</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org34aa172" class="outline-2">
+<h2 id="org34aa172"><span class="section-number-2">56</span> Open the sports site for score</h2>
+<div class="outline-text-2" id="text-56">
+<p>
+<code>==</code> #bindsym $mod+End exec live<sub>sports</sub><sub>scores</sub> ==
+</p>
+</div>
+</div>
+
+<div id="outline-container-org43c2c86" class="outline-2">
+<h2 id="org43c2c86"><span class="section-number-2">57</span> Open bookmarked site on browser</h2>
+<div class="outline-text-2" id="text-57">
+<p>
+bindsym $mod+Shift+b exec bookmark2
+</p>
+</div>
+</div>
+
+<div id="outline-container-org19ccce7" class="outline-2">
+<h2 id="org19ccce7"><span class="section-number-2">58</span> Kill all ffmpeg stuff</h2>
+<div class="outline-text-2" id="text-58">
+<p>
+bindsym $mod+k exec pkill ffmpeg
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga996a63" class="outline-2">
+<h2 id="orga996a63"><span class="section-number-2">59</span> Mpv pause</h2>
+<div class="outline-text-2" id="text-59">
+<p>
+bindsym $mod+Shift+s exec mpv<sub>stop</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org55365ed" class="outline-2">
+<h2 id="org55365ed"><span class="section-number-2">60</span> Mpv continue</h2>
+<div class="outline-text-2" id="text-60">
+<p>
+bindsym $mod+Shift+p exec mpv<sub>cont</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3258a31" class="outline-2">
+<h2 id="org3258a31"><span class="section-number-2">61</span> Emacs pop up buffer anywhere</h2>
+<div class="outline-text-2" id="text-61">
+<p>
+bindsym $mod+End exec  emacsclient &#x2013;eval "(emacs-everywhere)"
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7233487" class="outline-2">
+<h2 id="org7233487"><span class="section-number-2">62</span> Emacs org-capture protocol</h2>
+<div class="outline-text-2" id="text-62">
+<p>
+bindsym $mod+Shift+o  exec org-capture
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga193472" class="outline-2">
+<h2 id="orga193472"><span class="section-number-2">63</span> Vim specific stuff</h2>
+<div class="outline-text-2" id="text-63">
+<p>
+<code>=</code> # For vim syntax detection==
+</p>
+
+<p>
+<code>=</code> # vim:filetype=i3config==
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 06/28/2021 09:47:35 AM</p>
+<p class="author">Author: Bhaskar Chowdhury</p>
+<p class="date">Created: 2021-06-28 Mon 12:07</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

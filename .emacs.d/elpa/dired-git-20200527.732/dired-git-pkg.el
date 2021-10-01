@@ -1,0 +1,2 @@
+;;; Generated package description from dired-git.el  -*- no-byte-compile: t -*-
+(define-package "dired-git" "20200527.732" "Git integration for dired" '((emacs "26.1") (async-await "1.0") (async "1.9.4") (all-the-icons "2.2.0") (ppp "1.0.0")) :commit "82c93bdb2fe392b122f79d2e425c632f1c69ede3" :authors '(("Naoya Yamashita" . "conao3@gmail.com")) :maintainer '("Naoya Yamashita" . "conao3@gmail.com") :keywords '("tools") :url "https://github.com/conao3/dired-git.el")

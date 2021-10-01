@@ -1,0 +1,32 @@
+
+;; ----- smex-history -----
+(
+ dashboard-refresh-buffer
+ dashboard-return
+ package-refresh-contents
+ git-commit-review
+ list-packages
+ counsel-git-log
+ counsel-git
+)
+
+;; ----- smex-data -----
+(
+ (counsel-ag . 1)
+ (org-agenda-file-to-front . 1)
+ (image-dired . 1)
+ (calc . 1)
+ (dashboard-refresh-buffer . 5)
+ (finger . 2)
+ (appt-check . 1)
+ (popup-imenu . 4)
+ (counsel-git . 3)
+ (package-autoremove . 1)
+ (package-delete . 2)
+ (counsel-git-log . 1)
+ (list-packages . 4)
+ (git-messenger:popup-show . 1)
+ (git-commit-review . 1)
+ (package-refresh-contents . 1)
+ (dashboard-return . 4)
+)

@@ -1,0 +1,2 @@
+;;; Generated package description from leaf.el  -*- no-byte-compile: t -*-
+(define-package "leaf" "20210611.1550" "Simplify your init.el configuration, extended use-package" '((emacs "24.1")) :commit "a4fd520f5c31f54e0797155866e0b35df277664e" :authors '(("Naoya Yamashita" . "conao3@gmail.com")) :maintainer '("Naoya Yamashita" . "conao3@gmail.com") :keywords '("lisp" "settings") :url "https://github.com/conao3/leaf.el")
