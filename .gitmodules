@@ -10,3 +10,6 @@
 [submodule ".emacs.d/mu4e-dashboard"]
 	path = .emacs.d/mu4e-dashboard
 	url = https://github.com/rougier/mu4e-dashboard.git
+[submodule ".emacs.d/org-weather"]
+	path = .emacs.d/org-weather
+	url = git@github.com:abo-abo/org-weather.git
