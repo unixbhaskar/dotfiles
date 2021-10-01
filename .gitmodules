@@ -4,3 +4,6 @@
 [submodule ".emacs.d/elpa/vterm-20210308.1505/build/libvterm-prefix/src/libvterm"]
 	path = .emacs.d/elpa/vterm-20210308.1505/build/libvterm-prefix/src/libvterm
 	url = https://github.com/neovim/libvterm.git
+[submodule ".emacs.d/mu"]
+	path = .emacs.d/mu
+	url = https://github.com/djcb/mu.git
