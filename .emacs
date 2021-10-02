@@ -29,6 +29,20 @@
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
  '(display-time-use-mail-icon t)
+ '(doom-modeline-bar-width 2)
+ '(doom-modeline-env-elixir-executable "iex")
+ '(doom-modeline-env-go-executable "go")
+ '(doom-modeline-env-perl-executable "perl")
+ '(doom-modeline-env-python-executable "python")
+ '(doom-modeline-env-ruby-executable "ruby")
+ '(doom-modeline-env-rust-executable "rustc")
+ '(doom-modeline-github nil)
+ '(doom-modeline-gnus t)
+ '(doom-modeline-height 10)
+ '(doom-modeline-indent-info t)
+ '(doom-modeline-mode t)
+ '(doom-modeline-mu4e t)
+ '(doom-modeline-project-detection 'project)
  '(elfeed-feeds
    '("http://www.sysadminblogs.com/planet/atom.xml" "http://feeds2.feedburner.com/webupd8" "http://aws.typepad.com/aws/atom.xml" "http://www.openstack.org/blog/feed/" "http://selinuxnews.org/wp/index.php/feed/" "http://www.learninglinux.com/backend.php" "http://opensource.org/blog/feed" "http://z.about.com/6/g/linux/b/rss2.xml" "http://linuxtoday.com/backend/biglt.rss" "http://www.debian-administration.org/articles.rdf" "http://feeds.feedburner.com/Insidehpc" "http://lxer.com/module/newswire/headlines.rss" "http://feeds.delicious.com/rss/OracleTechnologyNetwork/linux" "http://rss.techtarget.com/184.xml" "http://z.about.com/6/o/m/linux_p2.xml" "http://linux-foundation.org/weblogs/press/feed/" "http://www.linux-mag.com/cache/rss20.xml" "http://google-opensource.blogspot.com/atom.xml" "http://wiki.openvz.org/w/index.php?title=Special:RecentChanges&feed=rss" "http://feeds2.feedburner.com/oreilly/linux" "http://www.linuxinsider.com/perl/syndication/rssfull.pl" "http://kernelnewbies.org/RecentChanges?action=rss_rc&ddiffs=1&unique=1" "http://dev.mysql.com/mysql.rss" "http://feeds2.feedburner.com/Command-line-fu" "http://kbase.redhat.com/faq/community/feeds/documents?community=2001" "http://www.linux.com/feature?theme=rss" "http://feeds.feedburner.com/Go2linux" "http://linuxvirtualization.com/xml/rss/feed.xml" "http://feeds.feedburner.com/unixmenhowtos" "http://linux.ittoolbox.com/rss/12/white_papers" "http://www.sun.com/bigadmin/content/rss/scripts.xml" "http://esr.ibiblio.org/?feed=rss2" "http://www.kroah.com/log/index.rss" "http://www.hackitlinux.com/index.rss" "http://feeds.oreilly.com/oreilly/lamp" "http://www.unix.com/external.php?type=RSS2" "http://feeds.feedburner.com/Phoronix" "http://www.linuxhpc.org/backend/linuxhpc.rdf" "http://www.pixelbeat.org/feed/rss2.xml" "http://blog.ivanristic.com/atom.xml" "http://www.novell.com/news/novell-in-the-news/RSS" "http://penguinista.org/feed" "http://kernel.org/kdist/rss.xml" "http://www.linuxtopia.org/linuxtopia.rss" "http://administratosphere.wordpress.com/feed/" "http://snipt.net/public/tag/bash/feed" "http://feeds.feedburner.com/susegeek" "http://superuser.com/feeds/tag/linux" "http://kerneloops.org/rss.php" "http://unixbhaskar.wordpress.com/feed/" "http://www.reddit.com/r/linux/.rss" "http://rss.techtarget.com/421.xml" "http://feeds.feedburner.com/linuxweblog" "http://feeds.feedburner.com/HowToLinux" "http://www.blogger.com/feeds/09134601055128665246/blogs" "http://packages.gentoo.org/feed/newpackage" "http://www.ducea.com/feed/" "http://feeds.feedburner.com/linuxscrew" "http://feeds.feedburner.com/Shell-fu" "http://feeds.askapache.com/apache/htaccess" "http://linux.byexamples.com/feed/" "http://www.linuxformat.co.uk/backend.php" "http://feeds.oreilly.com/oreilly/sysadmin" "http://feeds.linuxinsight.com/linuxportal" "http://rss.slashdot.org/Slashdot/slashdotApache" "http://unixbhaskar.blogspot.com/feeds/posts/default" "http://www.linuxsecurity.com/static-content/linuxsecurity_advisories.rss" "http://tuxtraining.com/feed" "http://www.reviewlinux.com/rss/rss_howtos.xml" "http://www.ibm.com/developerworks/views/linux/rss/libraryview.jsp" "http://planet.nagios.org/archives?format=feed&type=rss" "http://www.linuxhomenetworking.com/wiki/index.php?title=Special:RecentChanges&feed=rss" "http://feeds.feedburner.com/Unixtutorials" "http://jakarta.apache.org/site/rss.xml" "http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" "http://www.clustermonkey.net/component/option,com_rss/feed,RSS2.0/no_html,1/" "http://www.fsf.org/news/RSS" "http://nagios.org/backend/feeds/frontpage/" "http://rss.slashdot.org/Slashdot/slashdotLinux" "http://feeds.feedburner.com/UbuntuGeek" "http://www.sitepoint.com/feed.rdf/all/tech/" "http://www.linuxhaxor.net/feed/" "http://mysqlha.blogspot.com/feeds/posts/default" "http://feeds.feedburner.com/MozillaLinks" "http://systhread.net/rss.xml" "http://feeds.feedburner.com/linuxtutorial" "http://www.oreillynet.com/pub/feed/9" "http://www.linuxquestions.org/syndicate/lqlatest.xml" "http://services.devx.com/outgoing/devxfeed.xml" "http://www.linuxfromscratch.org/lfs/feed.rss" "http://mongrel.rubyforge.org/rss.xml" "http://aspiringsysadmin.com/blog/feed/" "http://www.linuxplus.net/feed/" "http://www.linuxworld.com/rss/linux-news.xml" "http://mysqldba.blogspot.com/atom.xml" "http://www.howtoforge.com/node/feed" "http://www.linuxjournal.com/node/feed" "http://lwn.net/headlines/newrss" "http://www.linuxexpert.com/feed/" "http://kerneltrap.org/node/feed" "http://www.monitoringexchange.org/cgi-bin/search.cgi?query=_SPECIAL&special=newplugins&xml_feed=1&xml_title=MonitoringExchange%20-%20New%20Plugins;d=1" "http://www.lids.org/?q=rss.xml" "http://feeds.feedburner.com/TheGeekStuff" "http://lkml.org/rss.php" "http://www.fridu.org/faqs-aamp-tips-mainmenu-80/40-hosting-a-sysadmin?format=feed&type=rss" "http://serverfault.com/feeds/tag/linux" "http://digg.com/rss/indexlinux_unix.xml" "http://www.usinglinux.org/rss.php" "http://www.tuxwire.com/category/Howto/feed/" "http://www.itworld.com/blogs/81/feed" "https://www.kernel.org/feeds/all.atom.xml" "http://software.intel.com/en-us/blogs/feed" "http://blogs.oracle.com/MySQL/feed/entries/rss?cat=/MySQL" "http://www.linuxfoundation.org/news-media/news/rss.xml" "http://www.osnews.com/files/recent.xml" "http://www.mysqlperformanceblog.com/feed/" "http://feeds.howtogeek.com/howtogeek" "http://rootprompt.org/rss/" "http://feeds.feedburner.com/TechCrunch/" "http://www.linuxinsight.com/aggregator/rss" "http://linuxinstruction.com/?q=rss.xml" "http://feeds.feedburner.com/Reviewlinux" "http://linuxsysadminblog.com/atom.xml" "http://static.fsf.org/fsforg/rss/news.xml" "http://www.eweek.com/servers/rss/" "http://oops.kernel.org/feed/" "http://www.nagios.org/backend/feeds/frontpage/" "http://www.nagios.org/backend/feeds/community/" "http://www.nagios.org/news?format=feed&type=rss" "http://www.nagios.org/backend/feeds/uber/" "http://www.linux-on-laptops.com/rss.xml" "http://www.shell-tips.com/feed/" "http://www.tuxradar.com/rss" "http://www.tuxmachines.org/node/feed" "http://feeds.feedburner.com/linuxfaq?format=xml" "http://devops.com/feed/" "http://0pointer.de/blog/index.rss2" "http://coreos.com/atom.xml" "http://java.awsblog.com/blog/feed/recentPosts.rss" "http://www.archlinux.org/feeds/news/" "http://blog.mariadb.org/feed/" "http://www.planetmysql.org/rss20.xml"))
  '(emojify-emoji-styles '(ascii github unicode))
@@ -133,10 +147,10 @@
      (340 . "#94BFF3")
      (360 . "#DC8CC3")))
  '(vc-annotate-very-old-color "#DC8CC3")
- '(weather-metno-location-latitude 22 t)
- '(weather-metno-location-longitude 88 t)
+ '(weather-metno-location-latitude 22)
+ '(weather-metno-location-longitude 88)
  '(weather-metno-location-msl nil)
- '(weather-metno-location-name "Kolkata, India" t)
+ '(weather-metno-location-name "Kolkata, India")
  '(weather-metno-mode-line t))
 (tool-bar-mode -1)
 (tooltip-mode -1)
@@ -1057,19 +1071,8 @@
 (add-hook 'text-mode-hook #'auto-fill-mode)
 (add-hook 'prog-mode-hook #'auto-fill-mode)
 (setq-default fill-column 80)
-;; Org-weather
 
-;; Load the org-weather library
-(add-to-list 'load-path "~/.emacs.d/org-weather")
-(require 'org-weather)
-;; Set your location and refresh the data
-;;(setq org-weather-location "Kolkata,IN")
-;;(setq org-weather-api-key  "783c9abf98d154e05236ccd5f4a0a914")
-;;(setq org-weather-api-url "http://api.openweathermap.org/data/2.5/weather?q=%s&mode=json&units=metric&APPID=%s")
-;;(setq org-weather-format "Weather: %desc, %tmin-%tmax%tu, %p%pu, %h%hu, %s%su")
-(org-weather-refresh)
 ;; Reload/evaluate this file i.e .emacs after change
-
 (defun reload-dotemacs ()
   (interactive)
   (load-file "~/.emacs"))
@@ -1372,7 +1375,7 @@
 (setq doom-modeline-lsp t)
 
 ;; Whether display the GitHub notifications. It requires `ghub' package.
-(setq doom-modeline-github t)
+;;(setq doom-modeline-github t)
 
 ;; The interval of checking GitHub.
 (setq doom-modeline-github-interval (* 30 60))
@@ -1639,12 +1642,6 @@
 
 (global-set-key (kbd "C-c i r") 'crux-reopen-as-root-mode)
 
-;; Open emacs init and emacs org file side by side
-
-(fset 'emacs-init-and-org-file-side-by-side
-   (kmacro-lambda-form [?\C-c ?i ?e ?\C-x ?3 ?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?o ?r ?g ?F ?i ?l ?e ?s ?/ ?e ?m ?a ?c ?s ?. ?o ?r ?g return] 0 "%d"))
-
-(global-set-key (kbd "C-c i i") 'emacs-init-and-org-file-side-by-side)
 
 ;; Header info skeleton for org file
 (define-skeleton org-header-skeleton
@@ -1731,3 +1728,10 @@
 ;; Make use of counsel feature for search file.
 
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+
+;; Open dot emacs init file and org emacs file side by side
+
+(fset 'open_dot_emacs_and_org_emacs_side_by_side
+   (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s down down down down return ?\C-x ?3 ?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?O ?r ?g ?F ?i ?l ?e ?s ?/ down down down down down down down down down down down down down down down return] 0 "%d"))
+
+(global-set-key (kbd "C-c i i") 'open_dot_emacs_and_org_emacs_side_by_side)
