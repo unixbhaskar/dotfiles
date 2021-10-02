@@ -1728,6 +1728,6 @@
       (delete-other-windows))))
 (global-set-key (kbd "C-c f") 'toggle-maximize-buffer)
 
-;; Make use of counsel feature for search file
+;; Make use of counsel feature for search file.
 
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
