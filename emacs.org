@@ -2022,3 +2022,8 @@
       (delete-other-windows))))
 (global-set-key (kbd "C-c f") 'crux-transpose-windows)
 #+end_src
+
+* Make use of counsel
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+#+end_src
