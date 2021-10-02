@@ -1749,12 +1749,6 @@
 (global-set-key (kbd "C-x n r") 'restart-emacs)
 #+END_SRC
 
-* Weather metno
-#+begin_src emacs-lisp
- (setq weather-metno-location-name "Kolkata, India"
-         weather-metno-location-latitude 22
-          weather-metno-location-longitude 88)
-#+end_src
 * Rainbow delimiters
 #+begin_src emacs-lisp
  (require 'rainbow-delimiters)
