@@ -1920,15 +1920,6 @@
 (global-set-key (kbd "C-c i r") 'crux-reopen-as-root-mode)
 #+end_src
 
-* Open emacs init and emacs org file side by side
-#+begin_src emacs-lisp
-
-(fset 'emacs-init-and-org-file-side-by-side
-   (kmacro-lambda-form [?\C-c ?i ?e ?\C-x ?3 ?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?o ?r ?g ?F ?i ?l ?e ?s ?/ ?e ?m ?a ?c ?s ?. ?o ?r ?g return] 0 "%d"))
-
-(global-set-key (kbd "C-c i i") 'emacs-init-and-org-file-side-by-side)
-#+end_src
-
 * Header info skeleton for org file
 #+begin_src emacs-lisp
 
@@ -1972,58 +1963,11 @@
  (require 'bookmark+)
 #+end_src
 
-* Mu4e Mark
-
+* Open dot emacs init file and org emacs file side by side
 #+begin_src emacs-lisp
-(add-to-list 'mu4e-marks
-  '(tag
-     :char       "g"
-     :prompt     "gtag"
-     :ask-target (lambda () (read-string "What tag do you want to add?"))
-     :action      (lambda (docid msg target)
-                    (mu4e-action-retag-message msg (concat "+" target)))))
+(fset 'open_dot_emacs_and_org_emacs_side_by_side
+   (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s down down down down return ?\C-x ?3 ?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?O ?r ?g ?F ?i ?l ?e ?s ?/ down down down down down down down down down down down down down down down return] 0 "%d"))
 
-(add-to-list 'mu4e-marks
-  '(archive
-     :char       "A"
-     :prompt     "Archive"
-     :show-target (lambda (target) "archive")
-     :action      (lambda (docid msg target)
-                    ;; must come before proc-move since retag runs
-                    ;; 'sed' on the file
-                    (mu4e-action-retag-message msg "-\\Inbox")
-                    (mu4e~proc-move docid nil "+S-u-N"))))
+(global-set-key (kbd "C-c i i") 'open_dot_emacs_and_org_emacs_side_by_side)
 
-(mu4e~headers-defun-mark-for tag)
-(mu4e~headers-defun-mark-for archive)
-(define-key mu4e-headers-mode-map (kbd "g") 'mu4e-headers-mark-for-tag)
-(define-key mu4e-headers-mode-map (kbd "A") 'mu4e-headers-mark-for-archive)
-#+end_src
-
-* To copy dot emacs and this org file to dotfile repo and local backup folder after edit and save
-#+begin_src emacs-lisp
-(add-hook 'local-write-file-hooks 'copy_dot_emacs_to_dotfiles_repo)
-(defun copy_dot_emacs_to_dotfiles_repo ()
-  "write the file in two places"
-  (let ((orig (buffer-file-name)))
-    (write-file (concat "/home/bhaskar/dotfiles/" (file-name-nondirectory orig)) nil)
-    (write-file (concat "/data/dotfiles/" (file-name-nondirectory orig)) nil)
-(write-file orig nil)))
-#+end_src
-
-* Make a window frame full screen then come back grid
-#+begin_src emacs-lisp
-(defun toggle-maximize-buffer () "Maximize buffer"
-  (interactive)
-  (if (= 1 (length (window-list)))
-      (jump-to-register '_)
-    (progn
-      (window-configuration-to-register '_)
-      (delete-other-windows))))
-(global-set-key (kbd "C-c f") 'crux-transpose-windows)
-#+end_src
-
-* Make use of counsel
-#+begin_src emacs-lisp
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
 #+end_src
