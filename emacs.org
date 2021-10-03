@@ -1,16 +1,19 @@
+#+TITLE: My Emacs Config
+#+AUTHOR: Bhaskar Chowdhury
+#+DATE: 06/19/2021
+#+EMAIL: unixbhaskar@gmail.com
 
-;; Author: Bhaskar Chowdhury
+* General Section
 
+#+BEGIN_SRC emacs-lisp
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(add-log-mailing-address "unixbhaskar@gmail.com")
- '(all-the-icons-dired-monochrome nil)
  '(ansi-color-names-vector
    ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
  '(calendar-view-diary-initially-flag t)
@@ -21,10 +24,7 @@
  '(custom-enabled-themes '(molokai))
  '(custom-safe-themes
    '("13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
- '(debug-on-error t)
- '(deft-filter-only-filenames t)
  '(diary-file "~/.emacs.d/OrgFiles/diary.org")
- '(dired-use-ls-dired t)
  '(display-line-numbers-type 'relative)
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
@@ -33,9 +33,7 @@
    '("http://www.sysadminblogs.com/planet/atom.xml" "http://feeds2.feedburner.com/webupd8" "http://aws.typepad.com/aws/atom.xml" "http://www.openstack.org/blog/feed/" "http://selinuxnews.org/wp/index.php/feed/" "http://www.learninglinux.com/backend.php" "http://opensource.org/blog/feed" "http://z.about.com/6/g/linux/b/rss2.xml" "http://linuxtoday.com/backend/biglt.rss" "http://www.debian-administration.org/articles.rdf" "http://feeds.feedburner.com/Insidehpc" "http://lxer.com/module/newswire/headlines.rss" "http://feeds.delicious.com/rss/OracleTechnologyNetwork/linux" "http://rss.techtarget.com/184.xml" "http://z.about.com/6/o/m/linux_p2.xml" "http://linux-foundation.org/weblogs/press/feed/" "http://www.linux-mag.com/cache/rss20.xml" "http://google-opensource.blogspot.com/atom.xml" "http://wiki.openvz.org/w/index.php?title=Special:RecentChanges&feed=rss" "http://feeds2.feedburner.com/oreilly/linux" "http://www.linuxinsider.com/perl/syndication/rssfull.pl" "http://kernelnewbies.org/RecentChanges?action=rss_rc&ddiffs=1&unique=1" "http://dev.mysql.com/mysql.rss" "http://feeds2.feedburner.com/Command-line-fu" "http://kbase.redhat.com/faq/community/feeds/documents?community=2001" "http://www.linux.com/feature?theme=rss" "http://feeds.feedburner.com/Go2linux" "http://linuxvirtualization.com/xml/rss/feed.xml" "http://feeds.feedburner.com/unixmenhowtos" "http://linux.ittoolbox.com/rss/12/white_papers" "http://www.sun.com/bigadmin/content/rss/scripts.xml" "http://esr.ibiblio.org/?feed=rss2" "http://www.kroah.com/log/index.rss" "http://www.hackitlinux.com/index.rss" "http://feeds.oreilly.com/oreilly/lamp" "http://www.unix.com/external.php?type=RSS2" "http://feeds.feedburner.com/Phoronix" "http://www.linuxhpc.org/backend/linuxhpc.rdf" "http://www.pixelbeat.org/feed/rss2.xml" "http://blog.ivanristic.com/atom.xml" "http://www.novell.com/news/novell-in-the-news/RSS" "http://penguinista.org/feed" "http://kernel.org/kdist/rss.xml" "http://www.linuxtopia.org/linuxtopia.rss" "http://administratosphere.wordpress.com/feed/" "http://snipt.net/public/tag/bash/feed" "http://feeds.feedburner.com/susegeek" "http://superuser.com/feeds/tag/linux" "http://kerneloops.org/rss.php" "http://unixbhaskar.wordpress.com/feed/" "http://www.reddit.com/r/linux/.rss" "http://rss.techtarget.com/421.xml" "http://feeds.feedburner.com/linuxweblog" "http://feeds.feedburner.com/HowToLinux" "http://www.blogger.com/feeds/09134601055128665246/blogs" "http://packages.gentoo.org/feed/newpackage" "http://www.ducea.com/feed/" "http://feeds.feedburner.com/linuxscrew" "http://feeds.feedburner.com/Shell-fu" "http://feeds.askapache.com/apache/htaccess" "http://linux.byexamples.com/feed/" "http://www.linuxformat.co.uk/backend.php" "http://feeds.oreilly.com/oreilly/sysadmin" "http://feeds.linuxinsight.com/linuxportal" "http://rss.slashdot.org/Slashdot/slashdotApache" "http://unixbhaskar.blogspot.com/feeds/posts/default" "http://www.linuxsecurity.com/static-content/linuxsecurity_advisories.rss" "http://tuxtraining.com/feed" "http://www.reviewlinux.com/rss/rss_howtos.xml" "http://www.ibm.com/developerworks/views/linux/rss/libraryview.jsp" "http://planet.nagios.org/archives?format=feed&type=rss" "http://www.linuxhomenetworking.com/wiki/index.php?title=Special:RecentChanges&feed=rss" "http://feeds.feedburner.com/Unixtutorials" "http://jakarta.apache.org/site/rss.xml" "http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" "http://www.clustermonkey.net/component/option,com_rss/feed,RSS2.0/no_html,1/" "http://www.fsf.org/news/RSS" "http://nagios.org/backend/feeds/frontpage/" "http://rss.slashdot.org/Slashdot/slashdotLinux" "http://feeds.feedburner.com/UbuntuGeek" "http://www.sitepoint.com/feed.rdf/all/tech/" "http://www.linuxhaxor.net/feed/" "http://mysqlha.blogspot.com/feeds/posts/default" "http://feeds.feedburner.com/MozillaLinks" "http://systhread.net/rss.xml" "http://feeds.feedburner.com/linuxtutorial" "http://www.oreillynet.com/pub/feed/9" "http://www.linuxquestions.org/syndicate/lqlatest.xml" "http://services.devx.com/outgoing/devxfeed.xml" "http://www.linuxfromscratch.org/lfs/feed.rss" "http://mongrel.rubyforge.org/rss.xml" "http://aspiringsysadmin.com/blog/feed/" "http://www.linuxplus.net/feed/" "http://www.linuxworld.com/rss/linux-news.xml" "http://mysqldba.blogspot.com/atom.xml" "http://www.howtoforge.com/node/feed" "http://www.linuxjournal.com/node/feed" "http://lwn.net/headlines/newrss" "http://www.linuxexpert.com/feed/" "http://kerneltrap.org/node/feed" "http://www.monitoringexchange.org/cgi-bin/search.cgi?query=_SPECIAL&special=newplugins&xml_feed=1&xml_title=MonitoringExchange%20-%20New%20Plugins;d=1" "http://www.lids.org/?q=rss.xml" "http://feeds.feedburner.com/TheGeekStuff" "http://lkml.org/rss.php" "http://www.fridu.org/faqs-aamp-tips-mainmenu-80/40-hosting-a-sysadmin?format=feed&type=rss" "http://serverfault.com/feeds/tag/linux" "http://digg.com/rss/indexlinux_unix.xml" "http://www.usinglinux.org/rss.php" "http://www.tuxwire.com/category/Howto/feed/" "http://www.itworld.com/blogs/81/feed" "https://www.kernel.org/feeds/all.atom.xml" "http://software.intel.com/en-us/blogs/feed" "http://blogs.oracle.com/MySQL/feed/entries/rss?cat=/MySQL" "http://www.linuxfoundation.org/news-media/news/rss.xml" "http://www.osnews.com/files/recent.xml" "http://www.mysqlperformanceblog.com/feed/" "http://feeds.howtogeek.com/howtogeek" "http://rootprompt.org/rss/" "http://feeds.feedburner.com/TechCrunch/" "http://www.linuxinsight.com/aggregator/rss" "http://linuxinstruction.com/?q=rss.xml" "http://feeds.feedburner.com/Reviewlinux" "http://linuxsysadminblog.com/atom.xml" "http://static.fsf.org/fsforg/rss/news.xml" "http://www.eweek.com/servers/rss/" "http://oops.kernel.org/feed/" "http://www.nagios.org/backend/feeds/frontpage/" "http://www.nagios.org/backend/feeds/community/" "http://www.nagios.org/news?format=feed&type=rss" "http://www.nagios.org/backend/feeds/uber/" "http://www.linux-on-laptops.com/rss.xml" "http://www.shell-tips.com/feed/" "http://www.tuxradar.com/rss" "http://www.tuxmachines.org/node/feed" "http://feeds.feedburner.com/linuxfaq?format=xml" "http://devops.com/feed/" "http://0pointer.de/blog/index.rss2" "http://coreos.com/atom.xml" "http://java.awsblog.com/blog/feed/recentPosts.rss" "http://www.archlinux.org/feeds/news/" "http://blog.mariadb.org/feed/" "http://www.planetmysql.org/rss20.xml"))
  '(emojify-emoji-styles '(ascii github unicode))
  '(eww-browse-url-new-window-is-tab t)
- '(exwm-floating-border-color "#1e1e3f")
  '(fci-rule-color "#383838")
- '(frame-background-mode 'dark)
  '(git-commit-setup-hook
    '(git-commit-save-message git-commit-setup-changelog-support git-commit-turn-on-auto-fill git-commit-turn-on-flyspell git-commit-propertize-diff bug-reference-mode with-editor-usage-message))
  '(git-messenger:show-detail t)
@@ -44,18 +42,9 @@
  '(global-emojify-mode-line-mode t)
  '(gnus-add-timestamp-to-message t)
  '(gnus-expert-user t)
- '(highlight-tail-colors
-   ((("#2e3c4c" "#2e3c4c" "green")
-     . 0)
-    (("#42305a" "#42305a" "brightcyan")
-     . 20)))
  '(icomplete-mode t)
- '(image-dired-dir "~/Pictures")
  '(image-dired-main-image-directory "~/Pictures")
  '(ivy-posframe-style 'frame-center)
- '(jdee-db-active-breakpoint-face-colors (cons "#161a2a" "#82aaff"))
- '(jdee-db-requested-breakpoint-face-colors (cons "#161a2a" "#3ad900"))
- '(jdee-db-spec-breakpoint-face-colors (cons "#161a2a" "#444a73"))
  '(mu4e-display-update-status-in-modeline t)
  '(mu4e-icalendar-diary-file "~/.emacs.d/OrgFiles/refile.org")
  '(mu4e-maildir-shortcuts
@@ -71,7 +60,6 @@
  '(notmuch-tag-added-formats '((".*" (notmuch-apply-face tag 'nil))))
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
- '(objed-cursor-color "#ff000d")
  '(org-agenda-diary-file "~/.emacs.d/OrgFiles/diary.org")
  '(org-agenda-files '("~/.emacs.d/OrgFiles/task.org"))
  '(org-agenda-include-diary t)
@@ -90,13 +78,9 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(vertico selectrum-prescient orderless org-roam-bibtex crux doom-themes dired-git keychain-environment with-emacs dired-icon dired-single magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos eglot spinner lsp-mode lsp-grammarly counsel-notmuch org-fancy-priorities rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download deft goto-line-preview general smex doom-modeline org-roam undo-tree slime imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode auto-complete))
+   '(org-protocol-jekyll org-roam-server org-download deft goto-line-preview general smex doom-modeline org-roam undo-tree slime imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode base16-theme auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
- '(pdf-view-use-imagemagick t)
- '(pdf-view-use-unicode-ligther t)
  '(popper-reference-buffers '("\\*Messages\\*$"))
- '(rustic-ansi-faces
-   ["#2d2b55" "#ff000d" "#3ad900" "#fad000" "#82aaff" "#ff9d00" "#ff628c" "#e3e9fa"])
  '(safe-local-variable-values
    '((eval add-hook 'after-save-hook
            (lambda nil
@@ -132,11 +116,14 @@
      (320 . "#8CD0D3")
      (340 . "#94BFF3")
      (360 . "#DC8CC3")))
- '(vc-annotate-very-old-color "#DC8CC3"))
+ '(vc-annotate-very-old-color "#DC8CC3")
+ '(weather-metno-mode-line t))
 (tool-bar-mode -1)
 (tooltip-mode -1)
 (menu-bar-mode -1)
-;; Package repos
+#+END_SRC
+* Repositories from where Emacs pull packages
+#+BEGIN_SRC emacs-lisp
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -166,7 +153,9 @@
 (setq use-package-always-ensure t)
 (use-package command-log-mode)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-;;Mu4e setup
+#+END_SRC
+* Mu4E , a mail client and indexer
+#+BEGIN_SRC emacs-lisp
 (setq load-path (append load-path '("~/.emacs.d/mu/mu4e")))
 (require 'mu4e)
 
@@ -177,7 +166,7 @@
       mu4e-attachment-dir "~/attachments")
 
 (setq mu4e-mu-binary "/usr/local/bin/mu")
-;; Encryption
+
 (require 'mml2015)
 (require 'epa-file)
 
@@ -191,9 +180,10 @@
 
 (defalias 'ec 'encrypt-message)
 (defalias 'dc 'decrypt-message)
-;;External browser invoke
 (setq browse-url-browser-function 'browse-url-vimb)
-;; Line number and Column number
+#+END_SRC
+* Line and Column numbers
+#+BEGIN_SRC emacs-lisp
 (column-number-mode)
 
 (dolist (mode '(org-mode-hook
@@ -211,7 +201,9 @@
 
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
-;; Mu4e various customization
+#+END_SRC
+* MU4E continues....
+#+BEGIN_SRC emacs-lisp
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -278,43 +270,64 @@
        (:maildir "/Thomas_Gleixner"       :key ?t)
        (:maildir "/linux-kernel"          :key ?k)
        (:maildir "/David_Miller"          :key ?d))))
-;; Disable uppercase
+
+
+
+
 (put 'upcase-region 'disabled nil)
+#+END_SRC
+* Vimb as external browser
+#+BEGIN_SRC emacs-lisp
 ;;open vimb,invoke it like browse-url-generic on M-x prompt
 (setq browse-url-generic-program
     (executable-find (getenv "BROWSER"))
      browse-url-browser-function 'browse-url-generic)
-;; Change META key to window key
+#+END_SRC
+* Change windows key as META key
+#+BEGIN_SRC emacs-lisp
 (setq x-super-keysym 'meta)
-;; Which-key,a key pop up for key binds
+#+END_SRC
+* Which-key , a key menu and information popup
+#+BEGIN_SRC emacs-lisp
 (use-package which-key
     :init (which-key-mode)
     :diminish which-key-mode
     :config
     (setq which-key-idle-delay 0.3))
-;; Ivy-rich
+#+END_SRC
+* ivy-rich
+#+BEGIN_SRC emacs-lisp
 (use-package ivy-rich
 	     :init
 	     (ivy-rich-mode 1))
-;; Mu4e Alerts
+#+END_SRC
+* MU4E alerts
+#+BEGIN_SRC emacs-lisp
 (use-package mu4e-alert
     :after mu4e
     :hook ((after-init . mu4e-alert-enable-mode-line-display)
            (after-init . mu4e-alert-enable-notifications))
     :config (mu4e-alert-set-default-style 'libnotify))
-;; Visual line mode and Flyspell mode
+
 (add-hook 'mu4e-view-mode-hook #'visual-line-mode)
 (add-hook 'mu4e-compose-mode-hook 'flyspell-mode)
 ;;(setq mu4e-compose-in-new-frame t)
 (setq mu4e-compose-format-flowed t)
-;; Mute system's gpg to use emacs own
+#+END_SRC
+* System GNUPG muted,emacs run its own
+#+BEGIN_SRC emacs-lisp
 (setq epg-gpg-program "gpg2")
 (setenv "GPG_AGENT_INFO" nil)
-;; Pass a password manager
+#+END_SRC
+* Pass , a password manager
+#+BEGIN_SRC emacs-lisp
 (use-package pass
   :pin melpa
   :config
   (setf epa-pinentry-mode 'loopback))
+#+END_SRC
+* Vterm, a terminal emulator
+#+BEGIN_SRC emacs-lisp
 ;;vterm
 
 (use-package vterm
@@ -323,16 +336,27 @@
 (require 'vterm)
 
 (global-set-key (kbd "C-x t") 'vterm)
-;; Secret file for password store
+#+END_SRC
+* Secrets
+#+BEGIN_SRC emacs-lisp
 (setq auth-source-debug t)
 
 (setq auth-sources
           '((:source "~/.emacs.d/secrets/.authinfo.gpg")))
+#+END_SRC
+* Buffer kill once done with it
+#+BEGIN_SRC emacs-lisp
 ;; don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
+#+END_SRC
+* Feed fetcher and displayer
+#+BEGIN_SRC emacs-lisp
 ;;elfeed
 
-(global-set-key (kbd "C-x n e") 'elfeed)
+(global-set-key (kbd "C-x w") 'elfeed)
+#+end_src
+* Autocomplete
+#+BEGIN_SRC emacs-lisp
 ;;Auto Complete
 
 ;;(global-auto-complete-mode t)
@@ -346,28 +370,31 @@
                        ))
 (real-global-auto-complete-mode t)
 
-
 ;;Color settings
 
 ;;(set-foreground-color "white")
 ;;(set-background-color "blue")
+#+END_SRC
+* CUA mode aka cut,copy,paste
+#+BEGIN_SRC emacs-lisp
 ;; make {copy, cut, paste, undo} have {C-c, C-x, C-v, C-z} keys
 (cua-mode 1)
-
-
-;; New Window. was nil
+#+END_SRC
+* Make new frame
+#+BEGIN_SRC emacs-lisp
 (progn
+;; New Window. was nil
 (global-set-key (kbd "C-S-n") 'make-frame-command)
 )
-
+#+END_SRC
+* Utf-8
+#+BEGIN_SRC emacs-lisp
 ;; UTF-8 as default encoding
-(prefer-coding-system 'utf-8)
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-
-
+#+END_SRC
+* Refiling folders for MU4E
+#+BEGIN_SRC emacs-lisp
 ;;Refiling folders
 
 ;;(setq mu4e-refile-folder
@@ -410,20 +437,27 @@
       ;; important to have a catch-all at the end!
       ;;(t  "/archive")
 ;;)))
-;; Gnus
-
-(setq user-mail-address "unixbhaskar@gmail.com"
-      user-full-name "Bhaskar Chowdhury")
-
-(setq gnus-select-method
-      '(nnimap "gmail"
-	       (nnimap-address "imap.gmail.com")  ; it could also be imap.googlemail.com if that's your server.
-	       (nnimap-server-port "imaps")
-	       (nnimap-stream ssl)))
-
-(setq smtpmail-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-service 587
-      gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")
+#+END_SRC
+* GNUS ,yet another mail client,not using
+#+BEGIN_SRC emacs-lisp
+(setq gnus-secondary-select-methods
+      '(
+    (nnimap "gmail"
+           (nnimap-address "imap.gmail.com")
+           (nnimap-server-port 993)
+           (nnimap-stream ssl)
+           (nnir-search-engine imap)
+           (nnimap-authinfo-file "~/.emacs.d/secrets/authinfo.gpg")
+           )
+    (nntp "news.gwene.org")
+    (nnfolder "archive"
+      ;;(nnfolder-directory   "~/Documents/Text/Gnus/Mail/archive")
+      ;;(nnfolder-active-file "~/Documents/Text/Gnus/Mail/archive/active")
+      (nnfolder-get-new-mail nil)
+      (nnfolder-inhibit-expiry t))))
+#+END_SRC
+* Spell check
+#+BEGIN_SRC emacs-lisp
 ;; Spell-check
 (require 'flyspell)
 (setq flyspell-issue-message-flag nil
@@ -433,15 +467,27 @@
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+#+END_SRC
+* Space instead of tabs
+#+BEGIN_SRC emacs-lisp
 ;; Never use tabs - always spaces
 (setq-default indent-tabs-mode nil)
+#+END_SRC
+* Trailing white space remove
+#+BEGIN_SRC emacs-lisp
 ;; Remove trailing whitespace on each save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+#+END_SRC
+* Company, autocomplete
+#+BEGIN_SRC emacs-lisp
 ;; Autocompletion: Company mode is better thought out than auto-complete.
 (use-package company
   :defer 2
   :config
   (global-company-mode))
+#+END_SRC
+* Spell Checking
+#+BEGIN_SRC emacs-lisp
 ;; SPELL CHECKING
 ;; Spell checking requires an external command to be available. Install =aspell= on your Mac, then make it the default checker for Emacs' =ispell=. Note that personal dictionary is located at =~/.aspell.LANG.pws= by default.
 
@@ -450,8 +496,10 @@
 ;; Enable spellcheck on the fly for all text modes. This includes org, latex and LaTeX. Spellcheck current word.
 
 (add-hook 'text-mode-hook 'flyspell-mode)
-(global-set-key (kbd "M-\\") 'ispell-word)
-(global-set-key (kbd "C-M-\\") 'flyspell-auto-correct-word)
+(global-set-key (kbd "s-\\") 'ispell-word)
+(global-set-key (kbd "C-s-\\") 'flyspell-auto-correct-word)
+
+;; ---------
 ;; THESAURUS
 
 ;; Spellcheck was =Cmd+\=, synonym search is =Cmd+Shift+\=. It requires =wordnet= to be installed locally.
@@ -463,19 +511,30 @@
 ;; Alternative, local thesaurus
 (use-package synosaurus
   :config
-  (global-set-key (kbd "M-|") 'synosaurus-choose-and-replace))
+  (global-set-key (kbd "s-|") 'synosaurus-choose-and-replace))
+#+END_SRC
+* Word definition search
+#+BEGIN_SRC emacs-lisp
 ;; Word definition search.
 (use-package define-word
   :config
   (global-set-key (kbd "M-\\") 'define-word-at-point))
+#+END_SRC
+* Org mode
+#+BEGIN_SRC emacs-lisp
 ;;Org mode stuff
 (define-key mu4e-headers-mode-map (kbd "C-c c") 'org-mu4e-store-and-capture)
+#+END_SRC
+* EMMS , Music player
+
+#+BEGIN_SRC emacs-lisp
 ;;Emms Music player
 
 (require 'emms-setup)
 (emms-all)
 (emms-default-players)
 (setq emms-source-file-default-directory "~/Music/")
+
 (require 'emms-player-simple)
 (require 'emms-source-file)
 (require 'emms-source-playlist)
@@ -486,11 +545,13 @@
 
 (setq emms-info-asynchronously nil)
 (setq emms-playlist-buffer-name "*Music*")
+
 ;;Mpv integration
 
 (load "emms-player-mpv.el")
 
 (global-set-key (kbd "C-x m") 'emms)
+
 (global-set-key (kbd "C-c s p") 'emms-pause)
 (global-set-key (kbd "C-c s n") 'emms-next)
 (global-set-key (kbd "C-c s s") 'emms-stop)
@@ -499,11 +560,16 @@
 (global-set-key (kbd "C-c s f") 'emms-add-dired)
 (global-set-key (kbd "C-c s t") 'emms-mark-track)
 (global-set-key (kbd "C-c s r") 'emms-previous)
-
+#+END_SRC
+* Org Agenda files
+#+BEGIN_SRC emacs-lisp
 ;;Org mode files
 
 (setq org-agenda-files
       '("~/.emacs.d/OrgFiles/task.org"))
+#+END_SRC
+* Maximize specific pane
+#+BEGIN_SRC emacs-lisp
 ;; Maximize a specific pane
 
 (defun x11-maximize-frame ()
@@ -513,6 +579,9 @@
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
 
 (global-set-key (kbd "C-f") 'x11-maximize-frame)
+#+END_SRC
+* Ivy-Posframe ,window shaper
+#+BEGIN_SRC emacs-lisp
 ;; Ivy posframe for spawn window on middle of the screen
 
 (use-package ivy-posframe
@@ -531,14 +600,26 @@
 		 (t . ivy-posframe-display-at-frame-center)))
 	     :config
 	     (ivy-posframe-mode 1))
+#+END_SRC
+* Calendar
+#+BEGIN_SRC emacs-lisp
 ;; Open calendar
 
 (global-set-key (kbd "C-x c") 'calendar)
+#+END_SRC
+* Show time on modline
+#+BEGIN_SRC emacs-lisp
 ;; Show time on mode line
 
  (display-time-mode 1)
+#+END_SRC
+* Battery percentage on modline
+#+BEGIN_SRC emacs-lisp
 ;; Display battery percentage
 (display-battery-mode 1)
+#+END_SRC
+* Indentation
+#+BEGIN_SRC emacs-lisp
 ;; Indentation specific stuff
 
 (add-hook 'sh-mode-hook
@@ -562,19 +643,34 @@
 (add-hook 'awk-mode-hook
 	       (lambda ()
 		 (c-set-style "awk")))
+#+END_SRC
+* Highlight current line
+#+BEGIN_SRC emacs-lisp
 ;; Highlight current line
 
 (when window-system (global-hl-line-mode))
+#+END_SRC
+* Better grep
+#+BEGIN_SRC emacs-lisp
 ;; Better grep
 
 (setq grep-command "grep --color -nH -e")
+#+END_SRC
+* Follow symlinks
+#+BEGIN_SRC emacs-lisp
 ;; Follow symlinks
 
 (setq vc-follow-symlinks t)
+#+END_SRC
+* Compilation Mode
+#+BEGIN_SRC emacs-lisp
 ;; Compilation mode
 
 (use-package compile
   :demand t)
+#+END_SRC
+* Search Engine Mode
+#+BEGIN_SRC emacs-lisp
 ;; Engine mode
 
  (use-package engine-mode
@@ -586,7 +682,7 @@
 	:keybinding "d")
 
      (defengine wikipedia
-	"https://en.wikipedia.org/wiki/%s"
+	"https://en.wikipedia.org/w/index.php?title=Special:Search&go=Go&search=%s"
 	:keybinding "w")
 
 
@@ -596,6 +692,9 @@
 
 
      (engine-mode t))
+#+END_SRC
+* Markdown
+#+BEGIN_SRC emacs-lisp
 ;; Setup Markdown
 
 (use-package markdown-mode
@@ -603,33 +702,48 @@
 	     ("\\.md\\'" . markdown-mode)
 	     ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "pandoc"))
+#+END_SRC
+* All the icons
+#+BEGIN_SRC emacs-lisp
 ;; All the icons
 
 (use-package all-the-icons)
 
 (use-package all-the-icons-dired
    :hook (dired-mode . all-the-icons-dired-mode))
+#+END_SRC
+* Text scales
+#+BEGIN_SRC emacs-lisp
 ;; Text scale increase and decrease
 
 (define-key global-map (kbd "C-1") 'text-scale-increase)
 (define-key global-map (kbd "C-0") 'text-scale-decrease)
+#+END_SRC
+* Git commit popper
+#+BEGIN_SRC emacs-lisp
 ;; Use magit-show-commit for showing status/diff commands
 
 (global-set-key (kbd "C-x v p") 'git-messenger:popup-message)
-;;(define-key git-messenger-map (kbd "m") 'git-messenger:copy-message)
 
+#+END_SRC
 
+* Org mode customization
+#+BEGIN_SRC emacs-lisp
 ;; Customization of org mode
 
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
+#+END_SRC
 
+* Tags in org mode
+#+BEGIN_SRC emacs-lisp
 ;; Add TAG to the org file
 
-(setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l) ("Reading" . ?r) ("Researching" . ?s) ("Medical" . ?m) ("Technical" . ?t)))
-
-
+(setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l) ("Reading" . ?r) ("Researching" . ?s) ("Technical" . ?t)))
+#+END_SRC
+* Powerline modeline
+#+BEGIN_SRC emacs-lisp
 ;; Powerline modline
 
 (use-package smart-mode-line-powerline-theme
@@ -642,36 +756,46 @@
 )
 (require 'powerline)
 (powerline-default-theme)
-
-
-;; Org babel to load languages
+#+END_SRC
+* Org-babel
+#+BEGIN_SRC emacs-lisp
 (org-babel-do-load-languages 'org-babel-load-languages
     '(
         (shell . t)
     )
 )
+#+END_SRC
+* Link showing key in org mode
+#+BEGIN_SRC emacs-lisp
 ;; Org buffer link back and forth key bind
 
 (with-eval-after-load 'org
   (define-key org-mode-map (kbd "M-n") 'org-next-link)
   (define-key org-mode-map (kbd "M-p") 'org-previous-link))
+
 ;; Use RETURN key to open the link in stead C-c C-o
 
 (setq org-return-follows-link t)
-;; Source code block comment
-
+#+END_SRC
+* Source code block insertion on the buffer , shortcuts
+#+BEGIN_SRC emacs-lisp
 (set-register ?p "#+begin_src perl\n\n#+end_src")
 (set-register ?b "#+begin_src bash\n\n#+end_src")
-(set-register ?s "#+begin_src sh\n\n#+end_src")
 (set-register ?c "#+begin_src C\n\n#+end_src")
 (set-register ?l "#+begin_src emacs-lisp\n\n#+end_src")
+#+END_SRC
+* Org-bullet mode
+#+BEGIN_SRC emacs-lisp
 ;; Make sure org-bullet-mode is ture
 (setq org-bullets-mode t)
+
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode)
   :config
   (setq org-bullets-bullet-list '("◉" "⁑" "⁂" "❖" "✮" "✱" "✸")))
-
+#+END_SRC
+* Org crypt
+#+BEGIN_SRC emacs-lisp
 ;; Org-crypt
 
 (use-package org-crypt
@@ -682,6 +806,9 @@
   (setq org-tags-exclude-from-inheritance (quote ("crypt")))
   :custom
   (setq org-crypt-key "9F017E9D"))
+#+END_SRC
+* Startup time measure
+#+BEGIN_SRC emacs-lisp
 ;; Startup time measure
 
   (add-hook 'emacs-startup-hook
@@ -691,17 +818,30 @@
                              (float-time
                               (time-subtract after-init-time before-init-time)))
                      gcs-done)))
+#+END_SRC
+* Emojis
+#+BEGIN_SRC emacs-lisp
 ;; Emojis
 
 (use-package emojify
   :hook (after-init . global-emojify-mode))
-;; Notmuch
-
+#+END_SRC
+* Notmuch, a mail indexer and searcher
+#+BEGIN_SRC emacs-lis
 (autoload 'notmuch "notmuch" "notmuch mail" t)
+#+END_SRC
+* Org mode shortcuts keybinds
+#+BEGIN_SRC emacs-lisp
+;; Org mode shortcut
+
 ;; This for swithing to org file
 (global-set-key "\C-cb" 'org-switchb)
+
 ;; This is for org capture
 (global-set-key "\C-cc" 'org-capture)
+#+END_SRC
+* Color TODO keywords
+#+BEGIN_SRC emacs-lisp
 ;; Color TODO keywords
 
 (setq org-todo-keyword-faces
@@ -711,23 +851,32 @@
               ("WAITING" :foreground "orange" :weight bold)
               ("STARTED" :foreground "magenta" :weight bold)
               ("CANCELLED" :foreground "red" :weight bold)
-              ("HOLD" :foreground "white" :weight bold)
+              ("HOLD" :foreground "black" :weight bold)
               ("NEXT" :foreground "purple" :weight bold)
               ("MEETING" :foreground "yellow" :weight bold)
               ("PHONE" :foreground "cyan" :weight bold))))
+#+END_SRC
+* Org mode Tags triggers
+#+BEGIN_SRC emacs-lisp
 ;; Org mode tags triggers
 
 (setq org-todo-state-tags-triggers
       (quote (("CANCELLED" ("CANCELLED" . t))
               ("WAITING" ("WAITING" . t))
               ("HOLD" ("WAITING") ("HOLD" . t))
-              ("DONE" ("DONE"  . t) )
+              ("DONE" ("DONE" .t ))
               ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
               ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
               ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
+#+END_SRC
+* Notes file path
+#+BEGIN_SRC emacs-lisp
 ;; Setting the org note file path
 
 (setq org-default-notes-file "~/.emacs.d/OrgFiles/notes.org")
+#+END_SRC
+* Org capture template
+#+BEGIN_SRC emacs-lisp
 ;; Templates for the org capture
 (require 'org-protocol)
 
@@ -743,28 +892,37 @@
                "* %?\n%U\n" :clock-in t :clock-resume t)
               ("d" "Diary" entry (file+datetree "~/.emacs.d/OrgFiles/diary.org")
                "* %?\n%U\n" :clock-in t :clock-resume t)
-              ("w" "Org-protocol" entry (file+olp+datetree "~/.emacs.d/OrgFiles/refile.org")
-               "* TODO Review %A %^G\n%x\n%U\n" :immediate-finish t)
+              ("w" "Org-protocol" entry (file "~/.emacs.d/OrgFiles/refile.org")
+               "*  %A %^G\n%c\n%U\n" :immediate-finish t)
               ("m" "Meeting" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
               ("p" "Phone call" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
               ("b" "Books" entry (file  "~/.emacs.d/OrgFiles/books.org")
-	      ;; "* %^{TITLE}\n:PROPERTIES:\n:ADDED: %<[%Y-%02m-%02d]>\n:END:%^{AUTHOR}p\n%?" :empty-lines 1)
+	       ;;"* %^{TITLE}\n:PROPERTIES:\n:ADDED: %<[%Y-%02m-%02d]>\n:END:%^{AUTHOR}p\n%?" :empty-lines 1)
                "* %(let* ((url (substring-no-properties (current-kill 0)))
                   (details (org-books-get-details url)))
                 (when details (apply #'org-books-format 1 details)))")
-;;("l" "Book log" item (function org-books-visit-book-log)
-;;"- %U %?" :prepend t))))
+	      ;;("l" "Book log" item (function org-books-visit-book-log)
+              ;;"- %U %?" :prepend t))))
              ("a" "Appointment" entry (file+olp+datetree "~/.emacs.d/OrgFiles/diary.org")
-               "* APPT %^{Description} %^g %?\n Added: %U")
+               "* APPT %^{Description} %^g %? Added: %U")
               ("c" "Contacts" entry (file+headline "~/.emacs.d/OrgFiles/contacts.org" "")
                "* %^{Name} :CONTACT: %[~/.emacs.d/OrgFiles/contacts.txt]"))))
+#+END_SRC
+* Show target for org buffer
+#+BEGIN_SRC emacs-lisp
 ;; Show the targets
 (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+#+END_SRC
+* Create new parent if it not existing while REFILING
+#+BEGIN_SRC emacs-lisp
 ;; Create new parent while refiling if it is not existed
 
 (setq org-refile-allow-creating-parent-nodes 'confirm)
+#+END_SRC
+* IDO
+#+BEGIN_SRC emacs-lisp
 ; Use IDO for both buffer and file completion and ido-everywhere to t
 (setq org-completion-use-ido t)
 (setq ido-everywhere t)
@@ -775,28 +933,49 @@
 (setq ido-default-buffer-method 'selected-window)
 ; Use the current window for indirect buffer display
 (setq org-indirect-buffer-display 'current-window)
+#+END_SRC
+
+* Mailto link while composing mail
+#+BEGIN_SRC emacs-lisp
 ;; Mailto link open in compose mail
 (setq org-link-mailto-program (quote (compose-mail "%a" "%s")))
 (require 'org-mime)
+#+END_SRC
+* Source code block syntax highlighting
+#+BEGIN_SRC emacs-lisp
 ;; Source code block syntax highliting
 
 (setq org-src-fontify-natively t)
+#+END_SRC
+* Source code indentation
+#+BEGIN_SRC emacs-lisp
 ;; Preserving souce block indentation
 
 (setq org-src-preserve-indentation nil)
 (setq org-edit-src-content-indentation 0)
+#+END_SRC
+* Utf-8 default encoding system
+#+BEGIN_SRC emacs-lisp
 ;; utf-8 is default encoding system
 
 (setq org-export-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 (set-charset-priority 'unicode)
 (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+#+END_SRC
+* Notmuch,Mu4e shortcut,keybinds
+#+BEGIN_SRC emacs-lisp
 ;; Notmuch shortcut
 
 (global-set-key (kbd "M-n") 'notmuch)
+
 ;; Mu4e shortcut
 
 (global-set-key (kbd "M-m") 'mu4e)
+#+END_SRC
+* Appointment reminder
+#+BEGIN_SRC emacs-lisp
+;; todo reminder pop up buffer
 ;; Make appt aware of appointments from the agenda
 
 (defun org-agenda-to-appt ()
@@ -822,6 +1001,8 @@
 		(if tod (appt-add tod event))))) entries)))
 
 ;;(org-agenda-to-appt)
+
+
 ;; org mode appt reminder alert
 
 (setq
@@ -835,11 +1016,17 @@
  ;; update appt each time agenda opened
 
 (add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt)
+#+END_SRC
+* Server start
+#+BEGIN_SRC emacs-lisp
 ;; Start the server if it is not already STARTED
 
 (load "server")
 (unless (server-running-p) (server-start))
-;; Few shortcut key for convenience date and time insertion
+#+END_SRC
+* Date and time insertion with keystroke C-c i[d t]
+#+BEGIN_SRC emacs-lisp
+;; Few shortcut key for convenience
 
 (defun mp-insert-date ()
   (interactive)
@@ -851,14 +1038,23 @@
 
 (global-set-key (kbd "C-c i d") 'mp-insert-date)
 (global-set-key (kbd "C-c i t") 'mp-insert-time)
+#+END_SRC
+* IDO vertically
+#+BEGIN_SRC emacs-lisp
 ;; Set items ido mode vertically
 
 (setq ido-separator "\n")
+#+END_SRC
+* Popup buffer change
+#+BEGIN_SRC emacs-lisp
 ;; Pop up for buffer change
 
 (global-set-key (kbd "C-b") 'counsel-switch-buffer)
 
 (global-set-key (kbd "C-x p") 'counsel-M-x)
+#+END_SRC
+* Blogs related stuff
+#+BEGIN_SRC emacs-lisp
 ;; Blog related stuff
 
 ;; set the directory
@@ -1042,6 +1238,9 @@
 
 (global-set-key (kbd "C-x e") 'blog-list)
 (global-set-key (kbd "C-x w") 'org2blog-user-interface)
+#+END_SRC
+* Buffer limit to 80 characters
+#+BEGIN_SRC emacs-lisp
 ;; Restrict buffer to 80 character limit
 
 ;;'(c-max-one-liner-length 80)
@@ -1052,92 +1251,46 @@
 (add-hook 'text-mode-hook #'auto-fill-mode)
 (add-hook 'prog-mode-hook #'auto-fill-mode)
 (setq-default fill-column 80)
+#+END_SRC
+* Org-weather
+#+BEGIN_SRC emacs-lisp
 ;; Org-weather
 
 ;; Load the org-weather library
-;;(add-to-list 'load-path "~/.emacs.d/org-weather")
-;;(require 'org-weather)
+(add-to-list 'load-path "~/.emacs.d/org-weather")
+(require 'org-weather)
 ;; Set your location and refresh the data
-;;(setq org-weather-location "Kolkata,IN")
-;;(setq org-weather-api-key  "783c9abf98d154e05236ccd5f4a0a914")
-;;(setq org-weather-api-url "http://api.openweathermap.org/data/2.5/weather?q=%s&mode=json&units=metric&APPID=%s")
-;;(setq org-weather-format "Weather: %desc, %tmin-%tmax%tu, %p%pu, %h%hu, %s%su")
-;;(org-weather-refresh)
-
-
+(setq org-weather-location "Kolkata,IN")
+(setq org-weather-api-key  "783c9abf98d154e05236ccd5f4a0a914")
+(setq org-weather-api-url "http://api.openweathermap.org/data/2.5/weather?q=%s&mode=json&units=metric&APPID=%s")
+(setq org-weather-format "Weather: %desc, %tmin-%tmax%tu, %p%pu, %h%hu, %s%su")
+(org-weather-refresh)
+#+END_SRC
+* Reload emacs after config change
+#+BEGIN_SRC emacs-lisp
 ;; Reload/evaluate this file i.e .emacs after change
-
 (defun reload-dotemacs ()
   (interactive)
   (load-file "~/.emacs"))
 (global-set-key (kbd "C-c r") 'reload-dotemacs)
-
-;; Open books.org file
-
-(defun org-open-books-file ()
-  (interactive)
-  (find-file "~/.emacs.d/OrgFiles/books.org"))
-(global-set-key (kbd "C-c n b") 'org-open-books-file)
-
-;; Open contacts.org file
-
-(defun org-open-contacts-file ()
-  (interactive)
-  (find-file "~/.emacs.d/OrgFiles/contacts.org"))
-(global-set-key (kbd "C-c n c") 'org-open-contacts-file)
-
-
-;; Open notes.org file
-
-(defun org-open-notes-file ()
-  (interactive)
-  (find-file "~/.emacs.d/OrgFiles/notes.org"))
-(global-set-key (kbd "C-c n n") 'org-open-notes-file)
-
-;; Open task.org file
-
-(defun org-open-task-file ()
-  (interactive)
-  (find-file "~/.emacs.d/OrgFiles/task.org"))
-(global-set-key (kbd "C-c o") 'org-open-task-file)
-
-;; Open refile.org file
-
-(defun org-open-refile-file ()
-  (interactive)
-  (find-file "~/.emacs.d/OrgFiles/refile.org"))
-(global-set-key (kbd "C-c n r") 'org-open-refile-file)
-
-;; Open diary.org file
-
-(defun org-open-dairy-file ()
-  (interactive)
-  (find-file "~/.emacs.d/OrgFiles/diary.org"))
-(global-set-key (kbd "C-c n a") 'org-open-dairy-file)
-
-;; Open emacs.org file
-
-(defun org-open-dotemacs-file ()
-  (interactive)
-  (find-file "~/.emacs.d/OrgFiles/emacs.org"))
-(global-set-key (kbd "C-c n e") 'org-open-dotemacs-file)
-
-;; Open the journal.org file
-
-(defun org-open-journal-file ()
-  (interactive)
-  (find-file "~/.emacs.d/OrgFiles/journal.org"))
-(global-set-key (kbd "C-c n j") 'org-open-journal-file)
-
+#+END_SRC
+* More blogs specific org2blog
+#+BEGIN_SRC emacs-lisp
 ;; org2blog base
 
 (setq org2blog/wp-blog-alist
       '(("Unixbhaskar's Blog"
          :url "https://unixbhaskar.wordpress.com/xmlrpc.php"
          :username "unixbhaskar")))
+#+END_SRC
+* Neotree
+#+BEGIN_SRC emacs-lisp
 ;; Neotree shortcut
 
 (global-set-key (kbd "C-n") 'neotree-toggle)
+#+END_SRC
+* Dashboard
+#+BEGIN_SRC emacs-lisp
 ;; Dashboard
 
 (require 'dashboard)
@@ -1202,6 +1355,9 @@
 (setq dashboard-org-agenda-categories '("Tasks" "Diary" "Notes"))
 (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
 (load "~/.emacs.d/org-link-minor-mode.el")
+#+END_SRC
+* IRC
+#+BEGIN_SRC emacs-lisp
 ;; IRC
 
 ;; Set our nickname & real-name as constant variables
@@ -1231,16 +1387,26 @@
 (erc-autojoin-enable)
 
 (setq erc-autojoin-channels-alist
-      '(("irc.libera.chat"  "#linux" "#kernel" "#git" "#emacs" "#vim" "#sysadmin")))))
+      '(("irc.libera.chat" .  "#linux" "#kernel" "#git" "#emacs" "#vim" "#shell")))))
+#+END_SRC
+* Image dired
+#+BEGIN_SRC emacs-lisp
 ;; Image-dired
 
 (global-set-key (kbd "C-i") 'image-dired)
+#+END_SRC
+* Comment line and  region keymap
+#+BEGIN_SRC emacs-lisp
 ;; comment line
 
 (global-set-key (kbd ";") 'comment-line)
+
 ;; comment region
 
 (global-set-key (kbd ";;") 'comment-region)
+#+END_SRC
+* Macro save
+#+BEGIN_SRC emacs-lisp
 ;; Save a macro for future sessions
 
 (defun save-macro (name)
@@ -1257,32 +1423,37 @@
      (switch-to-buffer nil))               ;; return to the initial buffer
 
 (global-set-key (kbd "C-c m") 'save-macro)
+#+END_SRC
+* Dictionary search
+#+BEGIN_SRC emacs-lisp
 ;; Dictionary
 
 (global-set-key (kbd "C-c d") 'dictionary-search)
-
-
+#+END_SRC
+* Wikipedia search
+#+BEGIN_SRC emacs-lisp
 ;; Wikipedia search
-;;(defun wikipedia-search (search-term)
-;;  "Search for SEARCH-TERM on wikipedia"
-;;  (interactive
-;;   (let ((term (if mark-active
-;;                   (buffer-substring (region-beginning) (region-end))
-;;                 (word-at-point))))
-;;     (list
-;;      (read-string
-;;       (format "Wikipedia (%s):" term) nil nil term)))
-;;   )
-;;  (browse-url
-;;   (concat
-;;    "https://en.wikipedia.org/wiki/"
-;;    search-term
-;;    ))
-;;  )
-;;
-;;(global-set-key (kbd "C-c w") 'wikipedia-search)
+(defun wikipedia-search (search-term)
+  "Search for SEARCH-TERM on wikipedia"
+  (interactive
+   (let ((term (if mark-active
+                   (buffer-substring (region-beginning) (region-end))
+                 (word-at-point))))
+     (list
+      (read-string
+       (format "Wikipedia (%s):" term) nil nil term)))
+   )
+  (browse-url
+   (concat
+    "http://en.m.wikipedia.org/w/index.php?search="
+    search-term
+    ))
+  )
 
-
+(global-set-key (kbd "C-c w") 'wikipedia-search)
+#+END_SRC
+* Undo
+#+BEGIN_SRC emacs-lisp
 ;; Undo
 
 (use-package undo-tree
@@ -1292,6 +1463,9 @@
     (global-undo-tree-mode)
     (setq undo-tree-visualizer-timestamps t)
     (setq undo-tree-visualizer-diff t)))
+#+END_SRC
+* Doom modeline
+#+BEGIN_SRC emacs-lisp
 ;; Doom-modeline
 
 (use-package doom-modeline
@@ -1427,10 +1601,16 @@
 
 ;; How wide the mode-line bar should be. It's only respected in GUI.
 (setq doom-modeline-bar-width 2)
+#+END_SRC
+* smex
+#+BEGIN_SRC emacs-lisp
 ;; Enhance M-x with counsel
 
 (use-package smex)
-;; General has to be loaded before pass
+#+END_SRC
+* Pass a password manager
+#+BEGIN_SRC emacs-lisp
+;; It has to be loaded before pass
 
 (use-package general
   :ensure t
@@ -1441,11 +1621,25 @@
 (use-package pass
   :general
   (:keymaps 'pass-view-mode-map "C-c C-y" 'pass-view-copy-password))
+#+END_SRC
+* Preview line
+#+BEGIN_SRC emacs-lisp
+;;Preview line before jumping to it.
+
+(use-package goto-line-preview
+  :general
+  ("M-g g" 'goto-line-preview))
+#+END_SRC
+* Filepath shrink
+#+BEGIN_SRC emacs-lisp
 ;; Shrinking file path
 
 (use-package shrink-path
   :ensure t
   :demand t)
+#+END_SRC
+* Emphesis marker hide
+#+BEGIN_SRC emacs-lisp
 ;; Hide the emphesis markers in org mode
 
 (setq org-hide-emphasis-markers t)
@@ -1453,6 +1647,9 @@
  'org-mode
  '(("^ *\\([-]\\) "
     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+#+END_SRC
+* Org Roam
+#+BEGIN_SRC emacs-lisp
 ;; Org Roam
 
 (use-package emacsql
@@ -1477,7 +1674,6 @@
 
 (add-hook 'after-init-hook 'org-roam-mode)
 
-;; Deft
 (use-package deft
   :after org
   :bind
@@ -1493,7 +1689,7 @@
   (deft-org-mode-title-prefix t)
   (deft-extensions '("org" "txt" "text" "md" "markdown" "org.gpg"))
   (deft-default-extension "org"))
-;; org-download C-M-y
+
 (use-package org-download
   :after org
   :defer nil
@@ -1515,13 +1711,16 @@
        (org-download-clipboard file))))
   :config
   (require 'org-download))
-;; Org-protocol redefined to work with browser i.e firefox Not working
+#+END_SRC
+* Org-protocol with firefox , org-capture
+#+BEGIN_SRC emacs-lisp
+;; Org-protocol redefined to work with browser i.e firefox
 
-;;(defun transform-square-brackets-to-round-ones(string-to-transform)
-;;  "Transforms [ into ( and ] into ), other chars left unchanged."
-;;  (concat
-;;  (mapcar #'(lambda (c) (if (equal c ?[) ?\( (if (equal c ?]) ?\) c))) string-to-transform))
-;;  )
+(defun transform-square-brackets-to-round-ones(string-to-transform)
+  "Transforms [ into ( and ] into ), other chars left unchanged."
+  (concat
+  (mapcar #'(lambda (c) (if (equal c ?[) ?\( (if (equal c ?]) ?\) c))) string-to-transform))
+  )
 
 ;;(setq org-capture-templates `(
 ;;	("p" "Protocol" entry (file+headline ,(concat org-directory "notes.org"))
@@ -1530,114 +1729,194 @@
 ;;         "* %? [[%:link][%:description]] %(progn (setq kk/delete-frame-after-capture 2) \"\")\nCaptured On: %U"
 ;; :empty-lines 1)
 ;;))
+#+END_SRC
+* Package install keybind
+#+BEGIN_SRC emacs-lisp
 ;; package-install shortcut
-(global-set-key (kbd "M-p") 'package-install)
+
+(global-set-key (kbd "M-i") 'package-install)
+#+END_SRC
+* Customization buffer
+#+BEGIN_SRC emacs-lisp
 ;; Customization shortcut
+
 (global-set-key (kbd "C-x n c") 'customize)
+#+END_SRC
+* Restart Emacs
+#+BEGIN_SRC emacs-lisp
 ;; Restart emacs
+
 (global-set-key (kbd "C-x n r") 'restart-emacs)
+#+END_SRC
 
-;; Rainbow delimiter
-
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-
-;; Explicit priorities than A,B,C
-
+* Rainbow delimiters
+#+begin_src emacs-lisp
+ (require 'rainbow-delimiters)
+ (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+#+end_src
+* Explicit priority symbol then A,B,C with the help of font Symbola
+#+begin_src emacs-lisp
 (use-package org-fancy-priorities
- :diminish
- :demand t
- :defines org-fancy-priorities-list
- :hook (org-mode . org-fancy-priorities-mode)
- :config
- (unless (char-displayable-p ?❗)
- (setq org-fancy-priorities-list '("HIGH" "MID" "LOW" "OPTIONAL"))))
+   :diminish
+   :demand t
+     :defines org-fancy-priorities-list
+     :hook (org-mode . org-fancy-priorities-mode)
+     :config
+     (unless (char-displayable-p ?❗)
+     (setq org-fancy-priorities-list '("HIGH" "MID" "LOW" "OPTIONAL"))))
+#+end_src
 
-;; Symbola font
-
+* Existence of Symbola font check and set
+#+begin_src emacs-lisp
 (when (member "Symbola" (font-family-list))
- (set-fontset-font "fontset-default" nil
- (font-spec :size 20 :name "Symbola")))
+  (set-fontset-font "fontset-default" nil
+  (font-spec :size 20 :name "Symbola")))
+#+end_src
 
-;; Abbrevation
+* Abbrevation
+#+begin_src emacs-lisp
 
 (setq abbrev-file-name             ;; tell emacs where to read abbrev
         "~/.emacs.d/abbrev_defs")    ;; definitions from...
 (setq save-abbrevs 'silent)        ;; save abbrevs when files are saved
 
  (setq-default abbrev-mode t)
+#+end_src
 
-;; Kill buffer with less keystroke
+* Custom functions for ORG mode files to open by Key stroke C-c-n-[various latters]
 
-(global-set-key (kbd "C-q") 'kill-this-buffer)
+#+begin_src emacs-lisp
+(defun org-open-books-file ()
+     (interactive)
+     (find-file "~/.emacs.d/OrgFiles/books.org"))
+   (global-set-key (kbd "C-c n b") 'org-open-books-file)
+#+end_src
 
-;; Copy emacs.org to dotfile repo
+   ;; Open contacts.org file
+#+begin_src emacs-lisp
+   (defun org-open-contacts-file ()
+     (interactive)
+     (find-file "~/.emacs.d/OrgFiles/contacts.org"))
+   (global-set-key (kbd "C-c n c") 'org-open-contacts-file)
+#+end_src
 
+   ;; Open notes.org file
+#+begin_src emacs-lisp
+   (defun org-open-notes-file ()
+     (interactive)
+     (find-file "~/.emacs.d/OrgFiles/notes.org"))
+   (global-set-key (kbd "C-c n n") 'org-open-notes-file)
+#+end_src
+   ;; Open task.org file
+#+begin_src emacs-lisp
+   (defun org-open-task-file ()
+     (interactive)
+     (find-file "~/.emacs.d/OrgFiles/task.org"))
+   (global-set-key (kbd "C-c o") 'org-open-task-file)
+#+end_src
+   ;; Open refile.org file
+#+begin_src emacs-lisp
+   (defun org-open-refile-file ()
+     (interactive)
+     (find-file "~/.emacs.d/OrgFiles/refile.org"))
+   (global-set-key (kbd "C-c n r") 'org-open-refile-file)
+#+end_src
+   ;; Open diary.org file
+#+begin_src emacs-lisp
+   (defun org-open-dairy-file ()
+     (interactive)
+      (find-file "~/.emacs.d/OrgFiles/diary.org"))
+    (global-set-key (kbd "C-c n a") 'org-open-dairy-file)
+#+end_src
+    ;; Open emacs.org file
+#+begin_src emacs-lisp
+    (defun org-open-dotemacs-file ()
+      (interactive)
+      (find-file "~/.emacs.d/OrgFiles/emacs.org"))
+ (global-set-key (kbd "C-c n e") 'org-open-dotemacs-file)
+#+end_src
+* Quit buffer with less keystroke C-q
+#+begin_src emacs-lisp
+   (global-set-key "C-q" 'kill-this-buffer)
+#+end_src
+* Keyboard macro to copy this file to dotfiles repo
+#+begin_src emacs-lisp
 (fset 'org-emacs-copy
    (kmacro-lambda-form [?\M-! ?o ?r ?g ?- ?e ?m ?a ?c ?s ?- ?c ?o ?p ?y return] 0 "%d"))
+(global-set-key "C-c n o") 'org-emacs-copy)
+#+end_src
 
-(global-set-key (kbd "C-c n o") 'org-emacs-copy)
-
-
-;; Projectile
-
+* Projectile setup
+#+begin_src emacs-lisp
 (projectile-mode +1)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-(setq projectile-project-search-path '("~/projects/"))
+   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+   (setq projectile-project-search-path '("~/projects/"))
+#+end_src
 
-;; Magit-org-todos
-
+* Magit org-todos
+#+begin_src emacs-lisp
 (use-package magit-org-todos
-  :config
-  (magit-org-todos-autoinsert))
+      :config
+      (magit-org-todos-autoinsert))
+#+end_src
 
-;; Linux kernel development settings
+* Linux kernel development settings
+#+begin_src emacs-lisp
 (setq c-default-style "linux")
-(require 'xcscope)
+    (require 'xcscope)
+#+end_src
 
-;; I3window config org file copy to dotfile repo
+* I3window config ORG file copy to dotfile repo
+
+#+begin_src emacs-lisp
 
 (fset 'copy-Orgi3window-config
    (kmacro-lambda-form [?\C-x ?\C-s ?\M-! ?/ ?h ?o ?m ?e ?/ ?b ?h ?a ?s ?k ?a ?r ?/ ?b ?i ?n ?/ ?o ?r ?g ?- ?i ?3 ?w ?i ?n ?d ?o ?w ?- ?c ?o ?n ?f ?i ?g return] 0 "%d"))
 
 (global-set-key (kbd "C-c i c") 'copy-Orgi3window-config)
+#+end_src
 
-;; I3Window config file open
+* I3Window config file open
 
+#+begin_src emacs-lisp
  (fset 'open_i3config_orgfile
     (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?O ?r ?g ?F ?i ?l ?e ?s ?/ ?i ?3 backspace backspace ?i ?3 ?c ?o ?n ?f ?i ?g ?. ?o ?r ?g return] 0 "%d"))
 
 (global-set-key (kbd "C-c i w") 'open_i3config_orgfile)
 
-;; Open THIS file
+#+end_src
 
+* Open Dot Emacs file
+
+#+begin_src emacs-lisp
 (fset 'open_dotemacs_file
    (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s return] 0 "%d"))
 
 (global-set-key (kbd "C-c i e") 'open_dotemacs_file)
 
-;; Start pinentry service on start
-;;(pinentry-start)
+#+end_src
 
-;; Dired git mode
-(add-hook 'dired-mode-hook 'dired-git-mode)
+* Start Pinentry service at start
+#+begin_src emacs-lisp
+(pinentry-start)
+#+end_src
 
-;; Find and open shell init files
+* Open shell init files
 
+#+begin_src emacs-lisp
 (global-set-key (kbd "C-c i s") 'crux-find-shell-init-file)
+#+end_src
 
-;; Reopen the present file as root mode
 
+* Reopen the present file as root mode
+
+#+begin_src emacs-lisp
 (global-set-key (kbd "C-c i r") 'crux-reopen-as-root-mode)
+#+end_src
 
-;; Open emacs init and emacs org file side by side
+* Header info skeleton for org file
+#+begin_src emacs-lisp
 
-(fset 'emacs-init-and-org-file-side-by-side
-   (kmacro-lambda-form [?\C-c ?i ?e ?\C-x ?3 ?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?o ?r ?g ?F ?i ?l ?e ?s ?/ ?e ?m ?a ?c ?s ?. ?o ?r ?g return] 0 "%d"))
-
-(global-set-key (kbd "C-c i i") 'emacs-init-and-org-file-side-by-side)
-
-;; Header info skeleton for org file
 (define-skeleton org-header-skeleton
 "Header info for an Org file."
 "Title: ""#+TITLE:" str " \n"
@@ -1646,86 +1925,43 @@
 "#+DATE: " (format-time-string "%Y-%m-%d-%X") "\n")
 
 (global-set-key (kbd "C-c i h") 'org-header-skeleton)
+#+end_src
 
- ;; To create empty org file
+* To create empty org file
+#+begin_src emacs-lisp
 
 (fset 'create-empty-org-file
    (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?O ?r ?g ?F ?i ?l ?e ?s ?/ ?t ?e ?s ?t ?. ?o ?r ?g return return] 0 "%d"))
 (global-set-key (kbd "C-c i o") 'create-empty-org-file)
+#+end_src
 
-;; Load dired+ features
+* Load dired+ features
+#+begin_src emacs-lisp
+
 (add-to-list 'load-path "~/.emacs.d/diredplus")
    (require 'dired+)
+#+end_src
 
-;; Load icicles
+* Load icicles
+#+begin_src emacs-lisp
+
 (add-to-list 'load-path "~/.emacs.d/icicles/")
  (require 'icicles)
 (icy-mode 1)
+#+end_src
 
-;; Bookmark+
+* Bookmark+
+#+begin_src emacs-lisp
 
 (add-to-list 'load-path "~/.emacs.d/bookmarkplus/")
  (require 'bookmark+)
+#+end_src
 
-;; Exchnage buffer position
-
-(global-set-key (kbd "C-c x") 'crux-transpose-windows)
-
-;; mu4e marks
-
-(add-to-list 'mu4e-marks
-  '(tag
-     :char       "g"
-     :prompt     "gtag"
-     :ask-target (lambda () (read-string "What tag do you want to add?"))
-     :action      (lambda (docid msg target)
-                    (mu4e-action-retag-message msg (concat "+" target)))))
-
-(add-to-list 'mu4e-marks
-  '(archive
-     :char       "A"
-     :prompt     "Archive"
-     :show-target (lambda (target) "archive")
-     :action      (lambda (docid msg target)
-                    ;; must come before proc-move since retag runs
-                    ;; 'sed' on the file
-                    (mu4e-action-retag-message msg "-\\Inbox")
-                    (mu4e~proc-move docid nil "+S-u-N"))))
-
-(mu4e~headers-defun-mark-for tag)
-(mu4e~headers-defun-mark-for archive)
-(define-key mu4e-headers-mode-map (kbd "g") 'mu4e-headers-mark-for-tag)
-(define-key mu4e-headers-mode-map (kbd "A") 'mu4e-headers-mark-for-archive)
-
-;; To copy dot emacs to dotfiles repo plus local backup folder after edit and save
-
-(add-hook 'local-write-file-hooks 'copy_dot_emacs_to_dotfiles_repo)
-(defun copy_dot_emacs_to_dotfiles_repo ()
-  "write the file in two places"
-  (let ((orig (buffer-file-name)))
-    (write-file (concat "/home/bhaskar/dotfiles/" (file-name-nondirectory orig)) nil)
-    (write-file (concat "/data/dotfiles/" (file-name-nondirectory orig))nil)
-
-    (write-file orig nil)))
-
-;; Make one window maximize ,then come back to grid
-
-(defun toggle-maximize-buffer () "Maximize buffer"
-  (interactive)
-  (if (= 1 (length (window-list)))
-      (jump-to-register '_)
-    (progn
-      (window-configuration-to-register '_)
-      (delete-other-windows))))
-(global-set-key (kbd "C-c f") 'toggle-maximize-buffer)
-
-;; Make use of counsel feature for search file.
-
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-
-;; Open dot emacs init file and org emacs file side by side
-
+* Open dot emacs init file and org emacs file side by side
+#+begin_src emacs-lisp
 (fset 'open_dot_emacs_and_org_emacs_side_by_side
    (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s down down down down return ?\C-x ?3 ?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?O ?r ?g ?F ?i ?l ?e ?s ?/ down down down down down down down down down down down down down down down return] 0 "%d"))
 
 (global-set-key (kbd "C-c i i") 'open_dot_emacs_and_org_emacs_side_by_side)
+
+#+end_src
