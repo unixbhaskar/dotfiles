@@ -1620,13 +1620,6 @@
 
 (global-set-key (kbd "C-c i w") 'open_i3config_orgfile)
 
-;; Open THIS file
-
-(fset 'open_dotemacs_file
-   (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s return] 0 "%d"))
-
-(global-set-key (kbd "C-c i e") 'open_dotemacs_file)
-
 ;; Start pinentry service on start
 ;;(pinentry-start)
 
@@ -1736,7 +1729,7 @@
 
 ;; Open dot emacs init file and org emacs file side by side
 
-(fset 'open_dot_emacs_and_org_emacs_side_by_side
-   (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s down down down down return ?\C-x ?3 ?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?O ?r ?g ?F ?i ?l ?e ?s ?/ down down down down down down down down down down down down down down down return] 0 "%d"))
-
 (global-set-key (kbd "C-c i i") 'open_dot_emacs_and_org_emacs_side_by_side)
+
+;; Aliases
+;;(load "alias")
