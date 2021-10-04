@@ -1784,3 +1784,9 @@
      ((eq notify-method 'notify-via-dbus-notifications)
       (emms-notifications-dbus track-name))
      (t (emms-notifications-message track-name)))))
+
+ ;; i3config and i3 org config file side by side
+(fset 'i3config-and-i3orgconfig-side-by-side
+   (kmacro-lambda-form [?\C-x ?\C-f ?. ?i ?t ?h ?r down return ?\C-x ?3 ?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?O ?r ?g ?f ?i ?l ?e backspace backspace backspace backspace ?F ?i ?l ?e ?s ?/ down down down down down down down ?i ?3 ?c ?o ?n ?f ?i ?g ?. ?o ?r ?g return] 0 "%d"))
+
+(global-set-key (kbd "C-c n w") 'i3config-and-i3orgconfig-side-by-side)
