@@ -150,6 +150,7 @@ export MANPAGER="vim -M +MANPAGER -"
 alias githome="cd $HOME/git-linux && ls"
 alias newsboat_urls="vim /home/bhaskar/.newsboat/urls"
 alias gitgraph="git log --all --decorate --oneline --graph"
+alias i3edit="vim -O ~/.ithreeconfig ~/.emacs.d/OrgFiles/i3config.org"
 # alias v='vim -c "let g:tty='\''$(tty)'\''"'
 
 # Check if the ssh-agent is already running
