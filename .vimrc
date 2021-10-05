@@ -60,6 +60,7 @@ Plugin 'mboughaba/i3config.vim'
 Plugin 'jreybert/vimagit'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'axvr/org.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
@@ -743,3 +744,9 @@ elseif hr >= 6
 elseif hr >= 0
          colorscheme molokai_dark
 endif
+" Template for source the code block skeleton
+function! LispBlock()
+	r~/.vim/templates/lispblock
+endfunction
+
+nmap <Leader>l :call LispBlock()<CR>
