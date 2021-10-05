@@ -2036,3 +2036,9 @@
       (emms-notifications-dbus track-name))
      (t (emms-notifications-message track-name)))))
 #+end_src
+
+* Get a shell quickly
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-c n s") 'shell)
+#+end_src
+
