@@ -1797,3 +1797,6 @@
 ;; Switch between buffers
 (global-set-key [(control right)] 'next-buffer)
 (global-set-key [(control left)] 'previous-buffer)
+
+;; helm mini
+(global-set-key (kbd "<C-tab>") 'helm-mini)
