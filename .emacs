@@ -1793,3 +1793,7 @@
 
 ;; Get a shell quickly
 (global-set-key (kbd "C-c n s") 'shell)
+
+;; Switch between buffers
+(global-set-key [(control right)] 'next-buffer)
+(global-set-key [(control left)] 'previous-buffer)
