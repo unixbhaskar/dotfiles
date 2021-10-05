@@ -138,7 +138,7 @@ alias localmail="mutt -F $HOME/.muttrc.local"
 alias enable_config="scripts/config --enable $1"
 alias disable_config="scripts/config --disable $1"
 alias who="git blame $1"
-alias econfig="vim -O ~/.emacs ~/.emacs.d/OrgFiles/emacs.org"
+alias econfig="vim -O ~/.emacs ~/.orgemacs"
 alias magit="vim -c MagitOnly"
 alias tsm="transmission-remote"
 alias tl="transmission-remote -l"
@@ -150,7 +150,7 @@ export MANPAGER="vim -M +MANPAGER -"
 alias githome="cd $HOME/git-linux && ls"
 alias newsboat_urls="vim /home/bhaskar/.newsboat/urls"
 alias gitgraph="git log --all --decorate --oneline --graph"
-alias i3edit="vim -O ~/.ithreeconfig ~/.emacs.d/OrgFiles/i3config.org"
+alias i3edit="vim -O ~/.ithreeconfig ~/.orgithreeconfig"
 
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
