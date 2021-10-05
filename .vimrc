@@ -187,6 +187,7 @@ autocmd FileType sh setlocal commentstring=#\ %s
 autocmd FileType cpp,cs,java setlocal commentstring=//\ %s
 autocmd FileType c setlocal commentstring=/*\ %s
 autocmd FileType vim setlocal commentstring=\"\ %s
+autocmd FileType lisp setlocal commentstring=\;;\ %s
 "Google calendar process
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
