@@ -210,6 +210,8 @@ autocmd BufWritePost  screenrc !notify_config_file_updates
 autocmd BufWritePost  .vimb_config !copy_vimb_config
 autocmd BufWritePost  .emacs !notify_config_file_updates
 autocmd BufWritePost  .newsboat_config !copy_newsboat_config
+autocmd BufWritePost  .orgemacs !notify_config_file_updates
+autocmd BufWritePost  .orgithreeconfig !notify_config_file_updates
 augroup END
 "Move between splits
 nnoremap <C-h> <C-w><C-h>
