@@ -2047,3 +2047,13 @@
 (global-set-key [(control right)] 'next-buffer)
 (global-set-key [(control left)] 'previous-buffer)
 #+end_src
+
+* Helm mini
+#+begin_src emacs-lisp
+(global-set-key (kbd "<C-tab>") 'helm-mini)
+#+end_src
+
+* Default directory
+#+begin_src emacs-lisp
+(setq default-directory "~/")
+#+end_src
