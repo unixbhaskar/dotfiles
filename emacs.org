@@ -2057,3 +2057,9 @@
 #+begin_src emacs-lisp
 (setq default-directory "~/")
 #+end_src
+
+* Smart Compile
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-c C-r") 'smart-compile)
+(setq compilation-read-command nil)
+#+end_src
