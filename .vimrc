@@ -658,7 +658,7 @@ nnoremap <Leader>p :b#<CR>
 " Next Buffer
 nnoremap <Leader>n :bn<CR>
 " Close Buffer
-nnoremap Q :bd!<CR>
+nnoremap <silent> Q :bd!<CR>
 " reload files changed outside vim
 set autoread
 " Triger `autoread` when files changes on disk
@@ -714,28 +714,28 @@ au BufNewFile,BufRead known_hosts setfiletype sshknownhost
 imap AR <C-R>=&<S-Right>
 " Autocomple brackets and quotation pair
 
-inoremap ( ()<ESC>i
+" inoremap ( ()<ESC>i
 
-inoremap ) <c-r>=ClosePair(')')<CR>
+" inoremap ) <c-r>=ClosePair(')')<CR>
 
-inoremap { {<CR>}<ESC>O
+" inoremap { {<CR>}<ESC>O
 
-inoremap } <c-r>=ClosePair('}')<CR>
+" inoremap } <c-r>=ClosePair('}')<CR>
 
-inoremap [ []<ESC>i
+" inoremap [ []<ESC>i
 
-inoremap ] <c-r>=ClosePair(']')<CR>
+" inoremap ] <c-r>=ClosePair(']')<CR>
 
-inoremap " ""<ESC>i
-inoremap ' ''<ESC>i
+" inoremap " ""<ESC>i
+" inoremap ' ''<ESC>i
 
-function! ClosePair(char)
-    if getline('.')[col('.') - 1] == a:char
-        return "\<Right>"
-    else
-        return a:char
-    endif
-endfunction
+" function! ClosePair(char)
+"     if getline('.')[col('.') - 1] == a:char
+"         return "\<Right>"
+"     else
+"         return a:char
+"     endif
+" endfunction
 "Change colorscheme as per the timing
 let hr = (strftime('%H'))
 if hr >= 17
@@ -753,3 +753,7 @@ function! LispBlock()
 endfunction
 
 nmap <Leader>l :call LispBlock()<CR>
+" Enlist match and replace in a buffer
+" map <S-r> :g//#|s///g|#
+" Vimgrep invocation by pressing ;g
+ nnoremap <Leader>g :vimgrep  %<Left><Left>
