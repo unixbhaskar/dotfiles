@@ -2063,3 +2063,16 @@
 (global-set-key (kbd "C-c C-r") 'smart-compile)
 (setq compilation-read-command nil)
 #+end_src
+
+
+* Describe variables
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-h v")'counsel-describe-variable)
+#+end_src
+
+* Describe function
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-h f")'counsel-describe-function)
+#+end_src
+
+
