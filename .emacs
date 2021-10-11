@@ -8,6 +8,7 @@
  ;; If there is more than one, they won't work right.
  '(add-log-mailing-address "unixbhaskar@gmail.com")
  '(all-the-icons-dired-monochrome nil)
+ '(all-the-icons-ivy-rich-mode t)
  '(ansi-color-names-vector
    ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
@@ -63,7 +64,9 @@
  '(icomplete-mode t)
  '(image-dired-dir "~/Pictures")
  '(image-dired-main-image-directory "~/Pictures")
+ '(ivy-posframe-mode t nil (ivy-posframe))
  '(ivy-posframe-style 'frame-center)
+ '(ivy-rich-mode t)
  '(jdee-db-active-breakpoint-face-colors (cons "#161a2a" "#82aaff"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#161a2a" "#3ad900"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#161a2a" "#444a73"))
@@ -1807,3 +1810,12 @@
 ;; Samrt Compile
 (global-set-key (kbd "C-c C-r")'smart-compile)
 (setq compilation-read-command nil)
+
+;; Describe variables
+(global-set-key (kbd "C-h v")'counsel-describe-variable)
+
+;; Describe function
+(global-set-key (kbd "C-h f")'counsel-describe-function)
+
+
+
