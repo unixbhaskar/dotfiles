@@ -61,7 +61,6 @@ Plugin 'jreybert/vimagit'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'axvr/org.vim'
-Plugin 'kovisoft/slimv'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
@@ -757,3 +756,5 @@ nmap <Leader>l :call LispBlock()<CR>
 " map <S-r> :g//#|s///g|#
 " Vimgrep invocation by pressing ;g
  nnoremap <Leader>g :vimgrep  %<Left><Left>
+" Swank start
+"let g:slimv_swank_cmd = '! xterm -e sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp &'
