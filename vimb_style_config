@@ -1,12 +1,13 @@
 @media (prefers-color-scheme: dark) {
 html,body,li,pre,div,textarea,body,input,td,tr,nav,article,header,p {
     color: #ccc !important;
-    background-color: #111 !important;
+    /* background-color: #111 !important; */
+    background-color: #2F4F4F !important;
     background-image: none !important;
 }
 h1, h2, h3, h4, h5, h6 {
-    color: #aaa !important;
-}
+     color: #FFFFFF !important;
+ }
 table, th, td {
     border-color: grey !important;
 }
