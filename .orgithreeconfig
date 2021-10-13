@@ -478,4 +478,7 @@ bindcode --release 49 exec gentoo_package_search
 
 (global-set-key (kbd "C-c n w") 'i3config-and-i3orgconfig-side-by-side)
 
+* Enlist emojis to select and paste anywhere
+bindsym $mod+Ctrl+e exec select_emojis
+
 # vim:filetype=i3config
