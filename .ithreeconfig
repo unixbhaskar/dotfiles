@@ -472,5 +472,7 @@ bindcode --release 110 exec kernel_feed.sh
 for_window [instance="^htop_scratchpad$"] move to scratchpad
 bindsym $mod+Ctrl+h exec "st -n htop_scratchpad -e htop" scratchpad show
 
+# Select emojis to paste it everywhere
+bindsym $mod+Ctrl+e exec select_emojis
 
 # vim:filetype=i3config
