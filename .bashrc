@@ -556,7 +556,7 @@ patch_series() {
 
 
 backup() {
-	cp -v "$1"{,.$(date +'%F')}
+	cp -v "$1"{,.$(date +'%F_%T')}
 }
 
 # TaskWorrior Prompt
