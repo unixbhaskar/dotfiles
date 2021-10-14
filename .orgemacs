@@ -2075,4 +2075,8 @@
 (global-set-key (kbd "C-h f")'counsel-describe-function)
 #+end_src
 
+* Move text or region of text up and down by holding Meta+up/down
 
+#+begin_src emacs-lisp
+(move-text-default-bindings)
+#+end_src
