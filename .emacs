@@ -1819,3 +1819,25 @@
 
 ;; Move text or region of text up and down by hold Meta+up/down
 (move-text-default-bindings)
+
+;; All about Org mode Clocking
+
+;; Resume clocking task when emacs is restarted
+(org-clock-persistence-insinuate)
+;; Save the running clock and all clock history when exiting Emacs, load it on startup
+(setq org-clock-persist t)
+;; Resume clocking task on clock-in if the clock is open
+(setq org-clock-in-resume t)
+;; Do not prompt to resume an active clock, just resume it
+(setq org-clock-persist-query-resume nil)
+
+;; Change tasks to whatever when clocking in
+(setq org-clock-in-switch-to-state "NEXT")
+;; Clock out when moving task to a done state
+(setq org-clock-out-when-done t)
+;; Enable auto clock resolution for finding open clocks
+(setq org-clock-auto-clock-resolution (quote when-no-clock-is-running))
+;; Include current clocking task in clock reports
+(setq org-clock-report-include-clocking-task t)
+;; use pretty things for the clocktable
+(setq org-pretty-entities t)
