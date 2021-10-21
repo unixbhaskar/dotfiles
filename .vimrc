@@ -758,3 +758,7 @@ nmap <Leader>l :call LispBlock()<CR>
  nnoremap <Leader>g :vimgrep  %<Left><Left>
 " Swank start
 "let g:slimv_swank_cmd = '! xterm -e sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp &'
+" Close all buffer at once <Leader>q
+ nmap <Leader>q :qall<CR>
+" Write to all the buffer
+ nmap <Leader>wa :wall<CR>
