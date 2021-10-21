@@ -461,7 +461,7 @@ bindsym $mod+F12 exec i3scripts
 
 # Open  floating window with vifm
 for_window [instance="^Vifm_scratchpad$"] move to scratchpad
-bindsym $mod+Ctrl+f exec "st -n Vifm_scratchpad -e download_floating_vifm" scratchpad show
+bindsym $mod+Ctrl+d exec "st -n Vifm_scratchpad -e download_floating_vifm" scratchpad show
 
 # Open manual page as pdf(press F1)
 bindcode --release 67 exec manual_view_in_pdf
