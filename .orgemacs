@@ -40,6 +40,7 @@
  '(git-messenger:use-magit-popup t)
  '(global-emojify-mode t)
  '(global-emojify-mode-line-mode t)
+ '(global-highlight-changes-mode t)
  '(gnus-add-timestamp-to-message t)
  '(gnus-expert-user t)
  '(icomplete-mode t)
@@ -2102,3 +2103,4 @@
 ********** use pretty things for the clocktable
 (setq org-pretty-entities t)
 #+end_src
+
