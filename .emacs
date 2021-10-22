@@ -54,8 +54,11 @@
  '(git-messenger:use-magit-popup t)
  '(global-emojify-mode t)
  '(global-emojify-mode-line-mode t)
+ '(global-highlight-changes-mode t)
+ '(global-highlight-parentheses-mode t)
  '(gnus-add-timestamp-to-message t)
  '(gnus-expert-user t)
+ '(grep-highlight-matches 'always)
  '(highlight-tail-colors
    ((("#2e3c4c" "#2e3c4c" "green")
      . 0)
@@ -64,6 +67,7 @@
  '(icomplete-mode t)
  '(image-dired-dir "~/Pictures")
  '(image-dired-main-image-directory "~/Pictures")
+ '(ispell-highlight-face 'flyspell-incorrect)
  '(ivy-posframe-mode t nil (ivy-posframe))
  '(ivy-posframe-style 'frame-center)
  '(ivy-rich-mode t)
@@ -104,7 +108,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless org-roam-bibtex crux doom-themes dired-git keychain-environment with-emacs dired-icon dired-single magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos eglot spinner lsp-mode lsp-grammarly counsel-notmuch org-fancy-priorities rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download deft goto-line-preview general smex doom-modeline org-roam undo-tree slime imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode auto-complete))
+   '(highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless org-roam-bibtex crux doom-themes dired-git keychain-environment with-emacs dired-icon dired-single magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos eglot spinner lsp-mode lsp-grammarly counsel-notmuch org-fancy-priorities rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download deft goto-line-preview general smex doom-modeline org-roam undo-tree slime imenus dictionary dashboard neotree org2blog org-books all-the-icons-ibuffer weather-metno projectile swiper-helm org-msg emacs-everywhere notmuch-maildir pretty-symbols emojify esup restart-emacs org-capture-pop-frame notmuch org-ref smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode forge magit-todos magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore solarized-theme org-preview-html htmlize popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons markdown-mode engine-mode zenburn-theme which-key vterm use-package synosaurus popper pdf-tools pass page-break-lines mu4e-views mu4e-alert monokai-theme molokai-theme magit ivy-rich ivy-posframe ffmpeg-player emms elfeed-goodies define-word counsel company command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -1841,3 +1845,4 @@
 (setq org-clock-report-include-clocking-task t)
 ;; use pretty things for the clocktable
 (setq org-pretty-entities t)
+
