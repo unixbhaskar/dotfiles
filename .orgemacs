@@ -2104,3 +2104,7 @@
 (setq org-pretty-entities t)
 #+end_src
 
+* Global Prettify Symbol Mode
+#+begin_src emacs-lisp
+(pretty-symbols-mode t)
+#+end_src
