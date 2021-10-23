@@ -1845,3 +1845,6 @@
 (setq org-clock-report-include-clocking-task t)
 ;; use pretty things for the clocktable
 (setq org-pretty-entities t)
+
+;; Prettify Symbol mode enable
+(pretty-symbols-mode t)
