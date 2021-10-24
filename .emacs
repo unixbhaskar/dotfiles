@@ -1885,3 +1885,14 @@
   ;; auto-updating embark collect buffer
   :hook
   (embark-collect-mode . consult-preview-at-point-mode))
+
+;; Switching theme based on daytime
+
+(use-package circadian
+  :ensure t
+  :config
+  (setq calendar-latitude 22.572645)
+  (setq calendar-longitude 88.363892)
+  (setq circadian-themes '((:sunrise . solarized-dark-high-contrast)
+                           (:sunset  . molokai)))
+  (circadian-setup))
