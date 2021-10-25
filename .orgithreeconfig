@@ -457,7 +457,7 @@ bindcode --release $mod+105  exec admin_scripts
 bindcode --release $mod+108 exec select_capture
 
 * All the important config files enlist and open
-bindcode --release $mod+62 exec config_list
+bindsym $mod+F10 exec config_list
 
 * Open Tour videos
 bindsym $mod+apostrophe exec tour_videos
@@ -486,5 +486,8 @@ bindcode --release 49 exec gentoo_package_search
 
 * Enlist emojis to select and paste anywhere
 bindsym $mod+Ctrl+e exec select_emojis
+
+* Open St Solarized terminal
+bindcode --release $mod+62 exec st_solarized
 
 # vim:filetype=i3config
