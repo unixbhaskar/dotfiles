@@ -134,8 +134,8 @@ hdr_order Date From To Subject X-Mailer User-Agent Organization
 # ##your Mutt has to have some colors
 # ##these are for four levels of quoted text
 # ##they override the system settings in /etc/mutt/Muttrc
-# source /home/bhaskar/.mutt/colors/mutt-colors-solarized-dark-256.muttrc
-# # #color quoted green default
+#source /home/bhaskar/.mutt/colors/mutt-colors-solarized-light-256.muttrc
+# #color quoted green default
 color quoted1 magenta black
 # #color quoted2 yellow default
 # #color quoted3 red default
