@@ -13,6 +13,7 @@ set nobackup
 "set background=dark
 let g:CommandTMaxFiles=200000
 nnoremap <Leader>n :set invnumber number?<CR>
+"set t_Co=16
 colorscheme molokai_dark
 let g:airline_theme='base16_gruvbox_dark_hard'
 "Different highlights set background=light
@@ -741,8 +742,7 @@ if hr >= 17
          colorscheme molokai_dark
 elseif hr >= 6
         set background=dark
-	let g:gruvbox_contrast_dark = 'hard'
-	colorscheme gruvbox
+	colorscheme gruvbox8_hard
 elseif hr >= 0
          colorscheme molokai_dark
 endif
