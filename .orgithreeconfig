@@ -415,7 +415,12 @@ bindsym $mod+Ctrl+v exec cmus-remote --stop
 bindsym $mod+Ctrl+s exec cmus-remote --play
 
 * Emacs pop up buffer anywhere
-bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)"
+for_window [title="^emacs-everywhere$"] move to scratchpad
+bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)" show scratchpad
+
+* Vim pop up buffer anywhere
+for_window [instance="^vim-everywhere$"] move to scratchpad
+bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim" scratchpad show
 
 * Emacs org-capture protocol
 bindsym $mod+Shift+o  exec org-capture
