@@ -353,7 +353,7 @@ bindsym $mod+minus scratchpad show
 focus_on_window_activation smart
 
 # Dotfiles config enlsit
-bindcode --release $mod+62 exec config_list
+bindsym  $mod+F10 exec config_list
 
 # clipmenu show the selection in dmenu
 
@@ -475,5 +475,8 @@ bindsym $mod+Ctrl+h exec "st -n htop_scratchpad -e htop" scratchpad show
 
 # Select emojis to paste it everywhere
 bindsym $mod+Ctrl+e exec select_emojis
+
+# Open st Solarized terminal
+bindcode --release  $mod+62 exec st_solarized
 
 # vim:filetype=i3config
