@@ -711,6 +711,10 @@ rather than the whole path."
 	"https://duckduckgo.com/?q=%s"
 	:keybinding "d")
 
+     (defengine github
+	"https://github.com/search?ref=simplesearch&q==%s"
+	:keybinding "g")
+
      (defengine wikipedia
 	"https://en.wikipedia.org/w/index.php?title=Special:Search&go=Go&search=%s"
 	:keybinding "w")
