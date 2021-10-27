@@ -2,14 +2,32 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("emacs.org" 0 9
+(#1=(#(".vimrc" 0 1
+      (bmkp-full-record #1#)
+      1 6
+      (bmkp-full-record #1#))
+    (filename . "~/.vimrc")
+    (buffer-name . ".vimrc")
+    (front-context-string . "\"Author : Bhaska")
+    (rear-context-string)
+    (front-context-region-string)
+    (rear-context-region-string)
+    (visits . 0)
+    (time . #2=(24932 64481 898094 608000))
+    (created . #2#)
+    (position . 1))
+#1=(#("emacs.org" 0 1
+      (bmkp-full-record #1#)
+      1 9
       (bmkp-full-record #1#))
     (filename . "~/.emacs.d/OrgFiles/emacs.org")
     (front-context-string . "#+TITLE: My Emac")
     (rear-context-string)
     (position . 1)
     (annotation . "This emacs config written in ORG mode "))
-#1=(#(".emacs" 0 6
+#1=(#(".emacs" 0 1
+      (bmkp-full-record #1#)
+      1 6
       (bmkp-full-record #1#))
     (filename . "~/.emacs")
     (front-context-string . "(custom-set-vari")
@@ -18,23 +36,30 @@
     (annotation . "This is a mail emacs config file ,so be careful! "))
 #1=(#("org-refile-last-stored" 0 22
       (bmkp-full-record #1#))
+    (annotation . "Main ORG agenda file ")
+    (tags)
     (filename . "~/.emacs.d/OrgFiles/task.org")
+    (buffer-name . "task.org")
     (front-context-string . "** TODO Review [")
-    (rear-context-string . "7-15 Thu 15:52]\n")
-    (position . 4011)
-    (annotation . "Main ORG agenda file "))
+    (rear-context-string . "-28 Wed 11:25]\n\n")
+    (front-context-region-string)
+    (rear-context-region-string)
+    (visits . 0)
+    (time . #2=(24941 16425 554371 265000))
+    (created . #2#)
+    (position . 6284))
 #1=(#("org-capture-last-stored" 0 23
       (bmkp-full-record #1#))
     (annotation)
     (tags)
     (filename . "~/.emacs.d/OrgFiles/notes.org")
     (buffer-name . "notes.org")
-    (front-context-string . "* Passport renew")
-    (rear-context-string . "ved-in-linux/]]\n")
+    (front-context-string . "* Here are the m")
+    (rear-context-string . "_desktop.html]]\n")
     (front-context-region-string)
     (rear-context-region-string)
     (visits . 0)
-    (time . #2=(24917 24411 543556 488000))
+    (time . #2=(24945 14587 953021 97000))
     (created . #2#)
-    (position . 14190))
+    (position . 14108))
 )

@@ -1,0 +1,155 @@
+#+TITLE: Keep track of things which needs attention
+#+AUTHOR: Bhaskar Chowdhury
+#+EMAIL: unixbhaskar@gmail.com
+#+DATE: 2021-05-25
+
+
+* STARTED [#B] [[https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git][Linus's Kernel Tree]] Find a bug or fix a bug in the linux kernel,send patches upstream :Technical:Daily:
+* STARTED [#A] *Exercise regularly for at least 60 mins*                :Daily:
+   SCHEDULED: <2021-05-21 Fri +1d>
+* ONGOING [#C] Researching about the open system i.e UNIX , Linux et al :Daily:Researching:
+  SCHEDULED: <2021-05-25 Tue +1d>
+  - Note taken on [2021-05-25 Tue 12:43] \\
+    Various aspect of the open system,kernel , file system , performance tuning , overall configuration , enhancement
+
+*=To open the local link file ,use C-u C-c C-o=*
+
+* ONGOING [#B] My Emacs config file :  [[file://home/bhaskar/.emacs][.emacs]] :@work:@home:laptop:Technical:ATTACH:
+  SCHEDULED: <2021-05-25 +1d>
+  :PROPERTIES:
+  :ID:       cf6d7662-39b7-450e-89c2-69d913cd3c72
+  :END:
+ [[http://doc.norang.ca/org-mode.html#DeadlinesAndAgendaVisibility][Wonderful details of org mode efficiency]]
+[[https://github.com/emacs-tw/awesome-emacs#key-bindings][Emacs-goodies-on-github]]
+* ONGOING [#A] *Try/should outright ignore rude/mean/nefarious people on the internet and in life* :Daily:@work:
+  SCHEDULED: <2021-05-28 Fri +1d>
+* ONGOING [#B] Learning VIML and ELISP for the sake of using the editors more efficiently. :@home:laptop:Researching:Technical:Daily:@work:
+  SCHEDULED: <2021-05-29 Sat +1d>
+** TODO Review https://mediaonfire.com/blog/2017_07_21_org_protocol_firefox.html :Researching:Technical:
+ [2021-06-24 Thu 18:23]
+** TODO Review https://planet.emacslife.com/          :Researching:Technical:
+ [2021-06-25 Fri 13:37]
+** TODO Review https://sachachua.com/blog/category/emacs/ :Researching:Technical:
+ [2021-06-25 Fri 13:42]
+** TODO Review https://depp.brause.cc/shackle/        :Researching:Technical:
+ [2021-06-25 Fri 14:42]
+** TODO Review https://www.reddit.com/r/emacs/                  :Researching:
+ [2021-06-26 Sat 13:54]
+** TODO Review https://www.reddit.com/r/vim/          :Researching:Technical:
+ [2021-06-26 Sat 13:57]
+** TODO Review https://vim.fandom.com/wiki/Vim_Tips_Wiki :Researching:Technical:
+ [2021-06-26 Sat 13:59]
+** TODO Review https://vim.fandom.com/wiki/Best_Vim_Tips :Researching:Technical:
+ [2021-06-26 Sat 14:05]
+** TODO Review https://writequit.org/eos/eos.html     :Researching:Technical:
+ [2021-07-01 Thu 13:06]
+** TODO Review https://sodocumentation.net/vim        :Researching:Technical:
+ [2021-07-02 Fri 02:37]
+ [[https://sodocumentation.net/vim][Vim documentation]]
+** TODO Review [[Power Vim Usage]] https://www.ukuug.org/events/linux2004/programme/paper-SMyers/Linux_2004_slides/vim_tips/ :Researching:
+ [2021-07-02 Fri 04:36]
+** TODO Review [[https://dev.to/serhatteker/remotely-edit-files-in-vim-3ppg][Remote Edit File with Vim]]              :Researching:Technical:
+ https://dev.to/serhatteker/remotely-edit-files-in-vim-3ppg
+ [2021-07-02 Fri 05:01]
+** TODO Review [[http://vimdoc.sourceforge.net/][Vim resources]]                          :Researching:Technical:
+ http://vimdoc.sourceforge.net/
+ [2021-07-02 Fri 13:49]
+** TODO Review [[http://vimsheet.com/][Vim default key combinations]]           :Researching:Technical:
+ http://vimsheet.com/
+ [2021-07-15 Thu 15:21]
+** TODO Review [[https://www.dannyadam.com/blog/2019/05/debugging-in-vim/][Debug inside Vim]]                       :Researching:Technical:
+ https://www.dannyadam.com/blog/2019/05/debugging-in-vim/
+ [2021-07-15 Thu 15:52]
+** TODO Review [[https://jamesbvaughan.com/markdown-pandoc-notes/][Note taking in vim]]                     :Researching:Technical:
+ https://jamesbvaughan.com/markdown-pandoc-notes/
+ [2021-07-16 Fri 14:25]
+* NEXT [#A] Reminds about passport renewals <2021-10-27 Wed 16:30> :Followup:ATTACH:
+  SCHEDULED: <2021-05-29 Sat +1w> DEADLINE: <2021-09-01 Wed>
+  :PROPERTIES:
+  :ID:       deb84872-545a-432b-99e4-9e3aa5aeb9e7
+  :END:
+  :LOGBOOK:
+  CLOCK: [2021-10-21 Thu 15:27]
+  :END:
+* ONGOING [#B] This is my Vim config file:  [[https://github.com/unixbhaskar/dotfiles/blob/master/.vimrc][.vimrc]] :@work:@home:laptop:Technical:ATTACH:
+  SCHEDULED: <2021-05-30 Sun +1d>
+  :PROPERTIES:
+  :ID:       638e6e78-f88c-4044-aadc-3e61db0c0087
+  :END:*
+
+* TODO [#B] Need to scan through the *GCC manual* for better understanding of the flags used :@work:laptop:Researching:Technical:Followup:
+  SCHEDULED: <2021-06-16 Wed +1d>
+  :LOGBOOK:
+  CLOCK: [2021-06-16 Wed 02:06]--[2021-06-16 Wed 02:08] =>  0:02
+  :END:
+[2021-06-16 Wed 02:06]
+* ONGOING [#B] Brushing *Cscope* and *Ctags* for old time's sake :@home:laptop:Researching:Technical:
+  SCHEDULED: <2021-06-21 Mon +1d>
+
+* ONGOING [#A] Trim down emacs packages ,lots of package causing load delay :@work:@home:laptop:Technical:
+  SCHEDULED: <2021-07-06 Tue +1d>
+  :LOGBOOK:
+  CLOCK: [2021-07-06 Tue 11:37]--[2021-07-06 Tue 11:51] =>  0:14
+  :END:
+[2021-07-06 Tue 11:37]
+
+* ONGOING [#B] [[https://www.goodreads.com/book/show/8903671-principles-of-compiler-design][Goodreads]] Need to finish the compiler book by Aho,Ullman :Reading:
+   DEADLINE: <2021-07-30 Thu +1d>
+** Archive                                                          :ARCHIVE:
+*** CANCELLED with Donald Knuth, that's a dream           :MEETING:CANCELLED:
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2021-09-15 Wed 19:08
+    :END:
+    :LOGBOOK:
+    CLOCK: [2021-05-31 Mon 03:24]--[2021-05-31 Mon 03:24] =>  0:00
+    :END:
+  [2021-05-31 Mon 03:24]
+* Notes
+**  :NOTE: [[https://git.wiki.kernel.org/index.php/Git_FAQ][Git_FAQ]]                                           :Technical:NOTE:
+** TODO Review [[https://ieeexplore.ieee.org/document/402081][IEEE The Linux Operating System]]        :Researching:Technical:
+ https://ieeexplore.ieee.org/document/402081
+ [2021-07-04 Sun 03:38]
+** TODO Review [[https://www.linuxjournal.com/content/parallel-shells-xargs-utilize-all-your-cpu-cores-unix-and-windows][Prallel shell with xargs]]                      :Technical:NOTE:
+ https://www.linuxjournal.com/content/parallel-shells-xargs-utilize-all-your-cpu-cores-unix-and-windows
+ [2021-07-04 Sun 14:40]
+
+** TODO Review [[https://blog.ikuamike.io/posts/2021/netcat/][NetCat]]                                             :Technical:
+ https://blog.ikuamike.io/posts/2021/netcat/
+ [2021-07-28 Wed 11:25]
+
+** TODO Review [[https://www.goodreads.com/book/show/337375.Lions_Commentary_on_UNIX_6th_Edition_with_Source_Code][Lion's Commentary on UNIX ]]                         :Technical:
+ https://www.goodreads.com/book/show/337375.Lions_Commentary_on_UNIX_6th_Edition_with_Source_Code
+ [2021-10-18 Mon 14:46]
+* Archive                                                           :ARCHIVE:
+*** WAITING [#B] Health related stuff needs to get done...but... :@home:HOLD:WAITING:
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2021-07-06 Tue 12:35
+    :ARCHIVE_FILE: ~/.emacs.d/OrgFiles/task.org
+    :ARCHIVE_CATEGORY: task
+    :ARCHIVE_TODO: WAITING
+    :END:
+    - Note taken on [2021-05-29 Sat 11:50] \\
+     I am not confident enough to get the booster in my body. Because , the recurring effect of getting it every year make me think.Wondering.
+
+** DONE [#B] Need to get the refill medicine from kazi SCHEDULED: <2021-08-20 Fri> :Medical:DONE:
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2021-09-15 Wed 19:06
+   :END:
+** DONE [#B] *Reading "On Intelligence" by Jeff Hawkins et al*   :Reading:DONE:
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2021-09-18 Sat 17:03
+   :END:
+   [[https://www.goodreads.com/book/show/18753110-on-intelligence][On Intelligence by Jeff Hawkins et al]]
+   :LOGBOOK:
+   CLOCK: [2021-09-15 Wed 19:01]--[2021-09-15 Wed 19:05] =>  0:04
+   :END:
+ [2021-09-15 Wed 19:01]
+
+** DONE [#B] *Mediclaims* premium has to be paid  :Medical:Followup:@home:DONE:
+   SCHEDULED: <2021-06-07 Mon +1w>  DEADLINE: <2021-09-10 Fri>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2021-10-11 Mon 02:33
+   :END:
+* Footnotes
+
+[fn:1] My org agenda file

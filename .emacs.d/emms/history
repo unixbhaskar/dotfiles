@@ -1,7 +1,7 @@
 ;;; emms history -*- mode: emacs-lisp; coding: utf-8; -*-
 (
 ;; active playlist
-" *temp*"
+nil
 ;; playlists: ((BUFFER_NAME SELECT_POSITION TRACKS) ...)
 nil
 ;; play method

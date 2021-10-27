@@ -59,3 +59,5 @@ ls
 cd ..
 ls
 htop
+ls
+exit

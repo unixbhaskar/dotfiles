@@ -1,0 +1,20 @@
+HTTP/1.1 200 OK
+Content-Type: image/svg+xml
+Content-Length: 569
+Connection: keep-alive
+Server: Server
+Date: Tue, 06 Apr 2021 23:55:50 GMT
+x-amz-rid: 7VQC6W185GQ3QTDSFE5B
+Last-Modified: Wed, 10 Mar 2021 17:40:29 GMT
+Expires: Thu, 31 Dec 2037 23:55:55 GMT
+Cache-Control: max-age=315360000
+Cache-Control: public
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+X-Cache: Hit from cloudfront
+Via: 1.1 71f2fed44216f4391ecbb693ee450dcf.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: EWR52-C2
+X-Amz-Cf-Id: N_P5xtlNTYv3n4lrlVA-VTgg_qBBIXoZgL_yoxfpG1kWLXhmkm1vLg==
+Age: 17546331
+
+<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>facebook</title><defs><path d="M15 30C6.716 30 0 23.284 0 15 0 6.716 6.716 0 15 0c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15zm-2.43-6.136h3.326v-7.842h2.219l.294-2.702h-2.513l.004-1.353c0-.705.069-1.082 1.107-1.082h1.387V8.182h-2.22c-2.665 0-3.603 1.311-3.603 3.515v1.623h-1.662v2.702h1.662v7.842z" id="a"/></defs><g fill="none" fill-rule="evenodd" opacity=".351"><path d="M0 0h30v30H0z"/><use fill="#000" xlink:href="#a"/></g></svg>

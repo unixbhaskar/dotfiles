@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Content-Type: image/svg+xml
+Content-Length: 875
+Connection: keep-alive
+Server: Server
+Date: Mon, 26 Jul 2021 16:40:57 GMT
+x-amz-rid: NAJ5QFS7F5TJ0CN4D8MQ
+Last-Modified: Fri, 16 Apr 2021 16:11:59 GMT
+Expires: Thu, 31 Dec 2037 23:55:55 GMT
+Cache-Control: max-age=315360000
+Cache-Control: public
+Accept-Ranges: bytes
+Permissions-Policy: interest-cohort=()
+Vary: Accept-Encoding
+X-Cache: Hit from cloudfront
+Via: 1.1 71f2fed44216f4391ecbb693ee450dcf.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: EWR52-C2
+X-Amz-Cf-Id: L03_BT3KfNKe3lXVl1n9QYg1Thu28f3MjeTH4BYdvOXUBKQj0dEDkw==
+Age: 7982024
+
+<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><title>twitter</title><g fill="none" fill-rule="evenodd" opacity=".351"><path d="M0 0h30v30H0z"/><path d="M15 30C6.716 30 0 23.284 0 15 0 6.716 6.716 0 15 0c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15zm5.813-18.514a3.075 3.075 0 0 0 1.291-1.714 5.697 5.697 0 0 1-1.866.752 2.86 2.86 0 0 0-2.143-.979c-1.622 0-2.937 1.388-2.937 3.098 0 .243.024.48.075.706-2.44-.13-4.605-1.362-6.054-3.237a3.22 3.22 0 0 0-.398 1.558c0 1.074.519 2.023 1.307 2.58a2.832 2.832 0 0 1-1.331-.388v.038c0 1.502 1.012 2.754 2.357 3.038a2.734 2.734 0 0 1-.775.109c-.189 0-.374-.019-.552-.055.373 1.23 1.458 2.127 2.744 2.151a5.703 5.703 0 0 1-4.35 1.284 8.01 8.01 0 0 0 4.504 1.391c5.404 0 8.357-4.72 8.357-8.815 0-.135-.002-.268-.008-.4a6.14 6.14 0 0 0 1.466-1.605 5.63 5.63 0 0 1-1.687.488z" fill="#000"/></g></svg>

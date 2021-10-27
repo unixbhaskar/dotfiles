@@ -1,32 +1,50 @@
 
 ;; ----- smex-history -----
 (
- dashboard-refresh-buffer
- dashboard-return
- package-refresh-contents
- git-commit-review
- list-packages
- counsel-git-log
- counsel-git
+ lsp
+ counsel-ag
+ emms
+ wos
+ mpc
+ list-timers
+ appt-check
 )
 
 ;; ----- smex-data -----
 (
- (counsel-ag . 1)
+ (counsel-ag . 2)
  (org-agenda-file-to-front . 1)
  (image-dired . 1)
  (calc . 1)
- (dashboard-refresh-buffer . 5)
- (finger . 2)
- (appt-check . 1)
+ (dashboard-refresh-buffer . 7)
+ (finger . 3)
+ (appt-check . 2)
  (popup-imenu . 4)
- (counsel-git . 3)
- (package-autoremove . 1)
- (package-delete . 2)
+ (counsel-git . 4)
+ (package-autoremove . 2)
+ (package-delete . 5)
  (counsel-git-log . 1)
  (list-packages . 4)
  (git-messenger:popup-show . 1)
  (git-commit-review . 1)
- (package-refresh-contents . 1)
- (dashboard-return . 4)
+ (package-refresh-contents . 2)
+ (tumme . 1)
+ (counsel-linux-app . 2)
+ (completion-at-point . 1)
+ (counsel-package . 1)
+ (info . 1)
+ (eww . 1)
+ (dashboard-mode . 1)
+ (list-fontsets . 1)
+ (list-timers . 2)
+ (list-abbrevs . 1)
+ (list-processes . 1)
+ (list-registers . 1)
+ (list-faces-display . 1)
+ (list-colors-display . 1)
+ (list-command-history . 1)
+ (mpc . 1)
+ (wos . 1)
+ (emms . 1)
+ (lsp . 3)
 )

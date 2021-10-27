@@ -4,7 +4,10 @@
 (setq url-cookie-storage
  '(("www.goodreads.com"
   [url-cookie "ccsid" "925-0378102-0782427" "Thu, 13 Jun 2041 04:24:00 -0000" "/" "www.goodreads.com" nil]
-  [url-cookie "_session_id2" "efd4f88b092c8c5f82bb482d4416993f" "Thu, 16 Sep 2021 16:38:53 -0000" "/" "www.goodreads.com" nil])
+  [url-cookie "logged_out_browsing_page_count" "1" "Mon, 27 Oct 2031 01:54:24 -0000" "/" "www.goodreads.com" nil]
+  [url-cookie "_session_id2" "9d2714e30c37fedb1c64a5c996852aab" "Wed, 27 Oct 2021 07:54:24 -0000" "/" "www.goodreads.com" nil])
+ (".redhat.com"
+  [url-cookie "bm_sz" "70758C165D540D1FCD8D5E235C38A743~YAAQVvs7FyFpyr58AQAAgvDqvg2UD7eHRY3tHQBOf7h6LdvELxP525mTseKXpDwvWlITbLJ+FQtcwUGhrv2wO3nn0Qp2NjMrqkN4N9Ro3pV71LgO9Hw6o8yCCCf9P4GdyNJ1z0OSi4djh96mmEgsUnLAUWUJDPMexfcJciMPCfSHVYT9K11z10ix+EGPAyAvjHuBU1ZtGzKZeMrvX8TpyJScFFKbH9wVUM9IK118vXupUVwnvRQffC8VI4PjdJst4Xvkp/p5TN9mchlt2gkbZc3QKSNRUUlu5RooBbS/x16H4Hg=~3158583~3748151" "Wed Oct 27 03:23:55 2021 GMT" "/" ".redhat.com" nil])
  (".amazon.in"
   [url-cookie "i18n-prefs" "INR" "Sun, 31-Jul-2022 13:51:22 GMT" "/" ".amazon.in" nil]))
 )
@@ -12,9 +15,11 @@
  '((".amazon.in"
   [url-cookie "session-id-time" "2082787201l" "Sun, 31-Jul-2022 13:51:22 GMT" "/" ".amazon.in" t]
   [url-cookie "session-id" "257-4069637-2708805" "Sun, 31-Jul-2022 13:51:22 GMT" "/" ".amazon.in" t])
+ (".redhat.com"
+  [url-cookie "_abck" "0085ABC04CC9094B1E2F9F6115778765~-1~YAAQVvs7Fx9pyr58AQAAgvDqvgbt579lcHA3j4u8OHaXKjm0AvJ3PBu8D1m5gf7ypDZUprTQ0K82N+Hid29qP0kPXY8Lp+WQrKDbAi1BdIdmxm40rJ1kOOgkB1W9S9sGeXZKL3cy8LPLacFi0sDOZjWSxFbJxcdm/9SwkSqrMoe221g4VHZPgxPb5ZsEJEOy+Q4jlIDiDTmRHAzSmnh7QdAajQ04pV1Gp+lJDEslGe2mmYWV5z9g/3EDOOc6hsmf8Ldfpt+zm1LNDjkbK4RLOwJwo1Hq4nWfenup6NjE42hQIfV8rXxSiaUmIm9c36Oatse+CJrt3n4otUDqwIs6hP3mZxGMOMGv5jJ2F6Fk/Dg086njXrQRgkI=~-1~-1~-1" "Wed Oct 26 23:23:55 2022 GMT" "/" ".redhat.com" t])
  ("reddit.com"
   [url-cookie "edgebucket" "TII9cPafxr0YrNcHLG" "Wed Apr 05 04:22:05 2023 GMT" "/" "reddit.com" t]
-  [url-cookie "token_v2" "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTc2MDAwMDMsInN1YiI6Ii1jWHp4QjBvMXZrQnhKMFNTTEg3MmxCUm8ycDgiLCJsb2dnZWRJbiI6ZmFsc2UsInNjb3BlcyI6WyIqIiwiZW1haWwiXX0.bdSoRcXeduvBqNl7b3oJhhKoh014hkuSEe1oFb9wF_w" "Wed, 05 Apr 2023 04:22:03 GMT" "/" "reddit.com" t])
+  [url-cookie "token_v2" "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQwMzE1NzcsInN1YiI6Ii11eXI4TUU1WjVZeXg4OF9WNHV1NXNnbDFmYWQwQXciLCJsb2dnZWRJbiI6ZmFsc2UsInNjb3BlcyI6WyIqIiwiZW1haWwiLCJwaWkiXX0.1mS2xEIIKJ1H1vVcuKurPOumdxQeW7SbTeB3cGpizZ8" "Thu, 12 Oct 2023 08:41:37 GMT" "/" "reddit.com" t])
  (".reddit.com"
   [url-cookie "csv" "1" "Wed Apr 05 04:22:06 2023 GMT" "/" ".reddit.com" t]
   [url-cookie "loid" "0000000000bcfyoypw.2.1617596523000.Z0FBQUFBQmdhcEJyMU1ONmdFQUdnV2pubWdORWl6VnlYOHk2bkc1ZFd4cDVlSkRhWVN1RDNBWjhIQWJVSzAwVlJ2LVdaaWE5RU5aRS03OUZ2c1pJdGE1YmkzZHdOaU41dlgyOU5UVVF5UFJBcjluRDN2SWtaRHZSMm1COTNURmV5YmpIWTRmWVZiTDk" "Wed, 05 Apr 2023 04:22:04 GMT" "/" ".reddit.com" t])

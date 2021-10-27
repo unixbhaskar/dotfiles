@@ -1,1 +1,1 @@
-("~/projects/linux/" "~/projects/linux-next/" "~/projects/Collected_Notes/" "~/projects/dotfiles/" "~/projects/AdminScripts/" "~/projects/vim/" "~/projects/emacs/" "~/local_bin/" "~/git-linux/AdminScripts/" "~/Collected_Notes/" "~/git-linux/vim/" "~/dotfiles/")
+("~/projects/linux/" "~/projects/linux-next/" "~/projects/Collected_Notes/" "~/projects/dotfiles/" "~/projects/AdminScripts/" "~/projects/vim/" "~/projects/emacs/" "~/git-linux/AdminScripts/" "~/LaTeX_Workouts/" "~/local_bin/" "~/Downloads/cmus-2.9.1/" "~/.bash-git-prompt/" "~/dotfiles/" "~/Collected_Notes/")

@@ -1,0 +1,21 @@
+* 2021
+
+** 2021-07 July
+
+*** 2021-07-02 Friday
+
+*** 2021-07-04 Sunday
+
+*** 2021-07-15 Thursday
+
+*** 2021-07-16 Friday
+
+*** 2021-07-20 Tuesday
+**** TODO Review [[https://granulate.io/understanding-congestion-control/][TCP congestion control]] :Technical:
+   https://granulate.io/understanding-congestion-control/
+   [2021-07-20 Tue 14:26]
+
+*** 2021-07-28 Wednesday
+** 2021-10 October
+
+*** 2021-10-18 Monday

@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 0
+Date: Tue, 26 Oct 2021 23:24:03 GMT
+Connection: keep-alive
+x-rh-edge-request-id: 15fb4b
+x-rh-edge-reference-id: 0.56fb3b17.1635290643.15fb4b
+x-rh-edge-cache-status: Constructed from child
+Strict-Transport-Security: max-age=31536000
+Set-Cookie: ak_bmsc=569286A8E473424C1D7366F345B92E5B~000000000000000000000000000000~YAAQVvs7F3xpyr58AQAAC/vqvg1r4bSVS6ZZIR+R6SQZwBbsC0p6ijmkJ6bQEmsC7OjarvgUGydpJeWfpnjuxyhg+TsTed+fWyS4mDzCzW6SghmZ3w7MDuHAv2lUbb93bmaBkW8/0WIX1BdM2IE083EHv1QDeylW4OI3UD8BmYbRF9kNgj9b9M5aoOgg4Qp3x8fQH+rZGMTOhiSMR9XAGu5OmNKMgYYIq8WleGXYSnKOSxu70Q2qKJx8yBHXrySx9j5DDurI7ns3WpAoeUgGabLbsVwoeDjjUsr3pXOzcon7T+9BKWhbZiEMygiUwzSst26hKl2xxpVpUn1JiozwgxcpoDzUk9Ls936ZGYqWdz0n0N8oSOV3MN90+kkGqo+XwB+m1z+I+PfaVtsqrjP4hIiSU8vczNiCq7pn; Domain=.redhat.com; Path=/; Expires=Wed, 27 Oct 2021 01:24:00 GMT; Max-Age=7197; HttpOnly
+

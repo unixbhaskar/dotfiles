@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Content-Type: image/svg+xml
+Content-Length: 711
+Connection: keep-alive
+Server: Server
+Date: Sat, 05 Jun 2021 03:31:09 GMT
+x-amz-rid: V805497K051NZF1CJFGN
+Last-Modified: Fri, 16 Apr 2021 16:11:59 GMT
+Expires: Thu, 31 Dec 2037 23:55:55 GMT
+Cache-Control: max-age=315360000
+Cache-Control: public
+Accept-Ranges: bytes
+Permissions-Policy: interest-cohort=()
+Vary: Accept-Encoding
+X-Cache: Hit from cloudfront
+Via: 1.1 71f2fed44216f4391ecbb693ee450dcf.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: EWR52-C2
+X-Amz-Cf-Id: x6bG2Sartgv3W8PPjEPUaiI1thbfZuSLgXE4JDvKTml3BvvXVlcDJw==
+Age: 12435812
+
+<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><title>linkedin</title><g fill="none" fill-rule="evenodd" opacity=".351"><path d="M0 0h30v30H0z"/><path d="M15 30C6.716 30 0 23.284 0 15 0 6.716 6.716 0 15 0c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15zM8.526 12.554v9.263h2.658v-9.263H8.526zm1.26-1.158c1 0 1.622-.711 1.622-1.608-.02-.914-.622-1.606-1.603-1.606s-1.623.694-1.623 1.609c0 .897.624 1.605 1.586 1.605h.019zm12.032 10.422v-5.151c0-2.868-1.484-4.202-3.373-4.202-1.522 0-2.476.908-2.653 1.543v-1.454h-2.986c.039.772 0 9.264 0 9.264h2.986v-5.012c0-.28-.012-.558.065-.757.205-.558.646-1.135 1.44-1.135 1.036 0 1.507.855 1.507 2.11v4.794h3.014z" fill="#000"/></g></svg>
