@@ -750,8 +750,12 @@ endif
 function! LispBlock()
 	r~/.vim/templates/lispblock
 endfunction
-
 nmap <Leader>l :call LispBlock()<CR>
+
+function! MarkDownBlock()
+	r~/.vim/templates/markdownblock
+endfunction
+nmap <Leader>k :call MarkDownBlock()<CR>
 " Enlist match and replace in a buffer
 " map <S-r> :g//#|s///g|#
 " Vimgrep invocation by pressing ;g
