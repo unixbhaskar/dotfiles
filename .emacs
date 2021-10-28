@@ -925,17 +925,17 @@ rather than the whole path."
 (defun blog-mode-parse-org (file)
   (let ((title (blog-mode-file-peek "/\\+title/" file))
         (date (blog-mode-file-peek "/\\+date/" file))
-        (draft (blog-mode-file-peek "/\\+draft/" file))
+    ;;    (draft (blog-mode-file-peek "/\\+draft/" file))
         (tags (blog-mode-file-peek "/\\+tags/" file)))
 
-    (list file (vector title draft date  tags))))
+    (list file (vector title date  tags))))
 
 (defun blog-mode-parse-md (file)
   (let ((title (blog-mode-file-peek "/^title/" file))
         (date (blog-mode-file-peek "/^date/" file))
-        (draft (blog-mode-file-peek "/^draft/" file))
+  ;;      (draft (blog-mode-file-peek "/^draft/" file))
         (tags (blog-mode-file-peek "/^tags/" file)))
-    (list file (vector title draft date  tags))))
+    (list file (vector title  date  tags))))
 
 (defun blog-mode-parse-directory (directory)
   (let ((md (concat directory "/index.md"))
@@ -965,9 +965,9 @@ rather than the whole path."
 
 (define-derived-mode blog-mode tabulated-list-mode "blog-mode" "Major mode Blog Mode, to edit hugo blogs"
   (setq tabulated-list-format [("Title" 60 t)
-                               ("Draft" 5 nil)
+                             ;;  ("Draft" 5 nil)
                                ("Date"  11 t)
-			       ("Tags" 5 nil)])
+			       ("Tags" 5 t)])
   (setq tabulated-list-padding 2)
   (setq tabulated-list-sort-key (cons "Date" t))
   (use-local-map blog-mode-map)
@@ -988,7 +988,7 @@ rather than the whole path."
 (define-key blog-mode-map (kbd "?") 'blog-mode-help)
 (define-key blog-mode-map (kbd "o") 'blog-mode-open)
 (define-key blog-mode-map (kbd "<return>") 'blog-mode-open)
-(define-key blog-mode-map (kbd "d") 'blog-mode-drafts)
+;;(define-key blog-mode-map (kbd "d") 'blog-mode-drafts)
 (define-key blog-mode-map (kbd "a") 'blog-mode-all)
 (define-key blog-mode-map (kbd "p") 'blog-mode-published)
 (define-key blog-mode-map (kbd "r") 'blog-mode-refresh-all)
@@ -1000,7 +1000,7 @@ rather than the whole path."
   "Help transient for blog mode."
   ["Blog mode help"
    ("o" "Open" blog-mode-open)
-   ("d" "Drafts" blog-mode-drafts)
+  ;; ("d" "Drafts" blog-mode-drafts)
    ("a" "All" blog-mode-all)
    ("p" "Published" blog-mode-published)
    ("r" "Refresh" blog-mode-refresh-all)
@@ -1025,14 +1025,14 @@ rather than the whole path."
     (setq tabulated-list-entries (-non-nil blog-mode-entries))
     (tabulated-list-print t)))
 
-(defun blog-mode-drafts ()
-  (interactive)
-  (progn
-    (setq tabulated-list-entries
-          (-filter (lambda (x)
-                     (string= "true"
-                              (aref (car (cdr x)) 1))) (-non-nil blog-mode-entries)))
-    (tabulated-list-print t)))
+;; (defun blog-mode-drafts ()
+;;   (interactive)
+;;   (progn
+;;     (setq tabulated-list-entries
+;;           (-filter (lambda (x)
+;;                      (string= "true"
+;;                               (aref (car (cdr x)) 1))) (-non-nil blog-mode-entries)))
+;;     (tabulated-list-print t)))
 
 (defun blog-mode-published ()
   (interactive)
@@ -1068,8 +1068,8 @@ rather than the whole path."
     (set-buffer (find-file path))
     (insert "#+title: " title "\n")
     (insert "#+date: " (format-time-string "%Y-%m-%d") "\n")
-    (insert "#+draft: true\n")
-    (insert "#+tags: true\n")
+    ;;(insert "#+draft: true\n")
+    (insert "#+tags: \n")
 
     (unless mini
       (insert "\n* References\n# Local Variables:\n# eval: (add-hook 'after-save-hook (lambda ()(org-babel-tangle)) nil t)\n# End:\n"))
