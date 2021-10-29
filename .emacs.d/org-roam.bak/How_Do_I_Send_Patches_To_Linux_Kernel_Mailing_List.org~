@@ -1,0 +1,140 @@
+
+#+TITLE:How do I send patches to Linux Kernel Mainling list
+#+AUTHOR: Bhaskar Chowdhury
+#+EMAIL: unixbhaskar@gmail.com
+#+DATE: 2021-10-28-08:02:12 PM
+
+Well during this pandemic ,I started to look deeply into the Linux kernel and
+due to some tenacity , I have sent some patches to the Linux kernel mailing
+list . Some of them get accepted,few get ignored and few get some comments.
+
+Sending a patch to Linux kernel mailing is a daunting task. The preparation
+and environment set needs some time and careful decision.
+
+Send a single patch or series of patch needs different kind of approach. So, after
+a while bugged by my stupidity,I have decided to automate stuff to get it done
+with minimum fuss.
+
+Here is the code for send a single patch to the mailing list :
+
+* How to send single patch
+
+#+begin_src sh
+send_patch() {
+
+	printf "\n Acquire those mail address attached with this file.....\n\n"
+
+	get_email_addresses
+
+	printf "\n\n THE PATCH FILE IS BELOW \n\n"
+
+	git format-patch -1
+	patchfile=$(basename *.patch)
+	to="--to=$(cat email_list)"
+	cc="--cc=linux-kernel@vger.kernel.org"
+	an="--annotate"
+
+	      printf "\n Checking values before sending the patch ....\n"
+	      printf "\n ${patchfile}  ${to}  ${cc}\n"
+
+	      printf "Is it look alright?? [Y/N] : %s"
+	      read consent
+
+         if [[ "$consent" == "N" ]];then
+	      printf "\n\n  Patchfile and TO fields must be filled, it seems values are missing..so,aborting.\n"
+         else
+	      git send-email $patchfile ${to} ${cc} ${an}
+
+	      printf "\nGetting rid of temp files....\n"
+	      rm -f email_list
+	      mv -v *.patch  ~/patches_sent/
+
+	  fi.
+  }
+
+#+end_src
+
+Well, if the code looks complicated, it is becasue of my fat head and
+stupidity.I couldn't figure it out, how could I do it better way. So, stick with
+it and it provide the stuff I needed.
+
+Okay, one thing might confuse you ,that is **get\-email\-address**(the forward
+slash to escape this org buffer markdown syntax). Which is look like this :
+
+#+begin_src sh
+get_email_addresses() {
+
+	filename=$(git log -1 --name-only --oneline | grep /)
+	scripts/get_maintainer.pl  $filename | tee $filename.$(date +'%T') 1> /dev/null
+	extract_email_address $filename.* | paste -s -d, - > email_list
+	rm -f $filename.*
+}
+
+#+end_src
+
+Well, it is also not so straight forward, took me way more time then needed to
+figure this out.
+
+
+* How to send patch series
+
+Here is what I have used :
+
+#+begin_src sh
+patch_series() {
+
+	patch_dir="/home/bhaskar/git-linux/linux/batch"
+
+	printf "\n\t Creating a patch series.....pls get the relevant email from MAINTAINERS file\n\n"
+
+               printf "\n Mention comma separated maintainers email .... : %s"
+               read man_email
+
+	       to="--to=$(echo ${man_email} | paste -s -d, -)"
+	       cc="--cc=linux-kernel@vger.kernel.org"
+	       an="--annotate"
+
+	printf "\n Pick the starting and ending commit for patch series range..\n"
+
+	          git log --pretty=oneline --abbrev=committed | head -20
+
+
+	 printf "\n Select the first commit of the series : %s"
+	 read start_commit
+
+	 printf "\n Now Select the end commit for the range : %s"
+	 read end_commit
+
+	 if [[ ! -d ${patch_dir} ]];then
+		 mkdir -p ${patch_dir}
+	 fi
+
+        git format-patch -o ${patch_dir} --cover-letter -n --thread=shallow ${to} ${cc} ${start_commit}^..${end_commit}
+
+	printf "\n\n Check the patch has been created properly or not....\n"
+
+             find $patch_dir -type f -ls
+
+	     printf "\n Is it looks alright?[Y/N]: %s"
+	     read res
+
+             if [[ $res == "N" ]];then
+
+		     printf "\n Nope, it doesn't look good..aborting\n"
+	     else
+
+                    printf "\n Actually sending the patches ....\n\n"
+
+                   git send-email --to-cover --cc-cover $patch_dir/*.patch ${an}
+	     fi
+}
+
+#+end_src
+
+
+Okay, it is hell , I have tried my best to strip out as much complexity as
+possible. Couldn't dilute more, my lacuna.
+
+All the pieces are in my **.bashrc** and available on [[https://github.com/unixbhaskar/dotfiles/blob/master/.bashrc][Github_Dot_Bashrc]]
+
+Hope this will help someone.

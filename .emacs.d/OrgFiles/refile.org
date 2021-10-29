@@ -1,4 +1,7 @@
 * 2021
+  :PROPERTIES:
+  :ID:       3acd9737-8b48-438a-8cee-38df55f99f6b
+  :END:
 
 ** 2021-07 July
 

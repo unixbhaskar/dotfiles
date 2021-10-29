@@ -1,0 +1,26 @@
+* Posts
+** [[/home/bhaskar/.emacs.d/OrgFiles/Rambling_About_Vim.org][Rambling About Vim]]
+   :PROPERTIES:
+   :ID:       0b8607ca-2f17-41b5-8e20-a49c86be7baa
+   :POSTID:   932
+   :POST_DATE: 20211027T18:30:00+0000
+   :PUBLISHED: Yes
+   :END:
+** [[/home/bhaskar/.emacs.d/OrgFiles/How_Do_I_Send_Patches_To_Linux_Kernel_Mailing_List.org][How do I send patches to Linux Kernel Mailing list]]
+   :PROPERTIES:
+   :POSTID:   927
+   :POST_DATE: 20211027T18:30:00+0000
+   :PUBLISHED: Yes
+   :END:
+** [[id:528ad342-64b1-4ad5-961a-f628213029a9][How do I send patches to Linux Kernel Mailing list]]
+   :PROPERTIES:
+   :POSTID:   927
+   :POST_DATE: 20211027T18:30:00+0000
+   :PUBLISHED: Yes
+   :END:
+** [[/home/bhaskar/.emacs.d/OrgFiles/Rambling_About_Emacs.org][Rambling about Emacs]]
+   :PROPERTIES:
+   :POSTID:   897
+   :POST_DATE: 20211026T18:30:00+0000
+   :PUBLISHED: Yes
+   :END:

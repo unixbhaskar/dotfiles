@@ -1,0 +1,112 @@
+#+BLOG: Unixbhaskar's Blog
+#+POSTID: 897
+
+#+TITLE:Rambling about Emacs
+#+AUTHOR: Bhaskar Chowdhury
+#+EMAIL: unixbhaskar@gmail.com
+#+DATE: 2021-10-27-01:05:22 PM
+
+Well, it look like to me that people are grossly mis-comparing with other
+editor(i.e vim). First of all, they are not comparing running vim on tty and
+running Emacs on tty. They are/were comparing vim running in tty to Emacs's GUI
+environment,which is absolutely wrong.
+
+There are some fundamental stuff which I have noticed ,although I have started using
+Emacs much late ,in spite of knowing its existence for long long time. Well, I
+was and am still use vim as my main configuration editor. The reason , because
+,I am so accustomed with it from the very beginning.
+
+Now,during this pandemic I decided to take a peek on Emacs and boy! it is bloody
+huge and powerful environment(mind you I am referring to Emacs GUI). It has so
+many nuts and bolts,and importantly you do not need all of them. Likewise, in
+Vim ,it has so many thing ,we happy to ignore, because those parts are not
+required day to day working. But having said that, knowing bits and pieces along
+the way is build your arsenal with more tools, just like as we grow old we
+gather more phrases to communicate.
+
+But, trying to learn all at once is pretty common mistake almost all the
+ordinary mortals do,a rush to get over thing which takes more time than the
+rushes offer.
+
+I am pleasantly surprised by the plethora of tools offered or already built into
+it the environment. As always, there are number of third party packages to
+provide more utility to harp on.But, there is a caution of tell , that you need
+to be very careful about the stuff you are bringing into your system. In general
+rule ,the leaner the system is ,the better the system run. But opting for it to
+cut out so many goodies and eye candy stuff, But it is a nature built into human
+being explore more ,so we look for it and get it. Moreover , if you are
+connected with internet, chances are high that you get more stuff than required
+all the time.
+
+A vanilla Emacs has so many things ,as modern peasant's desire should met almost
+75% if not all. For extra mile there are always goodies available on the
+internet.In fact, people are developing stuff(sometimes very redundant) for
+their need and keep some specific target users in mind.
+
+I , personally use my conscience to decide , what actually I need to accomplish
+the work. It happened in the past that I have used a tool , once the specific job
+done with that tool and I had realized those tools are not needed anymore ,so I
+threw it away. Keep the system in minimal state is the utmost goal of mine.
+
+Presently ,I am having almost 190 packages on top of vanilla GNU/Emacs , which
+is quite a bit I think. And I am in the process of getting rid of redundant
+stuff plus unused one.
+
+
+But, few things are still missing in that GUI environment and everyone knows
+about those. People have gone this far, to use Emacs as their Window Manager(i.e
+EXWM), that kinda bold step, but lacking required basic stuff probably hindering
+people to opt for it full time. Well, [[https://github.com/emacs-eaf/emacs-application-framework][EAF]] is good but heavily relied on Python
+and QT and people are there who despise and refrain both of them for some other
+reasons. There is also [[https://github.com/akirakyle/emacs-webkit][emacs-webkit]]  which tries to port WebKit as the back end
+to provide facilities within the Emacs environment. That is kinda bleeding edge
+stuff and it requires Emacs version 28 and up. If you decided to give it a shot
+, you have to compile Emacs from source to get it going . At least on any
+GNU/Linux the standard shipment is 27.2 .
+
+I would specifically like Emacs to be a yet another software and important one
+in my system rather completely running system on it. YMMV
+
+
+So far I have enjoyed the facilities offered by it to some extents and
+continually looking for streamlined it . Getting helps from unknown people on
+the internet is plus of having been connected with internet.
+
+Learning the intricacies of system operation ,like the important of keyboard
+macros is useful in several way. I have made few for my convenience. And editing
+those macros in the future is even more invigorating, means you can add and
+subtract to the macro you defined previously cool.
+
+I have made some shortcut for frequently used application , those shortcuts
+helps to open the application in quick way. Also knowing some specific in-built
+shortcut keys will help you go the distance. For that specific purpose [[https://github.com/justbur/emacs-which-key][which-key]]
+is wonderful. This package will help you find the command as well keys related
+to it in pop , so you don't have to remember all.
+
+Org-mode is good but overblown by the fanatics. You can accomplish so many
+things with text and other facilities provided by it like markdown kinda thing
+and hyperlinking . Plus you can easily convert those textually written stuff
+with org syntax into HTML,latex and many other form too. So, it is handy thing
+to know, how to manipulate stuff with minimal fuss. This mode is specifically
+highlighted to do GTD and literate programming, which is kinda cool.
+
+Are you fond of music? It has a bloody good thing called [[https://github.com/emacsmirror/emms][EMMS]] ,that is Emacs
+Multimedia System.But alas! it missed the video player , which you can easily
+achieved by selecting the video file in Dired buffer,select it pres ampersand
+and it will play stuff system default video player.
+
+A textual browser will at your disposal, called *Eww* and there are
+others. Unfortunately,full blown browser inside Emacs is still a WIP (I meant to
+say natively) . It is okay for me , I do use [[https://github.com/fanglingsu/vimb][VIMB]]  and I kinda like it for it's
+minimalist nature and overhead. But with that *emacs-webkit* with that I might be
+able to run it inside Emacs once upgraded to 28.
+
+Okay, *pdf-viewer* natively work with a software called *Imagemagick* , the
+pdf-viewr tool convert pdf to png and then rendered as pdf inside Emacs.Which is
+kinda okay for me, might not be for you.
+
+Like with other every software, it takes time to get accustomed with it by doing daily
+use,otherwise the time might increase to get a grasp of it.
+
+I do like Emacs as "*One of the software"* in my system and do use it in tandem with other
+stuff every single day.

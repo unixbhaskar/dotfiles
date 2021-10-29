@@ -1,0 +1,84 @@
+#+title: Rambling About Vim
+#+date: 2021-10-28
+#+tags: Technical
+
+Well,long time a **Vim** user like everyone else in the wild. This just a
+recollection of good and not so good stuff about this editor. Day to day
+activity performed on this editor. Especially the system config file
+editing.It is getting into the act without much ado,every time. The downside
+that, I need to remember few strokes to operate on it effectively. Okay,
+muscle memory sometimes overflowed and things skip of it . Although that can
+be fixed in a whisk with little dabble, but still that is not the natively
+built or done.
+
+So,user have to spend sometime to figure which fits their memory muscle. It is
+a lean editor with extremely powerful capability to almost everything you can
+dreamt off. But , at a cost of bring into the complexity (like every other
+software) to get it extended or enhanced.
+
+Plugins do solve lot of owes. But, they bring baggage too, and as a result the
+parsing (the config file) takes time to react, which getting into nerve
+sometimes.As you grow along with it and comes to know the nuts and bolts of it
+,you started to throw away the external thing i.e plugins and looking for
+option to do thing natively , means find a way to replicate that functionality
+provide by the plugins to writing some own script by manipulating vim own
+language.
+
+Engaging in some sort daily activity like coding or writing plain text file
+are blazing fast activity. Of late ,certain stuff allow writing markdown files
+as well.In fact, with some effort and tools ,you can write almost anything
+stuff on it.
+
+Some people also crazy enough to try it convert as IDE , because their
+workflow involve doing various activity and they wanted to live inside the
+editor to accomplish every little pieces inside it.
+
+Minimalist nature is depends on the person's need. My requirements are very
+minimal , because I don't do rocket science and hover on some predicted place
+or do very deterministic stuff most of the time.
+
+Vim allows you to write your own plugins and macros like other editor(i.e
+Emacs) to extend convenience and efficiency. Macros saves hell lot of time to
+do repetitive task with smooth incorporation of macros. And with little
+digging you can save those macros with name , so you can call them by name
+rather remembering the process.
+
+Okay, every **"Vim Experts"** tell people to look into the help text ,but is
+the help text always helpful? I doubt it. But, know how to look for it good
+thing to learn. Looking at the help page is one thing and interpreting the
+instruction is other thing. Ofentimes people misinterpret the what has been
+there in the help text. Other time there missing the concrete example about
+the stuff. Well, it is easy to complain and whining ,but to make thing easy
+for others.So, when the built in stuff failed you , do something which made
+your life with this editor. Write some of your own understanding in word which
+convey to your brain to grasp something you are looking at. Bring them out
+whenever you need theme . I have made some of my own just for the sake of my
+understanding ,eliminating the big padded words and instruction(basically
+esoteric and arcane stuff) .
+
+I do make keybinding as memory friendly as possible. So, with little effort
+you can easily brings that to work.
+
+Over the years I do accumulate lots of stuff in my **vimrc** ,but I do need
+them . But, I am in the process of eliminating all the less required stuff
+from it . I have already incorporated few of theme in different way. Overly
+crowded file might effect the runtime as well as performance.
+
+I am getting rid of plugins once by one. Because , I have seen lot of work can
+be done with whatever built in stuff shipped with the editor.Plus ,it allows me
+write small vim script to accomplish things I want.This is purely an excuse to
+learn and know more about the editor of choice.So, in essence,I am trying to
+give me chance catch up with inherent facilities provided by tool.But, the
+effort I put,the outcome not always pleasant ,going down the rabbit hole is the
+norm.Sometimes I do enjoy it ,but you know ,it piss me off other time.
+
+Every passing day brings something new to discover and implement, it is vicious
+cycle,take some taking to stop doing anything.
+
+But, sooner you discover that ,it is better to stop that mad pursuit . Because
+it is taking toll on you and the performance of your tool.Tweaking the existing
+thing is fine for enhancement, but adding stuff every now and then often less
+desirable.
+
+:) To nullify whatever I said ,here is my convoluted and overly large
+[[https://github.com/unixbhaskar/dotfiles/blob/master/.vimrc][Vimrc_At_GitHub]] .

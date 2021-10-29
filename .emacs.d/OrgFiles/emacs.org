@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       e202e4bc-a7ac-4e0c-8fbd-ca9ce1707fae
+:END:
 #+TITLE: My Emacs Config
 #+AUTHOR: Bhaskar Chowdhury
 #+DATE: 06/19/2021

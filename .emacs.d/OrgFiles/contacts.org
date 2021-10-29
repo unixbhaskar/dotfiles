@@ -1,4 +1,7 @@
 ** Donald.E.Knuth                                                   :CONTACT:
+   :PROPERTIES:
+   :ID:       15eaf0a2-93e8-4ca0-8396-65ca927c8153
+   :END:
 ** Ken Thompson                                                     :CONTACT:
 ** Dennis Ritche                                                    :CONTACT:
 ** Brian.W.Kernighan                                                :CONTACT:

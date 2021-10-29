@@ -1,0 +1,496 @@
+#+Title : I3Window Config File
+#+Author : Bhaskar Chowdhury
+#+Email : unixbhaskar@gmail.com
+#+Date : 08/23/202109:59:50 AM
+
+
+
+# It will not be overwritten, so edit it as you like.
+# Should you change your keyboard layout some time, delete
+# this file and re-run i3-config-wizard(1).
+
+# i3 config file (v4)
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+* Set the main modifier
+set $mod Mod1
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+* Fonts
+font pango:monospace 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+* Fonts2
+font pango:DejaVu Sans Mono 8
+
+* This is for the icons rendering
+font pango:fontawesome 8
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+* Floating modifier
+floating_modifier $mod
+
+* start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+* kill focused window
+bindsym $mod+Shift+q kill
+
+* start dmenu (a program launcher)
+bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10' -p 'search command item >'"
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+* change focus
+bindsym $mod+j focus left
+#bindsym $mod+k focus down
+# bindsym $mod+l focus up
+# # bindsym $mod+semicolon focus right
+
+* alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+* move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+* alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+* split in horizontal orientation
+bindsym $mod+h split h
+
+* split in vertical orientation
+bindsym $mod+v split v
+
+* enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+* change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+
+* toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+* change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+* focus the parent container
+bindsym $mod+a focus parent
+
+* focus the child container
+#bindsym $mod+d focus child
+
+* background wallpaper
+
+exec_always --no-startup-id feh --bg-scale /home/bhaskar/Pictures/LKM3_1024.png
+
+* Autostart
+#exec xfce4-terminal --hide-menubar --hide-scrollbar --command screen -c "$HOME/screenrc"
+exec $HOME/bin/st
+#exec $HOME/bin/telegram
+exec $HOME/bin/clipmenud
+exec $HOME/bin/pia-client
+exec $HOME/bin/noti_active
+#exec emacs --bg-daemon=emacs-daemon
+
+* Workspaces
+set $workspace1 "1   "
+set $workspace2 "2  "
+#set $workspace3 "3   "
+set $workspace3  "3 "
+set $workspace4 "4  ℰ"
+#set $workspace5 "5  "
+set $workspace5 "5  "
+set $workspace6 "6  "
+set $workspace7 "7  "
+set $workspace8 "8  "
+set $workspace9 "9 "
+set $workspace10 "10  "
+set $workspace11 "11 "
+set $workspace12 "12 "
+set $workspace13 "13 "
+set $workspace14 "14 "
+set $workspace15 "15 "
+set $workspace16 "16 "
+
+* switch to workspace
+bindsym $mod+Control+Right workspace next
+bindsym $mod+Control+Left workspace prev
+
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+b workspace $workspace2 ; exec "vimb";
+bindsym $mod+Shift+f workspace $workspace3 ; exec open_spotify;
+bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
+bindsym $mod+o workspace $workspace5 ; exec "st -n System_Operations -e system_operation";
+bindsym $mod+n workspace $workspace6 ; exec "st -n Newsboat -e newsboat";
+bindsym $mod+c  workspace $workspace7 ; exec "st -n Calcurse -e calcurse";
+bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st -n Cmus -e cmus";
+bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
+bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";
+bindsym $mod+braceleft workspace $workspace11 ; exec  strail;
+bindsym $mod+braceright workspace $workspace12 ; exec "st -n Screencast -e screencast";
+bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
+bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
+bindsym $mod+p workspace $workspace15 ; exec enlist_pdf_open;
+
+* ASSIGN PROGRAMS TO WORKSPACES
+assign [class="^st-256color" instance="^st-256color$"] → $workspace1
+assign [class="^Vimb$"]  → $workspace2
+assign [class="^Firefox$"] → $workspace3
+assign [class="^Emacs$"] → $workspace4
+assign [class="^st-256color$" instance="^System_Operations$"] → $workspace5
+assign [class="^st-256color$" instance="^Newsboat$"] →  $workspace6
+assign [class="^st-256color$" instance="^Calcurse$"] → $workspace7
+assign [class="^st-256color$" window_role="cmus" instance="^Cmus$"] → $workspace8
+assign [class="^st-256color$" instance="^Mutt$"] → $workspace9
+assign [class="^st-256color$" instance="^Tig$"] → $workspace10
+assign [class="^st-256color$" instance="^Sourcetrail$"] → $workspace11
+assign [class="^st-256color$" instance="^Screencast$"] → $workspace12
+assign [class="^st-256color$" instance="^Movies$"] → $workspace13
+assign [class="^st-256color$" instance="^Photos$"] → $workspace14
+assign [class="^st-256color$" instance="^Zathura$"] → $workspace15
+assign [class="^st-256color$" instance="^sys_monitor$"] → $workspace16
+
+* For_window versions
+
+# for_window  [instance="^st-256color$"] move container to workspace $workspace1
+#
+# for_window  [instance="^Vimb$"] move container to workspace $workspace2
+#
+# for_window  [instance="^Firefox$"] move container to workspace $workspace3
+#
+# for_window  [instance="^Emacs$"] move container to workspace $workspace4
+#
+ # for_window [class="st-256color" instance="^System_Operations$"] move container to workspace $workspace5
+
+# for_window  [instance="^Newsboat$"] move container to workspace $workspace6
+#
+# for_window [instance="^Calcurse$"] move container to workspace $workspace7
+#
+# for_window [instance="^Cmus$"] move container to workspace $workspace8
+#
+# for_window [instance="^Mutt$"] move container to workspace $workspace9
+#
+# for_window [instance="^Tig$"] move container to workspace $workspace10
+
+* Jump by mod+number of the window
+
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+bindsym $mod+Ctrl+braceleft workspace number 11
+bindsym $mod+Ctrl+braceright workspace number 12
+bindsym $mod+Ctrl+m workspace number 13
+bindsym $mod+Ctrl+comma workspace number 14
+bindsym $mod+Ctrl+p workspace number 15
+bindsym $mod+Ctrl+o workspace number 16
+
+* Prompt for workspace switch
+# bindsym $mod+w exec i3-input -F 'workspace number %s' -P 'go to workspace: '
+
+* move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+braceleft move container to workspace $workspace11
+bindsym $mod+Shift+braceright move container to workspace $workspace12
+#bindsym $mod+Shift+backslash move container to workspace $workspace13
+#bindsym $mod+Shift+comma move container to workspace $workspace14
+
+* reload the configuration file
+bindsym $mod+Shift+c reload
+* restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+* exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+* resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# class                  bground text    indicator
+# client.focused           #285577 #FFFFFF #2E9EF4
+# client.focused_inactive  #5F676A #FFFFFF #484E50
+# client.unfocused         #222222 #888888 #292D2E
+# client.urgent            #900000 #FFFFFF #900000
+# client.placeholder       #0C0C0C #FFFFFF #000000
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+* Status bar
+bar {
+     position top
+     output primary
+     tray_output primary
+
+colors {
+	background #000000
+	statusline #dddddd
+	separator #666666
+        focused_workspace  #4c7899 #285577 #ffffff
+        active_workspace   #333333 #ac4fc6 #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+}
+     status_command i3blocks -c  $HOME/.config/i3/i3blocks.conf
+     workspace_buttons yes
+     tray_output eDP-1
+     strip_workspace_numbers yes
+}
+
+* This bar will appear on second monitor ,if uncommented below lines
+# bar {
+#    position bottom
+#    output DP2
+#    status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
+#    }
+
+#
+* Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && killall -SIGUSR1 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+#bindsym XF86AudioRaiseVolume exec alsamixer sset Master 10%+ unmute
+#bindsym XF86AudioLowerVolume exec alsamixer sset Master 10%- unmute
+#
+bindsym $mod+F3 exec amixer set Master 10%+ unmute
+bindsym $mod+F2 exec amixer set Master 10%- unmute
+#
+#local
+
+* lock
+bindsym $mod+shift+x exec i3lock -i ~/Pictures/LKM3_1024.png
+
+* Border related stuff
+ hide_edge_borders both
+workspace_auto_back_and_forth yes
+
+bindsym $mod+Tab workspace back_and_forth
+
+for_window [class="^.*"] border pixel 1
+
+* Take a screenshot of the entire desktop upon pressing $mod+x
+bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots'
+
+# Press $mod+o followed by either f, t, Escape or Return to launch firefox,
+# thunderbird or return to the default mode, respectively.
+#set $mode_launcher Launch: [f]irefox [t]hunderbird
+* Shortcut menu
+# bindsym $mod+o mode "Shortcut_keys"
+
+# mode "Shortcut_keys" {
+#     bindsym l exec i3_open_mode_keys
+#     bindsym b exec bash_supported_keywords
+#     bindsym f exec firefox_shortcut_keys
+#     bindsym Escape mode "default"
+#     bindsym Return mode "default"
+# }
+
+
+#bindsym --release button2 exec --no-startup-id import /tmp/latest-screenshot.png
+
+# Make the currently focused window a scratchpad
+* floating_modifier Mod1
+bindsym $mod+Shift+minus move scratchpad
+
+* Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+* print all window titles bold
+ for_window [class=".*"] title_format "<b>%title</b>"
+ #for_window [class="(?i)firefox"] title_format "<span foreground='magenta'>%title</span>"
+
+* Focus on window activation
+focus_on_window_activation smart
+
+* clipmenu show the selection in dmenu
+
+bindsym $mod+z exec "clipmenu  -p 'clipboard items listed:'"
+
+* Play songs from artist directory
+
+bindsym $mod+semicolon exec songs_play
+
+* Surf browser open
+
+bindsym $mod+slash exec tabbed surf -pe
+
+* Close screencast
+bindsym $mod+Shift+bar exec kill_ffmpeg
+
+* Start video recording with ffmpeg
+bindsym $mod+BackSpace exec video_by_ffmpeg
+
+* Keybinds pop up for reminder
+bindsym $mod+grave exec i3_keybinds_help
+
+* Open youtube videos
+bindsym $mod+y exec search_youtube_videos
+
+* Seach query from dmenu prompt and open it on chosen browser
+ bindsym $mod+q exec search_on_the_internet
+
+* Open bookmarked site on browser
+bindsym $mod+Shift+b exec bookmark2
+
+* Mpv pause
+bindsym $mod+Shift+s exec mpv_stop
+
+* Mpv continue
+bindsym $mod+Shift+p exec mpv_cont
+
+* Kill Mpv
+bindsym $mod+Ctrl+k exec kill_mpv
+
+*  Cmus next song play
+bindsym $mod+Ctrl+n exec cmus-remote --next
+
+* Cmus prev song play
+bindsym $mod+Ctrl+r exec cmus-remote --prev
+
+* Cmus playback toggle
+bindsym $mod+Ctrl+t exec cmus-remote --pause
+
+*  Cmus Stop Play
+bindsym $mod+Ctrl+v exec cmus-remote --stop
+
+* Cmus Start Play
+bindsym $mod+Ctrl+s exec cmus-remote --play
+
+* Emacs pop up buffer anywhere
+for_window [title="^emacs-everywhere$"] move to scratchpad
+bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)" show scratchpad
+
+* Vim pop up buffer anywhere
+for_window [instance="^vim-everywhere$"] move to scratchpad
+bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim" scratchpad show
+
+* Emacs org-capture protocol
+bindsym $mod+Shift+o  exec org-capture
+
+* Search words in dictionary.com
+bindsym $mod+Shift+d exec search_dict
+
+* search specific subreddit and get the urls of the topic
+bindsym $mod+Shift+t exec reddit_info
+
+* LWN headlines
+bindsym $mod+l exec lwn_headlines
+# For vim syntax detection
+
+* Wikipedia search
+bindsym $mod+Shift+w exec wikipedia_search
+
+* Github search
+bindsym $mod+Shift+g exec github_search
+
+* Telegram desktop client
+bindsym $mod+plus exec toggle_telegram
+
+* Mail subjectline top 20
+bindsym $mod+Sys_Req exec check_mail2
+
+* Photo by webcam
+bindsym $mod+Delete exec take_photo_by_webcam
+
+* Hacker News top 10 headlines with dmenu
+bindsym $mod+Shift+h exec hn_headlines
+
+* List scripts and pressing enter open it in vim
+bindcode --release $mod+105  exec admin_scripts
+
+* Select particular area of the screen and capture
+bindcode --release $mod+108 exec select_capture
+
+* All the important config files enlist and open
+bindsym $mod+F10 exec config_list
+
+* Open Tour videos
+bindsym $mod+apostrophe exec tour_videos
+
+* Open i3 related scripts
+bindsym $mod+F12 exec i3scripts
+
+* Enlist all the Linux/Vim/Emacs WIKIs
+bindsym $mod+w  exec linux_wikis_search
+
+* Open floating window with vifm
+for_window [instance="^Vifm_scratchpad$"] move to scratchpad
+bindsym $mod+Ctrl+d exec "st -n Vifm_scratchpad -e download_floating_vifm" scratchpad show
+
+* Open manual page as pdf
+bindcode --release 67 exec manual_view_in_pdf
+
+* Search Gentoo packages on the packages.gentoo.org
+bindcode --release 49 exec gentoo_package_search
+
+* i3config and i3 org config file side by side
+(fset 'i3config-and-i3orgconfig-side-by-side
+   (kmacro-lambda-form [?\C-x ?\C-f ?. ?i ?t ?h ?r down return ?\C-x ?3 ?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?O ?r ?g ?f ?i ?l ?e backspace backspace backspace backspace ?F ?i ?l ?e ?s ?/ down down down down down down down ?i ?3 ?c ?o ?n ?f ?i ?g ?. ?o ?r ?g return] 0 "%d"))
+
+(global-set-key (kbd "C-c n w") 'i3config-and-i3orgconfig-side-by-side)
+
+* Enlist emojis to select and paste anywhere
+bindsym $mod+Ctrl+e exec select_emojis
+
+* Open St Solarized terminal
+bindcode --release $mod+62 exec st_solarized
+
+# vim:filetype=i3config

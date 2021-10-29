@@ -1,0 +1,111 @@
+** Donald.E.Knuth                                                   :CONTACT:
+** Ken Thompson                                                     :CONTACT:
+** Dennis Ritche                                                    :CONTACT:
+** Brian.W.Kernighan                                                :CONTACT:
+** Barish Daw                                                       :CONTACT:
+*** PHONE +91 97910 84702                                             :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 09:02]--[2021-06-24 Thu 09:02] =>  0:00
+    :END:
+  [2021-06-24 Thu 09:02]
+** Somak Majumdar                                                   :CONTACT:
+*** PHONE +91 98406 49546                                             :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 09:03]--[2021-06-24 Thu 09:03] =>  0:00
+    :END:
+  [2021-06-24 Thu 09:03]
+** Sukanta Mondol                                                   :CONTACT:
+**** PHONE +91 97909 03250                                            :PHONE:
+     :LOGBOOK:
+     CLOCK: [2021-06-24 Thu 09:04]--[2021-06-24 Thu 09:04] =>  0:00
+     :END:
+   [2021-06-24 Thu 09:04]
+*
+** Jhuma                                                            :CONTACT:
+*** PHONE 9831565015                                                  :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:24]--[2021-06-24 Thu 11:25] =>  0:01
+    :END:
+  [2021-06-24 Thu 11:24]
+** Neel                                                             :CONTACT:
+*** PHONE +91 85828 02672                                             :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:23]--[2021-06-24 Thu 11:24] =>  0:01
+    :END:
+  [2021-06-24 Thu 11:23]
+
+** Alliance_Internet_Helpdesk                                       :CONTACT:
+*** PHONE 918337000999                                                :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:28]--[2021-06-24 Thu 11:29] =>  0:01
+    :END:
+  [2021-06-24 Thu 11:28]
+*
+** Pradut_Bajaj_Finance                                             :CONTACT:
+*** PHONE 7003078152                                                  :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:32]--[2021-06-24 Thu 11:32] =>  0:00
+    :END:
+  [2021-06-24 Thu 11:32]
+*
+** Ranjan_Sales_Emporium                                            :CONTACT:
+*** PHONE 7003078156                                                  :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:33]--[2021-06-24 Thu 11:34] =>  0:01
+    :END:
+  [2021-06-24 Thu 11:33]
+*
+** Ranjit_Computer                                                  :CONTACT:
+*** PHONE 9830412783                                                  :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:35]--[2021-06-24 Thu 11:36] =>  0:01
+    :END:
+  [2021-06-24 Thu 11:35]
+*
+** Sankar_Netralaya_Mukundopur                                      :CONTACT:
+*** PHONE 03344013000                                                 :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:37]--[2021-06-24 Thu 11:37] =>  0:00
+    :END:
+  [2021-06-24 Thu 11:37]
+*
+** Samirda_Electric                                                 :CONTACT:
+*** PHONE 9831897426                                                  :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:39]--[2021-06-24 Thu 11:39] =>  0:00
+    :END:
+  [2021-06-24 Thu 11:38]
+*** PHONE 7059936942                                                  :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:39]--[2021-06-24 Thu 11:40] =>  0:01
+    :END:
+  [2021-06-24 Thu 11:39]
+*
+** Excide_Battery_Shop                                              :CONTACT:
+*** PHONE 9830529646                                                  :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:41]--[2021-06-24 Thu 11:42] =>  0:01
+    :END:
+  [2021-06-24 Thu 11:41]
+*
+** IRISH_Hospital_Ambulance                                         :CONTACT:
+*** PHONE 08697027393                                                 :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:43]--[2021-06-24 Thu 11:43] =>  0:00
+    :END:
+  [2021-06-24 Thu 11:43]
+*
+** MA                                                               :CONTACT:
+*** PHONE 9903140234                                                  :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:44]--[2021-06-24 Thu 11:44] =>  0:00
+    :END:
+  [2021-06-24 Thu 11:44]
+*
+** Tax_Consultant_Chandan_Pradhan                                   :CONTACT:
+*** PHONE 918240173446                                                :PHONE:
+    :LOGBOOK:
+    CLOCK: [2021-06-24 Thu 11:46]--[2021-06-24 Thu 11:46] =>  0:00
+    :END:
+  [2021-06-24 Thu 11:46]
+*

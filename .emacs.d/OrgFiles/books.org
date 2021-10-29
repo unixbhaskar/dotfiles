@@ -3,6 +3,7 @@
   :AUTHOR:   Alfred.V.Aho,Jeffery.D.Ullman
   :ADDED:    [2021-06-13]
   :GOODREAD: https://www.goodreads.com/book/show/8903671-principles-of-compiler-design
+  :ID:       f9b27cec-7e08-4a96-977f-c3d777bf9109
   :END:
 
 * * The Soul of A New Machine

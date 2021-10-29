@@ -1,4 +1,7 @@
 * Notes
+  :PROPERTIES:
+  :ID:       4391d46d-e2d6-4f77-8822-faa1c972b411
+  :END:
 * Mutt FAQ  https://www.fefe.de/muttfaq/faq.html             :Technical:NOTE:
  [2021-06-26 Sat 03:51]
 * Linux Kernel WIKI  https://wiki.kernel.org/                :Technical:NOTE:
@@ -20,13 +23,13 @@
   CLOCK: [2021-06-23 Wed 04:45]--[2021-06-23 Wed 04:46] =>  0:01
   :END:
 [2021-06-23 Wed 04:45]
-[[file:~/.emacs.d/OrgFiles/task.org][file:~/.emacs.d/OrgFiles/task.org]]
+[[id:6b1261c4-1d37-44a4-9e4c-a511ff2d36af][file:~/.emacs.d/OrgFiles/task.org]]
 * The laptop is showing it's age, highly needed a upgrade...meh        :NOTE:
   :LOGBOOK:
   CLOCK: [2021-06-23 Wed 04:47]--[2021-06-23 Wed 04:48] =>  0:01
   :END:
 [2021-06-23 Wed 04:47]
-[[file:~/.emacs.d/OrgFiles/task.org][file:~/.emacs.d/OrgFiles/task.org]]
+[[id:6b1261c4-1d37-44a4-9e4c-a511ff2d36af][file:~/.emacs.d/OrgFiles/task.org]]
 * AquaGuard gets old ...needs replacement...cost around 25k..wondering.. :NOTE:
   :LOGBOOK:
   CLOCK: [2021-06-24 Thu 09:00]--[2021-06-24 Thu 09:01] =>  0:01

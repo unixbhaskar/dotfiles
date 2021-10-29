@@ -1,0 +1,2 @@
+;;; Generated package description from org-preview-html.el  -*- no-byte-compile: t -*-
+(define-package "org-preview-html" "20210911.1528" "Automatically preview org-exported HTML files within Emacs" '((emacs "27.1") (org "8.0")) :commit "5f7345e75d0fe71afb19fd30c841dff5bdd6d1ab" :authors '(("Jake B" . "jakebox0@protonmail.com")) :maintainer '("Jake B" . "jakebox0@protonmail.com") :keywords '("org" "convenience" "outlines") :url "https://github.com/jakebox/org-preview-html")
