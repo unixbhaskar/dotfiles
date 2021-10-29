@@ -476,7 +476,7 @@ send_patch() {
 
 	get_email_addresses
 
-	printf "\n\n THE PATCH FLE IS BELOW \n\n"
+	printf "\n\n THE PATCH FILE IS BELOW \n\n"
 
 	git format-patch -1
 	patchfile=$(basename *.patch)
