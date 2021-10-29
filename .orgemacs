@@ -2194,3 +2194,8 @@ rather than the whole path."
   (circadian-setup))
 
 #+end_src
+
+* Org-roam V2 migration
+#+begin_src emacs-lisp
+(setq org-roam-v2-ack t)
+#+end_src
