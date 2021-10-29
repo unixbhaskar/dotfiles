@@ -1928,3 +1928,6 @@ rather than the whole path."
   (setq circadian-themes '((:sunrise . solarized-dark-high-contrast)
                            (:sunset  . molokai)))
   (circadian-setup))
+
+;; Org-roam V2 migration
+(setq org-roam-v2-ack t)
