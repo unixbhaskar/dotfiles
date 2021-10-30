@@ -602,3 +602,7 @@ gitstat() {
 		echo not a git repo.
 	fi
 }
+
+# fzf bindings
+ source /usr/share/bash-completion/completions/fzf
+ source /usr/share/fzf/key-bindings.bash
