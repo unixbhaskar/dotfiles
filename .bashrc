@@ -335,7 +335,7 @@ export EDITOR=vim
 export BROWSER="vimb"
 
 
-#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #Open/copy/to_gitrepo files with the help fzf and vim
 
@@ -603,6 +603,3 @@ gitstat() {
 	fi
 }
 
-# fzf bindings
- # source /usr/share/bash-completion/completions/fzf
- # source /usr/share/fzf/key-bindings.bash
