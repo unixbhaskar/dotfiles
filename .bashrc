@@ -604,5 +604,5 @@ gitstat() {
 }
 
 # fzf bindings
- source /usr/share/bash-completion/completions/fzf
- source /usr/share/fzf/key-bindings.bash
+ # source /usr/share/bash-completion/completions/fzf
+ # source /usr/share/fzf/key-bindings.bash
