@@ -1931,3 +1931,4 @@ rather than the whole path."
 
 ;; Org-roam V2 migration
 (setq org-roam-v2-ack t)
+
