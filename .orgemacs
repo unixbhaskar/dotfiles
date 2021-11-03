@@ -775,6 +775,7 @@ rather than the whole path."
 ;; Add TAG to the org file
 
 (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l) ("Reading" . ?r) ("Researching" . ?s) ("Technical" . ?t)))
+(org-pretty-tags-global-mode)
 #+END_SRC
 * Powerline modeline
 #+BEGIN_SRC emacs-lisp
@@ -2199,3 +2200,4 @@ rather than the whole path."
 #+begin_src emacs-lisp
 (setq org-roam-v2-ack t)
 #+end_src
+
