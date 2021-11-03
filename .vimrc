@@ -19,7 +19,7 @@ let g:solarized_term=1
 let g:solarized_bold=1
 let g:solarized_underline=1
 let g:solarized_italic=1
-let g:solarized_contrast="normal"
+let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 "call togglebg#map("<F12>")
 set background=dark
