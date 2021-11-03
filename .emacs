@@ -17,8 +17,12 @@
  '(calendar-view-diary-initially-flag t)
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
+ '(compilation-message-face 'default)
  '(compose-mail-user-agent-warnings nil)
  '(cua-enable-modeline-indications t)
+ '(cua-global-mark-cursor-color "#3cafa5")
+ '(cua-overwrite-cursor-color "#c49619")
+ '(cua-read-only-cursor-color "#93a61a")
  '(custom-enabled-themes '(molokai))
  '(custom-safe-themes
    '("13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
@@ -60,11 +64,19 @@
  '(gnus-add-timestamp-to-message t)
  '(gnus-expert-user t)
  '(grep-highlight-matches 'always)
+ '(highlight-parentheses-colors '("#3cafa5" "#c49619" "#3c98e0" "#7a7ed2" "#93a61a"))
+ '(highlight-symbol-colors
+   '("#3c6f408d329d" "#0c4a45f64ce3" "#486e33913532" "#1fac3bea568d" "#2ec943ac3324" "#449935a7314d" "#0b04411b5986"))
+ '(highlight-symbol-foreground-color "#9eacac")
  '(highlight-tail-colors
    ((("#2e3c4c" "#2e3c4c" "green")
      . 0)
     (("#42305a" "#42305a" "brightcyan")
      . 20)))
+ '(hl-bg-colors
+   '("#936d00" "#a72e01" "#ae1212" "#a81761" "#3548a2" "#0069b0" "#008981" "#687f00"))
+ '(hl-fg-colors
+   '("#002732" "#002732" "#002732" "#002732" "#002732" "#002732" "#002732" "#002732"))
  '(icomplete-mode t)
  '(image-dired-dir "~/Pictures")
  '(image-dired-main-image-directory "~/Pictures")
@@ -75,6 +87,8 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#161a2a" "#82aaff"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#161a2a" "#3ad900"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#161a2a" "#444a73"))
+ '(lsp-ui-doc-border "#9eacac")
+ '(mini-modeline-mode t)
  '(mu4e-display-update-status-in-modeline t)
  '(mu4e-icalendar-diary-file "~/.emacs.d/OrgFiles/refile.org")
  '(mu4e-maildir-shortcuts
@@ -109,11 +123,13 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary neotree org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(org-pretty-tags mini-modeline magit-commit-mark browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary neotree org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
  '(popper-reference-buffers '("\\*Messages\\*$"))
+ '(pos-tip-background-color "#01323d")
+ '(pos-tip-foreground-color "#9eacac")
  '(rustic-ansi-faces
    ["#2d2b55" "#ff000d" "#3ad900" "#fad000" "#82aaff" "#ff9d00" "#ff628c" "#e3e9fa"])
  '(safe-local-variable-values
@@ -123,6 +139,7 @@
            nil t)))
  '(scroll-bar-mode nil)
  '(send-mail-function 'mailclient-send-it)
+ '(smartrep-mode-line-active-bg (solarized-color-blend "#93a61a" "#01323d" 0.2))
  '(smtpmail-debug-info t)
  '(smtpmail-default-smtp-server "smtp.gmail.com")
  '(smtpmail-local-domain "gmail.com")
@@ -130,8 +147,11 @@
  '(smtpmail-smtp-service 587)
  '(smtpmail-smtp-user "unixbhaskar")
  '(smtpmail-stream-type 'starttls)
+ '(term-default-bg-color "#002732")
+ '(term-default-fg-color "#8d9fa1")
  '(user-mail-address "unixbhaskar@gmail.com")
  '(vc-annotate-background "#2B2B2B")
+ '(vc-annotate-background-mode nil)
  '(vc-annotate-color-map
    '((20 . "#BC8383")
      (40 . "#CC9393")
@@ -151,7 +171,13 @@
      (320 . "#8CD0D3")
      (340 . "#94BFF3")
      (360 . "#DC8CC3")))
- '(vc-annotate-very-old-color "#DC8CC3"))
+ '(vc-annotate-very-old-color "#DC8CC3")
+ '(weechat-color-list
+   '(unspecified "#002732" "#01323d" "#ae1212" "#ec423a" "#687f00" "#93a61a" "#936d00" "#c49619" "#0069b0" "#3c98e0" "#a81761" "#e2468f" "#008981" "#3cafa5" "#8d9fa1" "#60767e"))
+ '(xterm-color-names
+   ["#01323d" "#ec423a" "#93a61a" "#c49619" "#3c98e0" "#e2468f" "#3cafa5" "#faf3e0"])
+ '(xterm-color-names-bright
+   ["#002732" "#db5823" "#62787f" "#60767e" "#8d9fa1" "#7a7ed2" "#9eacac" "#ffffee"]))
 (tool-bar-mode -1)
 (tooltip-mode -1)
 (menu-bar-mode -1)
@@ -679,7 +705,7 @@ rather than the whole path."
 ;; Add TAG to the org file
 
 (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l) ("Reading" . ?r) ("Researching" . ?s) ("Medical" . ?m) ("Technical" . ?t)))
-
+(org-pretty-tags-global-mode)
 
 ;; Powerline modline
 
@@ -1931,4 +1957,3 @@ rather than the whole path."
 
 ;; Org-roam V2 migration
 (setq org-roam-v2-ack t)
-
