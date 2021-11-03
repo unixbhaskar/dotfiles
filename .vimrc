@@ -10,11 +10,20 @@ set path+=**
 set noswapfile
 set nobackup
 "syntax enable
-"set background=dark
 let g:CommandTMaxFiles=200000
 nnoremap <Leader>n :set invnumber number?<CR>
-"set t_Co=16
-colorscheme molokai_dark
+"colorscheme molokai_dark
+let g:solarized_term=1
+" let g:solarized_termcolors=256
+" set t_Co=256
+let g:solarized_bold=1
+let g:solarized_underline=1
+let g:solarized_italic=1
+let g:solarized_contrast="normal"
+let g:solarized_visibility="high"
+"call togglebg#map("<F12>")
+set background=dark
+colorscheme solarized
 let g:airline_theme='base16_gruvbox_dark_hard'
 "Different highlights set background=light
 highlight Comment    ctermfg=119
@@ -29,6 +38,7 @@ call vundle#begin()
 Plugin  'VundleVim/Vundle.vim'
 Plugin  'vim-airline/vim-airline'
 Plugin  'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'dstein64/vim-startuptime'
 Plugin  'vifm/vifm.vim'
 Plugin  'jamessan/vim-gnupg'
@@ -741,8 +751,7 @@ let hr = (strftime('%H'))
 if hr >= 17
          colorscheme molokai_dark
 elseif hr >= 6
-        set background=dark
-	colorscheme gruvbox8_hard
+	colorscheme solarized
 elseif hr >= 0
          colorscheme molokai_dark
 endif
