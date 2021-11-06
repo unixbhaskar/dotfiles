@@ -95,7 +95,6 @@ mailboxes =Al_Viro
  #mailboxes =Amazon_store
  #mailboxes =Amazon_Web_Services
  mailboxes =kernelci_bot
- mailboxes =kbuild_test_robot
  mailboxes =inbox/Google_Alert
  mailboxes =tip-bot2
  mailboxes =kernel_test_robot
