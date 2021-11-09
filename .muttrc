@@ -263,7 +263,7 @@ macro attach O \
 macro attach E "<save-entry><kill-line>/home/bhaskar/attachments/<enter>"
 macro index \Ci  "<change-folder> =INBOX<enter>"
 macro index \Ck  "<change-folder> =linux-kernel<enter>"
-macro index  G  "<change-folder> =Greg(GKH)<enter>"
+macro index \CG  "<change-folder> =Greg(GKH)<enter>"
 macro index  AL  "<change-folder> =Al_Viro<enter>"
 macro index  L  "<change-folder> =Linus<enter>"
 macro index  AN  "<change-folder> =Andrew_Morton<enter>"
