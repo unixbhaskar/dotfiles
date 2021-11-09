@@ -2201,3 +2201,19 @@ rather than the whole path."
 (setq org-roam-v2-ack t)
 #+end_src
 
+* Elfeed marking and unmarking
+#+begin_src emacs-lisp
+(defalias 'elfeed-toggle-star
+  (elfeed-expose #'elfeed-search-toggle-all 'star))
+
+(eval-after-load 'elfeed-search
+  '(define-key elfeed-search-mode-map (kbd "m") 'elfeed-toggle-star))
+
+;; face for starred articles
+(defface elfeed-search-star-title-face
+  '((t :foreground "#f77"))
+    "Marks a starred Elfeed entry.")
+
+(push '(star elfeed-search-star-title-face) elfeed-search-face-alist)
+
+#+end_src
