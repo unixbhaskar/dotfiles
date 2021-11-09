@@ -102,8 +102,8 @@ mailboxes =Al_Viro
  mailboxes =Paul_E_McKenney
  mailboxes =David_Miller
  mailboxes =Thomas_Gleixner
-set mbox=$HOME/Mail/received-`date +"%y%m"`
-set record=$HOME/Mail/sent-`date +"%y%m"`
+set mbox=$HOME/.maildir/received-`date +"%y%m"`
+set record=$HOME/.maildir/sent-`date +"%y%m"`
 auto_view text/html
 set mailcap_path=~/.mutt/mailcap
 set smtp_url="smtp://unixbhaskar@smtp.gmail.com:587/"
