@@ -1933,15 +1933,15 @@ rather than the whole path."
 (setq org-roam-v2-ack t)
 
 ;; Elfeed marking and unmarking
-(defalias 'elfeed-toggle-star
-  (elfeed-expose #'elfeed-search-toggle-all 'star))
+;; (defalias 'elfeed-toggle-star
+;;   (elfeed-expose #'elfeed-search-toggle-all 'star))
 
-(eval-after-load 'elfeed-search
-  '(define-key elfeed-search-mode-map (kbd "m") 'elfeed-toggle-star))
+;; (eval-after-load 'elfeed-search
+;;   '(define-key elfeed-search-mode-map (kbd "m") 'elfeed-toggle-star))
 
-;; face for starred articles
-(defface elfeed-search-star-title-face
-  '((t :foreground "#f77"))
-  "Marks a starred Elfeed entry.")
+;; ;; face for starred articles
+;; (defface elfeed-search-star-title-face
+;;   '((t :foreground "#f77"))
+;;   "Marks a starred Elfeed entry.")
 
-(push '(star elfeed-search-star-title-face) elfeed-search-face-alist)
+;; (push '(star elfeed-search-star-title-face) elfeed-search-face-alist)
