@@ -775,3 +775,16 @@ nmap <Leader>k :call MarkDownBlock()<CR>
  nmap <Leader>q :qall<CR>
 " Write to all the buffer
  nmap <Leader>wa :wall<CR>
+ " Becasue Backspace is broken..so this will fix it
+  " func Backspace()
+  " if col('.') == 1
+  "   if line('.')  != 1
+  "     return  "\<ESC>Dk$p\<S-J>i"
+  "   else
+  "     return ""
+  "   endif
+  " else
+  "   return "\<Left>\<Del>"
+  " endif
+" endfunc
+" inoremap <BS> <c-r>=Backspace()<CR>
