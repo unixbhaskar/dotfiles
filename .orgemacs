@@ -1967,6 +1967,30 @@ rather than the whole path."
 
 (fset 'create-empty-org-file
    (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s ?. ?d ?/ ?O ?r ?g ?F ?i ?l ?e ?s ?/ ?t ?e ?s ?t ?. ?o ?r ?g return return] 0 "%d"))
+
+(defun org+-buffer-name-to-title (&optional end)
+  "Rename buffer to value of #+TITLE:.
+If END is non-nil search for #+TITLE: at `point' and
+delimit it to END.
+Start an unlimited search at `point-min' otherwise."
+  (interactive)
+  (let ((beg (or (and end (point))
+         (point-min))))
+    (save-excursion
+      (when end
+    (goto-char end)
+    (setq end (line-end-position)))
+      (goto-char beg)
+      (when (re-search-forward "^[[:space:]]*#\\+TITLE:[[:space:]]*\\(.*?\\)[[:space:]]*$" end t)
+    (rename-buffer (match-string 1)))))
+  nil)
+
+(defun org+-buffer-name-to-title-config ()
+  "Configure Org to rename buffer to value of #+TITLE:."
+  (font-lock-add-keywords nil '(org+-buffer-name-to-title)))
+
+(add-hook 'org-mode-hook #'org+-buffer-name-to-title-config)
+
 (global-set-key (kbd "C-c i o") 'create-empty-org-file)
 #+end_src
 
