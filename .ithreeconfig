@@ -415,7 +415,7 @@ bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)" show scratchpad
 
 # Vim pop up buffer anywhere
 for_window [instance="^vim-everywhere$"] move to scratchpad
-bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim" scratchpad show
+bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim ~/Notes/$(date +'%F_%T').md" scratchpad show
 
 # Emacs org-capture protocol
 bindsym $mod+Shift+o  exec org-capture
