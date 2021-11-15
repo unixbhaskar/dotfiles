@@ -72,6 +72,8 @@ Plugin 'jreybert/vimagit'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'axvr/org.vim'
+Plugin 'voldikss/vim-floaterm'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
@@ -788,3 +790,6 @@ nmap <Leader>k :call MarkDownBlock()<CR>
   " endif
 " endfunc
 " inoremap <BS> <c-r>=Backspace()<CR>
+" Floating term
+ let g:floaterm_keymap_new = '<Leader>f'
+ let g:floaterm_keymap_toggle = '<Leader>ft'
