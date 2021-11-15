@@ -263,8 +263,6 @@ emacs_pkgs_clone() {
 vimplugin() {
 	 cd $HOME/.vim/bundle && git clone "$1" &&  cd "$(basename $1 .git)"
  }
-
-
 # To kick of my calendar notification in systemd driven os
 
 mycalservice() {
