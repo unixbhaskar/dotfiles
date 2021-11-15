@@ -2241,3 +2241,12 @@ Start an unlimited search at `point-min' otherwise."
 (push '(star elfeed-search-star-title-face) elfeed-search-face-alist)
 
 #+end_src
+
+* Multiple Cursors
+#+begin_src emacs-lisp
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+#+end_src
