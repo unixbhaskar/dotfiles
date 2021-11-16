@@ -482,4 +482,6 @@ bindsym $mod+Ctrl+e exec select_emojis
 # Open st Solarized terminal
 bindcode --release  $mod+62 exec st_solarized
 
+# Open Stackoverfloow search
+bindsym $mod+Ctrl+f exec stackoverflow_search
 # vim:filetype=i3config
