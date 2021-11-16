@@ -793,3 +793,5 @@ nmap <Leader>k :call MarkDownBlock()<CR>
 " Floating term
  let g:floaterm_keymap_new = '<Leader>f'
  let g:floaterm_keymap_toggle = '<Leader>ft'
+ let g:floaterm_keymap_prev = '<Leader>fp'
+ let g:floaterm_keymap_next = '<Leader>fn'
