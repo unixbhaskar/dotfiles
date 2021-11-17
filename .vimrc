@@ -795,3 +795,6 @@ nmap <Leader>k :call MarkDownBlock()<CR>
  let g:floaterm_keymap_toggle = '<Leader>ft'
  let g:floaterm_keymap_prev = '<Leader>fp'
  let g:floaterm_keymap_next = '<Leader>fn'
+ " Vertical split ;v and normal split ;s
+ nnoremap <Leader>v :vsplit<CR>
+ nnoremap <Leader>s :split<CR>
