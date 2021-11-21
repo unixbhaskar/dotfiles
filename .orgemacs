@@ -2250,3 +2250,8 @@ Start an unlimited search at `point-min' otherwise."
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 #+end_src
+
+* Git timemachine
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/.emacs.d/emacs-libvterm/git-timemachine.el")
+#+end_src
