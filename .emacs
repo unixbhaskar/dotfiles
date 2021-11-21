@@ -2002,3 +2002,7 @@ Start an unlimited search at `point-min' otherwise."
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; Git timemachine
+(add-to-list 'load-path "~/.emacs.d/git-timemachine/git-timemachine.el")
+
