@@ -453,7 +453,7 @@ Shortcut! Macros  gq to start , q to play, mh to history,ma to append, mp to pre
 
 Shortcut! TerminalOpen To open up a terminal inside it press \te
 
-Shortcut! ReplaceBacktickTO$()   Run this varbetim on ex prompt %s/`\([^`]*\)`/$(\1)/g
+Shortcut! ReplaceBacktickTO$()   Run this \cq
 
 Shortcut! MoveSelectInVisualMode  use CTRL-j and CTRL-k  in visual mode
 
@@ -795,6 +795,7 @@ nmap <Leader>k :call MarkDownBlock()<CR>
  let g:floaterm_keymap_toggle = '<Leader>ft'
  let g:floaterm_keymap_prev = '<Leader>fp'
  let g:floaterm_keymap_next = '<Leader>fn'
+ let g:floaterm_keymap_kill = '<Leader>fk'
  " Vertical split ;v and normal split ;s
  nnoremap <Leader>v :vsplit<CR>
  nnoremap <Leader>s :split<CR>
