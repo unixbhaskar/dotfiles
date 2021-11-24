@@ -484,4 +484,9 @@ bindcode --release  $mod+62 exec st_solarized
 
 # Open Stackoverfloow search
 bindsym $mod+Ctrl+f exec stackoverflow_search
+
+# Open any site in browser,prompt for url
+bindsym $mod+Ctrl+b exec open_on_browser
+
+
 # vim:filetype=i3config
