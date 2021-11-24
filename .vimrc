@@ -799,3 +799,5 @@ nmap <Leader>k :call MarkDownBlock()<CR>
  " Vertical split ;v and normal split ;s
  nnoremap <Leader>v :vsplit<CR>
  nnoremap <Leader>s :split<CR>
+ " Change directory ;d
+   nnoremap <Leader>d :lcd <space>
