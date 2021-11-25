@@ -8,7 +8,6 @@ if [[ -e /etc/bashrc || -e /etc/bash.bashrc ]]; then
  source /etc/bashrc || source /etc/bash.bashrc
 
 fi
-
 LESSOPEN="|/home/bhaskar/bin/lesspipe.sh %s"; export LESSOPEN
 export PATH="$PATH:/home/bhaskar/bin"
 
