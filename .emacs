@@ -10,7 +10,7 @@
  '(all-the-icons-dired-monochrome nil)
  '(all-the-icons-ivy-rich-mode t)
  '(ansi-color-names-vector
-   ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
+   ["#01323d" "#ec423a" "#93a61a" "#c49619" "#3c98e0" "#e2468f" "#3cafa5" "#60767e"])
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
@@ -50,7 +50,7 @@
  '(emojify-emoji-styles '(ascii github unicode))
  '(eww-browse-url-new-window-is-tab t)
  '(exwm-floating-border-color "#1e1e3f")
- '(fci-rule-color "#383838")
+ '(fci-rule-color "#01323d")
  '(frame-background-mode 'dark)
  '(git-commit-setup-hook
    '(git-commit-save-message git-commit-setup-changelog-support git-commit-turn-on-auto-fill git-commit-turn-on-flyspell git-commit-propertize-diff bug-reference-mode with-editor-usage-message))
@@ -69,10 +69,14 @@
    '("#3c6f408d329d" "#0c4a45f64ce3" "#486e33913532" "#1fac3bea568d" "#2ec943ac3324" "#449935a7314d" "#0b04411b5986"))
  '(highlight-symbol-foreground-color "#9eacac")
  '(highlight-tail-colors
-   ((("#2e3c4c" "#2e3c4c" "green")
-     . 0)
-    (("#42305a" "#42305a" "brightcyan")
-     . 20)))
+   '(("#01323d" . 0)
+     ("#687f00" . 20)
+     ("#008981" . 30)
+     ("#0069b0" . 50)
+     ("#936d00" . 60)
+     ("#a72e01" . 70)
+     ("#a81761" . 85)
+     ("#01323d" . 100)))
  '(hl-bg-colors
    '("#936d00" "#a72e01" "#ae1212" "#a81761" "#3548a2" "#0069b0" "#008981" "#687f00"))
  '(hl-fg-colors
@@ -103,7 +107,7 @@
  '(notmuch-show-all-tags-list t)
  '(notmuch-tag-added-formats '((".*" (notmuch-apply-face tag 'nil))))
  '(nrepl-message-colors
-   '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
+   '("#ec423a" "#db5823" "#c49619" "#687f00" "#c3d255" "#0069b0" "#3cafa5" "#e2468f" "#7a7ed2"))
  '(objed-cursor-color "#ff000d")
  '(org-agenda-diary-file "~/.emacs.d/OrgFiles/diary.org")
  '(org-agenda-files '("~/.emacs.d/OrgFiles/task.org"))
@@ -123,7 +127,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary neotree org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary neotree org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -137,6 +141,7 @@
            (lambda nil
              (org-babel-tangle))
            nil t)))
+ '(scroll-all-mode t)
  '(scroll-bar-mode nil)
  '(send-mail-function 'mailclient-send-it)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#93a61a" "#01323d" 0.2))
@@ -150,28 +155,28 @@
  '(term-default-bg-color "#002732")
  '(term-default-fg-color "#8d9fa1")
  '(user-mail-address "unixbhaskar@gmail.com")
- '(vc-annotate-background "#2B2B2B")
+ '(vc-annotate-background nil)
  '(vc-annotate-background-mode nil)
  '(vc-annotate-color-map
-   '((20 . "#BC8383")
-     (40 . "#CC9393")
-     (60 . "#DFAF8F")
-     (80 . "#D0BF8F")
-     (100 . "#E0CF9F")
-     (120 . "#F0DFAF")
-     (140 . "#5F7F5F")
-     (160 . "#7F9F7F")
-     (180 . "#8FB28F")
-     (200 . "#9FC59F")
-     (220 . "#AFD8AF")
-     (240 . "#BFEBBF")
-     (260 . "#93E0E3")
-     (280 . "#6CA0A3")
-     (300 . "#7CB8BB")
-     (320 . "#8CD0D3")
-     (340 . "#94BFF3")
-     (360 . "#DC8CC3")))
- '(vc-annotate-very-old-color "#DC8CC3")
+   '((20 . "#ec423a")
+     (40 . "#dace73be2daa")
+     (60 . "#d060861a2512")
+     (80 . "#c49619")
+     (100 . "#b55b9c82193e")
+     (120 . "#ad589f3e1963")
+     (140 . "#a513a1d61994")
+     (160 . "#9c81a44d19d1")
+     (180 . "#93a61a")
+     (200 . "#84b7a96352b1")
+     (220 . "#7a4daad96863")
+     (240 . "#6cbbac617d20")
+     (260 . "#5a04adfd9175")
+     (280 . "#3cafa5")
+     (300 . "#41c4a690bd74")
+     (320 . "#41d4a1f2c946")
+     (340 . "#40129d4ad514")
+     (360 . "#3c98e0")))
+ '(vc-annotate-very-old-color nil)
  '(weechat-color-list
    '(unspecified "#002732" "#01323d" "#ae1212" "#ec423a" "#687f00" "#93a61a" "#936d00" "#c49619" "#0069b0" "#3c98e0" "#a81761" "#e2468f" "#008981" "#3cafa5" "#8d9fa1" "#60767e"))
  '(xterm-color-names
@@ -262,7 +267,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(diary ((t (:foreground "blue")))))
+ )
 ;;(require 'org-mu4e)
 (require 'mu4e-contrib)
 (require 'smtpmail)
@@ -1312,7 +1317,7 @@ rather than the whole path."
       '(("irc.libera.chat"  "#linux" "#kernel" "#git" "#emacs" "#vim" "#sysadmin")))))
 ;; Image-dired
 
-(global-set-key (kbd "C-i") 'image-dired)
+(global-set-key (kbd "C-c i m") 'image-dired)
 ;; comment line
 
 (global-set-key (kbd ";") 'comment-line)
@@ -2006,3 +2011,32 @@ Start an unlimited search at `point-min' otherwise."
 
 ;; Git timemachine
 (add-to-list 'load-path "~/.emacs.d/git-timemachine/git-timemachine.el")
+
+;; Making window split direction easy
+
+(defun toggle-window-split ()
+  (interactive)
+  (if (= (count-windows) 2)
+      (let* ((this-win-buffer (window-buffer))
+         (next-win-buffer (window-buffer (next-window)))
+         (this-win-edges (window-edges (selected-window)))
+         (next-win-edges (window-edges (next-window)))
+         (this-win-2nd (not (and (<= (car this-win-edges)
+                     (car next-win-edges))
+                     (<= (cadr this-win-edges)
+                     (cadr next-win-edges)))))
+         (splitter
+          (if (= (car this-win-edges)
+             (car (window-edges (next-window))))
+          'split-window-horizontally
+        'split-window-vertically)))
+    (delete-other-windows)
+    (let ((first-win (selected-window)))
+      (funcall splitter)
+      (if this-win-2nd (other-window 1))
+      (set-window-buffer (selected-window) this-win-buffer)
+      (set-window-buffer (next-window) next-win-buffer)
+      (select-window first-win)
+      (if this-win-2nd (other-window 1))))))
+
+(global-set-key (kbd "C-x |") 'toggle-window-split)
