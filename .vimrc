@@ -322,26 +322,19 @@ let g:Mac_NamedMacrosDirectory = "~/.vim/macrobatics"
 nmap <nowait> q <plug>(Mac_Play)
 nmap <nowait> gq <plug>(Mac_RecordNew)
 "Navigating macros history
-
 nmap <leader>mh :DisplayMacroHistory<cr>
-
 nmap [m <plug>(Mac_RotateBack)
 nmap ]m <plug>(Mac_RotateForward)
 "Macro append and macro prepend
-
 nmap <leader>ma <plug>(Mac_Append)
 nmap <leader>mp <plug>(Mac_Prepend)
 "Named macros
-
 nmap <leader>mn <plug>(Mac_NameCurrentMacro)
 "Macro execute
-
 nmap <leader>me <plug>(Mac_SearchForNamedMacroAndPlay)
 "Macro select
-
 nmap <leader>ms <plug>(Mac_SearchForNamedMacroAndSelect)
 "Macro overwrite
-
 nmap <leader>mo <plug>(Mac_SearchForNamedMacroAndOverwrite)
 "Delete a macro
 
