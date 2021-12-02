@@ -197,7 +197,7 @@ separator=true
 [battery]
 label=
 #command=/usr/libexec/i3blocks/battery BAT0
-command=~/.config/i3/batt.sh
+command=~/.config/i3/battery_info.sh
 markup=pango
 interval=30
 #color=#b58900
