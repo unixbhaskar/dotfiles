@@ -41,5 +41,5 @@ fi
 export PATH="$PATH:/home/bhaskar/bin"
 export NSPR_LOG_MODULES=nsHttp:3,nsHostResolver:3,timestamp,rotate:200,nsHttp:5,cache2:5,nsSocketTransport:5,nsHostResolver:5,sync
 export MOZ_LOG=nsHttp:3,nsHostResolver:3,timestamp,rotate:200,nsHttp:5,cache2:5,nsSocketTransport:5,nsHostResolver:5,sync
-export NSPR_LOG_FILE=/data/firefox_log/firefox.log-main.16526.moz_log
-export MOZ_LOG_FILE=/data/firefox_log/firefox.log-main.16526.moz_log
+export NSPR_LOG_FILE=/data/firefox_log/firefox.log_NSFR_$(date +'%F_%T')_log
+export MOZ_LOG_FILE=/data/firefox_log/firefox.log__MOZ_$(date +'%F_%T')_log
