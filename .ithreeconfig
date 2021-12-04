@@ -488,5 +488,7 @@ bindsym $mod+Ctrl+f exec stackoverflow_search
 # Open any site in browser,prompt for url
 bindsym $mod+Ctrl+b exec open_on_browser
 
+# Open my Youtube Videos
+bindsym $mod+Ctrl+y exec my_yt_videos
 
 # vim:filetype=i3config
