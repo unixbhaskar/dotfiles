@@ -620,7 +620,7 @@ nnoremap <silent> @ :call DoMacroSave()<CR>
 " Cscope db connection
  cs add $CSCOPE_DB
 " Cscope with quickfix window
-source /home/bhaskar/.vim/bundle/cscope_quickfix.vim
+ source /home/bhaskar/.vim/bundle/cscope_quickfix.vim
 " Cscope popup menu
  let Cscope_PopupMenu = 1
 " allow filtering of quickfix/location list window results
