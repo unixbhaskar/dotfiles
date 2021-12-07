@@ -403,15 +403,16 @@ sedwise() {
 
 changes() {
 
-	if [ -e .git ];then
+	if [ $# -ne 2 ];then
+                printf "Usage: changes filename_org filename_new \n"
+
+	elif [ -e .git ];then
 
 		git difftool
 
-	elif [ $# -ne 2 ];then
-
-		printf "You need to provide both the file names \n"
 	else
-		$(command -v vimdiff) $1 $2
+
+               $(command -v vimdiff) $1 $2
 	fi
 }
 
