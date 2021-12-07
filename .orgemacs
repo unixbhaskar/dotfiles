@@ -1900,6 +1900,7 @@ rather than the whole path."
 #+begin_src emacs-lisp
 (setq c-default-style "linux")
     (require 'xcscope)
+    (cscope-setup)
 #+end_src
 
 * I3window config ORG file copy to dotfile repo
