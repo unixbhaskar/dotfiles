@@ -128,8 +128,9 @@
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			 ("org" . "https://orgmode.org/elpa/")
-			 ("elpa" . "https//elpa.gnu.org/packages/")))
+			 ("elpa" . "https//elpa.gnu.org/packages/")
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+			 ("org" . "https://orgmode.org/elpa/")))
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
@@ -139,6 +140,8 @@
 	     '("marmalade" . "https://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
              '("gnu elpa" . "https://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives
+             '("nongnu" . "https://elpa.nongnu.org/nongnu/") t)
 
 
 
