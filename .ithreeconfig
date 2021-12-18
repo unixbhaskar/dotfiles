@@ -124,6 +124,8 @@ set $workspace13 "13 "
 set $workspace14 "14 "
 set $workspace15 "15 "
 set $workspace16 "16 "
+set $workspace17  "17 "
+
 
 # switch to workspace
 bindsym $mod+Control+Right workspace next
@@ -145,6 +147,7 @@ bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
 bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
 bindsym $mod+p workspace $workspace15 ; exec enlist_pdf_open;
 bindsym $mod+F11 workspace $workspace16 ; exec sys_monitor;
+bindsym $mod+Shift+n workspace $workspace17 ; exec nyxt;
 
 #ASSIGN PROGRAMS TO WORKSPACES
 assign [class="^st-256color" instance="^st-256color$"] → $workspace1
@@ -163,6 +166,9 @@ assign [class="^st-256color$" instance="^Movies$"] → $workspace13
 assign [class="^st-256color$" instance="^Photos$"] → $workspace14
 assign [class="^st-256color$" instance="^Zathura$"] → $workspace15
 assign [class="^st-256color$" instance="^sys_monitor$"] → $workspace16
+assign [class="^Nyxt$"] → $workspace17
+
+
 
 # For_window versions
 
@@ -493,4 +499,5 @@ bindsym $mod+Ctrl+y exec my_yt_videos
 
 # Add bookmark to the default file
 bindsym $mod+Ctrl+a exec add_bookmark
+
 # vim:filetype=i3config
