@@ -500,4 +500,6 @@ bindsym $mod+Ctrl+y exec my_yt_videos
 # Add bookmark to the default file
 bindsym $mod+Ctrl+a exec add_bookmark
 
+# Enlist all the vim keybinds map
+bindsym $mod+Shift+v exec vim_key_maps
 # vim:filetype=i3config
