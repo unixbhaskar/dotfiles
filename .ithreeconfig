@@ -124,7 +124,7 @@ set $workspace13 "13 "
 set $workspace14 "14 "
 set $workspace15 "15 "
 set $workspace16 "16 "
-set $workspace17  "17 "
+set $workspace17  "17 N"
 
 
 # switch to workspace
@@ -204,7 +204,7 @@ bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 bindsym $mod+Ctrl+braceleft workspace number 11
 bindsym $mod+Ctrl+braceright workspace number 12
-bindsym $mod+Ctrl+m workspace number 13
+#bindsym $mod+Ctrl+m workspace number 13
 bindsym $mod+Ctrl+comma workspace number 14
 bindsym $mod+Ctrl+p workspace number 15
 bindsym $mod+Ctrl+o workspace number 16
@@ -505,5 +505,8 @@ bindsym $mod+Shift+v exec vim_key_maps
 
 # Enlist emacs key bindings
 bindsym $mod+Ctrl+slash exec emacs_key_maps
+
+# Enlist mutt key bindings
+bindsym $mod+Ctrl+m exec mutt_key_maps
 
 # vim:filetype=i3config
