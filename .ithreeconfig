@@ -502,4 +502,8 @@ bindsym $mod+Ctrl+a exec add_bookmark
 
 # Enlist all the vim keybinds map
 bindsym $mod+Shift+v exec vim_key_maps
+
+# Enlist emacs key bindings
+bindsym $mod+Ctrl+slash exec emacs_key_maps
+
 # vim:filetype=i3config
