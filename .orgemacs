@@ -865,7 +865,7 @@ rather than the whole path."
   :hook (after-init . global-emojify-mode))
 #+END_SRC
 * Notmuch, a mail indexer and searcher
-#+BEGIN_SRC emacs-lis
+#+BEGIN_SRC emacs-lisp
 (autoload 'notmuch "notmuch" "notmuch mail" t)
 #+END_SRC
 * Org mode shortcuts keybinds
@@ -904,8 +904,8 @@ rather than the whole path."
               ("HOLD" ("WAITING") ("HOLD" . t))
               ("DONE" ("DONE" .t ))
               ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
-              ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
-              ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
+              ("NEXT" ("WAITING") ("CANCELLED") ("HOLD")))))
+              ;;("DONE" ("WAITING") ("CANCELLED") ("HOLD"))
 #+END_SRC
 * Notes file path
 #+BEGIN_SRC emacs-lisp
@@ -2290,4 +2290,12 @@ Start an unlimited search at `point-min' otherwise."
       (if this-win-2nd (other-window 1))))))
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
+#+end_src
+
+* I3 intergration
+#+begin_src emacs-lisp
+(require 'i3)
+(require 'i3-integration)
+(add-to-list 'load-path "~/.emacs.d/diredplus")
+(i3-one-window-per-frame-mode-on)
 #+end_src
