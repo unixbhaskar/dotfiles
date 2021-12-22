@@ -11,7 +11,7 @@
  '(all-the-icons-ivy-rich-mode t)
  '(ansi-color-names-vector
    ["#01323d" "#ec423a" "#93a61a" "#c49619" "#3c98e0" "#e2468f" "#3cafa5" "#60767e"])
- '(bmkp-last-as-first-bookmark-file "/home/bhaskar/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
  '(calendar-view-diary-initially-flag t)
@@ -111,7 +111,8 @@
    '("#ec423a" "#db5823" "#c49619" "#687f00" "#c3d255" "#0069b0" "#3cafa5" "#e2468f" "#7a7ed2"))
  '(objed-cursor-color "#ff000d")
  '(org-agenda-diary-file "~/.emacs.d/OrgFiles/diary.org")
- '(org-agenda-files '("~/.emacs.d/OrgFiles/task.org"))
+ '(org-agenda-files
+   '("~/.emacs.d/OrgFiles/diary.org" "~/.emacs.d/OrgFiles/task.org"))
  '(org-agenda-include-diary t)
  '(org-agenda-insert-diary-extract-time t)
  '(org-directory "~/.emacs.d/OrgFiles")
@@ -129,7 +130,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary neotree org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary neotree org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -810,8 +811,8 @@ rather than the whole path."
               ("HOLD" ("WAITING") ("HOLD" . t))
               ("DONE" ("DONE"  . t) )
               ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
-              ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
-              ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
+              ("NEXT" ("WAITING") ("CANCELLED") ("HOLD")))))
+              ;;("DONE" ("WAITING") ("CANCELLED") ("HOLD"))
 ;; Setting the org note file path
 
 (setq org-default-notes-file "~/.emacs.d/OrgFiles/notes.org")
@@ -2046,3 +2047,9 @@ Start an unlimited search at `point-min' otherwise."
       (if this-win-2nd (other-window 1))))))
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
+
+;; i3 integration
+;; (require 'i3)
+;;(require 'i3-integration)
+(add-to-list 'load-path "~/.emacs.d/i3-emacs/")
+;;(i3-one-window-per-frame-mode-on)
