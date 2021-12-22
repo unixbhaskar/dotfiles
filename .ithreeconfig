@@ -104,7 +104,7 @@ exec $HOME/bin/st_solarized
 exec $HOME/bin/clipmenud
 exec $HOME/bin/pia-client
 exec $HOME/bin/noti_active
-#exec emacs --bg-daemon=emacs-daemon
+#exec emacs --bg-daemon
 
 set $workspace1 "1   "
 set $workspace2 "2  "
