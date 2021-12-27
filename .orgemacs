@@ -2299,3 +2299,9 @@ Start an unlimited search at `point-min' otherwise."
 (add-to-list 'load-path "~/.emacs.d/diredplus")
 (i3-one-window-per-frame-mode-on)
 #+end_src
+
+* Do not need an empty scratch buffer
+#+begin_src emacs-lisp
+(kill-buffer "*scratch*")
+#+end_src
+
