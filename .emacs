@@ -2053,3 +2053,7 @@ Start an unlimited search at `point-min' otherwise."
 ;;(require 'i3-integration)
 (add-to-list 'load-path "~/.emacs.d/i3-emacs/")
 ;;(i3-one-window-per-frame-mode-on)
+
+
+;; Do not need an empty scratch buffer
+(kill-buffer "*scratch*")
