@@ -292,6 +292,15 @@ folder-hook kernelci_bot             'push <delete-pattern>~r>1w!~F<enter><sync>
 
 folder-hook kernel_test_robot        'push <delete-pattern>~r>1w!~F<enter><sync>'
 
+folder-hook David_Miller            'push <delete-pattern>~r>1w!~F<enter><sync>'
+
+folder-hook Thomas_Gleixner          'push <delete-pattern>~r>1w!~F<enter><sync>'
+
+folder-hook Greg                     'push <delete-pattern>~r>1w!~F<enter><sync>'
+
+folder-hook Jonathan_Corbet           'push <delete-pattern>~r>1w!~F<enter><sync>'
+
+
 
 
 auto_view text/* application/* image/* audio/*
