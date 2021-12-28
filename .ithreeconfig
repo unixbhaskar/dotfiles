@@ -471,9 +471,8 @@ bindsym $mod+apostrophe exec tour_videos
 bindsym $mod+F12 exec i3scripts
 
 # Open  floating window with vifm
-for_window [instance="^Vifm_scratchpad$"] move to scratchpad
-bindsym $mod+Ctrl+d exec "st -n Vifm_scratchpad -e download_floating_vifm" scratchpad show
-
+for_window [instance="^Vifm_scratchpad$"] floating enable, resize set 900 500
+bindsym $mod+Ctrl+d exec "st -n Vifm_scratchpad -e download_floating_vifm"
 # Open manual page as pdf(press F1)
 bindcode --release 67 exec manual_view_in_pdf
 
@@ -481,8 +480,8 @@ bindcode --release 67 exec manual_view_in_pdf
 bindcode --release 110 exec kernel_feed.sh
 
 # htop scratchpad
-for_window [instance="^htop_scratchpad$"] move to scratchpad
-bindsym $mod+Ctrl+h exec "st -n htop_scratchpad -e htop" scratchpad show
+for_window [instance="^htop_scratchpad$"] floating enable, resize set 900 500
+bindsym $mod+Ctrl+h exec "st -n htop_scratchpad -e htop"
 
 # Select emojis to paste it everywhere
 bindsym $mod+Ctrl+e exec select_emojis
