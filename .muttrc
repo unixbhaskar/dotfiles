@@ -300,6 +300,14 @@ folder-hook Greg                     'push <delete-pattern>~r>1w!~F<enter><sync>
 
 folder-hook Jonathan_Corbet           'push <delete-pattern>~r>1w!~F<enter><sync>'
 
+folder-hook Andrew_Morton            'push <delete-pattern>~r>1w!~F<enter><sync>'
+
+folder-hook Al_Viro                 'push <delete-pattern>~r>1w!~F<enter><sync>'
+
+folder-hook Linus                  'push <delete-pattern>~r>1w!~F<enter><sync>'
+
+folder-hook Paul_E_McKenney        'push <delete-pattern>~r>1w!~F<enter><sync>'
+
 
 
 
