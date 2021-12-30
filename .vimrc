@@ -561,7 +561,7 @@ nmap BB  :!backup_file %<CR><CR>:echomsg "Backed up with date appended" expand('
 
 let g:help_in_tabs = 1
 
-nmap <silent> H  :let g:help_in_tabs = !g:help_in_tabs<CR>
+nmap <silent>H  :let g:help_in_tabs = !g:help_in_tabs<CR>
 
 "Only apply to .txt files...
 augroup HelpInTabs
@@ -576,6 +576,8 @@ function! HelpInNewTab ()
         execute "normal \<C-W>T"
     endif
 endfunction
+nmap <Leader>ht :Helptags<CR>
+nmap <Leader>hg :helpgrep  <Left>
 "[ Correct common mistypings in-the-fly ]
 iab    netowrk network
 iab    retrun  return
