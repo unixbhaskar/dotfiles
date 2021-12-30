@@ -1240,7 +1240,7 @@ rather than the whole path."
 ;;(setq dashboard-banner-logo-title "Emacs Dashboard")
 ;; Set the banner
 (setq dashboard-startup-banner [2])
-;; Value can be
+;; ;; Value can be
 ;; 'official which displays the official emacs logo
 ;; 'logo which displays an alternative emacs logo
 ;; 1, 2 or 3 which displays one of the text banners
@@ -1250,7 +1250,7 @@ rather than the whole path."
 (setq dashboard-center-content t)
 
 ;; To disable shortcut "jump" indicators for each section, set
-(setq dashboard-show-shortcuts nil)
+ (setq dashboard-show-shortcuts nil)
 
 (setq dashboard-items '(
 ;;			(recents  . 5)
@@ -1291,6 +1291,12 @@ rather than the whole path."
 (setq dashboard-org-agenda-categories '("Tasks" "Diary" "Notes"))
 (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
 (load "~/.emacs.d/org-link-minor-mode.el")
+
+
+
+
+
+
 ;; IRC
 
 ;; Set our nickname & real-name as constant variables
