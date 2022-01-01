@@ -207,7 +207,7 @@ bindsym $mod+Ctrl+braceright workspace number 12
 #bindsym $mod+Ctrl+m workspace number 13
 bindsym $mod+Ctrl+comma workspace number 14
 bindsym $mod+Ctrl+p workspace number 15
-bindsym $mod+Ctrl+o workspace number 16
+#bindsym $mod+Ctrl+o workspace number 16
 # bindsym $mod+Ctrl+b workspace number 16
 
 # Prompt for workspace switch
@@ -494,13 +494,13 @@ bindcode --release  $mod+62 exec st_solarized
 bindsym $mod+Ctrl+f exec stackoverflow_search
 
 # Open any site in browser,prompt for url
-bindsym $mod+Ctrl+b exec open_on_browser
+bindsym $mod+Ctrl+o exec open_on_browser
 
 # Open my Youtube Videos
 bindsym $mod+Ctrl+y exec my_yt_videos
 
 # Add bookmark to the default file
-bindsym $mod+Ctrl+a exec add_bookmark
+bindsym $mod+Ctrl+b exec add_bookmark
 
 # Enlist all the vim keybinds map
 bindsym $mod+Shift+v exec vim_key_maps
