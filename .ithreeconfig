@@ -481,8 +481,8 @@ bindcode --release 67 exec manual_view_in_pdf
 bindcode --release 110 exec kernel_feed.sh
 
 # htop scratchpad
-# for_window [instance="^htop_scratchpad$"] floating enable, resize set 900 500
-# bindsym $mod+Ctrl+h exec "st -n htop_scratchpad -e htop"
+for_window [instance="^htop_scratchpad$"] floating enable, resize set 900 500
+bindsym $mod+Ctrl+h exec "st -n htop_scratchpad -e htop"
 
 # Select emojis to paste it everywhere
 bindsym $mod+Ctrl+e exec select_emojis
@@ -511,7 +511,5 @@ bindsym $mod+Ctrl+slash exec emacs_key_maps
 # Enlist mutt key bindings
 bindsym $mod+Ctrl+m exec mutt_key_maps
 
-# Access browser history
-bindsym $mod+Ctrl+h exec browser_history
 
 # vim:filetype=i3config
