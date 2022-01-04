@@ -76,7 +76,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -386,7 +386,7 @@ bindsym $mod+grave exec i3_keybinds_help
 bindsym $mod+y exec search_youtube_videos
 
 # Seach query from dmenu prompt and open it on chosen browser
- bindsym $mod+q exec search_on_the_internet
+ bindsym $mod+s exec search_on_the_internet
 
 # Open bookmarked site on browser
 bindsym $mod+Shift+b exec bookmark2
