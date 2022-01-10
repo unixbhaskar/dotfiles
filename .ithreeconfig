@@ -515,6 +515,6 @@ bindsym $mod+Ctrl+m exec mutt_key_maps
 bindsym $mod+Ctrl+h exec browser_history
 
 # Play my YT videos locally
-bindsym $mod+Caps_Lock exec play_yt_videos_locally
+bindsym $mod+Shift+slash exec play_yt_videos_locally
 
 # vim:filetype=i3config
