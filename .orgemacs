@@ -1963,7 +1963,7 @@ rather than the whole path."
 "#+AUTHOR: " user-full-name "\n"
 "#+EMAIL: " user-mail-address "\n"
 "#+DATE: " (format-time-string "%Y-%m-%d-%X") "\n")
-
+;;"#+OPTIONS: " ^:nil  "\n"
 (global-set-key (kbd "C-c i h") 'org-header-skeleton)
 #+end_src
 
@@ -2305,3 +2305,7 @@ Start an unlimited search at `point-min' otherwise."
 (kill-buffer "*scratch*")
 #+end_src
 
+* Persistent highlight with tooltip note
+#+begin_src emacs-lisp
+;;(load ov-highlight.el)
+#+end_src
