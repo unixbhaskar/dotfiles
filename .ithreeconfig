@@ -150,7 +150,7 @@ bindsym $mod+F11 workspace $workspace16 ; exec sys_monitor;
 bindsym $mod+Shift+n workspace $workspace17 ; exec nyxt;
 
 #ASSIGN PROGRAMS TO WORKSPACES
-assign [class="^st-256color" instance="^st-256color$"] → $workspace1
+# assign [class="^st-256color" instance="^st-256color$"] → $workspace1
 assign [class="^Vimb$"]  → $workspace2
 assign [class="^Firefox$"] → $workspace3
 assign [class="^Emacs$"] → $workspace4
@@ -472,9 +472,12 @@ bindsym $mod+apostrophe exec tour_videos
 bindsym $mod+F12 exec i3scripts
 
 # Open  floating window with vifm
-for_window [instance="^Vifm_scratchpad$"] floating enable, resize set 900 500
-bindsym $mod+Ctrl+d exec "st -n Vifm_scratchpad -e download_floating_vifm"
+for_window [instance="^download_progress$"] floating enable, resize set 900 500
+bindsym $mod+Ctrl+d exec "st -n download_progress -e download_progress"
+
+
 # Open manual page as pdf(press F1)
+
 bindcode --release 67 exec manual_view_in_pdf
 
 # Linux kernel released numbers from kernel.org (press Home)
@@ -488,8 +491,10 @@ bindcode --release 110 exec kernel_feed.sh
 bindsym $mod+Ctrl+e exec select_emojis
 
 # Open st Solarized terminal
+for_window [instance="^st-256color$"] floating enable, resize set 900 500
 bindcode --release  $mod+62 exec st_solarized
 
+# for_window [instance="^Vifm_scratchpad$"] floating enable, resize set 900 500
 # Open Stackoverfloow search
 bindsym $mod+Ctrl+f exec stackoverflow_search
 
