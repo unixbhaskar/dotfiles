@@ -471,7 +471,7 @@ bindsym $mod+apostrophe exec tour_videos
 # Open i3 related scripts
 bindsym $mod+F12 exec i3scripts
 
-# Open  floating window with vifm
+# Open  floating window with download progress meter
 for_window [instance="^download_progress$"] floating enable, resize set 900 500
 bindsym $mod+Ctrl+d exec "st -n download_progress -e download_progress"
 
@@ -483,10 +483,6 @@ bindcode --release 67 exec manual_view_in_pdf
 # Linux kernel released numbers from kernel.org (press Home)
 bindcode --release 110 exec kernel_feed.sh
 
-# htop scratchpad
-# for_window [instance="^htop_scratchpad$"] floating enable, resize set 900 500
-# bindsym $mod+Ctrl+h exec "st -n htop_scratchpad -e htop"
-
 # Select emojis to paste it everywhere
 bindsym $mod+Ctrl+e exec select_emojis
 
@@ -494,7 +490,6 @@ bindsym $mod+Ctrl+e exec select_emojis
 for_window [instance="^st-256color$"] floating enable, resize set 900 500
 bindcode --release  $mod+62 exec st_solarized
 
-# for_window [instance="^Vifm_scratchpad$"] floating enable, resize set 900 500
 # Open Stackoverfloow search
 bindsym $mod+Ctrl+f exec stackoverflow_search
 
