@@ -104,7 +104,7 @@ exec $HOME/bin/st_solarized
 exec $HOME/bin/clipmenud
 exec $HOME/bin/pia-client
 exec $HOME/bin/noti_active
-#exec emacs --bg-daemon
+exec emacs --bg-daemon
 
 set $workspace1 "1   "
 set $workspace2 "2  "
@@ -153,7 +153,7 @@ bindsym $mod+Shift+n workspace $workspace17 ; exec nyxt;
 # assign [class="^st-256color" instance="^st-256color$"] → $workspace1
 assign [class="^Vimb$"]  → $workspace2
 assign [class="^Firefox$"] → $workspace3
-assign [class="^Emacs$"] → $workspace4
+# assign [class="^Emacs$"] → $workspace4
 assign [class="^st-256color$" instance="^System_Operations$"] → $workspace5
 assign [class="^st-256color$" instance="^Newsboat$"] →  $workspace6
 assign [class="^st-256color$" instance="^Calcurse$"] → $workspace7
