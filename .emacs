@@ -1733,6 +1733,7 @@ rather than the whole path."
 "#+AUTHOR: " user-full-name "\n"
 "#+EMAIL: " user-mail-address "\n"
 "#+DATE: " (format-time-string "%Y-%m-%d-%X") "\n")
+;;"#+OPTIONS: "  ^:nil  "\n"
 
 (global-set-key (kbd "C-c i h") 'org-header-skeleton)
 
@@ -2063,3 +2064,6 @@ Start an unlimited search at `point-min' otherwise."
 
 ;; Do not need an empty scratch buffer
 (kill-buffer "*scratch*")
+
+;; Load persistent highling with tooltip
+;; (load ov-highlight.el)
