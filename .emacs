@@ -1231,18 +1231,18 @@ rather than the whole path."
 
 ;; Dashboard
 
-;; (require 'dashboard)
-;; (dashboard-setup-startup-hook)
+(require 'dashboard)
+(dashboard-setup-startup-hook)
 ;; ;; Or if you use use-package
-;; (use-package dashboard
-;;   :ensure t
-;;   :config
-;;   (dashboard-setup-startup-hook))
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
 
 ;; Set the title
 ;;(setq dashboard-banner-logo-title "Emacs Dashboard")
 ;; Set the banner
-;; (setq dashboard-startup-banner [2])
+(setq dashboard-startup-banner [2])
 ;; ;; Value can be
 ;; 'official which displays the official emacs logo
 ;; 'logo which displays an alternative emacs logo
@@ -1250,15 +1250,15 @@ rather than the whole path."
 ;; "path/to/your/image.png" or "path/to/your/text.txt" which displays whatever image/text you would prefer
 
 ;; Content is not centered by default. To center, set
-;; (setq dashboard-center-content t)
+(setq dashboard-center-content t)
 
 ;; To disable shortcut "jump" indicators for each section, set
- ;; (setq dashboard-show-shortcuts nil)
+ (setq dashboard-show-shortcuts nil)
 
-;; (setq dashboard-items '(
+(setq dashboard-items '(
 ;;			(recents  . 5)
 ;;                        (bookmarks . 5)
-                        ;; (projects . 5)))
+                        (projects . 5)))
 ;;                        (agenda . 5)
 ;;                        (registers . 5)
 
@@ -1267,16 +1267,16 @@ rather than the whole path."
 ;;  (insert "Custom text"))
 ;;(add-to-list 'dashboard-item-generators  '(custom . dashboard-insert-custom))
 ;;(add-to-list 'dashboard-items '(custom) t)
-;; (setq dashboard-set-heading-icons t)
-;; (setq dashboard-set-file-icons t)
+(setq dashboard-set-heading-icons t)
+(setq dashboard-set-file-icons t)
 ;; Modify heading icon with another icons
 
 ;;(dashboard-modify-heading-icons '((recents . "file-text")
 ;;                                  (bookmarks . "book")))
 
-;; (setq dashboard-set-navigator t)
+(setq dashboard-set-navigator t)
 
-;; (setq dashboard-set-init-info t)
+(setq dashboard-set-init-info t)
 ;; (setq dashboard-set-footer nil)
 
 ;; Customize footer icons
@@ -1288,11 +1288,11 @@ rather than the whole path."
 ;;                                                   :face 'font-lock-keyword-face))
 
 
-;; (setq dashboard-projects-switch-function 'counsel-projectile-switch-project-by-name)
-;; (add-to-list 'dashboard-items '(agenda) t)
-;; (setq dashboard-week-agenda nil)
-;; (setq dashboard-org-agenda-categories '("Tasks" "Diary" "Notes"))
-;; (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
+(setq dashboard-projects-switch-function 'counsel-projectile-switch-project-by-name)
+(add-to-list 'dashboard-items '(agenda) t)
+(setq dashboard-week-agenda nil)
+(setq dashboard-org-agenda-categories '("Tasks" "Diary" "Notes"))
+(setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
 
 
 (load "~/.emacs.d/org-link-minor-mode.el")
