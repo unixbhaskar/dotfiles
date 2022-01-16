@@ -104,7 +104,7 @@ exec $HOME/bin/st_solarized
 exec $HOME/bin/clipmenud
 exec $HOME/bin/pia-client
 exec $HOME/bin/noti_active
-exec emacs --bg-daemon
+# exec emacs --bg-daemon
 
 set $workspace1 "1   "
 set $workspace2 "2  "
@@ -139,7 +139,7 @@ bindsym $mod+o workspace $workspace5 ; exec "st_solarized -n System_Operations -
 bindsym $mod+n workspace $workspace6 ; exec "st_solarized -n Newsboat -e newsboat";
 bindsym $mod+c  workspace $workspace7 ; exec "st_solarized -n Calcurse -e calcurse";
 bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st_solarized -n Cmus -e cmus";
-bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
+# bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
 bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";
 bindsym $mod+braceleft workspace $workspace11 ; exec  strail;
 bindsym $mod+braceright workspace $workspace12 ; exec "st -n Screencast -e screencast";
@@ -153,12 +153,12 @@ bindsym $mod+Shift+n workspace $workspace17 ; exec nyxt;
 # assign [class="^st-256color" instance="^st-256color$"] → $workspace1
 assign [class="^Vimb$"]  → $workspace2
 assign [class="^Firefox$"] → $workspace3
-# assign [class="^Emacs$"] → $workspace4
+assign [class="^Emacs$"] → $workspace4
 assign [class="^st-256color$" instance="^System_Operations$"] → $workspace5
 assign [class="^st-256color$" instance="^Newsboat$"] →  $workspace6
 assign [class="^st-256color$" instance="^Calcurse$"] → $workspace7
 assign [class="^st-256color$" window_role="cmus" instance="^Cmus$"] → $workspace8
-assign [class="^st-256color$" instance="^Mutt$"] → $workspace9
+# assign [class="^st-256color$" instance="^Mutt$"] → $workspace9
 assign [class="^st-256color$" instance="^Tig$"] → $workspace10
 assign [class="^st-256color$" instance="^Sourcetrail$"] → $workspace11
 assign [class="^st-256color$" instance="^Screencast$"] → $workspace12
@@ -425,6 +425,11 @@ bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)"
 for_window [instance="^vim-everywhere$"] floating enable, resize set 900 500
 bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim ~/Notes/$(date +'%F_%T').md"
 #bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim ~/Notes/$(date +'%F_%T').md" show scratchpad
+
+#Mutt floating window
+for_window [instance="^Mutt$"] floating enable, resize set 900 500
+bindsym $mod+Shift+m exec "st -n Mutt -e mail_open"
+
 
 # Emacs org-capture protocol
 bindsym $mod+Shift+o  exec org-capture
