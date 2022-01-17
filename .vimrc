@@ -9,6 +9,8 @@ syntax on
 set path+=**
 set noswapfile
 set nobackup
+set hlsearch
+set incsearch
 "syntax enable
 let g:CommandTMaxFiles=200000
 nnoremap <Leader>n :set invnumber number?<CR>
