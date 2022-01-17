@@ -145,7 +145,7 @@ bindsym $mod+braceleft workspace $workspace11 ; exec  strail;
 bindsym $mod+braceright workspace $workspace12 ; exec "st -n Screencast -e screencast";
 bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
 bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
-bindsym $mod+p workspace $workspace15 ; exec enlist_pdf_open;
+bindsym $mod+p workspace $workspace15 ; exec pdf_viewer;
 bindsym $mod+F11 workspace $workspace16 ; exec sys_monitor;
 bindsym $mod+Shift+n workspace $workspace17 ; exec nyxt;
 
@@ -521,5 +521,9 @@ bindsym $mod+Ctrl+h exec browser_history
 
 # Play my YT videos locally
 bindsym $mod+Shift+slash exec play_yt_videos_locally
+
+# Git clone with the help bash script and dmenu
+for_window [instance="^st-256color$"] floating enable, resize set 900 500
+bindsym $mod+Ctrl+g exec "st_solarized -e git_clone_download"
 
 # vim:filetype=i3config
