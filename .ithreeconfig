@@ -30,6 +30,7 @@ font pango:fontawesome 8
 floating_modifier $mod
 
 # start a terminal
+for_window [instance="^st-256color$"] floating enable, resize set 900 500
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -206,7 +207,7 @@ bindsym $mod+Ctrl+braceleft workspace number 11
 bindsym $mod+Ctrl+braceright workspace number 12
 #bindsym $mod+Ctrl+m workspace number 13
 bindsym $mod+Ctrl+comma workspace number 14
-bindsym $mod+Ctrl+p workspace number 15
+#bindsym $mod+Ctrl+p workspace number 15
 #bindsym $mod+Ctrl+o workspace number 16
 # bindsym $mod+Ctrl+b workspace number 16
 
@@ -525,5 +526,13 @@ bindsym $mod+Shift+slash exec play_yt_videos_locally
 # Git clone with the help bash script and dmenu
 for_window [instance="^st-256color$"] floating enable, resize set 900 500
 bindsym $mod+Ctrl+g exec "st_solarized -e git_clone_download"
+
+# Enlist git projects and select to get into it
+for_window [instance="^st-256color$"] floating enable, resize set 900 500
+bindsym $mod+Shift+a exec  "st_solarized -e git_projects"
+
+# Package install via dmenu
+for_window [instance="^st-256color$"] floating enable, resize set 900 500
+bindsym $mod+Ctrl+p exec "st_solarized -e download_package"
 
 # vim:filetype=i3config
