@@ -794,7 +794,7 @@ nmap <Leader>k :call MarkDownBlock()<CR>
  let g:floaterm_keymap_next = '<Leader>fn'
  let g:floaterm_keymap_kill = '<Leader>fk'
  " Vertical split ;v and normal split ;s
- nnoremap <Leader>v :vsplit<CR>
+ nnoremap <Leader>v :vnew<CR>
  nnoremap <Leader>s :split<CR>
  " Change directory ;d
    nnoremap <Leader>d :lcd <space>
