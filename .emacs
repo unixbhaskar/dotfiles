@@ -1290,10 +1290,9 @@ rather than the whole path."
 
 (setq dashboard-projects-switch-function 'counsel-projectile-switch-project-by-name)
 (add-to-list 'dashboard-items '(agenda) t)
-(setq dashboard-week-agenda nil)
+(setq dashboard-week-agenda t)
 (setq dashboard-org-agenda-categories '("Tasks" "Diary" "Notes"))
 (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
-
 
 (load "~/.emacs.d/org-link-minor-mode.el")
 
