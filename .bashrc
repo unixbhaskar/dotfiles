@@ -339,7 +339,7 @@ export BROWSER="vimb"
 
 file_open() { vim "$(find  $(pwd) -type f | fzf)"  ;}
 backup_dot_files() { cp -v "$1" "$(find /data/dotfiles -name '*' -type f | fzf)" ;}
-copy_to_gitrepo() { cp -v "$1" "$(find ~/git-linux/AdminScripts -name '*'  -type f | fzf)" ;}
+copy_to_adminscripts_repo() { cp -v "$1" "$(find ~/git-linux/AdminScripts -name '*'  -type f | fzf)" ;}
 
 #Gentoo specific stuff
 
