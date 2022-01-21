@@ -116,13 +116,13 @@
   ((modifier-translator #'meta-translate-modifiers)))
 
 
-;;;;Download youtube videos
-;;;; (define-command youtube-dl-current-page ()
-;;;;   "Download a Youtube video in the currently open buffer."
-;;;;   (with-result (url (buffer-get-url))
-;;;;     (uiop:run-program
-;;;;      (list "youtube-dl" url))))
-;;;; (define-key "C-c d" 'youtube-dl-current-page)
+;;Download youtube videos
+ (define-command youtube-dl-current-page ()
+   "Download a Youtube video in the currently open buffer."
+   (with-result (url (buffer-get-url))
+     (uiop:run-program
+      (list "youtube-dl" url))))
+ (define-key "C-c d" 'youtube-dl-current-page)
 
 ;;;; Excute shell command and show output
 ;;(define-mode shell-mode ()
@@ -169,13 +169,13 @@
 
 ;; Open pdf in zathura when download finished
 
-(define-configuration browser
-      ((after-download-hook
-        (hooks:add-hook
-         %slot-default%
-         (nyxt::make-handler-download
-          (lambda (download)
-            (when (str:ends-with-p "pdf" (nyxt::destination-path downloads))
-          ;;    (echo "Opening ~a i zathura." (nyxt::destination-path downloads))
-              (uiop:launch-program `("zathura" ,(nyxt::destination-path downloads)))))
-          :name 'open-pdf-in-zathura)))))
+;; (define-configuration browser
+;;       ((after-download-hook
+;;         (hooks:add-hook
+;;          %slot-default%
+;;          (nyxt::make-handler-download
+;;           (lambda (download)
+;;             (when (str:ends-with-p "pdf" (nyxt::destination-path download))
+;;           ;;    (echo "Opening ~a i zathura." (nyxt::destination-path download))
+;;               (uiop:launch-program `("open-downloaded-pdf" ,(nyxt::destination-path download)))))
+;;           :name 'open-pdf-in-zathura)))))
