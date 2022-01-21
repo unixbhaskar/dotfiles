@@ -117,12 +117,12 @@
 
 
 ;;Download youtube videos
- (define-command youtube-dl-current-page ()
-   "Download a Youtube video in the currently open buffer."
-   (with-result (url (buffer-get-url))
-     (uiop:run-program
-      (list "youtube-dl" url))))
- (define-key "C-c d" 'youtube-dl-current-page)
+ ;; (define-command youtube-dl-current-page ()
+ ;;   "Download a Youtube video in the currently open buffer."
+ ;;   (with-result (url (buffer-get-url))
+ ;;     (uiop:run-program
+ ;;      (list "youtube-dl" url))))
+ ;; (define-key "C-c d" 'youtube-dl-current-page)
 
 ;;;; Excute shell command and show output
 ;;(define-mode shell-mode ()
