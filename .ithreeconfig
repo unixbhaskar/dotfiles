@@ -370,6 +370,10 @@ bindsym $mod+z exec "clipmenu  -p 'clipboard items listed:'"
 
 bindsym $mod+semicolon exec songs_play
 
+# Play a song in continuous loop
+bindsym $mod+Ctrl+l exec mpv_loop_play
+
+
 # Surf browser open
 
 bindsym $mod+slash exec surf
@@ -534,5 +538,9 @@ bindsym $mod+Shift+a exec  "st_solarized -e git_projects"
 # Package install via dmenu
 for_window [instance="^st-256color$"] floating enable, resize set 900 500
 bindsym $mod+Ctrl+p exec "st_solarized -e download_package"
+
+# Enlist important tools
+for_window [instance="^st-256color$"] floating enable, resize set 900 500
+bindsym $mod+Shift+plus exec "st_solarized -e tools"
 
 # vim:filetype=i3config
