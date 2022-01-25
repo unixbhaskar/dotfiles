@@ -48,11 +48,11 @@
  '(ivy-posframe-style 'frame-center)
  '(mu4e-display-update-status-in-modeline t)
  '(mu4e-icalendar-diary-file "~/.emacs.d/OrgFiles/refile.org")
- '(mu4e-maildir-shortcuts
-   '((:maildir "/Inbox" :key 105)
-     (:maildir "/Greg(GKH)" :key 103)
-     (:maildir "/Linus" :key 108)
-     (:maildir "/Andrew_Morton" :key 97)))
+ # '(mu4e-maildir-shortcuts
+ #   '((:maildir "/Inbox" :key 105)
+ #     (:maildir "/Greg(GKH)" :key 103)
+ #     (:maildir "/Linus" :key 108)
+ #     (:maildir "/Andrew_Morton" :key 97)))
  '(mu4e-mu-binary "/usr/local/bin/mu")
  '(nnir-notmuch-remove-prefix "/home/bhaskar/gmail-backup")
  '(notmuch-always-prompt-for-sender t)
