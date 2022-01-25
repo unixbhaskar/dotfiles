@@ -26,7 +26,7 @@
  '(cua-read-only-cursor-color "#93a61a")
  '(custom-enabled-themes '(molokai))
  '(custom-safe-themes
-   '("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
+   '("b494aae329f000b68aa16737ca1de482e239d44da9486e8d45800fd6fd636780" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
  '(debug-on-error t)
  '(deft-filter-only-filenames t)
  '(diary-file "~/.emacs.d/OrgFiles/diary.org")
@@ -96,11 +96,11 @@
  '(marginalia-mode t)
  '(mu4e-display-update-status-in-modeline t)
  '(mu4e-icalendar-diary-file "~/.emacs.d/OrgFiles/refile.org")
- '(mu4e-maildir-shortcuts
-   '((:maildir "/Inbox" :key 105)
-     (:maildir "/Greg(GKH)" :key 103)
-     (:maildir "/Linus" :key 108)
-     (:maildir "/Andrew_Morton" :key 97)))
+ ;; '(mu4e-maildir-shortcuts
+ ;;   '((:maildir "/Inbox" :key 105)
+ ;;     (:maildir "/Greg(GKH)" :key 103)
+ ;;     (:maildir "/Linus" :key 108)
+ ;;     (:maildir "/Andrew_Morton" :key 97)))
  '(mu4e-mu-binary "/usr/local/bin/mu")
  '(nnir-notmuch-remove-prefix "/home/bhaskar/gmail-backup")
  '(notmuch-always-prompt-for-sender t)
