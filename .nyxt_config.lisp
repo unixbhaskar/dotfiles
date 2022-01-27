@@ -179,3 +179,6 @@
 ;;           ;;    (echo "Opening ~a i zathura." (nyxt::destination-path download))
 ;;               (uiop:launch-program `("open-downloaded-pdf" ,(nyxt::destination-path download)))))
 ;;           :name 'open-pdf-in-zathura)))))
+
+;; Kamoji
+(load-after-system :nx-kaomoji (nyxt-init-file "kaomoji.lisp"))
