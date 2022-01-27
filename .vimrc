@@ -799,3 +799,6 @@ nmap <Leader>k :call MarkDownBlock()<CR>
  nnoremap <Leader>s :split<CR>
  " Change directory ;d
    nnoremap <Leader>d :lcd <space>
+" Auto Pairs
+ Plugin 'jiangmiao/auto-pairs'
+let g:AutoPairsFlyMode = 1
