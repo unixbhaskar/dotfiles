@@ -22,6 +22,7 @@ set maildir_header_cache_verify=no
 set arrow_cursor = yes
 set alias_file=~/.mutt/aliases
 set check_new=yes
+set pager_stop=yes
 source $alias_file
 ignore *
 unignore ^from: ^date: ^subject: ^to: ^cc:
