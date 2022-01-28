@@ -276,6 +276,10 @@ macro index \emu "<shell-escape>/usr/bin/mu find  --clearlinks --format=links --
 macro index \emr "<change-folder-readonly>~/.maildir/search"
 macro pager \Cb "<pipe-entry>'urlview'<enter>"
 #macro index,pager A "<save-message>=Archive<enter>" "Archive Message"
+### BEGIN NOTMUCH-MUTT SETTINGS
+macro index \ens  "<enter-command>unset wait_key<enter><shell-escape>~/bin/mutt-notmuch --prompt search<enter><change-folder-readonly>~/.cache/notmuch/mutt/results/<enter>"  "search mail (using notmuch)"
+
+macro index \ent "<enter-command>unset wait_key<enter><pipe-message>~/bin/mutt-notmuch thread<enter><change-folder-readonly>~/.cache/notmuch/mutt/results/<enter><enter-command>set wait_key<enter>"  "search and reconstruct owning thread (using notmuch)"
 
 set editor="vim -c 'set spell spelllang=en'"
 
