@@ -5,6 +5,7 @@
 separator_block_width=5
 markup=pango
 
+
 #[feed]
 #ull_text=<span background="red" foreground="white">Salut</span>
 #markup=pango
@@ -17,6 +18,7 @@ markup=pango
 #command=inotifywait -qq -e close_write ~/.bash_history; tail -1 ~/.bash_history
 #interval=repeat
 #
+
 
 [diskio]
 #full_text=<span background="red">disk</span>
@@ -89,12 +91,12 @@ color=#00FFFF
 #color=#FF451F
 #color=#ff4800
 
-[uptime]
-#label=
-command=~/.config/i3/uptime.sh
-interval=300
-#color=#fff0a8
-color=#FF00FF
+#[uptime]
+##label=
+#command=~/.config/i3/uptime.sh
+#interval=300
+##color=#fff0a8
+#color=#FF00FF
 
 [weather]
 label=
