@@ -2309,3 +2309,13 @@ Start an unlimited search at `point-min' otherwise."
 #+begin_src emacs-lisp
 ;;(load ov-highlight.el)
 #+end_src
+
+* This is for vterm-toggle to other buffer
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-c n t") 'vterm-toggle)
++end_src
+
+* Restrict Elfeed entry to 1 month
+#+begin_src emacs-lisp
+(setq-default elfeed-search-filter "@1-month-ago +unread ")
+#+end_src
