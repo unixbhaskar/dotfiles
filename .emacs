@@ -96,11 +96,6 @@
  '(marginalia-mode t)
  '(mu4e-display-update-status-in-modeline t)
  '(mu4e-icalendar-diary-file "~/.emacs.d/OrgFiles/refile.org")
- ;; '(mu4e-maildir-shortcuts
- ;;   '((:maildir "/Inbox" :key 105)
- ;;     (:maildir "/Greg(GKH)" :key 103)
- ;;     (:maildir "/Linus" :key 108)
- ;;     (:maildir "/Andrew_Morton" :key 97)))
  '(mu4e-mu-binary "/usr/local/bin/mu")
  '(nnir-notmuch-remove-prefix "/home/bhaskar/gmail-backup")
  '(notmuch-always-prompt-for-sender t)
@@ -130,7 +125,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary neotree org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(ivy-bibtex annotation annotate vterm-toggle dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary neotree org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -2067,3 +2062,9 @@ Start an unlimited search at `point-min' otherwise."
 
 ;; Load persistent highling with tooltip
 ;; (load ov-highlight.el)
+
+;; This is for vterm-toggle to other buffer
+(global-set-key (kbd "C-c n t") 'vterm-toggle)
+
+;; To restrict elfeed for 1 month duration
+(setq-default elfeed-search-filter "@1-month-ago +unread ")
