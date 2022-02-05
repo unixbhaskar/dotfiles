@@ -142,7 +142,7 @@ bindsym $mod+c  workspace $workspace7 ; exec "st_solarized -n Calcurse -e calcur
 bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st_solarized -n Cmus -e cmus";
 # bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
 bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";
-bindsym $mod+braceleft workspace $workspace11 ; exec  strail;
+ bindsym $mod+braceleft workspace $workspace11 ; exec  strail;
 bindsym $mod+braceright workspace $workspace12 ; exec "st -n Screencast -e screencast";
 bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
 bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
@@ -161,7 +161,7 @@ assign [class="^st-256color$" instance="^Calcurse$"] → $workspace7
 assign [class="^st-256color$" window_role="cmus" instance="^Cmus$"] → $workspace8
 # assign [class="^st-256color$" instance="^Mutt$"] → $workspace9
 assign [class="^st-256color$" instance="^Tig$"] → $workspace10
-assign [class="^st-256color$" instance="^Sourcetrail$"] → $workspace11
+ assign [class="^st-256color$" instance="^Sourcetrail$"] → $workspace11
 assign [class="^st-256color$" instance="^Screencast$"] → $workspace12
 assign [class="^st-256color$" instance="^Movies$"] → $workspace13
 assign [class="^st-256color$" instance="^Photos$"] → $workspace14
