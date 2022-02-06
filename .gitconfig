@@ -41,15 +41,18 @@
 	spush = "!git push --recurse-submodules=on-demand"   # You need to run this command inside your git repo dir i.e git spush
 	supdate = "!git submodule update --remote --merge"  #You need to run this command inside your git repo dir i.e git supdate
 	localcommit = "!git cherry -v"
-	updatelinux = "!git push https://username:password@github.com/githubusername/linux.git master"
-        gitlablinux = "!git push https://username:password@gitlab.com/gitlabusername/linux.git master"
-	updategit = "!git push https://username:password@github.com/githubusername/git.git master"
-	muttupdate = "!git push https://username:password@gitlab.com/gitlabusername/mutt.git master"
-        updatei3 = "!git push https://username:password@github.com/githubusername/i3.git next"
-        updatebcc = "!git push https://username:password@github.com/githubusername/bcc.git master"
-	pushlatestlinuxtag = "!git push https://username:password@github.com/githubusername/linux.git --tags"
-        pushlatestgittag = "!git push https://username:password@github.com/githubusername/git.git --tags"
+	updatelinux = "!git push git@github.comr:unixbhaskar/linux.git master"
+        gitlablinux = "!git push git@gitlab.com:unixbhaskar/linux.git master"
+	updategit = "!git push git@github.com:unixbhaskar/git.git master"
+	muttupdate = "!git push git@gitlab.com:unixbhaskar/mutt.git master"
+        updatei3 = "!git push git@github.com;unixbhaskar/i3.git next"
+        updatebcc = "!git push git@github.com:unixbhaskar/bcc.git master"
+	pushlatestlinuxtag = "!git push git@github.com:unixbhaskar/linux.git --tags"
+        pushlatestgittag = "!git push git@github.com:unixbhaskar/git.git --tags"
 	logref = "!git reflog --date=iso"  # You need to run this command inside of your git repo i.e git logref
+        githubmyi3wm = "!git push git@github.com:unixbhaskar/i3WM.git main"
+        gitlabmyi3wm = "!git push git@gitlab.com:unixbhaskar/i3WM.git main"
+
 # Show the diff between the latest commit and the current state ; run it
 # inside your git repo dir
         currentstate = "!git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
