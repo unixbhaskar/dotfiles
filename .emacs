@@ -1272,7 +1272,7 @@ rather than the whole path."
 (setq dashboard-set-navigator t)
 
 (setq dashboard-set-init-info t)
-;; (setq dashboard-set-footer nil)
+(setq dashboard-set-footer nil)
 
 ;; Customize footer icons
 
