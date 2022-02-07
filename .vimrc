@@ -814,3 +814,19 @@ nmap <expr> <C-Left> &diff? '<Plug>(MergetoolDiffExchangeLeft)' : '<C-Left>'
 nmap <expr> <C-Right> &diff? '<Plug>(MergetoolDiffExchangeRight)' : '<C-Right>'
 nmap <expr> <C-Down> &diff? '<Plug>(MergetoolDiffExchangeDown)' : '<C-Down>'
 nmap <expr> <C-Up> &diff? '<Plug>(MergetoolDiffExchangeUp)' : '<C-Up>'
+" Vim Bookmark
+Plugin 'MattesGroeger/vim-bookmarks'
+" Take away the default bookmark binds
+ let g:bookmark_no_default_key_mappings = 1
+
+ " New key binds for booksmarks
+nmap <Leader>bt <Plug>BookmarkToggle
+nmap <Leader>ba <Plug>BookmarkAnnotate
+nmap <Leader>bs <Plug>BookmarkShowAll
+nmap <Leader>bn <Plug>BookmarkNext
+nmap <Leader>bp <Plug>BookmarkPrev
+nmap <Leader>bc <Plug>BookmarkClear
+nmap <Leader>bx <Plug>BookmarkClearAll
+nmap <Leader>bu <Plug>BookmarkMoveUp
+nmap <Leader>bd <Plug>BookmarkMoveDown
+nmap <Leader>bl <Plug>BookmarkMoveToLine
