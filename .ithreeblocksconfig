@@ -1,10 +1,14 @@
+# Author : Bhaskar Chowdhury
+# Email : unixbhaskar@gmail.com
+# Website : https://unixbhaskar.wordpress.com
+
+# General Settings
 #full_text=〉
 #align=center
 #color=#666666
-#separator=false
+#separator=fals
 separator_block_width=5
 markup=pango
-
 
 #[feed]
 #ull_text=<span background="red" foreground="white">Salut</span>
@@ -18,7 +22,6 @@ markup=pango
 #command=inotifywait -qq -e close_write ~/.bash_history; tail -1 ~/.bash_history
 #interval=repeat
 #
-
 
 [diskio]
 #full_text=<span background="red">disk</span>
@@ -118,7 +121,6 @@ color=#54f30a
 #interval=30
 #color=#1793D1
 
-
 #[disk-home]
 #label= :
 #command=~/.config/i3/i3blocks/disk $HOME
@@ -131,7 +133,6 @@ color=#54f30a
 #command=~/.config/i3/dhcp.sh
 #color=#d33682
 #interval=5
-
 
 [wireless]
 label=
@@ -212,7 +213,6 @@ command=~/.config/i3/i3blocks/load_average
 interval=10
 color=#6c71c4
 
-
 [volume]
 label=
 command=~/.config/i3/i3blocks/volume;echo
@@ -231,7 +231,6 @@ command=~/.config/i3/date_time.sh
 interval=5
 markup=pango
 #color=#00FA9A
-
 
 #[user]
 #label=
