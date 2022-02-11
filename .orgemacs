@@ -2319,3 +2319,21 @@ Start an unlimited search at `point-min' otherwise."
 #+begin_src emacs-lisp
 (setq-default elfeed-search-filter "@1-month-ago +unread ")
 #+end_src
+
+
+* Play youtube url in mpv
+#+begin_src emacs-lisp
+(defun mpv-play-url (url &rest args)
+  ""
+  (interactive)
+  (message "just a sec...video will start soon")
+  (start-process "mpv" nil "mpv" url))
+
+#+end_src
+* browse url open in default browser
+#+begin_src emacs-lisp
+(setq browse-url-browser-function
+      (quote
+	(("youtu\.?be" . mpv-play-url)
+	 ("." . browse-url-default-browser))))
+#+end_src
