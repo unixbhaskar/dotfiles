@@ -2068,3 +2068,17 @@ Start an unlimited search at `point-min' otherwise."
 
 ;; To restrict elfeed for 1 month duration
 (setq-default elfeed-search-filter "@1-month-ago +unread ")
+
+;; Play youtube url in mpv
+(defun mpv-play-url (url &rest args)
+  "youtube videos"
+  (interactive)
+  (message "just a sec...video will start soon")
+  (start-process "mpv" nil "mpv" url))
+
+
+;; browse url open in default browser
+(setq browse-url-browser-function
+      (quote
+	(("youtu\.?be" . mpv-play-url)
+	 ("." . browse-url-default-browser))))
