@@ -11,7 +11,7 @@
  '(all-the-icons-ivy-rich-mode t)
  '(ansi-color-names-vector
    ["#01323d" "#ec423a" "#93a61a" "#c49619" "#3c98e0" "#e2468f" "#3cafa5" "#60767e"])
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "/home/bhaskar/.emacs.d/bookmarks")
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
  '(calendar-view-diary-initially-flag t)
@@ -673,9 +673,9 @@ rather than the whole path."
 	:keybinding "w")
 
 
-     (defengine youtube
-	"https://www.youtube.com/results?aq=f&oq=&search_query=%s"
-	:keybinding "y")
+     ;; (defengine youtube
+	;; "https://www.youtube.com/results?aq=f&oq=&search_query=%s"
+	;; :keybinding "y")
 
 
      (engine-mode t))
