@@ -355,7 +355,7 @@ bindsym $mod+Ctrl+l exec mpv_loop_play
 
 # Surf browser open
 
-bindsym $mod+slash exec surf
+bindsym $mod+slash exec surf-open.sh
 
 # Close screencast
 bindsym $mod+Shift+bar exec kill_ffmpeg
@@ -520,5 +520,8 @@ bindsym $mod+Ctrl+p exec "st_solarized -e download_package"
 # Enlist important tools
 for_window [instance="^st-256color$"] floating enable, resize set 900 500
 bindsym $mod+Shift+plus exec "st_solarized -e tools"
+
+# Surf browser keystrokes
+bindsym $mod+Ctrl+i exec surf_key_maps
 
 # vim:filetype=i3config
