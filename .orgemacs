@@ -723,9 +723,9 @@ rather than the whole path."
 	:keybinding "w")
 
 
-     (defengine youtube
-	"https://www.youtube.com/results?aq=f&oq=&search_query=%s"
-	:keybinding "y")
+     # (defengine youtube
+	# "https://www.youtube.com/results?aq=f&oq=&search_query=%s"
+	# :keybinding "y")
 
 
      (engine-mode t))
