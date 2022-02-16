@@ -838,7 +838,9 @@ nmap <Leader>bl <Plug>BookmarkMoveToLine
 "Change name
 Shortcut! change_name ;cn
 nmap <Leader>cn :w <C-R>%<C-b><Right><Space><Right><Right><Right><Right><Right><Right><Right>_<Left>
-
-" Overwrite existing filename
-Shortcut! OverWriteFileName ;ofn
-nmap <Leader>ofn :saveas! <C-R>%
+" Save file with different name
+Shortcut! SaveFileWithDifferentName ;sdn
+nmap <Leader>sdn :saveas! <C-R>%
+"Change into new filename
+Shortcut! ChangedToNewlyNamedFile ;ec
+nmap <Leader>ec :e#<CR><CR>
