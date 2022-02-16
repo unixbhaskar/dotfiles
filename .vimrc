@@ -765,6 +765,11 @@ function! MarkDownBlock()
 	r~/.vim/templates/markdownblock
 endfunction
 nmap <Leader>k :call MarkDownBlock()<CR>
+
+function! NotesRefBlock()
+	r~/.vim/templates/notesref
+endfunction
+nmap <Leader>no :call NotesRefBlock()<CR>
 " Enlist match and replace in a buffer
 " map <S-r> :g//#|s///g|#
 " Vimgrep invocation by pressing ;g
@@ -831,4 +836,9 @@ nmap <Leader>bu <Plug>BookmarkMoveUp
 nmap <Leader>bd <Plug>BookmarkMoveDown
 nmap <Leader>bl <Plug>BookmarkMoveToLine
 "Change name
-nmap <Leader>cn :w <C-R>%<C-b><Right><Space>
+Shortcut! change_name ;cn
+nmap <Leader>cn :w <C-R>%<C-b><Right><Space><Right><Right><Right><Right><Right><Right><Right>_<Left>
+
+" Overwrite existing filename
+Shortcut! OverWriteFileName ;ofn
+nmap <Leader>ofn :saveas! <C-R>%
