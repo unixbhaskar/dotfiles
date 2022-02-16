@@ -830,3 +830,5 @@ nmap <Leader>bx <Plug>BookmarkClearAll
 nmap <Leader>bu <Plug>BookmarkMoveUp
 nmap <Leader>bd <Plug>BookmarkMoveDown
 nmap <Leader>bl <Plug>BookmarkMoveToLine
+"Change name
+nmap <Leader>cn :w <C-R>%<C-b><Right><Space>
