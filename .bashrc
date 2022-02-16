@@ -10,7 +10,6 @@ if [[ -e /etc/bashrc || -e /etc/bash.bashrc ]]; then
 fi
 LESSOPEN="|/home/bhaskar/bin/lesspipe.sh %s"; export LESSOPEN
 export PATH="$PATH:/home/bhaskar/bin"
-
 #export PILOTRATE=115200
 test -s ~/.alias && . ~/.alias || true
 export HISTTIMEFORMAT="%h/%d/%Y - %H:%M:%S "
@@ -603,3 +602,6 @@ gitstat() {
 	fi
 }
 
+# Adding asdf
+$HOME/git-linux/asdf/asdf.sh
+$HOME/git-linux/asdf/completions/asdf.bash
