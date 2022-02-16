@@ -843,4 +843,4 @@ Shortcut! SaveFileWithDifferentName ;sdn
 nmap <Leader>sdn :saveas! <C-R>%
 "Change into new filename
 Shortcut! ChangedToNewlyNamedFile ;ec
-nmap <Leader>ec :e#<CR><CR>
+nmap <Leader>ec :e#<CR><CR>:echomsg "Changed into the newly named file" expand('%')<CR>
