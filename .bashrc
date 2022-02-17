@@ -3,11 +3,13 @@
 # Email: unixbhaskar@gmail.com
 # Website : https://github.com/unixbhaskar
 
+# Check for existence of global bashrc
 if [[ -e /etc/bashrc || -e /etc/bash.bashrc ]]; then
 
  source /etc/bashrc || source /etc/bash.bashrc
 
 fi
+# Bunch of exports
 LESSOPEN="|/home/bhaskar/bin/lesspipe.sh %s"; export LESSOPEN
 export PATH="$PATH:/home/bhaskar/bin"
 #export PILOTRATE=115200
@@ -15,6 +17,7 @@ test -s ~/.alias && . ~/.alias || true
 export HISTTIMEFORMAT="%h/%d/%Y - %H:%M:%S "
 export HISTFILESIZE=99999
 export  HISTSIZE=99999
+# Aliases
 alias ls="ls --color=always"
 alias grep="grep --color"
 shopt -s checkwinsize cdspell autocd direxpand dirspell dotglob globstar histappend
@@ -23,7 +26,7 @@ alias ports='netstat -tulanp'
 alias meminfo='free -m -l -t'
 alias psmemhog='ps auxf | sort -nr -k 4'
 alias pscpuhog='ps auxf | sort -nr -k 3'
-alias wget='wget -c'
+alias fetch='wget -c'
 alias rsync='rsync --progress --stats -ravz'
 alias c="clear"
 alias d='cd ~/Downloads'
@@ -165,9 +168,6 @@ alias edit-archives="vim -O ~/bin/archive ~/bin/extract_archive"
 #    #echo "$(date +%F@%T) - SSH-AGENT: Agent already running"
 #    . ~/.ssh/ssh-agent >/dev/null
 #fi
-
-
-
 #Intialize the terminal for gpg
 unset SSH_AGENT_PID
 GPG_TTY=$(tty)
@@ -185,7 +185,6 @@ gpg-reload(){
      gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
      gpgconf --reload gpg-agent
  }
-
 #Gitlog
 
 gitlog() {
@@ -197,7 +196,6 @@ gitlog() {
     git log --pretty=format:"%h%x09 %C(cyan)%an%x09 %Creset%ad%x09 %Cgreen%s" --date-order
   fi
  }
-
 # configure,make and make install combine in build call
 
 build() {
@@ -228,8 +226,6 @@ build() {
      fi
 
 }
-
-
 #Git grep as search in repo
 
 search() {
@@ -242,22 +238,17 @@ search() {
 		git grep -n "$1"
 	fi
 }
-
-
 # Git clone and get into the cloned directory
 
 gclone() {
 
 	 cd $HOME/git-linux && git clone "$1" &&  cd "$(basename $1 .git)"
 }
-
 # Emacs external package cloning
 emacs_pkgs_clone() {
 
 	 cd $HOME/.emacs.d && git clone "$1" &&  cd "$(basename $1 .git)"
 }
-
-
 # To clone vim plugin ~/.vim/bundle  dir
 
 vimplugin() {
@@ -272,7 +263,6 @@ mycalservice() {
 	systemctl --user start mycal.service
 fi
 }
-
 # To start mail sync program aka mbsync
 
 mailsynclocally() {
@@ -282,29 +272,20 @@ mailsynclocally() {
 	systemctl --user start  mailsync.service
 fi
 }
-
-
 # Wrap the following commands for interactive use to avoid accidental file overwrites.
 rm() { command rm -i "${@}"; }
 #cp() { command cp -i "${@}"; }
 # mv() { command mv -i "${@}"; }
-
-
-
-
 # Change the terminal prompt to git mode, very show but useful
 
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
-
-
 #create directory and enter into it
 
 mkd() {
 	mkdir -p "$@" && cd "$_";
 }
-
 #To show apt-history
 
 function apt-history(){
@@ -324,15 +305,11 @@ function apt-history(){
               ;;
       esac
 }
-
-
-
-
+# Default terminal, browser and editor settings
 export TERM=st-256color
 export EDITOR=vim
 export BROWSER="vimb"
-
-
+# initialize fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #Open/copy/to_gitrepo files with the help fzf and vim
@@ -340,7 +317,6 @@ export BROWSER="vimb"
 file_open() { vim "$(find  $(pwd) -type f | fzf)"  ;}
 backup_dot_files() { cp -v "$1" "$(find /data/dotfiles -name '*' -type f | fzf)" ;}
 copy_to_adminscripts_repo() { cp -v "$1" "$(find ~/git-linux/AdminScripts -name '*'  -type f | fzf)" ;}
-
 #Gentoo specific stuff
 
 alias eqf='equery f' #list all files installed by PKG
@@ -357,8 +333,7 @@ alias eqm='equery m' #display metadata about PKG
 alias eqy='equery y' #display keywords for specified PKG
 alias eqs='equery s' #display total size of all files owned by PKG
 alias eqw='equery w' #print full path to ebuild for PKG
-
-#Shortcut to common kernel tool
+#Shortcut to common kernel tool ,last_commited_hash,checkpatch,filehash et al
 
 alias owner="scripts/get_maintainer.pl $1"
 
@@ -383,8 +358,7 @@ filehash() {
 	git ls-files -z  | GIT_PAGER= xargs -0 -L1 -I '{}' git log -n 1 --format="%h {}" -- '{}'
 
 }
-
-#Sane way to do sed
+#Sane way to do sed with backup
 
 sedwise() {
 
@@ -398,7 +372,6 @@ sedwise() {
 		echo The original file is stored as $1.$(date +'%F')
 	fi
 	}
-
 # Compare two files side by side
 
 changes() {
@@ -415,7 +388,7 @@ changes() {
                $(command -v vimdiff) $1 $2
 	fi
 }
-
+# Discard changes in git repo
 discard_changes() {
 
         if [[ $# -ne 1 ]];then
@@ -428,7 +401,7 @@ discard_changes() {
 
 	fi
 }
-
+# Find out the previous commit message
 prev_commits_msgs() {
 
 	if [[ $# -eq "" ]];then
@@ -441,8 +414,7 @@ prev_commits_msgs() {
 
 	fi
 }
-
-
+# git add and commit in one step
 addcom() {
 
 	git add .
@@ -453,7 +425,7 @@ addcom() {
 		echo Not allowed empty commit msg...aborting
 	fi
 }
-
+# Extract out the mail address from kernel maintainers file
 get_email_addresses() {
 
 	filename=$(git log -1 --name-only --oneline | grep /)
@@ -461,14 +433,14 @@ get_email_addresses() {
 	extract_email_address $filename.* | paste -s -d, - > email_list
 	rm -f $filename.*
 }
-
+# Filter out the subject pattern in the patch mail
 subject_pattern() {
 
 	filename=$(git log -1 --name-only --oneline | grep /)
 
 	git log --oneline $filename | gawk '{ print $2" "$3 }' | head -5
 }
-
+# Send patch to the kernel mailing list semi-automated way
 send_patch() {
 
 	printf "\n Acquire those mail address attached with this file.....\n\n"
@@ -501,10 +473,10 @@ send_patch() {
 	  fi
   }
 
-
+# Kernel patch send reference documentations
 #Ref: https://kernelnewbies.org/PatchSeries
 #Ref2: https://kernelnewbies.org/PatchTipsAndTricks
-
+# Send a patch series to the kernel mailing list
 patch_series() {
 
 	patch_dir="/home/bhaskar/git-linux/linux/batch"
@@ -552,12 +524,10 @@ patch_series() {
                    git send-email --to-cover --cc-cover $patch_dir/*.patch ${an}
 	     fi
 }
-
-
+# Take backup is simplest way with timestamp
 backup() {
 	cp -v "$1"{,.$(date +'%F_%T')}
 }
-
 # TaskWorrior Prompt
 
 task_indicator() {
@@ -579,17 +549,14 @@ task_indicator() {
 	fi
 
 }
-
 # Prompt with a Taskwarrior task graph
 
 PS1="\[\e[32;1m\u@\e[33;1m\h_\e[35;1m\t_\e[36;1m\d:\e[31;1m$(task_indicator)\e[m \]:\w>"
-
 
 # Cscope DB
 
 CSCOPE_DB=/home/bhaskar/git-linux/linux/cscope.out
 export CSCOPE_DB
-
 
 # Git log stats
 
@@ -601,7 +568,6 @@ gitstat() {
 		echo not a git repo.
 	fi
 }
-
 # Adding asdf
 $HOME/git-linux/asdf/asdf.sh
 $HOME/git-linux/asdf/completions/asdf.bash
