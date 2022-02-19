@@ -401,9 +401,9 @@ bindsym $mod+Ctrl+s exec cmus-remote --play
 bindsym $mod+Ctrl+k exec kill_mpv
 
 # Emacs pop up buffer anywhere
-#for_window [title="^emacs-everywhere$"] move to scratchpad
-for_window [title="^emacs-everywhere$"] floating enable, resize set 900 500
-bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)"
+for_window [title="^emacs-everywhere$"] move to scratchpad
+# for_window [title="^emacs-everywhere$"] floating enable, resize set 900 500
+bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)" scratcpad show
 
 # Vim pop up buffer anywhere
 #for_window [instance="^vim-everywhere$"] move to scratchpad
