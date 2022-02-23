@@ -98,6 +98,7 @@ exec $HOME/bin/st_solarized
 exec $HOME/bin/clipmenud
 exec $HOME/bin/pia-client
 exec $HOME/bin/noti_active
+exec $HOME/bin/command-t_ruby_fix.sh >/dev/null 2>&1
 # exec emacs --bg-daemon
 
 #Workspaces
@@ -403,8 +404,7 @@ bindsym $mod+Ctrl+k exec kill_mpv
 # Emacs pop up buffer anywhere
 for_window [title="^emacs-everywhere$"] move to scratchpad
 # for_window [title="^emacs-everywhere$"] floating enable, resize set 900 500
-bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)" scratcpad show
-
+ bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)" scratcpad show
 # Vim pop up buffer anywhere
 #for_window [instance="^vim-everywhere$"] move to scratchpad
 for_window [instance="^vim-everywhere$"] floating enable, resize set 900 500
