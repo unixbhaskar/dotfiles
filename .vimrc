@@ -186,7 +186,7 @@ vnoremap <F9> zf
 "NerdTree open CTRL+n
  noremap <C-n> :NERDTreeToggle<CR>
  "Search replaces n number of times
-nnoremap Q :normal n.<CR>
+nnoremap sr :normal n.<CR>
 "Open URI under cursor by pressing ob and os
  nmap ob :exe 'silent !vimb %'<CR>
  "Open selected URI.
