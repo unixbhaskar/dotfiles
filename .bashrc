@@ -571,3 +571,7 @@ gitstat() {
 # Adding asdf
 $HOME/git-linux/asdf/asdf.sh
 $HOME/git-linux/asdf/completions/asdf.bash
+# Emacs server daemon plus easy invocation of client
+export ALTERNATE_EDITOR=''
+alias ec='emacsclient --tty'
+alias eg='emacsclient -c'
