@@ -849,3 +849,6 @@ nmap <Leader>ec :e#<CR><CR>:echomsg "Changed into the newly named file" expand('
 " List oldfiles
  Shortcut! ListOldFilesAndSelect  ;of
  nmap <leader>of :browse oldfiles<CR>
+ " Justify text by selecting the text and press _j
+ Shortcut! JustifyText  First select the texts and then press _j
+  packadd! justify
