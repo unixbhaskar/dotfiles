@@ -524,4 +524,7 @@ bindsym $mod+Shift+plus exec "st_solarized -e tools"
 # Surf browser keystrokes
 bindsym $mod+Ctrl+apostrophe exec surf_key_maps
 
+# Surf history enlist
+bindsym $mod+Shift+apostrophe exec dmenu.uri.sh
+
 # vim:filetype=i3config
