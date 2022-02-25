@@ -773,7 +773,7 @@ nmap <Leader>no :call NotesRefBlock()<CR>
 " Enlist match and replace in a buffer
 " map <S-r> :g//#|s///g|#
 " Vimgrep invocation by pressing ;g
- nnoremap <Leader>g :vimgrep  %<Left><Left>
+ nnoremap <Leader>g :vimgrep //j  *<Left><Left><Left><Left><Left>
 " Swank start
 "let g:slimv_swank_cmd = '! xterm -e sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp &'
 " Close all buffer at once <Leader>q
@@ -808,7 +808,9 @@ nmap <Leader>no :call NotesRefBlock()<CR>
  Plugin 'jiangmiao/auto-pairs'
 let g:AutoPairsFlyMode = 1
 " Set Dictionary
-set dictionary+=~/.vim/spell/dictionary_word
+"set dictionary=~/.vim/spell/dictionary_word
+Shortcut! DictionaryCompletion  <C-]>
+inoremap <C-]> <C-X><C-K>
 " Vim Mergetool
 Plugin 'samoshkin/vim-mergetool'
 let g:mergetool_layout = 'mr'
@@ -844,3 +846,6 @@ nmap <Leader>sdn :saveas! <C-R>%
 "Change into new filename
 Shortcut! ChangedToNewlyNamedFile ;ec
 nmap <Leader>ec :e#<CR><CR>:echomsg "Changed into the newly named file" expand('%')<CR>
+" List oldfiles
+ Shortcut! ListOldFilesAndSelect  ;of
+ nmap <leader>of :browse oldfiles<CR>
