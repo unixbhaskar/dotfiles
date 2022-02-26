@@ -226,11 +226,11 @@ build() {
      fi
 
 }
-#Git grep as search in repo
+# Generic search method including git repo specific search
 
 search() {
 
-	if [ ! -e .git ];then
+       if [ ! -e .git ];then
 
 		sudo find / -name "$1" -ls  2> /dev/null
 
