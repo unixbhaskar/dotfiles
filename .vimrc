@@ -830,8 +830,8 @@ Plugin 'MattesGroeger/vim-bookmarks'
 nmap <Leader>bt <Plug>BookmarkToggle
 nmap <Leader>ba <Plug>BookmarkAnnotate
 nmap <Leader>bs <Plug>BookmarkShowAll
-nmap <Leader>bn <Plug>BookmarkNext
-nmap <Leader>bp <Plug>BookmarkPrev
+" nmap <Leader>bn <Plug>BookmarkNext
+" nmap <Leader>bp <Plug>BookmarkPrev
 nmap <Leader>bc <Plug>BookmarkClear
 nmap <Leader>bx <Plug>BookmarkClearAll
 nmap <Leader>bu <Plug>BookmarkMoveUp
@@ -852,3 +852,16 @@ nmap <Leader>ec :e#<CR><CR>:echomsg "Changed into the newly named file" expand('
  " Justify text by selecting the text and press _j
  Shortcut! JustifyText  First select the texts and then press _j
   packadd! justify
+ " Take backup of important files before doing any change
+augroup dotfiles
+ autocmd BufEnter .emacs  :silent normal BB<CR>
+ autocmd BufEnter .vimrc  :silent normal BB<CR>
+ autocmd BufEnter .bashrc  :silent normal BB<CR>
+ autocmd BufEnter .muttrc  :silent normal BB<CR>
+ autocmd BufEnter .gitconfig  :silent normal BB<CR>
+ autocmd BufEnter .ithreeconfig  :silent normal BB<CR>
+ autocmd BufEnter .ithreeblocksconfig  :silent normal BB<CR>
+ autocmd BufEnter .procmailrc  :silent normal BB<CR>
+ autocmd BufEnter .forward  :silent normal BB<CR>
+ autocmd BufEnter .mbsyncrc  :silent normal BB<CR>
+ augroup END
