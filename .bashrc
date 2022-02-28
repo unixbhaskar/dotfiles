@@ -575,3 +575,5 @@ $HOME/git-linux/asdf/completions/asdf.bash
 export ALTERNATE_EDITOR=''
 alias ec='emacsclient --tty'
 alias eg='emacsclient -c'
+# Notes access
+alias notes="vim ~/Notes/index.md"
