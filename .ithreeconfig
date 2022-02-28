@@ -128,7 +128,7 @@ bindsym $mod+Control+Left workspace prev
 
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+b workspace $workspace2 ; exec "vimb";
-bindsym $mod+Shift+f workspace $workspace3 ; exec open_spotify;
+bindsym $mod+Shift+f workspace $workspace3 ; exec firefox;
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
 bindsym $mod+o workspace $workspace5 ; exec "st_solarized -n System_Operations -e system_operation";
 bindsym $mod+n workspace $workspace6 ; exec "st_solarized -n Newsboat -e newsboat";
@@ -136,13 +136,14 @@ bindsym $mod+c  workspace $workspace7 ; exec "st_solarized -n Calcurse -e calcur
 bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st_solarized -n Cmus -e cmus";
 # bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
 bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";
- bindsym $mod+braceleft workspace $workspace11 ; exec  strail;
+bindsym $mod+braceleft workspace $workspace11 ; exec  strail;
 bindsym $mod+braceright workspace $workspace12 ; exec "st -n Screencast -e screencast";
 bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
 bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
 bindsym $mod+p workspace $workspace15 ; exec pdf_viewer;
 bindsym $mod+F11 workspace $workspace16 ; exec sys_monitor;
 bindsym $mod+Shift+n workspace $workspace17 ; exec nyxt;
+
 
 #ASSIGN PROGRAMS TO WORKSPACES
 # assign [class="^st-256color" instance="^st-256color$"] → $workspace1
@@ -161,7 +162,7 @@ assign [class="^st-256color$" instance="^Movies$"] → $workspace13
 assign [class="^st-256color$" instance="^Photos$"] → $workspace14
 assign [class="^st-256color$" instance="^Zathura$"] → $workspace15
 assign [class="^st-256color$" instance="^sys_monitor$"] → $workspace16
-assign [class="^Nyxt$"] → $workspace17
+ assign [class="^Nyxt$"] → $workspace17
 
 # For_window versions
 
@@ -526,5 +527,6 @@ bindsym $mod+Ctrl+apostrophe exec surf_key_maps
 
 # Surf history enlist
 bindsym $mod+Shift+apostrophe exec dmenu.uri.sh
+
 
 # vim:filetype=i3config
