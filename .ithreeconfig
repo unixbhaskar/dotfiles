@@ -143,7 +143,7 @@ bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
 bindsym $mod+p workspace $workspace15 ; exec pdf_viewer;
 bindsym $mod+F11 workspace $workspace16 ; exec sys_monitor;
 bindsym $mod+Shift+n workspace $workspace17 ; exec nyxt;
-
+bindsym $mod+Ctrl+z workspace $workspace3 ;exec "firefox --private-window";
 
 #ASSIGN PROGRAMS TO WORKSPACES
 # assign [class="^st-256color" instance="^st-256color$"] → $workspace1
