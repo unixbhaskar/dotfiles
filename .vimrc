@@ -839,13 +839,13 @@ nmap <Leader>bd <Plug>BookmarkMoveDown
 nmap <Leader>bl <Plug>BookmarkMoveToLine
 "Change name
 Shortcut! change_name ;cn
-nmap <Leader>cn :w <C-R>%<C-b><Right><Space><Right><Right><Right><Right><Right><Right><Right>_<Left>
+nmap <Leader>cn :saveas <C-R>%<C-b><S-Right><Right><Right><Right><Right><Right><Right><Right>_<Left>
 " Save file with different name
-Shortcut! SaveFileWithDifferentName ;sdn
-nmap <Leader>sdn :saveas! <C-R>%
+"Shortcut! SaveFileWithDifferentName ;sdn
+"nmap <Leader>sdn :saveas! <C-R>%
 "Change into new filename
-Shortcut! ChangedToNewlyNamedFile ;ec
-nmap <Leader>ec :e#<CR><CR>:echomsg "Changed into the newly named file" expand('%')<CR>
+"Shortcut! ChangedToNewlyNamedFile ;ec
+"nmap <Leader>ec :e#<CR><CR>:echomsg "Changed into the newly named file" expand('%')<CR>
 " List oldfiles
  Shortcut! ListOldFilesAndSelect  ;of
  nmap <leader>of :browse oldfiles<CR>
@@ -865,3 +865,5 @@ augroup dotfiles
  autocmd BufEnter .forward  :silent normal BB<CR>
  autocmd BufEnter .mbsyncrc  :silent normal BB<CR>
  augroup END
+ " From the cursor point to the end of line yank by Y
+  nnoremap Y y$
