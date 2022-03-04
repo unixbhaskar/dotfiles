@@ -188,7 +188,7 @@ vnoremap <F9> zf
  "Search replaces n number of times
 nnoremap sr :normal n.<CR>
 "Open URI under cursor by pressing ob and os
- nmap ob :exe 'silent !vimb %'<CR>
+ nmap ob :exe 'silent !vimb <C-r><C-l><CR>'
  "Open selected URI.
  vmap os :exe 'silent !vimb %'<CR>
  "Titlecase plugins
@@ -867,3 +867,68 @@ augroup dotfiles
  augroup END
  " From the cursor point to the end of line yank by Y
   nnoremap Y y$
+" TaskWarrior keys
+Shortcut! TW [args]             task [filter report arguments]
+Shortcut! TWUndo                undo the previous modification
+Shortcut! TWEditTaskrc          edit ~/.taskrc
+Shortcut! TWEditVitrc           edit ~/.vitrc
+Shortcut! TWDeleteCompleted     clear all completed tasks
+Shortcut! TWAdd                 add new tasks interactively
+Shortcut! TWAnnotate            add an annotation
+Shortcut! TWComplete            mark task done
+Shortcut! TWDelete              deleta a task
+Shortcut! TWDeleteAnnotation    delete an annotation
+Shortcut! TWModifyInteractive   make changes to a task interactively (use with caution!)
+Shortcut! TWReportInfo          run the info report
+Shortcut! TWReportSort [args]   overide the sort method, reset to default if no arguments passed
+Shortcut! TWSync                synchronise with taskd server
+Shortcut! TWToggleReadonly      toggle readonly option
+Shortcut! TWToggleHLField       toggle highlight field option
+Shortcut! TWHistory             list history records using unite.vim
+Shortcut! TWHistoryClear        clear history
+Shortcut! TWBookmark            list bookmarks using unite.vim
+Shortcut! TWBookmarkClear       clear bookmarks
+Shortcut! TW_Annotation		  A        add annotation
+Shortcut! TW_DeleteAnno		  X       delete annotation.
+Shortcut! TW_Add_UDA		  a       add uda attribute
+Shortcut! TW_Del_UDA		  x       delete uda attribute under cursor
+Shortcut! TW_OP_AmoFile		  o       open the annotation as a file.
+Shortcut! TW_New_Tsk		  a       create new task.
+Shortcut! TW_Set_cur		  d       set the task in current line done.
+Shortcut! TW_Delete		  D       delete field/annotation/task
+Shortcut! TW_Sel_CurTsk		  s       select/remove current task to selected list
+Shortcut! TW_ModCurFld		  m       modify current field.
+Shortcut! TW_ModCurTask 	 M       modify current task.
+Shortcut! TW_ChngFilter 	 f       change filter
+Shortcut! TW_ChngReport 	 r       change report type
+Shortcut! TW_SelCurTask 	 c       execute a command for selected tasks/current task
+Shortcut! TW_RefreshRep 	 R       refresh the report/clear selected list
+Shortcut! TW_QuitBuffer 	 q       quit buffer.
+Shortcut! TW_ClrAllComT 	 X       clear all completed task.
+Shortcut! TW_DupSelTask 	 p       duplicate selected tasks
+Shortcut! TW_UndolastChng 	 u       undo last change.
+Shortcut! TW_StartTask  	 +       start task
+Shortcut! TW_StopTask   	 -       stop task
+Shortcut! TW_SyncServer 	 S       sync with taskd server.
+Shortcut! TW_SortByColm 	 s       sort by this column primarily.(if already of the highest priority then switch the polarity)
+Shortcut! TW_SortColIncrs 	 <       sort by this column increasingly.(if already increasingly then increase its priority)
+Shortcut! TW_SortColDecrs 	 >       sort by this column decreasingly.(if already decreasingly then decrease its priority)
+Shortcut! TW_CycleColFmtL	 H       cycle column format left
+Shortcut! TW_CycleColFmtR 	 L       cycle column format right
+Shortcut! TW_NextHistEntry 	 J       next historical entry
+Shortcut! TW_PrevHistEntry	 K       previous historical entry
+Shortcut! TW_CreateBookM         B       create a bookmark for current combination
+Shortcut! TW_ViewDoc 	        <F1>    view the documents
+Shortcut! TW_ClickHndler	 <CR>    click handler
+Shortcut! TW_NextColumn 	 <TAB>   jump to the next column
+Shortcut! TW_PrevColumn 	 <S-TAB> jump to the previous column
+Shortcut! TW_NxtNonEmptyCol	 <right> jump to the next non-empty column
+Shortcut! TW_PrevNonEmptcol	 <left>  jump to the previous non-empty column
+Shortcut! TW_DoneVisSelTsk	 d       set done to all visual selected tasks
+Shortcut! TW_DelAlVisSelTsk	 D       delete all visual selected tasksgg
+Shortcut! TW_VisSelTskInfo	 <CR>    show information about visual selected tasks
+Shortcut! TW_VSelTskToList	 s       add visual selected tasks to selected list
+" Open pdf with zathura
+ nnoremap <Leader>pd  :!zathura <C-r><C-l><Cr>
+
+  let g:netrw_browsex_viewer = "vimb"
