@@ -95,6 +95,19 @@
  '(jdee-db-requested-breakpoint-face-colors (cons "#161a2a" "#3ad900"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#161a2a" "#444a73"))
  '(lsp-ui-doc-border "#9eacac")
+ '(magit-repository-directories
+   '(("~/projects/AdminScripts" . 5)
+     ("~/dotfiles" . 0)
+     ("~/Collected_Notes" . 0)
+     ("~/LaTeX_Workouts" . 0)
+     ("~/projects/emacs" . 0)
+     ("~/projects/linux-next" . 0)
+     ("~/projects/vim" . 0)
+     ("~/projects/linux" . 0)
+     ("~/git-linux/gcc" . 0)
+     ("~/git-linux/git" . 0)
+     ("~/git-linux/i3" . 0)
+     ("~/git-linux/nyxt" . 0)))
  '(marginalia-mode t)
  '(mu4e-display-update-status-in-modeline t)
  '(mu4e-icalendar-diary-file "~/.emacs.d/OrgFiles/refile.org")
@@ -127,7 +140,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate vterm-toggle dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary neotree org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate vterm-toggle dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary neotree org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -141,7 +154,7 @@
            (lambda nil
              (org-babel-tangle))
            nil t)))
- '(scroll-all-mode t)
+ ;; '(scroll-all-mode t)
  '(scroll-bar-mode nil)
  '(send-mail-function 'mailclient-send-it)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#93a61a" "#01323d" 0.2))
@@ -821,7 +834,7 @@ rather than the whole path."
       (quote (("t" "Todo" entry (file "~/.emacs.d/OrgFiles/task.org")
                "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
               ("r" "Respond" entry (file "~/.emacs.d/OrgFiles/refile.org")
-               "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
+               "* Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
               ("n" "Note" entry (file "~/.emacs.d/OrgFiles/notes.org")
                "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
               ("j" "Journal" entry (file+datetree "~/.emacs.d/OrgFiles/journal.org")
@@ -2087,3 +2100,7 @@ Start an unlimited search at `point-min' otherwise."
       (quote
 	(("youtu\.?be" . mpv-play-url)
 	 ("." . browse-url-default-browser))))
+
+(fset 'open-dot-emacs
+   (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s down down return] 0 "%d"))
+(global-set-key (kbd "C-c i e") 'open-dot-emacs)
