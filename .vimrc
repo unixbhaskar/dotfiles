@@ -75,7 +75,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'axvr/org.vim'
 Plugin 'voldikss/vim-floaterm'
-
+Plugin 'vimwiki/vimwiki'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
@@ -929,6 +929,10 @@ Shortcut! TW_DelAlVisSelTsk	 D       delete all visual selected tasksgg
 Shortcut! TW_VisSelTskInfo	 <CR>    show information about visual selected tasks
 Shortcut! TW_VSelTskToList	 s       add visual selected tasks to selected list
 " Open pdf with zathura
- nnoremap <Leader>pd  :!zathura <C-r><C-l><Cr>
-
+nnoremap <Leader>pd :!zathura <cfile> &<CR><CR>
+" Make vimb the default browser
   let g:netrw_browsex_viewer = "vimb"
+ " Makes all commands available in quickfix window
+ nnoremap <Leader>c  :Commands<CR>
+" Vimwiki markdown fixup
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]"
