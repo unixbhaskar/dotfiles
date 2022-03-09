@@ -747,14 +747,14 @@ imap AR <C-R>=&<S-Right>
 "     endif
 " endfunction
 "Change colorscheme as per the timing
-let hr = (strftime('%H'))
-if hr >= 17
-         colorscheme molokai_dark
-elseif hr >= 6
-	colorscheme solarized
-elseif hr >= 0
-         colorscheme molokai_dark
-endif
+" let hr = (strftime('%H'))
+" if hr >= 17
+"          colorscheme molokai_dark
+" elseif hr >= 6
+" 	colorscheme solarized
+" elseif hr >= 0
+"          colorscheme molokai_dark
+" endif
 " Template for source the code block skeleton
 function! LispBlock()
 	r~/.vim/templates/lispblock
