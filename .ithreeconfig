@@ -532,4 +532,7 @@ bindsym $mod+Shift+apostrophe exec surf_history_enlist
 
 bindsym $mod+Ctrl+a exec yt_studio_url
 
+# Brings up information management interface
+bindsym $mod+i exec "st_solarized -e kb"
+
 # vim:filetype=i3config
