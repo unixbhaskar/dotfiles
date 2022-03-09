@@ -1788,6 +1788,13 @@ rather than the whole path."
 (global-set-key (kbd "C-x n r") 'restart-emacs)
 #+END_SRC
 
+* Customize themes
+#+BEGIN_SRC emacs-lisp
+;; Customize themes
+
+(global-set-key (kbd "C-x n t") 'customize-themes)
+#+END_SRC
+
 * Rainbow delimiters
 #+begin_src emacs-lisp
  (require 'rainbow-delimiters)
@@ -2336,4 +2343,15 @@ Start an unlimited search at `point-min' otherwise."
       (quote
 	(("youtu\.?be" . mpv-play-url)
 	 ("." . browse-url-default-browser))))
+#+end_src
+
+
+* PopUp manipulations
+#+begin_src emacs-lisp
+(popper-mode 1)
+(global-set-key (kbd "C-c i p") 'popper-cycle)
+(global-set-key (kbd "C-c i l") 'popper-toggle-latest)
+(global-set-key (kbd "C-c i e") 'popper-echo-mode)
+(global-set-key (kbd "C-c i k") 'popper-kill-latest-popup)
+(global-set-key (kbd "C-c i y") 'popper-toggle-type)
 #+end_src
