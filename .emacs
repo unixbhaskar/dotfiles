@@ -154,7 +154,6 @@
            (lambda nil
              (org-babel-tangle))
            nil t)))
- ;; '(scroll-all-mode t)
  '(scroll-bar-mode nil)
  '(send-mail-function 'mailclient-send-it)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#93a61a" "#01323d" 0.2))
@@ -272,7 +271,8 @@
 		mu4e-org-mode-hook
 		eshell-mode-hook
 		eww-buffers-mode-hook
-		vterm-mode-hook))
+                markdown-mode-hook
+                vterm-mode-hook))
 (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
@@ -2101,6 +2101,11 @@ Start an unlimited search at `point-min' otherwise."
 	(("youtu\.?be" . mpv-play-url)
 	 ("." . browse-url-default-browser))))
 
-(fset 'open-dot-emacs
-   (kmacro-lambda-form [?\C-x ?\C-f ?. ?e ?m ?a ?c ?s down down return] 0 "%d"))
-(global-set-key (kbd "C-c i e") 'open-dot-emacs)
+;; PopUp manipulations
+(popper-mode 1)
+
+(global-set-key (kbd "C-c i p") 'popper-cycle)
+(global-set-key (kbd "C-c i l") 'popper-toggle-latest)
+(global-set-key (kbd "C-c i e") 'popper-echo-mode)
+(global-set-key (kbd "C-c i k") 'popper-kill-latest-popup)
+(global-set-key (kbd "C-c i y") 'popper-toggle-type)
