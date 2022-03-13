@@ -55,6 +55,7 @@
  '(exwm-floating-border-color "#1e1e3f")
  '(fci-rule-color "#01323d")
  '(frame-background-mode 'dark)
+ '(gdb-many-windows t)
  '(git-commit-setup-hook
    '(git-commit-save-message git-commit-setup-changelog-support git-commit-turn-on-auto-fill git-commit-turn-on-flyspell git-commit-propertize-diff bug-reference-mode with-editor-usage-message))
  '(git-messenger:show-detail t)
@@ -2109,3 +2110,31 @@ Start an unlimited search at `point-min' otherwise."
 (global-set-key (kbd "C-c i e") 'popper-echo-mode)
 (global-set-key (kbd "C-c i k") 'popper-kill-latest-popup)
 (global-set-key (kbd "C-c i y") 'popper-toggle-type)
+
+
+;; Special character mode
+
+(defmacro ins-val (val)
+  `(lambda () (interactive) (insert ,val)))
+
+(define-minor-mode special-char-mode
+  "Toggle Special Character mode"
+  nil
+  " SpecialChar"
+  `(
+    (,(kbd "1") . ,(ins-val "!")) (,(kbd "!") . ,(ins-val "1")) (,[kp-1] . ,(ins-val "1"))
+    (,(kbd "2") . ,(ins-val "@")) (,(kbd "@") . ,(ins-val "2")) (,[kp-2] . ,(ins-val "2"))
+    (,(kbd "3") . ,(ins-val "#")) (,(kbd "#") . ,(ins-val "3")) (,[kp-3] . ,(ins-val "3"))
+    (,(kbd "4") . ,(ins-val "$")) (,(kbd "$") . ,(ins-val "4")) (,[kp-4] . ,(ins-val "4"))
+    (,(kbd "5") . ,(ins-val "%")) (,(kbd "%") . ,(ins-val "5")) (,[kp-5] . ,(ins-val "5"))
+    (,(kbd "6") . ,(ins-val "^")) (,(kbd "^") . ,(ins-val "6")) (,[kp-6] . ,(ins-val "6"))
+    (,(kbd "7") . ,(ins-val "&")) (,(kbd "&") . ,(ins-val "7")) (,[kp-7] . ,(ins-val "7"))
+    (,(kbd "8") . ,(ins-val "*")) (,(kbd "*") . ,(ins-val "8")) (,[kp-8] . ,(ins-val "8"))
+    (,(kbd "9") . ,(ins-val "(")) (,(kbd "(") . ,(ins-val "9")) (,[kp-9] . ,(ins-val "9"))
+    (,(kbd "0") . ,(ins-val ")")) (,(kbd ")") . ,(ins-val "0")) (,[kp-0] . ,(ins-val "0"))
+    (,[kp-multiply] . ,(ins-val "*"))
+    )
+  :global 'true)
+
+(global-set-key (kbd "C-!") 'special-char-mode)
+
