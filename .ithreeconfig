@@ -104,8 +104,7 @@ exec $HOME/bin/command-t_ruby_fix.sh >/dev/null 2>&1
 #Workspaces
 set $workspace1 "1   "
 set $workspace2 "2  "
-#set $workspace3 "3   "
-set $workspace3  "3 "
+set $workspace3 "3   "
 set $workspace4 "4  ℰ"
 #set $workspace5 "5  "
 set $workspace5 "5  "
@@ -156,13 +155,13 @@ assign [class="^st-256color$" instance="^Calcurse$"] → $workspace7
 assign [class="^st-256color$" window_role="cmus" instance="^Cmus$"] → $workspace8
 # assign [class="^st-256color$" instance="^Mutt$"] → $workspace9
 assign [class="^st-256color$" instance="^Tig$"] → $workspace10
- assign [class="^st-256color$" instance="^Sourcetrail$"] → $workspace11
+assign [class="^st-256color$" instance="^Sourcetrail$"] → $workspace11
 assign [class="^st-256color$" instance="^Screencast$"] → $workspace12
 assign [class="^st-256color$" instance="^Movies$"] → $workspace13
 assign [class="^st-256color$" instance="^Photos$"] → $workspace14
 assign [class="^st-256color$" instance="^Zathura$"] → $workspace15
 assign [class="^st-256color$" instance="^sys_monitor$"] → $workspace16
- assign [class="^Nyxt$"] → $workspace17
+assign [class="^Nyxt$"] → $workspace17
 
 # For_window versions
 
