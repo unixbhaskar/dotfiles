@@ -1234,6 +1234,9 @@ rather than the whole path."
       '(("Unixbhaskar's Blog"
          :url "https://unixbhaskar.wordpress.com/xmlrpc.php"
          :username "unixbhaskar")))
+(setq org2blog/wp-image-upload t)
+
+
 ;; Neotree shortcut
 
 (global-set-key (kbd "C-n") 'neotree-toggle)
@@ -1748,7 +1751,8 @@ rather than the whole path."
 "#+EMAIL: " user-mail-address "\n"
 "#+DATE: " (format-time-string "%Y-%m-%d-%X") "\n")
 ;;"#+OPTIONS: "  ^:nil  "\n"
-
+;; "#+ATTR_HTML: " :class wp-block-image size-full "\n"
+;; "#+ATTR_HTML: " :align center "\n"
 (global-set-key (kbd "C-c i h") 'org-header-skeleton)
 
  ;; To create empty org file
@@ -2137,4 +2141,3 @@ Start an unlimited search at `point-min' otherwise."
   :global 'true)
 
 (global-set-key (kbd "C-!") 'special-char-mode)
-
