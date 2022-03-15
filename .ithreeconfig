@@ -125,7 +125,7 @@ bindsym $mod+Control+Left workspace prev
 
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+b workspace $workspace2 ; exec "vimb";
-bindsym $mod+Shift+f workspace $workspace3 ; exec firefox;
+bindsym $mod+Shift+f workspace $workspace3 ; exec "firefox";
 bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
 bindsym $mod+o workspace $workspace5 ; exec "st_solarized -n System_Operations -e system_operation";
 bindsym $mod+n workspace $workspace6 ; exec "st_solarized -n Newsboat -e newsboat";
