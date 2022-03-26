@@ -17,6 +17,7 @@ test -s ~/.alias && . ~/.alias || true
 export HISTTIMEFORMAT="%h/%d/%Y - %H:%M:%S "
 export HISTFILESIZE=99999
 export  HISTSIZE=99999
+export LS_COLORS="di=0;34"
 # Aliases
 alias ls="ls --color=always"
 alias grep="grep --color"
