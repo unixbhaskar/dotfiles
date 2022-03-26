@@ -967,3 +967,27 @@ augroup encrypted
 augroup END
 
 nnoremap <Leader>en :saveas <C-R>%.gpg<CR>
+" Build notes in PDF and Html for better viewing
+augroup Notes
+       autocmd!
+       autocmd BufWritePost *.md silent !buildnotepdf %:p
+       autocmd BufWritePost *.md silent !buildnotehtml %:p
+augroup END
+nnoremap <Leader>pn  :!pdfnote &<CR><CR>
+nnoremap <Leader>hn  :!htmlnote &<CR><CR>
+" Go To Jump Place
+ function! GotoJump()
+  jumps
+  let j = input("Please select your jump: ")
+  if j != ''
+    let pattern = '\v\c^\+'
+    if j =~ pattern
+      let j = substitute(j, pattern, '', 'g')
+      execute "normal " . j . "\<c-i>"
+    else
+      execute "normal " . j . "\<c-o>"
+    endif
+  endif
+endfunction
+
+nnoremap <Leader>jm :call GotoJump()<CR>
