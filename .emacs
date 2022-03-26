@@ -66,6 +66,7 @@
  '(global-highlight-parentheses-mode t)
  '(global-prettify-symbols-mode t)
  '(gnus-add-timestamp-to-message t)
+ '(gnus-default-nntp-server "news:comp.emacs")
  '(gnus-expert-user t)
  '(grep-highlight-matches 'always)
  '(highlight-parentheses-colors '("#3cafa5" "#c49619" "#3c98e0" "#7a7ed2" "#93a61a"))
@@ -137,6 +138,7 @@
  '(org-roam-dailies-directory "~/.emacs.d/OrgFiles/daily/")
  '(org-roam-mode t nil (org-roam))
  '(org-roam-server-mode t)
+ '(org-startup-with-inline-images t)
  '(org-tag-beautify-mode t)
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
@@ -190,6 +192,39 @@
      (340 . "#40129d4ad514")
      (360 . "#3c98e0")))
  '(vc-annotate-very-old-color nil)
+ '(webjump-sites
+   '(("GNU Project FTP Archive" .
+      [mirrors "https://ftp.gnu.org/pub/gnu/" "https://ftpmirror.gnu.org"])
+     ("GNU Project Home Page" . "www.gnu.org")
+     ("Emacs Home Page" . "www.gnu.org/software/emacs/emacs.html")
+     ("Savannah Emacs page" . "savannah.gnu.org/projects/emacs")
+     ("Emacs Lisp List" . "www.damtp.cam.ac.uk/user/eglen/emacs/ell.html")
+     ("Emacs Wiki" .
+      [simple-query "www.emacswiki.org" "www.emacswiki.org/cgi-bin/wiki/" ""])
+     ("DuckDuckGo" .
+      [simple-query "duckduckgo.com" "duckduckgo.com/?q=" ""])
+     ("Google" .
+      [simple-query "www.google.com" "www.google.com/search?q=" ""])
+     ("Google Groups" .
+      [simple-query "groups.google.com" "groups.google.com/groups?q=" ""])
+     ("Yahoo" .
+      [simple-query "www.yahoo.com" "search.yahoo.com/search?p=" ""])
+     ("Yahoo: Reference" . "www.yahoo.com/Reference/")
+     ("Wikipedia" .
+      [simple-query "wikipedia.org" "wikipedia.org/wiki/" ""])
+     ("National Weather Service" . webjump-to-iwin)
+     ("Usenet FAQs" . "www.faqs.org/faqs/")
+     ("RTFM Usenet FAQs by Group" . "ftp://rtfm.mit.edu/pub/usenet-by-group/")
+     ("RTFM Usenet FAQs by Hierarchy" . "ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/")
+     ("X Consortium Archive" . "ftp.x.org")
+     ("Association for Computing Machinery" . "www.acm.org")
+     ("Computer Professionals for Social Responsibility" . "www.cpsr.org")
+     ("Electronic Frontier Foundation" . "www.eff.org")
+     ("IEEE Computer Society" . "www.computer.org")
+     ("Risks Digest" . webjump-to-risks)
+     ("Supplemental Web site list for webjump" . "www.neilvandyke.org/webjump/")
+     (" My Blog At Wordpress " . "unixbhaskar.wordpress.com")
+     ("Linux Kernel " . "https://kernel.org/")))
  '(weechat-color-list
    '(unspecified "#002732" "#01323d" "#ae1212" "#ec423a" "#687f00" "#93a61a" "#936d00" "#c49619" "#0069b0" "#3c98e0" "#a81761" "#e2468f" "#008981" "#3cafa5" "#8d9fa1" "#60767e"))
  '(xterm-color-names
@@ -419,7 +454,7 @@
 ;;(set-foreground-color "white")
 ;;(set-background-color "blue")
 ;; make {copy, cut, paste, undo} have {C-c, C-x, C-v, C-z} keys
-(cua-mode 1)
+;; (cua-mode 1)
 
 
 ;; New Window. was nil
@@ -1117,7 +1152,7 @@ rather than the whole path."
     (insert "#+title: " title "\n")
     (insert "#+date: " (format-time-string "%Y-%m-%d") "\n")
     ;;(insert "#+draft: true\n")
-    (insert "#+tags: \n")
+    (insert "#+tags: " tag "\n")
 
     (unless mini
       (insert "\n* References\n# Local Variables:\n# eval: (add-hook 'after-save-hook (lambda ()(org-babel-tangle)) nil t)\n# End:\n"))
@@ -1245,18 +1280,18 @@ rather than the whole path."
 
 ;; Dashboard
 
-(require 'dashboard)
-(dashboard-setup-startup-hook)
+;; (require 'dashboard)
+;; (dashboard-setup-startup-hook)
 ;; ;; Or if you use use-package
-(use-package dashboard
-  :ensure t
-  :config
-  (dashboard-setup-startup-hook))
+;; (use-package dashboard
+;;   :ensure t
+;;   :config
+;;   (dashboard-setup-startup-hook))
 
 ;; Set the title
 ;;(setq dashboard-banner-logo-title "Emacs Dashboard")
 ;; Set the banner
-(setq dashboard-startup-banner [2])
+;; (setq dashboard-startup-banner [2])
 ;; ;; Value can be
 ;; 'official which displays the official emacs logo
 ;; 'logo which displays an alternative emacs logo
@@ -1264,15 +1299,15 @@ rather than the whole path."
 ;; "path/to/your/image.png" or "path/to/your/text.txt" which displays whatever image/text you would prefer
 
 ;; Content is not centered by default. To center, set
-(setq dashboard-center-content t)
+;; (setq dashboard-center-content t)
 
 ;; To disable shortcut "jump" indicators for each section, set
- (setq dashboard-show-shortcuts nil)
+ ;; (setq dashboard-show-shortcuts nil)
 
-(setq dashboard-items '(
+;; (setq dashboard-items '(
 ;;			(recents  . 5)
 ;;                        (bookmarks . 5)
-                        (projects . 5)))
+                        ;; (projects . 5)))
 ;;                        (agenda . 5)
 ;;                        (registers . 5)
 
@@ -1281,17 +1316,17 @@ rather than the whole path."
 ;;  (insert "Custom text"))
 ;;(add-to-list 'dashboard-item-generators  '(custom . dashboard-insert-custom))
 ;;(add-to-list 'dashboard-items '(custom) t)
-(setq dashboard-set-heading-icons t)
-(setq dashboard-set-file-icons t)
+;; (setq dashboard-set-heading-icons t)
+;; (setq dashboard-set-file-icons t)
 ;; Modify heading icon with another icons
 
 ;;(dashboard-modify-heading-icons '((recents . "file-text")
 ;;                                  (bookmarks . "book")))
 
-(setq dashboard-set-navigator t)
+;; (setq dashboard-set-navigator t)
 
-(setq dashboard-set-init-info t)
-(setq dashboard-set-footer nil)
+;; (setq dashboard-set-init-info t)
+;; (setq dashboard-set-footer nil)
 
 ;; Customize footer icons
 
@@ -1302,11 +1337,11 @@ rather than the whole path."
 ;;                                                   :face 'font-lock-keyword-face))
 
 
-(setq dashboard-projects-switch-function 'counsel-projectile-switch-project-by-name)
-(add-to-list 'dashboard-items '(agenda) t)
-(setq dashboard-week-agenda t)
-(setq dashboard-org-agenda-categories '("Tasks" "Diary" "Notes"))
-(setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
+;; (setq dashboard-projects-switch-function 'counsel-projectile-switch-project-by-name)
+;; (add-to-list 'dashboard-items '(agenda) t)
+;; (setq dashboard-week-agenda t)
+;; (setq dashboard-org-agenda-categories '("Tasks" "Diary" "Notes"))
+;; (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
 
 (load "~/.emacs.d/org-link-minor-mode.el")
 
@@ -2141,3 +2176,4 @@ Start an unlimited search at `point-min' otherwise."
   :global 'true)
 
 (global-set-key (kbd "C-!") 'special-char-mode)
+(put 'narrow-to-region 'disabled nil)
