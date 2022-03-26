@@ -27,7 +27,7 @@ font pango:fontawesome 8
 floating_modifier $mod
 
 # start a terminal
-for_window [instance="^st-256color$"] floating enable, resize set 900 500
+for_window [instance="^st-256color$"] floating enable, resize set 500 200
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -97,8 +97,8 @@ exec $HOME/bin/clipmenud
 exec $HOME/bin/pia-client
 exec $HOME/bin/noti_active
 exec $HOME/bin/command-t_ruby_fix.sh >/dev/null 2>&1
-# exec emacs --bg-daemon
-
+exec emacs --bg-daemon
+exec emacsclient -c
 #Workspaces
 set $workspace1 "1   "
 set $workspace2 "2  "
@@ -146,7 +146,7 @@ bindsym $mod+Ctrl+z workspace $workspace3 ;exec "firefox --private-window";
 # assign [class="^st-256color" instance="^st-256color$"] → $workspace1
 assign [class="^Vimb$"]  → $workspace2
 assign [class="^Firefox$"] → $workspace3
-assign [class="^Emacs$"] → $workspace4
+# assign [class="^Emacs$"] → $workspace4
 assign [class="^st-256color$" instance="^System_Operations$"] → $workspace5
 assign [class="^st-256color$" instance="^Newsboat$"] →  $workspace6
 assign [class="^st-256color$" instance="^Calcurse$"] → $workspace7
@@ -400,9 +400,10 @@ bindsym $mod+Ctrl+s exec cmus-remote --play
 bindsym $mod+Ctrl+k exec kill_mpv
 
 # Emacs pop up buffer anywhere
-for_window [title="^emacs-everywhere$"] move to scratchpad
-# for_window [title="^emacs-everywhere$"] floating enable, resize set 900 500
- bindsym $mod+End exec  emacsclient --eval "(emacs-everywhere)" scratcpad show
+# for_window [title="^emacs-everywhere$"] move to scratchpad
+ for_window [title="^emacs$"] floating enable, resize set 680 745
+ bindsym $mod+End exec  "emacsclient -c"
+
 # Vim pop up buffer anywhere
 #for_window [instance="^vim-everywhere$"] move to scratchpad
 for_window [instance="^vim-everywhere$"] floating enable, resize set 900 500
