@@ -711,7 +711,7 @@ exec "!go build %< && echo COMPILED"
 exec "!clear && time go run %"
 endif
 endfunc
-" Search delimiters made easy ,press ;;
+" Global search and replace prompt by pressing ;;
 noremap ;; :%s:::g<Left><Left><Left>
 "noremap ;' :%s:::cg<Left><Left><Left><Left>"
 "cmap \\ \(\)<Left>
