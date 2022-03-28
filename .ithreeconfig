@@ -27,7 +27,6 @@ font pango:fontawesome 8
 floating_modifier $mod
 
 # start a terminal
-for_window [instance="^st-256color$"] floating enable, resize set 500 200
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -92,13 +91,14 @@ bindsym $mod+a focus parent
 exec_always --no-startup-id feh --bg-scale /home/bhaskar/Pictures/LKM3_1024.png
 
 ##Autostart
-exec $HOME/bin/st_solarized
+# exec $HOME/bin/st_solarized
 exec $HOME/bin/clipmenud
 exec $HOME/bin/pia-client
 exec $HOME/bin/noti_active
 exec $HOME/bin/command-t_ruby_fix.sh >/dev/null 2>&1
 exec emacs --bg-daemon
-exec emacsclient -c
+#exec emacsclient -c
+
 #Workspaces
 set $workspace1 "1   "
 set $workspace2 "2  "
@@ -123,10 +123,10 @@ set $workspace17  "17 N"
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
 
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+b workspace $workspace2 ; exec "vimb";
-bindsym $mod+Shift+f workspace $workspace3 ; exec "firefox";
-bindsym $mod+Home workspace $workspace4 ; exec "emacs -fs";
+bindsym $mod+1 ; workspace $workspace1 ; exec "st_solarized -n Kb -e kb";
+bindsym $mod+b ; exec "vimb";
+bindsym $mod+Shift+f ; exec "firefox";
+bindsym $mod+Home ; exec "emacs -fs";
 bindsym $mod+o workspace $workspace5 ; exec "st_solarized -n System_Operations -e system_operation";
 bindsym $mod+n workspace $workspace6 ; exec "st_solarized -n Newsboat -e newsboat";
 bindsym $mod+c  workspace $workspace7 ; exec "st_solarized -n Calcurse -e calcurse";
@@ -139,13 +139,13 @@ bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
 bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
 bindsym $mod+p workspace $workspace15 ; exec pdf_viewer;
 bindsym $mod+F11 workspace $workspace16 ; exec sys_monitor;
-bindsym $mod+Shift+n workspace $workspace17 ; exec nyxt;
+bindsym $mod+Shift+n ; exec nyxt;
 bindsym $mod+Ctrl+z workspace $workspace3 ;exec "firefox --private-window";
 
 #ASSIGN PROGRAMS TO WORKSPACES
-# assign [class="^st-256color" instance="^st-256color$"] → $workspace1
-assign [class="^Vimb$"]  → $workspace2
-assign [class="^Firefox$"] → $workspace3
+ assign [class="^st-256color$" instance="^Kb$"] → $workspace1
+# assign [class="^Vimb$"]  → $workspace2
+# assign [class="^Firefox$"] → $workspace3
 # assign [class="^Emacs$"] → $workspace4
 assign [class="^st-256color$" instance="^System_Operations$"] → $workspace5
 assign [class="^st-256color$" instance="^Newsboat$"] →  $workspace6
@@ -159,7 +159,7 @@ assign [class="^st-256color$" instance="^Movies$"] → $workspace13
 assign [class="^st-256color$" instance="^Photos$"] → $workspace14
 assign [class="^st-256color$" instance="^Zathura$"] → $workspace15
 assign [class="^st-256color$" instance="^sys_monitor$"] → $workspace16
-assign [class="^Nyxt$"] → $workspace17
+# assign [class="^Nyxt$"] → $workspace17
 
 # For_window versions
 
@@ -405,10 +405,10 @@ bindsym $mod+Ctrl+k exec kill_mpv
  bindsym $mod+End exec  "emacsclient -c"
 
 # Vim pop up buffer anywhere
-#for_window [instance="^vim-everywhere$"] move to scratchpad
+# for_window [instance="^vim-everywhere$"] move to scratchpad
 for_window [instance="^vim-everywhere$"] floating enable, resize set 900 500
 bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim ~/Notes/$(date +'%F_%T').md"
-#bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim ~/Notes/$(date +'%F_%T').md" show scratchpad
+# bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim ~/Notes/$(date +'%F_%T').md" show scratchpad
 
 #Mutt floating window
 for_window [instance="^Mutt$"] floating enable, resize set 900 500
@@ -424,7 +424,7 @@ bindsym $mod+Shift+d exec search_dict
 bindsym $mod+w exec linux_wikis_search
 
 # search specific subreddit and get the urls of the topic
-bindsym $mod+Shift+t exec reddit_info
+# bindsym $mod+Shift+t exec reddit_info
 
 # LWN headlines
 bindsym $mod+l exec lwn_headlines
@@ -474,8 +474,8 @@ bindcode --release 110 exec kernel_feed.sh
 bindsym $mod+Ctrl+e exec select_emojis
 
 # Open st Solarized terminal
-for_window [instance="^st-256color$"] floating enable, resize set 900 500
-bindcode --release  $mod+62 exec st_solarized
+# for_window [instance="^st-256color$"] floating enable, resize set 900 500
+# bindcode --release  $mod+62 exec st_solarized
 
 # Open Stackoverfloow search
 bindsym $mod+Ctrl+f exec stackoverflow_search
@@ -533,4 +533,6 @@ bindsym $mod+Ctrl+a exec yt_studio_url
 # Brings up information management interface
 bindsym $mod+i exec "st_solarized -e kb"
 
+# Pop up a floating term
+bindsym $mod+Shift+t exec "floaterm ~/bin/st_solarized"
 # vim:filetype=i3config
