@@ -11,21 +11,15 @@
  '(all-the-icons-ivy-rich-mode t)
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["#01323d" "#ec423a" "#93a61a" "#c49619" "#3c98e0" "#e2468f" "#3cafa5" "#60767e"])
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
  '(calendar-view-diary-initially-flag t)
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
- '(compilation-message-face 'default)
  '(compose-mail-user-agent-warnings nil)
  '(corfu-global-mode t)
  '(cua-enable-modeline-indications t)
- '(cua-global-mark-cursor-color "#3cafa5")
- '(cua-overwrite-cursor-color "#c49619")
- '(cua-read-only-cursor-color "#93a61a")
  '(custom-enabled-themes '(molokai))
  '(custom-safe-themes
    '("51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "b494aae329f000b68aa16737ca1de482e239d44da9486e8d45800fd6fd636780" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
@@ -53,7 +47,6 @@
  '(emojify-emoji-styles '(ascii github unicode))
  '(eww-browse-url-new-window-is-tab t)
  '(exwm-floating-border-color "#1e1e3f")
- '(fci-rule-color "#01323d")
  '(frame-background-mode 'dark)
  '(gdb-many-windows t)
  '(git-commit-setup-hook
@@ -69,23 +62,6 @@
  '(gnus-default-nntp-server "news:comp.emacs")
  '(gnus-expert-user t)
  '(grep-highlight-matches 'always)
- '(highlight-parentheses-colors '("#3cafa5" "#c49619" "#3c98e0" "#7a7ed2" "#93a61a"))
- '(highlight-symbol-colors
-   '("#3c6f408d329d" "#0c4a45f64ce3" "#486e33913532" "#1fac3bea568d" "#2ec943ac3324" "#449935a7314d" "#0b04411b5986"))
- '(highlight-symbol-foreground-color "#9eacac")
- '(highlight-tail-colors
-   '(("#01323d" . 0)
-     ("#687f00" . 20)
-     ("#008981" . 30)
-     ("#0069b0" . 50)
-     ("#936d00" . 60)
-     ("#a72e01" . 70)
-     ("#a81761" . 85)
-     ("#01323d" . 100)))
- '(hl-bg-colors
-   '("#936d00" "#a72e01" "#ae1212" "#a81761" "#3548a2" "#0069b0" "#008981" "#687f00"))
- '(hl-fg-colors
-   '("#002732" "#002732" "#002732" "#002732" "#002732" "#002732" "#002732" "#002732"))
  '(icomplete-mode t)
  '(image-dired-dir "~/Pictures")
  '(image-dired-main-image-directory "~/Pictures")
@@ -96,7 +72,6 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#161a2a" "#82aaff"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#161a2a" "#3ad900"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#161a2a" "#444a73"))
- '(lsp-ui-doc-border "#9eacac")
  '(magit-repository-directories
    '(("~/projects/AdminScripts" . 5)
      ("~/dotfiles" . 0)
@@ -119,8 +94,6 @@
  '(notmuch-maildir-use-notmuch-insert t)
  '(notmuch-show-all-tags-list t)
  '(notmuch-tag-added-formats '((".*" (notmuch-apply-face tag 'nil))))
- '(nrepl-message-colors
-   '("#ec423a" "#db5823" "#c49619" "#687f00" "#c3d255" "#0069b0" "#3cafa5" "#e2468f" "#7a7ed2"))
  '(objed-cursor-color "#ff000d")
  '(org-agenda-diary-file "~/.emacs.d/OrgFiles/diary.org")
  '(org-agenda-files
@@ -143,13 +116,11 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate vterm-toggle dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary neotree org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate vterm-toggle dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
  '(popper-reference-buffers '("\\*Messages\\*$"))
- '(pos-tip-background-color "#01323d")
- '(pos-tip-foreground-color "#9eacac")
  '(rustic-ansi-faces
    ["#2d2b55" "#ff000d" "#3ad900" "#fad000" "#82aaff" "#ff9d00" "#ff628c" "#e3e9fa"])
  '(safe-local-variable-values
@@ -159,7 +130,6 @@
            nil t)))
  '(scroll-bar-mode nil)
  '(send-mail-function 'mailclient-send-it)
- '(smartrep-mode-line-active-bg (solarized-color-blend "#93a61a" "#01323d" 0.2))
  '(smtpmail-debug-info t)
  '(smtpmail-default-smtp-server "smtp.gmail.com")
  '(smtpmail-local-domain "gmail.com")
@@ -167,31 +137,7 @@
  '(smtpmail-smtp-service 587)
  '(smtpmail-smtp-user "unixbhaskar")
  '(smtpmail-stream-type 'starttls)
- '(term-default-bg-color "#002732")
- '(term-default-fg-color "#8d9fa1")
  '(user-mail-address "unixbhaskar@gmail.com")
- '(vc-annotate-background nil)
- '(vc-annotate-background-mode nil)
- '(vc-annotate-color-map
-   '((20 . "#ec423a")
-     (40 . "#dace73be2daa")
-     (60 . "#d060861a2512")
-     (80 . "#c49619")
-     (100 . "#b55b9c82193e")
-     (120 . "#ad589f3e1963")
-     (140 . "#a513a1d61994")
-     (160 . "#9c81a44d19d1")
-     (180 . "#93a61a")
-     (200 . "#84b7a96352b1")
-     (220 . "#7a4daad96863")
-     (240 . "#6cbbac617d20")
-     (260 . "#5a04adfd9175")
-     (280 . "#3cafa5")
-     (300 . "#41c4a690bd74")
-     (320 . "#41d4a1f2c946")
-     (340 . "#40129d4ad514")
-     (360 . "#3c98e0")))
- '(vc-annotate-very-old-color nil)
  '(webjump-sites
    '(("GNU Project FTP Archive" .
       [mirrors "https://ftp.gnu.org/pub/gnu/" "https://ftpmirror.gnu.org"])
@@ -224,13 +170,7 @@
      ("Risks Digest" . webjump-to-risks)
      ("Supplemental Web site list for webjump" . "www.neilvandyke.org/webjump/")
      (" My Blog At Wordpress " . "unixbhaskar.wordpress.com")
-     ("Linux Kernel " . "https://kernel.org/")))
- '(weechat-color-list
-   '(unspecified "#002732" "#01323d" "#ae1212" "#ec423a" "#687f00" "#93a61a" "#936d00" "#c49619" "#0069b0" "#3c98e0" "#a81761" "#e2468f" "#008981" "#3cafa5" "#8d9fa1" "#60767e"))
- '(xterm-color-names
-   ["#01323d" "#ec423a" "#93a61a" "#c49619" "#3c98e0" "#e2468f" "#3cafa5" "#faf3e0"])
- '(xterm-color-names-bright
-   ["#002732" "#db5823" "#62787f" "#60767e" "#8d9fa1" "#7a7ed2" "#9eacac" "#ffffee"]))
+     ("Linux Kernel " . "https://kernel.org/"))))
 (tool-bar-mode -1)
 (tooltip-mode -1)
 (menu-bar-mode -1)
@@ -399,11 +339,11 @@
 	     :init
 	     (ivy-rich-mode 1))
 ;; Mu4e Alerts
-(use-package mu4e-alert
-    :after mu4e
-    :hook ((after-init . mu4e-alert-enable-mode-line-display)
-           (after-init . mu4e-alert-enable-notifications))
-    :config (mu4e-alert-set-default-style 'libnotify))
+;; (use-package mu4e-alert
+;;     :after mu4e
+;;     :hook ((after-init . mu4e-alert-enable-mode-line-display)
+;;            (after-init . mu4e-alert-enable-notifications))
+;;     :config (mu4e-alert-set-default-style 'libnotify))
 ;; Visual line mode and Flyspell mode
 (add-hook 'mu4e-view-mode-hook #'visual-line-mode)
 (add-hook 'mu4e-compose-mode-hook 'flyspell-mode)
@@ -1270,12 +1210,6 @@ rather than the whole path."
          :url "https://unixbhaskar.wordpress.com/xmlrpc.php"
          :username "unixbhaskar")))
 (setq org2blog/wp-image-upload t)
-
-
-;; Neotree shortcut
-
-(global-set-key (kbd "C-n") 'neotree-toggle)
-
 
 
 ;; Dashboard
@@ -2177,3 +2111,6 @@ Start an unlimited search at `point-min' otherwise."
 
 (global-set-key (kbd "C-!") 'special-char-mode)
 (put 'narrow-to-region 'disabled nil)
+
+;; Stop creating backup files
+(setq make-backup-files nil)
