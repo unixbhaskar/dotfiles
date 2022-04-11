@@ -2387,3 +2387,7 @@ Start an unlimited search at `point-min' otherwise."
 (global-set-key (kbd "C-!") 'special-char-mode)
 #+end_src
 
+* Stop creating backup files
+#+begin_src emacs-lisp
+(setq make-backup-files nil)
+#+end_src
