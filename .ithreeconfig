@@ -126,7 +126,7 @@ bindsym $mod+Control+Left workspace prev
 bindsym $mod+1 ; workspace $workspace1 ; exec "st_solarized -n Kb -e kb";
 bindsym $mod+b ; exec "vimb";
 bindsym $mod+Shift+f ; exec "firefox";
-bindsym $mod+Home ; exec "emacs -fs";
+bindsym $mod+F11 ; exec "emacs -fs";
 bindsym $mod+o workspace $workspace5 ; exec "st_solarized -n System_Operations -e system_operation";
 bindsym $mod+n workspace $workspace6 ; exec "st_solarized -n Newsboat -e newsboat";
 bindsym $mod+c  workspace $workspace7 ; exec "st_solarized -n Calcurse -e calcurse";
@@ -138,7 +138,7 @@ bindsym $mod+braceright workspace $workspace12 ; exec "st -n Screencast -e scree
 bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
 bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
 bindsym $mod+p workspace $workspace15 ; exec pdf_viewer;
-bindsym $mod+F11 workspace $workspace16 ; exec sys_monitor;
+# bindsym $mod+F11 workspace $workspace16 ; exec sys_monitor;
 bindsym $mod+Shift+n ; exec nyxt;
 bindsym $mod+Ctrl+z workspace $workspace3 ;exec "firefox --private-window";
 
@@ -402,7 +402,7 @@ bindsym $mod+Ctrl+k exec kill_mpv
 # Emacs pop up buffer anywhere
 # for_window [title="^emacs-everywhere$"] move to scratchpad
  for_window [title="^emacs$"] floating enable, resize set 680 745
- bindsym $mod+End exec  "emacsclient -c"
+ bindsym $mod+F12 exec  "emacsclient -c"
 
 # Vim pop up buffer anywhere
 # for_window [instance="^vim-everywhere$"] move to scratchpad
@@ -457,7 +457,7 @@ bindcode --release $mod+108 exec select_capture
 bindsym $mod+apostrophe exec tour_videos
 
 # Open i3 related scripts
-bindsym $mod+F12 exec i3scripts
+# bindsym $mod+F12 exec i3scripts
 
 # Open  floating window with download progress meter
 for_window [instance="^download_progress$"] floating enable, resize set 900 500
