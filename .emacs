@@ -138,6 +138,7 @@
  '(smtpmail-smtp-user "unixbhaskar")
  '(smtpmail-stream-type 'starttls)
  '(user-mail-address "unixbhaskar@gmail.com")
+ '(warning-suppress-types '((browse-url)))
  '(webjump-sites
    '(("GNU Project FTP Archive" .
       [mirrors "https://ftp.gnu.org/pub/gnu/" "https://ftpmirror.gnu.org"])
@@ -778,6 +779,16 @@ rather than the whole path."
 (global-set-key "\C-cc" 'org-capture)
 ;; Color TODO keywords
 
+(defun org-capture-pdf-active-region ()
+  "Capture the active region of the pdf-view buffer."
+  (let* ((pdf-buf-name (plist-get org-capture-plist :original-buffer))
+         (pdf-buf (get-buffer pdf-buf-name)))
+    (if (buffer-live-p pdf-buf)
+        (with-current-buffer pdf-buf
+          (car (pdf-view-active-region-text)))
+      (user-error "Buffer %S not alive." pdf-buf-name))))
+
+;; Org capture template color distinguisher
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "red" :weight bold)
               ("ONGOING" :foreground "blue" :weight bold)
@@ -821,8 +832,10 @@ rather than the whole path."
                "* TODO Review %A %^G\n%x\n%U\n" :immediate-finish t)
               ("m" "Meeting" entry (file "~/.emacs.d/OrgFiles/refile.org")
                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
-              ("p" "Phone call" entry (file "~/.emacs.d/OrgFiles/refile.org")
-               "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
+              ;; ("p" "Phone call" entry (file "~/.emacs.d/OrgFiles/refile.org")
+              ;;  "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
+              ("p" "PDF-Notes" entry (file "~/.emacs.d/OrgFiles/notes.org")
+                  "* %?\n%(org-capture-pdf-active-region)\n")
               ("b" "Book" entry (file  "~/.emacs.d/OrgFiles/books.org")
 	      ;; "* %^{TITLE}\n:PROPERTIES:\n:ADDED: %<[%Y-%02m-%02d]>\n:END:%^{AUTHOR}p\n%?" :empty-lines 1)
                "* %(let* ((url (substring-no-properties (current-kill 0)))
