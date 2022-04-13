@@ -991,3 +991,5 @@ nnoremap <Leader>hn  :!htmlnote &<CR><CR>
 endfunction
 
 nnoremap <Leader>jm :call GotoJump()<CR>
+" Check diff before write by ;ch
+nnoremap <Leader>ch :w !diff % -<CR>
