@@ -116,7 +116,7 @@
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-selected-packages
-   '(dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate vterm-toggle dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate vterm-toggle dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert monokai-theme molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -1295,9 +1295,39 @@ rather than the whole path."
 
 ;; IRC
 
+;; (add-to-list 'load-path "~/.emacs.d/erc-sasl.el")
+;; ;; Require ERC-SASL package
+;; (require 'erc-sasl)
+
+;; ;; Add SASL server to list of SASL servers (start a new list, if it did not exist)
+;; (add-to-list 'erc-sasl-server-regexp-list "irc\\.libera\\.chat")
+
+;; ;; Redefine/Override the erc-login() function from the erc package, so that
+;; ;; it now uses SASL
+;; (defun erc-login ()
+;;   "Perform user authentication at the IRC server. (PATCHED)"
+;;   (erc-log (format "login: nick: %s, user: %s %s %s :%s"
+;;            (erc-current-nick)
+;;            (user-login-name)
+;;            (or erc-system-name (system-name))
+;;            erc-session-server
+;;            erc-session-user-full-name))
+;;   (if erc-session-password
+;;       (erc-server-send (format "PASS %s" erc-session-password))
+;;     (message "Logging in without password"))
+;;   (when (and (featurep 'erc-sasl) (erc-sasl-use-sasl-p))
+;;     (erc-server-send "CAP REQ :sasl"))
+;;   (erc-server-send (format "NICK %s" (erc-current-nick)))
+;;   (erc-server-send
+;;    (format "USER %s %s %s :%s"
+;;        ;; hacked - S.B.
+;;        (if erc-anonymous-login erc-email-userid (user-login-name))
+;;        "0" "*"
+;;        erc-session-user-full-name))
+;;   (erc-update-mode-line))
 ;; Set our nickname & real-name as constant variables
 (setq
- erc-nick "unixbhaskar"     ; Our IRC nick
+ erc-nick "unixbhaskar"     ; my IRC nick
  erc-user-full-name "Bhaskar Chowdhury") ; Our /whois name
 
 ;; Define a function to connect to a server
