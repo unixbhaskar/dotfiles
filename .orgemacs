@@ -1392,7 +1392,7 @@ rather than the whole path."
 
 
 (setq dashboard-projects-switch-function 'counsel-projectile-switch-project-by-name)
-(add-to-list 'dashboard-items '(agenda) t)
+(add-to-list 'dashboardtems '(agenda) t)
 (setq dashboard-week-agenda nil)
 (setq dashboard-org-agenda-categories '("Tasks" "Diary" "Notes"))
 (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
@@ -1400,8 +1400,37 @@ rather than the whole path."
 #+END_SRC
 * IRC
 #+BEGIN_SRC emacs-lisp
-;; IRC
+(add-to-list 'load-path "~/.emacs.d/erc-sasl.el");; IRC
 
+;; Require ERC-SASL package
+(require 'erc-sasl)
+
+;; Add SASL server to list of SASL servers (start a new list, if it did not exist)
+(add-to-list 'erc-sasl-server-regexp-list "irc\\.libera\\.chat")
+
+;; Redefine/Override the erc-login() function from the erc package, so that
+;; it now uses SASL
+(defun erc-login ()
+  "Perform user authentication at the IRC server. (PATCHED)"
+  (erc-log (format "login: nick: %s, user: %s %s %s :%s"
+           (erc-current-nick)
+           (user-login-name)
+           (or erc-system-name (system-name))
+           erc-session-server
+           erc-session-user-full-name))
+  (if erc-session-password
+      (erc-server-send (format "PASS %s" erc-session-password))
+    (message "Logging in without password"))
+  (when (and (featurep 'erc-sasl) (erc-sasl-use-sasl-p))
+    (erc-server-send "CAP REQ :sasl"))
+  (erc-server-send (format "NICK %s" (erc-current-nick)))
+  (erc-server-send
+   (format "USER %s %s %s :%s"
+       ;; hacked - S.B.
+       (if erc-anonymous-login erc-email-userid (user-login-name))
+       "0" "*"
+       erc-session-user-full-name))
+  (erc-update-mode-line))
 ;; Set our nickname & real-name as constant variables
 (setq
  erc-nick "unixbhaskar"     ; Our IRC nick
