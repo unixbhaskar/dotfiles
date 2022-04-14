@@ -155,7 +155,7 @@ alias newsboat_urls="vim /home/bhaskar/.newsboat/urls"
 alias gitgraph="git log --all --decorate --oneline --graph"
 alias i3edit="vim -O ~/.ithreeconfig ~/.orgithreeconfig"
 alias edit-archives="vim -O ~/bin/archive ~/bin/extract_archive"
-
+alias git_optimize="git reflog expire --all --expire=now; git gc --prune=now --aggressive"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
 #    #echo "$(date +%F@%T) - SSH-AGENT: Agent will be started"
