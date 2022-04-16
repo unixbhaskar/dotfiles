@@ -16,8 +16,8 @@ let g:CommandTMaxFiles=200000
 nnoremap <Leader>n :set invnumber number?<CR>
 "colorscheme molokai_dark
 let g:solarized_term=1
-" let g:solarized_termcolors=256
-" set t_Co=256
+ " let g:solarized_termcolors=256
+ " set t_Co=256
 let g:solarized_bold=1
 let g:solarized_underline=1
 let g:solarized_italic=1
