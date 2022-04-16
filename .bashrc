@@ -578,3 +578,5 @@ alias ec='emacsclient --tty'
 alias eg='emacsclient -c'
 # Notes access
 alias notes="vim ~/Notes/index.md"
+# Bash debug
+export PS4='# ${BASH_SOURCE}:${LINENO}: ${FUNCNAME[0]}() - [${SHLVL},${BASH_SUBSHELL},$?] '
