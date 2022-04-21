@@ -660,7 +660,7 @@ function! PreviewerMarkdown()
   silent execute "!echo ".l:path." > ~/.lastpreview.log"
   :execute "bel vert terminal"
 endfunction
-nmap <Leader>m : call PreviewerMarkdown()<CR>clear<CR>glow -p $(cat ~/.lastpreview.log)<CR>
+nmap <Leader>mk : call PreviewerMarkdown()<CR>clear<CR>glow -p $(cat ~/.lastpreview.log)<CR>
 " Ale ,language server protocol
 Plugin 'dense-analysis/ale'
 " Buffer manipulation
