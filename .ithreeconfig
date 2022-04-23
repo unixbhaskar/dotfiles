@@ -535,4 +535,9 @@ bindsym $mod+i exec "st_solarized -e kb"
 
 # Pop up a floating term
 bindsym $mod+Shift+t exec "floaterm ~/bin/st_solarized"
+
+# Open emacs client on tty
+
+bindsym $mod+Shift+y exec "st_solarized -e emacsclient --tty"
+
 # vim:filetype=i3config
