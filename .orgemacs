@@ -2418,9 +2418,16 @@ Start an unlimited search at `point-min' otherwise."
 (global-set-key (kbd "C-!") 'special-char-mode)
 #+end_src
 
-* Stop creating backup files
+* Stop creating backup files and put all the backup file in one directory
 #+begin_src emacs-lisp
 (setq make-backup-files nil)
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+  backup-by-copying t    ; Don't delink hardlinks
+  version-control t      ; Use version numbers on backups
+  delete-old-versions t  ; Automatically delete excess backups
+  kept-new-versions 20   ; how many of the newest versions to keep
+  kept-old-versions 5    ; and how many of the old
+  )
 #+end_src
 
 * Capture selected pdf doc text as note
@@ -2434,3 +2441,4 @@ Start an unlimited search at `point-min' otherwise."
           (car (pdf-view-active-region-text)))
       (user-error "Buffer %S not alive." pdf-buf-name))))
 #+end_src
+
