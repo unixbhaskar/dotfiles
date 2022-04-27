@@ -76,6 +76,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'axvr/org.vim'
 Plugin 'voldikss/vim-floaterm'
 Plugin 'vimwiki/vimwiki'
+Plugin 'dpelle/vim-LanguageTool'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
@@ -994,3 +995,6 @@ endfunction
 nnoremap <Leader>jm :call GotoJump()<CR>
 " Check diff before write by ;ch
 nnoremap <Leader>ch :w !diff % -<CR>
+" Language Tool cli
+let g:languagetool_jar="$HOME/LanguageTool-5.7/languagetool-commandline.jar"
+nnoremap <Leader>lt :LanguageToolCheck<CR>
