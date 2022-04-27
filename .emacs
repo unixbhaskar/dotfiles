@@ -59,7 +59,7 @@
  '(global-highlight-parentheses-mode t)
  '(global-prettify-symbols-mode t)
  '(gnus-add-timestamp-to-message t)
- '(gnus-default-nntp-server "news:comp.emacs")
+ '(gnus-default-nntp-server "news.gnus.org")
  '(gnus-expert-user t)
  '(grep-highlight-matches 'always)
  '(icomplete-mode t)
