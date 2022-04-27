@@ -971,8 +971,8 @@ nnoremap <Leader>en :saveas <C-R>%.gpg<CR>
 " Build notes in PDF and Html for better viewing
 augroup Notes
        autocmd!
-       autocmd BufWritePost *.md silent !buildnotepdf %:p
-       autocmd BufWritePost *.md silent !buildnotehtml %:p
+       autocmd BufWritePost ~/Notes/*.md silent !buildnotepdf %:p
+       autocmd BufWritePost ~/Notes/*.md silent !buildnotehtml %:p
 augroup END
 nnoremap <Leader>pn  :!pdfnote &<CR><CR>
 nnoremap <Leader>hn  :!htmlnote &<CR><CR>
