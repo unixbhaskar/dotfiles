@@ -512,6 +512,10 @@ bindsym $mod+Ctrl+g exec "st_solarized -e git_clone_download"
 for_window [instance="^st-256color$"] floating enable, resize set 900 500
 bindsym $mod+Shift+a exec  "st_solarized -e git_projects"
 
+# Run tig on selected project
+for_window [instance="^st-256color$"] floating enable, resize set 900 500
+bindsym $mod+Ctrl+i exec  "run_tig_on_git_repo.sh"
+
 # Package install via dmenu
 for_window [instance="^st-256color$"] floating enable, resize set 900 500
 bindsym $mod+Ctrl+p exec "st_solarized -e download_package"
