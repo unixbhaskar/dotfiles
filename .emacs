@@ -86,6 +86,7 @@
      ("~/git-linux/i3" . 0)
      ("~/git-linux/nyxt" . 0)))
  '(marginalia-mode t)
+ '(mml-secure-openpgp-sign-with-sender t)
  '(mu4e-display-update-status-in-modeline t)
  '(mu4e-icalendar-diary-file "~/.emacs.d/OrgFiles/refile.org")
  '(mu4e-mu-binary "/usr/local/bin/mu")
@@ -97,7 +98,7 @@
  '(objed-cursor-color "#ff000d")
  '(org-agenda-diary-file "~/.emacs.d/OrgFiles/diary.org")
  '(org-agenda-files
-   '("~/.emacs.d/OrgFiles/diary.org" "~/.emacs.d/OrgFiles/task.org"))
+   '("/home/bhaskar/.emacs.d/OrgFiles/diary.org" "/home/bhaskar/.emacs.d/OrgFiles/task.org"))
  '(org-agenda-include-diary t)
  '(org-agenda-insert-diary-extract-time t)
  '(org-directory "~/.emacs.d/OrgFiles")
@@ -2168,3 +2169,6 @@ Start an unlimited search at `point-min' otherwise."
   kept-new-versions 10   ; how many of the newest versions to keep
   kept-old-versions 5    ; and how many of the old
   )
+
+;; Call up proced ,which system process viewer
+(global-set-key (kbd "C-c h t") 'proced')
