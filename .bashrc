@@ -336,7 +336,7 @@ alias eqs='equery s' #display total size of all files owned by PKG
 alias eqw='equery w' #print full path to ebuild for PKG
 #Shortcut to common kernel tool ,last_commited_hash,checkpatch,filehash et al
 
-alias owner="scripts/get_maintainer.pl $1"
+alias owner="/home/bhaskar/git-linux/linux/scripts/get_maintainer.pl $1"
 
 last_commited_hash() {
 
@@ -350,7 +350,7 @@ last_commited_hash() {
 
 checkpatch() {
 
-	patch_check="scripts/checkpatch.pl -g $(gitlog | gawk '{ print $1 }' | head -1)"
+	patch_check="/home/bhaskar/git-linux/linux/scripts/checkpatch.pl -g $(gitlog | gawk '{ print $1 }' | head -1)"
 
 	$patch_check
 }
