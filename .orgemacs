@@ -2442,3 +2442,9 @@ Start an unlimited search at `point-min' otherwise."
       (user-error "Buffer %S not alive." pdf-buf-name))))
 #+end_src
 
+* Call up proced aka system process viewer
+
+#+begin_src emacs-lisp
+
+(global-set-key (kbd "C-c h t") 'proced)
+#+end_src
