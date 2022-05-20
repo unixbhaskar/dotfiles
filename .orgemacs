@@ -2448,3 +2448,8 @@ Start an unlimited search at `point-min' otherwise."
 
 (global-set-key (kbd "C-c h t") 'proced)
 #+end_src
+
+* xclip helps to copy and paste from clipboard
+#+begin_src emacs-lisp
+(xclip-mode 1)
+#+end_src
