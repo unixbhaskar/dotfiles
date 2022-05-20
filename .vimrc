@@ -772,6 +772,11 @@ function! NotesRefBlock()
 	r~/.vim/templates/notesref
 endfunction
 nmap <Leader>no :call NotesRefBlock()<CR>
+
+function! Ebuildsourcecompile()
+	r~/.vim/templates/ebuildsourecompile
+endfunction
+nmap <Leader>eb :call Ebuildsourcecompile()<CR>
 " Enlist match and replace in a buffer
 " map <S-r> :g//#|s///g|#
 " Vimgrep invocation by pressing ;g
