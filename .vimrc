@@ -1003,3 +1003,10 @@ nnoremap <Leader>ch :w !diff % -<CR>
 " Language Tool cli
 let g:languagetool_jar="$HOME/LanguageTool-5.7/languagetool-commandline.jar"
 nnoremap <Leader>lt :LanguageToolCheck<CR>
+
+" Define the highlight line color
+highlight LineHighlight ctermbg=darkgray guibg=darkgray
+" highlight the current line
+nnoremap <silent> <Leader>lh :call matchadd('LineHighlight', '\%'.line('.').'l')<CR>
+" clear all the highlighted lines
+nnoremap <silent> <Leader>hc :call clearmatches()<CR>
