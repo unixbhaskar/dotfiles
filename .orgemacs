@@ -2453,3 +2453,17 @@ Start an unlimited search at `point-min' otherwise."
 #+begin_src emacs-lisp
 (xclip-mode 1)
 #+end_src
+
+* Kill whole word at once
+#+BEGIN_SRC emacs-lisp
+(defun kill-whole-word()
+  (interactive)
+  (backward-word)
+  (kill-word 1) )
+(global-set-key (kbd "C-c w") 'kill-whole-word)
+#+END_SRC
+
+* Sudo edit file
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-c s e") 'sudo-edit)
+#+END_SRC
