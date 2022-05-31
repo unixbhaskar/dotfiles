@@ -2189,9 +2189,19 @@ Start an unlimited search at `point-min' otherwise."
   (interactive)
   (backward-word)
   (kill-word 1) )
-(global-set-key (kbd "C-c w") 'kill-whole-word)
+(global-set-key (kbd "C-c w w") 'kill-whole-word)
 
 
 ;; For Sudo edit
 
 (global-set-key (kbd "C-c s e") 'sudo-edit)
+
+;; Copy whole line
+(defun copy-whole-line()
+  (interactive)
+  (save-excursion
+    (kill-new
+     (buffer-substring
+      (point-at-bol)
+      (point-at-eol)))))
+(global-set-key (kbd "C-c w l") 'kill-whole-line)
