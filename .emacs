@@ -118,7 +118,7 @@
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-archive-upload-base "/home/bhaskar/.emacs.d/elpa/archives/gnu elpa")
  '(package-selected-packages
-   '(xclip orgit org2web amx grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate vterm-toggle dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(sudo-edit mark-multiple xclip orgit org2web amx grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate vterm-toggle dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -487,7 +487,14 @@
 (use-package company
   :defer 2
   :config
-  (global-company-mode))
+  (global-company-mode 1))
+
+(global-set-key "\t" 'company-complete-common)
+;; (add-to-list 'company-backends 'company-dabbrev-code)
+;; (add-to-list 'company-backends 'company-files)
+;; (add-to-list 'company-backends 'company-keywords)
+
+
 ;; SPELL CHECKING
 ;; Spell checking requires an external command to be available. Install =aspell= on your Mac, then make it the default checker for Emacs' =ispell=. Note that personal dictionary is located at =~/.aspell.LANG.pws= by default.
 
@@ -738,11 +745,11 @@ rather than the whole path."
 (setq org-return-follows-link t)
 ;; Source code block comment
 
-(set-register ?p "#+begin_src perl\n\n#+end_src")
-(set-register ?b "#+begin_src bash\n\n#+end_src")
-(set-register ?s "#+begin_src sh\n\n#+end_src")
-(set-register ?c "#+begin_src C\n\n#+end_src")
-(set-register ?l "#+begin_src emacs-lisp\n\n#+end_src")
+(set-register ?p "#+BEGIN_SRC perl\n\n#+END_SRC")
+(set-register ?b "#+BEGIN_SRC bash\n\n#+END_SRC")
+(set-register ?s "#+BEGIN_SRC sh\n\n#+END_SRC")
+(set-register ?c "#+BEGIN_SRC C\n\n#+END_SRC")
+(set-register ?l "#+BEGIN_SRC emacs-lisp\n\n#+END_SRC")
 ;; Make sure org-bullet-mode is ture
 (setq org-bullets-mode t)
 (use-package org-bullets
@@ -2175,3 +2182,16 @@ Start an unlimited search at `point-min' otherwise."
 
 ;; xclip helps to copy from system clipboard
 (xclip-mode 1)
+
+;; Kill whole word at once
+
+(defun kill-whole-word()
+  (interactive)
+  (backward-word)
+  (kill-word 1) )
+(global-set-key (kbd "C-c w") 'kill-whole-word)
+
+
+;; For Sudo edit
+
+(global-set-key (kbd "C-c s e") 'sudo-edit)
