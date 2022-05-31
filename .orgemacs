@@ -2460,10 +2460,22 @@ Start an unlimited search at `point-min' otherwise."
   (interactive)
   (backward-word)
   (kill-word 1) )
-(global-set-key (kbd "C-c w") 'kill-whole-word)
+(global-set-key (kbd "C-c w w") 'kill-whole-word)
 #+END_SRC
 
 * Sudo edit file
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-c s e") 'sudo-edit)
 #+END_SRC
+
+* Copy whole line
+#+begin_src emacs-lisp
+(defun copy-whole-line()
+  (interactive)
+  (save-excursion
+    (kill-new
+     (buffer-substring
+      (point-at-bol)
+      (point-at-eol)))))
+(global-set-key (kbd "C-c w l") 'copy-whole-line)
+#+end_src
