@@ -810,7 +810,17 @@ nmap <Leader>eb :call Ebuildsourcecompile()<CR>
  nnoremap <Leader>v :vnew<CR>
  nnoremap <Leader>s :split<CR>
  " Change directory ;d
-   nnoremap <Leader>d :lcd <space>
+function! ChangeDirectory (newpath)
+  if isdirectory(a:newpath)
+    :execute "lcd " . a:newpath
+  else
+    let dirname = fnamemodify(a:newpath, ":h")
+    :execute "lcd " . dirname
+  endif
+endfunction
+
+command! -nargs=1 -complete=file ChangeDir :call ChangeDirectory("<args>")
+nnoremap <Leader>d :ChangeDir<space>
 " Auto Pairs
  Plugin 'jiangmiao/auto-pairs'
 let g:AutoPairsFlyMode = 1
