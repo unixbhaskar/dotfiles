@@ -528,7 +528,7 @@ bindsym $mod+Shift+plus exec "st_solarized -e tools"
 bindsym $mod+Ctrl+apostrophe exec surf_key_maps
 
 # Surf history enlist
-bindsym $mod+Shift+apostrophe exec surf_history_enlist
+bindsym $mod+Shift+apostrophe exec surf_history_enliste
 
 # Youtube studio link
 
@@ -543,5 +543,6 @@ bindsym $mod+Shift+t exec "floaterm ~/bin/st_solarized"
 # Open emacs client on tty
 
 bindsym $mod+Shift+y exec "st_solarized -e emacsclient --tty"
+
 
 # vim:filetype=i3config
