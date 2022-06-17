@@ -1020,3 +1020,12 @@ highlight LineHighlight ctermbg=darkgray guibg=darkgray
 nnoremap <silent> <Leader>lh :call matchadd('LineHighlight', '\%'.line('.').'l')<CR>
 " clear all the highlighted lines
 nnoremap <silent> <Leader>hc :call clearmatches()<CR>
+" Change the cursor color and shape depending on the mode.
+if &term =~ "st-256color" && $SSH_CLIENT == ''
+    let &t_SI = "\<Esc>]12;purple\x7" . "\<Esc>[5 q"
+    try
+        let &t_SR = "\<Esc>]12;darkred\x7" . "\<Esc>[3 q"
+    catch
+    endtry
+    let &t_EI = "\<Esc>]12;royalblue2\x7" . "\<Esc>[2 q"
+endif
