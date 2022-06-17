@@ -134,7 +134,7 @@ macro index G "!fetchmail -a -m 'procmail -d %T'\r"
 # ignore *
 unignore Date To From: Subject X-Mailer Organization User-Agent
 hdr_order Date From To Subject X-Mailer User-Agent Organization
-
+unignore my_hdr X-URL: https://unixbhaskar.wordpress.com
 # ##your Mutt has to have some colors
 # ##these are for four levels of quoted text
 # ##they override the system settings in /etc/mutt/Muttrc
@@ -144,7 +144,7 @@ color quoted1 magenta black
 # #color quoted2 yellow default
 # #color quoted3 red default
 # #color signature cyan cyan
-
+set signature = "$HOME/.mutt/mysig.sig"
 #How to color individual mail id on index page
 
 color index brightcyan default '~f torvalds@linux-foundation.org'
