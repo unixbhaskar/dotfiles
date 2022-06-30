@@ -2501,3 +2501,21 @@ Start an unlimited search at `point-min' otherwise."
 #+begin_src emacs-lisp
 (global-set-key (kbd "C-x n s") 'scratch)
 #+end_src
+
+* Doom modeline color change
+#+BEGIN_SRC emacs-lisp
+(set-face-attribute 'mode-line nil
+                    :background "#353644"
+                    :foreground "white"
+                    :box '(:line-width 8 :color "#353644")
+                    :overline nil
+                    :underline nil)
+
+(set-face-attribute 'mode-line-inactive nil
+                    :background "#565063"
+                    :foreground "white"
+                    :box '(:line-width 8 :color "#565063")
+                    :overline nil
+                    :underline nil)
+#+END_SRC
+
