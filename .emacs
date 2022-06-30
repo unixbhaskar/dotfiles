@@ -22,7 +22,7 @@
  '(cua-enable-modeline-indications t)
  '(custom-enabled-themes '(molokai))
  '(custom-safe-themes
-   '("51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "b494aae329f000b68aa16737ca1de482e239d44da9486e8d45800fd6fd636780" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
+   '("3e200d49451ec4b8baa068c989e7fba2a97646091fd555eca0ee5a1386d56077" "833ddce3314a4e28411edf3c6efde468f6f2616fc31e17a62587d6a9255f4633" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "b494aae329f000b68aa16737ca1de482e239d44da9486e8d45800fd6fd636780" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
  '(debug-on-error t)
  '(deft-filter-only-filenames t)
  '(diary-file "~/.emacs.d/OrgFiles/diary.org")
@@ -118,7 +118,7 @@
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-archive-upload-base "/home/bhaskar/.emacs.d/elpa/archives/gnu elpa")
  '(package-selected-packages
-   '(sudo-edit mark-multiple xclip orgit org2web amx grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate vterm-toggle dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(scratch modus-themes sudo-edit mark-multiple xclip orgit org2web amx grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -459,9 +459,9 @@
 
 (setq user-mail-address "unixbhaskar@gmail.com"
       user-full-name "Bhaskar Chowdhury")
-
+(setq gnus-select-method '(nntp "news.eternal-september.org"))
 (setq gnus-secondary-select-methods
-      '((nntp "news.gnus.org")
+      '((nntp "news.gwene.org")
       (nnimap "gmail"
 	       (nnimap-address "imap.gmail.com")  ; it could also be imap.googlemail.com if that's your server.
 	       (nnimap-server-port "imaps")
@@ -2183,6 +2183,11 @@ Start an unlimited search at `point-min' otherwise."
 ;; xclip helps to copy from system clipboard
 (xclip-mode 1)
 
+;; For Sudo edit
+
+(global-set-key (kbd "C-c s e") 'sudo-edit)
+
+
 ;; Kill whole word at once
 
 (defun kill-whole-word()
@@ -2191,10 +2196,6 @@ Start an unlimited search at `point-min' otherwise."
   (kill-word 1) )
 (global-set-key (kbd "C-c w w") 'kill-whole-word)
 
-
-;; For Sudo edit
-
-(global-set-key (kbd "C-c s e") 'sudo-edit)
 
 ;; Copy whole line
 (defun copy-whole-line()
@@ -2220,3 +2221,7 @@ Start an unlimited search at `point-min' otherwise."
   (balance-windows)
   (other-window 1))
 (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
+
+;; Open scratch buffer
+
+(global-set-key (kbd "C-x n s") 'scratch)
