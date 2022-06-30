@@ -2497,3 +2497,7 @@ Start an unlimited search at `point-min' otherwise."
 (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
 #+end_src
 
+* Open scratch buffer
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-x n s") 'scratch)
+#+end_src
