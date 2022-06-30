@@ -156,6 +156,7 @@ alias gitgraph="git log --all --decorate --oneline --graph"
 alias i3edit="vim -O ~/.ithreeconfig ~/.orgithreeconfig"
 alias edit-archives="vim -O ~/bin/archive ~/bin/extract_archive"
 alias git_optimize="git reflog expire --all --expire=now; git gc --prune=now --aggressive"
+alias vig="vim_with_gruvbox $1"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
 #    #echo "$(date +%F@%T) - SSH-AGENT: Agent will be started"
@@ -590,3 +591,4 @@ vgrep() {
   VGREP_PREFIX="vgrep --no-header"
 FZF_DEFAULT_COMMAND="$VGREP_PREFIX '$INITIAL_QUERY'" fzf --bind "change:reload:$VGREP_PREFIX {q} || true" --ansi --phony --tac --query "$INITIAL_QUERY" | awk '{print $1}' | xargs -I{} -o vgrep --show {}
 }
+
