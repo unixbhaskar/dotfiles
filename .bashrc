@@ -157,6 +157,10 @@ alias i3edit="vim -O ~/.ithreeconfig ~/.orgithreeconfig"
 alias edit-archives="vim -O ~/bin/archive ~/bin/extract_archive"
 alias git_optimize="git reflog expire --all --expire=now; git gc --prune=now --aggressive"
 alias vig="vim_with_gruvbox $1"
+alias pkg_mask="vim /etc/portage/package.mask/$1"
+alias pkg_unmask="vim /etc/portage/package.unmask/$1"
+alias pkg_keyword="vim /etc/portage/package.accept_keywords"
+alias pkg_use="vim /etc/portage/package.use/$1"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
 #    #echo "$(date +%F@%T) - SSH-AGENT: Agent will be started"
