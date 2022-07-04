@@ -55,7 +55,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+# bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -544,5 +544,7 @@ bindsym $mod+Shift+t exec "floaterm ~/bin/st_solarized"
 
 bindsym $mod+Shift+y exec "st_solarized -e emacsclient --tty"
 
+# Make scratchpad windows shows at once
+bindsym $mod+Ctrl+1 exec "i3-msg '[class=.] scratchpad show'"
 
 # vim:filetype=i3config
