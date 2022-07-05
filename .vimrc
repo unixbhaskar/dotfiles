@@ -229,6 +229,7 @@ autocmd BufWritePost  .newsboat_config !copy_newsboat_config
 autocmd BufWritePost  .orgemacs !notify_config_file_updates
 autocmd BufWritePost  .orgithreeconfig !notify_config_file_updates
 autocmd BufWritePost  .nyxt_config.lisp !notify_config_file_updates
+autocmd BufWritePost   ~/bin/my_yt_videos !video_file_update.sh
 augroup END
 "Move between splits
 nnoremap <C-h> <C-w><C-h>
