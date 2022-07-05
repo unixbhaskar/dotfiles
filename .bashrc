@@ -161,6 +161,7 @@ alias pkg_mask="vim /etc/portage/package.mask/$1"
 alias pkg_unmask="vim /etc/portage/package.unmask/$1"
 alias pkg_keyword="vim /etc/portage/package.accept_keywords"
 alias pkg_use="vim /etc/portage/package.use/$1"
+alias yt_video="vim ~/bin/my_yt_videos"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
 #    #echo "$(date +%F@%T) - SSH-AGENT: Agent will be started"
