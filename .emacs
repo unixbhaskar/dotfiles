@@ -122,7 +122,7 @@
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
  '(package-archive-upload-base "/home/bhaskar/.emacs.d/elpa/archives/gnu elpa")
  '(package-selected-packages
-   '(scratch modus-themes sudo-edit mark-multiple xclip orgit org2web amx grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web amx grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -494,9 +494,9 @@
   (global-company-mode 1))
 
 (global-set-key "\t" 'company-complete-common)
-;; (add-to-list 'company-backends 'company-dabbrev-code)
-;; (add-to-list 'company-backends 'company-files)
-;; (add-to-list 'company-backends 'company-keywords)
+ ;; (add-to-list 'company-backends 'company-dabbrev-code)
+ ;; (add-to-list 'company-backends 'company-files)
+ ;; (add-to-list 'company-backends 'company-keywords)
 
 
 ;; SPELL CHECKING
@@ -852,7 +852,7 @@ rather than the whole path."
                   "* %?\n%(org-capture-pdf-active-region)\n")
               ("b" "Book" entry (file  "~/.emacs.d/OrgFiles/books.org")
 	      ;; "* %^{TITLE}\n:PROPERTIES:\n:ADDED: %<[%Y-%02m-%02d]>\n:END:%^{AUTHOR}p\n%?" :empty-lines 1)
-               "* %(let* ((url (substring-no-properties (current-kill 0)))
+               "*  %(let* ((url (substring-no-properties (current-kill 0)))
                   (details (org-books-get-details url)))
                 (when details (apply #'org-books-format 1 details)))")
 ;;("l" "Book log" item (function org-books-visit-book-log)
@@ -2245,3 +2245,15 @@ Start an unlimited search at `point-min' otherwise."
 ;; Open scratch buffer
 
 (global-set-key (kbd "C-x n s") 'scratch)
+
+;; Open pocket reader
+
+(global-set-key (kbd "C-c n p") 'pocket-reader)
+
+;; Convenience for M-x on terminal
+
+(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+
+;; Stop creating backup files
+
+(setq make-backup-files nil)
