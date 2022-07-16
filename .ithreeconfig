@@ -126,7 +126,7 @@ bindsym $mod+Control+Left workspace prev
 bindsym $mod+1 ; workspace $workspace1
 bindsym $mod+b ; exec "vimb";
 bindsym $mod+Shift+f ; exec "firefox";
-bindsym $mod+F11 ; exec "emacs -fs";
+# bindsym $mod+F11 ; exec "emacs -fs";
 bindsym $mod+o workspace $workspace5 ; exec "st_solarized -n System_Operations -e system_operation";
 bindsym $mod+n workspace $workspace6 ; exec "st_solarized -n Newsboat -e newsboat";
 bindsym $mod+c  workspace $workspace7 ; exec "st_solarized -n Calcurse -e calcurse";
@@ -457,7 +457,7 @@ bindcode --release $mod+108 exec select_capture
 bindsym $mod+apostrophe exec tour_videos
 
 # Open i3 related scripts
-# bindsym $mod+F12 exec i3scripts
+ bindsym $mod+F11 exec i3scripts
 
 # Open  floating window with download progress meter
 for_window [instance="^download_progress$"] floating enable, resize set 900 500
