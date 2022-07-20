@@ -1914,7 +1914,25 @@ rather than the whole path."
  (global-set-key (kbd "C-c n e") 'org-open-dotemacs-file)
 #+end_src
 * Quit buffer with less keystroke C-q
-#+begin_src emacs-lisp
+#+begin_src t-key (kbd "C-q"))
+(globalset-key
+(defun my-kill-this-buffer ()
+  (interactive)
+  (catch 'quit
+    (save-window-excursion
+      (let (done)
+        (when (and buffer-file-name (buffer-modified-p))
+          (while (not done)
+            (let ((response (read-char-choice
+                             (format "Save file %s? (y, n, d, q) " (buffer-file-name))
+                             '(?y ?n ?d ?q))))
+              (setq done (cond
+                          ((eq response ?q) (throw 'quit nil))
+                          ((eq response ?y) (save-buffer) t)
+                          ((eq response ?n) (set-buffer-modified-p nil) t)
+                          ((eq response ?d) (diff-buffer-with-file) nil))))))
+        (kill-buffer (current-buffer))))))
+
    (global-set-key "C-q" 'kill-this-buffer)
 #+end_src
 * Keyboard macro to copy this file to dotfiles repo
@@ -2519,3 +2537,7 @@ Start an unlimited search at `point-min' otherwise."
                     :underline nil)
 #+END_SRC
 
+* Convenience for M-x on the terminal
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+#+END_SRC
