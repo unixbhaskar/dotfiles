@@ -1010,7 +1010,7 @@ endfunction
 
 nnoremap <Leader>jm :call GotoJump()<CR>
 " Check diff before write by ;ch
-nnoremap <Leader>ch :w !diff % -<CR>
+nnoremap <silent><Leader>ch :w !diff % -<CR>
 " Language Tool cli
 let g:languagetool_jar="$HOME/LanguageTool-5.7/languagetool-commandline.jar"
 nnoremap <Leader>lt :LanguageToolCheck<CR>
