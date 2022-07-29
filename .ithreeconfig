@@ -307,7 +307,10 @@ for_window [class="^.*"] border pixel 1
 
 
 # Take a screenshot of the entire desktop upon pressing $mod+x
-bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots'
+bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots' && notify-send -t 1000 "Screenhot stored in ~/Pictures/Screenshots directory"
+
+# Show latest capture screenshot
+bindsym $mod+Shift+comma  exec show_latest_screenshot
 
 # set $mode_launcher Launch: [b]ash_keywords [f]irefox_keywords
 
