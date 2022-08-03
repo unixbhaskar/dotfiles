@@ -192,7 +192,7 @@ bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
+#bindsym $mod+0 workspace number 10
 bindsym $mod+Ctrl+braceleft workspace number 11
 bindsym $mod+Ctrl+braceright workspace number 12
 #bindsym $mod+Ctrl+m workspace number 13
@@ -552,5 +552,9 @@ bindsym $mod+Ctrl+1 exec "i3-msg '[class=.] scratchpad show'"
 
 # Mail compose from command line with emacs
 bindsym $mod+Ctrl+m exec mail_compose_send_by_emacs.sh
+
+# Enlist window list
+bindsym $mod+0 exec win_list
+
 
 # vim:filetype=i3config
