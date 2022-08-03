@@ -2541,3 +2541,4 @@ Start an unlimited search at `point-min' otherwise."
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 #+END_SRC
+
