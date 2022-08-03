@@ -22,7 +22,7 @@
  '(cua-enable-modeline-indications t)
  '(custom-enabled-themes '(molokai))
  '(custom-safe-themes
-   '("3e200d49451ec4b8baa068c989e7fba2a97646091fd555eca0ee5a1386d56077" "833ddce3314a4e28411edf3c6efde468f6f2616fc31e17a62587d6a9255f4633" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "b494aae329f000b68aa16737ca1de482e239d44da9486e8d45800fd6fd636780" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
+   '("73803d7cebbc240fd6cd8a54077b8fbf0b263a25db48579f5953279986283481" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "3e200d49451ec4b8baa068c989e7fba2a97646091fd555eca0ee5a1386d56077" "833ddce3314a4e28411edf3c6efde468f6f2616fc31e17a62587d6a9255f4633" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "b494aae329f000b68aa16737ca1de482e239d44da9486e8d45800fd6fd636780" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
  '(debug-on-error t)
  '(deft-filter-only-filenames t)
  '(diary-file "~/.emacs.d/OrgFiles/diary.org")
@@ -1173,6 +1173,13 @@ rather than the whole path."
   (load-file "~/.emacs"))
 (global-set-key (kbd "C-c r") 'reload-dotemacs)
 
+;; Open dot emacs file
+
+(defun open-dotemacs-file ()
+  (interactive)
+  (find-file "~/.emacs"))
+(global-set-key (kbd "C-c e") 'open-dotemacs-file)
+
 ;; Open books.org file
 
 (defun org-open-books-file ()
@@ -1340,33 +1347,33 @@ rather than the whole path."
 ;;        erc-session-user-full-name))
 ;;   (erc-update-mode-line))
 ;; Set our nickname & real-name as constant variables
-(setq
- erc-nick "unixbhaskar"     ; my IRC nick
- erc-user-full-name "Bhaskar Chowdhury") ; Our /whois name
+;; (setq
+;;  erc-nick "unixbhaskar"     ; my IRC nick
+;;  erc-user-full-name "Bhaskar Chowdhury") ; Our /whois name
 
-;; Define a function to connect to a server
-(defun some-serv ()
-  (lambda ()
-  (interactive)
-  (erc :server "irc.libera.chat"
-       :port   "6667")))
+;; ;; Define a function to connect to a server
+;; (defun some-serv ()
+;;   (lambda ()
+;;   (interactive)
+;;   (erc :server "irc.libera.chat"
+;;        :port   "6667")))
 
-;; TLS version
+;; ;; TLS version
 
-;; This example is also using erc's TLS capabilities:
-(global-set-key "\C-ce"
-  (lambda ()
-  (interactive)
-  (erc-tls :server "irc.libera.chat"
-           :port   "6697")
+;; ;; This example is also using erc's TLS capabilities:
+;; (global-set-key "\C-ce"
+;;   (lambda ()
+;;   (interactive)
+;;   (erc-tls :server "irc.libera.chat"
+;;            :port   "6697")
 
-;; Autojoin irc channel
+;; ;; Autojoin irc channel
 
-(require 'erc-join)
-(erc-autojoin-enable)
+;; (require 'erc-join)
+;; (erc-autojoin-enable)
 
-(setq erc-autojoin-channels-alist
-      '(("irc.libera.chat"  "#linux" "#kernel" "#git" "#emacs" "#vim" "#sysadmin")))))
+;; (setq erc-autojoin-channels-alist
+;;       '(("irc.libera.chat"  "#linux" "#kernel" "#git" "#emacs" "#vim" "#sysadmin")))))
 ;; Image-dired
 
 (global-set-key (kbd "C-c i m") 'image-dired)
@@ -2078,6 +2085,9 @@ Start an unlimited search at `point-min' otherwise."
                            (:sunset  . molokai)))
   (circadian-setup))
 
+
+
+
 ;; Org-roam V2 migration
 (setq org-roam-v2-ack t)
 
@@ -2273,3 +2283,16 @@ Start an unlimited search at `point-min' otherwise."
 ;; Stop creating backup files
 
 (setq make-backup-files nil)
+
+;; Helpful keybind
+(global-set-key (kbd "C-h f") #'helpful-callable)
+
+(global-set-key (kbd "C-h v") #'helpful-variable)
+
+(global-set-key (kbd "C-h k") #'helpful-key)
+
+
+;; Lookup the current symbol at point. C-c C-d is a common keybinding
+;; for this in lisp modes.
+(global-set-key (kbd "C-c C-d") #'helpful-at-point)
+
