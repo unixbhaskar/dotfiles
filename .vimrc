@@ -1013,7 +1013,7 @@ nnoremap <Leader>jm :call GotoJump()<CR>
 nnoremap <silent><Leader>ch :w !diff % -<CR>
 " Language Tool cli
 let g:languagetool_jar="$HOME/LanguageTool-5.7/languagetool-commandline.jar"
-nnoremap <Leader>lt :LanguageToolCheck<CR>
+nnoremap <silent><Leader>lt :LanguageToolCheck<CR>
 
 " Define the highlight line color
 highlight LineHighlight ctermbg=darkgray guibg=darkgray
