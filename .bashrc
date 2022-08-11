@@ -136,7 +136,6 @@ alias list_system_timers="systemctl  list-timers --all"
 alias keyboard_key_values="xmodmap -pke | less"
 alias fix_spell="$HOME/git-linux/linux/scripts/checkpatch.pl -f --terse --nosummary --types=typo_spelling $1"
 alias build=build
-alias see_portage_log="$(command -v elogv)"
 alias localmail="mutt -F $HOME/.muttrc.local"
 alias enable_config="scripts/config --enable $1"
 alias disable_config="scripts/config --disable $1"
@@ -164,6 +163,7 @@ alias pkg_use="vim /etc/portage/package.use/$1"
 alias yt_video="vim ~/bin/my_yt_videos"
 alias installpkg="sudo emerge -av $1"
 alias removepkg="sudo emerge -ac $1"
+alias vih="vih $1"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
 #    #echo "$(date +%F@%T) - SSH-AGENT: Agent will be started"
@@ -198,7 +198,7 @@ gpg-reload(){
 
 gitlog() {
   if [ "$1" ] && [ "$2" ]; then
-  git log --pretty=format:"%h%x09 %C(cyan)%an%x09 %Creset%ad%x09 %Cgreen%s" --date-order -n "$1" --author="$2"
+	  git log --pretty=format:"%h%x09 %C(cyan)%an%x09 %Creset%ad%x09 %Cgreen%s" --date-order -n "$1" --author="$2"
  elif [ "$1" ]; then
    git log --pretty=format:"%h%x09 %C(cyan)%an%x09 %Creset%ad%x09 %Cgreen%s" --date-order -n "$1"
  else
