@@ -104,7 +104,6 @@ color=#00FFFF
 [weather]
 label=
 command=~/.config/i3/IconicWeather.sh kolkata;echo
-#command=~/.config/i3/weather.sh
 interval=3000
 #color=#e36d06
 color=#54f30a
