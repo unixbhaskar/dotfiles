@@ -263,13 +263,21 @@ bar {
      tray_output primary
 
 colors {
-	background #000000
-	statusline #dddddd
-	separator #666666
-        focused_workspace  #4c7899 #285577 #ffffff
-        active_workspace   #333333 #ac4fc6 #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
+      background #002b36
+      statusline #839496
+      separator  #586e75
+      focused_workspace  #b58900 #b58900 #002b36
+      active_workspace   #586e75 #586e75 #002b36
+      inactive_workspace #073642 #002b36 #839496
+      urgent_workspace   #dc322f #dc322f #fdf6e3
+
+	# background #000000
+	# statusline #dddddd
+	# separator #666666
+        # focused_workspace  #4c7899 #285577 #ffffff
+        # active_workspace   #333333 #ac4fc6 #ffffff
+        # inactive_workspace #333333 #222222 #888888
+        # urgent_workspace   #2f343a #900000 #ffffff
 }
      status_command i3blocks -c  $HOME/.config/i3/i3blocks.conf
      workspace_buttons yes
