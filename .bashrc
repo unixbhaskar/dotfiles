@@ -55,6 +55,7 @@ alias filepath='ls | sed "s:^:`pwd`/:"'
 alias abspath='find $PWD -maxdepth 1 | xargs ls -ld'
 alias i3configfiles="cd ~/.config/i3"
 alias v="vim -u ~/.vimrc"
+alias v1="vim -u ~/.vimrc_gruvbox"
 alias sshot="cd ~/Pictures/Screenshots"
 alias github_repo='/home/bhaskar/bin/github_repo'
 alias see_log='sudo tail -f /var/log/messages || journalctl -f -q 2>/dev/null'
@@ -385,12 +386,12 @@ sedwise() {
 
 changes() {
 
-	if [ $# -ne 2 ];then
-                printf "Usage: changes filename_org filename_new \n"
+	# if [ $# -ne 2 ];then
+                # printf "Usage: changes filename_org filename_new \n"
 
-	elif [ -e .git ];then
+	if [ -e .git ];then
 
-		git difftool
+		git diff
 
 	else
 
