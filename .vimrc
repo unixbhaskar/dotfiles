@@ -93,6 +93,7 @@ set noeol
 set ttyfast
 set wildmenu
 set wildmode=longest,full
+set wildmenu wildoptions=pum
 set showbreak=...
 set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ ,nbsp:^
 set number
