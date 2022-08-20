@@ -567,5 +567,8 @@ bindsym $mod+0 exec win_list
 # Kickstart emacs daemon manually
 bindsym $mod+Shift+e exec kickstart_emacs_daemon
 
+# open st gruvbox terminal
+bindsym $mod+Caps_Lock exec st_gruvbox
+
 
 # vim:filetype=i3config
