@@ -423,7 +423,7 @@ bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim ~/Notes/$(d
 
 #Mutt floating window
 for_window [instance="^Mutt$"] floating enable, resize set 900 500
-bindsym $mod+Shift+m exec "st -n Mutt -e mail_open"
+bindsym $mod+Shift+m exec "st_solarized -n Mutt -e mail_open"
 
 # Emacs org-capture protocol
 bindsym $mod+Shift+o  exec org-capture
@@ -569,6 +569,9 @@ bindsym $mod+Shift+e exec kickstart_emacs_daemon
 
 # open st gruvbox terminal
 bindsym $mod+Caps_Lock exec st_gruvbox
+
+# Emacs without xresources
+bindsym $mod+Ctrl+x exec emacs-without-x-resources
 
 
 # vim:filetype=i3config
