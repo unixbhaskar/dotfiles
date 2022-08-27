@@ -11,7 +11,7 @@
  '(all-the-icons-ivy-rich-mode t)
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "/home/bhaskar/.emacs.d/bookmarks")
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
  '(calendar-view-diary-initially-flag t)
@@ -1529,7 +1529,7 @@ rather than the whole path."
 (setq doom-modeline-gnus t)
 
 ;; Wheter gnus should automatically be updated and how often (set to 0 or smaller than 0 to disable)
-(setq doom-modeline-gnus-timer 2)
+(setq doom-modeline-gnus-timer 0)
 
 ;; Wheter groups should be excludede when gnus automatically being updated.
 (setq doom-modeline-gnus-excluded-groups '("dummy.group"))
@@ -2301,6 +2301,10 @@ Start an unlimited search at `point-min' otherwise."
 (global-set-key (kbd "C-c t v") 'multi-vterm)
 (global-set-key (kbd "C-c t n") 'multi-vterm-next)
 (global-set-key (kbd "C-c t p") 'multi-vterm-prev)
-(global-set-key (kbd "C-c t b") 'multi-vterm-buffer-list)
 (global-set-key (kbd "C-c t r") 'multi-vterm-rename-buffer)
-(global-set-key (kbd "C-c t d") 'multi-vterm-dedicated-buffer)
+(global-set-key (kbd "C-c t d") 'multi-vterm-dedicated-open)
+(global-set-key (kbd "C-c t j") 'multi-vterm-project)
+(global-set-key (kbd "C-c t c") 'multi-vterm-dedicated-close)
+(global-set-key (kbd "C-c t t") 'multi-vterm-dedicated-toggle)
+(global-set-key (kbd "C-c t s") 'multi-vterm-dedicated-select)
+
