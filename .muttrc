@@ -28,11 +28,9 @@ set pager_stop=yes
 source $alias_file
 ignore *
 unignore ^from: ^date: ^subject: ^to: ^cc:
-
 #set to your from address
 set from="unixbhaskar@gmail.com"
 set realname="Bhaskar Chowdhury"
-
 # Few global settings
 # set record="$home/sent" #sent mail is saved here
 set delete=yes #delete without prompting
@@ -43,7 +41,6 @@ set markers=no #no + on wrapped lines
 set confirmappend=no #no prompt for save to =keep
 set to_chars=" +TCFL" #no L for mail_list
 set send_charset="us-ascii:utf-8"
-
 # Imaps ,headers, bodies
 set folder="imaps://imap.gmail.com:993"
 set spoolfile="+INBOX"
@@ -51,18 +48,15 @@ set record ="+[Gmail]/Sent Mail"
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/bodies
 #set mbox=$HOME/mail/received-`date +"%y%m"`
-
 #gpg
 set pgp_sign_as="9F017E9D66B07216543CEBB0B23A9DB7114B2915"
 set crypt_use_gpgme=yes
 set crypt_replysign=yes
 set crypt_replysignencrypted=yes
 set pgp_timeout=3600
-
 #This is to send mail in the background, but please set the log file for that
 
 #sendmail_wait = -1
-
 # GnuPG configuration, not using ,kept for self note
 #set pgp_decode_command="gpg2 --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
 #set pgp_verify_command="gpg2 --status-fd=2 --no-verbose --quiet --batch --output - --verify %s %f"
@@ -77,7 +71,6 @@ set pgp_timeout=3600
 #set pgp_list_pubring_command="gpg2 --no-verbose --batch --quiet --with-colons --list-keys %r"
 #set pgp_list_secring_command="gpg2 --no-verbose --batch --quiet --with-colons --list-secret-keys %r"
 #set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
-
 # Mailboxes
  mailboxes =inbox
  # mailboxes =sent
@@ -95,27 +88,22 @@ set pgp_timeout=3600
  mailboxes =Paul_E_McKenney
  mailboxes =David_Miller
  mailboxes =Thomas_Gleixner
-
 # Sent backup
 set mbox=$HOME/.maildir/received-`date +"%y%m"`
 set record=$HOME/.maildir/sent-`date +"%y%m"`
 auto_view text/html
-
 # Mailcap settings
 set mailcap_path=~/.mutt/mailcap
 set smtp_url="smtp://unixbhaskar@smtp.gmail.com:587/"
 set smtp_pass=$my_pass
 
-
 # # simulate the old url menu
 macro index \cb |urlview\n 'call urlview to extract URLs out of a message'
 #macro pager \cb |urlview\n 'call urlview to extract URLs out of a message'
 
-
 # #run fetchmail by hitting key of G
 macro index G "!fetchmail -a -m 'procmail -d %T'\r"
 #macro pager G "!fetchmail -a -m 'procmail -d %T'\r"
-
 # # default list of header fields to weed out when displaying mail
 # #ignore them all and then unignore what you want to see
 # ignore *
@@ -125,7 +113,7 @@ unignore my_hdr X-URL: https://unixbhaskar.wordpress.com
 # ##your Mutt has to have some colors
 # ##these are for four levels of quoted text
 # ##they override the system settings in /etc/mutt/Muttrc
-#source /home/bhaskar/.mutt/colors/mutt-colors-solarized-light-256.muttrc
+# source /home/bhaskar/.mutt/colors/mutt-colors-solarized-dark-256.muttrc
 # #color quoted green default
 color quoted1 magenta black
 # #color quoted2 yellow default
@@ -161,7 +149,6 @@ color index brightcyan default '~f unixbhaskar@gmail.com'
 color index brightmagenta default '~f kevin@8t8.us'
 
 color index yellow default '~f gregkh@linuxfoundation.org'
-
 # Colors
 color hdrdefault brightcyan black
 color header brightwhite black "^from:"
@@ -184,7 +171,6 @@ mono body bold "^Bad signature from.*"
 color normal white black
 color message green black
 color attachment brightgreen black
-
 # Sidebar settings
 set sidebar_visible
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
@@ -226,18 +212,15 @@ color sidebar_flagged red black
 color sidebar_new green black
 # Color to give mailboxes containing no new/flagged mail, etc.
 #color sidebar_ordinary color245 default
-
 # Selected mail for deletion Colors
 #color index blue black ~N      # New mail
 #color index brightwhite black ~O           # Old mail
 #color index red black ~F    # Forwared mail
 #color index brightwhite black  ~p   # Mail sent to me
 color index red black ~D   # Mail is marked as deleted
-
 # New mail arrival notification pop up
 set new_mail_command="notify-send --icon='/home/bhaskar/Pictures/neomutt.png' \
 'New Emails' '%n new messages, %u unread.' &"
-
 # Attachement related stuff
 macro attach O \
 "\
@@ -251,7 +234,6 @@ macro attach O \
 #bind editor <space> noop
 #macro attach W <save-entry><kill-line>/home/bhaskar/attachments/
 macro attach E "<save-entry><kill-line>/home/bhaskar/attachments/<enter>"
-
 # Customized keys for convenience ,mostly change label folders
 macro index \Ci  "<change-folder> =inbox<enter>"
 macro index \Ck  "<change-folder> =linux-kernel<enter>"
@@ -268,21 +250,16 @@ macro index P '| git am -s'\n
 # Mu : mail indexer and searcher settings
 macro index \emu "<shell-escape>/usr/bin/mu find  --clearlinks --format=links --linksdir=~/.maildir/search  date:today --fields=\" n l \""
 macro index \emr "<change-folder-readonly>~/.maildir/search"
-
 # url views
 macro pager \Cb "<pipe-entry>'urlview'<enter>"
-
 # Archive, but not yet using
 #macro index,pager A "<save-message>=Archive<enter>" "Archive Message"
-
 ### BEGIN NOTMUCH-MUTT SETTINGS
 macro index \ens  "<enter-command>unset wait_key<enter><shell-escape>~/bin/mutt-notmuch --prompt search<enter><change-folder-readonly>~/.cache/notmuch/mutt/results/<enter>"  "search mail (using notmuch)"
 
 macro index \ent "<enter-command>unset wait_key<enter><pipe-message>~/bin/mutt-notmuch thread<enter><change-folder-readonly>~/.cache/notmuch/mutt/results/<enter><enter-command>set wait_key<enter>"  "search and reconstruct owning thread (using notmuch)"
-
 # Setting vim spell setting for mail compose
 set editor="vim -c 'set spell spelllang=en'"
-
 # Automated task for each folder for deletion of old mails
 folder-hook linux-kernel             'push <delete-pattern>~r>1w!~F<enter><sync>'
 
@@ -311,16 +288,13 @@ folder-hook Al_Viro                 'push <delete-pattern>~r>1w!~F<enter><sync>'
 folder-hook Linus                  'push <delete-pattern>~r>1w!~F<enter><sync>'
 
 folder-hook Paul_E_McKenney        'push <delete-pattern>~r>1w!~F<enter><sync>'
-
 # Default views of various file types
 auto_view text/* application/* image/* audio/*
-
 # Mailing list related settings
 lists linux-kernel@vger.kernel.org
 subscribe [0-9]+.*@vger.kernel.org
 lists mutt-users@mutt.org
 subscribe [0-9]+.*@mutt.org
-
 #Status Bar
 set status_chars  = " *%A"
 set status_format = "[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?"
