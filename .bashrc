@@ -24,6 +24,7 @@ alias grep="grep --color"
 shopt -s checkwinsize cdspell autocd direxpand dirspell dotglob globstar histappend
 alias mount="mount | column -t"
 alias ports='netstat -tulanp'
+alias fp="ps -ef | grep $1"
 alias meminfo='free -m -l -t'
 alias psmemhog='ps auxf | sort -nr -k 4'
 alias pscpuhog='ps auxf | sort -nr -k 3'
