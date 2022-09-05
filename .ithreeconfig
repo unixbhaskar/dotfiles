@@ -12,7 +12,8 @@ font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+# font pango:DejaVu Sans Mono 8
+font pango:Symbola 8
 
 #This is for the icons rendering
 font pango:fontawesome 8
@@ -91,7 +92,7 @@ bindsym $mod+a focus parent
 exec_always --no-startup-id feh --bg-scale /home/bhaskar/Pictures/LKM3_1024.png
 
 ##Autostart
-exec $HOME/bin/st_solarized
+# exec $HOME/bin/st_solarized
 exec $HOME/bin/clipmenud
 exec $HOME/bin/pia-client
 exec $HOME/bin/noti_active
@@ -126,7 +127,6 @@ bindsym $mod+Control+Left workspace prev
 bindsym $mod+1 ; workspace $workspace1
 bindsym $mod+b ; exec "vimb";
 bindsym $mod+Shift+f ; exec "firefox";
-# bindsym $mod+F11 ; exec "emacs -fs";
 bindsym $mod+o workspace $workspace5 ; exec "st_solarized -n System_Operations -e system_operation";
 bindsym $mod+n workspace $workspace6 ; exec "st_solarized -n Newsboat -e newsboat";
 bindsym $mod+c  workspace $workspace7 ; exec "st_solarized -n Calcurse -e calcurse";
@@ -138,7 +138,6 @@ bindsym $mod+braceright workspace $workspace12 ; exec "st -n Screencast -e scree
 bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
 bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
 bindsym $mod+p workspace $workspace15 ; exec pdf_viewer;
-# bindsym $mod+F11 workspace $workspace16 ; exec sys_monitor;
 bindsym $mod+Shift+n ; exec nyxt;
 bindsym $mod+Ctrl+z workspace $workspace3 ;exec "firefox --private-window";
 
@@ -336,15 +335,15 @@ bindsym $mod+Shift+comma  exec show_latest_screenshot
 #bindsym --release button2 exec --no-startup-id import /tmp/latest-screenshot.png
 
 # Make the currently focused window a scratchpad
-#floating_modifier Mod1
+# floating_modifier Mod1
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
 # print all window titles bold
- for_window [class=".*"] title_format "<b>%title</b>"
- #for_window [class="(?i)firefox"] title_format "<span foreground='magenta'>%title</span>"
+for_window [class=".*"] title_format "<b>%title</b>"
+#for_window [class="(?i)firefox"] title_format "<span foreground='magenta'>%title</span>"
 
 # Focus on window activation
 focus_on_window_activation smart
@@ -380,7 +379,7 @@ bindsym $mod+grave exec i3_keybinds_help
 bindsym $mod+y exec search_youtube_videos
 
 # Seach query from dmenu prompt and open it on chosen browser
- bindsym $mod+s exec search_on_the_internet
+bindsym $mod+s exec search_on_the_internet
 
 # Open bookmarked site on browser
 bindsym $mod+Shift+b exec bookmark2
@@ -393,7 +392,6 @@ bindsym $mod+Shift+p exec mpv_cont
 
 # Cmus next song play
 bindsym $mod+Ctrl+n exec cmus-remote --next
-
 
 # Cmus prev song play
 bindsym $mod+Ctrl+r exec cmus-remote --prev
