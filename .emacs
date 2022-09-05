@@ -11,10 +11,12 @@
  '(all-the-icons-ivy-rich-mode t)
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
- '(bmkp-last-as-first-bookmark-file "/home/bhaskar/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
  '(calendar-view-diary-initially-flag t)
+ '(command-log-mode-auto-show t)
+ '(command-log-mode-is-global t)
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
  '(compose-mail-user-agent-warnings nil)
@@ -57,6 +59,7 @@
    '(git-commit-save-message git-commit-setup-changelog-support git-commit-turn-on-auto-fill git-commit-turn-on-flyspell git-commit-propertize-diff bug-reference-mode with-editor-usage-message))
  '(git-messenger:show-detail t)
  '(git-messenger:use-magit-popup t)
+ '(global-command-log-mode t)
  '(global-emojify-mode t)
  '(global-emojify-mode-line-mode t)
  '(global-highlight-changes-mode t)
@@ -2326,7 +2329,7 @@ Start an unlimited search at `point-min' otherwise."
 (setq langtool-default-language "en-US")
 
 (setq langtool-java-user-arguments '("-Dfile.encoding=UTF-8"))
-(setq langtool-java-bin "/usr/lib64/java/bin/java")
+(setq langtool-java-bin "/home/bhaskar/bin/java")
 (defun langtool-autoshow-detail-popup (overlays)
   (when (require 'popup nil t)
     ;; Do not interrupt current popup
@@ -2338,3 +2341,9 @@ Start an unlimited search at `point-min' otherwise."
 
 (setq langtool-autoshow-message-function
       'langtool-autoshow-detail-popup)
+
+;; SideFrame
+;; (add-to-list 'load-path "~/.emacs.d/sideframe/sideframe.el")
+;; (sideframe-make 'left  32)
+;; (sideframe-make 'right 32)
+;; (sideframe-toggle-maximized)
