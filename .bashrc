@@ -165,6 +165,7 @@ alias pkg_use="vim /etc/portage/package.use/$1"
 alias yt_video="vim ~/bin/my_yt_videos"
 alias installpkg="sudo emerge -av $1"
 alias removepkg="sudo emerge -ac $1"
+alias g2="mutt -F /home/bhaskar/.muttrc.gmail2"
 alias vih="vih $1"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
