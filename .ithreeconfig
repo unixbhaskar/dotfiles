@@ -124,7 +124,7 @@ set $workspace17  "17 N"
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
 
-bindsym $mod+1 ; workspace $workspace1
+bindsym $mod+1 ; workspace $workspace1 ;
 bindsym $mod+b ; exec "vimb";
 bindsym $mod+Shift+f ; exec "firefox";
 bindsym $mod+o workspace $workspace5 ; exec "st_solarized -n System_Operations -e system_operation";
@@ -419,9 +419,13 @@ for_window [instance="^vim-everywhere$"] floating enable, resize set 900 500
 bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim ~/Notes/$(date +'%F_%T').md"
 # bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim ~/Notes/$(date +'%F_%T').md" show scratchpad
 
-#Mutt floating window
+# Mutt floating window
 for_window [instance="^Mutt$"] floating enable, resize set 900 500
 bindsym $mod+Shift+m exec "st_solarized -n Mutt -e mail_open"
+
+# Second mutt instance for second mail aka patch mail
+for_window [instance="^Mutt$"] floating enable, resize set 900 500
+bindsym $mod+Ctrl+Shift+greater exec "st_gruvbox -n Mutt -e mail_open2"
 
 # Emacs org-capture protocol
 bindsym $mod+Shift+o  exec org-capture
@@ -570,6 +574,8 @@ bindsym $mod+Caps_Lock exec st_gruvbox
 
 # Emacs without xresources
 bindsym $mod+Ctrl+x exec emacs-without-x-resources
+
+
 
 
 # vim:filetype=i3config
