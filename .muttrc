@@ -1,16 +1,14 @@
 # This is a Mutt Email Client config file.
 #Author : Bhaskar Chowdhury
 #Email: unixbhaskar@gmail.com
+
 # Folder hooks
 
 folder-hook 'gmail1' 'source ~/.muttrc'
 folder-hook 'gmail2' 'source ~/.muttrc.gmail2'
-
-
 # Macros for switching accounts
 macro index <f2> '<sync-mailbox><enter-command>source ~/.muttrc<enter><change-folder>!<enter>'
 macro index <f7> '<sync-mailbox><enter-command>source ~/.muttrc.gmail2<enter><change-folder>!<enter>'
-
 # Basic settings about presentations
 source "gpg2 -dq $HOME/.mail.cred.gpg |"
 set imap_user = "unixbhaskar@gmail.com"
