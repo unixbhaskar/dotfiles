@@ -158,6 +158,7 @@ alias i3edit="vim -O ~/.ithreeconfig ~/.orgithreeconfig"
 alias edit-archives="vim -O ~/bin/archive ~/bin/extract_archive"
 alias git_optimize="git reflog expire --all --expire=now; git gc --prune=now --aggressive"
 alias vig="vim_with_gruvbox $1"
+alias gentoo_features="portageq envvar FEATURES | xargs -n 1"
 alias pkg_mask="vim /etc/portage/package.mask/$1"
 alias pkg_unmask="vim /etc/portage/package.unmask/$1"
 alias pkg_keyword="vim /etc/portage/package.accept_keywords"
@@ -586,7 +587,7 @@ $HOME/git-linux/asdf/asdf.sh
 $HOME/git-linux/asdf/completions/asdf.bash
 # Emacs server daemon plus easy invocation of client
 export ALTERNATE_EDITOR=''
-alias ec='emacsclient --tty'
+alias e='emacsclient --tty'
 alias eg='emacsclient -c'
 # Notes access
 alias notes="vim ~/Notes/index.md"
@@ -601,4 +602,4 @@ vgrep() {
   INITIAL_QUERY=$1
   VGREP_PREFIX="vgrep --no-header"
 FZF_DEFAULT_COMMAND="$VGREP_PREFIX '$INITIAL_QUERY'" fzf --bind "change:reload:$VGREP_PREFIX {q} || true" --ansi --phony --tac --query "$INITIAL_QUERY" | awk '{print $1}' | xargs -I{} -o vgrep --show {}
-}
+ }
