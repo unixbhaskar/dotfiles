@@ -254,6 +254,7 @@ macro index \ea  "<limit>all<enter>"
 macro index,browser \Cr "<enter-command>source ~/.muttrc<enter>"
 macro index \sn "l ^a^k~N\n"
 macro index P '| git am -s'\n
+macro index,pager S "<save-message>?"
 # Mu : mail indexer and searcher settings
 macro index \emu "<shell-escape>/usr/bin/mu find  --clearlinks --format=links --linksdir=~/.maildir/search  date:today --fields=\" n l \""
 macro index \emr "<change-folder-readonly>~/.maildir/search"
@@ -267,6 +268,7 @@ macro index \ens  "<enter-command>unset wait_key<enter><shell-escape>~/bin/mutt-
 macro index \ent "<enter-command>unset wait_key<enter><pipe-message>~/bin/mutt-notmuch thread<enter><change-folder-readonly>~/.cache/notmuch/mutt/results/<enter><enter-command>set wait_key<enter>"  "search and reconstruct owning thread (using notmuch)"
 # Setting vim spell setting for mail compose
 set editor="vim -c 'set spell spelllang=en'"
+#set editor="emacsclient -a \"\" -t"
 # Automated task for each folder for deletion of old mails
 folder-hook linux-kernel             'push <delete-pattern>~r>1w!~F<enter><sync>'
 
