@@ -38,7 +38,7 @@ alias boot='cd /boot'
 alias music='cd ~/Music'
 alias admscripts='cd ~/Adm_scripts'
 alias docu='cd ~/Documents'
-alias dstat='dstat -afv'
+alias dstat='dstat -afv 2>/dev/null'
 alias root="sudo su -"
 alias sstatus="sudo systemctl status"
 alias srestart="sudo systemctl restart"
@@ -61,6 +61,7 @@ alias sshot="cd ~/Pictures/Screenshots"
 alias github_repo='/home/bhaskar/bin/github_repo'
 alias see_log='sudo tail -f /var/log/messages || journalctl -f -q 2>/dev/null'
 alias gitlog=gitlog
+alias git_repo_create=grc
 alias dmesg_err='sudo dmesg -H -T -l err'
 alias ip='ip --color=auto'
 alias journal_clear="sudo journalctl --vacuum-size=50000"
@@ -603,3 +604,13 @@ vgrep() {
   VGREP_PREFIX="vgrep --no-header"
 FZF_DEFAULT_COMMAND="$VGREP_PREFIX '$INITIAL_QUERY'" fzf --bind "change:reload:$VGREP_PREFIX {q} || true" --ansi --phony --tac --query "$INITIAL_QUERY" | awk '{print $1}' | xargs -I{} -o vgrep --show {}
  }
+ # This is to create git repo afresh
+
+ grc() {
+	 git_repo_dir=$1
+	 mkdir -p "$git_repo_dir"
+	 cd $git_repo_dir
+	 git init
+
+ }
+
