@@ -12,7 +12,7 @@ set nobackup
 set hlsearch
 set incsearch
 "syntax enable
-let g:CommandTMaxFiles=200000
+let g:CommandTMaxFiles=500000
 nnoremap <Leader>n :set invnumber number?<CR>
 "colorscheme molokai_dark
 let g:solarized_term=1
