@@ -202,7 +202,7 @@ bindsym $mod+Ctrl+comma workspace number 14
 # bindsym $mod+Ctrl+b workspace number 16
 
 # Prompt for workspace switch
-bindsym $mod+i exec i3-input -F 'workspace number %s' -P 'go to workspace: '
+bindsym $mod+i exec i3-input -F 'workspace name %s' -P 'Go to workspace: '
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -576,7 +576,8 @@ bindsym $mod+Caps_Lock exec st_gruvbox
 bindsym $mod+Ctrl+x exec emacs-without-x-resources
 
 # Open the alsamixer in floating terminal
-bindsym $mod+F4 exec "st_solarized -n alsamixer -e alsamixer"
+for_window [instance="^st-256color$"] floating enable, resize set 900 500
+bindsym $mod+F4 exec "st_solarized -e alsamixer"
 
 
 # vim:filetype=i3config
