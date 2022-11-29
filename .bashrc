@@ -613,4 +613,4 @@ FZF_DEFAULT_COMMAND="$VGREP_PREFIX '$INITIAL_QUERY'" fzf --bind "change:reload:$
 	 git init
 
  }
-
+/home/bhaskar/tty_solarized
