@@ -77,6 +77,7 @@ Plugin 'axvr/org.vim'
 Plugin 'voldikss/vim-floaterm'
 Plugin 'vimwiki/vimwiki'
 Plugin 'dpelle/vim-LanguageTool'
+Plugin 'pedromg/vimblog'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
@@ -1031,3 +1032,8 @@ if &term =~ "st-256color" && $SSH_CLIENT == ''
     endtry
     let &t_EI = "\<Esc>]12;royalblue2\x7" . "\<Esc>[2 q"
 endif
+" Vim Blog for Wordpress
+
+       if !exists('*Wordpress_vim')
+         runtime vimblog.vim
+       endif
