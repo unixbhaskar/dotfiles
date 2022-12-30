@@ -343,6 +343,7 @@ bindsym $mod+minus scratchpad show
 
 # print all window titles bold
 for_window [class=".*"] title_format "<b>%title</b>"
+# for_window [all] title_window_icon on
 #for_window [class="(?i)firefox"] title_format "<span foreground='magenta'>%title</span>"
 
 # Focus on window activation

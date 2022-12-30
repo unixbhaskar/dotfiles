@@ -100,7 +100,7 @@ alias profile="vim ~/.profile"
 alias i3blocks="vim ~/.ithreeblocksconfig"
 alias scriptsgit="cd ~/git-linux/AdminScripts"
 alias lt="cd ~/LaTeX_Workouts"
-alias vimplugin=vimplugin
+alias vimplugin=vimplugin_install
 alias archlinux_update="cd $HOME/git-linux/ArchLinux_Kernel && git pull && cd ~"
 alias gentoo_update="cd $HOME/git-linux/gentoo && git pull && cd ~"
 alias slackware_update="cd ~/git-linux/SlackBuilds && git pull && cd ~"
@@ -266,7 +266,7 @@ emacs_pkgs_clone() {
 }
 # To clone vim plugin ~/.vim/bundle  dir
 
-vimplugin() {
+vimplugin_install() {
 	 cd $HOME/.vim/bundle && git clone "$1" &&  cd "$(basename $1 .git)"
  }
 # To kick of my calendar notification in systemd driven os
