@@ -1037,3 +1037,4 @@ endif
        if !exists('*Wordpress_vim')
          runtime vimblog.vim
        endif
+
