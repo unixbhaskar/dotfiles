@@ -268,6 +268,11 @@ emacs_pkgs_clone() {
 
 vimplugin_install() {
 	 cd $HOME/.vim/bundle && git clone "$1" &&  cd "$(basename $1 .git)"
+         repo=$1
+	 usr1=$(echo ${repo} | cut -d '/' -f 4)
+         proj="$(basename ${repo} .git)"
+         sh -c "echo Plugin \'$usr1/$proj\' >> "$HOME/.vimrc""
+
  }
 # To kick of my calendar notification in systemd driven os
 
