@@ -272,6 +272,8 @@ vimplugin_install() {
 	 usr1=$(echo ${repo} | cut -d '/' -f 4)
          proj="$(basename ${repo} .git)"
          sh -c "echo Plugin \'$usr1/$proj\' >> "$HOME/.vimrc""
+	 printf "Plugin now has a entry in vimrc.Lets install it..\n"
+         sh -c "vim -c "PluginList" -c "PluginInstall" -c "wq""
 
  }
 # To kick of my calendar notification in systemd driven os
