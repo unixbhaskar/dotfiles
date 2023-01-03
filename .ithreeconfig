@@ -580,5 +580,8 @@ bindsym $mod+Ctrl+x exec emacs-without-x-resources
 for_window [instance="^st-256color$"] floating enable, resize set 900 500
 bindsym $mod+F4 exec "st_solarized -e alsamixer"
 
+# Clear clipboard content at once
+
+bindsym $mod+Ctrl+c exec clear_clipboard
 
 # vim:filetype=i3config
