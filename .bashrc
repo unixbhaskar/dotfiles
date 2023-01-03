@@ -614,10 +614,14 @@ FZF_DEFAULT_COMMAND="$VGREP_PREFIX '$INITIAL_QUERY'" fzf --bind "change:reload:$
  # This is to create git repo afresh
 
  grc() {
-	 git_repo_dir=$1
-	 mkdir -p "$git_repo_dir"
-	 cd $git_repo_dir
-	 git init
+	 if [[ $# -eq "" ]];then
+		 echo you forgot to pass the repo name
+	 else
 
+	       git_repo_dir=$1
+	       mkdir -p "$git_repo_dir"
+	       cd "$git_repo_dir" || exit
+	       git init
+	 fi
  }
 /home/bhaskar/tty_solarized
