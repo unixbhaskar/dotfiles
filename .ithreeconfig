@@ -42,7 +42,7 @@ bindsym $mod+d exec "dmenu_run -sb '#005577' -p 'search command item >'"
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
+# bindsym $mod+j focus left
 #bindsym $mod+k focus down
 # bindsym $mod+l focus up
 # # bindsym $mod+semicolon focus right
@@ -319,17 +319,20 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots' && notify-send -t 1
 # Show latest capture screenshot
 bindsym $mod+Shift+comma  exec show_latest_screenshot
 
-# set $mode_launcher Launch: [b]ash_keywords [f]irefox_keywords
+set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs
 
-# bindsym $mod+o mode "Shortcut_keys"
+bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs"
 
-# mode "Shortcut_keys" {
-#     bindsym l exec i3_open_mode_keys
-#     bindsym b exec bash_supported_keywords
-#     bindsym f exec firefox_shortcut_keys
-#     bindsym Escape mode "default"
-#     bindsym Return mode "default"
-# }
+mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs" {
+    bindsym r exec open_reddit
+    bindsym g exec open_github
+    bindsym b exec open_blogs
+    bindsym h exec open_lore
+    bindsym t exec open_twitter
+    bindsym l exec open_linkedin
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
 
 
 #bindsym --release button2 exec --no-startup-id import /tmp/latest-screenshot.png
@@ -354,7 +357,7 @@ bindsym  $mod+F10 exec config_list
 
 # clipmenu show the selection in dmenu
 
-bindsym $mod+z exec "clipmenu  -p 'clipboard items listed:'"
+bindsym $mod+z exec "clipmenu -sb \#ff0000 -sf \#00ffff -p 'clipboard items listed:'"
 
 # Play songs from artist directory
 
@@ -561,11 +564,11 @@ bindsym $mod+Shift+y exec "st_solarized -e emacsclient --tty"
 # Make scratchpad windows shows at once
 bindsym $mod+Ctrl+1 exec "i3-msg '[class=.] scratchpad show'"
 
-# Mail compose from command line with emacs
-bindsym $mod+Ctrl+m exec mail_compose_send_by_emacs.sh
-
 # Enlist window list
 bindsym $mod+0 exec win_list
+
+# Mail compose from command line with emacs
+bindsym $mod+Ctrl+m exec mail_compose_send_by_emacs.sh
 
 # Kickstart emacs daemon manually
 bindsym $mod+Shift+e exec kickstart_emacs_daemon
