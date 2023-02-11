@@ -349,7 +349,6 @@ alias eqb='equery b' #list what package FILES belong to
 alias eql='equery l' #list package matching PKG
 alias eqd='equery d' #list all packages directly depending on ATOM
 alias eqg='equery g' #display a tree of all dependencies for PKG
-alias eqc='equery c' #list changelog entries for ATOM
 alias eqk='equery k' #verify checksums and timestamps for PKG
 alias eqm='equery m' #display metadata about PKG
 alias eqy='equery y' #display keywords for specified PKG
@@ -573,7 +572,8 @@ task_indicator() {
 }
 # Prompt with a Taskwarrior task graph
 
-PS1="\[\e[32;1m\u@\e[33;1m\h_\e[35;1m\t_\e[36;1m\d:\e[31;1m$(task_indicator)\e[m \]:\w>"
+# PS1="\[\e[32;1m\u@\e[33;1m\h_\e[35;1m\t_\e[36;1m\d:\e[31;1m$(task_indicator)\e[m \]:\w>"
+PS1="\[\e[33;1mtp_x250_\e[35;1m\t_\e[36;1m\d:\e[31;1m$(task_indicator)\e[m \]:\w>"
 
 # Cscope DB
 
