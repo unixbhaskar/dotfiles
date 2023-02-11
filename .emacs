@@ -15,7 +15,7 @@
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
  '(calendar-view-diary-initially-flag t)
- '(command-log-mode-auto-show t)
+ '(command-log-mode-auto-show nil)
  '(command-log-mode-is-global t)
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
@@ -70,6 +70,10 @@
  '(gnus-expert-user t)
  '(grep-highlight-matches 'always)
  '(icomplete-mode t)
+ '(ignored-local-variable-values
+   '((vc-prepare-patches-separately)
+     (diff-add-log-use-relative-names . t)
+     (vc-git-annotate-switches . "-w")))
  '(image-dired-dir "~/Pictures")
  '(image-dired-main-image-directory "~/Pictures")
  '(ispell-highlight-face 'flyspell-incorrect)
@@ -495,7 +499,7 @@
   :defer 2
   :config
   (global-company-mode 1))
-
+(add-hook 'after-init-hook 'global-company-mode)
 (global-set-key "\t" 'company-complete-common)
  ;; (add-to-list 'company-backends 'company-dabbrev-code)
  ;; (add-to-list 'company-backends 'company-files)
@@ -1908,8 +1912,8 @@ Start an unlimited search at `point-min' otherwise."
   (let ((orig (buffer-file-name)))
     (write-file (concat "/home/bhaskar/dotfiles/" (file-name-nondirectory orig)) nil)
     (write-file (concat "/data/dotfiles/" (file-name-nondirectory orig))nil)
-
     (write-file orig nil)))
+
 
 ;; Make one window maximize ,then come back to grid
 
@@ -2218,7 +2222,7 @@ Start an unlimited search at `point-min' otherwise."
 
 ;; Stop creating backup files and put all the backup file in single directory
 (setq make-backup-files nil)
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+(setq backup-directory-alist '(("." . ,"~/.emacs.d/backup"))
   backup-by-copying t    ; Don't delink hardlinks
   version-control t      ; Use version numbers on backups
   delete-old-versions t  ; Automatically delete excess backups
@@ -2311,7 +2315,6 @@ Start an unlimited search at `point-min' otherwise."
 (global-set-key (kbd "C-c t t") 'multi-vterm-dedicated-toggle)
 (global-set-key (kbd "C-c t s") 'multi-vterm-dedicated-select)
 
-
 ;; Webjump
 (global-set-key (kbd "C-c j") 'webjump)
 
@@ -2347,3 +2350,4 @@ Start an unlimited search at `point-min' otherwise."
 ;; (sideframe-make 'left  32)
 ;; (sideframe-make 'right 32)
 ;; (sideframe-toggle-maximized)
+
