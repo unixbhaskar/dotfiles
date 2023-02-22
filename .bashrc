@@ -479,11 +479,11 @@ send_patch() {
 	      printf "\n Checking values before sending the patch ....\n"
 	      printf "\n ${patchfile}  ${to}  ${cc}\n"
 
-	      printf "Is it look alright?? [Y/N] : %s"
+	      printf "\n Is it look alright?? [Y/N] : %s"
 	      read consent
 
          if [[ "$consent" == "N" ]];then
-	      printf "\n\n  Patchfile and TO fields must be filled, it seems values are missing..so,aborting.\n"
+	      printf "\n\n  Patchfile and TO fields must be filled..it seems values are missing..so aborting.\n"
          else
 	      git send-email $patchfile ${to} ${cc} ${an}
 
