@@ -319,13 +319,14 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots' && notify-send -t 1
 # Show latest capture screenshot
 bindsym $mod+Shift+comma  exec show_latest_screenshot
 
-set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs
+set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [e]Goodreads
 
-bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube"
+bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads"
 
-mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube" {
+mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads" {
     bindsym r exec open_reddit
     bindsym g exec open_github
+    bindsym e exec open_goodreads
     bindsym b exec open_blogs
     bindsym u exec open_youtube
     bindsym h exec open_lore
@@ -587,5 +588,8 @@ bindsym $mod+F4 exec "st_solarized -e alsamixer"
 # Clear clipboard content at once
 
 bindsym $mod+Ctrl+c exec clear_clipboard
+
+# Create empty workspace
+bindsym $mod+Ctrl+w exec "~/.config/i3/empty_i3_workspace"
 
 # vim:filetype=i3config
