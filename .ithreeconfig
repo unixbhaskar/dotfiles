@@ -319,17 +319,18 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots' && notify-send -t 1
 # Show latest capture screenshot
 bindsym $mod+Shift+comma  exec show_latest_screenshot
 
-set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [e]Goodreads
+set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [e]Goodreads [s]Slashdot
 
-bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads"
+bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot"
 
-mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads" {
+mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot" {
     bindsym r exec open_reddit
     bindsym g exec open_github
     bindsym e exec open_goodreads
     bindsym b exec open_blogs
     bindsym u exec open_youtube
     bindsym h exec open_lore
+    bindsym s exec open_slashdot
     bindsym t exec open_twitter
     bindsym l exec open_linkedin
     bindsym Escape mode "default"
