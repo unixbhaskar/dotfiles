@@ -52,7 +52,7 @@
 	logref = "!git reflog --date=iso"  # You need to run this command inside of your git repo i.e git logref
         githubmyi3wm = "!git push git@github.com:unixbhaskar/i3WM.git main"
         gitlabmyi3wm = "!git push git@gitlab.com:unixbhaskar/i3WM.git main"
-	squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} \"$@\");};f"
+
 # Show the diff between the latest commit and the current state ; run it
 # inside your git repo dir
         currentstate = "!git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
