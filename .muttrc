@@ -244,7 +244,7 @@ macro attach E "<save-entry><kill-line>/home/bhaskar/attachments/<enter>"
 # Customized keys for convenience ,mostly change label folders
 macro index \Ci  "<change-folder> =inbox<enter>"
 macro index \Ck  "<change-folder> =linux-kernel<enter>"
-macro index \CG  "<change-folder> =Greg(GKH)<enter>"
+macro index \Cg  "<change-folder> =Greg(GKH)<enter>"
 macro index  AL  "<change-folder> =Al_Viro<enter>"
 macro index  L  "<change-folder> =Linus<enter>"
 macro index  AN  "<change-folder> =Andrew_Morton<enter>"
