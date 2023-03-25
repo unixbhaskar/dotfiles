@@ -319,11 +319,10 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots' && notify-send -t 1
 # Show latest capture screenshot
 bindsym $mod+Shift+comma  exec show_latest_screenshot
 
-set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [e]Goodreads [s]Slashdot
+set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix
+bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix"
 
-bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot"
-
-mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot" {
+mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix" {
     bindsym r exec open_reddit
     bindsym g exec open_github
     bindsym e exec open_goodreads
@@ -333,6 +332,7 @@ mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs
     bindsym s exec open_slashdot
     bindsym t exec open_twitter
     bindsym l exec open_linkedin
+    bindsym p exec open_phoronix
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
@@ -592,5 +592,9 @@ bindsym $mod+Ctrl+c exec clear_clipboard
 
 # Create empty workspace
 bindsym $mod+Ctrl+w exec "~/.config/i3/empty_i3_workspace"
+
+# Open youtube in private window
+
+bindsym $mod+Shift+u exec open_youtube_without_login
 
 # vim:filetype=i3config
