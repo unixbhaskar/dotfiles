@@ -93,7 +93,7 @@ set pgp_timeout=3600
  mailboxes ="[Gmail]/Sent Mail"
  mailboxes =Jonathan_Corbet
  mailboxes =Paul_E_McKenney
- mailboxes =David_Miller
+ # mailboxes =David_Miller
  mailboxes =Thomas_Gleixner
 # Sent backup
 set mbox=$HOME/.maildir/received-`date +"%y%m"`
