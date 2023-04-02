@@ -1032,9 +1032,8 @@ if &term =~ "st-256color" && $SSH_CLIENT == ''
     endtry
     let &t_EI = "\<Esc>]12;royalblue2\x7" . "\<Esc>[2 q"
 endif
-" Vim Blog for Wordpress
+" " Vim Blog for Wordpress
 
-       if !exists('*Wordpress_vim')
-         runtime vimblog.vim
-       endif
-
+"        if !exists('*Wordpress_vim')
+"          runtime vimblog.vim
+"        endif
