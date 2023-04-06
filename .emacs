@@ -11,10 +11,16 @@
  '(all-the-icons-ivy-rich-mode t)
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
+ '(bibtex-completion-browser-function nil)
+ '(bibtex-completion-cite-default-as-initial-input t)
+ '(bibtex-completion-notes-global-mode nil)
+ '(bibtex-completion-pdf-open-function 'helm-open-file-with-default-tool)
+ '(bibtex-dialect 'biblatex)
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
  '(calendar-view-diary-initially-flag t)
+ '(citar-denote-mode t)
  '(command-log-mode-auto-show nil)
  '(command-log-mode-is-global t)
  '(company-quickhelp-color-background "#4F4F4F")
@@ -27,6 +33,7 @@
    '("73803d7cebbc240fd6cd8a54077b8fbf0b263a25db48579f5953279986283481" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "3e200d49451ec4b8baa068c989e7fba2a97646091fd555eca0ee5a1386d56077" "833ddce3314a4e28411edf3c6efde468f6f2616fc31e17a62587d6a9255f4633" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "b494aae329f000b68aa16737ca1de482e239d44da9486e8d45800fd6fd636780" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
  '(debug-on-error t)
  '(deft-filter-only-filenames t)
+ '(denote-modules-global-mode t)
  '(diary-file "~/.emacs.d/OrgFiles/diary.org")
  '(dired-use-ls-dired t)
  '(display-line-numbers-type 'relative)
@@ -112,8 +119,12 @@
    '("/home/bhaskar/.emacs.d/OrgFiles/diary.org" "/home/bhaskar/.emacs.d/OrgFiles/task.org"))
  '(org-agenda-include-diary t)
  '(org-agenda-insert-diary-extract-time t)
+ '(org-bibtex-inherit-tags t)
+ '(org-bibtex-tags-are-keywords t)
+ '(org-books-file t)
  '(org-directory "~/.emacs.d/OrgFiles")
  '(org-export-backends '(ascii html icalendar latex md odt org texinfo))
+ '(org-export-with-email t)
  '(org-file-apps
    '((auto-mode . emacs)
      ("\\.mm\\'" . default)
@@ -130,11 +141,13 @@
  '(org-use-sub-superscripts '{})
  '(package-archive-upload-base "/home/bhaskar/.emacs.d/elpa/archives/gnu elpa")
  '(package-selected-packages
-   '(site-lisp org-noter-pdftools citar-denote citar-embark citar-org-roam citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web amx grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(bibtex-utils gscholar-bibtex site-lisp org-noter-pdftools citar-denote citar-embark citar-org-roam citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web amx grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
  '(popper-reference-buffers '("\\*Messages\\*$"))
+ '(restart-emacs-daemon-with-tty-frames-p t)
+ '(restart-emacs-restore-frames t)
  '(rustic-ansi-faces
    ["#2d2b55" "#ff000d" "#3ad900" "#fad000" "#82aaff" "#ff9d00" "#ff628c" "#e3e9fa"])
  '(safe-local-variable-values
@@ -332,9 +345,9 @@
        (:maildir "/Al_Viro"               :key ?v)
        (:maildir "/Jonathan_Corbet"       :key ?j)
        (:maildir "/Paul_E_McKenney"       :key ?p)
-       (:maildir "/Thomas_Gleixner"       :key ?t)
        (:maildir "/linux-kernel"          :key ?k)
-       (:maildir "/David_Miller"          :key ?d))))
+       (:maildir "/Thomas_Gleixner"       :key ?t))))
+
 ;; Disable uppercase
 (put 'upcase-region 'disabled nil)
 ;;open vimb,invoke it like browse-url-generic on M-x prompt
@@ -1200,7 +1213,7 @@ rather than the whole path."
 (defun org-open-contacts-file ()
   (interactive)
   (find-file "~/.emacs.d/OrgFiles/contacts.org"))
-(global-set-key (kbd "C-c n c") 'org-open-contacts-file)
+(global-set-key (kbd "C-c n v") 'org-open-contacts-file)
 
 
 ;; Open notes.org file
@@ -2354,15 +2367,32 @@ Start an unlimited search at `point-min' otherwise."
 
 ;; Biblatex
 
+(autoload 'helm-bibtex "helm-bibtex" "" t)
+
  (setq bib-files-directory (directory-files
         (concat (getenv "HOME") "/bibliography") t
                              "^[A-Z|a-z].+.bib$")
-     pdf-files-directory (concat (getenv "HOME") "/bibliography/"))
+     pdf-files-directory (concat (getenv "HOME") "/bibliography/pdf_docs/"))
+
+(setq bibtex-completion-bibliography
+      '("~/bibliography/bibliography.bib" "~/.emacs.d/OrgFiles/books.bib" "~/.emacs.d/OrgFiles/notes.bib"))
+
+(setq bibtex-completion-library-path
+      '("~/bibliography/library/" "~/bibliography/pdf_docs"))
+
+(setq bibtex-completion-notes-path "~/.emacs.d/OrgFiles/notes.bib")
+
+(setq gscholar-bibtex-database-file "~/bibliography/bibliography.bib")
+
+(defun bibtex-completion-open-pdf-external (keys &optional fallback-action)
+  (let ((bibtex-completion-pdf-open-function
+         (lambda (fpath) (start-process "zathura" "*helm-bibtex-zathura*" "/usr/bin/zathura" fpath))))
+    (bibtex-completion-open-pdf keys fallback-action)))
 
 (use-package citar
     :custom
-    (org-cite-global-bibliography '("~/bibliography/bibliography.bib"))
-    (citar-bibliography bibtex-files)
+    (org-cite-global-bibliography '("~/bibliography/bibliography.bib" "~/.emacs.d/OrgFiles/books.bib"))
+    (citar-bibliography '("~/bibliography/bibliography.bib"))
     (org-cite-insert-processor 'citar)
     (org-cite-follow-processor 'citar)
     (org-cite-activate-processor 'citar)
@@ -2373,7 +2403,25 @@ Start an unlimited search at `point-min' otherwise."
     :bind
     (("C-c t o" . citar-open)
      (:map org-mode-map :package org ("C-c b" . #'org-cite-insert))))
+(global-set-key (kbd "C-c h") 'helm-bibtex)
+(global-set-key (kbd "C-c n g") 'gscholar-bibtex)
 
 ;; Systemd conf file syntax color
 
 (load "~/.emacs.d/systemd-color" nil t)
+
+;; citar shortcuts
+
+(let ((map global-map))
+  (define-key map (kbd "C-c n c c") #'citar-create-note)
+  (define-key map (kbd "C-c n c o") #'citar-denote-open-note)
+  (define-key map (kbd "C-c n c d") #'citar-denote-dwim)
+  (define-key map (kbd "C-c n c a") #'citar-denote-add-citekey)
+  (define-key map (kbd "C-c n c k") #'citar-denote-remove-citekey)
+  (define-key map (kbd "C-c n c e") #'citar-denote-open-reference-entry)
+  (define-key map (kbd "C-c n c r") #'citar-denote-find-reference)
+  (define-key map (kbd "C-c n c f") #'citar-denote-find-citation)
+  (define-key map (kbd "C-c n c n") #'citar-denote-cite-nocite)
+  (define-key map (kbd "C-c n c m") #'citar-denote-reference-nocite))
+
+
