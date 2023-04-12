@@ -2619,3 +2619,26 @@ Start an unlimited search at `point-min' otherwise."
 * Systemd config file color syntax
 (load "~/.emacs.d/systemd-color" nil t)
 
+* Hydra
+;;; Hydra
+(defhydra
+  hydra-jump-to-directory-and-files
+  (:color monokai)
+  "Jump to directory and file"
+  ("P" (find-file "/home/bhaskar/patches_sent") "Patches-Sent")
+  ("B" (find-file "/home/bhaskar/bibliography") "Bibliography")
+  ("v" (find-file "/home/bhaskar/Videos") "Videos")
+  ("p" (find-file "/home/bhaskar/Pictures") "Pictures")
+  ("a" (find-file "/home/bhaskar/Adm_scripts") "Admin-Scripts")
+  ("i" (find-file "/home/bhaskar/.config/i3") "i3-scripts")
+  ("e" (find-file "/home/bhaskar/.emacs.d") "emacs.d")
+  ("b" (find-file "/home/bhaskar/.bashrc") ".bashrc")
+  ("c" (find-file "/home/bhaskar/.ithreeconfig") "i3config")
+  ("m" (find-file "/home/bhaskar/.muttrc") "mutt-config")
+  ("g" (find-file "/home/bhaskar/.gitconfig") "git-config")
+  ("k" (find-file "/home/bhaskar/git-linux/linux") "linux-kernel-source")
+  ("d" (find-file "/home/bhaskar/Downloads") "Downloads")
+  ("r" (find-file "/data") "Static-Resources")
+  ("q" nil "Quit" :color blue)) ; Add :color blue
+
+(global-set-key (kbd "C-c 1") 'hydra-jump-to-directory-and-files/body)
