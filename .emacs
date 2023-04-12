@@ -141,7 +141,7 @@
  '(org-use-sub-superscripts '{})
  '(package-archive-upload-base "/home/bhaskar/.emacs.d/elpa/archives/gnu elpa")
  '(package-selected-packages
-   '(bibtex-utils gscholar-bibtex site-lisp org-noter-pdftools citar-denote citar-embark citar-org-roam citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web amx grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(djvu bibtex-utils gscholar-bibtex site-lisp org-noter-pdftools citar-denote citar-embark citar-org-roam citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web amx grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -2424,4 +2424,26 @@ Start an unlimited search at `point-min' otherwise."
   (define-key map (kbd "C-c n c n") #'citar-denote-cite-nocite)
   (define-key map (kbd "C-c n c m") #'citar-denote-reference-nocite))
 
+;; Stolen from Emacs Elements Youtube video
 
+;;; Hydra
+(defhydra
+  hydra-jump-to-directory-and-files
+  (:color monokai)
+  "Jump to directory and file"
+  ("P" (find-file "/home/bhaskar/patches_sent") "Patches-Sent")
+  ("B" (find-file "/home/bhaskar/bibliography") "Bibliography")
+  ("v" (find-file "/home/bhaskar/Videos") "Videos")
+  ("p" (find-file "/home/bhaskar/Pictures") "Pictures")
+  ("a" (find-file "/home/bhaskar/Adm_scripts") "Admin-Scripts")
+  ("i" (find-file "/home/bhaskar/.config/i3") "i3-scripts")
+  ("e" (find-file "/home/bhaskar/.emacs.d") "emacs.d")
+  ("b" (find-file "/home/bhaskar/.bashrc") ".bashrc")
+  ("c" (find-file "/home/bhaskar/.ithreeconfig") "i3config")
+  ("m" (find-file "/home/bhaskar/.muttrc") "mutt-config")
+  ("g" (find-file "/home/bhaskar/.gitconfig") "git-config")
+  ("k" (find-file "/home/bhaskar/git-linux/linux") "linux-kernel-source")
+  ("d" (find-file "/home/bhaskar/Downloads") "Downloads")
+  ("r" (find-file "/data") "Static-Resources")
+  ("q" nil "Quit" :color blue)) ; Add :color blue
+(global-set-key (kbd "C-c 1") 'hydra-jump-to-directory-and-files/body)
