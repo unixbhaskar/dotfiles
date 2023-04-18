@@ -100,6 +100,7 @@ exec $HOME/bin/noti_active
 exec $HOME/bin/command-t_ruby_fix.sh >/dev/null 2>&1
 exec emacs --bg-daemon
 exec $HOME/bin/start_btop
+exec $HOME/bin/move_pdf >/dev/null 2>&1
 #exec emacsclient -c
 
 #Workspaces
