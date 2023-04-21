@@ -26,6 +26,86 @@
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
  '(compose-mail-user-agent-warnings nil)
+ '(connection-local-criteria-alist
+   '(((:application tramp)
+      tramp-connection-local-default-system-profile tramp-connection-local-default-shell-profile)
+     ((:application eshell)
+      eshell-connection-default-profile)))
+ '(connection-local-profile-alist
+   '((tramp-connection-local-darwin-ps-profile
+      (tramp-process-attributes-ps-args "-acxww" "-o" "pid,uid,user,gid,comm=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" "-o" "state=abcde" "-o" "ppid,pgid,sess,tty,tpgid,minflt,majflt,time,pri,nice,vsz,rss,etime,pcpu,pmem,args")
+      (tramp-process-attributes-ps-format
+       (pid . number)
+       (euid . number)
+       (user . string)
+       (egid . number)
+       (comm . 52)
+       (state . 5)
+       (ppid . number)
+       (pgrp . number)
+       (sess . number)
+       (ttname . string)
+       (tpgid . number)
+       (minflt . number)
+       (majflt . number)
+       (time . tramp-ps-time)
+       (pri . number)
+       (nice . number)
+       (vsize . number)
+       (rss . number)
+       (etime . tramp-ps-time)
+       (pcpu . number)
+       (pmem . number)
+       (args)))
+     (tramp-connection-local-busybox-ps-profile
+      (tramp-process-attributes-ps-args "-o" "pid,user,group,comm=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" "-o" "stat=abcde" "-o" "ppid,pgid,tty,time,nice,etime,args")
+      (tramp-process-attributes-ps-format
+       (pid . number)
+       (user . string)
+       (group . string)
+       (comm . 52)
+       (state . 5)
+       (ppid . number)
+       (pgrp . number)
+       (ttname . string)
+       (time . tramp-ps-time)
+       (nice . number)
+       (etime . tramp-ps-time)
+       (args)))
+     (tramp-connection-local-bsd-ps-profile
+      (tramp-process-attributes-ps-args "-acxww" "-o" "pid,euid,user,egid,egroup,comm=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" "-o" "state,ppid,pgid,sid,tty,tpgid,minflt,majflt,time,pri,nice,vsz,rss,etimes,pcpu,pmem,args")
+      (tramp-process-attributes-ps-format
+       (pid . number)
+       (euid . number)
+       (user . string)
+       (egid . number)
+       (group . string)
+       (comm . 52)
+       (state . string)
+       (ppid . number)
+       (pgrp . number)
+       (sess . number)
+       (ttname . string)
+       (tpgid . number)
+       (minflt . number)
+       (majflt . number)
+       (time . tramp-ps-time)
+       (pri . number)
+       (nice . number)
+       (vsize . number)
+       (rss . number)
+       (etime . number)
+       (pcpu . number)
+       (pmem . number)
+       (args)))
+     (tramp-connection-local-default-shell-profile
+      (shell-file-name . "/bin/sh")
+      (shell-command-switch . "-c"))
+     (tramp-connection-local-default-system-profile
+      (path-separator . ":")
+      (null-device . "/dev/null"))
+     (eshell-connection-default-profile
+      (eshell-path-env-list))))
  '(corfu-global-mode t)
  '(cua-enable-modeline-indications t)
  '(custom-enabled-themes '(molokai))
@@ -141,7 +221,7 @@
  '(org-use-sub-superscripts '{})
  '(package-archive-upload-base "/home/bhaskar/.emacs.d/elpa/archives/gnu elpa")
  '(package-selected-packages
-   '(djvu bibtex-utils gscholar-bibtex site-lisp org-noter-pdftools citar-denote citar-embark citar-org-roam citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web amx grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation annotate dashboard-project-status spell-fu helpful ctags-update org-beautify-theme org-tag-beautify org-timeline org-dashboard org wgrep org-roam org-noter git-timemachine multiple-cursors browse-at-remote w3m consult-company embark-consult highlight-parentheses keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment with-emacs dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books all-the-icons-ibuffer weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin all-the-icons-ivy-rich mode-icons sml-mode magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(reddigg hnreader djvu bibtex-utils gscholar-bibtex site-lisp org-noter-pdftools citar-embark citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation dashboard-project-status spell-fu ctags-update org-beautify-theme org-timeline org-dashboard org wgrep org-roam multiple-cursors browse-at-remote w3m consult-company embark-consult keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin mode-icons magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -151,7 +231,8 @@
  '(rustic-ansi-faces
    ["#2d2b55" "#ff000d" "#3ad900" "#fad000" "#82aaff" "#ff9d00" "#ff628c" "#e3e9fa"])
  '(safe-local-variable-values
-   '((eval add-hook 'after-save-hook
+   '((vc-git-annotate-switches . "-w")
+     (eval add-hook 'after-save-hook
            (lambda nil
              (org-babel-tangle))
            nil t)))
@@ -214,8 +295,7 @@
              '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-(add-to-list 'package-archives
-	     '("marmalade" . "https://marmalade-repo.org/packages/") t)
+
 (add-to-list 'package-archives
              '("gnu elpa" . "https://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives
@@ -2447,3 +2527,63 @@ Start an unlimited search at `point-min' otherwise."
   ("r" (find-file "/data") "Static-Resources")
   ("q" nil "Quit" :color blue)) ; Add :color blue
 (global-set-key (kbd "C-c 1") 'hydra-jump-to-directory-and-files/body)
+
+;; Read HackerNews in emacs hnreader
+;;;Hydra
+(defhydra
+  hydra-hackernews-keys
+  (:color monokai)
+  "These keys can be used in hackernews mode"
+  ("h" hnreader-news "Hacker News")
+  ("p" hnreader-past "Past view")
+  ("a" hnreader-ask "Load ask page")
+  ("s" hnreader-show "Load show page")
+  ("n" hnreader-newest "Load New Link Page")
+  ("m" hnreader-more "Load more")
+  ("b" hnreader-back "Go back to previous page")
+  ("c" hnreader-comment "Pass url of the news")
+  ("o" hnreader-org-insert-hn-link "Insert hn link in org")
+  ("f" reddigg-view-frontpage "Frontpage"))
+
+(global-set-key (kbd "C-c 2") 'hydra-hackernews-keys/body)
+
+;; Reddit inside emacs
+(add-hook 'md4rd-mode-hook 'md4rd-indent-all-the-lines)
+(setq md4rd-subs-active '(lisp+Common_Lisp emacs linux bash programming vim linuxadmins))
+
+;;;Hydra
+(defhydra
+  hydra-reddit-keys
+  (:color monokai)
+  "These keys can be used in reddit mode"
+  ("m" reddigg-view-main "main view")
+  ("s" reddigg-view-sub "sub view")
+  ("c" reddigg-view-comments "comment view")
+  ("f" reddigg-view-frontpage "frontpage"))
+
+(global-set-key (kbd "C-c 3") 'hydra-reddit-keys/body)
+
+;;;Hydra
+(defhydra
+  hydra-subreddit-manipulation-keys
+  (:color monokai)
+  "These keys can be used in subreddit mode"
+    ("u" tree-mode-goto-parent "Goto-Parent")
+    ("o" md4rd-open "Open-reddit-mode")
+    ("v" md4rd-visit "visit-reddit")
+    ("e" tree-mode-toggle-expand "tree mode")
+    ("E" md4rd-widget-expand-all "widget expand")
+    ("C" md4rd-widget-collapse-all "widget collapse")
+    ("n" widget-forward "widget forward")
+    ("j" widget-forward "widget forward2")
+    ("h" backward-button "backward button")
+    ("p" widget-backward "widget backward")
+    ("k" widget-backward "widget backward2")
+    ("l" forward-button "forward button")
+    ("q" kill-current-buffer "kill current buffer")
+    ("r" md4rd-reply "reply")
+    ("u" md4rd-upvote "upvote")
+    ("d" md4rd-downvote "downvote")
+    ("t" md4rd-widget-toggle-line "toggle lne"))
+
+(global-set-key (kbd "C-c 4") 'hydra-subreddit-manipulation-keys/body)
