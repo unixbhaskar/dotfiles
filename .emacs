@@ -221,11 +221,13 @@
  '(org-use-sub-superscripts '{})
  '(package-archive-upload-base "/home/bhaskar/.emacs.d/elpa/archives/gnu elpa")
  '(package-selected-packages
-   '(reddigg hnreader djvu bibtex-utils gscholar-bibtex site-lisp org-noter-pdftools citar-embark citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation dashboard-project-status spell-fu ctags-update org-beautify-theme org-timeline org-dashboard org wgrep org-roam multiple-cursors browse-at-remote w3m consult-company embark-consult keytar move-text dired-git-info smart-compile vimrc-mode vertico selectrum-prescient orderless crux dired-git keychain-environment dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin mode-icons magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode use-package synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(reddigg hnreader djvu bibtex-utils gscholar-bibtex site-lisp org-noter-pdftools citar-embark citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation dashboard-project-status spell-fu ctags-update org-beautify-theme org-timeline org-dashboard org wgrep org-roam multiple-cursors browse-at-remote w3m consult-company embark-consult keytar move-text dired-git-info smart-compile vimrc-mode selectrum-prescient orderless crux dired-git keychain-environment dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin mode-icons magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
  '(popper-reference-buffers '("\\*Messages\\*$"))
+ '(popper-reference-buffers '("\\*Backtrace\\*$"))
+ '(popper-reference-buffers '("\\*diary.org\\*$"))
  '(restart-emacs-daemon-with-tty-frames-p t)
  '(restart-emacs-restore-frames t)
  '(rustic-ansi-faces
@@ -2513,12 +2515,13 @@ Start an unlimited search at `point-min' otherwise."
   "Jump to directory and file"
   ("P" (find-file "/home/bhaskar/patches_sent") "Patches-Sent")
   ("B" (find-file "/home/bhaskar/bibliography") "Bibliography")
+  ("b" (find-file "/home/bhaskar/bin") "Home_bin")
   ("v" (find-file "/home/bhaskar/Videos") "Videos")
   ("p" (find-file "/home/bhaskar/Pictures") "Pictures")
   ("a" (find-file "/home/bhaskar/Adm_scripts") "Admin-Scripts")
   ("i" (find-file "/home/bhaskar/.config/i3") "i3-scripts")
   ("e" (find-file "/home/bhaskar/.emacs.d") "emacs.d")
-  ("b" (find-file "/home/bhaskar/.bashrc") ".bashrc")
+  ("h" (find-file "/home/bhaskar/.bashrc") ".bashrc")
   ("c" (find-file "/home/bhaskar/.ithreeconfig") "i3config")
   ("m" (find-file "/home/bhaskar/.muttrc") "mutt-config")
   ("g" (find-file "/home/bhaskar/.gitconfig") "git-config")
@@ -2546,6 +2549,7 @@ Start an unlimited search at `point-min' otherwise."
   ("f" reddigg-view-frontpage "Frontpage"))
 
 (global-set-key (kbd "C-c 2") 'hydra-hackernews-keys/body)
+
 
 ;; Reddit inside emacs
 (add-hook 'md4rd-mode-hook 'md4rd-indent-all-the-lines)
