@@ -2615,7 +2615,6 @@ Start an unlimited search at `point-min' otherwise."
     (("C-c t o" . citar-open)
      (:map org-mode-map :package org ("C-c b" . #'org-cite-insert))))
 
-
 * Systemd config file color syntax
 (load "~/.emacs.d/systemd-color" nil t)
 
