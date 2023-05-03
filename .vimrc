@@ -1037,3 +1037,5 @@ endif
 "        if !exists('*Wordpress_vim')
 "          runtime vimblog.vim
 "        endif
+" Command T ruby initialization
+let g:CommandTPreferredImplementation='ruby'
