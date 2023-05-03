@@ -320,10 +320,10 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots' && notify-send -t 1
 # Show latest capture screenshot
 bindsym $mod+Shift+comma  exec show_latest_screenshot
 
-set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix
-bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix"
+set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall
+bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall"
 
-mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix" {
+mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall" {
     bindsym r exec open_reddit
     bindsym g exec open_github
     bindsym e exec open_goodreads
@@ -333,6 +333,7 @@ mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs
     bindsym s exec open_slashdot
     bindsym t exec open_twitter
     bindsym l exec open_linkedin
+    bindsym c exec open_linux_syscall
     bindsym p exec open_phoronix
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -559,7 +560,7 @@ bindsym $mod+Ctrl+a exec yt_studio_url
 bindsym $mod+k exec "st_solarized -e kb"
 
 # Pop up a floating term
-bindsym $mod+Shift+t exec "floaterm ~/bin/st_solarized"
+# bindsym $mod+Shift+t exec "floaterm ~/bin/st_solarized"
 
 # Open emacs client on tty
 
@@ -578,7 +579,8 @@ bindsym $mod+Ctrl+m exec mail_compose_send_by_emacs.sh
 bindsym $mod+Shift+e exec kickstart_emacs_daemon
 
 # open st gruvbox terminal
-bindsym $mod+Caps_Lock exec st_gruvbox
+# bindsym $mod+Caps_Lock exec st_gruvbox
+bindsym $mod+Shift+t exec st_gruvbox
 
 # Emacs without xresources
 bindsym $mod+Ctrl+x exec emacs-without-x-resources
