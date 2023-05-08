@@ -103,7 +103,6 @@ unfreeze = update-index --no-assume-unchanged  #You need to run this command ins
 	writeCommitGraph = true
 [merge]
 	tool = vimdiff
-	algorithm = histogram
 [diff]
 	external = git_diff_wrapper  # call it inside the git repo; git diff
 [pull]
