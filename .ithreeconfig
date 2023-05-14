@@ -500,7 +500,7 @@ bindsym $mod+Ctrl+e exec select_emojis
 # bindcode --release  $mod+62 exec st_solarized
 
 # Open Stackoverfloow search
-bindsym $mod+Ctrl+f exec stackoverflow_search
+# bindsym $mod+Ctrl+f exec stackoverflow_search
 
 # Open any site in browser,prompt for url and specific browser
 bindsym $mod+Ctrl+o exec open_in_specific_browser
@@ -599,5 +599,8 @@ bindsym $mod+Ctrl+w exec "~/.config/i3/empty_i3_workspace"
 # Open youtube in private window
 
 bindsym $mod+Shift+u exec open_youtube_without_login
+
+# Gentoo package eta term
+bindsym $mod+Ctrl+f exec "st_gruvbox -e package_eta"
 
 # vim:filetype=i3config
