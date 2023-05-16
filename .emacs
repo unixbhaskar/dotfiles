@@ -2591,3 +2591,12 @@ Start an unlimited search at `point-min' otherwise."
     ("t" md4rd-widget-toggle-line "toggle lne"))
 
 (global-set-key (kbd "C-c 4") 'hydra-subreddit-manipulation-keys/body)
+
+;; Clean up undo file mess
+
+(defun get_rid_of_undo_file ()
+  "Get rid of undo file  with external script."
+      (shell-command(format "clean_undo_tree" buffer-file-name)))
+
+(add-hook 'after-save-hook 'kill-this-buffer #'get_rid_of_undo_file)
+

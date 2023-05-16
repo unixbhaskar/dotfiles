@@ -2557,7 +2557,7 @@ Start an unlimited search at `point-min' otherwise."
 
 
 * Language Tool
-
+#+BEGIN_SRC emacs-lisp
 (setq langtool-language-tool-jar "/home/bhaskar/LanguageTool-5.7/languagetool-commandline.jar")
 (require 'langtool)
 
@@ -2583,18 +2583,18 @@ Start an unlimited search at `point-min' otherwise."
 
 (setq langtool-autoshow-message-function
       'langtool-autoshow-detail-popup)
-
+#+END_SRC
 
 *  SideFrame
-
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/.emacs.d/sideframe/sideframe.el")
 (sideframe-make 'left  32)
 (sideframe-make 'right 32)
 (sideframe-toggle-maximized)
-
+#+END_SRC
 
 * Bibtex
-
+#+BEGIN_SRC emacs-lisp
  (setq bib-files-directory (directory-files
         (concat (getenv "HOME") "/bibliography") t
                              "^[A-Z|a-z].+.bib$")
@@ -2614,11 +2614,15 @@ Start an unlimited search at `point-min' otherwise."
     :bind
     (("C-c t o" . citar-open)
      (:map org-mode-map :package org ("C-c b" . #'org-cite-insert))))
+#+END_SRC
 
 * Systemd config file color syntax
+#+BEGIN_SRC emacs-lisp
 (load "~/.emacs.d/systemd-color" nil t)
+#+END_SRC
 
 * Hydra
+#+BEGIN_SRC emacs-lisp
 ;;; Hydra
 (defhydra
   hydra-jump-to-directory-and-files
@@ -2641,3 +2645,16 @@ Start an unlimited search at `point-min' otherwise."
   ("q" nil "Quit" :color blue)) ; Add :color blue
 
 (global-set-key (kbd "C-c 1") 'hydra-jump-to-directory-and-files/body)
+#+END_SRC
+
+
+* Get rid of the undo file mess
+#+BEGIN_SRC emacs-lisp
+;; Clean up undo file mess
+
+(defun get_rid_of_undo_file ()
+  "Get rid of undo file  with external script."
+      (shell-command(format "clean_undo_tree" buffer-file-name)))
+
+(add-hook 'after-save-hook 'kill-this-buffer #'get_rid_of_undo_file)
+#+END_SRC
