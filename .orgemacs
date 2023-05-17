@@ -2658,3 +2658,11 @@ Start an unlimited search at `point-min' otherwise."
 
 (add-hook 'after-save-hook 'kill-this-buffer #'get_rid_of_undo_file)
 #+END_SRC
+
+* Org footnotes frequently used options
+#+BEGIN_SRC emacs-lisp
+
+(global-set-key (kbd "C-c 5") 'org-footnote-new)
+
+(global-set-key (kbd "C-c 6") 'org-footnote-renumber-fn:N)
+#+END_SRC

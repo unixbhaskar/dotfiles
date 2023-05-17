@@ -623,7 +623,7 @@
 ;; Alternative, local thesaurus
 (use-package synosaurus
   :config
-  (global-set-key (kbd "M-|") 'synosaurus-choose-and-replace))
+  (global-set-key (kbd "S-|") 'synosaurus-choose-and-replace))
 ;; Word definition search.
 (use-package define-word
   :config
@@ -2318,13 +2318,13 @@ Start an unlimited search at `point-min' otherwise."
 
 ;; Stop creating backup files and put all the backup file in single directory
 (setq make-backup-files nil)
-(setq backup-directory-alist '(("." . ,"~/.emacs.d/backup"))
-  backup-by-copying t    ; Don't delink hardlinks
-  version-control t      ; Use version numbers on backups
-  delete-old-versions t  ; Automatically delete excess backups
-  kept-new-versions 10   ; how many of the newest versions to keep
-  kept-old-versions 5    ; and how many of the old
-  )
+;; (setq backup-directory-alist '(("." . ,"~/.emacs.d/backup"))
+;;   backup-by-copying t    ; Don't delink hardlinks
+;;   version-control t      ; Use version numbers on backups
+;;   delete-old-versions t  ; Automatically delete excess backups
+;;   kept-new-versions 10   ; how many of the newest versions to keep
+;;   kept-old-versions 5    ; and how many of the old
+;;   )
 
 ;; Call up proced ,which system process viewer
 ;; (global-set-key (kbd "C-c h t") 'proced')
@@ -2373,7 +2373,7 @@ Start an unlimited search at `point-min' otherwise."
 
 ;; Open scratch buffer
 
-(global-set-key (kbd "C-x n s") 'scratch)
+(global-set-key (kbd "C-x n s") 'scratch-buffer)
 
 ;; Open pocket reader
 
@@ -2592,11 +2592,9 @@ Start an unlimited search at `point-min' otherwise."
 
 (global-set-key (kbd "C-c 4") 'hydra-subreddit-manipulation-keys/body)
 
-;; Clean up undo file mess
 
-(defun get_rid_of_undo_file ()
-  "Get rid of undo file  with external script."
-      (shell-command(format "clean_undo_tree" buffer-file-name)))
+;; Org-footnote frequently use bindings
 
-(add-hook 'after-save-hook 'kill-this-buffer #'get_rid_of_undo_file)
+(global-set-key (kbd "C-c 5") 'org-footnote-new)
 
+(global-set-key (kbd "C-c 6") 'org-footnote-renumber-fn:N)
