@@ -128,7 +128,7 @@ bindsym $mod+Control+Left workspace prev
 
 bindsym $mod+1 ; workspace $workspace1 ;
 bindsym $mod+b ; exec "vimb";
-bindsym $mod+Shift+f ; exec "firefox";
+bindsym $mod+Shift+f ; exec "speed_firefox";
 bindsym $mod+braceleft workspace $workspace5 ; exec "st_gruvbox -n Btop -e btop";
 bindsym $mod+n workspace $workspace6 ; exec "st_solarized -n Newsboat -e newsboat";
 bindsym $mod+c  workspace $workspace7 ; exec "st_solarized -n Calcurse -e calcurse";
@@ -141,7 +141,7 @@ bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
 bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
 bindsym $mod+p workspace $workspace15 ; exec pdf_viewer;
 bindsym $mod+Shift+n ; exec nyxt;
-bindsym $mod+Ctrl+z workspace $workspace3 ;exec "firefox --private-window";
+bindsym $mod+Ctrl+z workspace $workspace3 ;exec "speed_firefox --private-window";
 
 #ASSIGN PROGRAMS TO WORKSPACES
 # assign [class="^st-256color$"] → $workspace1
