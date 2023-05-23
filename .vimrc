@@ -191,7 +191,7 @@ vnoremap <F9> zf
  "Search replaces n number of times
 nnoremap sr :normal n.<CR>
 "Open URI under cursor by pressing ob and os
- nmap ob :exe 'silent !vimb <C-r><C-l><CR>'
+ nmap ob :exe 'silent !vimb'<C-r><C-l><CR>
  "Open selected URI.
  vmap os :exe 'silent !vimb %'<CR>
  "Titlecase plugins
@@ -957,12 +957,13 @@ nnoremap <Leader>pd :!zathura <cfile> &<CR><CR>
 " Vimwiki markdown fixup
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]"
 " Transparent editing of gpg encrypted files.
-" By Wouter Hanegraaff
+" GPG encrypt By Wouter Hanegraaff
 augroup encrypted
   au!
 
   " First make sure nothing is written to ~/.viminfo while editing
   " an encrypted file.
+  "
   autocmd BufReadPre,FileReadPre *.gpg set viminfo=
   " We don't want a various options which write unencrypted data to disk
   autocmd BufReadPre,FileReadPre *.gpg set noswapfile noundofile nobackup
@@ -985,7 +986,7 @@ augroup encrypted
   " after the file has been written.
   autocmd BufWritePost,FileWritePost *.gpg u
 augroup END
-
+" Save file with .gpg extension
 nnoremap <Leader>en :saveas <C-R>%.gpg<CR>
 " Build notes in PDF and Html for better viewing
 augroup Notes
