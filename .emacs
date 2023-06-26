@@ -16,6 +16,7 @@
  '(bibtex-completion-notes-global-mode nil)
  '(bibtex-completion-pdf-open-function 'helm-open-file-with-default-tool)
  '(bibtex-dialect 'biblatex)
+ '(bmkp-eww-buffer-renaming t)
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
@@ -27,12 +28,16 @@
  '(company-quickhelp-color-foreground "#DCDCCC")
  '(compose-mail-user-agent-warnings nil)
  '(connection-local-criteria-alist
-   '(((:application tramp)
+   '(((:application tramp :protocol "flatpak")
+      tramp-container-connection-local-default-flatpak-profile)
+     ((:application tramp)
       tramp-connection-local-default-system-profile tramp-connection-local-default-shell-profile)
      ((:application eshell)
       eshell-connection-default-profile)))
  '(connection-local-profile-alist
-   '((tramp-connection-local-darwin-ps-profile
+   '((tramp-container-connection-local-default-flatpak-profile
+      (tramp-remote-path "/app/bin" tramp-default-remote-path "/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin" "/local/bin" "/local/freeware/bin" "/local/gnu/bin" "/usr/freeware/bin" "/usr/pkg/bin" "/usr/contrib/bin" "/opt/bin" "/opt/sbin" "/opt/local/bin"))
+     (tramp-connection-local-darwin-ps-profile
       (tramp-process-attributes-ps-args "-acxww" "-o" "pid,uid,user,gid,comm=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" "-o" "state=abcde" "-o" "ppid,pgid,sess,tty,tpgid,minflt,majflt,time,pri,nice,vsz,rss,etime,pcpu,pmem,args")
       (tramp-process-attributes-ps-format
        (pid . number)
@@ -110,7 +115,7 @@
  '(cua-enable-modeline-indications t)
  '(custom-enabled-themes '(molokai))
  '(custom-safe-themes
-   '("73803d7cebbc240fd6cd8a54077b8fbf0b263a25db48579f5953279986283481" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "3e200d49451ec4b8baa068c989e7fba2a97646091fd555eca0ee5a1386d56077" "833ddce3314a4e28411edf3c6efde468f6f2616fc31e17a62587d6a9255f4633" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "b494aae329f000b68aa16737ca1de482e239d44da9486e8d45800fd6fd636780" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
+   '("fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" "73803d7cebbc240fd6cd8a54077b8fbf0b263a25db48579f5953279986283481" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "3e200d49451ec4b8baa068c989e7fba2a97646091fd555eca0ee5a1386d56077" "833ddce3314a4e28411edf3c6efde468f6f2616fc31e17a62587d6a9255f4633" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "b494aae329f000b68aa16737ca1de482e239d44da9486e8d45800fd6fd636780" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
  '(debug-on-error t)
  '(deft-filter-only-filenames t)
  '(denote-modules-global-mode t)
@@ -138,6 +143,7 @@
  '(elfeed-feeds
    '("https://blog.tecosaur.com/tmio/rss.xml" "https://www.reddit.com/r/orgmode.rss" "https://www.reddit.com/r/emacs.rss" "http://pragmaticemacs.com/feed/" "https://planet.emacslife.com/atom.xml" "https://updates.orgmode.org/feed/changes" "http://oremacs.com/atom.xml" "https://oneofus.la/have-emacs-will-hack/feed.xml" "http://www.sysadminblogs.com/planet/atom.xml" "http://feeds2.feedburner.com/webupd8" "http://aws.typepad.com/aws/atom.xml" "http://www.openstack.org/blog/feed/" "http://selinuxnews.org/wp/index.php/feed/" "http://www.learninglinux.com/backend.php" "http://opensource.org/blog/feed" "http://z.about.com/6/g/linux/b/rss2.xml" "http://linuxtoday.com/backend/biglt.rss" "http://www.debian-administration.org/articles.rdf" "http://feeds.feedburner.com/Insidehpc" "http://lxer.com/module/newswire/headlines.rss" "http://feeds.delicious.com/rss/OracleTechnologyNetwork/linux" "http://rss.techtarget.com/184.xml" "http://z.about.com/6/o/m/linux_p2.xml" "http://linux-foundation.org/weblogs/press/feed/" "http://www.linux-mag.com/cache/rss20.xml" "http://google-opensource.blogspot.com/atom.xml" "http://wiki.openvz.org/w/index.php?title=Special:RecentChanges&feed=rss" "http://feeds2.feedburner.com/oreilly/linux" "http://www.linuxinsider.com/perl/syndication/rssfull.pl" "http://kernelnewbies.org/RecentChanges?action=rss_rc&ddiffs=1&unique=1" "http://dev.mysql.com/mysql.rss" "http://feeds2.feedburner.com/Command-line-fu" "http://kbase.redhat.com/faq/community/feeds/documents?community=2001" "http://www.linux.com/feature?theme=rss" "http://feeds.feedburner.com/Go2linux" "http://linuxvirtualization.com/xml/rss/feed.xml" "http://feeds.feedburner.com/unixmenhowtos" "http://linux.ittoolbox.com/rss/12/white_papers" "http://www.sun.com/bigadmin/content/rss/scripts.xml" "http://esr.ibiblio.org/?feed=rss2" "http://www.kroah.com/log/index.rss" "http://www.hackitlinux.com/index.rss" "http://feeds.oreilly.com/oreilly/lamp" "http://www.unix.com/external.php?type=RSS2" "http://feeds.feedburner.com/Phoronix" "http://www.linuxhpc.org/backend/linuxhpc.rdf" "http://www.pixelbeat.org/feed/rss2.xml" "http://blog.ivanristic.com/atom.xml" "http://www.novell.com/news/novell-in-the-news/RSS" "http://penguinista.org/feed" "http://kernel.org/kdist/rss.xml" "http://www.linuxtopia.org/linuxtopia.rss" "http://administratosphere.wordpress.com/feed/" "http://snipt.net/public/tag/bash/feed" "http://feeds.feedburner.com/susegeek" "http://superuser.com/feeds/tag/linux" "http://kerneloops.org/rss.php" "http://unixbhaskar.wordpress.com/feed/" "http://www.reddit.com/r/linux/.rss" "http://rss.techtarget.com/421.xml" "http://feeds.feedburner.com/linuxweblog" "http://feeds.feedburner.com/HowToLinux" "http://www.blogger.com/feeds/09134601055128665246/blogs" "http://packages.gentoo.org/feed/newpackage" "http://www.ducea.com/feed/" "http://feeds.feedburner.com/linuxscrew" "http://feeds.feedburner.com/Shell-fu" "http://feeds.askapache.com/apache/htaccess" "http://linux.byexamples.com/feed/" "http://www.linuxformat.co.uk/backend.php" "http://feeds.oreilly.com/oreilly/sysadmin" "http://feeds.linuxinsight.com/linuxportal" "http://rss.slashdot.org/Slashdot/slashdotApache" "http://unixbhaskar.blogspot.com/feeds/posts/default" "http://www.linuxsecurity.com/static-content/linuxsecurity_advisories.rss" "http://tuxtraining.com/feed" "http://www.reviewlinux.com/rss/rss_howtos.xml" "http://www.ibm.com/developerworks/views/linux/rss/libraryview.jsp" "http://planet.nagios.org/archives?format=feed&type=rss" "http://www.linuxhomenetworking.com/wiki/index.php?title=Special:RecentChanges&feed=rss" "http://feeds.feedburner.com/Unixtutorials" "http://jakarta.apache.org/site/rss.xml" "http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" "http://www.clustermonkey.net/component/option,com_rss/feed,RSS2.0/no_html,1/" "http://www.fsf.org/news/RSS" "http://nagios.org/backend/feeds/frontpage/" "http://rss.slashdot.org/Slashdot/slashdotLinux" "http://feeds.feedburner.com/UbuntuGeek" "http://www.sitepoint.com/feed.rdf/all/tech/" "http://www.linuxhaxor.net/feed/" "http://mysqlha.blogspot.com/feeds/posts/default" "http://feeds.feedburner.com/MozillaLinks" "http://systhread.net/rss.xml" "http://feeds.feedburner.com/linuxtutorial" "http://www.oreillynet.com/pub/feed/9" "http://www.linuxquestions.org/syndicate/lqlatest.xml" "http://services.devx.com/outgoing/devxfeed.xml" "http://www.linuxfromscratch.org/lfs/feed.rss" "http://mongrel.rubyforge.org/rss.xml" "http://aspiringsysadmin.com/blog/feed/" "http://www.linuxplus.net/feed/" "http://www.linuxworld.com/rss/linux-news.xml" "http://mysqldba.blogspot.com/atom.xml" "http://www.howtoforge.com/node/feed" "http://www.linuxjournal.com/node/feed" "http://lwn.net/headlines/newrss" "http://www.linuxexpert.com/feed/" "http://kerneltrap.org/node/feed" "http://www.monitoringexchange.org/cgi-bin/search.cgi?query=_SPECIAL&special=newplugins&xml_feed=1&xml_title=MonitoringExchange%20-%20New%20Plugins;d=1" "http://www.lids.org/?q=rss.xml" "http://feeds.feedburner.com/TheGeekStuff" "http://lkml.org/rss.php" "http://www.fridu.org/faqs-aamp-tips-mainmenu-80/40-hosting-a-sysadmin?format=feed&type=rss" "http://serverfault.com/feeds/tag/linux" "http://digg.com/rss/indexlinux_unix.xml" "http://www.usinglinux.org/rss.php" "http://www.tuxwire.com/category/Howto/feed/" "http://www.itworld.com/blogs/81/feed" "https://www.kernel.org/feeds/all.atom.xml" "http://software.intel.com/en-us/blogs/feed" "http://blogs.oracle.com/MySQL/feed/entries/rss?cat=/MySQL" "http://www.linuxfoundation.org/news-media/news/rss.xml" "http://www.osnews.com/files/recent.xml" "http://www.mysqlperformanceblog.com/feed/" "http://feeds.howtogeek.com/howtogeek" "http://rootprompt.org/rss/" "http://feeds.feedburner.com/TechCrunch/" "http://www.linuxinsight.com/aggregator/rss" "http://linuxinstruction.com/?q=rss.xml" "http://feeds.feedburner.com/Reviewlinux" "http://linuxsysadminblog.com/atom.xml" "http://static.fsf.org/fsforg/rss/news.xml" "http://www.eweek.com/servers/rss/" "http://oops.kernel.org/feed/" "http://www.nagios.org/backend/feeds/frontpage/" "http://www.nagios.org/backend/feeds/community/" "http://www.nagios.org/news?format=feed&type=rss" "http://www.nagios.org/backend/feeds/uber/" "http://www.linux-on-laptops.com/rss.xml" "http://www.shell-tips.com/feed/" "http://www.tuxradar.com/rss" "http://www.tuxmachines.org/node/feed" "http://feeds.feedburner.com/linuxfaq?format=xml" "http://devops.com/feed/" "http://0pointer.de/blog/index.rss2" "http://coreos.com/atom.xml" "http://java.awsblog.com/blog/feed/recentPosts.rss" "http://www.archlinux.org/feeds/news/" "http://blog.mariadb.org/feed/" "http://www.planetmysql.org/rss20.xml"))
  '(emojify-emoji-styles '(ascii github unicode))
+ '(eww-auto-rename-buffer 'title)
  '(eww-browse-url-new-window-is-tab t)
  '(exwm-floating-border-color "#1e1e3f")
  '(frame-background-mode 'dark)
@@ -170,6 +176,9 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#161a2a" "#82aaff"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#161a2a" "#3ad900"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#161a2a" "#444a73"))
+ '(keycast-mode-line-format "%5s%k%c%r")
+ '(keycast-mode-line-insert-after 'doom-modeline-format--main)
+ '(keycast-mode-line-mode t)
  '(magit-repository-directories
    '(("~/projects/AdminScripts" . 5)
      ("~/dotfiles" . 0)
@@ -218,15 +227,14 @@
  '(org-tag-beautify-mode t)
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)" "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
+ '(org-use-speed-commands t)
  '(org-use-sub-superscripts '{})
  '(package-archive-upload-base "/home/bhaskar/.emacs.d/elpa/archives/gnu elpa")
  '(package-selected-packages
-   '(reddigg hnreader djvu bibtex-utils gscholar-bibtex site-lisp org-noter-pdftools citar-embark citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation dashboard-project-status spell-fu ctags-update org-beautify-theme org-timeline org-dashboard org wgrep org-roam multiple-cursors browse-at-remote w3m consult-company embark-consult keytar move-text dired-git-info smart-compile vimrc-mode selectrum-prescient orderless crux dired-git keychain-environment dired-icon magit-topgit magit-popup git-commit-insert-issue pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs org-capture-pop-frame smart-mode-line-powerline-theme remember-last-theme wttrin mode-icons magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired all-the-icons engine-mode synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(keycast nerd-icons-dired org-alert reddigg hnreader djvu bibtex-utils gscholar-bibtex site-lisp org-noter-pdftools citar-embark citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation dashboard-project-status spell-fu ctags-update org-beautify-theme org-timeline org-dashboard org wgrep org-roam multiple-cursors browse-at-remote w3m consult-company keytar move-text dired-git-info vimrc-mode selectrum-prescient orderless crux dired-git keychain-environment dired-icon magit-topgit magit-popup pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs smart-mode-line-powerline-theme remember-last-theme wttrin mode-icons magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
- '(popper-reference-buffers '("\\*Messages\\*$"))
- '(popper-reference-buffers '("\\*Backtrace\\*$"))
  '(popper-reference-buffers '("\\*diary.org\\*$"))
  '(restart-emacs-daemon-with-tty-frames-p t)
  '(restart-emacs-restore-frames t)
@@ -623,7 +631,7 @@
 ;; Alternative, local thesaurus
 (use-package synosaurus
   :config
-  (global-set-key (kbd "S-|") 'synosaurus-choose-and-replace))
+  (global-set-key (kbd "C-|") 'synosaurus-choose-and-replace))
 ;; Word definition search.
 (use-package define-word
   :config
@@ -1210,7 +1218,7 @@ rather than the whole path."
   "Little function to create a org file inside of the blog"
   (interactive)
   (let* (
-         (mini (yes-or-no-p "Mini post? "))
+         (mini (yes-or-no-p "Create New Post? "))
          (title (read-from-minibuffer "Title: "))
          (tag (read-from-minibuffer "Tags: "))
          (year (format-time-string "%Y"))
@@ -2374,7 +2382,16 @@ Start an unlimited search at `point-min' otherwise."
 ;; Open scratch buffer
 
 (global-set-key (kbd "C-x n s") 'scratch-buffer)
-
+(setq initial-scratch-message
+  "  ;; *------------------------------------------------------*
+  ;; | Debugging is twice as hard as writing the code in    |
+  ;; | the first place. Therefore, if you write the code    |
+  ;; | as cleverly as possible, you are, by definition, not |
+  ;; | smart enough to debug it.                            |
+  ;; |                                                      |
+  ;; | - Brian.W.Kernighan                                  |
+  ;; *------------------------------------------------------*
+\n")
 ;; Open pocket reader
 
 (global-set-key (kbd "C-c n p") 'pocket-reader)
@@ -2592,9 +2609,11 @@ Start an unlimited search at `point-min' otherwise."
 
 (global-set-key (kbd "C-c 4") 'hydra-subreddit-manipulation-keys/body)
 
-
 ;; Org-footnote frequently use bindings
 
 (global-set-key (kbd "C-c 5") 'org-footnote-new)
 
-(global-set-key (kbd "C-c 6") 'org-footnote-renumber-fn:N)
+(global-set-key (kbd "C-c 6") 'org-footnote-normalize)
+
+(add-hook 'doom-modeline-mode 'keycast-mode-line-mode)
+
