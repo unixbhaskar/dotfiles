@@ -2664,5 +2664,20 @@ Start an unlimited search at `point-min' otherwise."
 
 (global-set-key (kbd "C-c 5") 'org-footnote-new)
 
-(global-set-key (kbd "C-c 6") 'org-footnote-renumber-fn:N)
+(global-set-key (kbd "C-c 6") 'org-footnote-normalize)
 #+END_SRC
+
+* Open scratch buffer
++begin_src emacs-lisp
+(global-set-key (kbd "C-x n s") 'scratch-buffer)
+(setq initial-scratch-message
+  "  ;; *------------------------------------------------------*
+  ;; | Debugging is twice as hard as writing the code in    |
+  ;; | the first place. Therefore, if you write the code    |
+  ;; | as cleverly as possible, you are, by definition, not |
+  ;; | smart enough to debug it.                            |
+  ;; |                                                      |
+  ;; | - Brian.W.Kernighan                                  |
+  ;; *------------------------------------------------------*
+\n)"
+#+end_src
