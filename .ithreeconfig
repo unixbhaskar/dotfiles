@@ -512,8 +512,8 @@ bindsym $mod+Ctrl+y exec my_yt_videos
 # Add bookmark to the default file
 bindsym $mod+Ctrl+b exec add_bookmark
 
-# Enlist all the vim keybinds map
-bindsym $mod+Shift+v exec vim_key_maps
+# Vifm file manager
+bindsym $mod+Shift+v exec "st_solarized -e vifm"
 
 # Enlist emacs key bindings
 bindsym $mod+Ctrl+slash exec emacs_key_maps
@@ -604,4 +604,6 @@ bindsym $mod+Shift+u exec open_youtube_without_login
 # Gentoo package eta term
 bindsym $mod+Ctrl+f exec "st_gruvbox -e package_eta"
 
+# Screenkey
+bindsym $mod+Ctrl+Shift+s exec scrnkey
 # vim:filetype=i3config
