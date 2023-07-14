@@ -2681,3 +2681,10 @@ Start an unlimited search at `point-min' otherwise."
   ;; *------------------------------------------------------*
 \n)"
 #+end_src
+
+* Some specific key bind for double quote
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "M-\"") 'insert-pair)
+#+END_SRC
+
