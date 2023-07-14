@@ -231,7 +231,7 @@
  '(org-use-sub-superscripts '{})
  '(package-archive-upload-base "/home/bhaskar/.emacs.d/elpa/archives/gnu elpa")
  '(package-selected-packages
-   '(keycast nerd-icons-dired org-alert reddigg hnreader djvu bibtex-utils gscholar-bibtex site-lisp org-noter-pdftools citar-embark citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation dashboard-project-status spell-fu ctags-update org-beautify-theme org-timeline org-dashboard org wgrep org-roam multiple-cursors browse-at-remote w3m consult-company keytar move-text dired-git-info vimrc-mode selectrum-prescient orderless crux dired-git keychain-environment dired-icon magit-topgit magit-popup pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs smart-mode-line-powerline-theme remember-last-theme wttrin mode-icons magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(nerd-icons-dired org-alert reddigg hnreader djvu bibtex-utils gscholar-bibtex site-lisp org-noter-pdftools citar-embark citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation dashboard-project-status spell-fu ctags-update org-beautify-theme org-timeline org-dashboard org wgrep org-roam multiple-cursors browse-at-remote w3m consult-company keytar move-text dired-git-info vimrc-mode selectrum-prescient orderless crux dired-git keychain-environment dired-icon magit-topgit magit-popup pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs smart-mode-line-powerline-theme remember-last-theme wttrin mode-icons magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -2616,4 +2616,9 @@ Start an unlimited search at `point-min' otherwise."
 (global-set-key (kbd "C-c 6") 'org-footnote-normalize)
 
 (add-hook 'doom-modeline-mode 'keycast-mode-line-mode)
+
+;; Some specific shortcut for the double quote pairs
+
+(global-set-key (kbd "M-\"") 'insert-pair)
+
 
