@@ -1052,3 +1052,8 @@ function! Vtip()
 endfunction
 
 noremap <silent><Leader>tp :call Vtip()<CR>
+" Man pages with fzf
+" stolen from here https://www.reddit.com/r/vim/comments/mg8ov7/fuzzily_searching_man_pages_using_fzfvim/
+command! -nargs=? Man call fzf#run(fzf#wrap({'source': 'man -k -s 1 '.shellescape(<q-args>).' | cut -d " " -f 1', 'sink': 'tab Man', 'options': ['--preview', 'MANPAGER=cat MANWIDTH='.(&columns/2-4).' man {}']}))
+
+nnoremap <localleader>a :Man<CR>
