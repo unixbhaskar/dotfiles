@@ -20,6 +20,7 @@ export  HISTSIZE=99999
 export LS_COLORS='di=0;34:ex=1;32'
 # Aliases
 alias ls="ls --color=always"
+alias l="ls -lathr"
 alias grep="grep --color"
 shopt -s checkwinsize cdspell autocd direxpand dirspell dotglob globstar histappend
 alias mount="mount | column -t"
@@ -98,7 +99,7 @@ alias i3config="vim ~/.ithreeconfig"
 alias blogs="cd /home/bhaskar/blogs/content/articles/2023/"
 alias nyxtconfig="vim ~/.nyxt_config.lisp"
 alias orgfiles="cd /home/bhaskar/.emacs.d/OrgFiles/"
-alias linux-next="cd $HOME/git-linux/linux-next"
+alias linux-next="cd $HOME/git-linux/linux-next && git pull"
 alias profile="vim ~/.profile"
 alias i3blocks="vim ~/.ithreeblocksconfig"
 alias scriptsgit="cd ~/git-linux/AdminScripts"
@@ -174,7 +175,6 @@ alias g2="mutt -F /home/bhaskar/.muttrc.gmail2"
 alias world="vim /var/lib/portage/world"
 alias emerge_log="sudo $(command -v elogv)"
 alias vih="vih $1"
-
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
 #    #echo "$(date +%F@%T) - SSH-AGENT: Agent will be started"
