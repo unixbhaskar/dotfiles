@@ -321,6 +321,7 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots' && notify-send -t 1
 # Show latest capture screenshot
 bindsym $mod+Shift+comma  exec show_latest_screenshot
 
+# i3 bar shortcut menu
 set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall
 bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall"
 
@@ -341,9 +342,6 @@ mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs
 }
 
 
-#bindsym --release button2 exec --no-startup-id import /tmp/latest-screenshot.png
-
-# Make the currently focused window a scratchpad
 # floating_modifier Mod1
 bindsym $mod+Shift+minus move scratchpad
 
@@ -606,4 +604,10 @@ bindsym $mod+Ctrl+f exec "st_gruvbox -e package_eta"
 
 # Screenkey
 bindsym $mod+Ctrl+Shift+s exec scrnkey
+
+# Sports Feeds
+
+bindsym $mod+F5 exec sports_feeds
+
+
 # vim:filetype=i3config
