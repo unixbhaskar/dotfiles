@@ -603,7 +603,7 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	set autoread
 	" Focus on a particular window(w),open buffer(b) list,open histrory(h),open registers(r)
 	noremap <leader>w :Windows<cr>
-	nnoremap <leader>b :buffers<cr>
+	nnoremap <leader>b :Buffers<cr>
 	nnoremap <leader>h :History<cr>
 	nnoremap <leader>r :registers<cr>
 	" Quote a word by pressing leader and double quote
@@ -1054,6 +1054,6 @@ endfunction
 noremap <silent><Leader>tp :call Vtip()<CR>
 " Man pages with fzf
 " stolen from here https://www.reddit.com/r/vim/comments/mg8ov7/fuzzily_searching_man_pages_using_fzfvim/
-command! -nargs=? Man call fzf#run(fzf#wrap({'source': 'man -k -s 1 '.shellescape(<q-args>).' | cut -d " " -f 1', 'sink': 'tab Man', 'options': ['--preview', 'MANPAGER=cat MANWIDTH='.(&columns/2-4).' man {}']}))
+command! -nargs=? Man call fzf#run(fzf#wrap({'source': 'man -k -s 1 '.shellescape(<q-args>).' | cut -d " " -f 1', 'sink': 'tab Man', 'options': ['--preview', 'MANPAGER=bat MANWIDTH='.(&columns/2-4).' man {}']}))
 
 nnoremap <localleader>a :Man<CR>
