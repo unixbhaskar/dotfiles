@@ -606,12 +606,15 @@ bindsym $mod+Ctrl+f exec "st_gruvbox -e package_eta"
 # Screenkey
 bindsym $mod+Ctrl+Shift+s exec scrnkey
 
-# Sports Feeds
+# Restart Firefox
 
-bindsym $mod+F5 exec sports_feeds
+bindsym $mod+F5 exec restart_firefox
 
-# Gentoo package enlist with fzf
+# Package enlists with fzf
 for_window [instance="^st-256color$"] floating enable, resize set 900 500
-bindsym $mod+F6 exec "st_solarized -e gentoo_package_browse"
+bindsym $mod+F6 exec "st_solarized -e pkgview"
+
+# Sports Feeds
+bindsym $mod+Ctrl+Shift+k exec sports_feeds
 
 # vim:filetype=i3config
