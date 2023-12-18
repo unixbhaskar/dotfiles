@@ -725,8 +725,8 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	map <S-m> :e .md<Left><Left><Left>
 	" File type detection for ssh known_host file
 	au BufNewFile,BufRead known_hosts setfiletype sshknownhost
-	" Capture register value with AR <C-r>=
-	imap AR <C-R>=&<S-Right>
+	 "Capture register value with AR <C-r>=
+	 imap AR <C-R>=<S-Right>
 	" Autocomple brackets and quotation pair
 
 	" inoremap ( ()<ESC>i
@@ -1031,7 +1031,7 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	" clear all the highlighted lines
 	nnoremap <silent> <Leader>hc :call clearmatches()<CR>
 	" Change the cursor color and shape depending on the mode.
-	if &term =~ "st-256color" && $SSH_CLIENT == ''
+	if &term =~ "st_solarized" && $SSH_CLIENT == ''
 	    let &t_SI = "\<Esc>]12;purple\x7" . "\<Esc>[5 q"
 	    try
 		let &t_SR = "\<Esc>]12;darkred\x7" . "\<Esc>[3 q"
@@ -1039,11 +1039,6 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	    endtry
 	    let &t_EI = "\<Esc>]12;royalblue2\x7" . "\<Esc>[2 q"
 	endif
-	" " Vim Blog for Wordpress
-
-	"        if !exists('*Wordpress_vim')
-	"          runtime vimblog.vim
-	"        endif
 	" Command T ruby initialization
 	let g:CommandTPreferredImplementation='ruby'
 "tips
@@ -1057,3 +1052,6 @@ noremap <silent><Leader>tp :call Vtip()<CR>
 command! -nargs=? Man call fzf#run(fzf#wrap({'source': 'man -k -s 1 '.shellescape(<q-args>).' | cut -d " " -f 1', 'sink': 'tab Man', 'options': ['--preview', 'MANPAGER=bat MANWIDTH='.(&columns/2-4).' man {}']}))
 
 nnoremap <localleader>a :Man<CR>
+" Clear register
+command! ClrReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
+ autocmd VimEnter * ClrReg
