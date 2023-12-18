@@ -113,9 +113,9 @@
       (eshell-path-env-list))))
  '(corfu-global-mode t)
  '(cua-enable-modeline-indications t)
- '(custom-enabled-themes '(molokai))
+ '(custom-enabled-themes '(solarized-dark-high-contrast))
  '(custom-safe-themes
-   '("fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" "73803d7cebbc240fd6cd8a54077b8fbf0b263a25db48579f5953279986283481" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "3e200d49451ec4b8baa068c989e7fba2a97646091fd555eca0ee5a1386d56077" "833ddce3314a4e28411edf3c6efde468f6f2616fc31e17a62587d6a9255f4633" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "b494aae329f000b68aa16737ca1de482e239d44da9486e8d45800fd6fd636780" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
+   '("cf922a7a5c514fad79c483048257c5d8f242b21987af0db813d3f0b138dfaf53" "f6665ce2f7f56c5ed5d91ed5e7f6acb66ce44d0ef4acfaa3a42c7cfe9e9a9013" "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" "73803d7cebbc240fd6cd8a54077b8fbf0b263a25db48579f5953279986283481" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "3e200d49451ec4b8baa068c989e7fba2a97646091fd555eca0ee5a1386d56077" "833ddce3314a4e28411edf3c6efde468f6f2616fc31e17a62587d6a9255f4633" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "b494aae329f000b68aa16737ca1de482e239d44da9486e8d45800fd6fd636780" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "8f567db503a0d27202804f2ee51b4cd409eab5c4374f57640317b8fcbbd3e466" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
  '(debug-on-error t)
  '(deft-filter-only-filenames t)
  '(denote-modules-global-mode t)
@@ -162,6 +162,7 @@
  '(gnus-default-nntp-server "news.gnus.org")
  '(gnus-expert-user t)
  '(grep-highlight-matches 'always)
+ '(helm-browse-url-firefox-new-window "-new-window")
  '(icomplete-mode t)
  '(ignored-local-variable-values
    '((vc-prepare-patches-separately)
@@ -179,6 +180,7 @@
  '(keycast-mode-line-format "%5s%k%c%r")
  '(keycast-mode-line-insert-after 'doom-modeline-format--main)
  '(keycast-mode-line-mode t)
+ '(load-prefer-newer t)
  '(magit-repository-directories
    '(("~/projects/AdminScripts" . 5)
      ("~/dotfiles" . 0)
@@ -231,7 +233,7 @@
  '(org-use-sub-superscripts '{})
  '(package-archive-upload-base "/home/bhaskar/.emacs.d/elpa/archives/gnu elpa")
  '(package-selected-packages
-   '(nerd-icons-dired org-alert reddigg hnreader djvu bibtex-utils gscholar-bibtex site-lisp org-noter-pdftools citar-embark citar dired-rsync langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes sudo-edit mark-multiple xclip orgit org2web grip-mode dired-toggle flyspell-correct-popup flycheck-grammarly org-ref-prettify ivy-bibtex annotation dashboard-project-status spell-fu ctags-update org-beautify-theme org-timeline org-dashboard org wgrep org-roam multiple-cursors browse-at-remote w3m consult-company keytar move-text dired-git-info vimrc-mode selectrum-prescient orderless crux dired-git keychain-environment dired-icon magit-topgit magit-popup pinentry org-pomodoro insert-shebang chronos magit-org-todos spinner lsp-grammarly counsel-notmuch rainbow-delimiters rainbow-mode org-protocol-jekyll org-roam-server org-download goto-line-preview smex undo-tree slime imenus dictionary org-books weather-metno swiper-helm emacs-everywhere pretty-symbols emojify esup restart-emacs smart-mode-line-powerline-theme remember-last-theme wttrin mode-icons magithub toc-org org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger all-the-icons-dired synosaurus pass page-break-lines mu4e-alert molokai-theme ffmpeg-player elfeed-goodies define-word command-log-mode auto-complete))
+   '(nerd-icons-dired org-alert reddigg hnreader djvu bibtex-utils gscholar-bibtex site-lisp citar-embark langtool multi-vterm org-gcal ix cl-libify pocket-reader scratch modus-themes mark-multiple xclip orgit org2web dired-toggle ivy-bibtex annotation dashboard-project-status ctags-update org-beautify-theme org-timeline org-dashboard org w3m consult-company dired-git-info vimrc-mode keychain-environment dired-icon magit-popup pinentry insert-shebang magit-org-todos spinner counsel-notmuch rainbow-delimiters org-protocol-jekyll org-roam-server smex slime imenus dictionary org-books weather-metno swiper-helm pretty-symbols emojify restart-emacs remember-last-theme wttrin mode-icons org-bullets all-the-icons-ivy pdf-view-restore popup-edit-menu popup-kill-ring popup-switcher popup-complete popup-imenu git-messenger synosaurus pass command-log-mode))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -962,7 +964,7 @@ rather than the whole path."
               ("p" "PDF-Notes" entry (file "~/.emacs.d/OrgFiles/notes.org")
                   "* %?\n%(org-capture-pdf-active-region)\n")
               ("b" "Book" entry (file  "~/.emacs.d/OrgFiles/books.org")
-	      ;; "* %^{TITLE}\n:PROPERTIES:\n:ADDED: %<[%Y-%02m-%02d]>\n:END:%^{AUTHOR}p\n%?" :empty-lines 1)
+	       ;; "* %^{TITLE}\n:PROPERTIES:\n:ADDED: %<[%Y-%02m-%02d]>\n:END:%^{AUTHOR}p\n%?" :empty-lines 1)
                "*  %(let* ((url (substring-no-properties (current-kill 0)))
                   (details (org-books-get-details url)))
                 (when details (apply #'org-books-format 1 details)))")
@@ -2620,5 +2622,3 @@ Start an unlimited search at `point-min' otherwise."
 ;; Some specific shortcut for the double quote pairs
 
 (global-set-key (kbd "M-\"") 'insert-pair)
-
-
