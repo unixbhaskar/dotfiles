@@ -34,7 +34,7 @@ alias rsync='rsync --progress --stats -ravz'
 alias c="clear"
 alias d='cd ~/Downloads'
 alias p='cd ~/Pictures'
-alias linuxgit='cd ~/git-linux/linux/'
+alias linuxsrc='cd ~/git-linux/linux/'
 alias boot='cd /boot'
 alias music='cd ~/Music'
 alias admscripts='cd ~/Adm_scripts'
@@ -174,6 +174,7 @@ alias removepkg="sudo emerge -ac $1"
 alias g2="mutt -F /home/bhaskar/.muttrc.gmail2"
 alias world="vim /var/lib/portage/world"
 alias emerge_log="sudo $(command -v elogv)"
+alias scripts="ls -ld *[_-]scripts"
 alias vih="vih $1"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
@@ -629,4 +630,5 @@ FZF_DEFAULT_COMMAND="$VGREP_PREFIX '$INITIAL_QUERY'" fzf --bind "change:reload:$
 	       git init
 	 fi
  }
-/home/bhaskar/tty_solarized
+# Solarzed dark applied to terminal
+ /home/bhaskar/tty_solarized
