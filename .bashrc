@@ -11,7 +11,7 @@ if [[ -e /etc/bashrc || -e /etc/bash.bashrc ]]; then
 fi
 # Bunch of exports
 LESSOPEN="|/home/bhaskar/bin/lesspipe.sh %s"; export LESSOPEN
-export PATH="$PATH:/home/bhaskar/bin"
+export PATH="$PATH:/opt/piavpn/bin:/home/bhaskar/bin"
 #export PILOTRATE=115200
 test -s ~/.alias && . ~/.alias || true
 export HISTTIMEFORMAT="%h/%d/%Y - %H:%M:%S "
@@ -96,7 +96,7 @@ alias videodl="/home/bhaskar/bin/yt-dlp_linux -f 18 $1"
 alias mp3dl="$HOME/bin/youtube_video_to_mp3_conv.sh $1"
 alias path="echo $PATH"
 alias i3config="vim ~/.ithreeconfig"
-alias blogs="cd /home/bhaskar/blogs/content/articles/2023/"
+alias blogs="cd /home/bhaskar/blogs/content/articles/2024/"
 alias nyxtconfig="vim ~/.nyxt_config.lisp"
 alias orgfiles="cd /home/bhaskar/.emacs.d/OrgFiles/"
 alias linux-next="cd $HOME/git-linux/linux-next && git pull"
@@ -106,7 +106,7 @@ alias scriptsgit="cd ~/git-linux/AdminScripts"
 alias lt="cd ~/LaTeX_Workouts"
 alias vimplugin=vimplugin_install
 alias archlinux_update="cd $HOME/git-linux/ArchLinux_Kernel && git pull && cd ~"
-alias gentoo_update="cd $HOME/git-linux/gentoo && git pull && cd ~"
+alias gentoo_update="sudo  emerge  --verbose --update --deep --newuse --with-bdeps=y --exclude webkit-gtk --exclude llvm --keep-going @world"
 alias slackware_update="cd ~/git-linux/SlackBuilds && git pull && cd ~"
 alias debian_update="cd ~/git-linux/debian_linux && git pull && cd ~"
 alias gdb="gdb --tui --quiet --statistics $1"
@@ -175,6 +175,9 @@ alias g2="mutt -F /home/bhaskar/.muttrc.gmail2"
 alias world="vim /var/lib/portage/world"
 alias emerge_log="sudo $(command -v elogv)"
 alias scripts="ls -ld *[_-]scripts"
+alias em="sudo emerge -av"
+alias pdf="cd /home/bhaskar/bibliography/pdf_docs/ && ls -althr"
+alias aps="apt-cache search $1"
 alias vih="vih $1"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
@@ -251,13 +254,15 @@ build() {
 
 search() {
 
-       if [ ! -e .git ];then
+       if test ! -d ".git";then
 
-		sudo find / -name "$1" -ls  2> /dev/null
+		sudo find / -name "*$1*" -ls  2> /dev/null
 
-	else
+       elif test $(git rev-parse --git-dir 2>/dev/null);then
+
 		git grep -n "$1"
 	fi
+
 }
 # Git clone and get into the cloned directory
 
@@ -336,7 +341,7 @@ function apt-history(){
 # Default terminal, browser and editor settings
 export TERM=st-256color
 export EDITOR=vim
-export BROWSER="vimb"
+export BROWSER="firefox"
 # initialize fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -579,7 +584,7 @@ task_indicator() {
 # Prompt with a Taskwarrior task graph
 
 # PS1="\[\e[32;1m\u@\e[33;1m\h_\e[35;1m\t_\e[36;1m\d:\e[31;1m$(task_indicator)\e[m \]:\w>"
-PS1="\[\e[33;1mtp_x250_\e[35;1m\t_\e[36;1m\d:\e[31;1m$(task_indicator)\e[m \]:\w>"
+PS1="\[\e[33;1m\u_\e[35;1m\t_\e[36;1m\d:\e[31;1m$(task_indicator)\e[m \]:\w>"
 
 # Cscope DB
 
@@ -601,8 +606,8 @@ $HOME/git-linux/asdf/asdf.sh
 $HOME/git-linux/asdf/completions/asdf.bash
 # Emacs server daemon plus easy invocation of client
 export ALTERNATE_EDITOR=''
-alias e='emacsclient --tty'
-alias eg='emacsclient -c'
+alias e="emacsclient --tty"
+alias eg="emacsclient -c"
 # Notes access
 # alias notes="vim ~/Notes/index.md"
 # Bash debug
@@ -632,3 +637,19 @@ FZF_DEFAULT_COMMAND="$VGREP_PREFIX '$INITIAL_QUERY'" fzf --bind "change:reload:$
  }
 # Solarzed dark applied to terminal
  /home/bhaskar/tty_solarized
+# Pulseaudio start on Slackware as user
+#
+if test "$(uname -n)" = "Slackware" -a "$(whoami)" = "bhaskar";then
+	/usr/bin/pulseaudio --start
+fi
+ export XDG_SESSION_TYPE=X11
+# Man with fzf
+srccmd() {
+    compgen -c | sort | fzf --preview 'man {}' --preview-window 'right:60%:wrap' | xargs man
+}
+
+srcman() {
+    local man_page
+    man_page=$(man -k . | sort | fzf --prompt='Man Pages> ' --preview='echo {} | awk "{print \$1}" | xargs man' --preview-window=down:50%:wrap)
+    man "$(echo "$man_page" | awk '{print $1}')"
+}
