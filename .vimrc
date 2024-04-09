@@ -37,13 +37,13 @@ highlight Visual term=bold cterm=bold ctermbg=7 ctermfg=2 guifg=Red guibg=LightB
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " PlugIns let Vundle manage Vundle, required
-Plugin  'VundleVim/Vundle.vim'
-Plugin  'vim-airline/vim-airline'
-Plugin  'vim-airline/vim-airline-themes'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'dstein64/vim-startuptime'
-Plugin  'vifm/vifm.vim'
-Plugin  'jamessan/vim-gnupg'
+Plugin 'vifm/vifm.vim'
+Plugin 'jamessan/vim-gnupg'
 Plugin 'AutoComplPop'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-latex/vim-latex'
@@ -52,7 +52,6 @@ Plugin 'itchyny/calendar.vim'
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'sunaku/vim-shortcut'
-Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'mbbill/undotree'
 Plugin 'tpope/vim-commentary'
@@ -62,13 +61,11 @@ Plugin 'svermeulen/vim-macrobatics'
 Plugin 'mhinz/vim-startify'
 Plugin 'strboul/urlview.vim'
 Plugin 'mtth/scratch.vim'
-Plugin  'tyru/open-browser.vim'
+Plugin 'tyru/open-browser.vim'
 Plugin 'wincent/command-t'
-Plugin 'preservim/nerdtree'
-Plugin  'Xuyuanp/nerdtree-git-plugin'
-Plugin  'bash-support.vim'
-Plugin  'sudo.vim'
-Plugin  'erietz/vim-terminator'
+Plugin 'bash-support.vim'
+Plugin 'sudo.vim'
+Plugin 'erietz/vim-terminator'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'jreybert/vimagit'
 Plugin 'godlygeek/tabular'
@@ -206,7 +203,7 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	autocmd FileType cpp,cs,java setlocal commentstring=//\ %s
 	autocmd FileType c setlocal commentstring=/*\ %s
 	autocmd FileType vim setlocal commentstring=\"\ %s
-	autocmd FileType lisp setlocal commentstring=\;;\ %s
+	autocmd FileType lisp setlocal commentstring=\;;;\ %s
 	"Google calendar process
 	let g:calendar_google_calendar = 1
 	let g:calendar_google_task = 1
@@ -665,8 +662,6 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	  :execute "bel vert terminal"
 	endfunction
 	nmap <Leader>mk : call PreviewerMarkdown()<CR>clear<CR>glow -p $(cat ~/.lastpreview.log)<CR>
-	" Ale ,language server protocol
-	Plugin 'dense-analysis/ale'
 	" Buffer manipulation
 	" Previous buffer
 	nnoremap <Leader>p :b#<CR>
@@ -1051,7 +1046,26 @@ noremap <silent><Leader>tp :call Vtip()<CR>
 " stolen from here https://www.reddit.com/r/vim/comments/mg8ov7/fuzzily_searching_man_pages_using_fzfvim/
 command! -nargs=? Man call fzf#run(fzf#wrap({'source': 'man -k -s 1 '.shellescape(<q-args>).' | cut -d " " -f 1', 'sink': 'tab Man', 'options': ['--preview', 'MANPAGER=bat MANWIDTH='.(&columns/2-4).' man {}']}))
 
-nnoremap <localleader>a :Man<CR>
+nnoremap <Leader>m :Man<CR>
 " Clear register
 command! ClrReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
  autocmd VimEnter * ClrReg
+" Ale fixer
+" Ale ,language server protocol
+" Plugin 'dense-analysis/ale'
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+" \   'javascript': ['eslint'],
+" \}
+
+" " Set this variable to 1 to fix files when you save them.
+" let g:ale_fix_on_save = 1
+
+" " Let the completion
+" let g:ale_completion_enabled = 1
+
+" " Omni function completion by C-x C-o
+" set omnifunc=ale#completion#OmniFunc
+
+" " Auto import from external modules
+" let g:ale_completion_autoimport = 1
