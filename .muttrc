@@ -35,6 +35,7 @@ set pager_stop=yes
 source $alias_file
 ignore *
 unignore ^from: ^date: ^subject: ^to: ^cc:
+unignore Message-Id
 #set to your from address
 set from="unixbhaskar@gmail.com"
 set realname="Bhaskar Chowdhury"
