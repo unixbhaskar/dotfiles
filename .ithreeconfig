@@ -137,11 +137,11 @@ bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st_solarized -n Cm
 # bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
 bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";
 bindsym $mod+o workspace $workspace11 ; exec "st_solarized -n System_Operations -e system_operation";
-bindsym $mod+braceright workspace $workspace12 ; exec "st -n Screencast -e screencast";
+bindsym $mod+braceright workspace $workspace12 ; exec "st_solarized -n Screencast -e screencast";
 bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
 bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
 bindsym $mod+p workspace $workspace15 ; exec pdf_viewer;
-bindsym $mod+Shift+n ; exec nyxt;
+bindsym $mod+Shift+n ; exec start_nyxt;
 bindsym $mod+Ctrl+z workspace $workspace3 ;exec "speed_firefox --private-window";
 
 #ASSIGN PROGRAMS TO WORKSPACES
@@ -381,7 +381,7 @@ bindsym $mod+Shift+bar exec kill_ffmpeg
 bindsym $mod+BackSpace exec video_by_ffmpeg
 
 # Keybinds pop up for reminder
-bindsym $mod+grave exec i3_keybinds_help
+# bindsym $mod+grave exec i3_keybinds_help
 
 # Open youtube videos
 bindsym $mod+y exec search_youtube_videos
@@ -456,6 +456,10 @@ bindsym $mod+Shift+w exec wikipedia_search
 # Github search
 bindsym $mod+Shift+g exec github_search
 
+# Open sentence checker
+
+bindsym $mod+Ctrl+slash exec open_sentence_checker
+
 # Telegram desktop client
 bindsym $mod+plus exec toggle_telegram toggle
 
@@ -469,7 +473,7 @@ bindsym $mod+Delete exec take_photo_by_webcam
 bindsym $mod+Shift+h exec hn_hlines
 
 # List scripts and pressing enter open it in vim(105 == RightCtrl)
-bindcode --release $mod+105  exec admin_scripts
+bindcode --release $mod+105  exec various_scripts
 
 # Select particular area of the screen and capture(108 == RightAlt)
 bindcode --release $mod+108 exec select_capture
@@ -484,12 +488,11 @@ bindsym $mod+apostrophe exec tour_videos
 for_window [instance="^download_progress$"] floating enable, resize set 900 500
 bindsym $mod+Ctrl+d exec "st -n download_progress -e download_progress"
 
-# Open manual page as pdf(press F1)
-
-# bindcode --release 67 exec manual_view_in_pdf
+# Open manual page as pdf
+bindsym $mod+grave exec manual_view_in_pdf
 
 # Linux kernel released numbers from kernel.org (press Home)
-bindcode --release 110 exec kernel_feed.sh
+bindsym $mod+F1 exec kernel_feed.sh
 
 # Select emojis to paste it everywhere
 bindsym $mod+Ctrl+e exec select_emojis
@@ -514,7 +517,7 @@ bindsym $mod+Ctrl+b exec add_bookmark
 bindsym $mod+Shift+v exec "st_solarized -e vifm"
 
 # Enlist emacs key bindings
-bindsym $mod+Ctrl+slash exec emacs_key_maps
+#bindsym $mod+Ctrl+slash exec emacs_key_maps
 
 # Enlist mutt key bindings
 # bindsym $mod+Ctrl+m exec mutt_key_maps
@@ -616,5 +619,9 @@ bindsym $mod+F6 exec "st_solarized -e pkgview"
 
 # Sports Feeds
 bindsym $mod+Ctrl+Shift+k exec sports_feeds
+
+# Open html blogs locally
+bindsym $mod+Ctrl+Shift+b exec show_blogs_locally
+
 
 # vim:filetype=i3config
