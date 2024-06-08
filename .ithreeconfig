@@ -143,6 +143,7 @@ bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
 bindsym $mod+p workspace $workspace15 ; exec pdf_viewer;
 bindsym $mod+Shift+n ; exec start_nyxt;
 bindsym $mod+Ctrl+z workspace $workspace3 ;exec "speed_firefox --private-window";
+bindsym $mod+Ctrl+c workspace $workspace16 ;exec "calibre";
 
 #ASSIGN PROGRAMS TO WORKSPACES
 # assign [class="^st-256color$"] → $workspace1
@@ -322,10 +323,10 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots' && notify-send -t 1
 bindsym $mod+Shift+comma  exec show_latest_screenshot
 
 # i3 bar shortcut menu
-set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall
-bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall"
+set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon
+bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon"
 
-mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall" {
+mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon"{
     bindsym r exec open_reddit
     bindsym g exec open_github
     bindsym e exec open_goodreads
@@ -337,6 +338,8 @@ mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs
     bindsym l exec open_linkedin
     bindsym c exec open_linux_syscall
     bindsym p exec open_phoronix
+    bindsym m exec open_mastodon
+    bindsym f exec open_fosstodon
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
@@ -435,7 +438,10 @@ bindsym $mod+Shift+m exec "st_solarized -n Mutt -e mail_open"
 for_window [instance="^Mutt$"] floating enable, resize set 900 500
 bindsym $mod+Ctrl+Shift+greater exec "st_gruvbox -n Mutt -e mail_open_readonly"
 
-# Emacs org-capture protocol
+# Emacs org-capture-url to capture the url 110=home press Fn simeltenously
+bindcode $mod+110  exec org-capture-url
+
+# Emacs org-capturel to invoke the capture template list inside emacs
 bindsym $mod+Shift+o  exec org-capture
 
 # Search words in dictionary.com
@@ -594,7 +600,7 @@ bindsym $mod+F4 exec "st_solarized -e alsamixer"
 
 # Clear clipboard content at once
 
-bindsym $mod+Ctrl+c exec clear_clipboard
+bindsym $mod+Ctrl+Shift+c exec clear_clipboard
 
 # Create empty workspace
 bindsym $mod+Ctrl+w exec "~/.config/i3/empty_i3_workspace"
