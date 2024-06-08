@@ -106,7 +106,7 @@ alias scriptsgit="cd ~/git-linux/AdminScripts"
 alias lt="cd ~/LaTeX_Workouts"
 alias vimplugin=vimplugin_install
 alias archlinux_update="cd $HOME/git-linux/ArchLinux_Kernel && git pull && cd ~"
-alias gentoo_update="sudo  emerge  --verbose --update --deep --newuse --with-bdeps=y --exclude webkit-gtk --exclude llvm --keep-going @world"
+alias gentoo_update="sudo  emerge  --verbose --update --deep --newuse --with-bdeps=y --exclude webkit-gtk  --keep-going @world"
 alias slackware_update="cd ~/git-linux/SlackBuilds && git pull && cd ~"
 alias debian_update="cd ~/git-linux/debian_linux && git pull && cd ~"
 alias gdb="gdb --tui --quiet --statistics $1"
@@ -177,7 +177,7 @@ alias emerge_log="sudo $(command -v elogv)"
 alias scripts="ls -ld *[_-]scripts"
 alias em="sudo emerge -av"
 alias pdf="cd /home/bhaskar/bibliography/pdf_docs/ && ls -althr"
-alias aps="apt-cache search $1"
+alias acs="apt-cache search $1"
 alias vih="vih $1"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
@@ -648,8 +648,9 @@ srccmd() {
     compgen -c | sort | fzf --preview 'man {}' --preview-window 'right:60%:wrap' | xargs man
 }
 
-srcman() {
+tm() {
     local man_page
-    man_page=$(man -k . | sort | fzf --prompt='Man Pages> ' --preview='echo {} | awk "{print \$1}" | xargs man' --preview-window=down:50%:wrap)
+    man_page=$(man -k . | sort | fzf --prompt='Man Pages> ' --preview='echo {} | awk "{print \$1}" | xargs man' --preview-window=right:60%:wrap)
     man "$(echo "$man_page" | awk '{print $1}')"
 }
+
