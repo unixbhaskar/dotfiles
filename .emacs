@@ -17,7 +17,7 @@
  '(bibtex-completion-pdf-open-function 'helm-open-file-with-default-tool)
  '(bibtex-dialect 'biblatex)
  '(bmkp-eww-buffer-renaming t)
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "/home/bhaskar/.emacs.d/bookmarks")
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
  '(calendar-view-diary-initially-flag t)
@@ -112,7 +112,8 @@
  '(cua-enable-modeline-indications t)
  '(custom-enabled-themes '(solarized-dark-high-contrast))
  '(custom-safe-themes
-   '("0c08a5c3c2a72e3ca806a29302ef942335292a80c2934c1123e8c732bb2ddd77"
+   '("10e5d4cc0f67ed5cafac0f4252093d2119ee8b8cb449e7053273453c1a1eb7cc"
+     "0c08a5c3c2a72e3ca806a29302ef942335292a80c2934c1123e8c732bb2ddd77"
      "cf922a7a5c514fad79c483048257c5d8f242b21987af0db813d3f0b138dfaf53"
      "f6665ce2f7f56c5ed5d91ed5e7f6acb66ce44d0ef4acfaa3a42c7cfe9e9a9013"
      "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c"
@@ -347,7 +348,6 @@
  '(org-agenda-insert-diary-extract-time t)
  '(org-bibtex-inherit-tags t)
  '(org-bibtex-tags-are-keywords t)
- '(org-books-file t)
  '(org-directory "~/.emacs.d/OrgFiles")
  '(org-export-backends '(ascii html icalendar latex md odt org texinfo))
  '(org-export-with-email t)
@@ -374,15 +374,15 @@
                        insert-shebang ivy-bibtex ix keychain-environment
                        langtool magit magit-org-todos magit-popup mark-multiple
                        modus-themes mu4e-marker-icons multi-vterm org org-alert
-                       org-beautify-theme org-books org-bullets org-dashboard
-                       org-gcal org-inline-pdf org-protocol-jekyll
-                       org-roam-server org-timeline org2web orgit
-                       pdf-view-restore peep-dired pinentry popup-complete
-                       popup-edit-menu popup-imenu popup-kill-ring
-                       popup-switcher pretty-symbols rainbow-delimiters reddigg
-                       remember-last-theme restart-emacs scratch site-lisp slime
-                       smex spinner swiper-helm synosaurus unicode-fonts
-                       vimrc-mode w3m weather-metno webpaste wttrin xclip))
+                       org-beautify-theme org-bullets org-dashboard org-gcal
+                       org-inline-pdf org-protocol-jekyll org-roam-server
+                       org-timeline org2web orgit password-menu pdf-view-restore
+                       peep-dired pinentry popup-complete popup-edit-menu
+                       popup-imenu popup-kill-ring popup-switcher pretty-symbols
+                       rainbow-delimiters reddigg remember-last-theme
+                       restart-emacs scratch site-lisp slime smex spinner
+                       swiper-helm synosaurus unicode-fonts vimrc-mode w3m
+                       weather-metno webpaste wordnut wttrin xclip))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -439,7 +439,7 @@
      ("Supplemental Web site list for webjump" . "www.neilvandyke.org/webjump/")
      (" My Blog At Wordpress " . "unixbhaskar.wordpress.com")
      ("Linux Kernel " . "https://kernel.org/")))
- '(webpaste-open-in-browser t)
+ '(webpaste-open-in-browser t t)
  '(zoneinfo-style-world-list
    '(("America/Washington" "Seattle") ("America/New_York" "New York")
      ("Europe/London" "London") ("Europe/Paris" "Paris")
@@ -1014,6 +1014,8 @@ rather than the whole path."
 (setq org-return-follows-link t)
 ;; Source code block comment
 
+(global-set-key (kbd "C-c i -") 'org-insert-structure-template)
+
 (set-register ?p "#+BEGIN_SRC perl\n\n#+END_SRC")
 (set-register ?b "#+BEGIN_SRC bash\n\n#+END_SRC")
 (set-register ?s "#+BEGIN_SRC sh\n\n#+END_SRC")
@@ -1095,7 +1097,15 @@ rather than the whole path."
 ;; Templates for the org capture
 (require 'org-protocol)
 
-;; Capture templates for: TODO tasks, Notes, appointments, phone calls, meetings, and org-protocol
+;; Transform square bracket to round one
+
+ (defun transform-square-brackets-to-round-ones(string-to-transform)
+   "Transforms [ into ( and ] into ), other chars left unchanged."
+   (concat
+   (mapcar #'(lambda (c) (if (equal c ?\[) ?\( (if (equal c ?\]) ?\) c))) string-to-transform))
+   )
+
+;;  Capture templates for: TODO tasks, Notes,Weblink, Appointments, Phone calls, Meetings, org-protocol, source code
 (setq org-capture-templates
       (quote (("t" "Todo" entry (file "~/.emacs.d/OrgFiles/task.org")
                "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
@@ -1120,12 +1130,26 @@ rather than the whole path."
                "*  %(let* ((url (substring-no-properties (current-kill 0)))
                   (details (org-books-get-details url)))
                 (when details (apply #'org-books-format 1 details)))")
-;;("l" "Book log" item (function org-books-visit-book-log)
-;;"- %U %?" :prepend t))))
+              ;;("l" "Book log" item (function org-books-visit-book-log)
+                 ;;"- %U %?" :prepend t))))
              ("a" "Appointment" entry (file+olp+datetree "~/.emacs.d/OrgFiles/diary.org")
                "* APPT %^{Description} %^g %?\n Added: %U")
               ("c" "Contacts" entry (file+headline "~/.emacs.d/OrgFiles/contacts.org" "")
-               "* %^{Name} :CONTACT: %[~/.emacs.d/OrgFiles/contacts.txt]"))))
+               "* %^{Name} :CONTACT: %[~/.emacs.d/OrgFiles/contacts.txt]")
+
+              ("e" "Elfeed Note" entry (file+olp+datetree "~/.emacs.d/OrgFiles/elfeeds.org")
+               "*  Elfeed Note: %? \n%U\n%a\n" :clock-in t :clock-resume t)
+
+              ("s" "Source Code" entry (file  "~/.emacs.d/OrgFiles/notes.org")
+                "* %^{Title}\n Captured: %u \n Short Descriptions:%^{Descriptions} \n\n #+BEGIN_SRC %^{Programming Language Name} \n  %c\n\n%c\n#+END_SRC\n\n\n")
+
+              ("w" "Web Link And Headline" entry (file+headline "~/.emacs.d/OrgFiles/weblink_and_headline.org" "WebLink And Headline")
+              "** %^{Title}*       %^g\n\n Description: %^{description}\n\n  Source: %u, %c\n\n%i" :empty-lines 1)
+
+             ("L" "Protocol Link" entry (file  "~/.emacs.d/OrgFiles/notes.org")
+               "*  [[%:link][%(transform-square-brackets-to-round-ones \"%^:description\")]]\n %?"))))
+
+
 ;; Show the targets
 (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 ;; Create new parent while refiling if it is not existed
@@ -1445,6 +1469,13 @@ rather than the whole path."
   (find-file "~/.emacs"))
 (global-set-key (kbd "C-c e") 'open-dotemacs-file)
 
+;; Open bibliography file
+
+(defun open-bibliography-file ()
+  (interactive)
+  (find-file "~/bibliography/bibliography.bib"))
+(global-set-key (kbd "C-c i b") 'open-bibliography-file)
+
 ;; Open books.org file
 
 (defun org-open-books-file ()
@@ -1577,7 +1608,7 @@ rather than the whole path."
 ;; (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
 
 (load "~/.emacs.d/org-link-minor-mode.el")
-
+(load "~/.emacs.d/elpa/org-books/org-books.el")
 
 ;; IRC
 
@@ -1941,21 +1972,7 @@ rather than the whole path."
        (org-download-clipboard file))))
   :config
   (require 'org-download))
-;; Org-protocol redefined to work with browser i.e firefox Not working
 
-;;(defun transform-square-brackets-to-round-ones(string-to-transform)
-;;  "Transforms [ into ( and ] into ), other chars left unchanged."
-;;  (concat
-;;  (mapcar #'(lambda (c) (if (equal c ?[) ?\( (if (equal c ?]) ?\) c))) string-to-transform))
-;;  )
-
-;;(setq org-capture-templates `(
-;;	("p" "Protocol" entry (file+headline ,(concat org-directory "notes.org"))
-;;        "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
-;;	("L" "Protocol Link" entry (file+headline ,(concat org-directory "notes.org"))
-;;         "* %? [[%:link][%:description]] %(progn (setq kk/delete-frame-after-capture 2) \"\")\nCaptured On: %U"
-;; :empty-lines 1)
-;;))
 ;; package-install shortcut
 (global-set-key (kbd "M-p") 'package-install)
 ;; Customization shortcut
@@ -2545,35 +2562,7 @@ Start an unlimited search at `point-min' otherwise."
   ;; |                                                      |
   ;; | - Brian.W.Kernighan                                  |
   ;; *------------------------------------------------------*
-
-
-             ;;; a8888b.
-             ;;; d888888b.
-             ;;; 8P"YP"Y88
-             ;;; 8|o||o|88
-             ;;; 8'    .88
-             ;;; 8`._.' Y8.
-            ;;; d/      `8b.
-          ;;; .dP   .     Y8b.
-         ;;; d8:'   "   `::88b.
-        ;;; d8"           `Y88b
-       ;;; :8P     '       :888
-        ;;; 8a.    :      _a88P
-      ;;; ._/"Yaa_ :    .| 88P|
-      ;;; \    YP"      `| 8P  `.
-      ;;; /     \._____.d|    .'
-      ;;; `--..__)888888P`._.'
-
-    ;;; *------------------------------------------------------*
-   ;;; | Debugging is twice as hard as writing the code in    |
-   ;;; | the first place. Therefore, if you write the code    |
-   ;;; | as cleverly as possible, you are, by definition, not |
-   ;;; | smart enough to debug it.                            |
-   ;;; |                                                      |
-   ;;; | - Brian.W.Kernighan                                  |
-   ;;; *------------------------------------------------------*
 \n")
-
 ;; Open pocket reader
 
 (global-set-key (kbd "C-c n p") 'pocket-reader)
@@ -2669,6 +2658,8 @@ Start an unlimited search at `point-min' otherwise."
   (let ((bibtex-completion-pdf-open-function
          (lambda (fpath) (start-process "zathura" "*helm-bibtex-zathura*" "/usr/bin/zathura" fpath))))
     (bibtex-completion-open-pdf keys fallback-action)))
+
+(global-set-key (kbd "C-c i n") 'org-ref-open-bibtex-notes)
 
 (use-package citar
     :custom
@@ -2859,3 +2850,18 @@ Start an unlimited search at `point-min' otherwise."
 
 ;; Open recently created pastes in an external browser
 (setq webpaste-open-in-browser t)
+
+;; Word highlightx
+(defun highlight-word ()
+  "Highlight the current word you are on."
+  (interactive)
+  (backward-word 1)
+  (set-mark-command nil)
+  (forward-word 1))
+
+(global-set-key (kbd "C-c w h") 'highlight-word)
+
+;; Fix GUI pdf tools trouble of installing every single time
+
+(require 'pdf-tools)
+(add-hook 'doc-view-mode-hook 'pdf-tools-install)
