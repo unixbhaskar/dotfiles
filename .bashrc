@@ -21,6 +21,7 @@ export LS_COLORS='di=0;34:ex=1;32'
 # Aliases
 alias ls="ls --color=always"
 alias l="ls -lathr"
+alias diffs='diff --side-by-side --suppress-common-lines'
 alias grep="grep --color"
 shopt -s checkwinsize cdspell autocd direxpand dirspell dotglob globstar histappend
 alias mount="mount | column -t"
@@ -92,7 +93,7 @@ alias muttrc="vim ~/.muttrc"
 alias reload_bashrc="source ~/.bashrc"
 alias bashrc="vim ~/.bashrc && source ~/.bashrc"
 alias cat="bat"
-alias videodl="/home/bhaskar/bin/yt-dlp_linux -f 18 $1"
+alias videodl="$HOME/bin/youtube_video_download.sh $1"
 alias mp3dl="$HOME/bin/youtube_video_to_mp3_conv.sh $1"
 alias path="echo $PATH"
 alias i3config="vim ~/.ithreeconfig"
@@ -310,9 +311,10 @@ rm() { command rm -i "${@}"; }
 #cp() { command cp -i "${@}"; }
 # mv() { command mv -i "${@}"; }
 # Change the terminal prompt to git mode, very show but useful
-
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
+fi
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 #create directory and enter into it
 
@@ -653,4 +655,4 @@ tm() {
     man_page=$(man -k . | sort | fzf --prompt='Man Pages> ' --preview='echo {} | awk "{print \$1}" | xargs man' --preview-window=right:60%:wrap)
     man "$(echo "$man_page" | awk '{print $1}')"
 }
-
+ xset b off
