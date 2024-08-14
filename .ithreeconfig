@@ -450,9 +450,6 @@ bindsym $mod+Shift+d exec search_dict
 # Linux/Vim/Emacs WIKI search
 bindsym $mod+w exec linux_wikis_search
 
-# search specific subreddit and get the urls of the topic
-# bindsym $mod+Shift+t exec reddit_info
-
 # LWN headlines
 bindsym $mod+l exec lwn_headlines
 
@@ -503,13 +500,6 @@ bindsym $mod+F1 exec kernel_feed.sh
 # Select emojis to paste it everywhere
 bindsym $mod+Ctrl+e exec select_emojis
 
-# Open st Solarized terminal
-# for_window [instance="^st-256color$"] floating enable, resize set 900 500
-# bindcode --release  $mod+62 exec st_solarized
-
-# Open Stackoverfloow search
-# bindsym $mod+Ctrl+f exec stackoverflow_search
-
 # Open any site in browser,prompt for url and specific browser
 bindsym $mod+Ctrl+o exec open_in_specific_browser
 
@@ -521,12 +511,6 @@ bindsym $mod+Ctrl+b exec add_bookmark
 
 # Vifm file manager
 bindsym $mod+Shift+v exec "st_solarized -e vifm"
-
-# Enlist emacs key bindings
-#bindsym $mod+Ctrl+slash exec emacs_key_maps
-
-# Enlist mutt key bindings
-# bindsym $mod+Ctrl+m exec mutt_key_maps
 
 # Browsers combined history(Vimb,Firefox)
 bindsym $mod+Ctrl+h exec browser_history
@@ -561,18 +545,12 @@ bindsym $mod+Ctrl+apostrophe exec surf_key_maps
 bindsym $mod+Shift+apostrophe exec surf_bookmarks
 
 # Youtube studio link
-
 bindsym $mod+Ctrl+a exec yt_studio_url
 
 # Brings up information management interface
 bindsym $mod+k exec "kill_process"
-# bindsym $mod+k exec "st_solarized -e kb"
-
-# Pop up a floating term
-# bindsym $mod+Shift+t exec "floaterm ~/bin/st_solarized"
 
 # Open emacs client on tty
-
 bindsym $mod+Shift+y exec "st_solarized -e emacsclient --tty"
 
 # Make scratchpad windows shows at once
@@ -588,7 +566,6 @@ bindsym $mod+Ctrl+m exec mail_compose_send_by_emacs.sh
 bindsym $mod+Shift+e exec kickstart_emacs_daemon
 
 # open st gruvbox terminal
-# bindsym $mod+Caps_Lock exec st_gruvbox
 bindsym $mod+Shift+t exec st_gruvbox
 
 # Emacs without xresources
@@ -599,14 +576,12 @@ for_window [instance="^st-256color$"] floating enable, resize set 900 500
 bindsym $mod+F4 exec "st_solarized -e alsamixer"
 
 # Clear clipboard content at once
-
 bindsym $mod+Ctrl+Shift+c exec clear_clipboard
 
 # Create empty workspace
 bindsym $mod+Ctrl+w exec "~/.config/i3/empty_i3_workspace"
 
 # Open youtube in private window
-
 bindsym $mod+Shift+u exec open_youtube_without_login
 
 # Gentoo package eta term
@@ -616,7 +591,6 @@ bindsym $mod+Ctrl+f exec "st_gruvbox -e package_eta"
 bindsym $mod+Ctrl+Shift+s exec scrnkey
 
 # Restart Firefox
-
 bindsym $mod+F5 exec restart_firefox
 
 # Package enlists with fzf
@@ -629,5 +603,7 @@ bindsym $mod+Ctrl+Shift+k exec sports_feeds
 # Open html blogs locally
 bindsym $mod+Ctrl+Shift+b exec show_blogs_locally
 
+# Open the i3 keybinds for reference
+bindsym $mod+F7 exec i3_keybinds_help
 
 # vim:filetype=i3config
