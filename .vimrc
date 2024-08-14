@@ -112,7 +112,7 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	let g:startuptime_sort = 0
 	let g:startuptime_tries = 5
 	let g:startuptime_exe_args = ['-u', '~/.vimrc']
-	"vifm
+
 	"let loaded_vifm=1
 	map<Leader>vv :Vifm<CR>
 	" Pop up git commit info box by pressing \g
@@ -183,8 +183,6 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	nnoremap <F9> za
 	onoremap <F9> <C-C>za
 	vnoremap <F9> zf
-	"NerdTree open CTRL+n
-	 noremap <C-n> :NERDTreeToggle<CR>
 	 "Search replaces n number of times
 	nnoremap sr :normal n.<CR>
 	"Open URI under cursor by pressing ob and os
@@ -230,29 +228,31 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	autocmd BufWritePost  .nyxt_config.lisp !notify_config_file_updates
 	autocmd BufWritePost   ~/bin/my_yt_videos !video_file_update.sh
 	augroup END
-	"Move between splits
-	nnoremap <C-h> <C-w><C-h>
+
+	nnoremap <C-H> <C-W><C-H>
 	nnoremap <C-j> <C-w><C-j>
 	nnoremap <C-k> <C-w><C-k>
 	nnoremap <C-l> <C-w><C-l>
-	"Open this file in vertical split for quick reference
+
+	Shortcut! "vimrc vertical split for quick reference ;vr"
 	nnoremap <leader>vr :vsplit ~/.vimrc<cr>
-	"After editing this file must be sourced ,so the changes take effect on
-	"current session
+
+	Shortcut! "Vimrc reload After editing by ;sv"
 	nnoremap <leader>sv :source ~/.vimrc<cr>
-	"To insert email address with a shortcut @@ ,to insert author with a shortcut au, to insert date type dts and then need to press space after that
+
+	Shortcut! "Abbreviate to insert email address with a shortcut @@ ,to insert author with a shortcut au, to insert date type dts"
 	iabbrev @@    unixbhaskar@gmail.com
 	iabbrev au    Bhaskar Chowdhury
 	iabbrev <expr> dts strftime("%c")
 	iabbrev ws  https://github.com/unixbhaskar
-	" Auto loading .vimrc once saved
+	"Auto loading .vimrc once saved
 	if has('autocmd')
 	    augroup reload_vimrc
 		autocmd!
 		autocmd! BufWritePost ~/.vimrc nested source %
 	    augroup END
 	endif
-	" Auto loading .bashrc once saved
+	"Auto loading .bashrc once saved
 	if has('autocmd')
 	    augroup reload_bashrc
 		autocmd!
@@ -287,9 +287,9 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 
 	let $FZF_DEFAULT_OPTS .= ' --inline-info'
 
-	Shortcut! :Files bring up the fuzzy finder
+	Shortcut! ":Files invoked by <C-f> bring up the fuzzy finder"
 	 map <C-f> <Esc><Esc>:Files!<CR>
-	 Shortcut! :Blines  in file and go to chosen line
+	Shortcut! ":Blines invoked by <C-f><<Esc><Esc>  in file and go to chosen line"
 	inoremap <C-f> <Esc><Esc>:Blines!<CR>
 
 	" Always enable preview window on the right with 60% width
@@ -301,24 +301,27 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 	" [Tags] Command to generate tags file
 	let g:fzf_tags_command = 'ctags -R'
-	" Mapping selecting mappings
-	nmap <leader><tab> <plug>(fzf-maps-n)
-	xmap <leader><tab> <plug>(fzf-maps-x)
-	omap <leader><tab> <plug>(fzf-maps-o)
-	" Insert mode completion
+	Shortcut! "Mapping selecting mappings \<tab>"
+	nmap <localleader><tab> <plug>(fzf-maps-n)
+	xmap <localleader><tab> <plug>(fzf-maps-x)
+	omap <localleader><tab> <plug>(fzf-maps-o)
+	Shortcut! "Insert mode completion <c-x><c-k> for word, <c-x><c-f> file path, <c-x><c-l> for lines"
 	imap <c-x><c-k> <plug>(fzf-complete-word)
 	imap <c-x><c-f> <plug>(fzf-complete-path)
 	imap <c-x><c-l> <plug>(fzf-complete-line)
 	" Word completion with custom spec with popup layout option
 	inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'window': {'width': 0.2, 'height': 0.9, 'xoffset': 1 }})
-	"Visual mode selection move up and down my unimpaired
+
+	Shortcut! "Visual mode selection move up and down <C-j> and <C-k>"
 
 	"autocmd VimEnter * vunmap <C-j>
 	vmap <C-k> [egv
 	vmap <C-j> ]egv
+
 	"Convert `` to $() in code
 	 map <leader>cq  :%s/`\([^`]*\)`/$(\1)/g<CR>
-	"All about macros ..vim-microbastic plugin
+
+	 "All about macros ..vim-microbastic plugin
 
 	let g:Mac_NamedMacroFileExtension = '.vimmacro'
 	let g:Mac_NamedMacrosDirectory = "~/.vim/macrobatics"
@@ -368,7 +371,7 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 
 	Shortcut! SelectEntireBuffer  aa in normal mode
 
-	Shortcut!  BackupCurrentFile   BB in normal mode
+	Shortcut! BackupCurrentFile   BB in normal mode
 
 	Shortcut! GitCommit popup messages of the specific line of code by pressing  \g
 
