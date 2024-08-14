@@ -17,7 +17,7 @@
  '(bibtex-completion-pdf-open-function 'helm-open-file-with-default-tool)
  '(bibtex-dialect 'biblatex)
  '(bmkp-eww-buffer-renaming t)
- '(bmkp-last-as-first-bookmark-file "/home/bhaskar/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
  '(calendar-view-diary-initially-flag t)
@@ -322,7 +322,7 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#161a2a" "#82aaff"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#161a2a" "#3ad900"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#161a2a" "#444a73"))
- '(load-prefer-newer t)
+ '(load-prefer-newer t t)
  '(magit-repository-directories
    '(("~/projects/AdminScripts" . 5) ("~/dotfiles" . 0) ("~/Collected_Notes" . 0)
      ("~/LaTeX_Workouts" . 0) ("~/projects/emacs" . 0)
@@ -356,8 +356,8 @@
      ("\\.pdf\\'" . "zathura %s")))
  '(org-roam-completion-everywhere t)
  '(org-roam-dailies-directory "~/.emacs.d/OrgFiles/daily/")
- '(org-roam-mode t nil (org-roam))
- '(org-roam-server-mode t)
+ ;;; '(org-roam-mode t nil (org-roam))
+ ;;; '(org-roam-server-mode t)
  '(org-startup-with-inline-images t)
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)"
@@ -369,12 +369,13 @@
    '(all-the-icons-ivy annotation bibtex-utils citar-embark cl-libify
                        command-log-mode consult-company counsel-notmuch
                        ctags-update dashboard-project-status dictionary
-                       dired-git-info dired-icon dired-toggle djvu emojify
-                       git-messenger gscholar-bibtex hnreader imenus
-                       insert-shebang ivy-bibtex ix keychain-environment
-                       langtool magit magit-org-todos magit-popup mark-multiple
-                       modus-themes mu4e-marker-icons multi-vterm org org-alert
-                       org-beautify-theme org-bullets org-dashboard org-gcal
+                       dired-git-info dired-icon dired-toggle djvu emms-state
+                       emojify git-messenger gnuplot gnuplot-mode
+                       gscholar-bibtex hnreader imenus insert-shebang ivy-bibtex
+                       ix keychain-environment langtool magit magit-org-todos
+                       magit-popup mark-multiple modus-themes mu4e-marker-icons
+                       multi-vterm nov org org-alert org-beautify-theme
+                       org-bullets org-contacts org-dashboard org-gcal
                        org-inline-pdf org-protocol-jekyll org-roam-server
                        org-timeline org2web orgit password-menu pdf-view-restore
                        peep-dired pinentry popup-complete popup-edit-menu
@@ -407,6 +408,7 @@
  '(smtpmail-smtp-service 587)
  '(smtpmail-smtp-user "unixbhaskar")
  '(smtpmail-stream-type 'starttls)
+ '(use-package-compute-statistics t)
  '(user-mail-address "unixbhaskar@gmail.com")
  '(warning-suppress-types '((browse-url)))
  '(webjump-sites
@@ -452,8 +454,7 @@
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("elpa" . "https://elpa.gnu.org/packages/")
-                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-			 ("org" . "https://orgmode.org/elpa/")))
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
@@ -631,12 +632,13 @@
   (setf epa-pinentry-mode 'loopback))
 ;;vterm
 
-(use-package vterm
-	         :ensure t)
-(add-to-list 'load-path "~/.emacs.d/emacs-libvterm/")
-(require 'vterm)
+;;; (use-package vterm
+;;; 	         :ensure t)
+;;; (add-to-list 'load-path "~/.emacs.d/emacs-libvterm/")
+;;; (require 'vterm)
 
-(global-set-key (kbd "C-x t") 'vterm)
+;;; (global-set-key (kbd "C-x t") 'vterm)
+
 ;; Secret file for password store
 (setq auth-source-debug t)
 
@@ -810,7 +812,7 @@
 (setq emms-playlist-buffer-name "*Music*")
 ;;Mpv integration
 
-(load "emms-player-mpv.el")
+(load "~/.emacs.d/emms-player-mpv.el")
 
 (global-set-key (kbd "C-x m") 'emms)
 (global-set-key (kbd "C-c s p") 'emms-pause)
@@ -963,10 +965,12 @@ rather than the whole path."
 
 (use-package all-the-icons-dired
    :hook (dired-mode . all-the-icons-dired-mode))
+
 ;; Text scale increase and decrease
 
-(define-key global-map (kbd "C-1") 'text-scale-increase)
-(define-key global-map (kbd "C-0") 'text-scale-decrease)
+;; (define-key global-map (kbd "C-1") 'text-scale-increase)
+;; (define-key global-map (kbd "C-0") 'text-scale-decrease)
+
 ;; Use magit-show-commit for showing status/diff commands
 
 (global-set-key (kbd "C-x v p") 'git-messenger:popup-message)
@@ -1134,8 +1138,8 @@ rather than the whole path."
                  ;;"- %U %?" :prepend t))))
              ("a" "Appointment" entry (file+olp+datetree "~/.emacs.d/OrgFiles/diary.org")
                "* APPT %^{Description} %^g %?\n Added: %U")
-              ("c" "Contacts" entry (file+headline "~/.emacs.d/OrgFiles/contacts.org" "")
-               "* %^{Name} :CONTACT: %[~/.emacs.d/OrgFiles/contacts.txt]")
+              ("c" "Contacts" entry (file+headline "~/.emacs.d/OrgFiles/contacts.org" "CONTACTS")
+               "* %^{Name} \n Email: %^{Email} \n Phone: %^{Phone} \n" :empty-lines 1)
 
               ("e" "Elfeed Note" entry (file+olp+datetree "~/.emacs.d/OrgFiles/elfeeds.org")
                "*  Elfeed Note: %? \n%U\n%a\n" :clock-in t :clock-resume t)
@@ -1144,7 +1148,10 @@ rather than the whole path."
                 "* %^{Title}\n Captured: %u \n Short Descriptions:%^{Descriptions} \n\n #+BEGIN_SRC %^{Programming Language Name} \n  %c\n\n%c\n#+END_SRC\n\n\n")
 
               ("w" "Web Link And Headline" entry (file+headline "~/.emacs.d/OrgFiles/weblink_and_headline.org" "WebLink And Headline")
-              "** %^{Title}*       %^g\n\n Description: %^{description}\n\n  Source: %u, %c\n\n%i" :empty-lines 1)
+              "** %^{Title}       %^g \n\n  Description: %^{description}\n\n  Source: %u, %c\n\n%i" :empty-lines 1)
+
+              ("B" "BibTex Capture" plain (file "~/.emacs.d/OrgFiles/bibliography.bib")
+              "@Book{%^{key}, \n  author = {%^{author}}, \n  title = {%^{Title}}, \n  date = {%t}, \n  url = {%^{Link}},\n annote = {%^{Annotation}} \n %^{endbracket}" :empty-lines 1)
 
              ("L" "Protocol Link" entry (file  "~/.emacs.d/OrgFiles/notes.org")
                "*  [[%:link][%(transform-square-brackets-to-round-ones \"%^:description\")]]\n %?"))))
@@ -1673,12 +1680,17 @@ rather than the whole path."
 ;; Image-dired
 
 (global-set-key (kbd "C-c i m") 'image-dired)
+
 ;; comment line
+(if (display-graphic-p)
+    (progn
+ (global-set-key (kbd "M-;") 'comment-line)
+  else
+  (globacl-set-key (kbd "C-x C-;") 'comment-line)))
 
-;; (global-set-key (kbd ";") 'comment-line)
-;; ;; comment region
+;; comment region
 
-;; (global-set-key (kbd ";;") 'comment-region)
+(global-set-key (kbd "C-c i f") 'comment-region)
 
 
 ;; Save a macro for future sessions
@@ -1918,21 +1930,21 @@ rather than the whole path."
   :after emacsql
   :defer nil)
 
-(use-package org-roam
-      :ensure t
-      :hook
-      (after-init . org-roam-mode)
-      :custom
-      (org-roam-directory (file-truename "~/.emacs.d/OrgFiles/"))
-      :bind (:map org-roam-mode-map
-              (("C-c n l" . org-roam)
-               ("C-c n f" . org-roam-find-file)
-               ("C-c n g" . org-roam-graph))
-               ("C-c n t" . org-roam-dailies-today)
-              (("C-c n i" . org-roam-insert))
-              (("C-c n I" . org-roam-insert-immediate))))
+;;; (use-package org-roam
+;;;       :ensure t
+;;;       :hook
+;;;       (after-init . org-roam-mode)
+;;;       :custom
+;;;       (org-roam-directory (file-truename "~/.emacs.d/OrgFiles/"))
+;;;       :bind (:map org-roam-mode-map
+;;;               (("C-c n l" . org-roam)
+;;;                ("C-c n f" . org-roam-find-file)
+;;;                ("C-c n g" . org-roam-graph))
+;;;                ("C-c n t" . org-roam-dailies-today)
+;;;               (("C-c n i" . org-roam-insert))
+;;;               (("C-c n I" . org-roam-insert-immediate))))
 
-(add-hook 'after-init-hook 'org-roam-mode)
+;;; (add-hook 'after-init-hook 'org-roam-mode)
 
 ;; Deft
 (use-package deft
@@ -2358,14 +2370,14 @@ Start an unlimited search at `point-min' otherwise."
 
 ;; Switching theme based on daytime
 
-(use-package circadian
-  :ensure t
-  :config
-  (setq calendar-latitude 22.572645)
-  (setq calendar-longitude 88.363892)
-  (setq circadian-themes '((:sunrise . solarized-dark-high-contrast)
-                           (:sunset  . molokai)))
-  (circadian-setup))
+;; (use-package circadian
+;;   :ensure t
+;;   :config
+;;   (setq calendar-latitude 22.572645)
+;;   (setq calendar-longitude 88.363892)
+;;   (setq circadian-themes '((:sunrise . solarized-dark-high-contrast)
+;;                            (:sunset  . solarized-dark-high-contras)))
+;;   (circadian-setup))
 
 
 
@@ -2459,14 +2471,6 @@ Start an unlimited search at `point-min' otherwise."
 	(("youtu\.?be" . mpv-play-url)
 	 ("." . browse-url-default-browser))))
 
-;; PopUp manipulations
-(popper-mode 1)
-
-(global-set-key (kbd "C-c i p") 'popper-cycle)
-(global-set-key (kbd "C-c i l") 'popper-toggle-latest)
-(global-set-key (kbd "C-c i e") 'popper-echo-mode)
-(global-set-key (kbd "C-c i k") 'popper-kill-latest-popup)
-(global-set-key (kbd "C-c i y") 'popper-toggle-type)
 
 ;; Special character mode
 
@@ -2865,3 +2869,10 @@ Start an unlimited search at `point-min' otherwise."
 
 (require 'pdf-tools)
 (add-hook 'doc-view-mode-hook 'pdf-tools-install)
+
+;; ibuffer mapping
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; Read novel
+
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
