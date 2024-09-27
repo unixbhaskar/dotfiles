@@ -1924,11 +1924,11 @@ rather than the whole path."
     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 ;; Org Roam
 
-(use-package emacsql
-  :defer nil)
-(use-package emacsql-sqlite
-  :after emacsql
-  :defer nil)
+;;; (use-package emacsql
+;;;   :defer nil)
+;;; (use-package emacsql-sqlite
+;;;   :after emacsql
+;;;   :defer nil)
 
 ;;; (use-package org-roam
 ;;;       :ensure t
