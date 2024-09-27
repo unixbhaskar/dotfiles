@@ -955,7 +955,7 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	" Open pdf with zathura
 	nnoremap <Leader>pd :!zathura <cfile> &<CR><CR>
 	" Make vimb the default browser
-	  let g:netrw_browsex_viewer = "vimb"
+	  let g:netrw_browsex_viewer = "vimb<CR>"
 	 " Makes all commands available in quickfix window
 	 nnoremap <Leader>c  :Commands<CR>
 	" Vimwiki markdown fixup
@@ -990,7 +990,7 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	  " after the file has been written.
 	  autocmd BufWritePost,FileWritePost *.gpg u
 	augroup END
-	" Save file with .gpg extension
+	" Save file with .gpg extensionton
 	nnoremap <Leader>en :saveas <C-R>%.gpg<CR>
 	" Build notes in PDF and Html for better viewing
 	augroup Notes
@@ -1072,3 +1072,32 @@ command! ClrReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | e
 
 " " Auto import from external modules
 " let g:ale_completion_autoimport = 1
+" Help command at the bottom
+" function! ShowBasicCommands()
+"     belowright split
+"     resize 5
+
+"      enew
+
+"     setlocal buftype=nofile
+"     setlocal bufhidden=wipe
+"     setlocal noswapfile
+
+"     setlocal modifiable
+
+"     call append(0, [
+"                 \ "VIM COMMANDS",
+"                 \ "===================",
+"                 \ ":w  - Save file   :q   - Quit Vim   i - Insert mode   v  - Visual mode    dd - Delete line",
+"                 \ "yy - Yank (copy) line   p - Paste line   /text  - Search for text   :help  - Show help",
+"                 \ ";sv  - Reload vimrc  ;sr - open vimrc  ;ot - open terminal"
+"                 \ ])
+
+" 	 wincmd w
+
+
+" endfunction
+
+" call ShowBasicCommands()
+
+" command! HelpCommands call ShowBasicCommands()
