@@ -105,7 +105,7 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	  au InsertLeave * setlocal cursorline
 	augroup END
 	"set spelling
-	set spell spelllang=en
+	"set spell spelllang=en
 	" Write file with sudo permission with capital W
 	command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 	"vim startup time measure
@@ -235,7 +235,7 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	nnoremap <C-l> <C-w><C-l>
 
 	Shortcut! "vimrc vertical split for quick reference ;vr"
-	nnoremap <leader>vr :vsplit ~/.vimrc<cr>
+	nnoremap <localleader>vr :vsplit ~/.vimrc<cr>
 
 	Shortcut! "Vimrc reload After editing by ;sv"
 	nnoremap <leader>sv :source ~/.vimrc<cr>
@@ -1101,3 +1101,7 @@ command! ClrReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | e
 " call ShowBasicCommands()
 
 " command! HelpCommands call ShowBasicCommands()
+" Show matched and replace in a buffer
+ nnoremap <Leader>re :g/MATCH/#\|s/MATCH/REPLACE/g\|#
+ " Add editor config
+ " packadd! editorconfig
