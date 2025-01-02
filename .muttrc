@@ -8,7 +8,7 @@ folder-hook 'gmail1' 'source ~/.muttrc'
 folder-hook 'gmail2' 'source ~/.muttrc.gmail2'
 # Macros for switching accounts
 macro index <f2> '<sync-mailbox><enter-command>source ~/.muttrc<enter><change-folder>!<enter>'
-macro index <f7> '<sync-mailbox><enter-command>source ~/.muttrc.gmail2<enter><change-folder>!<enter>'
+# macro index <f7> '<sync-mailbox><enter-command>source ~/.muttrc.gmail2<enter><change-folder>!<enter>'
 # Basic settings about presentations
 source "gpg2 -dq $HOME/.mail.cred.gpg |"
 set imap_user = "unixbhaskar@gmail.com"
@@ -271,7 +271,7 @@ macro index \ent "<enter-command>unset wait_key<enter><pipe-message>~/bin/mutt-n
 set editor="vim -c 'set spell spelllang=en'"
 #set editor="emacsclient -a \"\" -t"
 # Automated task for each folder for deletion of old mails
-folder-hook linux-kernel             'push <delete-pattern>~r>1w!~F<enter><sync>'
+folder-hook linux-kernel             'push <delete-pattern>~r>3d!~F<enter><sync>'
 
 folder-hook inbox/Google_Alert       'push <delete-pattern>~r>1w!~F<enter><sync>'
 
