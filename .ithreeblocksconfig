@@ -33,11 +33,11 @@ color=#39F4E1
 #[separator]
 #full_text=
 
-#[feed]
-#instance=https://tinyurl.com/n2gg53r
-#command=~/.config/i3/feed.sh
-#label=
-#interval=60
+# [feed]
+# instance=https://tinyurl.com/n2gg53r
+# command=~/.config/i3/feed.sh
+# label=
+# interval=60
 
 #[disk]
 #command=~/.config/i3/diskio.sh
@@ -82,10 +82,10 @@ color=#00FFFF
 #command=~/.config/i3/vpn.sh
 #interval=100
 
-#[kernel]
-#command=~/.config/i3/latest_kernel_version.sh;echo
-#interval=3000
-# color=#C8F49D
+# [kernel]
+# command=~/.config/i3/latest_kernel_version.sh;echo
+# interval=3000
+#  color=#C8F49D
 
 #[browser]
 #label=
@@ -147,11 +147,18 @@ command=~/.config/i3/i3blocks/wifi
 #color=#00FF00
 interval=10
 
-#[gpgkey]
-#label=
-#command=~/.config/i3/pgp.sh
-#interval=once
-#color=#4BF9FF
+[wireless]
+label=
+instance=wlo1
+command=~/.config/i3/i3blocks/wifi
+#color=#00FF00
+interval=10
+
+[gpgkey]
+label=
+command=~/.config/i3/pgp.sh
+interval=once
+color=#4BF9FF
 
 #[public-ip]
 #label=
