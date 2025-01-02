@@ -8,15 +8,15 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 8
-font pango:Symbola 8
+font pango:Symbola 10
 
 #This is for the icons rendering
-font pango:fontawesome 8
+font pango:fontawesome 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 # Before i3 v4.8, we used to recommend this one as the default:
@@ -323,10 +323,11 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots' && notify-send -t 1
 bindsym $mod+Shift+comma  exec show_latest_screenshot
 
 # i3 bar shortcut menu
-set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon
-bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon"
+set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [k]Bluesky
 
-mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon"{
+bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [k]Bluesky"
+
+mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [k]Bluesky"{
     bindsym r exec open_reddit
     bindsym g exec open_github
     bindsym e exec open_goodreads
@@ -339,7 +340,7 @@ mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs
     bindsym c exec open_linux_syscall
     bindsym p exec open_phoronix
     bindsym m exec open_mastodon
-    bindsym f exec open_fosstodon
+    bindsym k exec open_bluesky
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
@@ -372,6 +373,9 @@ bindsym $mod+semicolon exec songs_play
 
 # Play a song in continuous loop
 bindsym $mod+Ctrl+l exec mpv_loop_play
+
+# Play Playlist/Directory songs
+bindsym $mod+Shift+plus exec play_playlist
 
 # Surf browser open
 
@@ -433,10 +437,6 @@ bindsym $mod+Ctrl+Return exec "st_solarized -n vim-everywhere -e vim ~/Notes/$(d
 # Mutt floating window
 for_window [instance="^Mutt$"] floating enable, resize set 900 500
 bindsym $mod+Shift+m exec "st_solarized -n Mutt -e mail_open"
-
-# Second mutt instance for read-only mail
-for_window [instance="^Mutt$"] floating enable, resize set 900 500
-bindsym $mod+Ctrl+Shift+greater exec "st_gruvbox -n Mutt -e mail_open_readonly"
 
 # Emacs org-capture-url to capture the url 110=home press Fn simeltenously
 bindcode $mod+110  exec org-capture-url
@@ -535,8 +535,8 @@ for_window [instance="^st-256color$"] floating enable, resize set 900 500
 bindsym $mod+Ctrl+p exec "st_solarized -e download_package"
 
 # Enlist important tools
-for_window [instance="^st-256color$"] floating enable, resize set 900 500
-bindsym $mod+Shift+plus exec "st_solarized -e tools"
+# for_window [instance="^st-256color$"] floating enable, resize set 900 500
+# bindsym $mod+Shift+plus exec "st_solarized -e tools"
 
 # Surf browser keystrokes
 bindsym $mod+Ctrl+apostrophe exec surf_key_maps
