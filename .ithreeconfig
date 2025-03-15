@@ -323,11 +323,11 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots' && notify-send -t 1
 bindsym $mod+Shift+comma  exec show_latest_screenshot
 
 # i3 bar shortcut menu
-set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [k]Bluesky
+set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon
 
-bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [k]Bluesky"
+bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon"
 
-mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [k]Bluesky"{
+mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon"{
     bindsym r exec open_reddit
     bindsym g exec open_github
     bindsym e exec open_goodreads
@@ -340,7 +340,7 @@ mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs
     bindsym c exec open_linux_syscall
     bindsym p exec open_phoronix
     bindsym m exec open_mastodon
-    bindsym k exec open_bluesky
+    bindsym f exec open_fosstodon
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
@@ -606,4 +606,6 @@ bindsym $mod+Ctrl+Shift+b exec show_blogs_locally
 # Open the i3 keybinds for reference
 bindsym $mod+F7 exec i3_keybinds_help
 
+# Linux release cgit page aka Linus git tree
+bindsym $mod+Ctrl+Shift+r exec linux_release
 # vim:filetype=i3config
