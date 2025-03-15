@@ -14,7 +14,11 @@ fi
 if [[ "$(tty)" = "/dev/tty2" ]]; then
 	    pgrep i3 || i3_start
 fi
-/home/bhaskar/bin/brightness_up
+
+
+if [[ $(uname -n) == Slackware ]]; then
+	/usr/local/bin/fix-mouse
+fi
 # Most applications support several languages for their output.
 # To make use of this feature, simply uncomment one of the lines below or
 # add your own one (see /usr/share/locale/locale.alias for more codes)
