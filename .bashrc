@@ -36,6 +36,8 @@ alias c="clear"
 alias d='cd ~/Downloads'
 alias p='cd ~/Pictures'
 alias linuxsrc='cd ~/git-linux/linux/'
+alias linuxstb='cd ~/git-linux/linux-stable/'
+alias linuxnext='cd ~/git-linux/linux-next/'
 alias boot='cd /boot'
 alias music='cd ~/Music'
 alias admscripts='cd ~/Adm_scripts'
@@ -180,6 +182,10 @@ alias em="sudo emerge -av"
 alias pdf="cd /home/bhaskar/bibliography/pdf_docs/ && ls -althr"
 alias acs="apt-cache search $1"
 alias makeconf="vim /etc/portage/make.conf"
+alias linuxstable="/home/bhaskar/bin/linux_stable_update"
+alias ffusrcontent="vim /home/bhaskar/.mozilla/firefox/18q9dvrr.default-release/chrome/userContent.css && ff_css_copy_to_backups && refresh_and_restart_ff"
+alias ffusrchrome="vim /home/bhaskar/.mozilla/firefox/18q9dvrr.default-release/chrome/userChrome.css && refresh_and_restart_ff"
+alias ffcopycontent="cp -v $HOME/.mozilla/firefox/18q9dvrr.default-release/chrome/userContent.css $HOME/.mozilla/firefox/profile/chrome/userContent.css"
 alias vih="vih $1"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
@@ -404,7 +410,7 @@ sedwise() {
 
 		sed -i.$(date +'%F') $1 $2
 
-		echo The original file is stored as $1.$(date +'%F')
+		echo The original file is stored as $2.$(date +'%F')
 	fi
 	}
 # Compare two files side by side
@@ -656,4 +662,8 @@ tm() {
     man_page=$(man -k . | sort | fzf --prompt='Man Pages> ' --preview='echo {} | awk "{print \$1}" | xargs man' --preview-window=right:60%:wrap)
     man "$(echo "$man_page" | awk '{print $1}')"
 }
- xset b off
+xset b off
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
