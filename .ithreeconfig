@@ -426,7 +426,7 @@ bindsym $mod+Ctrl+k exec kill_mpv
 # Emacs pop up buffer anywhere
 # for_window [title="^emacs-everywhere$"] move to scratchpad
  for_window [title="^emacs$"] floating enable, resize set 680 745
- bindsym $mod+F12 exec  "emacsclient -c"
+ bindsym $mod+F12 exec  "emacsclient --eval '(emacs-everywhere)'"
 
 # Vim pop up buffer anywhere
 # for_window [instance="^vim-everywhere$"] move to scratchpad
