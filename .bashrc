@@ -356,7 +356,7 @@ export BROWSER="firefox"
 
 #Open/copy/to_gitrepo files with the help fzf and vim
 
-file_open() { vim "$(find  $(pwd) -type f | fzf)"  ;}
+fo() { vim "$(find  $(pwd) -type f | fzf)"  ;}
 backup_dot_files() { cp -v "$1" "$(find /data/dotfiles -name '*' -type f | fzf)" ;}
 copy_to_adminscripts_repo() { cp -v "$1" "$(find ~/git-linux/AdminScripts -name '*'  -type f | fzf)" ;}
 #Gentoo specific stuff
@@ -583,7 +583,7 @@ task_indicator() {
 		echo "$OVERDUE"
 	elif [[ "$($TASK +READY +TOMORROW count)" -gt "0" ]]; then
 		echo "$DUETOMORROW"
-	elif [[ "$($TASK +READY urgency > 10 count)" -gt "0" ]]; then
+	elif [[ "$($TASK +READY urgency -gt 10 count)" -gt "0" ]]; then
 		echo "$URGENT"
 	else
 		echo ""
