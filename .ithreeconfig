@@ -447,8 +447,8 @@ bindsym $mod+Shift+o  exec org-capture
 # Search words in dictionary.com
 bindsym $mod+Shift+d exec search_dict
 
-# Linux/Vim/Emacs WIKI search
-bindsym $mod+w exec linux_wikis_search
+# Linux/Vim/Emacs WIKI search and packages of various distros
+bindsym $mod+w exec linux_distro_pkgs_search_online
 
 # LWN headlines
 bindsym $mod+l exec lwn_headlines
@@ -608,4 +608,8 @@ bindsym $mod+F7 exec i3_keybinds_help
 
 # Linux release cgit page aka Linus git tree
 bindsym $mod+Ctrl+Shift+r exec linux_release
+
+# Enlist inputrc keybind
+bindsym $mod+F8 exec inputrc_key_listing
+
 # vim:filetype=i3config
