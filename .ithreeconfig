@@ -132,7 +132,7 @@ bindsym $mod+b ; exec "vimb";
 bindsym $mod+Shift+f ; exec "speed_firefox";
 bindsym $mod+braceleft workspace $workspace5 ; exec "st_gruvbox -n Btop -e btop";
 bindsym $mod+n workspace $workspace6 ; exec "st_solarized -n Newsboat -e newsboat";
-bindsym $mod+c  workspace $workspace7 ; exec "st_solarized -n Calcurse -e calcurse";
+bindsym $mod+k  workspace $workspace7 ; exec "st_solarized -n Calcurse -e calcurse";
 bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st_solarized -n Cmus -e cmus";
 # bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
 bindsym $mod+g  workspace $workspace10 ; exec "st -n Tig -e tig_open";
@@ -355,7 +355,7 @@ bindsym $mod+minus scratchpad show
 # print all window titles bold
 for_window [class=".*"] title_format "<b>%title</b>"
 # for_window [all] title_window_icon on
-#for_window [class="(?i)firefox"] title_format "<span foreground='magenta'>%title</span>"
+# for_window [class="(?i)firefox"] title_format "<span foreground='magenta'>%title</span>"
 
 # Focus on window activation
 focus_on_window_activation smart
@@ -548,7 +548,7 @@ bindsym $mod+Shift+apostrophe exec surf_bookmarks
 bindsym $mod+Ctrl+a exec yt_studio_url
 
 # Brings up information management interface
-bindsym $mod+k exec "kill_process"
+# bindsym $mod+k exec "kill_process"
 
 # Open emacs client on tty
 bindsym $mod+Shift+y exec "st_solarized -e emacsclient --tty"
@@ -591,7 +591,7 @@ bindsym $mod+Ctrl+f exec "st_gruvbox -e package_eta"
 bindsym $mod+Ctrl+Shift+s exec scrnkey
 
 # Restart Firefox
-bindsym $mod+F5 exec restart_firefox
+#bindsym $mod+F5 exec restart_firefox
 
 # Package enlists with fzf
 for_window [instance="^st-256color$"] floating enable, resize set 900 500
@@ -611,5 +611,14 @@ bindsym $mod+Ctrl+Shift+r exec linux_release
 
 # Enlist inputrc keybind
 bindsym $mod+F8 exec inputrc_key_listing
+
+# System exist menu
+bindsym $mod+Ctrl+Delete exec system_menu
+
+# Mount file system via dmenu
+bindsym $mod+Ctrl+equal exec  mount_disks
+
+# Unmount file system via dmenu
+bindsym $mod+F5 exec  unmount_disk
 
 # vim:filetype=i3config
