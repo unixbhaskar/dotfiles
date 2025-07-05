@@ -23,6 +23,8 @@ alias ls="ls --color=always"
 alias l="ls -lathr"
 alias diffs='diff --side-by-side --suppress-common-lines'
 alias grep="grep --color"
+alias gadd="git_stage_file"
+alias fe="file_edit"
 shopt -s checkwinsize cdspell autocd direxpand dirspell dotglob globstar histappend
 alias mount="mount | column -t"
 alias ports='netstat -tulanp'
