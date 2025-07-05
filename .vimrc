@@ -234,7 +234,7 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	nnoremap <C-k> <C-w><C-k>
 	nnoremap <C-l> <C-w><C-l>
 
-	Shortcut! "vimrc vertical split for quick reference ;vr"
+	Shortcut! "vimrc vertical split for quick reference \vr"
 	nnoremap <localleader>vr :vsplit ~/.vimrc<cr>
 
 	Shortcut! "Vimrc reload After editing by ;sv"
@@ -1105,3 +1105,7 @@ command! ClrReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | e
  nnoremap <Leader>re :g/MATCH/#\|s/MATCH/REPLACE/g\|#
  " Add editor config
  " packadd! editorconfig
+" Git blame shortcut
+nmap <silent> <Leader>gb :term git blame %<CR>
+" Git log for file
+nmap <silent> <Leader>gl :silent vert term git log --oneline %<CR>
