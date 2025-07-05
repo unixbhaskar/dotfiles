@@ -49,6 +49,7 @@ set markers=no #no + on wrapped lines
 set confirmappend=no #no prompt for save to =keep
 set to_chars=" +TCFL" #no L for mail_list
 set send_charset="us-ascii:utf-8"
+set message_id_format="<%z_%f@unixbhaskar-laptop>"
 # Imaps ,headers, bodies
 set folder="imaps://imap.gmail.com:993"
 set spoolfile="+INBOX"
