@@ -59,7 +59,7 @@ alias logs="find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1
 alias copy_to='sudo cp -v'
 alias week='date +%V'
 alias filepath='ls | sed "s:^:`pwd`/:"'
-alias abspath='find $PWD -maxdepth 1 | xargs ls -ld'
+alias abspath='find $PWD -maxdepth 1 -type d -print'
 alias i3configfiles="cd ~/.config/i3"
 alias v="vim -u ~/.vimrc"
 alias v1="vim -u ~/.vimrc_gruvbox"
@@ -178,7 +178,7 @@ alias installpkg="sudo emerge -av $1"
 alias removepkg="sudo emerge -ac $1"
 alias g2="mutt -F /home/bhaskar/.muttrc.gmail2"
 alias world="vim /var/lib/portage/world"
-alias emerge_log="sudo $(command -v elogv)"
+alias emerge_log="sudo elogv"
 alias scripts="ls -ld *[_-]scripts"
 alias em="sudo emerge -av"
 alias pdf="cd /home/bhaskar/bibliography/pdf_docs/ && ls -althr"
@@ -522,7 +522,7 @@ send_patch() {
 # Send a patch series to the kernel mailing list
 patch_series() {
 
-	patch_dir="/home/bhaskar/git-linux/linux/batch"
+	patch_dir="patches"
 
 	printf "\n\t Creating a patch series.....pls get the relevant email from MAINTAINERS file\n\n"
 
@@ -566,6 +566,7 @@ patch_series() {
 
                    git send-email --to-cover --cc-cover $patch_dir/*.patch ${an}
 	     fi
+	     mv -v patches/*.patch ~/patches_sent/
 }
 # Take backup is simplest way with timestamp
 backup() {
