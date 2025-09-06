@@ -205,7 +205,7 @@ bindsym $mod+Ctrl+comma workspace number 14
 # bindsym $mod+Ctrl+b workspace number 16
 
 # Prompt for workspace switch
-# bindsym $mod+i exec i3-input -F 'workspace name %s' -P 'Go to workspace: '
+# bindsym $mod+i exec i3-input -F '%s' -P 'Go to workspace: '
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -305,7 +305,7 @@ bindsym $mod+F3 exec amixer set Master 10%+ unmute
 bindsym $mod+F2 exec amixer set Master 10%- unmute
 
 #lock
-bindcode --release $mod+133 exec i3lock -i ~/Pictures/LKM3_1024.png -c ff0000 -t
+bindsym $mod+l exec i3lock -i ~/Pictures/LKM3_1024.png -c ff0000 -t
 
 # window borders and back and forth window move
  hide_edge_borders both
@@ -451,7 +451,7 @@ bindsym $mod+Shift+d exec search_dict
 bindsym $mod+w exec linux_distro_pkgs_search_online
 
 # LWN headlines
-bindsym $mod+l exec lwn_headlines
+# bindsym $mod+l exec lwn_headlines
 
 # Wikipedia search
 bindsym $mod+Shift+w exec wikipedia_search
@@ -620,5 +620,8 @@ bindsym $mod+Ctrl+equal exec  mount_disks
 
 # Unmount file system via dmenu
 bindsym $mod+F5 exec  unmount_disk
+
+# Kernel versions with a pop up
+bindsym $mod+F9 exec latest_kernel_versions
 
 # vim:filetype=i3config
