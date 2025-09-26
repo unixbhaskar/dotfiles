@@ -8,9 +8,9 @@ test -z "$PROFILEREAD" && . /etc/profile || true
 if [ -n "$BASH" ] && [ -r ~/.bashrc ]; then
     . ~/.bashrc
 fi
-if [[ "$(tty)" = "/dev/tty1" ]]; then
-	/usr/local/bin/check_init
-fi
+# if [[ "$(tty)" = "/dev/tty1" ]]; then
+# 	/usr/local/bin/check_init
+# fi
 if [[ "$(tty)" = "/dev/tty2" ]]; then
 	    pgrep i3 || i3_start
 fi
