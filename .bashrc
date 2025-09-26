@@ -2,7 +2,6 @@
 # Author:  Bhaskar Chowdhury
 # Email: unixbhaskar@gmail.com
 # Website : https://github.com/unixbhaskar
-
 # Check for existence of global bashrc
 if [[ -e /etc/bashrc || -e /etc/bash.bashrc ]]; then
 
@@ -202,7 +201,7 @@ alias vih="vih $1"
 #    #echo "$(date +%F@%T) - SSH-AGENT: Agent already running"
 #    . ~/.ssh/ssh-agent >/dev/null
 #fi
-#Intialize the terminal for gpg
+# Intialize the terminal for gpg
 unset SSH_AGENT_PID
 GPG_TTY=$(tty)
 export GPG_TTY
