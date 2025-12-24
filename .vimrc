@@ -1015,7 +1015,7 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	  endif
 	endfunction
 
-	nnoremap <Leader>jm :call GotoJump()<CR>
+	nnoremap <silent><Leader>jm :call GotoJump()<CR>
 	" Check diff before write by ;ch
 	nnoremap <silent><Leader>ch :w !diff % -<CR>
 	" Language Tool cli
@@ -1109,3 +1109,5 @@ command! ClrReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | e
 nmap <silent> <Leader>gb :term git blame %<CR>
 " Git log for file
 nmap <silent> <Leader>gl :silent vert term git log --oneline %<CR>
+" Chnages made shown in the bottom
+nmap <silent> <Leader>dc :changes<CR>
