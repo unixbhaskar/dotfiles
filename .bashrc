@@ -189,6 +189,7 @@ alias ffusrcontent="vim /home/bhaskar/.mozilla/firefox/18q9dvrr.default-release/
 alias ffusrchrome="vim /home/bhaskar/.mozilla/firefox/18q9dvrr.default-release/chrome/userChrome.css && refresh_and_restart_ff"
 alias ffcopycontent="cp -v $HOME/.mozilla/firefox/18q9dvrr.default-release/chrome/userContent.css $HOME/.mozilla/firefox/profile/chrome/userContent.css"
 alias vih="vih $1"
+alias rmb="/home/bhaskar/bin/safe_rm"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
 #    #echo "$(date +%F@%T) - SSH-AGENT: Agent will be started"
@@ -316,7 +317,7 @@ mailsynclocally() {
 fi
 }
 # Wrap the following commands for interactive use to avoid accidental file overwrites.
-rm() { command rm -i "${@}"; }
+#rm() { command rm -i "${@}"; }
 #cp() { command cp -i "${@}"; }
 # mv() { command mv -i "${@}"; }
 # Change the terminal prompt to git mode, very show but useful
@@ -671,3 +672,4 @@ xset b off
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+source "$HOME/.cargo/env"
