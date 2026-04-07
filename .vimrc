@@ -74,6 +74,7 @@ Plugin 'axvr/org.vim'
 Plugin 'voldikss/vim-floaterm'
 Plugin 'vimwiki/vimwiki'
 Plugin 'dpelle/vim-LanguageTool'
+Plugin 'machakann/vim-highlightedyank'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -377,8 +378,6 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 
 	Shortcut! Tagbar to toggle by  F8
 
-	Shortcut! NerdTree to open by pressing C-n
-
 	Shortcut! BrowserOpen for under cursor url by pressing "ob" in normal mode
 
 	Shortcut! UrlSelect  open the url by pressing quickly "os" in normal mode
@@ -679,12 +678,12 @@ source ~/.vim/bundle/vim-shortcut/plugin/shortcut.vim
 	" Notification after file change
 	autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 	"shortcut ;cc to compile/run current filetype
-	map <leader>cc :call CompileRunGcc()<CR>
+	map <silent><leader>cc :call CompileRunGcc()<CR>
 	func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
-	exec "!clear && gcc % -o %< && echo COMPILED"
-	exec "!clear && time ./%<"
+	exec "silent !clear && gcc % -S -o %<"
+	exec ":vsplit %:r | :set ft=nasm"
 	elseif &filetype == 'cpp'
 	exec "!clear && g++ % -o %< && echo COMPILED"
 	exec "!clear && time ./%<"
@@ -1111,3 +1110,15 @@ nmap <silent> <Leader>gb :term git blame %<CR>
 nmap <silent> <Leader>gl :silent vert term git log --oneline %<CR>
 " Chnages made shown in the bottom
 nmap <silent> <Leader>dc :changes<CR>
+"Cscope key binds
+
+Shortcut! Cscope_Key_Prefixes <C-\>keys quickfix OR <C-@>keys "split" OR <C-@><C-@>keys "vertical split"
+Shortcut! Find_This_Def	 <C-\>g :Cscope g <C-R>=expand("<cword>")<CR><CR>
+Shortcut! Find_func_called_this_func	 <C-\>d :Cscope d <C-R>=expand("<cword>")<CR> <C-R>=expand("%")<CR><CR>
+Shortcut! Find_func_calling_this_func	 <C-\>c :Cscope c <C-R>=expand("<cword>")<CR><CR>
+Shortcut! Find_This_Text_String	         <C-\>t :Cscope t <C-R>=expand("<cword>")<CR><CR>
+Shortcut! Find_This_Egrep_pattern	 <C-\>e :Cscope e <C-R>=expand("<cword>")<CR><CR>
+Shortcut! Find_This_File	         <C-\>f :Cscope f <C-R>=expand("<cfile>")<CR><CR>
+Shortcut! Find_File_Including_This_File	 <C-\>i :Cscope i <C-R>=expand("<cfile>")<CR>$<CR>
+Shortcut! Find_This_C_Symbol	         <C-\>s :Cscope s <C-R>=expand("<cword>")<CR><CR>
+Shortcut! Find_Places_Where_This_Symbol_Assigned_Value <C-\>a :Cscope a
