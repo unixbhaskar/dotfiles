@@ -1111,7 +1111,6 @@ nmap <silent> <Leader>gl :silent vert term git log --oneline %<CR>
 " Chnages made shown in the bottom
 nmap <silent> <Leader>dc :changes<CR>
 "Cscope key binds
-
 Shortcut! Cscope_Key_Prefixes <C-\>keys quickfix OR <C-@>keys "split" OR <C-@><C-@>keys "vertical split"
 Shortcut! Find_This_Def	 <C-\>g :Cscope g <C-R>=expand("<cword>")<CR><CR>
 Shortcut! Find_func_called_this_func	 <C-\>d :Cscope d <C-R>=expand("<cword>")<CR> <C-R>=expand("%")<CR><CR>
