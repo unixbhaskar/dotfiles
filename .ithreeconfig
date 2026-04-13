@@ -54,10 +54,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+# bindsym $mod+Shift+j move left
+# bindsym $mod+Shift+k move down
+# bindsym $mod+Shift+l move up
+# bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -547,8 +547,8 @@ bindsym $mod+Shift+apostrophe exec surf_bookmarks
 # Youtube studio link
 bindsym $mod+Ctrl+a exec yt_studio_url
 
-# Brings up information management interface
-# bindsym $mod+Shift+k exec "kill_process"
+# Select a process id to kill a specific process
+bindsym $mod+Shift+k exec "kill_process"
 
 # Open emacs client on tty
 bindsym $mod+Shift+y exec "st_solarized -e emacsclient --tty"
@@ -623,5 +623,9 @@ bindsym $mod+F5 exec  unmount_disk
 
 # Kernel versions with a pop up
 bindsym $mod+F9 exec latest_kernel_versions
+
+# Firefox without extensions and theme
+
+bindsym $mod+Ctrl+j exec ff_safe_mode
 
 # vim:filetype=i3config
