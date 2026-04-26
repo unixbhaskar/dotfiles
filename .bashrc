@@ -190,6 +190,8 @@ alias ffusrchrome="vim /home/bhaskar/.mozilla/firefox/18q9dvrr.default-release/c
 alias ffcopycontent="cp -v $HOME/.mozilla/firefox/18q9dvrr.default-release/chrome/userContent.css $HOME/.mozilla/firefox/profile/chrome/userContent.css"
 alias vih="vih $1"
 alias rmb="/home/bhaskar/bin/safe_rm"
+alias emclean="sudo emerge --ask --verbose --depclean"
+alias config_change="sudo dispatch-conf"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
 #    #echo "$(date +%F@%T) - SSH-AGENT: Agent will be started"
