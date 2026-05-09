@@ -478,8 +478,8 @@ bindsym $mod+Shift+h exec hn_hlines
 # List scripts and pressing enter open it in vim(105 == RightCtrl)
 bindcode --release $mod+105  exec various_scripts
 
-# Select particular area of the screen and capture(108 == RightAlt)
-bindcode --release $mod+108 exec select_capture
+# Select particular area of the screen and capture
+bindsym  $mod+F6 exec select_capture
 
 # Open Tour videos
 bindsym $mod+apostrophe exec tour_videos
@@ -594,8 +594,8 @@ bindsym $mod+Ctrl+Shift+s exec scrnkey
 #bindsym $mod+F5 exec restart_firefox
 
 # Package enlists with fzf
-for_window [instance="^st-256color$"] floating enable, resize set 900 500
-bindsym $mod+F6 exec "st_solarized -e pkgview"
+# for_window [instance="^st-256color$"] floating enable, resize set 900 500
+# bindsym $mod+F6 exec "st_solarized -e pkgview"
 
 # Sports Feeds
 bindsym $mod+Ctrl+Shift+k exec sports_feeds
