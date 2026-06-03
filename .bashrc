@@ -111,7 +111,7 @@ alias scriptsgit="cd ~/git-linux/AdminScripts"
 alias lt="cd ~/LaTeX_Workouts"
 alias vimplugin=vimplugin_install
 alias archlinux_update="cd $HOME/git-linux/ArchLinux_Kernel && git pull && cd ~"
-alias gentoo_update="sudo  emerge  --verbose --update --deep --newuse --with-bdeps=y --exclude webkit-gtk --exclude llvm --exclude rust-bin  --keep-going @world"
+alias gentoo_update="sudo  emerge  --verbose --update --deep --newuse --with-bdeps=y --autounmask-write=y --exclude webkit-gtk --exclude llvm --exclude rust-bin  --keep-going @world"
 alias slackware_update="cd ~/git-linux/SlackBuilds && git pull && cd ~"
 alias debian_update="cd ~/git-linux/debian_linux && git pull && cd ~"
 alias gdb="gdb --tui --quiet --statistics $1"
