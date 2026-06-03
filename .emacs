@@ -591,7 +591,11 @@
        (:maildir "/Jonathan_Corbet"       :key ?j)
        (:maildir "/Paul_E_McKenney"       :key ?p)
        (:maildir "/linux-kernel"          :key ?k)
-       (:maildir "/Thomas_Gleixner"       :key ?t))))
+       (:maildir "/Thomas_Gleixner"       :key ?t)
+       (:maildir "/H_Peter_Anvin"         :key ?v)
+       (:maildir "/Ted_Tso"               :key ?s)
+       (:maildir "/Junio_C_Hamano_Git"    :key ?h)
+       (:maildir "/Ingo_Molnar"           :key ?o))))
 
 ;; Disable uppercase
 (put 'upcase-region 'disabled nil)
@@ -2876,3 +2880,21 @@ Start an unlimited search at `point-min' otherwise."
 ;; Read novel
 
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+;; Gentoo portage file syntax hightlights
+
+(load  "~/.emacs.d/portage-modes.el")
+
+(move-text-default-bindings)
+
+;; Webpaste
+
+(use-package webpaste
+  :ensure t
+  :bind (("C-c C-p C-b" . webpaste-paste-buffer)
+         ("C-c C-p C-r" . webpaste-paste-region)
+         ("C-c C-p C-p" . webpaste-paste-buffer-or-region))
+  :config
+  (progn
+    (setq webpaste-paste-raw-text t)
+    (setq webpaste-paste-confirmation t)
+    (setq webpaste-provider-priority '("paste.debian.net" "dpaste.com"))))
