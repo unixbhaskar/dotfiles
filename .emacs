@@ -17,7 +17,7 @@
  '(bibtex-completion-pdf-open-function 'helm-open-file-with-default-tool)
  '(bibtex-dialect 'biblatex)
  '(bmkp-eww-buffer-renaming t)
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "/home/bhaskar/.emacs.d/bookmarks")
  '(calendar-mark-diary-entries-flag t)
  '(calendar-mark-holidays-flag t)
  '(calendar-view-diary-initially-flag t)
@@ -28,7 +28,8 @@
  '(company-quickhelp-color-foreground "#DCDCCC")
  '(compose-mail-user-agent-warnings nil)
  '(connection-local-criteria-alist
-   '(((:application tramp :protocol "kubernetes")
+   '(((:application vc-git) vc-git-connection-default-profile)
+     ((:application tramp :protocol "kubernetes")
       tramp-kubernetes-connection-local-default-profile)
      ((:application tramp :protocol "flatpak")
       tramp-container-connection-local-default-flatpak-profile
@@ -37,7 +38,8 @@
       tramp-connection-local-default-shell-profile)
      ((:application eshell) eshell-connection-default-profile)))
  '(connection-local-profile-alist
-   '((tramp-flatpak-connection-local-default-profile
+   '((vc-git-connection-default-profile (vc-git--program-version))
+     (tramp-flatpak-connection-local-default-profile
       (tramp-remote-path "/app/bin" tramp-default-remote-path "/bin" "/usr/bin"
                          "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"
                          "/local/bin" "/local/freeware/bin" "/local/gnu/bin"
@@ -112,7 +114,8 @@
  '(cua-enable-modeline-indications t)
  '(custom-enabled-themes '(solarized-dark-high-contrast))
  '(custom-safe-themes
-   '("10e5d4cc0f67ed5cafac0f4252093d2119ee8b8cb449e7053273453c1a1eb7cc"
+   '("46433a4be67ff0f415175d0876ef9435d190f3aa57bb00670febd70ba0ba52e1"
+     "10e5d4cc0f67ed5cafac0f4252093d2119ee8b8cb449e7053273453c1a1eb7cc"
      "0c08a5c3c2a72e3ca806a29302ef942335292a80c2934c1123e8c732bb2ddd77"
      "cf922a7a5c514fad79c483048257c5d8f242b21987af0db813d3f0b138dfaf53"
      "f6665ce2f7f56c5ed5d91ed5e7f6acb66ce44d0ef4acfaa3a42c7cfe9e9a9013"
@@ -322,13 +325,17 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#161a2a" "#82aaff"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#161a2a" "#3ad900"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#161a2a" "#444a73"))
- '(load-prefer-newer t t)
+ '(load-prefer-newer t)
  '(magit-repository-directories
    '(("~/projects/AdminScripts" . 5) ("~/dotfiles" . 0) ("~/Collected_Notes" . 0)
      ("~/LaTeX_Workouts" . 0) ("~/projects/emacs" . 0)
      ("~/projects/linux-next" . 0) ("~/projects/vim" . 0)
-     ("~/projects/linux" . 0) ("~/git-linux/gcc" . 0) ("~/git-linux/git" . 0)
-     ("~/git-linux/i3" . 0) ("~/git-linux/nyxt" . 0)))
+     ("~/projects/linux" . 0) ("~/projects/gcc" . 0) ("~/projects/git" . 0)
+     ("~/projects/linux-firmware" . 0) ("~/projects/sparse" . 0)
+     ("~/projects/smatch" . 0) ("~/projects/linux-history" . 0)
+     ("~/projects/pahole" . 0) ("~/projects/linux-kbuild" . 0)
+     ("~/projects/curl" . 0) ("~/projects/util-linux" . 0)
+     ("~/projects/i3-window-manager" . 0)))
  '(marginalia-mode t)
  '(mml-secure-openpgp-sign-with-sender t)
  '(mu4e-display-update-status-in-modeline t)
@@ -356,9 +363,7 @@
      ("\\.pdf\\'" . "zathura %s")))
  '(org-roam-completion-everywhere t)
  '(org-roam-dailies-directory "~/.emacs.d/OrgFiles/daily/")
- ;;; '(org-roam-mode t nil (org-roam))
- ;;; '(org-roam-server-mode t)
- '(org-startup-with-inline-images t)
+ '(org-startup-with-link-previews t)
  '(org-todo-keywords
    '((sequence "TODO(t)" "DONE(d)" "STARTED(s)" "WAITING(w)" "ONGOING(o)"
                "CANCELLED(c)" "NEXT(n)" "HOLD(h)" "MEETING(m)" "PHONE(p)")))
@@ -366,24 +371,26 @@
  '(org-use-sub-superscripts '{})
  '(package-archive-upload-base "/home/bhaskar/.emacs.d/elpa/archives/gnu elpa")
  '(package-selected-packages
-   '(all-the-icons-ivy annotation bibtex-utils citar-embark cl-libify
-                       command-log-mode consult-company counsel-notmuch
-                       ctags-update dashboard-project-status dictionary
-                       dired-git-info dired-icon dired-toggle djvu emms-state
-                       emojify git-messenger gnuplot gnuplot-mode
+   '(all-the-icons-ivy annotation auto-package-update bibtex-utils citar-embark
+                       cl-libify command-log-mode consult-company
+                       counsel-notmuch ctags-update dashboard-project-status
+                       dictionary dired-git-info dired-icon dired-toggle djvu
+                       emms-state emojify git-messenger gnuplot gnuplot-mode
                        gscholar-bibtex hnreader imenus insert-shebang ivy-bibtex
-                       ix keychain-environment langtool magit magit-org-todos
-                       magit-popup mark-multiple modus-themes mu4e-marker-icons
-                       multi-vterm nov org org-alert org-beautify-theme
-                       org-bullets org-contacts org-dashboard org-gcal
-                       org-inline-pdf org-protocol-jekyll org-roam-server
-                       org-timeline org2web orgit password-menu pdf-view-restore
-                       peep-dired pinentry popup-complete popup-edit-menu
-                       popup-imenu popup-kill-ring popup-switcher pretty-symbols
-                       rainbow-delimiters reddigg remember-last-theme
-                       restart-emacs scratch site-lisp slime smex spinner
-                       swiper-helm synosaurus unicode-fonts vimrc-mode w3m
-                       weather-metno webpaste wordnut wttrin xclip))
+                       ix keychain-environment langtool magit
+                       magit-browse-commit magit-org-todos magit-popup
+                       magit-stats magit-todos mark-multiple modus-themes
+                       mu4e-marker-icons multi-vterm nov org org-alert
+                       org-beautify-theme org-bullets org-contacts org-dashboard
+                       org-gcal org-inline-pdf org-protocol-jekyll
+                       org-roam-server org-timeline org2web orgit password-menu
+                       pdf-view-restore peep-dired pinentry popup-complete
+                       popup-edit-menu popup-imenu popup-kill-ring
+                       popup-switcher pretty-symbols rainbow-delimiters reddigg
+                       remember-last-theme restart-emacs scratch site-lisp slime
+                       smex spinner swiper-helm synosaurus unicode-fonts
+                       vimrc-mode w3m weather-metno webpaste wordnut wttrin
+                       xclip))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -412,26 +419,26 @@
  '(user-mail-address "unixbhaskar@gmail.com")
  '(warning-suppress-types '((browse-url)))
  '(webjump-sites
-   '(("GNU Project FTP Archive" .
-      [mirrors "https://ftp.gnu.org/pub/gnu/" "https://ftpmirror.gnu.org"])
+   '(("GNU Project FTP Archive"
+      . [mirrors "https://ftp.gnu.org/pub/gnu/" "https://ftpmirror.gnu.org"])
      ("GNU Project Home Page" . "www.gnu.org")
      ("Emacs Home Page" . "www.gnu.org/software/emacs/emacs.html")
      ("Savannah Emacs page" . "savannah.gnu.org/projects/emacs")
      ("Emacs Lisp List" . "www.damtp.cam.ac.uk/user/eglen/emacs/ell.html")
-     ("Emacs Wiki" .
-      [simple-query "www.emacswiki.org" "www.emacswiki.org/cgi-bin/wiki/" ""])
+     ("Emacs Wiki"
+      . [simple-query "www.emacswiki.org" "www.emacswiki.org/cgi-bin/wiki/" ""])
      ("DuckDuckGo" . [simple-query "duckduckgo.com" "duckduckgo.com/?q=" ""])
      ("Google" . [simple-query "www.google.com" "www.google.com/search?q=" ""])
-     ("Google Groups" .
-      [simple-query "groups.google.com" "groups.google.com/groups?q=" ""])
+     ("Google Groups"
+      . [simple-query "groups.google.com" "groups.google.com/groups?q=" ""])
      ("Yahoo" . [simple-query "www.yahoo.com" "search.yahoo.com/search?p=" ""])
      ("Yahoo: Reference" . "www.yahoo.com/Reference/")
      ("Wikipedia" . [simple-query "wikipedia.org" "wikipedia.org/wiki/" ""])
      ("National Weather Service" . webjump-to-iwin)
      ("Usenet FAQs" . "www.faqs.org/faqs/")
      ("RTFM Usenet FAQs by Group" . "ftp://rtfm.mit.edu/pub/usenet-by-group/")
-     ("RTFM Usenet FAQs by Hierarchy" .
-      "ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/")
+     ("RTFM Usenet FAQs by Hierarchy"
+      . "ftp://rtfm.mit.edu/pub/usenet-by-hierarchy/")
      ("X Consortium Archive" . "ftp.x.org")
      ("Association for Computing Machinery" . "www.acm.org")
      ("Computer Professionals for Social Responsibility" . "www.cpsr.org")
@@ -612,9 +619,9 @@
     :config
     (setq which-key-idle-delay 0.3))
 ;; Ivy-rich
-(use-package ivy-rich
-	     :init
-	     (ivy-rich-mode 1))
+ (use-package ivy-rich
+ 	     :init
+ 	     (ivy-rich-mode 1))
 ;; Mu4e Alerts
 ;; (use-package mu4e-alert
 ;;     :after mu4e
@@ -816,7 +823,7 @@
 (setq emms-playlist-buffer-name "*Music*")
 ;;Mpv integration
 
-(load "~/.emacs.d/emms-player-mpv.el")
+;; (load "~/.emacs.d/emms-player-mpv.el")
 
 (global-set-key (kbd "C-x m") 'emms)
 (global-set-key (kbd "C-c s p") 'emms-pause)
@@ -1195,6 +1202,11 @@ rather than the whole path."
 ;; Notmuch shortcut
 
 (global-set-key (kbd "M-n") 'notmuch)
+
+;; Sorting mail order
+
+(setq notmuch-search-oldest-first nil)
+
 ;; Mu4e shortcut
 
 (global-set-key (kbd "M-m") 'mu4e)
@@ -1686,11 +1698,11 @@ rather than the whole path."
 (global-set-key (kbd "C-c i m") 'image-dired)
 
 ;; comment line
-(if (display-graphic-p)
-    (progn
- (global-set-key (kbd "M-;") 'comment-line)
-  else
-  (globacl-set-key (kbd "C-x C-;") 'comment-line)))
+;; (if (display-graphic-p)
+;;    (progn
+;; (global-set-key (kbd "M-;") 'comment-line)
+;; else
+;; (globacl-set-key (kbd "C-x C-;") 'comment-line)))
 
 ;; comment region
 
@@ -2898,3 +2910,7 @@ Start an unlimited search at `point-min' otherwise."
     (setq webpaste-paste-raw-text t)
     (setq webpaste-paste-confirmation t)
     (setq webpaste-provider-priority '("paste.debian.net" "dpaste.com"))))
+
+;; Disassemble in a separate buffer for C program
+
+(global-set-key (kbd "C-c C-x") 'disaster)
