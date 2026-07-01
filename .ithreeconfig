@@ -143,8 +143,8 @@ bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
 bindsym $mod+comma workspace $workspace14 ; exec photo_albaum;
 bindsym $mod+p workspace $workspace15 ; exec pdf_viewer;
 bindsym $mod+Shift+n ; exec start_nyxt;
-bindsym $mod+Ctrl+z workspace $workspace3 ;exec "speed_firefox --private-window";
-bindsym $mod+Ctrl+c workspace $workspace16 ;exec "calibre";
+# bindsym $mod+Ctrl+z workspace $workspace3 ;exec "speed_firefox --private-window";
+# bindsym $mod+Ctrl+c workspace $workspace16 ;exec "calibre";
 
 #ASSIGN PROGRAMS TO WORKSPACES
 #assign [class="^st-256color$"] → $workspace1
@@ -621,5 +621,9 @@ bindsym $mod+F9 exec latest_kernel_versions
 # Firefox without extensions and theme
 
 bindsym $mod+Ctrl+j exec ff_safe_mode
+
+# Bluetooth Earphone conenction
+
+bindsym $mod+Ctrl+c exec "st_solarized -e bluetooth_connect"
 
 # vim:filetype=i3config
