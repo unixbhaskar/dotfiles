@@ -129,7 +129,7 @@ bindsym $mod+Control+Left workspace prev
 
 bindsym $mod+1 ; workspace $workspace1 ;
 bindsym $mod+b ; exec "vimb";
-bindsym $mod+Shift+f ; workspace $workspace3 ; exec "speed_firefox";
+bindsym $mod+Shift+f ; workspace $workspace3 ; exec "firefox";
 bindsym $mod+Shift+y ; workspace $workspace4 ; exec "st_solarized -e emacsclient --tty"
 bindsym $mod+braceleft workspace $workspace5 ; exec "st_gruvbox -n Btop -e btop";
 bindsym $mod+n workspace $workspace6 ; exec "st_solarized -n Newsboat -e newsboat";
@@ -322,19 +322,19 @@ set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [
 bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon"
 
 mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon"{
-    bindsym r exec open_reddit
-    bindsym g exec open_github
-    bindsym e exec open_goodreads
-    bindsym b exec open_blogs
-    bindsym u exec open_youtube
-    bindsym h exec open_lore
-    bindsym s exec open_slashdot
-    bindsym t exec open_twitter
-    bindsym l exec open_linkedin
-    bindsym c exec open_linux_syscall
-    bindsym p exec open_phoronix
-    bindsym m exec open_mastodon
-    bindsym f exec open_fosstodon
+    bindsym r workspace $workspace3 ; exec open_reddit ;
+    bindsym g workspace $workspace3 ; exec open_github ;
+    bindsym e workspace $workspace3 ; exec open_goodreads ;
+    bindsym b workspace $workspace3 ; exec open_blogs ;
+    bindsym u workspace $workspace3 ; exec open_youtube ;
+    bindsym h workspace $workspace3 ; exec open_lore ;
+    bindsym s workspace $workspace3 ; exec open_slashdot ;
+    bindsym t workspace $workspace3 ; exec open_twitter ;
+    bindsym l workspace $workspace3 ; exec open_linkedin ;
+    bindsym c workspace $workspace3 ; exec open_linux_syscall ;
+    bindsym p workspace $workspace3 ; exec open_phoronix ;
+    bindsym m workspace $workspace3 ; exec open_mastodon ;
+    bindsym f workspace $workspace3 ; exec open_fosstodon ;
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
