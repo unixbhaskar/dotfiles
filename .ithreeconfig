@@ -35,7 +35,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10' -p 'search command item >'"
-bindsym $mod+d exec "dmenu_run -sb '#005577' -p 'search command item >'"
+ bindsym $mod+d exec "dmenu_run -sb '#005577' -p 'search command item >'"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -136,7 +136,7 @@ bindsym $mod+n workspace $workspace6 ; exec "st_solarized -n Newsboat -e newsboa
 bindsym $mod+k  workspace $workspace7 ; exec "st_solarized -n Calcurse -e calcurse";
 bindsym $mod+u  workspace $workspace8 ; exec --no-startup-id "st_solarized -n Cmus -e cmus";
 # bindsym $mod+Shift+m  workspace $workspace9 ; exec "st -n Mutt -e mail_open";
-bindsym $mod+g  workspace $workspace10 ; exec "st_solarized -n Tig -e tig_open";
+bindsym $mod+g  workspace $workspace10 ; exec "run_tig_on_git_repo.sh";
 bindsym $mod+o workspace $workspace11 ; exec "st_solarized -n System_Operations -e system_operation";
 bindsym $mod+braceright workspace $workspace12 ; exec "st_solarized -n Screencast -e screencast";
 bindsym $mod+m workspace $workspace13 ; exec  movie_watch;
@@ -185,7 +185,7 @@ for_window  [instance="^Emacs$"] move container to workspace $workspace4
 #
 # for_window [instance="^Mutt$"] move container to workspace $workspace9
 #
-# for_window [instance="^Tig$"] move container to workspace $workspace10
+# for_window [class="^st-256color$" instance="^Tig$"] fullscreen disable
 
 # Move to specific workspace
 bindsym $mod+2 workspace number 2
@@ -317,24 +317,25 @@ bindsym $mod+x exec scrot  -e 'mv $f ~/Pictures/Screenshots' && notify-send -t 1
 bindsym $mod+Shift+comma  exec show_latest_screenshot
 
 # i3 bar shortcut menu
-set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon
+set $mode_launcher Launch: [r]Reddit [t]Twitter [l]Linkedin [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon [k]SourceHut
 
-bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon"
+bindsym $mod+j mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon [k]SourceHut"
 
-mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon"{
-    bindsym r workspace $workspace3 ; exec open_reddit ;
-    bindsym g workspace $workspace3 ; exec open_github ;
-    bindsym e workspace $workspace3 ; exec open_goodreads ;
-    bindsym b workspace $workspace3 ; exec open_blogs ;
-    bindsym u workspace $workspace3 ; exec open_youtube ;
-    bindsym h workspace $workspace3 ; exec open_lore ;
-    bindsym s workspace $workspace3 ; exec open_slashdot ;
-    bindsym t workspace $workspace3 ; exec open_twitter ;
-    bindsym l workspace $workspace3 ; exec open_linkedin ;
-    bindsym c workspace $workspace3 ; exec open_linux_syscall ;
-    bindsym p workspace $workspace3 ; exec open_phoronix ;
-    bindsym m workspace $workspace3 ; exec open_mastodon ;
-    bindsym f workspace $workspace3 ; exec open_fosstodon ;
+mode "[r]Reddit [t]Twitter [l]Linkedin [h]Kernel_mailing_list [g]Github [b]Blogs [u]Youtube [e]Goodreads [s]Slashdot [p]Phoronix [c]Linux_Syscall [m]Mastodon [f]Fosstodon [k]SourceHut"{
+    bindsym r  exec open_reddit ;
+    bindsym g  exec open_github ;
+    bindsym e  exec open_goodreads ;
+    bindsym b  exec open_blogs ;
+    bindsym u  exec open_youtube ;
+    bindsym h  exec open_lore ;
+    bindsym s  exec open_slashdot ;
+    bindsym t  exec open_twitter ;
+    bindsym l  exec open_linkedin ;
+    bindsym c  exec open_linux_syscall ;
+    bindsym p  exec open_phoronix ;
+    bindsym m  exec open_mastodon ;
+    bindsym f  exec open_fosstodon ;
+    bindsym k  exec open_sourcehut ;
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
@@ -521,8 +522,8 @@ for_window [instance="^st-256color$"] floating enable, resize set 900 500
 bindsym $mod+Shift+a exec  "st_solarized -e git_projects"
 
 # Run tig on selected project
-for_window [instance="^st-256color$"] floating enable, resize set 900 500
-bindsym $mod+Ctrl+i exec  "run_tig_on_git_repo.sh"
+# for_window [instance="^st-256color$"] floating enable, resize set 900 500
+# bindsym $mod+Ctrl+i exec  "run_tig_on_git_repo.sh"
 
 # Package install via dmenu
 for_window [instance="^st-256color$"] floating enable, resize set 900 500
