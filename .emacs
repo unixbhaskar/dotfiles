@@ -108,7 +108,8 @@
      (tramp-connection-local-default-shell-profile (shell-file-name . "/bin/sh")
                                                    (shell-command-switch . "-c"))
      (tramp-connection-local-default-system-profile (path-separator . ":")
-                                                    (null-device . "/dev/null"))
+                                                    (null-device . "/dev/null")
+                                                    (exec-suffixes ""))
      (eshell-connection-default-profile (eshell-path-env-list))))
  '(corfu-global-mode t)
  '(cua-enable-modeline-indications t)
@@ -379,18 +380,17 @@
                        gscholar-bibtex hnreader imenus insert-shebang ivy-bibtex
                        ix keychain-environment langtool magit
                        magit-browse-commit magit-org-todos magit-popup
-                       magit-stats magit-todos mark-multiple modus-themes
-                       mu4e-marker-icons multi-vterm nov org org-alert
-                       org-beautify-theme org-bullets org-contacts org-dashboard
-                       org-gcal org-inline-pdf org-protocol-jekyll
-                       org-roam-server org-timeline org2web orgit password-menu
-                       pdf-view-restore peep-dired pinentry popup-complete
-                       popup-edit-menu popup-imenu popup-kill-ring
-                       popup-switcher pretty-symbols rainbow-delimiters reddigg
-                       remember-last-theme restart-emacs scratch site-lisp slime
-                       smex spinner swiper-helm synosaurus unicode-fonts
-                       vimrc-mode w3m weather-metno webpaste wordnut wttrin
-                       xclip))
+                       magit-todos mark-multiple modus-themes mu4e-marker-icons
+                       multi-vterm nov org org-alert org-beautify-theme
+                       org-bullets org-contacts org-dashboard org-gcal
+                       org-inline-pdf org-protocol-jekyll org-roam-server
+                       org-timeline org2web orgit password-menu pdf-view-restore
+                       peep-dired pinentry popup-complete popup-edit-menu
+                       popup-imenu popup-kill-ring popup-switcher pretty-symbols
+                       rainbow-delimiters reddigg remember-last-theme
+                       restart-emacs scratch site-lisp slime smex spinner
+                       swiper-helm synosaurus unicode-fonts vimrc-mode w3m
+                       weather-metno webpaste wordnut wttrin xclip))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -407,16 +407,17 @@
      (vc-git-annotate-switches . "-w")
      (eval add-hook 'after-save-hook (lambda nil (org-babel-tangle)) nil t)))
  '(scroll-bar-mode nil)
- '(send-mail-function 'mailclient-send-it)
- '(smtpmail-debug-info t)
- '(smtpmail-default-smtp-server "smtp.gmail.com")
- '(smtpmail-local-domain "gmail.com")
- '(smtpmail-smtp-server "smtp.gmail.com")
- '(smtpmail-smtp-service 587)
- '(smtpmail-smtp-user "unixbhaskar")
- '(smtpmail-stream-type 'starttls)
- '(use-package-compute-statistics t)
- '(user-mail-address "unixbhaskar@gmail.com")
+ ;;; '(setq send-mail-function 'smtpmail-send-it)
+ ;;; '(setq message-send-mail-function 'smtpmail-send-it)
+ ;;; '(setq smtpmail-debug-info t)
+ ;;; '(setq user-mail-address "unixbhaskar@gmail.com")
+ ;;; '(setq smtpmail-smtp-user "unixbhskar")
+ ;;; '(setq smtpmail-local-domain "gmail.com")
+ ;;; '(setq smtpmail-default-smtp-server "smtp.gmail.com")
+ ;;; '(setq smtpmail-smtp-server "smtp.gmail.com")
+ ;;; '(setq smtpmail-smtp-service 587)
+ ;;; '(setq smtpmail-stream-type 'starttls)
+ ;;; '(setq use-package-compute-statistics t)
  '(warning-suppress-types '((browse-url)))
  '(webjump-sites
    '(("GNU Project FTP Archive"
@@ -558,6 +559,12 @@
 (setq smtpmail-debug-info t)
 (setq smtpmail-stream-type 'starttls)
 (setq mm-sign-option 'guided)
+(setq ser-mail-address "unixbhaskar@gmail.com")
+(setq smtpmail-smtp-user "unixbhaskar")
+(setq smtpmail-local-domain "gmail.com")
+(setq smtpmail-default-smtp-server "smtp.gmail.com")
+(setq smtpmail-smtp-server "smtp.gmail.com")
+(setq smtpmail-smtp-service 587)
 
 (when (fboundp 'imagemagick-register-types)
     (imagemagick-register-types))
@@ -2914,3 +2921,14 @@ Start an unlimited search at `point-min' otherwise."
 ;; Disassemble in a separate buffer for C program
 
 (global-set-key (kbd "C-c C-x") 'disaster)
+
+;; lexical binding warning suppress
+
+;; (setq warning-suppress-types '((lexical-binding)))
+;; (setq warning-inhibit-types '((files missing-lexbind-cookie)))
+;; (setq warning-suppress-log-types '((files missing-lexbind-cookie)))
+
+
+;; Secure SMTP
+(setq starttls-use-gnutls t
+ starttls-extra-arguments nil)
