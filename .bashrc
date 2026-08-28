@@ -192,6 +192,7 @@ alias vih="vih $1"
 alias rmb="/home/bhaskar/bin/safe_rm"
 alias emclean="sudo emerge --ask --verbose --depclean"
 alias kbuild_pull="cd ~/git-linux/kbuild/ &&  git pull origin kbuild-next"
+alias linux_net="cd ~/git-linux/linux-net && git pull && git-show-new"
 alias config_change="sudo dispatch-conf"
 # Check if the ssh-agent is already running
 #if [[ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]]; then
