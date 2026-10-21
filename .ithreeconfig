@@ -8,15 +8,15 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+font pango:monospace 15
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 8
-font pango:Symbola 10
+font pango:Symbola 15
 
 #This is for the icons rendering
-font pango:fontawesome 10
+font pango:fontawesome 15
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 # Before i3 v4.8, we used to recommend this one as the default:
@@ -35,7 +35,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10' -p 'search command item >'"
- bindsym $mod+d exec "dmenu_run -sb '#005577' -p 'search command item >'"
+ bindsym $mod+d exec "dmenu_run -sb '#005577'  -fn 'Inconsolata 12' -p 'search command item >'"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
