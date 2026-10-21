@@ -10,7 +10,7 @@ if [[ -e /etc/bashrc || -e /etc/bash.bashrc ]]; then
 fi
 # Bunch of exports
 LESSOPEN="|/home/bhaskar/bin/lesspipe.sh %s"; export LESSOPEN
-export PATH="$PATH:/opt/piavpn/bin:/home/bhaskar/bin"
+export PATH="$PATH:/opt/piavpn/bin:/home/bhaskar/bin:/usr/libexec/git-core/"
 #export PILOTRATE=115200
 test -s ~/.alias && . ~/.alias || true
 export HISTTIMEFORMAT="%h/%d/%Y - %H:%M:%S "
@@ -19,6 +19,7 @@ export  HISTSIZE=99999
 export LS_COLORS='di=0;34:ex=1;32'
 # Aliases
 alias ls="ls --color=always"
+alias i3logs="less /home/bhaskar/.config/i3/i3logs"
 alias l="ls -lathr"
 alias diffs='diff --side-by-side --suppress-common-lines'
 alias grep="grep --color"
@@ -59,7 +60,11 @@ alias copy_to='sudo cp -v'
 alias week='date +%V'
 alias filepath='ls | sed "s:^:`pwd`/:"'
 alias abspath='find $PWD -maxdepth 1 -type d -print'
+alias i3logs_follow="tail -f /home/bhaskar/.config/i3/i3logs"
+alias i3logs_lines="tail -n100 /home/bhaskar/.config/i3/i3logs"
 alias i3configfiles="cd ~/.config/i3"
+alias debpkginst="sudo apt-get install $1 -y"
+alias debpkgreinst="sudo apt-get --reinstall install $1 -y"
 alias v="vim -u ~/.vimrc"
 alias v1="vim -u ~/.vimrc_gruvbox"
 alias sshot="cd ~/Pictures/Screenshots"
@@ -106,7 +111,7 @@ alias nyxtconfig="vim ~/.nyxt_config.lisp"
 alias orgfiles="cd /home/bhaskar/.emacs.d/OrgFiles/"
 alias linux-next="cd $HOME/git-linux/linux-next && git pull"
 alias profile="vim ~/.profile"
-alias i3blocks="vim ~/.ithreeblocksconfig"
+alias i3blocksconfig="vim ~/.ithreeblocksconfig"
 alias scriptsgit="cd ~/git-linux/AdminScripts"
 alias lt="cd ~/LaTeX_Workouts"
 alias vimplugin=vimplugin_install
