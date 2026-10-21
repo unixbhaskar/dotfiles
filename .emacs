@@ -377,20 +377,21 @@
                        counsel-notmuch ctags-update dashboard-project-status
                        dictionary dired-git-info dired-icon dired-toggle djvu
                        emms-state emojify git-messenger gnuplot gnuplot-mode
-                       gscholar-bibtex hnreader imenus insert-shebang ivy-bibtex
-                       ix keychain-environment langtool magit
-                       magit-browse-commit magit-org-todos magit-popup
-                       magit-todos mark-multiple modus-themes mu4e-marker-icons
-                       multi-vterm nov org org-alert org-beautify-theme
-                       org-bullets org-contacts org-dashboard org-gcal
-                       org-inline-pdf org-protocol-jekyll org-roam-server
-                       org-timeline org2web orgit password-menu pdf-view-restore
-                       peep-dired pinentry popup-complete popup-edit-menu
-                       popup-imenu popup-kill-ring popup-switcher pretty-symbols
-                       rainbow-delimiters reddigg remember-last-theme
-                       restart-emacs scratch site-lisp slime smex spinner
-                       swiper-helm synosaurus unicode-fonts vimrc-mode w3m
-                       weather-metno webpaste wordnut wttrin xclip))
+                       gscholar-bibtex helm-grepint hnreader imenus
+                       insert-shebang ivy-bibtex ix keychain-environment
+                       langtool magit magit-browse-commit magit-org-todos
+                       magit-popup magit-todos mark-multiple modus-themes
+                       mu4e-marker-icons multi-vterm nov org org-alert
+                       org-beautify-theme org-bullets org-contacts org-dashboard
+                       org-gcal org-inline-pdf org-protocol-jekyll
+                       org-roam-server org-timeline org2web orgit password-menu
+                       pdf-view-restore peep-dired pinentry popup-complete
+                       popup-edit-menu popup-imenu popup-kill-ring
+                       popup-switcher pretty-symbols rainbow-delimiters reddigg
+                       remember-last-theme restart-emacs scratch site-lisp slime
+                       smex spinner swiper-helm synosaurus unicode-fonts
+                       vimrc-mode w3m weather-metno webpaste wordnut wttrin
+                       xclip))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pdf-view-use-imagemagick t)
  '(pdf-view-use-unicode-ligther t)
@@ -407,17 +408,6 @@
      (vc-git-annotate-switches . "-w")
      (eval add-hook 'after-save-hook (lambda nil (org-babel-tangle)) nil t)))
  '(scroll-bar-mode nil)
- ;;; '(setq send-mail-function 'smtpmail-send-it)
- ;;; '(setq message-send-mail-function 'smtpmail-send-it)
- ;;; '(setq smtpmail-debug-info t)
- ;;; '(setq user-mail-address "unixbhaskar@gmail.com")
- ;;; '(setq smtpmail-smtp-user "unixbhskar")
- ;;; '(setq smtpmail-local-domain "gmail.com")
- ;;; '(setq smtpmail-default-smtp-server "smtp.gmail.com")
- ;;; '(setq smtpmail-smtp-server "smtp.gmail.com")
- ;;; '(setq smtpmail-smtp-service 587)
- ;;; '(setq smtpmail-stream-type 'starttls)
- ;;; '(setq use-package-compute-statistics t)
  '(warning-suppress-types '((browse-url)))
  '(webjump-sites
    '(("GNU Project FTP Archive"
