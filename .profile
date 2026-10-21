@@ -18,8 +18,8 @@ fi
 if [[ $(uname -n) == Slackware ]]; then
 	/usr/local/bin/fix-mouse
 fi
-if [[ $(uname -n) == debian ]]; then
-	/home/bhaskar/bin/brightness_up
+if [[ $(uname -n) == opensuseTW ]]; then
+	/home/bhaskar/bin/startpulse
 fi
 # Most applications support several languages for their output.
 # To make use of this feature, simply uncomment one of the lines below or
@@ -46,3 +46,4 @@ export NSPR_LOG_MODULES=nsHttp:3,nsHostResolver:3,timestamp,rotate:200,nsHttp:5,
 export MOZ_LOG=nsHttp:3,nsHostResolver:3,timestamp,rotate:200,nsHttp:5,cache2:5,nsSocketTransport:5,nsHostResolver:5,sync
 export NSPR_LOG_FILE=/data/firefox_log/firefox.log_NSFR_$(date +'%F_%T')_log
 export MOZ_LOG_FILE=/data/firefox_log/firefox.log__MOZ_$(date +'%F_%T')_log
+source "$HOME/.cargo/env"
